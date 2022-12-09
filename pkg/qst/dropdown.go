@@ -1,11 +1,11 @@
 package qst
 
 import (
-	"bytes"
 	"fmt"
 	"html/template"
 	"io"
 	"log"
+	"sort"
 	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -15,20 +15,22 @@ type optionT struct {
 	Key      string
 	Val      trl.S //  template.HTML
 	Selected bool
+
+	ValLC template.HTML `json:"-"` // helper
+
 }
 
 // DropdownT represents a HTML dropdown control
 // Methods need to return a string, so we can use them in templates
 type DropdownT struct {
 	Name       string
-	Title      string `json:"-"` // <select title='...'
-	AutoSubmit bool   // onchange this.Form.Submit() is suppressed
+	AutoSubmit bool // onchange this.Form.Submit() is suppressed
 	Disabled   bool
 
 	// management of 'style' and 'class' HTML attributes
 	Attrs map[template.HTMLAttr]template.HTMLAttr
 
-	LC      string // LangCode
+	LC      string // for rendering the labels inside the template below
 	Options []optionT
 
 	NameJavaScriptExpression template.JSStr `json:"-"` // helper
@@ -37,12 +39,6 @@ type DropdownT struct {
 // SetName - for usage in templates
 func (d *DropdownT) SetName(s string) string {
 	d.Name = s
-	return ""
-}
-
-// SetTitle - for usage in templates
-func (d *DropdownT) SetTitle(s string) string {
-	d.Title = s
 	return ""
 }
 
@@ -122,7 +118,7 @@ func (d *DropdownT) Add(k string, v trl.S) string {
 	return ""
 }
 
-// AddPleaseSelect adds a default option
+// AddPleaseSelect adds a default option at the top
 func (d *DropdownT) AddPleaseSelect(v trl.S) {
 	leadOpt := []optionT{{Key: "", Val: v}} // i.e. "please choose"
 	(*d).Options = append(leadOpt, (*d).Options...)
@@ -158,6 +154,11 @@ func (d *DropdownT) Len() int           { return len(d.Options) }
 func (d *DropdownT) Swap(i, j int)      { d.Options[i], d.Options[j] = d.Options[j], d.Options[i] }
 func (d *DropdownT) Less(i, j int) bool { return d.Options[i].Val[d.LC] < d.Options[j].Val[d.LC] }
 
+// SortOptionsByLabel for quest generation time
+func (d *DropdownT) SortOptionsByLabel() {
+	sort.Sort(d)
+}
+
 //
 // Template stuff
 //
@@ -166,8 +167,6 @@ var tplStr = `
 	<select 
 			name='{{ .Name }}'  id='{{ .Name }}'
 				
-			{{- if ne  .Title "" }}title='{{.Title}}' {{end -}}
-			
 			{{- range $attr, $val := .Attrs}}
 				{{$attr}}='{{$val}}'
 			{{end -}}
@@ -185,7 +184,7 @@ var tplStr = `
 		{{$outer := .}}
 		{{range $Option := .Options -}}
 			<!-- keep the ugly formatting of the end if -->
-			<option value="{{ $Option.Key }}" {{ if eq $Option.Selected true }}selected{{end}} >{{$Option.Val.Tr $outer.LC}}</option>
+			<option value="{{ $Option.Key }}" {{ if eq $Option.Selected true }}selected{{end}} >{{$Option.ValLC}}</option>
 		{{- end}}
 	</select>
 `
@@ -203,21 +202,20 @@ func init() {
 // Render to io.Writer
 func (d *DropdownT) Render(w io.Writer) {
 	d.NameJavaScriptExpression = template.JSStr(d.Name)
+	for i := 0; i < len(d.Options); i++ {
+		d.Options[i].ValLC = template.HTML(d.Options[i].Val[d.LC])
+	}
+	// log.Printf("%#v", d.Options)
 	err := tpl.Execute(w, d)
 	if err != nil {
-		log.Printf("Failure 1 to render dropdown: %v", err)
+		log.Printf("error rendering dropdown %v: %v", d.Name, err)
 	}
 }
 
 // RenderStr to string
 func (d *DropdownT) RenderStr() string {
-	var b bytes.Buffer
-	d.NameJavaScriptExpression = template.JSStr(d.Name)
-	err := tpl.Execute(&b, d)
-	if err != nil {
-		msg := fmt.Sprintf("Failure 2 to render dropdown %v: %v", d.Name, err)
-		log.Printf(msg)
-		return msg
-	}
-	return b.String()
+	sb := &strings.Builder{}
+	d.Render(sb)
+	// log.Print(sb.String())
+	return sb.String()
 }

@@ -6,7 +6,6 @@ import (
 	"log"
 	"math"
 	"path"
-	"sort"
 	"strconv"
 	"strings"
 
@@ -423,13 +422,10 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode), width, inp.MaxChars, colsRows, inp.Response)
 
 	case "dropdown":
-		// i.DD = &DropdownT{}
 		inp.DD.SetName(inp.Name)
 		inp.DD.LC = q.LangCode
-		inp.DD.SetTitle(inp.Label.TrSilent(q.LangCode) + " " + inp.Desc.TrSilent(q.LangCode))
 		inp.DD.Select(inp.Response)
 		// inp.DD.SetAttr("class", inp.CSSControl)
-		sort.Sort(inp.DD)
 
 		ctrl += inp.DD.RenderStr()
 

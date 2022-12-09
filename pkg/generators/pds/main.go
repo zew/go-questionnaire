@@ -197,22 +197,36 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Average time to close a deal in weeks",
 			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 		}.Outline("b.)")
-		rangesRowLabelsLeft(
+
+		/*
+			closing weeks - three display variations:
+				range
+				radios
+				dropdown
+		*/
+
+		if false {
+			rangesRowLabelsLeft(
+				qst.WrapPageT(page),
+				"closing_time",
+				lblDuration,
+				sliderWeeksClosing,
+			)
+
+			radiosLabelsTop(
+				qst.WrapPageT(page),
+				"closing_time",
+				lblDuration,
+				mCh5,
+			)
+		}
+
+		dropdownsLabelsTop(
 			qst.WrapPageT(page),
 			"closing_time",
 			lblDuration,
-			sliderWeeksClosing,
+			mCh5,
 		)
-
-		// radiosLabelsTop(
-		// 	qst.WrapPageT(page),
-		// 	"closing_time2",
-		// 	trl.S{
-		// 		"en": "Alternative visualisation using radios; <br> or vertical?",
-		// 		"de": "Alternative visualisation using radios; <br> or vertical?",
-		// 	}.Outline("b.)"),
-		// 	mCh5,
-		// )
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT2)
 
@@ -1329,8 +1343,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	(&q).Hyphenize()
-	(&q).ComputeMaxGroups()
+	q.Hyphenize()
+	q.ComputeMaxGroups()
+	q.SetColspans()
+
 	if err := (&q).TranslationCompleteness(); err != nil {
 		return &q, err
 	}

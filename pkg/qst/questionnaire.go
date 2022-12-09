@@ -1020,7 +1020,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	kv := q.DynamicPageValues()
 	err := q.DynamicPages()
 	if err != nil {
-		err = fmt.Errorf("dyn page creation on joined q: %w", err)
+		err = fmt.Errorf("dyn page creation in PageHTML() q: %w", err)
 		return err.Error(), err
 	}
 	q.DynamicPagesApplyValues(kv)

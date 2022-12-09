@@ -74,6 +74,15 @@ Infrastructure
   * Official announcement of internal preview release on 10. Dec
 
 
-## RC2
+## RC3
 
-* Slider: Display width
+done
+
+* Slider: Display width adapted 
+* Slider: Ticks corrected 
+* Weeks to close: As dropdown
+
+todo
+* Default value of Range
+* Align the tranche names
+* 2022-11-28_ZEW_Survey.xlsx

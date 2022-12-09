@@ -744,6 +744,8 @@ select {
     appearance: none; */
     text-indent: 1px;
     text-overflow: '';
+
+    border-width: thin;
     border: none;
 
     /* suppressing light blue background from options - does not work */
@@ -751,10 +753,14 @@ select {
 }
 
 option {
-    padding: 0.4em;
-    color: var(--clr-inp-focus);
+    padding: 0.3em 0.14rem;
+    /* color: var(--clr-inp-focus); */
     background-color: transparent;
     border: none;
+}
+
+select  option:nth-child(1) {
+    font-size: 95%;
 }
 
 select:-moz-focusring {
@@ -767,7 +773,7 @@ select:-moz-focusring {
     stackoverflow.com/questions/2591796
 
     2021-02:
-    all it takes to preven long options from stretching the select:
+    all it takes to prevent long options from stretching the select:
         max-width: 80px;
 
 */

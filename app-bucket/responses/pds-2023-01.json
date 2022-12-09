@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4655d94fba714bf9a6f77e9e28e26376d5aa8e77d74657c0155679663081945c",
+ 	"md_5": "d3d8f49bf1e20eca1ccd54da71eae7eb2083235093d22b1376321082aaae5177",
  	"lang_codes": [
  		"en"
  	],
@@ -158,6 +158,7 @@
  								"en": "\u003c5"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -210,6 +211,7 @@
  								"en": "5-10"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -262,6 +264,7 @@
  								"en": "11-20"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -314,6 +317,7 @@
  								"en": "\u003e20"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -465,6 +469,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -516,6 +521,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -567,6 +573,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -618,6 +625,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -748,6 +756,7 @@
  								"en": "Whole loan"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -799,6 +808,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -929,6 +939,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -980,6 +991,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -1085,6 +1097,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1114,6 +1127,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1143,6 +1157,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1172,6 +1187,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1201,6 +1217,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1291,6 +1308,7 @@
  								"en": "Please state the number of deals closed in Q4 2022 by market segment: "
  							},
  							"col_span": 7,
+ 							"col_span_label": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1550,6 +1568,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1579,6 +1598,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1608,6 +1628,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1637,6 +1658,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1666,6 +1688,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1690,22 +1713,73 @@
  						},
  						{
  							"name": "st1_closing_time",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"type": "dropdown",
+ 							"max_chars": 10,
  							"label": {
  								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Durchschnittl. Zeit bis Abschluss in Wochen",
  								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age time to close a deal in weeks"
  							},
- 							"suffix": {
- 								"de": "Wochen",
- 								"en": "weeks"
- 							},
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
+ 							"drop_down": {
+ 								"Name": "",
+ 								"AutoSubmit": false,
+ 								"Disabled": false,
+ 								"Attrs": null,
+ 								"LC": "",
+ 								"Options": [
+ 									{
+ 										"Key": "",
+ 										"Val": {
+ 											"en": " Please choose"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "lt6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u003c6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "9weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;9 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "12weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;12 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "18weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;18 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "gt18weeks",
+ 										"Val": {
+ 											"en": "\u003e18 weeks"
+ 										},
+ 										"Selected": false
+ 									}
+ 								]
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1721,112 +1795,201 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "st2_closing_time",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"suffix": {
- 								"de": "Wochen",
- 								"en": "weeks"
- 							},
+ 							"type": "dropdown",
+ 							"max_chars": 10,
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
+ 							"drop_down": {
+ 								"Name": "",
+ 								"AutoSubmit": false,
+ 								"Disabled": false,
+ 								"Attrs": null,
+ 								"LC": "",
+ 								"Options": [
+ 									{
+ 										"Key": "",
+ 										"Val": {
+ 											"en": " Please choose"
+ 										},
+ 										"Selected": false
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
+ 									{
+ 										"Key": "lt6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u003c6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "9weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;9 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "12weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;12 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "18weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;18 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "gt18weeks",
+ 										"Val": {
+ 											"en": "\u003e18 weeks"
+ 										},
+ 										"Selected": false
+ 									}
+ 								]
  							}
  						},
  						{
  							"name": "st3_closing_time",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"suffix": {
- 								"de": "Wochen",
- 								"en": "weeks"
- 							},
+ 							"type": "dropdown",
+ 							"max_chars": 10,
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
+ 							"drop_down": {
+ 								"Name": "",
+ 								"AutoSubmit": false,
+ 								"Disabled": false,
+ 								"Attrs": null,
+ 								"LC": "",
+ 								"Options": [
+ 									{
+ 										"Key": "",
+ 										"Val": {
+ 											"en": " Please choose"
+ 										},
+ 										"Selected": false
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
+ 									{
+ 										"Key": "lt6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u003c6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "9weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;9 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "12weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;12 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "18weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;18 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "gt18weeks",
+ 										"Val": {
+ 											"en": "\u003e18 weeks"
+ 										},
+ 										"Selected": false
+ 									}
+ 								]
  							}
  						},
  						{
  							"name": "st4_closing_time",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"suffix": {
- 								"de": "Wochen",
- 								"en": "weeks"
- 							},
+ 							"type": "dropdown",
+ 							"max_chars": 10,
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
+ 							"drop_down": {
+ 								"Name": "",
+ 								"AutoSubmit": false,
+ 								"Disabled": false,
+ 								"Attrs": null,
+ 								"LC": "",
+ 								"Options": [
+ 									{
+ 										"Key": "",
+ 										"Val": {
+ 											"en": " Please choose"
+ 										},
+ 										"Selected": false
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
+ 									{
+ 										"Key": "lt6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u003c6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "6weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;6 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "9weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;9 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "12weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;12 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "18weeks",
+ 										"Val": {
+ 											"en": "\u0026nbsp;18 weeks"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "gt18weeks",
+ 										"Val": {
+ 											"en": "\u003e18 weeks"
+ 										},
+ 										"Selected": false
+ 									}
+ 								]
  							}
  						}
  					]
@@ -1838,6 +2001,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1867,6 +2031,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1896,6 +2061,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1925,6 +2091,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1954,6 +2121,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2044,6 +2212,7 @@
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
  							},
  							"col_span": 7,
+ 							"col_span_label": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2303,6 +2472,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2332,6 +2502,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2361,6 +2532,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2390,6 +2562,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2419,6 +2592,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2509,6 +2683,7 @@
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
  							},
  							"col_span": 7,
+ 							"col_span_label": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3076,6 +3251,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3105,6 +3281,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3134,6 +3311,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3163,6 +3341,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3192,6 +3371,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3282,6 +3462,7 @@
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by sector: "
  							},
  							"col_span": 7,
+ 							"col_span_label": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4234,6 +4415,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4263,6 +4445,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4292,6 +4475,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4321,6 +4505,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4350,6 +4535,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4518,6 +4704,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4547,6 +4734,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4576,6 +4764,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4605,6 +4794,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4634,6 +4824,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4802,6 +4993,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4831,6 +5023,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4860,6 +5053,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4889,6 +5083,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4918,6 +5113,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5179,6 +5375,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;4:4;6:6;8:8;10:10",
  							"style": {
@@ -5238,6 +5435,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;4:4;6:6;8:8;10:10",
  							"style": {
@@ -5297,6 +5495,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;4:4;6:6;8:8;10:10",
  							"style": {
@@ -5356,6 +5555,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;4:4;6:6;8:8;10:10",
  							"style": {
@@ -5450,6 +5650,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
@@ -5508,6 +5709,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
@@ -5566,6 +5768,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
@@ -5624,6 +5827,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
@@ -5718,6 +5922,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
@@ -5776,6 +5981,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
@@ -5834,6 +6040,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
@@ -5892,6 +6099,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
@@ -5987,6 +6195,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
@@ -6046,6 +6255,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
@@ -6105,6 +6315,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
@@ -6164,6 +6375,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
@@ -6259,6 +6471,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -6318,6 +6531,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -6377,6 +6591,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -6436,6 +6651,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -6530,6 +6746,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -6588,6 +6805,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -6646,6 +6864,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -6704,6 +6923,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -6806,6 +7026,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6835,6 +7056,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6864,6 +7086,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6893,6 +7116,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6929,6 +7153,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -6985,6 +7210,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -7040,6 +7266,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -7095,6 +7322,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -7151,6 +7379,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -7207,6 +7436,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -7262,6 +7492,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -7317,6 +7548,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -7373,6 +7605,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -7429,6 +7662,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -7484,6 +7718,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -7539,6 +7774,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -7595,6 +7831,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -7651,6 +7888,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -7706,6 +7944,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -7761,6 +8000,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -7859,6 +8099,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -7917,6 +8158,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -7975,6 +8217,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -8033,6 +8276,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -8128,6 +8372,7 @@
  								"en": "x EBITDA"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -8187,6 +8432,7 @@
  								"en": "x EBITDA"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -8246,6 +8492,7 @@
  								"en": "x EBITDA"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -8305,6 +8552,7 @@
  								"en": "x EBITDA"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -8399,6 +8647,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -8457,6 +8706,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -8515,6 +8765,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -8573,6 +8824,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -8667,6 +8919,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500",
  							"style": {
@@ -8725,6 +8978,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500",
  							"style": {
@@ -8783,6 +9037,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500",
  							"style": {
@@ -8841,6 +9096,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500",
  							"style": {
@@ -8935,6 +9191,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -8993,6 +9250,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -9051,6 +9309,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -9109,6 +9368,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -9242,6 +9502,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -9318,6 +9579,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -9394,6 +9656,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -9470,6 +9733,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -9577,6 +9841,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -9635,6 +9900,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -9693,6 +9959,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -9751,6 +10018,7 @@
  								"en": "years"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
@@ -9846,6 +10114,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -9905,6 +10174,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -9964,6 +10234,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -10023,6 +10294,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
@@ -10118,6 +10390,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--1:1;1.1:1.1;1.2:1.2;1.3:1.3;1.4:1.4;1.5:1.5",
  							"style": {
@@ -10177,6 +10450,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--1:1;1.1:1.1;1.2:1.2;1.3:1.3;1.4:1.4;1.5:1.5",
  							"style": {
@@ -10236,6 +10510,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--1:1;1.1:1.1;1.2:1.2;1.3:1.3;1.4:1.4;1.5:1.5",
  							"style": {
@@ -10295,6 +10570,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--1:1;1.1:1.1;1.2:1.2;1.3:1.3;1.4:1.4;1.5:1.5",
  							"style": {
@@ -10464,6 +10740,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -10540,6 +10817,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -10616,6 +10894,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -10692,6 +10971,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -10823,6 +11103,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -10899,6 +11180,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -10975,6 +11257,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11051,6 +11334,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11182,6 +11466,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11258,6 +11543,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11334,6 +11620,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11410,6 +11697,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11541,6 +11829,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11617,6 +11906,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11693,6 +11983,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11769,6 +12060,7 @@
  								"en": "mn €"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -11850,6 +12142,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -11879,6 +12172,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -11908,6 +12202,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -11937,6 +12232,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -11966,6 +12262,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12064,6 +12361,7 @@
  								"en": "Please enter per\u0026shy;centages for each segment"
  							},
  							"col_span": 7,
+ 							"col_span_label": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12323,6 +12621,7 @@
  						{
  							"type": "textblock",
  							"col_span": 3,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12352,6 +12651,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12381,6 +12681,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12410,6 +12711,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12439,6 +12741,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -12537,6 +12840,7 @@
  								"en": "Please enter per\u0026shy;centages for each region"
  							},
  							"col_span": 7,
+ 							"col_span_label": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -13174,6 +13478,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -13203,6 +13508,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -13232,6 +13538,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -13261,6 +13568,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -13297,6 +13605,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -13353,6 +13662,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -13408,6 +13718,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -13463,6 +13774,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -13519,6 +13831,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -13575,6 +13888,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -13630,6 +13944,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -13685,6 +14000,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -13741,6 +14057,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -13797,6 +14114,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -13852,6 +14170,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -13907,6 +14226,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -13963,6 +14283,7 @@
  								"en": "0-1"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -14019,6 +14340,7 @@
  								"en": "2-3"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -14074,6 +14396,7 @@
  								"en": "4-5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -14129,6 +14452,7 @@
  								"en": "\u003e5"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -14227,6 +14551,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14285,6 +14610,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14343,6 +14669,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14401,6 +14728,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14495,6 +14823,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14553,6 +14882,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14611,6 +14941,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14669,6 +15000,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14763,6 +15095,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14821,6 +15154,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14879,6 +15213,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -14937,6 +15272,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15055,6 +15391,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -15131,6 +15468,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -15207,6 +15545,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -15283,6 +15622,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -15390,6 +15730,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15448,6 +15789,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15506,6 +15848,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15564,6 +15907,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15658,6 +16002,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15716,6 +16061,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15774,6 +16120,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15832,6 +16179,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15926,6 +16274,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -15984,6 +16333,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16042,6 +16392,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16100,6 +16451,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16194,6 +16546,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16252,6 +16605,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16310,6 +16664,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16368,6 +16723,7 @@
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
@@ -16460,7 +16816,8 @@
  								"de": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the de\u0026shy;vel\u0026shy;op\u0026shy;ment of expected returns  \u003c/span\u003e",
  								"en": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the de\u0026shy;vel\u0026shy;op\u0026shy;ment of expected returns  \u003c/span\u003e"
  							},
- 							"col_span": 1
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						}
  					]
  				},
@@ -16505,6 +16862,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -16534,6 +16892,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -16563,6 +16922,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -16592,6 +16952,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -16628,6 +16989,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -16684,6 +17046,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -16739,6 +17102,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -16793,6 +17157,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -16848,6 +17213,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -16904,6 +17270,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -16960,6 +17327,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -17015,6 +17383,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -17069,6 +17438,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -17124,6 +17494,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -17180,6 +17551,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -17236,6 +17608,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -17291,6 +17664,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -17345,6 +17719,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -17400,6 +17775,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -17456,6 +17832,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -17512,6 +17889,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -17567,6 +17945,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -17621,6 +18000,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -17676,6 +18056,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -17767,6 +18148,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17796,6 +18178,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17825,6 +18208,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17854,6 +18238,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17890,6 +18275,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -17946,6 +18332,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -18001,6 +18388,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -18055,6 +18443,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -18110,6 +18499,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -18166,6 +18556,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -18222,6 +18613,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -18277,6 +18669,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -18331,6 +18724,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -18386,6 +18780,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -18442,6 +18837,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -18498,6 +18894,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -18553,6 +18950,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -18607,6 +19005,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -18662,6 +19061,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -18718,6 +19118,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -18774,6 +19175,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -18829,6 +19231,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -18883,6 +19286,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -18938,6 +19342,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -18998,7 +19403,8 @@
  								"de": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the change in deal quality with respect to the risk return profile \u003c/span\u003e",
  								"en": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the change in deal quality with respect to the risk return profile \u003c/span\u003e"
  							},
- 							"col_span": 1
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						}
  					]
  				},
@@ -19043,6 +19449,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -19072,6 +19479,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -19101,6 +19509,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -19130,6 +19539,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -19166,6 +19576,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -19222,6 +19633,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -19277,6 +19689,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -19331,6 +19744,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -19386,6 +19800,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -19442,6 +19857,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -19498,6 +19914,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -19553,6 +19970,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -19607,6 +20025,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -19662,6 +20081,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -19718,6 +20138,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -19774,6 +20195,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -19829,6 +20251,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -19883,6 +20306,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -19938,6 +20362,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -19994,6 +20419,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -20050,6 +20476,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -20105,6 +20532,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -20159,6 +20587,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -20214,6 +20643,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -20305,6 +20735,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -20334,6 +20765,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -20363,6 +20795,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -20392,6 +20825,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -20428,6 +20862,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -20484,6 +20919,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -20539,6 +20975,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -20593,6 +21030,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -20648,6 +21086,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -20704,6 +21143,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -20760,6 +21200,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -20815,6 +21256,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -20869,6 +21311,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -20924,6 +21367,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -20980,6 +21424,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -21036,6 +21481,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -21091,6 +21537,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -21145,6 +21592,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -21200,6 +21648,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -21256,6 +21705,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -21312,6 +21762,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -21367,6 +21818,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -21421,6 +21873,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -21476,6 +21929,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -21536,7 +21990,8 @@
  								"de": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e  Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003c/span\u003e",
  								"en": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e  Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003c/span\u003e"
  							},
- 							"col_span": 1
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						}
  					]
  				},
@@ -21581,6 +22036,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -21610,6 +22066,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -21639,6 +22096,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -21668,6 +22126,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -21704,6 +22163,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -21760,6 +22220,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -21815,6 +22276,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -21869,6 +22331,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -21924,6 +22387,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -21980,6 +22444,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -22036,6 +22501,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -22091,6 +22557,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -22145,6 +22612,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -22200,6 +22668,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -22256,6 +22725,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -22312,6 +22782,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -22367,6 +22838,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -22421,6 +22893,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -22476,6 +22949,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -22532,6 +23006,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -22588,6 +23063,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -22643,6 +23119,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -22697,6 +23174,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -22752,6 +23230,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -22843,6 +23322,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22872,6 +23352,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22901,6 +23382,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22930,6 +23412,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22966,6 +23449,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -23022,6 +23506,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -23077,6 +23562,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -23131,6 +23617,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -23186,6 +23673,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -23242,6 +23730,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -23298,6 +23787,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -23353,6 +23843,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -23407,6 +23898,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -23462,6 +23954,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -23518,6 +24011,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -23574,6 +24068,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -23629,6 +24124,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -23683,6 +24179,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -23738,6 +24235,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -23794,6 +24292,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -23850,6 +24349,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -23905,6 +24405,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -23959,6 +24460,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -24014,6 +24516,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -24074,7 +24577,8 @@
  								"de": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Do you observe more deals, same amount of deals or less deals  \u003c/span\u003e",
  								"en": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Do you observe more deals, same amount of deals or less deals  \u003c/span\u003e"
  							},
- 							"col_span": 1
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						}
  					]
  				},
@@ -24119,6 +24623,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -24148,6 +24653,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -24177,6 +24683,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -24206,6 +24713,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -24242,6 +24750,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -24298,6 +24807,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -24353,6 +24863,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -24407,6 +24918,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -24462,6 +24974,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -24518,6 +25031,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -24574,6 +25088,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -24629,6 +25144,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -24683,6 +25199,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -24738,6 +25255,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -24794,6 +25312,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -24850,6 +25369,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -24905,6 +25425,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -24959,6 +25480,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -25014,6 +25536,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -25070,6 +25593,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -25126,6 +25650,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -25181,6 +25706,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -25235,6 +25761,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -25290,6 +25817,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -25381,6 +25909,7 @@
  								"en": "Senior"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -25410,6 +25939,7 @@
  								"en": "Unitranche"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -25439,6 +25969,7 @@
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -25468,6 +25999,7 @@
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -25504,6 +26036,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -25560,6 +26093,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -25615,6 +26149,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -25669,6 +26204,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -25724,6 +26260,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -25780,6 +26317,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -25836,6 +26374,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -25891,6 +26430,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -25945,6 +26485,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -26000,6 +26541,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -26056,6 +26598,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -26112,6 +26655,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -26167,6 +26711,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -26221,6 +26766,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -26276,6 +26822,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -26332,6 +26879,7 @@
  								"en": "Im\u0026shy;proved"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -26388,6 +26936,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -26443,6 +26992,7 @@
  								"en": "Same"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -26497,6 +27047,7 @@
  								"en": "\u0026nbsp;"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -26552,6 +27103,7 @@
  								"en": "De\u0026shy;clined"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -27538,6 +28090,7 @@
  								"en": "Not re\u0026shy;le\u0026shy;vant\u003cbr\u003e(1)"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style": {
@@ -27589,6 +28142,7 @@
  								"en": "(2)"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2",
  							"style": {
@@ -27640,6 +28194,7 @@
  								"en": "(3)"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3",
  							"style": {
@@ -27691,6 +28246,7 @@
  								"en": "(4)"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4",
  							"style": {
@@ -27742,6 +28298,7 @@
  								"en": "Potential dealbreaker\u003cbr\u003e(5)"
  							},
  							"col_span": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "5",
  							"style": {
@@ -28751,7 +29308,8 @@
  							"label": {
  								"en": "\n\t\t\t\tTodo: \u003cbr\u003e\n\t\t\t\tText Weitergabe meiner Da\u0026shy;ten an [partner_2]\u003cbr\u003e\n\n\t\t\t\tZusammen mit Identifikation am Anfang?\u003cbr\u003e\n\t\t\t\tIdentifikation hierher ans Ende?\u003cbr\u003e\n\n\n\t\t\t\t"
  							},
- 							"col_span": 1
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "q45",

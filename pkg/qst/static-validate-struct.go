@@ -209,6 +209,12 @@ func (q *QuestionnaireT) Validate() error {
 					}
 				}
 
+				if inp.Type == "dropdown" {
+					if inp.DD == nil {
+						return fmt.Errorf("%v: 'DD' setting required", s)
+					}
+				}
+
 				// jump to page exists?
 				if inp.Type == "button" && inp.Response != "" {
 					pgIdx, err := strconv.Atoi(inp.Response)

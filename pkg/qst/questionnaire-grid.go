@@ -440,7 +440,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
 
-		// the range input
+		// the range input itself
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  
 				name='%v' id='%v' title='%v %v' 
@@ -458,6 +458,12 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Response,
 		)
 
+		// '500 - 510' is the max content, defined by CSS, approx 3.9rem
+		maxWidthDisplay := ""
+		if inp.Max < 100 && inp.Step >= 1 {
+			maxWidthDisplay = ` style="max-width:3.3rem" `
+		}
+
 		// value indicator [rangename]_display
 		display := `<input 
 			type='text' 
@@ -466,16 +472,18 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			class='range-display'
 			size='%v' 
 			maxlength='%v' 
+			%v
 			value=''
 			disabled='true'
-		>
-		`
+		>` // no space at the end
+
 		display = fmt.Sprintf(
 			display,
 			inp.Name,
 			inp.Name,
 			inp.MaxChars,
 			inp.MaxChars,
+			maxWidthDisplay,
 		)
 
 		// no answer radio [rangename]_noanswer
@@ -496,19 +504,19 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Name,
 		)
 
+		// label must be trailing sibling to input[range]
+		// we render a second label, containing the display and the ticks
+		// the actual word label is in another grid item
 		ctrl += fmt.Sprintf(`
-			<!-- label must be trailing sibling to input[range] -->
-			<label for="%v">
-				<!-- label content in other grid item -->
-				  %v %v
+			<label for="%v" >
+				%v%v
 				<div class="labels" aria-hidden="true" 
 				>%v</div>
 			</label>	
 				%v
 			`,
 			inp.Name,
-			display,
-			inp.Suffix["en"],
+			display, inp.Suffix[q.LangCode],
 			inp.rangeLabels(),
 			noAnswer,
 		)

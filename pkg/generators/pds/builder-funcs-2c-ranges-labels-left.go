@@ -99,13 +99,6 @@ func rangesRowLabelsLeft(
 				inp.Max = cf.Max
 				inp.Step = cf.Step
 
-				// if rangeType == "3" {
-				// 	// below 6 months, 6m-18m in 3m brackets, over 18m
-				// 	inp.Min = 3
-				// 	inp.Max = 21
-				// 	inp.Step = 3
-				// }
-
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1

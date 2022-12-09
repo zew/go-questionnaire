@@ -9,9 +9,9 @@ Sebastian Stehling - Dept Leader
 Jan Mellert  - Investment Advisory and Solutions
 Daniel Huss  - Leiter Manager Selektion
 
-Real estate debt - 80 Teilnehmer
-xx - 30
-Corp lending - 80
+Corp lending debt - 80 Teilnehmer
+Infrastruct - 30
+Real estate - 80
 
 Unternehmen
     Drei Assetklassen
@@ -59,7 +59,6 @@ Infrastructure
      submit to customer for feedback;  
      no mobile optimization yet;  
      sliders without feedback/final decision
-
 
 
 * Communication with customer

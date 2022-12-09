@@ -908,7 +908,7 @@ func special202212(q *qst.QuestionnaireT) error {
 
 				inp.Min = -100
 				inp.Max = 100
-				inp.Step = 0.1
+				inp.Step = 0.01
 				inp.MaxChars = 5
 
 				inp.ColSpan = 3

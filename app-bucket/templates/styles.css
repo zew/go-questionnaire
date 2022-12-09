@@ -446,7 +446,6 @@ label, .postlabel {
     font-size:          100%;    /* like legend */
     line-height:        120%;
     letter-spacing:     0.03rem;
-    xx-font-weight:     300; /* visibility in mobile browser */
 
 
     /* 2021-02 - not needed in CSS grid */
@@ -1892,6 +1891,8 @@ input.ib-300 {     width:300px;    }
     --range-trackheight: 0.40em;
     /* if bigger than 1.5em => increase horizontal buffer */
     --range-thumbsize:   1.5em;
+    --ticks-cx:    calc(0.5 * 1.5em + 1px);
+    --ticks-width: calc(100%  - (1.5em + 2px));
 
 
     /* weeks */
@@ -1906,33 +1907,47 @@ input.ib-300 {     width:300px;    }
     --range-03-width:    12.0em;
     --range-03-tick-cx:   1.045em;
 
-
-
- 
-
 }
 
-/* two classes for the range input compound elements */
+/* two classes for the range input compound elements 
+        [type=range]~label input,
+*/
+
+/* 
+    making sure display and suffix are vertically aligned
+*/
+[type=range]~label {
+    vertical-align: baseline;
+    font-size: 75%;
+    font-size: 85%;
+    line-height: 100%;
+}
 .range-display{
     display: inline-block;
     vertical-align: middle;
-    /* background-color: grey; */
+    vertical-align: baseline;
+    font-size:   100%; /* inherits from above/outer class: value 85%*/
+    line-height: 100%;
 
     text-align: right;
-    /* padding-right: 0.4rem !important; */
 
     max-width: 3.6rem;
+    max-width: 3.9rem; /* '500 - 510' is the max content */
 
     padding: 0;
     margin: 0;
+    margin-right: 0.2rem;
     border: none;
+
 }
 
-input[type=radio].range-noanswer{
+
+
+input[type=radio].range-noanswer {
     position: absolute;
     right: -1.6rem;
     vertical-align: middle;
-    bottom: 0.45rem; 
+    bottom: 0.45rem;
 
     background-color: grey;
 

@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"io"
+	"log"
 	"math"
 	"path"
 	"sort"
@@ -679,22 +680,28 @@ func (inp *inputT) rangeLabels() string {
 
 		parts := strings.Split(inp.DynamicFuncParamset, "--")
 
-		lbls1 := parts[1]
-		pairs := strings.Split(lbls1, ";")
+		ticksStr := parts[1]
+		pairs := strings.Split(ticksStr, ";")
 
 		for _, pairStr := range pairs {
 			pair := strings.Split(pairStr, ":")
-			x1, _ := strconv.Atoi(pair[0])
-			xs = append(xs, float64(x1))
+			// x1, _ := strconv.Atoi(pair[0])
+			pair[0] = strings.ReplaceAll(pair[0], ",", ".")
+			x1, err := strconv.ParseFloat(pair[0], 64)
+			if err != nil {
+				log.Printf("cannot convert range tick %s - %v -\n\t%+v", pair[0], err, inp)
+			}
+			xs = append(xs, x1)
 			lbls = append(lbls, pair[1])
 		}
 
-		// if parts[0] == "1" {
-		// 	// log.Printf("   xs %+v", xs)
-		// 	// log.Printf("   ys %+v", ys)
-		// }
-
 	}
+
+	// if strings.Contains(inp.DynamicFuncParamset, "1.5") {
+	// 	log.Printf("   tickS %v", inp.DynamicFuncParamset)
+	// 	log.Printf("     xs %+v", xs)
+	// 	log.Printf("   lbls %+v", lbls)
+	// }
 
 	// prelimin
 	ws1 := []float64{} // widths delta, first element 0, adding up to 1.000
@@ -703,14 +710,22 @@ func (inp *inputT) rangeLabels() string {
 		copy(xsPrelim, xs)
 
 		ws0 := []float64{} // widths based on zero
-		for x := inp.Min; x <= inp.Max; x += inp.Step {
+		ctr := 0.0
+		for stp := inp.Min; stp <= inp.Max; stp += inp.Step {
+			// correcting the cumulative rounding errors of x += inp.Step - instead using _one_ multiplication
+			stp = inp.Min + ctr*inp.Step
+			ctr++
+
 			// check if current step x has a label assigned xs[0]
-			if len(xsPrelim) > 0 && x == xsPrelim[0] {
+			if len(xsPrelim) > 0 && stp == xsPrelim[0] {
 				xsPrelim = xsPrelim[1:] // chop off leading ticks
-				ws0 = append(ws0, x-inp.Min)
+				ws0 = append(ws0, stp-inp.Min)
 			}
 		}
-		// log.Printf("   w1: %+v", ws0)
+		// if strings.Contains(inp.DynamicFuncParamset, "1.5") {
+		// 	log.Printf("   ws0  %+v", ws0)
+		// }
+
 		for i := 0; i < len(ws0); i++ {
 			ws0[i] = ws0[i] / (inp.Max - inp.Min)
 		}
@@ -734,12 +749,21 @@ func (inp *inputT) rangeLabels() string {
 
 	}
 
+	// if strings.Contains(inp.DynamicFuncParamset, "1.5") {
+	// 	log.Printf("   ws1  %+v", ws1)
+	// }
+
 	core := &strings.Builder{}
 
 	itr1 := -2
 	itr2 := -1
 
+	ctr := 0.0
 	for stp := inp.Min; stp <= inp.Max; stp += inp.Step {
+
+		// correcting the cumulative rounding errors of x += inp.Step - instead using _one_ multiplication
+		stp = inp.Min + ctr*inp.Step
+		ctr++
 
 		// check if current step should have a tick in xs[0]
 		if len(xs) > 0 && stp == xs[0] {

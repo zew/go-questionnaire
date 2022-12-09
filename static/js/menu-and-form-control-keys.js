@@ -283,7 +283,8 @@ function pdsRangeInput(src){
             if (el.nodeType == Node.TEXT_NODE) {
                 // console.log("   ch #",i , " - textnode");
             } else {
-                console.log("       ch #", i, el.nodeType, el.type, el.name);
+                // nodeType is an integer
+                // console.log("       ch #", i, el.nodeType, el.tagName, el.type, el.name);
                 if (el.type == "text") {
                     display = el;
                 }

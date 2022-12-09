@@ -73,3 +73,7 @@ Infrastructure
   * Last round of change requests before internal preview on 10. Dec
   * Official announcement of internal preview release on 10. Dec
 
+
+## RC2
+
+* Slider: Display width

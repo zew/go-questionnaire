@@ -1891,6 +1891,9 @@ input.ib-300 {     width:300px;    }
     --range-trackheight: 0.40em;
     /* if bigger than 1.5em => increase horizontal buffer */
     --range-thumbsize:   1.5em;
+
+    /* ticks div - "labels" - horizontal positioning */
+    /* no idea, why the 1px and 2px are corrections are necessary */
     --ticks-cx:    calc(0.5 * 1.5em + 1px);
     --ticks-width: calc(100%  - (1.5em + 2px));
 
@@ -1935,8 +1938,9 @@ input.ib-300 {     width:300px;    }
     max-width: 3.9rem; /* '500 - 510' is the max content */
 
     padding: 0;
+    padding-right: 0.15rem;
     margin: 0;
-    margin-right: 0.2rem;
+    margin-right: 0.15rem;
     border: none;
 
 }

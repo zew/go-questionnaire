@@ -18,6 +18,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
 	q.Survey = s
 	q.LangCodes = []string{"en"} // governs default language code
+	// q.LangCode = "en"
 
 	q.Survey.Org = trl.S{
 		"en": "ZEW",
@@ -203,15 +204,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			sliderWeeksClosing,
 		)
 
-		radiosLabelsTop(
-			qst.WrapPageT(page),
-			"closing_time2",
-			trl.S{
-				"en": "Alternative visualisation using radios; <br> or vertical?",
-				"de": "Alternative visualisation using radios; <br> or vertical?",
-			}.Outline("b.)"),
-			mCh5,
-		)
+		// radiosLabelsTop(
+		// 	qst.WrapPageT(page),
+		// 	"closing_time2",
+		// 	trl.S{
+		// 		"en": "Alternative visualisation using radios; <br> or vertical?",
+		// 		"de": "Alternative visualisation using radios; <br> or vertical?",
+		// 	}.Outline("b.)"),
+		// 	mCh5,
+		// )
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT2)
 
@@ -1111,83 +1112,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `What UN SDGs are supported by your investment strategy?`,
 			}.Outline("4.5")
 			checkBoxColumn(qst.WrapPageT(page), unSDG, 2, inps, lbls)
-		}
-
-	}
-
-	// page-slider-demo
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{"en": "Slider vs. radio group ;<br>Various slider thumbs"}
-		page.Short = trl.S{"en": "Slider vs. radio group ;<br>Various slider thumbs"}
-		page.CounterProgress = "-"
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 11
-			gr.BottomVSpacers = 3
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01"
-				inp.Type = "range"
-				inp.DynamicFuncParamset = `3--0:0;20:20;40:40;60:60;80:80;100:100`
-
-				inp.Min = 0
-				inp.Max = 100
-				inp.Step = 10
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.Width = "90%"
-
-				// inp.Label = trl.S{
-				// 	"de": "Normal Slider",
-				// 	"en": "Normal Slider",
-				// }
-				inp.Suffix = trl.S{
-					"de": "unit",
-					"en": "unit",
-				}
-
-				inp.ColSpan = 4
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 8
-			}
-
-		}
-
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			gr.WidthMax("85%")
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./slider/inner-1.html"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
-		}
-
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			gr.WidthMax("85%")
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./slider/inner-2.html"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
 		}
 
 	}

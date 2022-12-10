@@ -5,7 +5,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func iterate(
+func createRows(
 	page *qst.WrappedPageT,
 	inpNames []string,
 	overTypes []string,

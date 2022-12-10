@@ -8,48 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-// const firstColLbl = float32(4)
-// const firstColLbl = float32(2)
-const firstColLbl = float32(3)
-
-var suffixWeeks = trl.S{
-	"en": "weeks",
-	"de": "Wochen",
-}
-
-var suffixYears = trl.S{
-	"en": "years",
-	"de": "Jahre",
-}
-
-var suffixEBITDA = trl.S{
-	"en": "x EBITDA",
-	"de": "x EBITDA",
-}
-var suffixPercent = trl.S{
-	"en": "%",
-	"de": "%",
-}
-
-var suffixMillionEuro = trl.S{
-	// capitalizemytitle.com/how-to-abbreviate-million/
-	// "en": "million €",
-	// "en": "MM €",
-	"en": "mn €",
-	"de": "Mio €",
-}
-
-var placeHolderNum = trl.S{
-	"en": "#",
-	"de": "#",
-}
-
-var placeHolderMillion = trl.S{
-	"en": "million Euro",
-	"de": "Millionen Euro",
-}
-
-func rangesRowLabelsLeft(
+func UNUSEDrangesRowLabelsLeft(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,

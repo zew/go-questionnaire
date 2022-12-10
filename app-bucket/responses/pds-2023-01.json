@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d3d8f49bf1e20eca1ccd54da71eae7eb2083235093d22b1376321082aaae5177",
+ 	"md_5": "6ae5259f8175df9f0789470162c42ea241c850b9d5ea20997edd08be12dc007c",
  	"lang_codes": [
  		"en"
  	],
@@ -4409,196 +4409,89 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st1_esg",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
  							"label": {
  								"de": "\u003cb\u003ef.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG KPIs\u003c/bb\u003e \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? \u003c/span\u003e",
  								"en": "\u003cb\u003ef.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG KPIs\u003c/bb\u003e \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? \u003c/span\u003e"
  							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_q1_1f_esg",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
  							"suffix": {
  								"de": "%",
  								"en": "%"
  							},
- 							"col_span": 4,
- 							"col_span_label": 3,
+ 							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 										"margin": "0 0 0 1.2rem"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
+ 									"grid_item_style": {
+ 										"justify_self": "start"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -4609,22 +4502,31 @@
  							}
  						},
  						{
- 							"name": "st2_esg",
+ 							"name": "st2_q1_1f_esg",
  							"type": "range",
  							"step": 5,
  							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
  							"suffix": {
  								"de": "%",
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
  								"desktop": {
- 									"grid_container_style": {},
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
  									"box_style": {
- 										"width_max": "90%"
+ 										"margin": "0 1.4rem 0 1.4rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4635,28 +4537,20 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							}
- 						},
- 						{
- 							"name": "st3_esg",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
  							},
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"width_max": "90%"
+ 										"margin": "0 0 0 1.2rem"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -4667,25 +4561,114 @@
  							}
  						},
  						{
- 							"name": "st4_esg",
+ 							"name": "st3_q1_1f_esg",
  							"type": "range",
  							"step": 5,
  							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
  							"suffix": {
  								"de": "%",
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
  								"desktop": {
- 									"grid_container_style": {},
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
  									"box_style": {
- 										"width_max": "90%"
+ 										"margin": "0 1.4rem 0 1.4rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_q1_1f_esg",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -4698,196 +4681,89 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st1_esgratch",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
  							"label": {
  								"de": "\u003cb\u003eg.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG ratchets\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with ESG ratchets? \u003c/span\u003e",
  								"en": "\u003cb\u003eg.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG ratchets\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with ESG ratchets? \u003c/span\u003e"
  							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_q1_1g_ratch",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
  							"suffix": {
  								"de": "%",
  								"en": "%"
  							},
- 							"col_span": 4,
- 							"col_span_label": 3,
+ 							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 										"margin": "0 0 0 1.2rem"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
+ 									"grid_item_style": {
+ 										"justify_self": "start"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -4898,22 +4774,31 @@
  							}
  						},
  						{
- 							"name": "st2_esgratch",
+ 							"name": "st2_q1_1g_ratch",
  							"type": "range",
  							"step": 5,
  							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
  							"suffix": {
  								"de": "%",
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
  								"desktop": {
- 									"grid_container_style": {},
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
  									"box_style": {
- 										"width_max": "90%"
+ 										"margin": "0 1.4rem 0 1.4rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4924,28 +4809,20 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							}
- 						},
- 						{
- 							"name": "st3_esgratch",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
  							},
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"width_max": "90%"
+ 										"margin": "0 0 0 1.2rem"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -4956,25 +4833,114 @@
  							}
  						},
  						{
- 							"name": "st4_esgratch",
+ 							"name": "st3_q1_1g_ratch",
  							"type": "range",
  							"step": 5,
  							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
  							"suffix": {
  								"de": "%",
  								"en": "%"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
  								"desktop": {
- 									"grid_container_style": {},
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
  									"box_style": {
- 										"width_max": "90%"
+ 										"margin": "0 1.4rem 0 1.4rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_q1_1g_ratch",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -4987,43 +4953,76 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 1.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {
- 										"font_size": 85,
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"label": {
+ 								"de": "\u003cb\u003eh.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare 1.5°C target\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?\u003c/span\u003e",
+ 								"en": "\u003cb\u003eh.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare 1.5°C target\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?\u003c/span\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
  						{
- 							"type": "textblock",
+ 							"name": "st1_q1_1h_degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
  							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5047,13 +5046,42 @@
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"name": "st2_q1_1h_degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
  							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5077,13 +5105,42 @@
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"name": "st3_q1_1h_degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5107,13 +5164,42 @@
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"name": "st4_q1_1h_degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5127,143 +5213,6 @@
  										"font_size": 85,
  										"align_horizontal": "left"
  									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st1_esg15degrees",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
- 							"label": {
- 								"de": "\u003cb\u003eh.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare 1.5°C target\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? \u003c/span\u003e",
- 								"en": "\u003cb\u003eh.)\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare 1.5°C target\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? \u003c/span\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st2_esg15degrees",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st3_esg15degrees",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st4_esg15degrees",
- 							"type": "range",
- 							"step": 5,
- 							"max": 100,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width_max": "90%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},

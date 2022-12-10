@@ -206,7 +206,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		*/
 
 		if false {
-			rangesRowLabelsLeft(
+			UNUSEDrangesRowLabelsLeft(
 				qst.WrapPageT(page),
 				"closing_time",
 				lblDuration,
@@ -234,44 +234,75 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT4)
 
-		shareESG := trl.S{
-			"en": `<bb>Share ESG KPIs</bb> <br>
-					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
-			"de": `<bb>Share ESG KPIs</bb> <br>
-					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
-		}.Outline("f.)")
-		rangesRowLabelsLeft(
-			qst.WrapPageT(page),
-			"esg",
-			shareESG,
-			sliderPctZeroHundredMiddle,
-		)
+		page11fghInputs := []string{
+			"q1_1f_esg",
+			"q1_1g_ratch",
+			"q1_1h_degrees",
+		}
 
-		shareESGRatch := trl.S{
-			"en": `<bb>Share ESG ratchets</bb> <br> 
-					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
-			"de": `<bb>Share ESG ratchets</bb> <br> 
-					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
-		}.Outline("g.)")
-		rangesRowLabelsLeft(
-			qst.WrapPageT(page),
-			"esgratch",
-			shareESGRatch,
-			sliderPctZeroHundredMiddle,
-		)
+		page11fghTypes := []string{
+			"range-pct",
+			"range-pct",
+			"range-pct",
+		}
 
-		share15Degree := trl.S{
-			"en": `<bb>Share 1.5°C target</bb> <br> 
-					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
-			"de": `<bb>Share 1.5°C target</bb> <br> 
-					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
-		}.Outline("h.)")
-		rangesRowLabelsLeft(
-			qst.WrapPageT(page),
-			"esg15degrees",
-			share15Degree,
-			sliderPctZeroHundredMiddle,
-		)
+		page11fghLbls := []trl.S{
+			{
+				"en": `<bb>Share ESG KPIs</bb> <br>
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
+				"de": `<bb>Share ESG KPIs</bb> <br>
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
+			},
+			{
+				"en": `<bb>Share ESG ratchets</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
+				"de": `<bb>Share ESG ratchets</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
+			},
+			{
+				"en": `<bb>Share 1.5°C target</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?</span>`,
+				"de": `<bb>Share 1.5°C target</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?</span>`,
+			},
+		}
+
+		if false {
+
+			for i := 0; i < len(page11fghInputs); i++ {
+
+				// outline := page11fghInputs[i][3:4]
+				outline := page11fghInputs[i][4:5]
+				UNUSEDrangesRowLabelsLeft(
+					qst.WrapPageT(page),
+					page11fghInputs[i],
+					page11fghLbls[i].Outline(outline+".)"),
+					sliderPctZeroHundredMiddle,
+				)
+
+			}
+
+		} else {
+
+			for i := 0; i < len(page11fghLbls); i++ {
+				rn := rune(102 + i) // 102 is f
+				page11fghLbls[i] = page11fghLbls[i].Outline(fmt.Sprintf("%c.)", rn))
+			}
+
+			createRows(
+				qst.WrapPageT(page),
+				page11fghInputs,
+				page11fghTypes,
+				page11fghLbls,
+				[]*rangeConf{
+					// &sliderPctZeroHundredMiddle,
+					&sliderPctZeroHundredWide,
+					&sliderPctZeroHundredWide,
+					&sliderPctZeroHundredWide,
+				},
+			)
+
+		}
 
 	}
 
@@ -379,11 +410,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for i := 0; i < len(page12Lbls); i++ {
-			rn := rune(97 + i)
+			rn := rune(97 + i) // 97 is a
 			page12Lbls[i] = page12Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
-		iterate(
+		createRows(
 			qst.WrapPageT(page),
 			page12Inputs,
 			page12Types,
@@ -482,11 +513,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {
-			rn := rune(97 + i)
+			rn := rune(97 + i) // 97 is a
 			page13Lbls[i] = page13Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
-		iterate(
+		createRows(
 			qst.WrapPageT(page),
 			page13Inputs,
 			page13Types,
@@ -565,11 +596,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for i := 0; i < len(page14Lbls); i++ {
-			rn := rune(97 + i)
+			rn := rune(97 + i) // 97 is a
 			page14Lbls[i] = page14Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
-		iterate(
+		createRows(
 			qst.WrapPageT(page),
 			page14Inputs,
 			page14Types,
@@ -648,11 +679,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for i := 0; i < len(page21Lbls); i++ {
-			rn := rune(97 + i)
+			rn := rune(97 + i) // 97 is a
 			page21Lbls[i] = page21Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
-		iterate(
+		createRows(
 			qst.WrapPageT(page),
 			page21Inputs,
 			page21Types,
@@ -772,11 +803,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		for i := 0; i < len(page23Lbls); i++ {
 			// page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("2.3.%v", i+1))
-			rn := rune(97 + i)
+			rn := rune(97 + i) // 97 is a
 			page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
-		iterate(
+		createRows(
 			qst.WrapPageT(page),
 			page23Inputs,
 			page23Types,

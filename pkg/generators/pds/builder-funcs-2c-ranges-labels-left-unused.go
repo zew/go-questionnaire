@@ -39,7 +39,7 @@ func UNUSEDrangesRowLabelsLeft(
 			}
 			inp.LabelVertical()
 
-			inp.StyleLbl = trancheNameStyle
+			inp.StyleLbl = styleHeaderCols1
 		}
 
 		// row1

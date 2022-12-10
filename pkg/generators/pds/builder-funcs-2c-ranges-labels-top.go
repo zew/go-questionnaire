@@ -64,11 +64,11 @@ func rangesRowLabelsTop(
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
 
-				// inp.LabelPadRight()
-				inp.LabelCenter()
 				inp.Vertical()
 
-				inp.StyleLbl = trancheNameStyle
+				// inp.LabelPadRight()
+				// inp.LabelCenter()
+				inp.StyleLbl = styleHeaderCols2
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"

@@ -93,7 +93,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "identification"
+				inp.Name = "q01_identification"
 				inp.MaxChars = 24
 				inp.Placeholder = trl.S{
 					"en": "name of manager",
@@ -117,7 +117,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			radiosSingleRow(
 				qst.WrapPageT(page),
-				"teamsize",
+				"q02_teamsize",
 				lblMain,
 				mCh2,
 			)
@@ -171,7 +171,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page10
+	// page11
 	{
 		page := q.AddPage()
 		// page.Section = trl.S{
@@ -223,7 +223,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		dropdownsLabelsTop(
 			qst.WrapPageT(page),
-			"closing_time",
+			"q11b_closing_time",
 			lblDuration,
 			mCh5,
 		)
@@ -235,9 +235,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		restrictedTextMultiCols(qst.WrapPageT(page), rT4)
 
 		page11fghInputs := []string{
-			"q1_1f_esg",
-			"q1_1g_ratch",
-			"q1_1h_degrees",
+			"q11f_esg",
+			"q11g_ratch",
+			"q11h_degrees",
 		}
 
 		page11fghTypes := []string{
@@ -269,9 +269,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		if false {
 
-			for i := 0; i < len(page11fghInputs); i++ {
+			// 5cols layout
 
-				// outline := page11fghInputs[i][3:4]
+			for i := 0; i < len(page11fghInputs); i++ {
 				outline := page11fghInputs[i][4:5]
 				UNUSEDrangesRowLabelsLeft(
 					qst.WrapPageT(page),
@@ -279,10 +279,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					page11fghLbls[i].Outline(outline+".)"),
 					sliderPctZeroHundredMiddle,
 				)
-
 			}
 
 		} else {
+
+			// 4cols layout
 
 			for i := 0; i < len(page11fghLbls); i++ {
 				rn := rune(102 + i) // 102 is f
@@ -295,8 +296,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				page11fghTypes,
 				page11fghLbls,
 				[]*rangeConf{
-					// &sliderPctZeroHundredMiddle,
-					&sliderPctZeroHundredWide,
+					&sliderPctZeroHundredWide, // &sliderPctZeroHundredMiddle,
 					&sliderPctZeroHundredWide,
 					&sliderPctZeroHundredWide,
 				},
@@ -532,6 +532,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 		)
 
+		//
+		//
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1

@@ -34,9 +34,9 @@ func restrictedTextMultiCols(
 				// inp.Label = ttLbl.Bold()
 				inp.Label = ttLbl
 			}
-			inp.LabelVertical()
-
-			inp.StyleLbl = trancheNameStyle
+			// inp.LabelVertical()
+			// inp.LabelBottom()
+			inp.StyleLbl = styleHeaderCols1
 		}
 
 		// row1

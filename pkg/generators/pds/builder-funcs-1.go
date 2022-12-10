@@ -13,8 +13,8 @@ func checkBoxCascade(
 	page *qst.WrappedPageT,
 	lblMain trl.S,
 	// numCols float32,
-	inps []string,
-	lbls []trl.S,
+	inpsL1 []string,
+	lblsL1 []trl.S,
 ) {
 
 	numCols := float32(5)
@@ -42,14 +42,16 @@ func checkBoxCascade(
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleGridContainer.GapRow = "0.05rem"
 
-		for idx1 := 0; idx1 < len(inps); idx1++ {
+		for idx1 := 0; idx1 < len(inpsL1); idx1++ {
+
+			ttPrefL1 := inpsL1[idx1][:3] // ac1, ac2, ac3
 
 			// row1
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = "xx_" + inps[idx1]
-				inp.Label = lbls[idx1]
+				inp.Name = "q03_" + inpsL1[idx1]
+				inp.Label = lblsL1[idx1]
 				if idx1 > 0 {
 					inp.Label["en"] = inp.Label["en"] + " - starting Q1-23?"
 				}
@@ -93,23 +95,26 @@ func checkBoxCascade(
 				inp.ColSpanLabel = 1
 			}
 
-			inps := trancheTypeNamesAC1
-			lbls2 := allLbls["ac1-tranche-types"]
+			inpsL2 := trancheTypeNamesAC1
+			lblsL2 := allLbls["ac1-tranche-types"]
 
 			if idx1 == 1 {
-				inps = trancheTypeNamesAC2
-				lbls2 = allLbls["ac2-tranche-types"]
+				inpsL2 = trancheTypeNamesAC2
+				lblsL2 = allLbls["ac2-tranche-types"]
 			}
 			if idx1 == 2 {
-				inps = trancheTypeNamesAC3
-				lbls2 = allLbls["ac3-tranche-types"]
+				inpsL2 = trancheTypeNamesAC3
+				lblsL2 = allLbls["ac3-tranche-types"]
 			}
 
-			for idx2 := 0; idx2 < len(inps); idx2++ {
+			for idx2 := 0; idx2 < len(inpsL2); idx2++ {
+
+				// ttPref := inpsL2[idx2][:3]
+
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = fmt.Sprintf("%v_%v_", idx1, idx2) + inps[idx2]
-				inp.Label = lbls2[idx2]
+				inp.Name = fmt.Sprintf("q031_%v_", ttPrefL1) + inpsL2[idx2]
+				inp.Label = lblsL2[idx2]
 				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 				inp.Vertical()
@@ -121,14 +126,6 @@ func checkBoxCascade(
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleText.FontSize = 90
-				// labelBottom := false
-				// if labelBottom {
-				// 	inp.StyleLbl.Desktop.StyleGridItem.Order = 2
-				// } else {
-				// 	// top
-				// 	inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-				// 	inp.StyleLbl.Desktop.StyleBox.Top = "0.2rem"
-				// }
 			}
 
 		}

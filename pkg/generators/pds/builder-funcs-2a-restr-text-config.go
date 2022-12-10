@@ -51,7 +51,7 @@ var (
 
 	// multi-row configs
 	rT1 = configRT{
-		InputNameP2: "numdeals",
+		InputNameP2: "q11a_numdeals",
 		Chars:       6,
 		LblRow1: trl.S{
 			"en": "Total number of new deals",
@@ -75,7 +75,7 @@ var (
 		Placeholder: placeHolderNum,
 	}
 	rT2 = configRT{
-		InputNameP2: "volbysegm",
+		InputNameP2: "q11c_volbysegm",
 		Chars:       10,
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by segment",
@@ -95,7 +95,7 @@ var (
 		Placeholder: placeHolderMillion,
 	}
 	rT3 = configRT{
-		InputNameP2: "volbyreg",
+		InputNameP2: "q11d_volbyreg",
 		Chars:       10,
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by region",
@@ -119,7 +119,7 @@ var (
 		Placeholder: placeHolderMillion,
 	}
 	rT4 = configRT{
-		InputNameP2: "volbysect",
+		InputNameP2: "q11e_volbysect",
 		Chars:       10,
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by sector",

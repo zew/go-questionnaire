@@ -81,8 +81,12 @@ done
 * Slider: Display width adapted 
 * Slider: Ticks corrected 
 * Weeks to close: As dropdown
+* Everywhere: Tranche names aligned
 
 todo
-* Default value of Range
-* Align the tranche names
+
+* Default value of range
+
 * 2022-11-28_ZEW_Survey.xlsx
+* Employee-Number for each asset class
+* Numbering of all questions

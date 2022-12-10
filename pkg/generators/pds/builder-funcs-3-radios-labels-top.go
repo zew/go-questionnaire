@@ -59,9 +59,9 @@ func radiosLabelsTop(
 			// inp.Label = ttLbl.Bold()
 			inp.Label = ttLbl
 
-			inp.LabelVertical()
+			// inp.LabelVertical()
 
-			inp.StyleLbl = trancheNameStyle
+			inp.StyleLbl = styleHeaderCols3
 		}
 
 	}

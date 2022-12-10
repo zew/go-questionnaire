@@ -7,18 +7,50 @@ import (
 
 const outline2Indent = "1.2rem"
 
-var trancheNameStyle = css.NewStylesResponsive(nil)
+var styleHeaderCols1 = css.NewStylesResponsive(nil)
+var styleHeaderCols2 = css.NewStylesResponsive(nil)
+var styleHeaderCols3 = css.NewStylesResponsive(nil)
+var styleHeaderCols4 = css.NewStylesResponsive(nil)
 
 func init() {
-	// align tranchenames
-	trancheNameStyle.Desktop.StyleGridItem.JustifySelf = "start"
-	trancheNameStyle.Desktop.StyleText.AlignHorizontal = "left"
-	trancheNameStyle.Desktop.StyleText.FontSize = 85
-	// this needs to be differentiated
-	trancheNameStyle.Desktop.StyleBox.Margin = "0 0 0 1.2rem"
 
-	// restrTextRowLabelsTop - 2.1
-	// 3.1
+	//
+	//
+	styleHeaderCols1.Desktop.StyleText.FontSize = 85
+	styleHeaderCols1.Desktop.StyleGridItem.JustifySelf = "start"
+	styleHeaderCols1.Desktop.StyleGridItem.AlignSelf = "end"
+
+	styleHeaderCols1.Desktop.StyleText.AlignHorizontal = "center" // good for Mezzanine..., but bat for Senior
+	styleHeaderCols1.Desktop.StyleText.AlignHorizontal = "left"
+
+	// left margin
+	styleHeaderCols1.Desktop.StyleBox.Margin = "0 0 0 0.4rem"
+	styleHeaderCols1.Desktop.StyleBox.Width = "100%"
+	styleHeaderCols1.Desktop.StyleBox.WidthMax = "6rem"
+
+	//
+	//
+	styleHeaderCols2.Desktop.StyleText.FontSize = 85
+	styleHeaderCols2.Desktop.StyleGridItem.JustifySelf = "center"
+	styleHeaderCols2.Desktop.StyleGridItem.AlignSelf = "end"
+	styleHeaderCols2.Desktop.StyleText.AlignHorizontal = "center"
+
+	// right margin - exclude range radio
+	// bottom margin - dy from range display
+	styleHeaderCols2.Desktop.StyleBox.Margin = "0 0.98rem 0.5rem 0"
+	styleHeaderCols2.Desktop.StyleBox.Width = "100%"
+
+	*styleHeaderCols3 = *styleHeaderCols2
+	styleHeaderCols3.Desktop.StyleBox.Margin = ""
+	styleHeaderCols3.Desktop.StyleBox.Position = "relative"
+	styleHeaderCols3.Desktop.StyleBox.Top = "0.6rem"
+	// styleHeaderCols3.Desktop.StyleBox.BackgroundColor = "lightgrey"
+
+	*styleHeaderCols4 = *styleHeaderCols2
+	styleHeaderCols4.Desktop.StyleGridItem.JustifySelf = "left"
+	styleHeaderCols4.Desktop.StyleText.AlignHorizontal = "left"
+	styleHeaderCols4.Desktop.StyleBox.Margin = "0 0 0.5rem 3.2rem"
+
 }
 
 // config multiple choice
@@ -130,18 +162,18 @@ var assetClassesLabels = []trl.S{
 
 // strategy, strategies
 var trancheTypeNamesAC1 = []string{
-	"st1_senior",
-	"st2_unittranche",
-	"st3_subordinated",
-	"st4_mezzanine", // "mezzanine_pik_other",
+	"tt1_senior",
+	"tt2_unittranche",
+	"tt3_subordinated",
+	"tt4_mezzanine", // "mezzanine_pik_other",
 }
 var trancheTypeNamesAC2 = []string{
-	"st1_wholeloan",
-	"st2_subordinated",
+	"tt1_wholeloan",
+	"tt2_subordinated",
 }
 var trancheTypeNamesAC3 = []string{
-	"st1_senior",
-	"st2_subordinated",
+	"tt1_senior",
+	"tt2_subordinated",
 }
 
 var lblDont = trl.S{

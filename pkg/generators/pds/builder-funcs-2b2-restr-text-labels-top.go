@@ -35,19 +35,19 @@ func restrTextRowLabelsTop(
 			inp.Label = lbl
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
-			inp.LabelVertical()
 
+			inp.LabelVertical()
 			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
 			inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
 
 		}
 	}
 
+	// row1 - tranche types
 	{
 		gr := page.AddGroup()
 		gr.Cols = numCols
 
-		// row1
 		for idx1, trancheType := range trancheTypeNamesAC1 {
 
 			ttPref := trancheType[:3]
@@ -72,11 +72,9 @@ func restrTextRowLabelsTop(
 
 				// inp.LabelPadRight()
 				inp.Vertical()
-
-				inp.LabelCenter()
 				inp.ControlCenter()
 
-				inp.StyleLbl = trancheNameStyle
+				inp.StyleLbl = styleHeaderCols2
 
 				if idx1 == idxLastCol {
 					inp.Suffix = cf.Suffix

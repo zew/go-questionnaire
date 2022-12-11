@@ -341,6 +341,18 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 				val = html.EscapeString(val) // XSS prevention
 				q.Pages[prevPage].Groups[i1].Inputs[i2].Response = val
 			}
+			if inp.Type == "range" {
+				ok := sess.EffectiveIsSet(inp.Name + "_noanswer")
+				if ok {
+					log.Printf("found noansewr for %v", inp.Name)
+					val := sess.EffectiveStr(inp.Name + "_noanswer")
+					if val == "true" {
+						q.Pages[prevPage].Groups[i1].Inputs[i2].Response = "noanswer"
+						savedFields[inp.Name] = "noanswer"
+					}
+				}
+			}
+
 		}
 	}
 	empty := make([]string, 0, 20)
@@ -354,6 +366,10 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	if len(empty) > 0 {
 		if len(empty) > 3 {
 			sort.Strings(empty)
+		}
+		if len(empty) > 7 {
+			empty = append(empty[0:5], empty[len(empty)-3:]...)
+			empty[4] = " ... "
 		}
 		log.Printf("(Page#%2v) empty or '0' fields '%v'", prevPage, strings.Join(empty, ", "))
 	}

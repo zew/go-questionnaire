@@ -435,24 +435,54 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		}
 	case "range":
 
+		// range-input wrapper
+		// display flex, column-reverse
 		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
 
-		// the range input itself
+		// HTML spec demands the default value for a range input to be max-min/2;
+		// thus we have _no_ chance to find out about the init state
+		//
+		// we have two remedies for measuring default
+
+		// remedy 1: A data attribute 'data-dirty';
+		// javascript onload-input can check for this
+		// 		src.dataset.dirty === "false"
+		dirty := ""
+		if inp.Response == "" {
+			dirty = " data-dirty='false' "
+		}
+
+		// remedy 2: An "empty catcher" hidden input
+		// normally, just as with checkboxes, the empty catcher must _succeed_ corresponding range,
+		// but since we have embarked on this display:flex and column-reverse design,
+		// we must position this catcher ahead of the range-input.
+		if inp.Response == "" {
+			ctrl += fmt.Sprintf(
+				`<input type='hidden' name='%v' id='%v_hidd' value='' />`,
+				nm, nm,
+			)
+		}
+
+		//
+
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  
-				name='%v' id='%v' title='%v %v' 
+				name='%v' id='%v' 
 				min='%v' max='%v' step='%v' 
-				list='%v'  
 				value='%v'
+				%v
 				oninput='pdsRangeInput(this)' 
 				onclick='pdsRangeClick(this)' 
+				onfocus='pdsRangeClick(this)' 
 			/>
 			`,
 			inp.Type,
-			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
+			nm, nm,
 			inp.Min, inp.Max, inp.Step,
-			inp.Signature(),
 			inp.Response,
+			dirty,
+			//
+			// inp.Signature(), // for corresponding datalist list=%v
 		)
 
 		// '500 - 510' is the max content, defined by CSS, approx 3.9rem
@@ -472,7 +502,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			%v
 			value=''
 			disabled='true'
-		>` // no space at the end
+		>` // no space at the end - it follows the [unit]
 
 		display = fmt.Sprintf(
 			display,
@@ -487,9 +517,9 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		noAnswer := `<input 
 			type='radio' 
 			name='%v_noanswer' 
-			class='range-noanswer'
 			id='%v_noanswer' 
-			value='%v_noanswer'
+			class='range-noanswer'
+			value='true'
 			title='no answer'
 			oninput='pdsRangeRadioInput(this)' 
 			tabindex='-1'
@@ -498,31 +528,39 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			noAnswer,
 			inp.Name,
 			inp.Name,
-			inp.Name,
 		)
 
-		// label must be trailing sibling to input[range]
-		// we render a second label, containing the display and the ticks
-		// the actual word label is in another grid item
+		// we render a second label, serves as anchor
+		// a.) for the display
+		// b.) for the ticks
+		//
+		// the label containing the description text is in another grid item above
+		//
+		// this is a _trailing_ sibling to the input[range];
+		// display:flex and column-reverse design will render it above
+		//
+		//
+		//
 		ctrl += fmt.Sprintf(`
 			<label for="%v" >
 				%v%v
 				<div class="labels" aria-hidden="true" 
 				>%v</div>
 			</label>	
-				%v
 			`,
 			inp.Name,
 			display, inp.Suffix[q.LangCode],
 			inp.rangeLabels(),
-			noAnswer,
 		)
+
+		ctrl += noAnswer
 
 		ctrl += `</div>` // /input-wrapper
 
 		inp.Suffix = trl.S{} // delete - since range writes its own suffix
 
-		// render JS
+		// render JS;
+		// we fire an input event at the range-input on window load
 		sb := &strings.Builder{}
 		inp.JSBlockStrings = map[string]string{
 			"inputName": inp.Name,

@@ -61,5 +61,6 @@
 
     }
 
+    console.log("JS tpl 'prio123.js' successfully added");
 
 }

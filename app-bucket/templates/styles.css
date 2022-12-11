@@ -620,6 +620,23 @@ input[type=range] {
     --sliderHeight: 28px;
 }
 
+
+/* 
+
+Since one vendor's browser doesn' t understand other vendors' prefixes, 
+it has to _drop_ any rules that contain unrecognized prefixes
+
+CSS vendor prefixes
+
+-webkit-  Safari, Chrome
+-moz-     Firefox
+-ms-      Internet Explorer
+
+-o-       Opera
+-khtml-   Konqueror, really old Safari
+
+*/
+
 input[type=range]::-webkit-slider-thumb {
     /* -webkit-appearance: none;
     appearance: none; */
@@ -666,6 +683,58 @@ input[type=range]::-moz-range-thumb {
     background-position-y: top; */
 }
 
+
+input[type=range]::-ms-thumb {
+    height: 100%;
+    /* not working in chrome */
+    height: calc(var(--sliderHeight)/ 1);
+
+    background-color: transparent;
+    border: none;
+    border-radius: 0.0rem;
+    cursor: pointer;
+
+    /* background-image: var(--img-url-pointer);
+    background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-size: contain;
+    background-size: cover;
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top; */
+}
+
+/* 
+
+Making the thumb of the range/slider invisible.
+
+This works by adding/removing the class from the range
+    let elem = document.getElementById('tt2_q11g_ratch');
+    console.log("elem is", elem);
+    elem.classList.toggle("hidethumb");
+    elem.classList.add("hidethumb");
+    elem.classList.remove("hidethumb");
+        
+*/
+
+input[type=range].hidethumb::-webkit-slider-thumb {
+    height:  10% !important;
+    width :  10% !important;
+    opacity:  0.3;
+}
+
+
+input[type=range].hidethumb::-moz-range-thumb {
+    height:  10% !important;
+    width :  10% !important;
+    opacity:  0.3;
+}
+
+input[type=range].hidethumb::-ms-thumb {
+    height:  10% !important;
+    width :  10% !important;
+    opacity:  0.3;
+}
 
 /* make the placeholder lighter */
 ::placeholder {

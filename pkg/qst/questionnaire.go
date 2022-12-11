@@ -205,9 +205,9 @@ func (inp inputT) IsReserved() bool {
 	return false
 }
 
-// Signature returns matching datalist
+// Signature returns the first token from DynamicFuncParamset;
+// usually this is [1,2,3]
 func (inp inputT) Signature() string {
-
 	if inp.DynamicFuncParamset != "" {
 		parts := strings.Split(inp.DynamicFuncParamset, "--")
 		return fmt.Sprintf("signature-%v", parts[0])
@@ -1845,7 +1845,8 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 	w := &strings.Builder{}
 	fmt.Fprintf(w, "<script>\n")
 	fmt.Fprint(w, string(cnts))
-	fmt.Fprintf(w, "console.log('JS tpl %v successfully added')", pth)
+	// put the console message into the script itself, if needed
+	// fmt.Fprintf(w, "console.log('JS tpl %v successfully added')", pth)
 	fmt.Fprintf(w, "</script>\n")
 
 	base := template.New(tName)

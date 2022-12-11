@@ -64,15 +64,15 @@ function myChange(evt) {
     if (frm) {
         if (frm.q03_ac1_corplending[0]) {
             frm.q03_ac1_corplending[0].addEventListener('change',myChange);
-            console.log("handler assigned");
+            console.log("handler 'pdsPage1' assigned");
         }
         if (frm.q03_ac2_realestate[0]) {
             frm.q03_ac2_realestate[0].addEventListener('change', myChange);
-            console.log("handler assigned");
+            console.log("handler 'pdsPage1' assigned");
         }
         if (frm.q03_ac3_infrastruct[0]) {
             frm.q03_ac3_infrastruct[0].addEventListener('change', myChange);
-            console.log("handler assigned");
+            console.log("handler 'pdsPage1' assigned");
         }
     }
 

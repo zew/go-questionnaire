@@ -20,7 +20,7 @@ func init() {
 	styleHeaderCols1.Desktop.StyleGridItem.JustifySelf = "start"
 	styleHeaderCols1.Desktop.StyleGridItem.AlignSelf = "end"
 
-	styleHeaderCols1.Desktop.StyleText.AlignHorizontal = "center" // good for Mezzanine..., but bat for Senior
+	styleHeaderCols1.Desktop.StyleText.AlignHorizontal = "center" // good for Mezzanine..., but bad for Senior
 	styleHeaderCols1.Desktop.StyleText.AlignHorizontal = "left"
 
 	// left margin

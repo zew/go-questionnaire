@@ -33,6 +33,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page0
 	{
 		page := q.AddPage()
+		page.ValidationFuncName = ""
+
 		page.SuppressInProgressbar = true
 
 		page.Label = trl.S{
@@ -44,7 +46,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Begrüßung",
 		}
 
-		page.ValidationFuncName = ""
 		page.WidthMax("42rem")
 
 		// gr0
@@ -64,7 +65,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page1
+	// page1 - asset classes
 	{
 		page := q.AddPage()
 		// page.SuppressInProgressbar = true
@@ -174,6 +175,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page11
 	{
 		page := q.AddPage()
+		page.ValidationFuncName = "pdsRange"
+
 		// page.Section = trl.S{
 		// 	"en": "Section 1",
 		// 	"de": "Section 1",
@@ -309,6 +312,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page12
 	{
 		page := q.AddPage()
+		page.ValidationFuncName = "pdsRange"
 
 		page.Label = trl.S{
 			"en": "Portfolio changes continued: <br>New transactions",
@@ -350,12 +354,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"range-pct",
 		}
 		page12Inputs := []string{
-			"cash_margin",
-			"interest_floor",
-			"upfront_fee",
-			"fixed_rate_coupon",
-			"irr_expected",
-			"share_floating_rate",
+			"q12a_cash_margin",
+			"q12b_interest_floor",
+			"q12c_upfront_fee",
+			"q12d_fixed_rate_coupon",
+			"q12e_irr_expected",
+			"q12f_share_floating_rate",
 		}
 		page12Lbls := []trl.S{
 			{
@@ -454,12 +458,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"range-pct",
 		}
 		page13Inputs := []string{
-			"number_covenants",
-			"contracted_maturity",
-			"opening_leverage",
-			"ebitda_avg",
-			"ev_avg",
-			"share_sponsored_or_not",
+			"q13a_number_covenants",
+			"q13b_contracted_maturity",
+			"q13c_opening_leverage",
+			"q13d_ebitda_avg",
+			"q13e_ev_avg",
+			"q13f_share_sponsored_or_not",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -557,10 +561,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"range-pct",
 		}
 		page14Inputs := []string{
-			"vol_realized_loans",
-			"time_to_maturity",
-			"gross_irr",
-			"gross_moic",
+			"q14a_vol_realized_loans",
+			"q14b_time_to_maturity",
+			"q14c_gross_irr",
+			"q14d_gross_moic",
 		}
 		page14Lbls := []trl.S{
 			{
@@ -620,6 +624,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page20
 	{
 		page := q.AddPage()
+		page.ValidationFuncName = "pdsRange"
 
 		page.Label = trl.S{
 			"en": "2. Overall (existing) Portfolio",
@@ -656,10 +661,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"restricted-text-million",
 		}
 		page21Inputs := []string{
-			"portfolio_value",
-			"capital_called",
-			"capital_repaid",
-			"capital_reserve",
+			"q21a_portfolio_value",
+			"q21b_capital_called",
+			"q21c_capital_repaid",
+			"q21d_capital_reserve",
 		}
 		page21Lbls := []trl.S{
 			{
@@ -723,6 +728,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page23
 	{
 		page := q.AddPage()
+		page.ValidationFuncName = "pdsRange"
 
 		page.Label = trl.S{
 			"en": "2.3 Portfolio risk",
@@ -751,17 +757,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"range-pct",
 		}
 		page23Inputs := []string{
-			"covenants_per_credit",
-			"share_covenant_holiday",
-			"share_covenant_reset",
+			"q23a_covenants_per_credit",
+			"q23b_share_covenant_holiday",
+			"q23c_share_covenant_reset",
 
-			"share_covenant_breach",
-			"share_loan_defaults",
-			"share_default_recovered",
+			"q23d_share_covenant_breach",
+			"q23e_share_loan_defaults",
+			"q23f_share_default_recovered",
 
-			"share_esg_kpis",
-			"share_esg_ratchets",
-			"share_esg_15degrees",
+			"q23g_share_esg_kpis",
+			"q23h_share_esg_ratchets",
+			"q23i_share_esg_15degrees",
 		}
 		page23Lbls := []trl.S{
 			{
@@ -804,7 +810,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for i := 0; i < len(page23Lbls); i++ {
-			// page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("2.3.%v", i+1))
 			rn := rune(97 + i) // 97 is a
 			page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
@@ -845,13 +850,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page.WidthMax("64rem")
 
-		page5Inputs := []string{
-			"financing_situation_pricing",
-			"deal_quality",
-			"deal_documentation",
-			"deal_amount",
+		page3Inputs := []string{
+			"q31_financing_situation_pricing",
+			"q32_deal_quality",
+			"q33_deal_documentation",
+			"q34_deal_amount",
 		}
-		page5Lbls := []trl.S{
+		page3Lbls := []trl.S{
 			{
 				"en": `Financing situation/pricing <br>
 						<span class=font-size-90> Assess the development of expected returns  </span>`,
@@ -878,11 +883,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 		}
 
-		for i := 0; i < len(page5Lbls); i++ {
-			page5Lbls[i] = page5Lbls[i].Outline(fmt.Sprintf("3.%v", i+1))
+		for i := 0; i < len(page3Lbls); i++ {
+			page3Lbls[i] = page3Lbls[i].Outline(fmt.Sprintf("3.%v", i+1))
 		}
 
-		for idx1, inpName := range page5Inputs {
+		for idx1, inpName := range page3Inputs {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
@@ -891,8 +896,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{
 					inp := gr.AddInput()
 					inp.Type = "textblock"
-					inp.Label = page5Lbls[idx1].Bold()
-					inp.Label = page5Lbls[idx1]
+					inp.Label = page3Lbls[idx1].Bold()
+					inp.Label = page3Lbls[idx1]
 
 					inp.ColSpan = 1
 					// inp.ColSpanLabel = 1
@@ -941,14 +946,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// matrix1
 		{
 			inps := []string{
-				"business_cycle",
-				"interest_rates",
-				"inflation_deflation",
-				"demographics",
-				"supply_chains",
-				"health_issues",
-				"regulatory_environment",
-				"other",
+				"411_business_cycle",
+				"412_interest_rates",
+				"413_inflation_deflation",
+				"414_demographics",
+				"415_supply_chains",
+				"416_health_issues",
+				"417_regulatory_environment",
+				"418_other",
 			}
 
 			lbls := map[string]string{
@@ -973,17 +978,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// matrix2
 		{
 			inps := []string{
-				"energy",
-				"materials",
-				"industrials",
-				"consumer_discretionary",
-				"consumer_staples",
-				"health_care",
-				"financials",
-				"information_technology",
-				"communication_services",
-				"utilities",
-				"real_estate",
+				"q4201_energy",
+				"q4202_materials",
+				"q4203_industrials",
+				"q4204_consumer_discretionary",
+				"q4205_consumer_staples",
+				"q4206_health_care",
+				"q4207_financials",
+				"q4208_information_technology",
+				"q4209_communication_services",
+				"q4210_utilities",
+				"q4211_real_estate",
 			}
 
 			lbls := map[string]string{
@@ -1026,7 +1031,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			radiosSingleRow(
 				qst.WrapPageT(page),
-				"esg_importance1",
+				"q43_esg_importance",
 				esgImportance1,
 				mCh3,
 			)
@@ -1036,13 +1041,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// matrix3
 		{
 			inps := []string{
-				"availability",
-				"quality",
-				"performance",
-				"greenwashing",
-				"regulation",
-				"opportunities",
-				"other",
+				"q441_availability",
+				"q442_quality",
+				"q443_performance",
+				"q444_greenwashing",
+				"q445_regulation",
+				"q446_opportunities",
+				"q447_other",
 			}
 
 			lbls := map[string]string{
@@ -1065,23 +1070,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 
 			var inps = []string{
-				"poverty",
-				"hunger",
-				"health",
-				"education",
-				"gender_eq",
-				"water",
-				"energy",
-				"work",
-				"industry",
-				"inequality",
-				"communities",
-				"responsible",
-				"climate",
-				"life_water",
-				"life_land",
-				"peace",
-				"partnership",
+				"q4501_poverty",
+				"q4502_hunger",
+				"q4503_health",
+				"q4504_education",
+				"q4505_gender_eq",
+				"q4506_water",
+				"q4507_energy",
+				"q4508_work",
+				"q4509_industry",
+				"q4510_inequality",
+				"q4511_communities",
+				"q4512_responsible",
+				"q4513_climate",
+				"q4514_life_water",
+				"q4515_life_land",
+				"q4516_peace",
+				"q4517_partnership",
 			}
 			var lbls = []trl.S{
 				{
@@ -1196,6 +1201,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.NoNavigation = false
 	}
 
+	// page6 - finish
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -1218,7 +1224,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = "q44_dsgvo"
+				inp.Name = "q61_dsgvo"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 6
@@ -1299,7 +1305,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q45"
+				rad.Name = "q62_sharing"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = 1

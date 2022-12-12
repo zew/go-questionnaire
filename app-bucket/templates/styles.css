@@ -717,24 +717,30 @@ This works by adding/removing the class from the range
         
 */
 
+/* this is for init state */
 input[type=range].hidethumb::-webkit-slider-thumb {
-    height:  10% !important;
+    height:   0  !important;
     width :  10% !important;
     opacity:  0.3;
 }
-
-
 input[type=range].hidethumb::-moz-range-thumb {
-    height:  10% !important;
+    height:   0  !important;
+    width :  10% !important;
+    opacity:  0.3;
+}
+input[type=range].hidethumb::-ms-thumb {
+    height:   0  !important;
     width :  10% !important;
     opacity:  0.3;
 }
 
-input[type=range].hidethumb::-ms-thumb {
-    height:  10% !important;
-    width :  10% !important;
-    opacity:  0.3;
+/* default */
+input[type=range].noanswer {
+    /* previously set: transparent */
+    background-color: lightgrey;
 }
+
+
 
 /* make the placeholder lighter */
 ::placeholder {

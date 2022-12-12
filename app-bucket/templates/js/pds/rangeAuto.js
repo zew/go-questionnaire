@@ -1,5 +1,10 @@
-// non global block
 {
+    // non global block
+
+    // unused;
+    // because the init of range, display, noanswer 
+    // is done using server side HTML generation
+
     let range = document.getElementById("{{.inputName }}");
 
     let initRange = (inst) => {

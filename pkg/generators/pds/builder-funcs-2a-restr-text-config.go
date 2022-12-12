@@ -163,7 +163,7 @@ var (
 
 	//
 	r221 = configRT{
-		InputNameP2: "221market_segment",
+		InputNameP2: "q22a_market_segment",
 		Chars:       5,
 		LblRow1: trl.S{
 			"en": "Share of portfolio by segment (at fair market value)",
@@ -185,7 +185,7 @@ var (
 	}
 
 	r222 = configRT{
-		InputNameP2: "222region",
+		InputNameP2: "q22b_region",
 		Chars:       5,
 		LblRow1: trl.S{
 			"en": "Share of portfolio by region (at fair market value)",

@@ -435,10 +435,6 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		}
 	case "range":
 
-		// range-input wrapper
-		// display flex, column-reverse
-		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
-
 		// HTML spec demands the default value for a range input to be max-min/2;
 		// thus we have _no_ chance to find out about the init state
 		//
@@ -447,20 +443,53 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		// remedy 1: A data attribute 'data-dirty';
 		// javascript onload-input can check for this
 		// 		src.dataset.dirty === "false"
+		// unused
 		dirty := ""
 		if inp.Response == "" {
 			dirty = " data-dirty='false' "
 		}
 
 		// remedy 2: An "empty catcher" hidden input
-		// normally, just as with checkboxes, the empty catcher must _succeed_ corresponding range,
-		// but since we have embarked on this display:flex and column-reverse design,
-		// we must position this catcher ahead of the range-input.
+		// see below
+		// just as with checkboxes, the empty catcher must _succeed_ corresponding range,
+		// empty catcher: see above;
+		// _after_ the input-wrapper;
+		// because input-wrapper is display=flex and column-reverse
 		if inp.Response == "" {
 			ctrl += fmt.Sprintf(
 				`<input type='hidden' name='%v' id='%v_hidd' value='' />`,
 				nm, nm,
 			)
+		}
+
+		// range-input wrapper
+		// display flex, column-reverse
+		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
+
+		classCSS := []string{}
+		if inp.Response == "" {
+			classCSS = append(classCSS, "hidethumb")
+		} else if inp.Response == "no answ." {
+			classCSS = append(classCSS, "noanswer", "hidethumb")
+		}
+
+		dispVal := ""
+		if inp.Response == "" {
+			dispVal = " -- " // init
+		} else if inp.Response == "no answ." {
+			dispVal = "no answ." // also adapt in pdsRange.js display.value
+		} else {
+			floatFormatter := "%.0f"
+			if inp.Step < 1.0 {
+				floatFormatter = "%.1f"
+			}
+			if inp.Step < 0.1 {
+				floatFormatter = "%.2f"
+			}
+			fmStr := fmt.Sprintf("%v - %v", floatFormatter, floatFormatter)
+			resp, _ := strconv.ParseFloat(inp.Response, 64)
+			// log.Printf("float formatter for %v, %v \n\t\t%v", resp, resp+inp.Step, fmStr)
+			dispVal = fmt.Sprintf(fmStr, resp, resp+inp.Step)
 		}
 
 		//
@@ -470,10 +499,11 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 				name='%v' id='%v' 
 				min='%v' max='%v' step='%v' 
 				value='%v'
-				%v
 				oninput='pdsRangeInput(this)' 
 				onclick='pdsRangeClick(this)' 
 				onfocus='pdsRangeClick(this)' 
+				%v
+				class='%v'
 			/>
 			`,
 			inp.Type,
@@ -481,6 +511,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Min, inp.Max, inp.Step,
 			inp.Response,
 			dirty,
+			strings.Join(classCSS, " "),
 			//
 			// inp.Signature(), // for corresponding datalist list=%v
 		)
@@ -500,7 +531,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			size='%v' 
 			maxlength='%v' 
 			%v
-			value=''
+			value='%v'
 			disabled='true'
 		>` // no space at the end - it follows the [unit]
 
@@ -511,7 +542,13 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.MaxChars,
 			inp.MaxChars,
 			maxWidthDisplay,
+			dispVal,
 		)
+
+		checked := ""
+		if inp.Response == "no answ." {
+			checked = " checked=true "
+		}
 
 		// no answer radio [rangename]_noanswer
 		noAnswer := `<input 
@@ -520,6 +557,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			id='%v_noanswer' 
 			class='range-noanswer'
 			value='true'
+			%v
 			title='no answer'
 			oninput='pdsRangeRadioInput(this)' 
 			tabindex='-1'
@@ -528,6 +566,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			noAnswer,
 			inp.Name,
 			inp.Name,
+			checked,
 		)
 
 		// we render a second label, serves as anchor
@@ -559,19 +598,33 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 		inp.Suffix = trl.S{} // delete - since range writes its own suffix
 
-		// render JS;
-		// we fire an input event at the range-input on window load
-		sb := &strings.Builder{}
-		inp.JSBlockStrings = map[string]string{
-			"inputName": inp.Name,
+		/*
+			// empty catcher: see above;
+			// _after_ the input-wrapper;
+			// because input-wrapper is display=flex and column-reverse
+			if inp.Response == "" {
+				ctrl += fmt.Sprintf(
+					`<input type='hidden' name='%v' id='%v_hidd' value='' />`,
+					nm, nm,
+				)
+			}
+		*/
+
+		if false {
+			// render JS;
+			// we fire an input event at the range-input on window load
+			sb := &strings.Builder{}
+			inp.JSBlockStrings = map[string]string{
+				"inputName": inp.Name,
+			}
+			q.RenderJS(
+				sb,
+				path.Join(q.Survey.Type, "rangeAuto"),
+				inp.JSBlockTrls,
+				inp.JSBlockStrings,
+			)
+			ctrl += sb.String()
 		}
-		q.RenderJS(
-			sb,
-			path.Join(q.Survey.Type, "rangeAuto"),
-			inp.JSBlockTrls,
-			inp.JSBlockStrings,
-		)
-		ctrl += sb.String()
 
 	case "text", "number", "hidden", "checkbox", "radio":
 		rspvl := inp.Response

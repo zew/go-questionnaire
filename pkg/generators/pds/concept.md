@@ -76,17 +76,25 @@ Infrastructure
 
 ## RC3
 
-done
+Done
 
-* Slider: Display width adapted 
+* All pages: Tranche names aligned
+* Question "Weeks to closing": As dropdown
+* Slider: Display "from - to" width changes width as needed
 * Slider: Ticks corrected 
-* Weeks to close: As dropdown
-* Everywhere: Tranche names aligned
+* Slider: Init state and no-answer state
 
-todo
+* Testing on Firefox, Chrome, Edge, Opera, Mac-Safari; desktop versions only
 
-* Default value of range
+* Internal names of all questions sequentially numbered
 
-* 2022-11-28_ZEW_Survey.xlsx
+
+
+Todo
+
 * Employee-Number for each asset class
-* Numbering of all questions
+
+* Frage zum Konzept-Update 2022-11-28_ZEW_Survey.xlsx
+   Reiter 'Real Estate Debt' und 'Infrastructure Debt'  
+   sind _nur_ die fett markierten Fragen unterschiedlich zu 'Direct Lending'?
+

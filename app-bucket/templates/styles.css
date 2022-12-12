@@ -734,9 +734,8 @@ input[type=range].hidethumb::-ms-thumb {
     opacity:  0.3;
 }
 
-/* default */
 input[type=range].noanswer {
-    /* previously set: transparent */
+    /* default / previously set: transparent */
     background-color: lightgrey;
 }
 

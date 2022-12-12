@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3695580d35fd78a78f877135ee10688b4fba52d7282363010eb58da1011b3183",
+ 	"md_5": "40a4f9190361c0142af7a9614e3806009eca99f489130a1cf076af5be84ecf39",
  	"lang_codes": [
  		"en"
  	],
@@ -5410,7 +5410,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_cash_margin",
+ 							"name": "tt1_q12a_cash_margin",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -5472,7 +5472,7 @@
  							}
  						},
  						{
- 							"name": "tt2_cash_margin",
+ 							"name": "tt2_q12a_cash_margin",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -5534,7 +5534,7 @@
  							}
  						},
  						{
- 							"name": "tt3_cash_margin",
+ 							"name": "tt3_q12a_cash_margin",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -5596,7 +5596,7 @@
  							}
  						},
  						{
- 							"name": "tt4_cash_margin",
+ 							"name": "tt4_q12a_cash_margin",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -5694,7 +5694,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_interest_floor",
+ 							"name": "tt1_q12b_interest_floor",
  							"type": "range",
  							"step": 0.25,
  							"max": 2,
@@ -5755,7 +5755,7 @@
  							}
  						},
  						{
- 							"name": "tt2_interest_floor",
+ 							"name": "tt2_q12b_interest_floor",
  							"type": "range",
  							"step": 0.25,
  							"max": 2,
@@ -5816,7 +5816,7 @@
  							}
  						},
  						{
- 							"name": "tt3_interest_floor",
+ 							"name": "tt3_q12b_interest_floor",
  							"type": "range",
  							"step": 0.25,
  							"max": 2,
@@ -5877,7 +5877,7 @@
  							}
  						},
  						{
- 							"name": "tt4_interest_floor",
+ 							"name": "tt4_q12b_interest_floor",
  							"type": "range",
  							"step": 0.25,
  							"max": 2,
@@ -5974,7 +5974,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_upfront_fee",
+ 							"name": "tt1_q12c_upfront_fee",
  							"type": "range",
  							"step": 0.25,
  							"max": 4,
@@ -6035,7 +6035,7 @@
  							}
  						},
  						{
- 							"name": "tt2_upfront_fee",
+ 							"name": "tt2_q12c_upfront_fee",
  							"type": "range",
  							"step": 0.25,
  							"max": 4,
@@ -6096,7 +6096,7 @@
  							}
  						},
  						{
- 							"name": "tt3_upfront_fee",
+ 							"name": "tt3_q12c_upfront_fee",
  							"type": "range",
  							"step": 0.25,
  							"max": 4,
@@ -6157,7 +6157,7 @@
  							}
  						},
  						{
- 							"name": "tt4_upfront_fee",
+ 							"name": "tt4_q12c_upfront_fee",
  							"type": "range",
  							"step": 0.25,
  							"max": 4,
@@ -6254,7 +6254,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_fixed_rate_coupon",
+ 							"name": "tt1_q12d_fixed_rate_coupon",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6316,7 +6316,7 @@
  							}
  						},
  						{
- 							"name": "tt2_fixed_rate_coupon",
+ 							"name": "tt2_q12d_fixed_rate_coupon",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6378,7 +6378,7 @@
  							}
  						},
  						{
- 							"name": "tt3_fixed_rate_coupon",
+ 							"name": "tt3_q12d_fixed_rate_coupon",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6440,7 +6440,7 @@
  							}
  						},
  						{
- 							"name": "tt4_fixed_rate_coupon",
+ 							"name": "tt4_q12d_fixed_rate_coupon",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6538,7 +6538,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_irr_expected",
+ 							"name": "tt1_q12e_irr_expected",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6600,7 +6600,7 @@
  							}
  						},
  						{
- 							"name": "tt2_irr_expected",
+ 							"name": "tt2_q12e_irr_expected",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6662,7 +6662,7 @@
  							}
  						},
  						{
- 							"name": "tt3_irr_expected",
+ 							"name": "tt3_q12e_irr_expected",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6724,7 +6724,7 @@
  							}
  						},
  						{
- 							"name": "tt4_irr_expected",
+ 							"name": "tt4_q12e_irr_expected",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -6822,7 +6822,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_floating_rate",
+ 							"name": "tt1_q12f_share_floating_rate",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -6883,7 +6883,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_floating_rate",
+ 							"name": "tt2_q12f_share_floating_rate",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -6944,7 +6944,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_floating_rate",
+ 							"name": "tt3_q12f_share_floating_rate",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -7005,7 +7005,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_floating_rate",
+ 							"name": "tt4_q12f_share_floating_rate",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -7255,7 +7255,7 @@
  					"columns": 16,
  					"inputs": [
  						{
- 							"name": "tt1_number_covenants",
+ 							"name": "tt1_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -7312,7 +7312,7 @@
  							}
  						},
  						{
- 							"name": "tt1_number_covenants",
+ 							"name": "tt1_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -7368,7 +7368,7 @@
  							}
  						},
  						{
- 							"name": "tt1_number_covenants",
+ 							"name": "tt1_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -7424,7 +7424,7 @@
  							}
  						},
  						{
- 							"name": "tt1_number_covenants",
+ 							"name": "tt1_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -7481,7 +7481,7 @@
  							}
  						},
  						{
- 							"name": "tt2_number_covenants",
+ 							"name": "tt2_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -7538,7 +7538,7 @@
  							}
  						},
  						{
- 							"name": "tt2_number_covenants",
+ 							"name": "tt2_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -7594,7 +7594,7 @@
  							}
  						},
  						{
- 							"name": "tt2_number_covenants",
+ 							"name": "tt2_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -7650,7 +7650,7 @@
  							}
  						},
  						{
- 							"name": "tt2_number_covenants",
+ 							"name": "tt2_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -7707,7 +7707,7 @@
  							}
  						},
  						{
- 							"name": "tt3_number_covenants",
+ 							"name": "tt3_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -7764,7 +7764,7 @@
  							}
  						},
  						{
- 							"name": "tt3_number_covenants",
+ 							"name": "tt3_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -7820,7 +7820,7 @@
  							}
  						},
  						{
- 							"name": "tt3_number_covenants",
+ 							"name": "tt3_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -7876,7 +7876,7 @@
  							}
  						},
  						{
- 							"name": "tt3_number_covenants",
+ 							"name": "tt3_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -7933,7 +7933,7 @@
  							}
  						},
  						{
- 							"name": "tt4_number_covenants",
+ 							"name": "tt4_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -7990,7 +7990,7 @@
  							}
  						},
  						{
- 							"name": "tt4_number_covenants",
+ 							"name": "tt4_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -8046,7 +8046,7 @@
  							}
  						},
  						{
- 							"name": "tt4_number_covenants",
+ 							"name": "tt4_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -8102,7 +8102,7 @@
  							}
  						},
  						{
- 							"name": "tt4_number_covenants",
+ 							"name": "tt4_q13a_number_covenants",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -8195,7 +8195,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_contracted_maturity",
+ 							"name": "tt1_q13b_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -8256,7 +8256,7 @@
  							}
  						},
  						{
- 							"name": "tt2_contracted_maturity",
+ 							"name": "tt2_q13b_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -8317,7 +8317,7 @@
  							}
  						},
  						{
- 							"name": "tt3_contracted_maturity",
+ 							"name": "tt3_q13b_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -8378,7 +8378,7 @@
  							}
  						},
  						{
- 							"name": "tt4_contracted_maturity",
+ 							"name": "tt4_q13b_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -8475,7 +8475,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_opening_leverage",
+ 							"name": "tt1_q13c_opening_leverage",
  							"type": "range",
  							"step": 0.5,
  							"min": 2,
@@ -8537,7 +8537,7 @@
  							}
  						},
  						{
- 							"name": "tt2_opening_leverage",
+ 							"name": "tt2_q13c_opening_leverage",
  							"type": "range",
  							"step": 0.5,
  							"min": 2,
@@ -8599,7 +8599,7 @@
  							}
  						},
  						{
- 							"name": "tt3_opening_leverage",
+ 							"name": "tt3_q13c_opening_leverage",
  							"type": "range",
  							"step": 0.5,
  							"min": 2,
@@ -8661,7 +8661,7 @@
  							}
  						},
  						{
- 							"name": "tt4_opening_leverage",
+ 							"name": "tt4_q13c_opening_leverage",
  							"type": "range",
  							"step": 0.5,
  							"min": 2,
@@ -8759,7 +8759,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_ebitda_avg",
+ 							"name": "tt1_q13d_ebitda_avg",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -8820,7 +8820,7 @@
  							}
  						},
  						{
- 							"name": "tt2_ebitda_avg",
+ 							"name": "tt2_q13d_ebitda_avg",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -8881,7 +8881,7 @@
  							}
  						},
  						{
- 							"name": "tt3_ebitda_avg",
+ 							"name": "tt3_q13d_ebitda_avg",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -8942,7 +8942,7 @@
  							}
  						},
  						{
- 							"name": "tt4_ebitda_avg",
+ 							"name": "tt4_q13d_ebitda_avg",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -9039,7 +9039,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_ev_avg",
+ 							"name": "tt1_q13e_ev_avg",
  							"type": "range",
  							"step": 10,
  							"max": 500,
@@ -9100,7 +9100,7 @@
  							}
  						},
  						{
- 							"name": "tt2_ev_avg",
+ 							"name": "tt2_q13e_ev_avg",
  							"type": "range",
  							"step": 10,
  							"max": 500,
@@ -9161,7 +9161,7 @@
  							}
  						},
  						{
- 							"name": "tt3_ev_avg",
+ 							"name": "tt3_q13e_ev_avg",
  							"type": "range",
  							"step": 10,
  							"max": 500,
@@ -9222,7 +9222,7 @@
  							}
  						},
  						{
- 							"name": "tt4_ev_avg",
+ 							"name": "tt4_q13e_ev_avg",
  							"type": "range",
  							"step": 10,
  							"max": 500,
@@ -9319,7 +9319,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_sponsored_or_not",
+ 							"name": "tt1_q13f_share_sponsored_or_not",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -9380,7 +9380,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_sponsored_or_not",
+ 							"name": "tt2_q13f_share_sponsored_or_not",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -9441,7 +9441,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_sponsored_or_not",
+ 							"name": "tt3_q13f_share_sponsored_or_not",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -9502,7 +9502,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_sponsored_or_not",
+ 							"name": "tt4_q13f_share_sponsored_or_not",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -9633,7 +9633,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_vol_realized_loans",
+ 							"name": "tt1_q14a_vol_realized_loans",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -9712,7 +9712,7 @@
  							}
  						},
  						{
- 							"name": "tt2_vol_realized_loans",
+ 							"name": "tt2_q14a_vol_realized_loans",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -9791,7 +9791,7 @@
  							}
  						},
  						{
- 							"name": "tt3_vol_realized_loans",
+ 							"name": "tt3_q14a_vol_realized_loans",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -9870,7 +9870,7 @@
  							}
  						},
  						{
- 							"name": "tt4_vol_realized_loans",
+ 							"name": "tt4_q14a_vol_realized_loans",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -9985,7 +9985,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_time_to_maturity",
+ 							"name": "tt1_q14b_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -10046,7 +10046,7 @@
  							}
  						},
  						{
- 							"name": "tt2_time_to_maturity",
+ 							"name": "tt2_q14b_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -10107,7 +10107,7 @@
  							}
  						},
  						{
- 							"name": "tt3_time_to_maturity",
+ 							"name": "tt3_q14b_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -10168,7 +10168,7 @@
  							}
  						},
  						{
- 							"name": "tt4_time_to_maturity",
+ 							"name": "tt4_q14b_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
  							"max": 10,
@@ -10265,7 +10265,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_gross_irr",
+ 							"name": "tt1_q14c_gross_irr",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -10327,7 +10327,7 @@
  							}
  						},
  						{
- 							"name": "tt2_gross_irr",
+ 							"name": "tt2_q14c_gross_irr",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -10389,7 +10389,7 @@
  							}
  						},
  						{
- 							"name": "tt3_gross_irr",
+ 							"name": "tt3_q14c_gross_irr",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -10451,7 +10451,7 @@
  							}
  						},
  						{
- 							"name": "tt4_gross_irr",
+ 							"name": "tt4_q14c_gross_irr",
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
@@ -10549,7 +10549,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_gross_moic",
+ 							"name": "tt1_q14d_gross_moic",
  							"type": "range",
  							"step": 0.05,
  							"min": 1,
@@ -10611,7 +10611,7 @@
  							}
  						},
  						{
- 							"name": "tt2_gross_moic",
+ 							"name": "tt2_q14d_gross_moic",
  							"type": "range",
  							"step": 0.05,
  							"min": 1,
@@ -10673,7 +10673,7 @@
  							}
  						},
  						{
- 							"name": "tt3_gross_moic",
+ 							"name": "tt3_q14d_gross_moic",
  							"type": "range",
  							"step": 0.05,
  							"min": 1,
@@ -10735,7 +10735,7 @@
  							}
  						},
  						{
- 							"name": "tt4_gross_moic",
+ 							"name": "tt4_q14d_gross_moic",
  							"type": "range",
  							"step": 0.05,
  							"min": 1,
@@ -10904,7 +10904,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_portfolio_value",
+ 							"name": "tt1_q21a_portfolio_value",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -10983,7 +10983,7 @@
  							}
  						},
  						{
- 							"name": "tt2_portfolio_value",
+ 							"name": "tt2_q21a_portfolio_value",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11062,7 +11062,7 @@
  							}
  						},
  						{
- 							"name": "tt3_portfolio_value",
+ 							"name": "tt3_q21a_portfolio_value",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11141,7 +11141,7 @@
  							}
  						},
  						{
- 							"name": "tt4_portfolio_value",
+ 							"name": "tt4_q21a_portfolio_value",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11275,7 +11275,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_capital_called",
+ 							"name": "tt1_q21b_capital_called",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11354,7 +11354,7 @@
  							}
  						},
  						{
- 							"name": "tt2_capital_called",
+ 							"name": "tt2_q21b_capital_called",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11433,7 +11433,7 @@
  							}
  						},
  						{
- 							"name": "tt3_capital_called",
+ 							"name": "tt3_q21b_capital_called",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11512,7 +11512,7 @@
  							}
  						},
  						{
- 							"name": "tt4_capital_called",
+ 							"name": "tt4_q21b_capital_called",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11646,7 +11646,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_capital_repaid",
+ 							"name": "tt1_q21c_capital_repaid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11725,7 +11725,7 @@
  							}
  						},
  						{
- 							"name": "tt2_capital_repaid",
+ 							"name": "tt2_q21c_capital_repaid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11804,7 +11804,7 @@
  							}
  						},
  						{
- 							"name": "tt3_capital_repaid",
+ 							"name": "tt3_q21c_capital_repaid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -11883,7 +11883,7 @@
  							}
  						},
  						{
- 							"name": "tt4_capital_repaid",
+ 							"name": "tt4_q21c_capital_repaid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -12017,7 +12017,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_capital_reserve",
+ 							"name": "tt1_q21d_capital_reserve",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -12096,7 +12096,7 @@
  							}
  						},
  						{
- 							"name": "tt2_capital_reserve",
+ 							"name": "tt2_q21d_capital_reserve",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -12175,7 +12175,7 @@
  							}
  						},
  						{
- 							"name": "tt3_capital_reserve",
+ 							"name": "tt3_q21d_capital_reserve",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -12254,7 +12254,7 @@
  							}
  						},
  						{
- 							"name": "tt4_capital_reserve",
+ 							"name": "tt4_q21d_capital_reserve",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -12515,7 +12515,7 @@
  							}
  						},
  						{
- 							"name": "tt1_221market_segment_main",
+ 							"name": "tt1_q22a_market_segment_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12535,7 +12535,7 @@
  							"response": "100"
  						},
  						{
- 							"name": "tt2_221market_segment_main",
+ 							"name": "tt2_q22a_market_segment_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12550,7 +12550,7 @@
  							"response": "100"
  						},
  						{
- 							"name": "tt3_221market_segment_main",
+ 							"name": "tt3_q22a_market_segment_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12565,7 +12565,7 @@
  							"response": "100"
  						},
  						{
- 							"name": "tt4_221market_segment_main",
+ 							"name": "tt4_q22a_market_segment_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12611,7 +12611,7 @@
  							}
  						},
  						{
- 							"name": "tt1_221market_segment_low",
+ 							"name": "tt1_q22a_market_segment_low",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12645,7 +12645,7 @@
  							}
  						},
  						{
- 							"name": "tt2_221market_segment_low",
+ 							"name": "tt2_q22a_market_segment_low",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12658,7 +12658,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_221market_segment_low",
+ 							"name": "tt3_q22a_market_segment_low",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12671,7 +12671,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_221market_segment_low",
+ 							"name": "tt4_q22a_market_segment_low",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12688,7 +12688,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_221market_segment_core",
+ 							"name": "tt1_q22a_market_segment_core",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12722,7 +12722,7 @@
  							}
  						},
  						{
- 							"name": "tt2_221market_segment_core",
+ 							"name": "tt2_q22a_market_segment_core",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12735,7 +12735,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_221market_segment_core",
+ 							"name": "tt3_q22a_market_segment_core",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12748,7 +12748,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_221market_segment_core",
+ 							"name": "tt4_q22a_market_segment_core",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12765,7 +12765,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_221market_segment_upper",
+ 							"name": "tt1_q22a_market_segment_upper",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12799,7 +12799,7 @@
  							}
  						},
  						{
- 							"name": "tt2_221market_segment_upper",
+ 							"name": "tt2_q22a_market_segment_upper",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12812,7 +12812,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_221market_segment_upper",
+ 							"name": "tt3_q22a_market_segment_upper",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -12825,7 +12825,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_221market_segment_upper",
+ 							"name": "tt4_q22a_market_segment_upper",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13009,7 +13009,7 @@
  							}
  						},
  						{
- 							"name": "tt1_222region_main",
+ 							"name": "tt1_q22b_region_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13029,7 +13029,7 @@
  							"response": "100"
  						},
  						{
- 							"name": "tt2_222region_main",
+ 							"name": "tt2_q22b_region_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13044,7 +13044,7 @@
  							"response": "100"
  						},
  						{
- 							"name": "tt3_222region_main",
+ 							"name": "tt3_q22b_region_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13059,7 +13059,7 @@
  							"response": "100"
  						},
  						{
- 							"name": "tt4_222region_main",
+ 							"name": "tt4_q22b_region_main",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13105,7 +13105,7 @@
  							}
  						},
  						{
- 							"name": "tt1_222region_uk",
+ 							"name": "tt1_q22b_region_uk",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13139,7 +13139,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_uk",
+ 							"name": "tt2_q22b_region_uk",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13152,7 +13152,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_uk",
+ 							"name": "tt3_q22b_region_uk",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13165,7 +13165,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_uk",
+ 							"name": "tt4_q22b_region_uk",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13182,7 +13182,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_222region_france",
+ 							"name": "tt1_q22b_region_france",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13216,7 +13216,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_france",
+ 							"name": "tt2_q22b_region_france",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13229,7 +13229,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_france",
+ 							"name": "tt3_q22b_region_france",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13242,7 +13242,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_france",
+ 							"name": "tt4_q22b_region_france",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13259,7 +13259,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_222region_dach",
+ 							"name": "tt1_q22b_region_dach",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13293,7 +13293,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_dach",
+ 							"name": "tt2_q22b_region_dach",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13306,7 +13306,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_dach",
+ 							"name": "tt3_q22b_region_dach",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13319,7 +13319,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_dach",
+ 							"name": "tt4_q22b_region_dach",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13336,7 +13336,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_222region_benelux",
+ 							"name": "tt1_q22b_region_benelux",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13370,7 +13370,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_benelux",
+ 							"name": "tt2_q22b_region_benelux",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13383,7 +13383,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_benelux",
+ 							"name": "tt3_q22b_region_benelux",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13396,7 +13396,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_benelux",
+ 							"name": "tt4_q22b_region_benelux",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13413,7 +13413,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_222region_nordics",
+ 							"name": "tt1_q22b_region_nordics",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13447,7 +13447,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_nordics",
+ 							"name": "tt2_q22b_region_nordics",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13460,7 +13460,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_nordics",
+ 							"name": "tt3_q22b_region_nordics",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13473,7 +13473,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_nordics",
+ 							"name": "tt4_q22b_region_nordics",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13490,7 +13490,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_222region_southern_eu",
+ 							"name": "tt1_q22b_region_southern_eu",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13524,7 +13524,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_southern_eu",
+ 							"name": "tt2_q22b_region_southern_eu",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13537,7 +13537,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_southern_eu",
+ 							"name": "tt3_q22b_region_southern_eu",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13550,7 +13550,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_southern_eu",
+ 							"name": "tt4_q22b_region_southern_eu",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13567,7 +13567,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt1_222region_other",
+ 							"name": "tt1_q22b_region_other",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13601,7 +13601,7 @@
  							}
  						},
  						{
- 							"name": "tt2_222region_other",
+ 							"name": "tt2_q22b_region_other",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13614,7 +13614,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt3_222region_other",
+ 							"name": "tt3_q22b_region_other",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13627,7 +13627,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "tt4_222region_other",
+ 							"name": "tt4_q22b_region_other",
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
@@ -13855,7 +13855,7 @@
  					"columns": 16,
  					"inputs": [
  						{
- 							"name": "tt1_covenants_per_credit",
+ 							"name": "tt1_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -13912,7 +13912,7 @@
  							}
  						},
  						{
- 							"name": "tt1_covenants_per_credit",
+ 							"name": "tt1_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -13968,7 +13968,7 @@
  							}
  						},
  						{
- 							"name": "tt1_covenants_per_credit",
+ 							"name": "tt1_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -14024,7 +14024,7 @@
  							}
  						},
  						{
- 							"name": "tt1_covenants_per_credit",
+ 							"name": "tt1_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -14081,7 +14081,7 @@
  							}
  						},
  						{
- 							"name": "tt2_covenants_per_credit",
+ 							"name": "tt2_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -14138,7 +14138,7 @@
  							}
  						},
  						{
- 							"name": "tt2_covenants_per_credit",
+ 							"name": "tt2_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -14194,7 +14194,7 @@
  							}
  						},
  						{
- 							"name": "tt2_covenants_per_credit",
+ 							"name": "tt2_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -14250,7 +14250,7 @@
  							}
  						},
  						{
- 							"name": "tt2_covenants_per_credit",
+ 							"name": "tt2_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -14307,7 +14307,7 @@
  							}
  						},
  						{
- 							"name": "tt3_covenants_per_credit",
+ 							"name": "tt3_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -14364,7 +14364,7 @@
  							}
  						},
  						{
- 							"name": "tt3_covenants_per_credit",
+ 							"name": "tt3_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -14420,7 +14420,7 @@
  							}
  						},
  						{
- 							"name": "tt3_covenants_per_credit",
+ 							"name": "tt3_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -14476,7 +14476,7 @@
  							}
  						},
  						{
- 							"name": "tt3_covenants_per_credit",
+ 							"name": "tt3_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -14533,7 +14533,7 @@
  							}
  						},
  						{
- 							"name": "tt4_covenants_per_credit",
+ 							"name": "tt4_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -14590,7 +14590,7 @@
  							}
  						},
  						{
- 							"name": "tt4_covenants_per_credit",
+ 							"name": "tt4_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "2-3",
@@ -14646,7 +14646,7 @@
  							}
  						},
  						{
- 							"name": "tt4_covenants_per_credit",
+ 							"name": "tt4_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "4-5",
@@ -14702,7 +14702,7 @@
  							}
  						},
  						{
- 							"name": "tt4_covenants_per_credit",
+ 							"name": "tt4_q23a_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -14795,7 +14795,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_covenant_holiday",
+ 							"name": "tt1_q23b_share_covenant_holiday",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -14856,7 +14856,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_covenant_holiday",
+ 							"name": "tt2_q23b_share_covenant_holiday",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -14917,7 +14917,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_covenant_holiday",
+ 							"name": "tt3_q23b_share_covenant_holiday",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -14978,7 +14978,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_covenant_holiday",
+ 							"name": "tt4_q23b_share_covenant_holiday",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15075,7 +15075,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_covenant_reset",
+ 							"name": "tt1_q23c_share_covenant_reset",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15136,7 +15136,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_covenant_reset",
+ 							"name": "tt2_q23c_share_covenant_reset",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15197,7 +15197,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_covenant_reset",
+ 							"name": "tt3_q23c_share_covenant_reset",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15258,7 +15258,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_covenant_reset",
+ 							"name": "tt4_q23c_share_covenant_reset",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15355,7 +15355,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_covenant_breach",
+ 							"name": "tt1_q23d_share_covenant_breach",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15416,7 +15416,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_covenant_breach",
+ 							"name": "tt2_q23d_share_covenant_breach",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15477,7 +15477,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_covenant_breach",
+ 							"name": "tt3_q23d_share_covenant_breach",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15538,7 +15538,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_covenant_breach",
+ 							"name": "tt4_q23d_share_covenant_breach",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -15654,7 +15654,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_loan_defaults",
+ 							"name": "tt1_q23e_share_loan_defaults",
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.1,
@@ -15733,7 +15733,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_loan_defaults",
+ 							"name": "tt2_q23e_share_loan_defaults",
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.1,
@@ -15812,7 +15812,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_loan_defaults",
+ 							"name": "tt3_q23e_share_loan_defaults",
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.1,
@@ -15891,7 +15891,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_loan_defaults",
+ 							"name": "tt4_q23e_share_loan_defaults",
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.1,
@@ -16006,7 +16006,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_default_recovered",
+ 							"name": "tt1_q23f_share_default_recovered",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16067,7 +16067,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_default_recovered",
+ 							"name": "tt2_q23f_share_default_recovered",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16128,7 +16128,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_default_recovered",
+ 							"name": "tt3_q23f_share_default_recovered",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16189,7 +16189,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_default_recovered",
+ 							"name": "tt4_q23f_share_default_recovered",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16286,7 +16286,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_esg_kpis",
+ 							"name": "tt1_q23g_share_esg_kpis",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16347,7 +16347,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_esg_kpis",
+ 							"name": "tt2_q23g_share_esg_kpis",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16408,7 +16408,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_esg_kpis",
+ 							"name": "tt3_q23g_share_esg_kpis",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16469,7 +16469,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_esg_kpis",
+ 							"name": "tt4_q23g_share_esg_kpis",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16566,7 +16566,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_esg_ratchets",
+ 							"name": "tt1_q23h_share_esg_ratchets",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16627,7 +16627,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_esg_ratchets",
+ 							"name": "tt2_q23h_share_esg_ratchets",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16688,7 +16688,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_esg_ratchets",
+ 							"name": "tt3_q23h_share_esg_ratchets",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16749,7 +16749,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_esg_ratchets",
+ 							"name": "tt4_q23h_share_esg_ratchets",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16846,7 +16846,7 @@
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "tt1_share_esg_15degrees",
+ 							"name": "tt1_q23i_share_esg_15degrees",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16907,7 +16907,7 @@
  							}
  						},
  						{
- 							"name": "tt2_share_esg_15degrees",
+ 							"name": "tt2_q23i_share_esg_15degrees",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -16968,7 +16968,7 @@
  							}
  						},
  						{
- 							"name": "tt3_share_esg_15degrees",
+ 							"name": "tt3_q23i_share_esg_15degrees",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -17029,7 +17029,7 @@
  							}
  						},
  						{
- 							"name": "tt4_share_esg_15degrees",
+ 							"name": "tt4_q23i_share_esg_15degrees",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -17316,7 +17316,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_financing_situation_pricing_past3m",
+ 							"name": "tt1_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -17373,7 +17373,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_past3m",
+ 							"name": "tt1_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -17429,7 +17429,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_past3m",
+ 							"name": "tt1_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -17484,7 +17484,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_past3m",
+ 							"name": "tt1_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -17540,7 +17540,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_past3m",
+ 							"name": "tt1_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -17597,7 +17597,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_past3m",
+ 							"name": "tt2_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -17654,7 +17654,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_past3m",
+ 							"name": "tt2_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -17710,7 +17710,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_past3m",
+ 							"name": "tt2_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -17765,7 +17765,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_past3m",
+ 							"name": "tt2_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -17821,7 +17821,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_past3m",
+ 							"name": "tt2_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -17878,7 +17878,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_past3m",
+ 							"name": "tt3_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -17935,7 +17935,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_past3m",
+ 							"name": "tt3_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -17991,7 +17991,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_past3m",
+ 							"name": "tt3_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -18046,7 +18046,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_past3m",
+ 							"name": "tt3_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -18102,7 +18102,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_past3m",
+ 							"name": "tt3_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -18159,7 +18159,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_past3m",
+ 							"name": "tt4_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -18216,7 +18216,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_past3m",
+ 							"name": "tt4_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -18272,7 +18272,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_past3m",
+ 							"name": "tt4_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -18327,7 +18327,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_past3m",
+ 							"name": "tt4_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -18383,7 +18383,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_past3m",
+ 							"name": "tt4_q31_financing_situation_pricing_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -18614,7 +18614,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_financing_situation_pricing_next3m",
+ 							"name": "tt1_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -18671,7 +18671,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_next3m",
+ 							"name": "tt1_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -18727,7 +18727,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_next3m",
+ 							"name": "tt1_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -18782,7 +18782,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_next3m",
+ 							"name": "tt1_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -18838,7 +18838,7 @@
  							}
  						},
  						{
- 							"name": "tt1_financing_situation_pricing_next3m",
+ 							"name": "tt1_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -18895,7 +18895,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_next3m",
+ 							"name": "tt2_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -18952,7 +18952,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_next3m",
+ 							"name": "tt2_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -19008,7 +19008,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_next3m",
+ 							"name": "tt2_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -19063,7 +19063,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_next3m",
+ 							"name": "tt2_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -19119,7 +19119,7 @@
  							}
  						},
  						{
- 							"name": "tt2_financing_situation_pricing_next3m",
+ 							"name": "tt2_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -19176,7 +19176,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_next3m",
+ 							"name": "tt3_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -19233,7 +19233,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_next3m",
+ 							"name": "tt3_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -19289,7 +19289,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_next3m",
+ 							"name": "tt3_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -19344,7 +19344,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_next3m",
+ 							"name": "tt3_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -19400,7 +19400,7 @@
  							}
  						},
  						{
- 							"name": "tt3_financing_situation_pricing_next3m",
+ 							"name": "tt3_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -19457,7 +19457,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_next3m",
+ 							"name": "tt4_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -19514,7 +19514,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_next3m",
+ 							"name": "tt4_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -19570,7 +19570,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_next3m",
+ 							"name": "tt4_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -19625,7 +19625,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_next3m",
+ 							"name": "tt4_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -19681,7 +19681,7 @@
  							}
  						},
  						{
- 							"name": "tt4_financing_situation_pricing_next3m",
+ 							"name": "tt4_q31_financing_situation_pricing_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -19927,7 +19927,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_deal_quality_past3m",
+ 							"name": "tt1_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -19984,7 +19984,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_past3m",
+ 							"name": "tt1_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20040,7 +20040,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_past3m",
+ 							"name": "tt1_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -20095,7 +20095,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_past3m",
+ 							"name": "tt1_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20151,7 +20151,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_past3m",
+ 							"name": "tt1_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -20208,7 +20208,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_past3m",
+ 							"name": "tt2_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -20265,7 +20265,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_past3m",
+ 							"name": "tt2_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20321,7 +20321,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_past3m",
+ 							"name": "tt2_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -20376,7 +20376,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_past3m",
+ 							"name": "tt2_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20432,7 +20432,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_past3m",
+ 							"name": "tt2_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -20489,7 +20489,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_past3m",
+ 							"name": "tt3_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -20546,7 +20546,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_past3m",
+ 							"name": "tt3_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20602,7 +20602,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_past3m",
+ 							"name": "tt3_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -20657,7 +20657,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_past3m",
+ 							"name": "tt3_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20713,7 +20713,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_past3m",
+ 							"name": "tt3_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -20770,7 +20770,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_past3m",
+ 							"name": "tt4_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -20827,7 +20827,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_past3m",
+ 							"name": "tt4_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20883,7 +20883,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_past3m",
+ 							"name": "tt4_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -20938,7 +20938,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_past3m",
+ 							"name": "tt4_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -20994,7 +20994,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_past3m",
+ 							"name": "tt4_q32_deal_quality_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -21225,7 +21225,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_deal_quality_next3m",
+ 							"name": "tt1_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -21282,7 +21282,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_next3m",
+ 							"name": "tt1_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -21338,7 +21338,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_next3m",
+ 							"name": "tt1_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -21393,7 +21393,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_next3m",
+ 							"name": "tt1_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -21449,7 +21449,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_quality_next3m",
+ 							"name": "tt1_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -21506,7 +21506,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_next3m",
+ 							"name": "tt2_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -21563,7 +21563,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_next3m",
+ 							"name": "tt2_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -21619,7 +21619,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_next3m",
+ 							"name": "tt2_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -21674,7 +21674,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_next3m",
+ 							"name": "tt2_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -21730,7 +21730,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_quality_next3m",
+ 							"name": "tt2_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -21787,7 +21787,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_next3m",
+ 							"name": "tt3_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -21844,7 +21844,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_next3m",
+ 							"name": "tt3_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -21900,7 +21900,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_next3m",
+ 							"name": "tt3_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -21955,7 +21955,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_next3m",
+ 							"name": "tt3_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -22011,7 +22011,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_quality_next3m",
+ 							"name": "tt3_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -22068,7 +22068,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_next3m",
+ 							"name": "tt4_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -22125,7 +22125,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_next3m",
+ 							"name": "tt4_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -22181,7 +22181,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_next3m",
+ 							"name": "tt4_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -22236,7 +22236,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_next3m",
+ 							"name": "tt4_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -22292,7 +22292,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_quality_next3m",
+ 							"name": "tt4_q32_deal_quality_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -22538,7 +22538,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_deal_documentation_past3m",
+ 							"name": "tt1_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -22595,7 +22595,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_past3m",
+ 							"name": "tt1_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -22651,7 +22651,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_past3m",
+ 							"name": "tt1_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -22706,7 +22706,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_past3m",
+ 							"name": "tt1_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -22762,7 +22762,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_past3m",
+ 							"name": "tt1_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -22819,7 +22819,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_past3m",
+ 							"name": "tt2_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -22876,7 +22876,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_past3m",
+ 							"name": "tt2_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -22932,7 +22932,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_past3m",
+ 							"name": "tt2_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -22987,7 +22987,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_past3m",
+ 							"name": "tt2_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -23043,7 +23043,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_past3m",
+ 							"name": "tt2_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -23100,7 +23100,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_past3m",
+ 							"name": "tt3_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -23157,7 +23157,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_past3m",
+ 							"name": "tt3_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -23213,7 +23213,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_past3m",
+ 							"name": "tt3_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -23268,7 +23268,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_past3m",
+ 							"name": "tt3_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -23324,7 +23324,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_past3m",
+ 							"name": "tt3_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -23381,7 +23381,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_past3m",
+ 							"name": "tt4_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -23438,7 +23438,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_past3m",
+ 							"name": "tt4_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -23494,7 +23494,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_past3m",
+ 							"name": "tt4_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -23549,7 +23549,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_past3m",
+ 							"name": "tt4_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -23605,7 +23605,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_past3m",
+ 							"name": "tt4_q33_deal_documentation_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -23836,7 +23836,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_deal_documentation_next3m",
+ 							"name": "tt1_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -23893,7 +23893,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_next3m",
+ 							"name": "tt1_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -23949,7 +23949,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_next3m",
+ 							"name": "tt1_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -24004,7 +24004,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_next3m",
+ 							"name": "tt1_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24060,7 +24060,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_documentation_next3m",
+ 							"name": "tt1_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -24117,7 +24117,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_next3m",
+ 							"name": "tt2_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -24174,7 +24174,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_next3m",
+ 							"name": "tt2_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24230,7 +24230,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_next3m",
+ 							"name": "tt2_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -24285,7 +24285,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_next3m",
+ 							"name": "tt2_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24341,7 +24341,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_documentation_next3m",
+ 							"name": "tt2_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -24398,7 +24398,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_next3m",
+ 							"name": "tt3_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -24455,7 +24455,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_next3m",
+ 							"name": "tt3_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24511,7 +24511,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_next3m",
+ 							"name": "tt3_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -24566,7 +24566,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_next3m",
+ 							"name": "tt3_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24622,7 +24622,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_documentation_next3m",
+ 							"name": "tt3_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -24679,7 +24679,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_next3m",
+ 							"name": "tt4_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -24736,7 +24736,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_next3m",
+ 							"name": "tt4_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24792,7 +24792,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_next3m",
+ 							"name": "tt4_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -24847,7 +24847,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_next3m",
+ 							"name": "tt4_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -24903,7 +24903,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_documentation_next3m",
+ 							"name": "tt4_q33_deal_documentation_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -25149,7 +25149,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_deal_amount_past3m",
+ 							"name": "tt1_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -25206,7 +25206,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_past3m",
+ 							"name": "tt1_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -25262,7 +25262,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_past3m",
+ 							"name": "tt1_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -25317,7 +25317,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_past3m",
+ 							"name": "tt1_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -25373,7 +25373,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_past3m",
+ 							"name": "tt1_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -25430,7 +25430,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_past3m",
+ 							"name": "tt2_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -25487,7 +25487,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_past3m",
+ 							"name": "tt2_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -25543,7 +25543,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_past3m",
+ 							"name": "tt2_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -25598,7 +25598,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_past3m",
+ 							"name": "tt2_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -25654,7 +25654,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_past3m",
+ 							"name": "tt2_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -25711,7 +25711,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_past3m",
+ 							"name": "tt3_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -25768,7 +25768,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_past3m",
+ 							"name": "tt3_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -25824,7 +25824,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_past3m",
+ 							"name": "tt3_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -25879,7 +25879,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_past3m",
+ 							"name": "tt3_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -25935,7 +25935,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_past3m",
+ 							"name": "tt3_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -25992,7 +25992,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_past3m",
+ 							"name": "tt4_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -26049,7 +26049,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_past3m",
+ 							"name": "tt4_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -26105,7 +26105,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_past3m",
+ 							"name": "tt4_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -26160,7 +26160,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_past3m",
+ 							"name": "tt4_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -26216,7 +26216,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_past3m",
+ 							"name": "tt4_q34_deal_amount_past3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -26447,7 +26447,7 @@
  					"columns": 40,
  					"inputs": [
  						{
- 							"name": "tt1_deal_amount_next3m",
+ 							"name": "tt1_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -26504,7 +26504,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_next3m",
+ 							"name": "tt1_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -26560,7 +26560,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_next3m",
+ 							"name": "tt1_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -26615,7 +26615,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_next3m",
+ 							"name": "tt1_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -26671,7 +26671,7 @@
  							}
  						},
  						{
- 							"name": "tt1_deal_amount_next3m",
+ 							"name": "tt1_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -26728,7 +26728,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_next3m",
+ 							"name": "tt2_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -26785,7 +26785,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_next3m",
+ 							"name": "tt2_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -26841,7 +26841,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_next3m",
+ 							"name": "tt2_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -26896,7 +26896,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_next3m",
+ 							"name": "tt2_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -26952,7 +26952,7 @@
  							}
  						},
  						{
- 							"name": "tt2_deal_amount_next3m",
+ 							"name": "tt2_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -27009,7 +27009,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_next3m",
+ 							"name": "tt3_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -27066,7 +27066,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_next3m",
+ 							"name": "tt3_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -27122,7 +27122,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_next3m",
+ 							"name": "tt3_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -27177,7 +27177,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_next3m",
+ 							"name": "tt3_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -27233,7 +27233,7 @@
  							}
  						},
  						{
- 							"name": "tt3_deal_amount_next3m",
+ 							"name": "tt3_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -27290,7 +27290,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_next3m",
+ 							"name": "tt4_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Im\u0026shy;proved",
@@ -27347,7 +27347,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_next3m",
+ 							"name": "tt4_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -27403,7 +27403,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_next3m",
+ 							"name": "tt4_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "Same",
@@ -27458,7 +27458,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_next3m",
+ 							"name": "tt4_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "\u0026nbsp;",
@@ -27514,7 +27514,7 @@
  							}
  						},
  						{
- 							"name": "tt4_deal_amount_next3m",
+ 							"name": "tt4_q34_deal_amount_next3m",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;clined",
@@ -27734,8 +27734,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Busi\u0026shy;ness cycle",
- 								"en": "Busi\u0026shy;ness cycle"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27745,27 +27745,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "business_cycle"
+ 							"value_radio": "411_business_cycle"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "business_cycle"
+ 							"value_radio": "411_business_cycle"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "business_cycle"
+ 							"value_radio": "411_business_cycle"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Interest rates",
- 								"en": "Interest rates"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27775,27 +27775,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "interest_rates"
+ 							"value_radio": "412_interest_rates"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "interest_rates"
+ 							"value_radio": "412_interest_rates"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "interest_rates"
+ 							"value_radio": "412_interest_rates"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/deflation",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/deflation"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27805,27 +27805,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "inflation_deflation"
+ 							"value_radio": "413_inflation_deflation"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "inflation_deflation"
+ 							"value_radio": "413_inflation_deflation"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "inflation_deflation"
+ 							"value_radio": "413_inflation_deflation"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Demographics",
- 								"en": "Demographics"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27835,27 +27835,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "demographics"
+ 							"value_radio": "414_demographics"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "demographics"
+ 							"value_radio": "414_demographics"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "demographics"
+ 							"value_radio": "414_demographics"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Supply chains",
- 								"en": "Supply chains"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27865,27 +27865,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "supply_chains"
+ 							"value_radio": "415_supply_chains"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "supply_chains"
+ 							"value_radio": "415_supply_chains"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "supply_chains"
+ 							"value_radio": "415_supply_chains"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Health issues",
- 								"en": "Health issues"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27895,27 +27895,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "health_issues"
+ 							"value_radio": "416_health_issues"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "health_issues"
+ 							"value_radio": "416_health_issues"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "health_issues"
+ 							"value_radio": "416_health_issues"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Regulatory environ\u0026shy;ment",
- 								"en": "Regulatory environ\u0026shy;ment"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -27925,29 +27925,29 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "regulatory_environment"
+ 							"value_radio": "417_regulatory_environment"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "regulatory_environment"
+ 							"value_radio": "417_regulatory_environment"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "regulatory_environment"
+ 							"value_radio": "417_regulatory_environment"
  						},
  						{
  							"name": "risks_label",
  							"type": "text",
  							"max_chars": 18,
  							"label": {
- 								"de": "Other",
- 								"en": "Other"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 2,
@@ -27974,21 +27974,21 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"value_radio": "418_other"
  						},
  						{
  							"name": "risks_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"value_radio": "418_other"
  						},
  						{
  							"name": "risks_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"value_radio": "418_other"
  						},
  						{
  							"name": "prio123",
@@ -28135,8 +28135,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Energy",
- 								"en": "Energy"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28146,27 +28146,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "energy"
+ 							"value_radio": "q4201_energy"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "energy"
+ 							"value_radio": "q4201_energy"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "energy"
+ 							"value_radio": "q4201_energy"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Materials",
- 								"en": "Materials"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28176,27 +28176,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "materials"
+ 							"value_radio": "q4202_materials"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "materials"
+ 							"value_radio": "q4202_materials"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "materials"
+ 							"value_radio": "q4202_materials"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "In\u0026shy;dus\u0026shy;tri\u0026shy;als",
- 								"en": "In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28206,27 +28206,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "industrials"
+ 							"value_radio": "q4203_industrials"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "industrials"
+ 							"value_radio": "q4203_industrials"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "industrials"
+ 							"value_radio": "q4203_industrials"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Cons\u0026shy;umer discretionary",
- 								"en": "Cons\u0026shy;umer discretionary"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28236,27 +28236,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "consumer_discretionary"
+ 							"value_radio": "q4204_consumer_discretionary"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "consumer_discretionary"
+ 							"value_radio": "q4204_consumer_discretionary"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "consumer_discretionary"
+ 							"value_radio": "q4204_consumer_discretionary"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Cons\u0026shy;umer staples",
- 								"en": "Cons\u0026shy;umer staples"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28266,27 +28266,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "consumer_staples"
+ 							"value_radio": "q4205_consumer_staples"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "consumer_staples"
+ 							"value_radio": "q4205_consumer_staples"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "consumer_staples"
+ 							"value_radio": "q4205_consumer_staples"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Health care",
- 								"en": "Health care"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28296,27 +28296,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "health_care"
+ 							"value_radio": "q4206_health_care"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "health_care"
+ 							"value_radio": "q4206_health_care"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "health_care"
+ 							"value_radio": "q4206_health_care"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Financials",
- 								"en": "Financials"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28326,27 +28326,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "financials"
+ 							"value_radio": "q4207_financials"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "financials"
+ 							"value_radio": "q4207_financials"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "financials"
+ 							"value_radio": "q4207_financials"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Information technology",
- 								"en": "Information technology"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28356,27 +28356,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "information_technology"
+ 							"value_radio": "q4208_information_technology"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "information_technology"
+ 							"value_radio": "q4208_information_technology"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "information_technology"
+ 							"value_radio": "q4208_information_technology"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion services",
- 								"en": "Com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion services"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28386,27 +28386,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "communication_services"
+ 							"value_radio": "q4209_communication_services"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "communication_services"
+ 							"value_radio": "q4209_communication_services"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "communication_services"
+ 							"value_radio": "q4209_communication_services"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Utilities",
- 								"en": "Utilities"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28416,27 +28416,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "utilities"
+ 							"value_radio": "q4210_utilities"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "utilities"
+ 							"value_radio": "q4210_utilities"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "utilities"
+ 							"value_radio": "q4210_utilities"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Real estate",
- 								"en": "Real estate"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28446,21 +28446,21 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "real_estate"
+ 							"value_radio": "q4211_real_estate"
  						},
  						{
  							"name": "gicsprio_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "real_estate"
+ 							"value_radio": "q4211_real_estate"
  						},
  						{
  							"name": "gicsprio_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "real_estate"
+ 							"value_radio": "q4211_real_estate"
  						},
  						{
  							"name": "prio123",
@@ -28501,7 +28501,7 @@
  					"columns": 10,
  					"inputs": [
  						{
- 							"name": "esg_importance1",
+ 							"name": "q43_esg_importance",
  							"type": "radio",
  							"label": {
  								"de": "Not re\u0026shy;le\u0026shy;vant\u003cbr\u003e(1)",
@@ -28553,7 +28553,7 @@
  							}
  						},
  						{
- 							"name": "esg_importance1",
+ 							"name": "q43_esg_importance",
  							"type": "radio",
  							"label": {
  								"de": "(2)",
@@ -28605,7 +28605,7 @@
  							}
  						},
  						{
- 							"name": "esg_importance1",
+ 							"name": "q43_esg_importance",
  							"type": "radio",
  							"label": {
  								"de": "(3)",
@@ -28657,7 +28657,7 @@
  							}
  						},
  						{
- 							"name": "esg_importance1",
+ 							"name": "q43_esg_importance",
  							"type": "radio",
  							"label": {
  								"de": "(4)",
@@ -28709,7 +28709,7 @@
  							}
  						},
  						{
- 							"name": "esg_importance1",
+ 							"name": "q43_esg_importance",
  							"type": "radio",
  							"label": {
  								"de": "Potential dealbreaker\u003cbr\u003e(5)",
@@ -28888,8 +28888,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "ESG data availability",
- 								"en": "ESG data availability"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28899,27 +28899,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "availability"
+ 							"value_radio": "q441_availability"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "availability"
+ 							"value_radio": "q441_availability"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "availability"
+ 							"value_radio": "q441_availability"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "ESG data quality",
- 								"en": "ESG data quality"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28929,27 +28929,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "quality"
+ 							"value_radio": "q442_quality"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "quality"
+ 							"value_radio": "q442_quality"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "quality"
+ 							"value_radio": "q442_quality"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Concerns about performance/sacrificing returns",
- 								"en": "Concerns about performance/sacrificing returns"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28959,27 +28959,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "performance"
+ 							"value_radio": "q443_performance"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "performance"
+ 							"value_radio": "q443_performance"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "performance"
+ 							"value_radio": "q443_performance"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Concerns about greenwashing",
- 								"en": "Concerns about greenwashing"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -28989,27 +28989,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "greenwashing"
+ 							"value_radio": "q444_greenwashing"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "greenwashing"
+ 							"value_radio": "q444_greenwashing"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "greenwashing"
+ 							"value_radio": "q444_greenwashing"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Complex regulatory landscape",
- 								"en": "Complex regulatory landscape"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29019,27 +29019,27 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "regulation"
+ 							"value_radio": "q445_regulation"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "regulation"
+ 							"value_radio": "q445_regulation"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "regulation"
+ 							"value_radio": "q445_regulation"
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Lack of suitable in\u0026shy;vest\u0026shy;ments",
- 								"en": "Lack of suitable in\u0026shy;vest\u0026shy;ments"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29049,29 +29049,29 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "opportunities"
+ 							"value_radio": "q446_opportunities"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "opportunities"
+ 							"value_radio": "q446_opportunities"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "opportunities"
+ 							"value_radio": "q446_opportunities"
  						},
  						{
  							"name": "esg_challenge_label",
  							"type": "text",
  							"max_chars": 18,
  							"label": {
- 								"de": "Other",
- 								"en": "Other"
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 3,
  							"col_span_label": 2,
@@ -29098,21 +29098,21 @@
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"value_radio": "q447_other"
  						},
  						{
  							"name": "esg_challenge_prio2",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"value_radio": "q447_other"
  						},
  						{
  							"name": "esg_challenge_prio3",
  							"type": "radio",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"value_radio": "q447_other"
  						},
  						{
  							"name": "prio123",
@@ -29153,7 +29153,7 @@
  					"columns": 2,
  					"inputs": [
  						{
- 							"name": "poverty",
+ 							"name": "q4501_poverty",
  							"type": "checkbox",
  							"label": {
  								"de": "No poverty",
@@ -29181,7 +29181,7 @@
  							}
  						},
  						{
- 							"name": "hunger",
+ 							"name": "q4502_hunger",
  							"type": "checkbox",
  							"label": {
  								"de": "Zero hunger",
@@ -29209,7 +29209,7 @@
  							}
  						},
  						{
- 							"name": "health",
+ 							"name": "q4503_health",
  							"type": "checkbox",
  							"label": {
  								"de": "Good health and well-being",
@@ -29237,7 +29237,7 @@
  							}
  						},
  						{
- 							"name": "education",
+ 							"name": "q4504_education",
  							"type": "checkbox",
  							"label": {
  								"de": "Quality education",
@@ -29265,7 +29265,7 @@
  							}
  						},
  						{
- 							"name": "gender_eq",
+ 							"name": "q4505_gender_eq",
  							"type": "checkbox",
  							"label": {
  								"de": "Gender equality",
@@ -29293,7 +29293,7 @@
  							}
  						},
  						{
- 							"name": "water",
+ 							"name": "q4506_water",
  							"type": "checkbox",
  							"label": {
  								"de": "Clean water and sanitation",
@@ -29321,7 +29321,7 @@
  							}
  						},
  						{
- 							"name": "energy",
+ 							"name": "q4507_energy",
  							"type": "checkbox",
  							"label": {
  								"de": "Affordable and clean energy",
@@ -29349,7 +29349,7 @@
  							}
  						},
  						{
- 							"name": "work",
+ 							"name": "q4508_work",
  							"type": "checkbox",
  							"label": {
  								"de": "Decent work and eco\u0026shy;nom\u0026shy;ic growth",
@@ -29377,7 +29377,7 @@
  							}
  						},
  						{
- 							"name": "industry",
+ 							"name": "q4509_industry",
  							"type": "checkbox",
  							"label": {
  								"de": "Industry innovation and infrastructure",
@@ -29405,7 +29405,7 @@
  							}
  						},
  						{
- 							"name": "inequality",
+ 							"name": "q4510_inequality",
  							"type": "checkbox",
  							"label": {
  								"de": "Re\u0026shy;duce inequality",
@@ -29433,7 +29433,7 @@
  							}
  						},
  						{
- 							"name": "communities",
+ 							"name": "q4511_communities",
  							"type": "checkbox",
  							"label": {
  								"de": "Sustainable cities and communities",
@@ -29461,7 +29461,7 @@
  							}
  						},
  						{
- 							"name": "responsible",
+ 							"name": "q4512_responsible",
  							"type": "checkbox",
  							"label": {
  								"de": "Responsible consumption and production",
@@ -29489,7 +29489,7 @@
  							}
  						},
  						{
- 							"name": "climate",
+ 							"name": "q4513_climate",
  							"type": "checkbox",
  							"label": {
  								"de": "Climate action",
@@ -29517,7 +29517,7 @@
  							}
  						},
  						{
- 							"name": "life_water",
+ 							"name": "q4514_life_water",
  							"type": "checkbox",
  							"label": {
  								"de": "Life be\u0026shy;low water",
@@ -29545,7 +29545,7 @@
  							}
  						},
  						{
- 							"name": "life_land",
+ 							"name": "q4515_life_land",
  							"type": "checkbox",
  							"label": {
  								"de": "Life on land",
@@ -29573,7 +29573,7 @@
  							}
  						},
  						{
- 							"name": "peace",
+ 							"name": "q4516_peace",
  							"type": "checkbox",
  							"label": {
  								"de": "Peace, justice and strong institutions",
@@ -29601,7 +29601,7 @@
  							}
  						},
  						{
- 							"name": "partnership",
+ 							"name": "q4517_partnership",
  							"type": "checkbox",
  							"label": {
  								"de": "Partnership for the goals",
@@ -29672,7 +29672,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "q44_dsgvo",
+ 							"name": "q61_dsgvo",
  							"type": "checkbox",
  							"label": {
  								"en": "\n\t\t\t\t\t\tTodo: Abstimmung des exakten Textes zwi\u0026shy;schen ZEW und Partner\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;ga\u0026shy;ben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür [Private Debt Survey] des [ZEW] verwendet werden.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
@@ -29730,7 +29730,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q45",
+ 							"name": "q62_sharing",
  							"type": "radio",
  							"label": {
  								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen Da\u0026shy;ten zu Auswertungszwecken an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
@@ -29775,7 +29775,7 @@
  							}
  						},
  						{
- 							"name": "q45",
+ 							"name": "q62_sharing",
  							"type": "radio",
  							"label": {
  								"en": "Meine Da\u0026shy;ten sollen \u003ci\u003enicht\u003c/i\u003e an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"

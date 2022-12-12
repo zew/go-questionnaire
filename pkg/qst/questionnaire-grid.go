@@ -449,12 +449,12 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			dirty = " data-dirty='false' "
 		}
 
-		// remedy 2: An "empty catcher" hidden input
-		// see below
-		// just as with checkboxes, the empty catcher must _succeed_ corresponding range,
-		// empty catcher: see above;
-		// _after_ the input-wrapper;
-		// because input-wrapper is display=flex and column-reverse
+		// remedy 2: An "empty catcher" hidden input;
+		// with checkboxes, the empty catcher must _succeed_ corresponding input,
+		// since http.Form.Get() fetches the first value.
+
+		// in the range case, this is not true; instead it _precedes_ the corresponding input;
+		// is it because input-wrapper is display=flex and column-reverse?
 		if inp.Response == "" {
 			ctrl += fmt.Sprintf(
 				`<input type='hidden' name='%v' id='%v_hidd' value='' />`,
@@ -483,13 +483,20 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			if inp.Step < 1.0 {
 				floatFormatter = "%.1f"
 			}
-			if inp.Step < 0.1 {
+			if inp.Step <= 0.5 {
 				floatFormatter = "%.2f"
 			}
-			fmStr := fmt.Sprintf("%v - %v", floatFormatter, floatFormatter)
+			if inp.Step <= 0.05 {
+				floatFormatter = "%.3f"
+			}
+			// fmStr := fmt.Sprintf("%v - %v", floatFormatter, floatFormatter)
 			resp, _ := strconv.ParseFloat(inp.Response, 64)
+			lower := fmt.Sprintf(floatFormatter, resp)
+			upper := fmt.Sprintf(floatFormatter, resp+inp.Step)
 			// log.Printf("float formatter for %v, %v \n\t\t%v", resp, resp+inp.Step, fmStr)
-			dispVal = fmt.Sprintf(fmStr, resp, resp+inp.Step)
+			lower = humanizeRangeDisplay(lower)
+			upper = humanizeRangeDisplay(upper)
+			dispVal = fmt.Sprintf("%v - %v", lower, upper)
 		}
 
 		//
@@ -597,18 +604,6 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		ctrl += `</div>` // /input-wrapper
 
 		inp.Suffix = trl.S{} // delete - since range writes its own suffix
-
-		/*
-			// empty catcher: see above;
-			// _after_ the input-wrapper;
-			// because input-wrapper is display=flex and column-reverse
-			if inp.Response == "" {
-				ctrl += fmt.Sprintf(
-					`<input type='hidden' name='%v' id='%v_hidd' value='' />`,
-					nm, nm,
-				)
-			}
-		*/
 
 		if false {
 			// render JS;
@@ -722,7 +717,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			rspvl, checked, disabled,
 		)
 
-		// the checkbox "empty catcher" must follow *after* the actual checkbox input,
+		// the checkbox "empty catcher" must follow _after_ the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
 		if inp.Type == "checkbox" {
 			ctrl += fmt.Sprintf(
@@ -900,4 +895,30 @@ func (inp *inputT) rangeLabels() string {
 
 	return core.String()
 
+}
+
+// for range inputs, we have a display panel;
+// we want to chop off decimal digits like follows
+//
+//	1.25 - 1.5
+//	1.5  - 1.75
+//	1.75 - 2
+func humanizeRangeDisplay(s string) string {
+
+	if !strings.Contains(s, ".") {
+		return s
+	}
+
+	for len(s) > 0 {
+		// fmt.Print(s[len(s)-1:], "\n")
+		if s[len(s)-1:] == "0" {
+			s = s[:len(s)-1]
+		} else if s[len(s)-1:] == "." {
+			s = s[:len(s)-1]
+			break
+		} else {
+			break
+		}
+	}
+	return s
 }

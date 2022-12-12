@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "40a4f9190361c0142af7a9614e3806009eca99f489130a1cf076af5be84ecf39",
+ 	"md_5": "6372606227238817637dc6d74b14ffb00a3f4e60996b10d4147dc83cb456506d",
  	"lang_codes": [
  		"en"
  	],
@@ -132,239 +132,6 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents.",
- 								"en": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents."
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 16,
- 					"inputs": [
- 						{
- 							"name": "q02_teamsize",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u003c5",
- 								"en": "\u003c5"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.3rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end",
- 										"order": 2
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q02_teamsize",
- 							"type": "radio",
- 							"label": {
- 								"de": "5-10",
- 								"en": "5-10"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.3rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end",
- 										"order": 2
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q02_teamsize",
- 							"type": "radio",
- 							"label": {
- 								"de": "11-20",
- 								"en": "11-20"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.3rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end",
- 										"order": 2
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q02_teamsize",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u003e20",
- 								"en": "\u003e20"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.3rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end",
- 										"order": 2
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
  					"columns": 1,
  					"inputs": [
  						{
@@ -379,7 +146,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"columns": 5,
  					"inputs": [
  						{
@@ -670,11 +437,267 @@
  							}
  						},
  						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents.",
+ 								"en": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents."
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q032_ac1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003c5",
+ 								"en": "\u003c5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "5-10",
+ 								"en": "5-10"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "11-20",
+ 								"en": "11-20"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e20",
+ 								"en": "\u003e20"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.05rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
  							"name": "q03_ac2_realestate",
  							"type": "checkbox",
  							"label": {
  								"de": "Real estate debt",
- 								"en": "Real estate debt - starting Q1-23?"
+ 								"en": "Real estate debt\u003cbr\u003e \u003cspan style=font-size:80%\u003e(not yet included in following pages)\u003c/span\u003e"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -853,11 +876,277 @@
  							}
  						},
  						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents.",
+ 								"en": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents."
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q032_ac2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003c5",
+ 								"en": "\u003c5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "5-10",
+ 								"en": "5-10"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "11-20",
+ 								"en": "11-20"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e20",
+ 								"en": "\u003e20"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.05rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
  							"name": "q03_ac3_infrastruct",
  							"type": "checkbox",
  							"label": {
  								"de": "Infrastructure debt",
- 								"en": "Infrastructure debt - starting Q1-23?"
+ 								"en": "Infrastructure debt\u003cbr\u003e \u003cspan style=font-size:80%\u003e(not yet included in following pages)\u003c/span\u003e"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -1024,6 +1313,250 @@
  									},
  									"text_style": {
  										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents.",
+ 								"en": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents."
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q032_ac3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003c5",
+ 								"en": "\u003c5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "5-10",
+ 								"en": "5-10"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "11-20",
+ 								"en": "11-20"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q032_ac3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e20",
+ 								"en": "\u003e20"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
  										"align_horizontal": "center"
  									}
  								},

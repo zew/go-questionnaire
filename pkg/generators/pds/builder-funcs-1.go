@@ -35,15 +35,16 @@ func checkBoxCascade(
 
 	}
 
-	// gr2
-	{
+	// gr2,3,4
+
+	for idx1 := 0; idx1 < len(inpsL1); idx1++ {
+
 		gr := page.AddGroup()
 		gr.Cols = numCols
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleGridContainer.GapRow = "0.05rem"
-
-		for idx1 := 0; idx1 < len(inpsL1); idx1++ {
-
+		gr.BottomVSpacers = 2
+		{
 			ttPrefL1 := inpsL1[idx1][:3] // ac1, ac2, ac3
 
 			// row1
@@ -53,7 +54,10 @@ func checkBoxCascade(
 				inp.Name = "q03_" + inpsL1[idx1]
 				inp.Label = lblsL1[idx1]
 				if idx1 > 0 {
-					inp.Label["en"] = inp.Label["en"] + " - starting Q1-23?"
+					// inp.Label["en"] += " - starting Q1-23?"
+				}
+				if idx1 > 0 {
+					inp.Label["en"] += "<br> <span style=font-size:80%>(not yet included in following pages)</span>"
 				}
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 10
@@ -64,7 +68,10 @@ func checkBoxCascade(
 				inp.Style.Desktop.StyleBox.Margin = "0.4rem 0 0 0"
 			}
 
+			//
+			//
 			// row2
+			// 		indented label
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -82,10 +89,7 @@ func checkBoxCascade(
 				inp.ColSpanLabel = 1
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleText.FontSize = 85
-				// inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-				// inp.StyleLbl.Desktop.StyleBox.Top = "0.2rem"
 			}
-
 			// row3
 			// 		indented level2
 			{
@@ -113,7 +117,7 @@ func checkBoxCascade(
 
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = fmt.Sprintf("q031_%v_", ttPrefL1) + inpsL2[idx2]
+				inp.Name = fmt.Sprintf("q031_%v_%v", ttPrefL1, inpsL2[idx2])
 				inp.Label = lblsL2[idx2]
 				inp.ColSpan = 1
 				inp.ColSpanControl = 1
@@ -127,7 +131,89 @@ func checkBoxCascade(
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleText.FontSize = 90
 			}
+			if len(inpsL2) == 2 {
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 1
+				}
+			}
+
+			//
+			//
+			// row4
+			// 		indented label
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 4
+				inp.Label = trl.S{
+					"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
+					"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
+				}
+				inp.ColSpanLabel = 1
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleText.FontSize = 85
+
+				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+				inp.StyleLbl.Desktop.StyleBox.Top = "0.3rem"
+
+			}
+			// row5
+			// 		indented level2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+			for idx2 := 0; idx2 < len(allLbls["teamsize"]); idx2++ {
+				inp := gr.AddInput()
+				inp.Type = "radio"
+				// inp.Name = fmt.Sprintf("%v", nm)
+				inp.Name = fmt.Sprintf("q032_%v", ttPrefL1)
+				// inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
+				inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
+				inp.Label = allLbls["teamsize"][idx2]
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				inp.Vertical()
+				inp.VerticalLabel()
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				if false {
+					inp.StyleLbl.Desktop.StyleGridItem.Order = 2
+					inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+					inp.StyleLbl.Desktop.StyleBox.Top = "-0.3rem"
+				} else {
+					// top
+					// inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+					// inp.StyleLbl.Desktop.StyleBox.Top = "0.4rem"
+				}
+			}
+
+			// radiosSingleRow(
+			// 	page,
+			// 	fmt.Sprintf("q031_%v", ttPrefL1),
+			// 	// "q02_teamsize",
+			// 	lblMain,
+			// 	mCh2,
+			// )
 
 		}
+
 	}
 }

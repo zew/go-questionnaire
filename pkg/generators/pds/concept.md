@@ -78,23 +78,20 @@ Infrastructure
 
 Done
 
+* Page2: Employee-Number for each asset class
 * All pages: Tranche names aligned
-* Question "Weeks to closing": As dropdown
-* Slider: Display "from - to" width changes width as needed
-* Slider: Ticks corrected 
-* Slider: Init state and no-answer state
-
-* Testing on Firefox, Chrome, Edge, Opera, Mac-Safari; desktop versions only
-
+* Page2: Question "Weeks to closing": As dropdown
+* Sliders: Display "from - to" width changes as needed
+* Sliders: Ticks complete
+* Sliders: Init state and no-answer state complete
+* Tested on Firefox, Chrome, Edge, Opera, Mac-Safari;  
+  desktop versions only
 * Internal names of all questions sequentially numbered
-
-
 
 Todo
 
-* Employee-Number for each asset class
-
-* Frage zum Konzept-Update 2022-11-28_ZEW_Survey.xlsx
-   Reiter 'Real Estate Debt' und 'Infrastructure Debt'  
-   sind _nur_ die fett markierten Fragen unterschiedlich zu 'Direct Lending'?
+* Frage an Prime Capital zum Konzept-Update 2022-11-28_ZEW_Survey.xlsx:
+   Die Reiter 'Real Estate Debt' und 'Infrastructure Debt'  
+   sind _nur_ bei den fett markierten Fragen unterschiedlich zu 'Direct Lending'?  
+   Oder gibt's noch andere Unterschiede?
 

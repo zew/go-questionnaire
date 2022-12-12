@@ -111,7 +111,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		// gr2
-		{
+		if false {
 			lblMain := trl.S{
 				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
@@ -124,35 +124,35 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 		}
 
-		if false {
-			// gr3
-			{
-				lblMain := trl.S{
-					"en": `Which asset classes do you invest in?`,
-					"de": `Wählen Sie Ihre Assetklassen.`,
-				}
-				checkBoxRow(
-					qst.WrapPageT(page),
-					lblMain,
-					assetClassesInputs,
-					assetClassesLabels,
-				)
-			}
+		// if false {
+		// 	// gr3
+		// 	{
+		// 		lblMain := trl.S{
+		// 			"en": `Which asset classes do you invest in?`,
+		// 			"de": `Wählen Sie Ihre Assetklassen.`,
+		// 		}
+		// 		checkBoxRow(
+		// 			qst.WrapPageT(page),
+		// 			lblMain,
+		// 			assetClassesInputs,
+		// 			assetClassesLabels,
+		// 		)
+		// 	}
 
-			// gr4
-			{
-				lblMain := trl.S{
-					"en": `Your  strategies`,
-					"de": `Ihre Strategie`,
-				}
-				checkBoxRow(
-					qst.WrapPageT(page),
-					lblMain,
-					trancheTypeNamesAC1,
-					allLbls["ac1-tranche-types"],
-				)
-			}
-		}
+		// 	// gr4
+		// 	{
+		// 		lblMain := trl.S{
+		// 			"en": `Your  strategies`,
+		// 			"de": `Ihre Strategie`,
+		// 		}
+		// 		checkBoxRow(
+		// 			qst.WrapPageT(page),
+		// 			lblMain,
+		// 			trancheTypeNamesAC1,
+		// 			allLbls["ac1-tranche-types"],
+		// 		)
+		// 	}
+		// }
 
 		//
 		// gr5

@@ -957,14 +957,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 
 			lbls := map[string]string{
-				"business_cycle":         "Business cycle",
-				"interest_rates":         "Interest rates",
-				"inflation_deflation":    "Inflation/deflation",
-				"demographics":           "Demographics",
-				"supply_chains":          "Supply chains",
-				"health_issues":          "Health issues",
-				"regulatory_environment": "Regulatory environment",
-				"other":                  "Other",
+				"411_business_cycle":         "Business cycle",
+				"412_interest_rates":         "Interest rates",
+				"413_inflation_deflation":    "Inflation/deflation",
+				"414_demographics":           "Demographics",
+				"415_supply_chains":          "Supply chains",
+				"416_health_issues":          "Health issues",
+				"417_regulatory_environment": "Regulatory environment",
+				"418_other":                  "Other",
 			}
 
 			lblMain := trl.S{
@@ -992,17 +992,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 
 			lbls := map[string]string{
-				"energy":                 "Energy",
-				"materials":              "Materials",
-				"industrials":            "Industrials",
-				"consumer_discretionary": "Consumer discretionary",
-				"consumer_staples":       "Consumer staples",
-				"health_care":            "Health care",
-				"financials":             "Financials",
-				"information_technology": "Information technology",
-				"communication_services": "Communication services",
-				"utilities":              "Utilities",
-				"real_estate":            "Real estate",
+				"q4201_energy":                 "Energy",
+				"q4202_materials":              "Materials",
+				"q4203_industrials":            "Industrials",
+				"q4204_consumer_discretionary": "Consumer discretionary",
+				"q4205_consumer_staples":       "Consumer staples",
+				"q4206_health_care":            "Health care",
+				"q4207_financials":             "Financials",
+				"q4208_information_technology": "Information technology",
+				"q4209_communication_services": "Communication services",
+				"q4210_utilities":              "Utilities",
+				"q4211_real_estate":            "Real estate",
 			}
 
 			lblMain := trl.S{
@@ -1051,13 +1051,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 
 			lbls := map[string]string{
-				"availability":  "ESG data availability",
-				"quality":       "ESG data quality",
-				"performance":   "Concerns about performance/sacrificing returns",
-				"greenwashing":  "Concerns about greenwashing",
-				"regulation":    "Complex regulatory landscape",
-				"opportunities": "Lack of suitable investments",
-				"other":         "Other",
+				"q441_availability":  "ESG data availability",
+				"q442_quality":       "ESG data quality",
+				"q443_performance":   "Concerns about performance/sacrificing returns",
+				"q444_greenwashing":  "Concerns about greenwashing",
+				"q445_regulation":    "Complex regulatory landscape",
+				"q446_opportunities": "Lack of suitable investments",
+				"q447_other":         "Other",
 			}
 
 			lblMain := trl.S{

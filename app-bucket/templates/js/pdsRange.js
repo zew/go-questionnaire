@@ -108,6 +108,11 @@ function pdsRangeClick(src) {
     src.classList.remove("noanswer");
     src.dataset.dirty = "";
 
+    // make sure, there is also a value selected with the first click
+    const evt = new Event("input");
+    src.dispatchEvent(evt);
+
+
     // src.disabled = false;
     return true;
 }

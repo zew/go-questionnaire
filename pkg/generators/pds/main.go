@@ -192,7 +192,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.CounterProgress = "1a"
 
 		page.WidthMax("42rem")
-		page.WidthMax("64rem")
+		page.WidthMax("58rem")
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT1)
 
@@ -326,7 +326,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.CounterProgress = "-"
 		page.CounterProgress = "1b"
 
-		page.WidthMax("64rem")
+		page.WidthMax("58rem")
 
 		{
 			gr := page.AddGroup()
@@ -636,7 +636,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page.CounterProgress = "2a"
 
-		page.WidthMax("64rem")
+		page.WidthMax("58rem")
 
 		{
 			gr := page.AddGroup()
@@ -741,7 +741,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.CounterProgress = "2.3"
 		page.CounterProgress = "2b"
 
-		page.WidthMax("64rem")
+		page.WidthMax("58rem")
 
 		page23Types := []string{
 			"radios1-4",
@@ -848,7 +848,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page.CounterProgress = "3"
 
-		page.WidthMax("64rem")
+		page.WidthMax("58rem")
+		page.WidthMax("52rem") // getting the nice "valley" alignment
 
 		page3Inputs := []string{
 			"q31_financing_situation_pricing",

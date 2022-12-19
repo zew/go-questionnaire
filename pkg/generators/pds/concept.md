@@ -95,3 +95,44 @@ Todo
    sind _nur_ bei den fett markierten Fragen unterschiedlich zu 'Direct Lending'?  
    Oder gibt's noch andere Unterschiede?
 
+
+## RC4
+
+* Fragengruppe 3. Markt Sentiment        - für alle asset classes gemeinsam? Nein
+* Fragengruppe 4. Qualitative Questions  - für alle asset classes gemeinsam? Nein
+
+* Fully dynamic - asset classes + strategies
+
+* Fully dynamic - zero transactions
+
+* Fully dynamic - new transaction page skipped
+
+* Mobile Layout
+
+* globale Checkbox: Neue Transaktionen unter 1.1
+
+* 1.1a.) Drei ESG Fragen als drei Eingabefelder?  
+        1.1a       Total number
+
+           -   I floating rate
+           -  II ESG + Doc 
+           - III Ratchets  
+
+           -   I Low mid cap
+           -  II Core+Upper 
+           - III Other  
+
+    Summation-Prüfung dann über jeweils römisch I-II-III muss total number of deals ergeben?
+
+Prio b - Number Input - replace Komma mit Punkt; wenn möglich
+
+b.) total summe
+   d.) e.) f.) ein Feld mit live Summe der eingetragenen Werte
+
+   Bei Seitenwechsel: "Summe von e.) ist ungleich b.) total
+
+Prio
+   11a.) a-I-III for each must lte 11a.)
+   bei Seitenwechsel
+
+Horizonatels Scrollen für Mobile

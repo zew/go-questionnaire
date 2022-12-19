@@ -44,8 +44,8 @@ var (
 		}.Outline("b)"),
 		Min:         0,
 		Max:         40000,
-		Step:        1,
 		Suffix:      suffixMillionEuro,
+		Step:        0.1,
 		Placeholder: placeHolderMillion,
 	}
 
@@ -86,6 +86,7 @@ var (
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
 		},
 		Suffix:   suffixMillionEuro,
+		Step:     0.1,
 		SubNames: []string{"low", "mid", "upper"},
 		SubLbls: map[string]string{
 			"low":   "Lower mid-market (0-15m € EBITDA)",
@@ -105,7 +106,9 @@ var (
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
-		Suffix:   suffixMillionEuro,
+		Suffix: suffixMillionEuro,
+		Step:   0.1,
+
 		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
 		SubLbls: map[string]string{
 			"uk":          "UK",
@@ -130,6 +133,8 @@ var (
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
+		Step:   0.1,
+
 		SubNames: []string{
 			"energy",
 			"materials",

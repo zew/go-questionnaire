@@ -51,6 +51,9 @@ func restrictedTextMultiCols(
 
 				inp.MaxChars = cf.Chars
 				inp.Step = 1
+				if cf.Step != 0.0 {
+					inp.Step = cf.Step
+				}
 				inp.Min = 0
 				inp.Max = 1000 * 1000
 				// inp.Validator = "inRange100"
@@ -107,6 +110,9 @@ func restrictedTextMultiCols(
 
 				inp.MaxChars = cf.Chars
 				inp.Step = 1
+				if cf.Step != 0.0 {
+					inp.Step = cf.Step
+				}
 				inp.Min = 0
 				inp.Max = 1000 * 1000
 				// inp.Validator = "inRange100"

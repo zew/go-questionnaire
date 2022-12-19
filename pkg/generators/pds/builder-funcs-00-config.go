@@ -35,9 +35,10 @@ func init() {
 	styleHeaderCols2.Desktop.StyleGridItem.AlignSelf = "end"
 	styleHeaderCols2.Desktop.StyleText.AlignHorizontal = "center"
 
-	// right margin - exclude range radio
+	// right margin  - exclude range radio
 	// bottom margin - dy from range display
 	styleHeaderCols2.Desktop.StyleBox.Margin = "0 0.98rem 0.5rem 0"
+	styleHeaderCols2.Desktop.StyleBox.Margin = "0 4.18rem 0.5rem 0"
 	styleHeaderCols2.Desktop.StyleBox.Width = "100%"
 
 	*styleHeaderCols3 = *styleHeaderCols2
@@ -164,8 +165,9 @@ var assetClassesLabels = []trl.S{
 var trancheTypeNamesAC1 = []string{
 	"tt1_senior",
 	"tt2_unittranche",
-	"tt3_subordinated",
-	"tt4_mezzanine", // "mezzanine_pik_other",
+	"tt3_subpikoth", // Subordinated / PIK / Other
+	// "tt3_subordinated",
+	// "tt4_mezzanine", // "mezzanine_pik_other",
 }
 var trancheTypeNamesAC2 = []string{
 	"tt1_wholeloan",
@@ -192,13 +194,13 @@ var allLbls = map[string][]trl.S{
 			"de": "Unitranche",
 		},
 		{
-			"en": "Subordinated",
-			"de": "Subordinated",
+			"en": "Subordinated / PIK / Other",
+			"de": "Subordinated / PIK / Other",
 		},
-		{
-			"en": "Mezzanine / PIK / other",
-			"de": "Mezzanine / PIK / other",
-		},
+		// {
+		// 	"en": "Mezzanine / PIK / other",
+		// 	"de": "Mezzanine / PIK / other",
+		// },
 	},
 	"ac2-tranche-types": {
 		{

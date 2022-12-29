@@ -18,6 +18,7 @@ func checkBoxCascade(
 ) {
 
 	numCols := float32(5)
+	// numCols := float32(4)
 
 	// gr1
 	{
@@ -35,8 +36,7 @@ func checkBoxCascade(
 
 	}
 
-	// gr2,3,4
-
+	// gr2 - 3-4, 5-6
 	for idx1 := 0; idx1 < len(inpsL1); idx1++ {
 
 		gr := page.AddGroup()
@@ -53,9 +53,6 @@ func checkBoxCascade(
 				inp.Type = "checkbox"
 				inp.Name = "q03_" + inpsL1[idx1]
 				inp.Label = lblsL1[idx1]
-				if idx1 > 0 {
-					// inp.Label["en"] += " - starting Q1-23?"
-				}
 				if idx1 > 0 {
 					inp.Label["en"] += "<br> <span style=font-size:80%>(not yet included in following pages)</span>"
 				}
@@ -77,6 +74,7 @@ func checkBoxCascade(
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+				inp.DisplayNone()
 			}
 			{
 				inp := gr.AddInput()
@@ -89,7 +87,9 @@ func checkBoxCascade(
 				inp.ColSpanLabel = 1
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleText.FontSize = 85
+				inp.DisplayNone()
 			}
+
 			// row3
 			// 		indented level2
 			{
@@ -97,6 +97,7 @@ func checkBoxCascade(
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+				inp.DisplayNone()
 			}
 
 			inpsL2 := trancheTypeNamesAC1
@@ -113,8 +114,6 @@ func checkBoxCascade(
 
 			for idx2 := 0; idx2 < len(inpsL2); idx2++ {
 
-				// ttPref := inpsL2[idx2][:3]
-
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
 				inp.Name = fmt.Sprintf("q031_%v_%v", ttPrefL1, inpsL2[idx2])
@@ -130,6 +129,17 @@ func checkBoxCascade(
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleText.FontSize = 90
+				inp.DisplayNone()
+
+			}
+			if len(inpsL2) == 3 {
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 1
+					inp.DisplayNone()
+				}
 			}
 			if len(inpsL2) == 2 {
 				{
@@ -137,12 +147,14 @@ func checkBoxCascade(
 					inp.Type = "textblock"
 					inp.ColSpan = 1
 					inp.ColSpanLabel = 1
+					inp.DisplayNone()
 				}
 				{
 					inp := gr.AddInput()
 					inp.Type = "textblock"
 					inp.ColSpan = 1
 					inp.ColSpanLabel = 1
+					inp.DisplayNone()
 				}
 			}
 
@@ -155,6 +167,7 @@ func checkBoxCascade(
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+				inp.DisplayNone()
 			}
 			{
 				inp := gr.AddInput()
@@ -170,7 +183,7 @@ func checkBoxCascade(
 
 				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 				inp.StyleLbl.Desktop.StyleBox.Top = "0.3rem"
-
+				inp.DisplayNone()
 			}
 			// row5
 			// 		indented level2
@@ -179,6 +192,7 @@ func checkBoxCascade(
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+				inp.DisplayNone()
 			}
 			for idx2 := 0; idx2 < len(allLbls["teamsize"]); idx2++ {
 				inp := gr.AddInput()
@@ -203,15 +217,9 @@ func checkBoxCascade(
 					// inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 					// inp.StyleLbl.Desktop.StyleBox.Top = "0.4rem"
 				}
-			}
+				inp.DisplayNone()
 
-			// radiosSingleRow(
-			// 	page,
-			// 	fmt.Sprintf("q031_%v", ttPrefL1),
-			// 	// "q02_teamsize",
-			// 	lblMain,
-			// 	mCh2,
-			// )
+			}
 
 		}
 

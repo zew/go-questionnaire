@@ -293,7 +293,7 @@ func (s *SurveyT) HTMLForm(questTypes []string, errStr string) string {
 
 for FMT eachMonth2inQ() main_refinance_rate_ecb': 0,5%%
 %v
-                     <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+                     <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  tabindex=1 /> <br>
 		</form>
 		
         <script> document.getElementById('submit').focus(); </script>

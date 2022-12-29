@@ -124,38 +124,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 		}
 
-		// if false {
-		// 	// gr3
-		// 	{
-		// 		lblMain := trl.S{
-		// 			"en": `Which asset classes do you invest in?`,
-		// 			"de": `Wählen Sie Ihre Assetklassen.`,
-		// 		}
-		// 		checkBoxRow(
-		// 			qst.WrapPageT(page),
-		// 			lblMain,
-		// 			assetClassesInputs,
-		// 			assetClassesLabels,
-		// 		)
-		// 	}
-
-		// 	// gr4
-		// 	{
-		// 		lblMain := trl.S{
-		// 			"en": `Your  strategies`,
-		// 			"de": `Ihre Strategie`,
-		// 		}
-		// 		checkBoxRow(
-		// 			qst.WrapPageT(page),
-		// 			lblMain,
-		// 			trancheTypeNamesAC1,
-		// 			allLbls["ac1-tranche-types"],
-		// 		)
-		// 	}
-		// }
-
 		//
-		// gr5
+		// gr2
 		{
 			lblMain := trl.S{
 				"en": `Which asset classes do you invest in?`,

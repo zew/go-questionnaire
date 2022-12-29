@@ -154,6 +154,17 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	}
 	myfmt.Fprintf(w, "%v generated<br>\n", fn)
 
+	if cfg.Get().AnonymousSurveyID == s.Type {
+		myfmt.Fprint(
+			w,
+			`<a  
+				accesskey='c'  
+				target='_check'
+				tabindex=2 
+				href='https://localhost:8083/survey/a' 
+			><b>c</b>heck </a><br>`)
+	}
+
 	//
 	// create empty styles-quest-[surveytype].css"
 	// if it does not yet exist

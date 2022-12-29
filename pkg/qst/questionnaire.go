@@ -691,18 +691,6 @@ func (q *QuestionnaireT) EditPage(idx int) *pageT {
 	return q.Pages[idx]
 }
 
-// WrappedPageT for creating helper funcs outside
-// the package - *temporarily*.
-// compare EditPage
-type WrappedPageT struct {
-	*pageT
-}
-
-// WrapPageT is a wrapper for pageT
-func WrapPageT(pt *pageT) *WrappedPageT {
-	return &WrappedPageT{pt}
-}
-
 // AddFinishButtonNextToLast from page
 //
 // Adding explicit button to finish page, which is outsite navigation.
@@ -819,32 +807,9 @@ func (q *QuestionnaireT) CurrentPageHTML() (string, error) {
 	return q.PageHTML(q.CurrPage)
 }
 
-/*
-	Interface compositeif
-
-	Seems hopeless to export the hierarchy of Questionnaire, Group, Input;
-	We must attach everything to the Questionnaire
-
-*/
-
-// AddGroupAtCurrentPage - for dynamic funcs
-func (q *QuestionnaireT) AddGroupAtCurrentPage() *groupT {
-	return q.Pages[q.CurrPage].AddGroup()
-}
-
 // GetLangCode -
 func (q *QuestionnaireT) GetLangCode() string {
 	return q.LangCode
-}
-
-// AddGroupWithInputs - for dynamic funcs
-func (q *QuestionnaireT) AddGroupWithInputs(names []string) {
-	cp := q.Pages[q.CurrPage]
-	gr := cp.AddGroup()
-	for i := 0; i < len(names); i++ {
-		inp := gr.AddInput()
-		inp.Name = names[i]
-	}
 }
 
 // shufflingGroupsT is a helper for RandomizeOrder()

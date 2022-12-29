@@ -205,11 +205,18 @@ func (inp *inputT) LabelVertical() {
 // Vertical order of control and label instead of horizontal
 func (inp *inputT) Vertical() {
 	inp.Style = css.NewStylesResponsive(inp.Style)
-	// inp.Style.Desktop.StyleBox.Display = "grid"
 	inp.Style.Desktop.StyleGridContainer.AutoFlow = "column"
 	rows := 1
 	inp.Style.Desktop.StyleGridContainer.TemplateRows = strings.Repeat("1fr ", rows)
 	inp.Style.Desktop.StyleGridContainer.TemplateColumns = " " // empty string
+}
+
+// DisplayNone setting the input div to display:none.
+// Use case: Inputs be shown or hidden based on Javascript.
+// Notice that input wrapper div has a dynamic class with display=grid.
+func (inp *inputT) DisplayNone() {
+	inp.Style = css.NewStylesResponsive(inp.Style)
+	inp.Style.Desktop.StyleBox.Display = "none"
 }
 
 // appendTooltip appends an explanation

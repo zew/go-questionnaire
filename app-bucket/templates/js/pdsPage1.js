@@ -46,8 +46,11 @@
             let containers = document.getElementsByClassName(className);
             if (containers.length > 0) {
                 let container = containers[0];
+                // overriding  server side generated CSS class value for display
+                // for i.e. pg01-grp02-inp04 { display: grid }
+                // by setting an element style
                 if (paramShowHide) {
-                    container.style.display = ""; // not block
+                    container.style.display = "grid"; // not block
                     // console.log("  shown");
                 } else {
                     container.style.display = "none";

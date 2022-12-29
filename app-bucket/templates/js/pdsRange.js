@@ -102,6 +102,16 @@ function pdsRangeInput(src) {
 
 // activate an input[type=range] from de-activated visual state 
 function pdsRangeClick(src) {
+
+    let isDisabled = src.classList.contains("hidethumb");
+
+    if (isDisabled) {
+        // continue below
+    } else {
+        // active
+        return true;
+    }
+
     // console.log("rangeClick()");
     // src.style.backgroundColor = "transparent";
     src.classList.remove("hidethumb");

@@ -113,7 +113,7 @@ func prio3Matrix(
 			inp := gr.AddInput()
 			inp.ColSpanControl = 1
 			inp.Type = "javascript-block"
-			inp.Name = "prio123"
+			inp.Name = "prio123" // js filename
 
 			s1 := trl.S{
 				"de": "Keine Prio zweimal",

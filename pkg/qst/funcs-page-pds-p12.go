@@ -24,8 +24,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
-		"en": "<span style='font-size:90%'>Portfolio changes continued:</span> New transactions",
-		"de": "<span style='font-size:90%'>Portfolio changes continued:</span> New transactions",
+		"en": "<span style='font-size:85%; font-weight: normal'>Portfolio changes continued: <br></span> New transactions",
+		"de": "<span style='font-size:85%; font-weight: normal'>Portfolio changes continued: <br></span> New transactions",
 	}
 	page.Short = trl.S{
 		"en": "Portfolio changes - 2",

@@ -350,16 +350,21 @@ func onlySelectedTranchTypes(q *QuestionnaireT, ac assetClass) assetClass {
 		names = append(names, fmt.Sprintf("%v_%v_q031", ac.Prefix, ac.TrancheTypes[i].Prefix))
 	}
 
-	newTT := make([]trancheType, 0, ln)
+	newTTs := make([]trancheType, 0, ln)
 	for i, name := range names {
 		inp := q.ByName(name)
 		if inp.Response != "" && inp.Response != "0" {
-			newTT = append(newTT, ac.TrancheTypes[i])
+			newTTs = append(newTTs, ac.TrancheTypes[i])
 		}
 	}
 
 	acRet := ac
-	acRet.TrancheTypes = newTT
+	acRet.TrancheTypes = newTTs
+
+	// if len(acRet.TrancheTypes) == 0 {
+	// 	log.Printf("  %v => %v tt(s)", ac.Prefix, len(acRet.TrancheTypes))
+	// 	log.Print(util.IndentedDump(acRet))
+	// }
 
 	return acRet
 }

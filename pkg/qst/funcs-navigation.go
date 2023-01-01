@@ -68,7 +68,6 @@ func pdsAssetClass3(q *QuestionnaireT, pageIdx int) bool {
 }
 
 func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
-
 	ac := PDSAssetClasses[acIdx]
 
 	// inp := q.Pages[11].Groups[0].Inputs[1]
@@ -83,7 +82,7 @@ func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 				return true
 			}
 		}
-
+		// asset class selected, but not a single tranche type
 		return false
 	}
 	return false

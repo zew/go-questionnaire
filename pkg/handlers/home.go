@@ -355,8 +355,16 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 		}
 	}
+
+	inpNamesS := make([]string, 0, len(savedFields)) // input names sorted
+	for inpName := range savedFields {
+		inpNamesS = append(inpNamesS, inpName)
+	}
+	sort.Strings(inpNamesS)
+
 	empty := make([]string, 0, 20)
-	for inpName, val := range savedFields {
+	for _, inpName := range inpNamesS {
+		val := savedFields[inpName]
 		if val != "" && val != "0" {
 			log.Printf("page#%v %-32v => '%v'", prevPage, inpName, val)
 		} else {

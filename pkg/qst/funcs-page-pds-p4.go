@@ -15,7 +15,10 @@ func pdsPage4AC3(q *QuestionnaireT, page *pageT) error {
 func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	ac := PDSAssetClasses[acIdx]
-	ac = onlySelectedTranchTypes(q, ac)
+
+	// Tranche type selection has no effect on this page.
+	// Its for the asset class as a whole
+	// ac = onlySelectedTranchTypes(q, ac)
 
 	page.Label = trl.S{
 		"en": "4. Qualitative questions",
@@ -35,63 +38,63 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// matrix1
 	{
 		inps := []string{
-			"411_business_cycle",
-			"412_interest_rates",
-			"413_inflation_deflation",
-			"414_demographics",
-			"415_supply_chains",
-			"416_health_issues",
-			"417_regulatory_environment",
-			"418_other",
+			"1_business_cycle",
+			"2_interest_rates",
+			"3_inflation_deflation",
+			"4_demographics",
+			"5_supply_chains",
+			"6_health_issues",
+			"7_regulatory_environment",
+			"8_other",
 		}
 
 		lbls := map[string]string{
-			"411_business_cycle":         "Business cycle",
-			"412_interest_rates":         "Interest rates",
-			"413_inflation_deflation":    "Inflation/deflation",
-			"414_demographics":           "Demographics",
-			"415_supply_chains":          "Supply chains",
-			"416_health_issues":          "Health issues",
-			"417_regulatory_environment": "Regulatory environment",
-			"418_other":                  "Other",
+			"1_business_cycle":         "Business cycle",
+			"2_interest_rates":         "Interest rates",
+			"3_inflation_deflation":    "Inflation/deflation",
+			"4_demographics":           "Demographics",
+			"5_supply_chains":          "Supply chains",
+			"6_health_issues":          "Health issues",
+			"7_regulatory_environment": "Regulatory environment",
+			"8_other":                  "Other",
 		}
 
 		lblMain := trl.S{
 			"en": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
 			"de": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
 		}.Outline("4.1")
-		prio3Matrix(page, ac, "risks", lblMain, inps, lbls, true)
+		prio3Matrix(page, ac, "q41_risks", lblMain, inps, lbls, true)
 	}
 
 	//
 	// matrix2
 	{
 		inps := []string{
-			"q4201_energy",
-			"q4202_materials",
-			"q4203_industrials",
-			"q4204_consumer_discretionary",
-			"q4205_consumer_staples",
-			"q4206_health_care",
-			"q4207_financials",
-			"q4208_information_technology",
-			"q4209_communication_services",
-			"q4210_utilities",
-			"q4211_real_estate",
+			"01_energy",
+			"02_materials",
+			"03_industrials",
+			"04_consumer_discretionary",
+			"05_consumer_staples",
+			"06_health_care",
+			"07_financials",
+			"08_information_technology",
+			"09_communication_services",
+			"10_utilities",
+			"11_real_estate",
 		}
 
 		lbls := map[string]string{
-			"q4201_energy":                 "Energy",
-			"q4202_materials":              "Materials",
-			"q4203_industrials":            "Industrials",
-			"q4204_consumer_discretionary": "Consumer discretionary",
-			"q4205_consumer_staples":       "Consumer staples",
-			"q4206_health_care":            "Health care",
-			"q4207_financials":             "Financials",
-			"q4208_information_technology": "Information technology",
-			"q4209_communication_services": "Communication services",
-			"q4210_utilities":              "Utilities",
-			"q4211_real_estate":            "Real estate",
+			"01_energy":                 "Energy",
+			"02_materials":              "Materials",
+			"03_industrials":            "Industrials",
+			"04_consumer_discretionary": "Consumer discretionary",
+			"05_consumer_staples":       "Consumer staples",
+			"06_health_care":            "Health care",
+			"07_financials":             "Financials",
+			"08_information_technology": "Information technology",
+			"09_communication_services": "Communication services",
+			"10_utilities":              "Utilities",
+			"11_real_estate":            "Real estate",
 		}
 
 		lblMain := trl.S{
@@ -102,7 +105,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 					investment opportunities in the next three months? 
 					Please rank the top three.`,
 		}.Outline("4.2")
-		prio3Matrix(page, ac, "gicsprio", lblMain, inps, lbls, false)
+		prio3Matrix(page, ac, "q42_gicsprio", lblMain, inps, lbls, false)
 	}
 
 	{
@@ -131,30 +134,30 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// matrix3
 	{
 		inps := []string{
-			"q441_availability",
-			"q442_quality",
-			"q443_performance",
-			"q444_greenwashing",
-			"q445_regulation",
-			"q446_opportunities",
-			"q447_other",
+			"1_availability",
+			"2_quality",
+			"3_performance",
+			"4_greenwashing",
+			"5_regulation",
+			"6_opportunities",
+			"7_other",
 		}
 
 		lbls := map[string]string{
-			"q441_availability":  "ESG data availability",
-			"q442_quality":       "ESG data quality",
-			"q443_performance":   "Concerns about performance/sacrificing returns",
-			"q444_greenwashing":  "Concerns about greenwashing",
-			"q445_regulation":    "Complex regulatory landscape",
-			"q446_opportunities": "Lack of suitable investments",
-			"q447_other":         "Other",
+			"1_availability":  "ESG data availability",
+			"2_quality":       "ESG data quality",
+			"3_performance":   "Concerns about performance/sacrificing returns",
+			"4_greenwashing":  "Concerns about greenwashing",
+			"5_regulation":    "Complex regulatory landscape",
+			"6_opportunities": "Lack of suitable investments",
+			"7_other":         "Other",
 		}
 
 		lblMain := trl.S{
 			"en": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
 			"de": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
 		}.Outline("4.4")
-		prio3Matrix(page, ac, "esg_challenge", lblMain, inps, lbls, true)
+		prio3Matrix(page, ac, "q44_esg_challenge", lblMain, inps, lbls, true)
 	}
 
 	{

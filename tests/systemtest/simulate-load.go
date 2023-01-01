@@ -189,6 +189,24 @@ var presets = map[string]map[int]map[string]string{
 			"q20_neg_externalities": "all",
 		},
 	},
+	"pds": {
+		1: {
+			"ac1_q03":      "1",
+			"ac1_tt1_q031": "1",
+			"ac1_tt2_q031": "1",
+			"ac1_tt3_q031": "1",
+
+			"ac2_q03":      "1",
+			"ac2_tt1_q031": "1",
+			"ac2_tt2_q031": "1",
+
+			"ac3_q03": "1",
+			// "ac3_tt1_q031": "0",  // this does not work yet
+			// "ac3_tt2_q031": "0",  // this does not work yet
+			"ac3_tt1_q031": "1",
+			"ac3_tt2_q031": "1",
+		},
+	},
 }
 
 var skipPages = map[string]map[int]interface{}{
@@ -244,10 +262,23 @@ func removeSystemtestJSON(t *testing.T, q *qst.QuestionnaireT) {
 }
 
 // clientPageToServer doing POST requests to a single page of the test server
-func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
-	urlMain string, sessCook *http.Cookie) {
+func clientPageToServer(
+	t *testing.T,
+	clQ *qst.QuestionnaireT,
+	idxPage int,
+	urlMain string,
+	sessCook *http.Cookie,
+) {
 
 	ctr.Reset()
+
+	// dynamic pages - changes on previous input
+	kv := clQ.DynamicPageValues()
+	err := clQ.DynamicPages()
+	if err != nil {
+		t.Fatalf("dyn page creation on client q: %v", err)
+	}
+	clQ.DynamicPagesApplyValues(kv)
 
 	// values from ctr.IncrementStr() are stored into clQ (client questionnaire)
 	// and POSTed to the server
@@ -269,6 +300,7 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 		// condense radio inputs
 		// map distinct for weeding out multiple radios with same name
 		condensed := map[string]string{}
+		outputDoubles := map[string]bool{}
 
 		for i2, grp := range p.Groups {
 			for i3, inp := range grp.Inputs {
@@ -276,7 +308,7 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 					continue
 				}
 				val, ok := "", false
-				if _, visitedBefore := condensed[inp.Name]; visitedBefore {
+				if _, processedBefore := condensed[inp.Name]; processedBefore {
 					val = condensed[inp.Name]
 				} else {
 					val, ok = getPreset(clQ.Survey.Type, i1, inp.Name)
@@ -289,14 +321,16 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 					condensed[inp.Name] = val
 				}
 
-				// condensed[inp.Name] = val
 				vals.Set(inp.Name, val)
 				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = val
-				lpCntr++
-				if lpCntr < 3 || lpCntr%10 == 0 {
-					t.Logf("Input %12v set to value %2v ", inp.Name, val)
+
+				// logging
+				if _, ok := outputDoubles[inp.Name]; !ok {
+					lpCntr++
+					// if lpCntr < 3 || lpCntr%10 == 0 {
+					t.Logf("%-22v => '%v' ", inp.Name, val)
+					outputDoubles[inp.Name] = true
 				}
-				// }
 			}
 		}
 	}
@@ -325,11 +359,11 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 // It then compares the local copy of the questionnaire data
 // with the "server" version.
 //
-// qSrc is the basic survey template file for iterating pages and inputs
+// qSrc is the basic survey template file for iterating pages and inputs.
 // clQ  is a fake user response file - recording the data requested to the test server - "client questionnaire"
 func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, urlMain string, sessCook *http.Cookie) {
 
-	var clQ = &qst.QuestionnaireT{} // see func description
+	var clQ = &qst.QuestionnaireT{} // client questionnaire; see func description
 	var err error
 
 	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Filename()+".json")
@@ -465,7 +499,7 @@ func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) 
 		}
 
 		respBytes, _ := io.ReadAll(resp.Body)
-		mustNotHave := fmt.Sprintf("Login by hash failed")
+		mustNotHave := "Login by hash failed"
 		if strings.Contains(string(respBytes), mustNotHave) {
 			t.Fatalf("Response must not contain '%v' \n\n%v", mustNotHave, string(respBytes))
 		} else {

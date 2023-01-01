@@ -1333,7 +1333,7 @@ func (q *QuestionnaireT) Compare(v *QuestionnaireT, lenient bool) (bool, error) 
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if len(q.Pages[i1].Groups) != len(v.Pages[i1].Groups) {
-			return false, fmt.Errorf("page %v: Unequal numbers of groups: %v - %v", i1, len(q.Pages[i1].Groups), v.Pages[i1].Groups)
+			return false, fmt.Errorf("page %v: Unequal numbers of groups: %v - %v", i1, len(q.Pages[i1].Groups), len(v.Pages[i1].Groups))
 		}
 		if i1 < len(q.Pages)-1 { // No completion time comparison for last page
 			qf := q.Pages[i1].Finished
@@ -1345,7 +1345,7 @@ func (q *QuestionnaireT) Compare(v *QuestionnaireT, lenient bool) (bool, error) 
 
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			if len(q.Pages[i1].Groups[i2].Inputs) != len(v.Pages[i1].Groups[i2].Inputs) {
-				return false, fmt.Errorf("page %v: Group %v: Unequal numbers of groups: %v - %v", i1, i2, len(q.Pages[i1].Groups[i2].Inputs), len(v.Pages[i1].Groups[i2].Inputs))
+				return false, fmt.Errorf("page %v: Group %v: Unequal numbers of inputs: %v - %v", i1, i2, len(q.Pages[i1].Groups[i2].Inputs), len(v.Pages[i1].Groups[i2].Inputs))
 			}
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
@@ -1881,10 +1881,10 @@ func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) {
 // DynamicPages dynamically re-creates groups and inputs
 // based on conditions like q.UserID or values from other pages;
 //
-// there are three issues integrating this methon with the Join() method:
+// there are three issues integrating this method with the Join() method:
 //
 //   - the structure depends on user input from other pages - we must call Join() first
-//   - Join() will see distinct structures for groups/inputs beween base (empty) and split (previously entered data) - we coded an exception
+//   - Join() will see distinct structures for groups/inputs between base (empty) and split (previously entered data) - we coded an exception
 //   - DynamicPages() will now create re-groups and _empty_ inputs
 //   - We now pull _previous_ dynamic page values (qSplit.DynamicPageValues) and apply them to the joined questionnaire
 //
@@ -1907,7 +1907,7 @@ func (q *QuestionnaireT) DynamicPages() error {
 				log.Print(s)
 				return fmt.Errorf(s)
 			}
-			// log.Printf("dyn page gen %q created %v groups", page.GeneratorFuncName, len(page.Groups))
+			// log.Printf("dyn page#%02v - generator %q created %v groups", i1, q.Pages[i1].GeneratorFuncName, len(q.Pages[i1].Groups))
 		}
 	}
 	if dynPagesCreated {

@@ -1,24 +1,24 @@
-package pds
+package qst
 
 import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/pkg/css"
-	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
 func radiosLabelsTop(
-	page *qst.WrappedPageT,
+	page *pageT,
+	ac assetClass,
 	nm string,
 	lbl trl.S,
 	cf configMC,
 ) {
 
 	// numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
-	numColsMajor := float32(len(trancheTypeNamesAC1))
+	numColsMajor := float32(len(ac.TrancheTypes))
 	numColsMinor := numColsMajor * cf.Cols
-	idxLastCol := len(trancheTypeNamesAC1) - 1
+	idxLastCol := len(ac.TrancheTypes) - 1
 	_ = idxLastCol
 
 	grSt := css.NewStylesResponsive(nil)
@@ -49,17 +49,14 @@ func radiosLabelsTop(
 		gr.BottomVSpacers = 0
 		gr.BottomVSpacers = 1
 
-		for idx1 := range trancheTypeNamesAC1 {
+		for idx1 := range ac.TrancheTypes {
 
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 1
 
-			ttLbl := allLbls["ac1-tranche-types"][idx1]
-			// inp.Label = ttLbl.Bold()
+			ttLbl := ac.TrancheTypes[idx1].Lbl
 			inp.Label = ttLbl
-
-			// inp.LabelVertical()
 
 			inp.StyleLbl = styleHeaderCols3
 		}
@@ -76,21 +73,19 @@ func radiosLabelsTop(
 		}
 
 		// for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
-		for idx1, trancheType := range trancheTypeNamesAC1 {
+		for idx1, trancheType := range ac.TrancheTypes {
 
 			_ = idx1
 
 			// row1 - inputs
-			ttPref := trancheType[:3]
+			lastIdx2 := len(PDSLbls[cf.KeyLabels]) - 1
 
-			lastIdx2 := len(allLbls[cf.KeyLabels]) - 1
-
-			for idx2 := 0; idx2 < len(allLbls[cf.KeyLabels]); idx2++ {
+			for idx2 := 0; idx2 < len(PDSLbls[cf.KeyLabels]); idx2++ {
 				inp := gr.AddInput()
 				inp.Type = "radio"
-				inp.Name = fmt.Sprintf("%v_%v", ttPref, nm)
+				inp.Name = fmt.Sprintf("%v_%v_%v", ac.Prefix, trancheType.Prefix, nm)
 				inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
-				inp.Label = allLbls[cf.KeyLabels][idx2]
+				inp.Label = PDSLbls[cf.KeyLabels][idx2]
 
 				inp.ColSpan = cf.InpColspan
 				inp.ColSpanControl = 1
@@ -134,18 +129,6 @@ func radiosLabelsTop(
 				}
 
 			}
-
-			// if cf.DontKnow {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "radio"
-			// 	inp.Name = fmt.Sprintf("%v", nm)
-			// 	inp.ValueRadio = fmt.Sprintf("%v", len(allLbls[cf.KeyLabels])+1)
-			// 	inp.Label = lblDont
-			// 	inp.ColSpan = 4
-			// 	inp.ColSpanControl = 1
-			// 	inp.Vertical()
-			// 	inp.VerticalLabel()
-			// }
 
 		}
 	}

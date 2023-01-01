@@ -8,13 +8,29 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+var lblsTeamSize = []trl.S{
+	{
+		"en": "<5",
+		"de": "<5",
+	},
+	{
+		"en": "5-10",
+		"de": "5-10",
+	},
+	{
+		"en": "11-20",
+		"de": "11-20",
+	},
+	{
+		"en": ">20",
+		"de": ">20",
+	},
+}
+
 // checkBoxCascade for hierarchical checkboxes from page1
 func checkBoxCascade(
 	page *qst.WrappedPageT,
 	lblMain trl.S,
-	// numCols float32,
-	inpsL1 []string,
-	lblsL1 []trl.S,
 ) {
 
 	numCols := float32(5)
@@ -37,7 +53,8 @@ func checkBoxCascade(
 	}
 
 	// gr2 - 3-4, 5-6
-	for idx1 := 0; idx1 < len(inpsL1); idx1++ {
+	// for idx1 := 0; idx1 < len(inpsL1); idx1++ {
+	for idx1, ac := range qst.PDSAssetClasses {
 
 		gr := page.AddGroup()
 		gr.Cols = numCols
@@ -45,14 +62,14 @@ func checkBoxCascade(
 		gr.Style.Desktop.StyleGridContainer.GapRow = "0.05rem"
 		gr.BottomVSpacers = 2
 		{
-			ttPrefL1 := inpsL1[idx1][:3] // ac1, ac2, ac3
 
 			// row1
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = "q03_" + inpsL1[idx1]
-				inp.Label = lblsL1[idx1]
+				inp.Name = fmt.Sprintf("%v_q03", ac.Prefix)
+				// inp.Name = fmt.Sprintf("%v_q03", ac.Name)
+				inp.Label = ac.Lbl
 				if idx1 > 0 {
 					inp.Label["en"] += "<br> <span style=font-size:80%>(not yet included in following pages)</span>"
 				}
@@ -100,24 +117,14 @@ func checkBoxCascade(
 				inp.DisplayNone()
 			}
 
-			inpsL2 := trancheTypeNamesAC1
-			lblsL2 := allLbls["ac1-tranche-types"]
+			for idx2, trancheType := range ac.TrancheTypes {
 
-			if idx1 == 1 {
-				inpsL2 = trancheTypeNamesAC2
-				lblsL2 = allLbls["ac2-tranche-types"]
-			}
-			if idx1 == 2 {
-				inpsL2 = trancheTypeNamesAC3
-				lblsL2 = allLbls["ac3-tranche-types"]
-			}
-
-			for idx2 := 0; idx2 < len(inpsL2); idx2++ {
+				_ = idx2
 
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = fmt.Sprintf("q031_%v_%v", ttPrefL1, inpsL2[idx2])
-				inp.Label = lblsL2[idx2]
+				inp.Name = fmt.Sprintf("%v_%v_q031", ac.Prefix, trancheType.Prefix)
+				inp.Label = trancheType.Lbl
 				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 				inp.Vertical()
@@ -132,7 +139,7 @@ func checkBoxCascade(
 				inp.DisplayNone()
 
 			}
-			if len(inpsL2) == 3 {
+			if len(ac.TrancheTypes) == 3 {
 				{
 					inp := gr.AddInput()
 					inp.Type = "textblock"
@@ -141,7 +148,7 @@ func checkBoxCascade(
 					inp.DisplayNone()
 				}
 			}
-			if len(inpsL2) == 2 {
+			if len(ac.TrancheTypes) == 2 {
 				{
 					inp := gr.AddInput()
 					inp.Type = "textblock"
@@ -194,14 +201,12 @@ func checkBoxCascade(
 				inp.ColSpanLabel = 1
 				inp.DisplayNone()
 			}
-			for idx2 := 0; idx2 < len(allLbls["teamsize"]); idx2++ {
+			for idx2 := 0; idx2 < len(lblsTeamSize); idx2++ {
 				inp := gr.AddInput()
 				inp.Type = "radio"
-				// inp.Name = fmt.Sprintf("%v", nm)
-				inp.Name = fmt.Sprintf("q032_%v", ttPrefL1)
-				// inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
+				inp.Name = fmt.Sprintf("%v_q032", ac.Prefix)
 				inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
-				inp.Label = allLbls["teamsize"][idx2]
+				inp.Label = lblsTeamSize[idx2]
 				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 				inp.Vertical()

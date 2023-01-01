@@ -1,17 +1,17 @@
-package pds
+package qst
 
 import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/pkg/css"
-	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
 // radiosSingleRow - five shades - and no answer
 // previously "multipleChoice"
 func radiosSingleRow(
-	page *qst.WrappedPageT,
+	page *pageT,
+	ac assetClass,
 	nm string,
 	lblMain trl.S,
 	cf configMC,
@@ -42,12 +42,12 @@ func radiosSingleRow(
 		// gr.Style = css.NewStylesResponsive(gr.Style)
 		// gr.Style.Desktop.StyleGridContainer.GapRow = "0"
 
-		for idx2 := 0; idx2 < len(allLbls[cf.KeyLabels]); idx2++ {
+		for idx2 := 0; idx2 < len(PDSLbls[cf.KeyLabels]); idx2++ {
 			inp := gr.AddInput()
 			inp.Type = "radio"
-			inp.Name = fmt.Sprintf("%v", nm)
+			inp.Name = fmt.Sprintf("%v_%v", ac.Prefix, nm)
 			inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
-			inp.Label = allLbls[cf.KeyLabels][idx2]
+			inp.Label = PDSLbls[cf.KeyLabels][idx2]
 			inp.ColSpan = 2
 			inp.ColSpan = cf.InpColspan
 			inp.ColSpanControl = 1
@@ -69,8 +69,8 @@ func radiosSingleRow(
 		if cf.DontKnow {
 			inp := gr.AddInput()
 			inp.Type = "radio"
-			inp.Name = fmt.Sprintf("%v", nm)
-			inp.ValueRadio = fmt.Sprintf("%v", len(allLbls[cf.KeyLabels])+1)
+			inp.Name = fmt.Sprintf("%v_%v", ac.Prefix, nm)
+			inp.ValueRadio = fmt.Sprintf("%v", len(PDSLbls[cf.KeyLabels])+1)
 			inp.Label = lblDont
 			inp.ColSpan = 4
 			inp.ColSpanControl = 1

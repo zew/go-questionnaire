@@ -484,6 +484,8 @@ type pageT struct {
 	// there should be several strings - key/value - not just one "msg"
 	ValidationFuncMsg trl.S `json:"validation_func_msg,omitempty"`
 
+	// Page body is created dynamically.
+	// Static testing becomes meaningless.
 	GeneratorFuncName string `json:"generator_func_name,omitempty"`
 }
 

@@ -8,31 +8,70 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+// Notice, that these func are called
+// on each request
 type funcPageGeneratorT func(*QuestionnaireT, *pageT) error
 
 var pageGens = ctr.New() // page generations
 
 var funcPGs = map[string]funcPageGeneratorT{
-	"pds01":     pds01,
-	"fmt202212": fmt202212,
+	"pageFuncExample": pageFuncExample,
+	"fmt202212":       fmt202212,
+
+	"pdsPage11-ac1": pdsPage11AC1,
+	"pdsPage11-ac2": pdsPage11AC2,
+	"pdsPage11-ac3": pdsPage11AC3,
+
+	"pdsPage12-ac1": pdsPage12AC1,
+	"pdsPage12-ac2": pdsPage12AC2,
+	"pdsPage12-ac3": pdsPage12AC3,
+
+	"pdsPage21-ac1": pdsPage21AC1,
+	"pdsPage21-ac2": pdsPage21AC2,
+	"pdsPage21-ac3": pdsPage21AC3,
+
+	"pdsPage23-ac1": pdsPage23AC1,
+	"pdsPage23-ac2": pdsPage23AC2,
+	"pdsPage23-ac3": pdsPage23AC3,
+
+	"pdsPage3-ac1": pdsPage3AC1,
+	"pdsPage3-ac2": pdsPage3AC2,
+	"pdsPage3-ac3": pdsPage3AC3,
+
+	"pdsPage4-ac1": pdsPage4AC1,
+	"pdsPage4-ac2": pdsPage4AC2,
+	"pdsPage4-ac3": pdsPage4AC3,
 }
 
-func pds01(q *QuestionnaireT, page *pageT) error {
+func pageFuncExample(q *QuestionnaireT, page *pageT) error {
 
-	// we can modify page-data
-	page.NoNavigation = false
 	gn := pageGens.Increment()
-	lblMain := trl.S{
-		"en": fmt.Sprintf(`lbl main %v - lbl main lbl main lbl main`, gn),
-		"de": fmt.Sprintf(`lbl main %v - lbl main lbl main lbl main`, gn),
+
+	// modify/overwrite page-data
+	page.WidthMax("42rem")
+	page.NoNavigation = false
+	page.SuppressInProgressbar = true
+
+	page.Label = trl.S{
+		"de": fmt.Sprintf("Dynamic page example %v", gn),
+		"en": fmt.Sprintf("Dynamic page example %v", gn),
+	}
+	page.Short = trl.S{
+		"de": fmt.Sprintf("Dynamic<br>page %v", gn),
+		"en": fmt.Sprintf("Dynamic<br>page %v", gn),
 	}
 
 	// dynamically recreate the groups
-
 	page.Groups = nil
 
 	// gr1
 	{
+
+		lblMain := trl.S{
+			"en": fmt.Sprintf(`lbl main %v - lbl main lbl main lbl main`, gn),
+			"de": fmt.Sprintf(`lbl main %v - lbl main lbl main lbl main`, gn),
+		}
+
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 1

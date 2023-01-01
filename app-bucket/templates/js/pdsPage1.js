@@ -5,15 +5,15 @@
     let frm = document.forms.frmMain;
 
     const triggers = [
-        "q03_ac1_corplending",
-        "q03_ac2_realestate",
-        "q03_ac3_infrastruct",
+        "ac1_q03",
+        "ac2_q03",
+        "ac3_q03",
     ];
 
     const parentContainers = {
-        "q03_ac1_corplending" : "pg01-grp02",
-        "q03_ac2_realestate"  : "pg01-grp03",
-        "q03_ac3_infrastruct" : "pg01-grp04",
+        "ac1_q03" : "pg01-grp02",
+        "ac2_q03" : "pg01-grp03",
+        "ac3_q03" : "pg01-grp04",
     };
 
     UNUSED_subInputs = [

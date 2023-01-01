@@ -1,4 +1,4 @@
-package pds
+package qst
 
 import "github.com/zew/go-questionnaire/pkg/trl"
 

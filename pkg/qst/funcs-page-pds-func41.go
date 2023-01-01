@@ -1,13 +1,15 @@
-package pds
+package qst
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/css"
-	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
 func checkBoxRow(
-	page *qst.WrappedPageT,
+	page *pageT,
+	ac assetClass,
 	lblMain trl.S,
 	names []string,
 	lbls []trl.S,
@@ -38,7 +40,7 @@ func checkBoxRow(
 		for idx1 := 0; idx1 < len(names); idx1++ {
 			inp := gr.AddInput()
 			inp.Type = "checkbox"
-			inp.Name = names[idx1]
+			inp.Name = fmt.Sprintf("%v_%v", ac.Prefix, names[idx1])
 			inp.Label = lbls[idx1]
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
@@ -60,7 +62,8 @@ func checkBoxRow(
 }
 
 func checkBoxColumn(
-	page *qst.WrappedPageT,
+	page *pageT,
+	ac assetClass,
 	lblMain trl.S,
 	numCols float32,
 	inps []string,
@@ -91,13 +94,12 @@ func checkBoxColumn(
 		for idx1 := 0; idx1 < len(inps); idx1++ {
 			inp := gr.AddInput()
 			inp.Type = "checkbox"
-			inp.Name = inps[idx1]
+			inp.Name = fmt.Sprintf("%v_%v", ac.Prefix, inps[idx1])
 			inp.Label = lbls[idx1]
 			inp.ColSpan = numCols
 			inp.ColSpanControl = 6
 			inp.ColSpanLabel = 1
 			inp.ControlFirst()
-
 		}
 
 	}

@@ -1,15 +1,15 @@
-package pds
+package qst
 
 import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/pkg/css"
-	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
 func prio3Matrix(
-	page *qst.WrappedPageT,
+	page *pageT,
+	ac assetClass,
 	name string,
 	lblMain trl.S,
 	inps []string,
@@ -65,21 +65,10 @@ func prio3Matrix(
 		for idx1, nm := range inps {
 
 			if freeText && idx1 == len(inps)-1 {
-				//
-				{
-					// inp := gr.AddInput()
-					// inp.Type = "textblock"
-					// inp.Label = trl.S{
-					// 	"de": lbls[nm],
-					// 	"en": lbls[nm],
-					// }
-					// inp.ColSpan = 1.5
-					// inp.ColSpanLabel = 1
-				}
 				{
 					inp := gr.AddInput()
 					inp.Type = "text"
-					inp.Name = fmt.Sprintf("%v_label", name)
+					inp.Name = fmt.Sprintf("%v_%v_label", ac.Prefix, name)
 					inp.Label = trl.S{
 						"de": lbls[nm],
 						"en": lbls[nm],
@@ -108,16 +97,11 @@ func prio3Matrix(
 			for idx2 := 0; idx2 < 3; idx2++ {
 				inp := gr.AddInput()
 				inp.Type = "radio"
-				inp.Name = fmt.Sprintf("%v_prio%v", name, idx2+1)
+				inp.Name = fmt.Sprintf("%v_%v_prio%v", ac.Prefix, name, idx2+1)
 				inp.ValueRadio = fmt.Sprintf("%v", nm) // row idx1
-				// inp.Label = trl.S{
-				// 	"de": lbls[nm],
-				// }
 
 				inp.ColSpan = 2
-				// inp.ColSpanLabel = 1
 				inp.ColSpanControl = 1
-
 			}
 
 		}
@@ -143,7 +127,7 @@ func prio3Matrix(
 			inp.JSBlockStrings["inputBaseName"] = name
 			for idx1 := 0; idx1 < 3; idx1++ {
 				key := fmt.Sprintf("%v_%v", "inp", idx1+1) // {{.inp_1}}, {{.inp_2}}, ...
-				inp.JSBlockStrings[key] = fmt.Sprintf("%v_prio%v", name, idx1)
+				inp.JSBlockStrings[key] = fmt.Sprintf("%v_%v_prio%v", ac.Prefix, name, idx1)
 			}
 
 		}

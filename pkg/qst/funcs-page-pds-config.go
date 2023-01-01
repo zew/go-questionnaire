@@ -1,10 +1,11 @@
-package pds
+package qst
 
 import (
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+const firstColLbl = float32(3)
 const outline2Indent = "1.2rem"
 
 var styleHeaderCols1 = css.NewStylesResponsive(nil)
@@ -54,128 +55,108 @@ func init() {
 
 }
 
-// config multiple choice
-type configMC struct {
-	KeyLabels          string // key to a map of labels
-	Cols               float32
-	InpColspan         float32
-	LabelBottom        bool
-	DontKnow           bool
-	GroupBottomSpacers int
-
-	GroupLeftIndent string
-
-	XDisplacements []string
+// asset classes
+type assetClass struct {
+	NameUnused   string // unusued
+	Prefix       string
+	Lbl          trl.S
+	TrancheTypes []trancheType
 }
 
-var (
-	mCh2 = configMC{
-		KeyLabels:          "teamsize",
-		Cols:               16,
-		InpColspan:         16 / 4,
-		LabelBottom:        true,
-		DontKnow:           false,
-		GroupBottomSpacers: 3,
-	}
-
-	mCh2a = configMC{
-		KeyLabels:          "covenants-per-credit",
-		Cols:               4,
-		InpColspan:         1,
-		LabelBottom:        false,
-		DontKnow:           false,
-		GroupBottomSpacers: 3,
-		GroupLeftIndent:    outline2Indent,
-
-		XDisplacements: []string{
-			"1.6rem",
-			"0.62rem",
-			"0.62rem",
-			"1.6rem",
-		},
-	}
-
-	mCh3 = configMC{
-		KeyLabels:   "relevance1-5",
-		Cols:        10,
-		InpColspan:  2,
-		LabelBottom: false,
-		DontKnow:    false,
-	}
-
-	mCh4 = configMC{
-		KeyLabels:       "improveDecline1-5",
-		Cols:            10,
-		InpColspan:      2,
-		LabelBottom:     false,
-		DontKnow:        false,
-		GroupLeftIndent: outline2Indent,
-		XDisplacements: []string{
-			"1.6rem",
-			"0.79rem",
-			"",
-			"0.79rem",
-			"1.6rem",
-		},
-	}
-	mCh5 = configMC{
-		KeyLabels:   "closing-time-weeks",
-		Cols:        14,
-		InpColspan:  2,
-		LabelBottom: false,
-		DontKnow:    false,
-
-		// not yet
-		// GroupLeftIndent: outline2Indent,
-
-		XDisplacements: []string{
-			"1.46rem",
-			"1.27rem",
-			"0.64rem",
-			"",
-			"0.64rem",
-			"1.27rem",
-			"1.46rem",
-		},
-	}
-)
-
-var assetClassesInputs = []string{
-	"ac1_corplending",
-	"ac2_realestate",
-	"ac3_infrastruct",
+// tranche types
+// strategies
+type trancheType struct {
+	Name, Prefix string
+	Lbl          trl.S
 }
 
-var assetClassesLabels = []trl.S{
+var PDSAssetClasses = []assetClass{
 	{
-		"en": "Corporate / direct lending",
-		"de": "Corporate / direct lending",
+		NameUnused: "ac1_corplending",
+		Prefix:     "ac1",
+		Lbl: trl.S{
+			"en": "Corporate / direct lending",
+			"de": "Corporate / direct lending",
+		},
+		TrancheTypes: []trancheType{
+			{
+				Name:   "tt1_senior",
+				Prefix: "tt1",
+				Lbl: trl.S{
+					"en": "Senior",
+					"de": "Senior",
+				},
+			},
+			{
+				Name:   "tt2_unittranche",
+				Prefix: "tt2",
+				Lbl: trl.S{
+					"en": "Unitranche",
+					"de": "Unitranche",
+				},
+			},
+			{
+				Name:   "tt3_subpikoth",
+				Prefix: "tt3",
+				Lbl: trl.S{
+					"en": "Subordinated / PIK / Other",
+					"de": "Subordinated / PIK / Other",
+				},
+			},
+		},
 	},
 	{
-		"en": "Real estate debt",
-		"de": "Real estate debt",
+		NameUnused: "ac2_realestate",
+		Prefix:     "ac2",
+		Lbl: trl.S{
+			"en": "Real estate debt",
+			"de": "Real estate debt",
+		},
+		TrancheTypes: []trancheType{
+			{
+				Name:   "tt1_wholeloan",
+				Prefix: "tt1",
+				Lbl: trl.S{
+					"en": "Whole loan",
+					"de": "Whole loan",
+				},
+			},
+			{
+				Name:   "tt2_subordinated",
+				Prefix: "tt2",
+				Lbl: trl.S{
+					"en": "Subordinated",
+					"de": "Subordinated",
+				},
+			},
+		},
 	},
 	{
-		"en": "Infrastructure debt",
-		"de": "Infrastructure debt",
+		NameUnused: "ac3_infrastruct",
+		Prefix:     "ac3",
+		Lbl: trl.S{
+			"en": "Infrastructure debt",
+			"de": "Infrastructure debt",
+		},
+		TrancheTypes: []trancheType{
+			{
+				Name:   "tt1_senior",
+				Prefix: "tt1",
+				Lbl: trl.S{
+					"en": "Senior",
+					"de": "Senior",
+				},
+			},
+			{
+				Name:   "tt2_subordinated",
+				Prefix: "tt2",
+				Lbl: trl.S{
+					"en": "Subordinated",
+					"de": "Subordinated",
+				},
+			},
+		},
 	},
-}
-
-// strategy, strategies
-var trancheTypeNamesAC1 = []string{
-	"tt1_senior",
-	"tt2_unittranche",
-	"tt3_subpikoth", // Subordinated / PIK / Other
-	// "tt3_subordinated",
-	// "tt4_mezzanine", // "mezzanine_pik_other",
-}
-var trancheTypeNamesAC2 = []string{
-	"tt1_wholeloan",
-	"tt2_subordinated",
-}
-var trancheTypeNamesAC3 = []string{
-	"tt1_senior",
-	"tt2_subordinated",
 }
 
 var lblDont = trl.S{
@@ -183,45 +164,7 @@ var lblDont = trl.S{
 	"en": "Don´t know",
 }
 
-var allLbls = map[string][]trl.S{
-	"ac1-tranche-types": {
-		{
-			"en": "Senior",
-			"de": "Senior",
-		},
-		{
-			"en": "Unitranche",
-			"de": "Unitranche",
-		},
-		{
-			"en": "Subordinated / PIK / Other",
-			"de": "Subordinated / PIK / Other",
-		},
-		// {
-		// 	"en": "Mezzanine / PIK / other",
-		// 	"de": "Mezzanine / PIK / other",
-		// },
-	},
-	"ac2-tranche-types": {
-		{
-			"en": "Whole loan",
-			"de": "Whole loan",
-		},
-		{
-			"en": "Subordinated",
-			"de": "Subordinated",
-		},
-	},
-	"ac3-tranche-types": {
-		{
-			"en": "Senior",
-			"de": "Senior",
-		},
-		{
-			"en": "Subordinated",
-			"de": "Subordinated",
-		},
-	},
+var PDSLbls = map[string][]trl.S{
 	"teamsize": {
 		{
 			"en": "<5",
@@ -284,7 +227,6 @@ var allLbls = map[string][]trl.S{
 			"de": "Declined",
 		},
 	},
-
 	"improveWorsen1-5": {
 		{
 			"en": "Improve significantly",
@@ -308,10 +250,6 @@ var allLbls = map[string][]trl.S{
 		},
 	},
 	"closing-time-weeks": {
-		// {
-		// 	"en": "below 6&nbsp;m",
-		// 	"de": "below 6&nbsp;m",
-		// },
 		{
 			"en": "<<br>6",
 			"de": "<<br>6",
@@ -337,31 +275,21 @@ var allLbls = map[string][]trl.S{
 			"en": "&nbsp;<br>18",
 			"de": "&nbsp;<br>18",
 		},
-
-		// {
-		// 	"en": "over 18&nbsp;m",
-		// 	"de": "over 18&nbsp;m",
-		// },
 		{
 			"en": "><br>18",
 			"de": "><br>18",
 		},
 	},
-
 	"covenants-per-credit": {
 		{
 			"en": "0-1",
 			"de": "0-1",
 		},
 		{
-			// "en": "1-3",
-			// "de": "1-3",
 			"en": "2-3",
 			"de": "2-3",
 		},
 		{
-			// "en": "3-5",
-			// "de": "3-5",
 			"en": "4-5",
 			"de": "4-5",
 		},
@@ -371,10 +299,6 @@ var allLbls = map[string][]trl.S{
 		},
 	},
 }
-
-// const firstColLbl = float32(4)
-// const firstColLbl = float32(2)
-const firstColLbl = float32(3)
 
 var suffixWeeks = trl.S{
 	"en": "weeks",

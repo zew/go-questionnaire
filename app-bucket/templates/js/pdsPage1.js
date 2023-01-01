@@ -1,4 +1,31 @@
+const allCheckboxes = [
+    "ac1_q03",
+    "ac2_q03",
+    "ac3_q03",
 
+    "ac1_tt1_q031",
+    "ac1_tt2_q031",
+    "ac1_tt3_q031",
+
+    "ac2_tt1_q031",
+    "ac2_tt2_q031",
+
+    "ac3_tt1_q031",
+    "ac3_tt2_q031",
+];
+
+// for fast checking
+function checkAll() {
+    for (let i0 = 0; i0 < allCheckboxes.length; i0++) {
+        let elID = allCheckboxes[i0];
+        let checkBx = document.getElementById(elID);
+        if (checkBx) {
+            checkBx.checked = !checkBx.checked;
+            const evt = new Event("change");
+            checkBx.dispatchEvent(evt);
+        }
+    }
+}
 
 // non global block
 {
@@ -74,11 +101,11 @@
 
     for (let i0 = 0; i0 < triggers.length; i0++) {
         const elID = triggers[i0];
-        let checkB = document.getElementById(elID);
-        if (checkB){
+        let checkBx = document.getElementById(elID);
+        if (checkBx){
             // checkB[0].addEventListener('change', myChange);
-            checkB.addEventListener('change', myOnchange);
-            console.log("onchange ", checkB.name, "'pdsPage1'");
+            checkBx.addEventListener('change', myOnchange);
+            console.log("onchange ", checkBx.name, "'pdsPage1'");
         }        
     }
 
@@ -88,10 +115,10 @@
         const evt = new Event("change");
         for (let i0 = 0; i0 < triggers.length; i0++) {
             const elID = triggers[i0];
-            let checkB = document.getElementById(elID);
-            if (checkB) {
+            let checkBx = document.getElementById(elID);
+            if (checkBx) {
                 // checkB[0].addEventListener('change', myChange);
-                checkB.dispatchEvent(evt);
+                checkBx.dispatchEvent(evt);
             }
         }
     }
@@ -101,7 +128,3 @@
 
 
 }
-
-
-
-

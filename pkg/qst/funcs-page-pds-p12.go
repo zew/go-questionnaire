@@ -18,6 +18,9 @@ func pdsPage12AC3(q *QuestionnaireT, page *pageT) error {
 
 func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
+	ac := PDSAssetClasses[acIdx]
+	ac = onlySelectedTranchTypes(q, ac)
+
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
@@ -128,7 +131,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	createRows(
 		page,
-		PDSAssetClasses[acIdx],
+		ac,
 		page12Inputs,
 		page12Types,
 		page12Lbls,
@@ -232,7 +235,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	createRows(
 		page,
-		PDSAssetClasses[acIdx],
+		ac,
 		page13Inputs,
 		page13Types,
 		page13Lbls,
@@ -318,7 +321,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	createRows(
 		page,
-		PDSAssetClasses[acIdx],
+		ac,
 		page14Inputs,
 		page14Types,
 		page14Lbls,

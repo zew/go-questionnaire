@@ -14,6 +14,9 @@ func pdsPage4AC3(q *QuestionnaireT, page *pageT) error {
 
 func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 
+	ac := PDSAssetClasses[acIdx]
+	ac = onlySelectedTranchTypes(q, ac)
+
 	page.Label = trl.S{
 		"en": "4. Qualitative questions",
 		"de": "4. Qualitative questions",
@@ -57,7 +60,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"en": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
 			"de": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
 		}.Outline("4.1")
-		prio3Matrix(page, PDSAssetClasses[acIdx], "risks", lblMain, inps, lbls, true)
+		prio3Matrix(page, ac, "risks", lblMain, inps, lbls, true)
 	}
 
 	//
@@ -99,7 +102,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 					investment opportunities in the next three months? 
 					Please rank the top three.`,
 		}.Outline("4.2")
-		prio3Matrix(page, PDSAssetClasses[acIdx], "gicsprio", lblMain, inps, lbls, false)
+		prio3Matrix(page, ac, "gicsprio", lblMain, inps, lbls, false)
 	}
 
 	{
@@ -117,7 +120,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		radiosSingleRow(
 			page,
-			PDSAssetClasses[acIdx],
+			ac,
 			"q43_esg_importance",
 			esgImportance1,
 			mCh3,
@@ -151,7 +154,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"en": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
 			"de": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
 		}.Outline("4.4")
-		prio3Matrix(page, PDSAssetClasses[acIdx], "esg_challenge", lblMain, inps, lbls, true)
+		prio3Matrix(page, ac, "esg_challenge", lblMain, inps, lbls, true)
 	}
 
 	{
@@ -250,7 +253,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"en": `What UN SDGs are supported by your investment strategy?`,
 			"de": `What UN SDGs are supported by your investment strategy?`,
 		}.Outline("4.5")
-		checkBoxColumn(page, PDSAssetClasses[acIdx], unSDG, 2, inps, lbls)
+		checkBoxColumn(page, ac, unSDG, 2, inps, lbls)
 	}
 
 	return nil

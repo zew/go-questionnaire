@@ -11,6 +11,10 @@ func createRows(
 	rangeCfgs []*rangeConf,
 ) {
 
+	if len(ac.TrancheTypes) == 0 {
+		return
+	}
+
 	for idx1, inpName := range inpNames {
 
 		if overTypes[idx1] == "range-pct" {

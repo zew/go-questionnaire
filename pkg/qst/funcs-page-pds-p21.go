@@ -18,6 +18,9 @@ func pdsPage21AC3(q *QuestionnaireT, page *pageT) error {
 
 func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
+	ac := PDSAssetClasses[acIdx]
+	ac = onlySelectedTranchTypes(q, ac)
+
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
@@ -89,7 +92,7 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	createRows(
 		page,
-		PDSAssetClasses[acIdx],
+		ac,
 		page21Inputs,
 		page21Types,
 		page21Lbls,
@@ -118,8 +121,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		}
 	}
 
-	restrictedTextMultiCols(page, PDSAssetClasses[acIdx], r221)
-	restrictedTextMultiCols(page, PDSAssetClasses[acIdx], r222)
+	restrictedTextMultiCols(page, ac, r221)
+	restrictedTextMultiCols(page, ac, r222)
 
 	return nil
 }

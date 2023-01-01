@@ -1757,7 +1757,8 @@ func (q *QuestionnaireT) Version() int {
 	return q.VersionEffective
 }
 
-// ByName retrieves an input element by name
+// ByName retrieves an input element by name.
+// Returns nil if the input element was not found.
 func (q *QuestionnaireT) ByName(n string) *inputT {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {

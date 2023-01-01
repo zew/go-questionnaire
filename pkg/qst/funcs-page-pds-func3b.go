@@ -15,6 +15,10 @@ func radiosLabelsTop(
 	cf configMC,
 ) {
 
+	if len(ac.TrancheTypes) == 0 {
+		return
+	}
+
 	// numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
 	numColsMajor := float32(len(ac.TrancheTypes))
 	numColsMinor := numColsMajor * cf.Cols

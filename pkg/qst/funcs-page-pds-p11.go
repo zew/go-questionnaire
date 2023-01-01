@@ -18,6 +18,9 @@ func pdsPage11AC3(q *QuestionnaireT, page *pageT) error {
 
 func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 
+	ac := PDSAssetClasses[acIdx]
+	ac = onlySelectedTranchTypes(q, ac)
+
 	page.ValidationFuncName = "pdsRange"
 
 	// page.Section = trl.S{
@@ -39,7 +42,7 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// dynamically recreate the groups
 	page.Groups = nil
 
-	restrictedTextMultiCols(page, PDSAssetClasses[acIdx], rT1)
+	restrictedTextMultiCols(page, ac, rT1)
 
 	lblDuration := trl.S{
 		"en": "Average time to close a deal in weeks",
@@ -48,17 +51,17 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	dropdownsLabelsTop(
 		page,
-		PDSAssetClasses[acIdx],
+		ac,
 		"q11b_closing_time",
 		lblDuration,
 		mCh5,
 	)
 
-	restrictedTextMultiCols(page, PDSAssetClasses[acIdx], rT2)
+	restrictedTextMultiCols(page, ac, rT2)
 
-	restrictedTextMultiCols(page, PDSAssetClasses[acIdx], rT3)
+	restrictedTextMultiCols(page, ac, rT3)
 
-	restrictedTextMultiCols(page, PDSAssetClasses[acIdx], rT4)
+	restrictedTextMultiCols(page, ac, rT4)
 
 	page11fghInputs := []string{
 		"q11f_esg",
@@ -104,7 +107,7 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		createRows(
 			page,
-			PDSAssetClasses[acIdx],
+			ac,
 			page11fghInputs,
 			page11fghTypes,
 			page11fghLbls,

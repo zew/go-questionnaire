@@ -1,6 +1,8 @@
 package qst
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -66,8 +68,8 @@ type assetClass struct {
 // tranche types
 // strategies
 type trancheType struct {
-	Name, Prefix string
-	Lbl          trl.S
+	NameUnused, Prefix string
+	Lbl                trl.S
 }
 
 var PDSAssetClasses = []assetClass{
@@ -80,24 +82,24 @@ var PDSAssetClasses = []assetClass{
 		},
 		TrancheTypes: []trancheType{
 			{
-				Name:   "tt1_senior",
-				Prefix: "tt1",
+				NameUnused: "tt1_senior",
+				Prefix:     "tt1",
 				Lbl: trl.S{
 					"en": "Senior",
 					"de": "Senior",
 				},
 			},
 			{
-				Name:   "tt2_unittranche",
-				Prefix: "tt2",
+				NameUnused: "tt2_unittranche",
+				Prefix:     "tt2",
 				Lbl: trl.S{
 					"en": "Unitranche",
 					"de": "Unitranche",
 				},
 			},
 			{
-				Name:   "tt3_subpikoth",
-				Prefix: "tt3",
+				NameUnused: "tt3_subpikoth",
+				Prefix:     "tt3",
 				Lbl: trl.S{
 					"en": "Subordinated / PIK / Other",
 					"de": "Subordinated / PIK / Other",
@@ -114,16 +116,16 @@ var PDSAssetClasses = []assetClass{
 		},
 		TrancheTypes: []trancheType{
 			{
-				Name:   "tt1_wholeloan",
-				Prefix: "tt1",
+				NameUnused: "tt1_wholeloan",
+				Prefix:     "tt1",
 				Lbl: trl.S{
 					"en": "Whole loan",
 					"de": "Whole loan",
 				},
 			},
 			{
-				Name:   "tt2_subordinated",
-				Prefix: "tt2",
+				NameUnused: "tt2_subordinated",
+				Prefix:     "tt2",
 				Lbl: trl.S{
 					"en": "Subordinated",
 					"de": "Subordinated",
@@ -140,16 +142,16 @@ var PDSAssetClasses = []assetClass{
 		},
 		TrancheTypes: []trancheType{
 			{
-				Name:   "tt1_senior",
-				Prefix: "tt1",
+				NameUnused: "tt1_senior",
+				Prefix:     "tt1",
 				Lbl: trl.S{
 					"en": "Senior",
 					"de": "Senior",
 				},
 			},
 			{
-				Name:   "tt2_subordinated",
-				Prefix: "tt2",
+				NameUnused: "tt2_subordinated",
+				Prefix:     "tt2",
 				Lbl: trl.S{
 					"en": "Subordinated",
 					"de": "Subordinated",
@@ -335,4 +337,29 @@ var placeHolderNum = trl.S{
 var placeHolderMillion = trl.S{
 	"en": "million Euro",
 	"de": "Millionen Euro",
+}
+
+func onlySelectedTranchTypes(q *QuestionnaireT, ac assetClass) assetClass {
+
+	ln := len(ac.TrancheTypes)
+
+	// iterate over all
+	names := make([]string, 0, ln)
+	for i := 0; i < ln; i++ {
+		//                               ("ac1_tt1_q031")
+		names = append(names, fmt.Sprintf("%v_%v_q031", ac.Prefix, ac.TrancheTypes[i].Prefix))
+	}
+
+	newTT := make([]trancheType, 0, ln)
+	for i, name := range names {
+		inp := q.ByName(name)
+		if inp.Response != "" && inp.Response != "0" {
+			newTT = append(newTT, ac.TrancheTypes[i])
+		}
+	}
+
+	acRet := ac
+	acRet.TrancheTypes = newTT
+
+	return acRet
 }

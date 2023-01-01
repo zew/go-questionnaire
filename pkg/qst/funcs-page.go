@@ -15,8 +15,10 @@ type funcPageGeneratorT func(*QuestionnaireT, *pageT) error
 var pageGens = ctr.New() // page generations
 
 var funcPGs = map[string]funcPageGeneratorT{
+
 	"pageFuncExample": pageFuncExample,
-	"fmt202212":       fmt202212,
+
+	"fmt202212": fmt202212,
 
 	"pdsPage11-ac1": pdsPage11AC1,
 	"pdsPage11-ac2": pdsPage11AC2,

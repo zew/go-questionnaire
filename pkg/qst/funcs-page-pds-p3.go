@@ -18,6 +18,9 @@ func pdsPage3AC3(q *QuestionnaireT, page *pageT) error {
 
 func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
+	ac := PDSAssetClasses[acIdx]
+	ac = onlySelectedTranchTypes(q, ac)
+
 	page.Label = trl.S{
 		"en": "3. Index Questions",
 		"de": "3. Index Questions",
@@ -29,7 +32,7 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.CounterProgress = "3"
 
 	page.WidthMax("52rem") // getting the nice "valley" alignment
-	if len(PDSAssetClasses[acIdx].TrancheTypes) == 2 {
+	if len(ac.TrancheTypes) == 2 {
 		page.WidthMax("36rem")
 		// one column => see group width
 	}
@@ -93,7 +96,7 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		radiosLabelsTop(
 			page,
-			PDSAssetClasses[acIdx],
+			ac,
 			inpName+"_past3m",
 			trl.S{
 				"en": "<i>Last</i> 3&nbsp;months",
@@ -103,7 +106,7 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 		)
 		radiosLabelsTop(
 			page,
-			PDSAssetClasses[acIdx],
+			ac,
 			inpName+"_next3m",
 			trl.S{
 				"en": "<i>Next</i> 3&nbsp;months",

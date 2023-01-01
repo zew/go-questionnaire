@@ -126,8 +126,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr2
 		{
 			lblMain := trl.S{
-				"en": `Which asset classes do you invest in?`,
-				"de": `Wählen Sie Ihre Assetklassen.`,
+				"en": `Which asset classes do you invest in?
+					<span style='font-size: 80%;'>
+					 &nbsp;&nbsp;&nbsp;&nbsp;
+					<a href='#' onclick='checkAll();' >Check all</a>
+					</span>
+				`,
+				"de": `Wählen Sie Ihre Assetklassen.
+					<span style='font-size: 80%;'>
+					 &nbsp;&nbsp;&nbsp;&nbsp;
+					<a href='#' onclick='checkAll();' >Check all</a>
+					</span>
+				`,
 			}
 			checkBoxCascade(
 				qst.WrapPageT(page),
@@ -139,35 +149,44 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	for i := 0; i < 3; i++ {
+
+		naviCondition := fmt.Sprintf("pds_ac%v", i+1)
+
 		// page11
 		{
 			page := q.AddPage()
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage11-ac%v", i+1)
+			page.NavigationCondition = naviCondition
 		}
 		// page12
 		{
 			page := q.AddPage()
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage12-ac%v", i+1)
+			page.NavigationCondition = naviCondition
 		}
 		// page21
 		{
 			page := q.AddPage()
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage21-ac%v", i+1)
+			page.NavigationCondition = naviCondition
 		}
 		// page23
 		{
 			page := q.AddPage()
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage23-ac%v", i+1)
+			page.NavigationCondition = naviCondition
 		}
 		// page3
 		{
 			page := q.AddPage()
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage3-ac%v", i+1)
+			page.NavigationCondition = naviCondition
 		}
 		// page4
 		{
 			page := q.AddPage()
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage4-ac%v", i+1)
+			page.NavigationCondition = naviCondition
 		}
 
 	}

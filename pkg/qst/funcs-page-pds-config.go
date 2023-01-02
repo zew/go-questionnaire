@@ -354,6 +354,11 @@ var placeHolderMillion = trl.S{
 	"de": "Millionen Euro",
 }
 
+var placeHolder100percent = trl.S{
+	"en": "100",
+	"de": "100",
+}
+
 func onlySelectedTranchTypes(q *QuestionnaireT, ac assetClass) assetClass {
 
 	ln := len(ac.TrancheTypes)

@@ -2,6 +2,7 @@ package qst
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -71,9 +72,12 @@ func restrictedTextMultiCols(
 				}
 
 				if cf.FirstRow100Pct {
+					// seems to get lost due to dynamic page?
 					inp.Response = "100" // must parse to number
-					inp.Disabled = true
+					trl.S{}.Bold()
 
+					inp.Placeholder = placeHolder100percent
+					inp.Disabled = true
 				}
 
 			}
@@ -134,6 +138,34 @@ func restrictedTextMultiCols(
 				}
 
 			}
+
+		}
+
+		for _, trancheType := range ac.TrancheTypes {
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "restrictedTextSum" // js filename
+
+			lblClean := cf.LblRow1.RemoveSomeHTML()
+			s1 := trl.S{
+				"en": fmt.Sprintf("Does not add up. Really continue?\n%v,  %v", lblClean["en"], trancheType.Lbl),
+				"de": fmt.Sprintf("Does not add up. Really continue?\n%v,  %v", lblClean["de"], trancheType.Lbl),
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+
+			inp.JSBlockStrings = map[string]string{}
+			inp.JSBlockStrings["InpMain"] = fmt.Sprintf("%v_%v_%v", ac.Prefix, trancheType.Prefix, cf.InputNameP2)
+
+			sns := make([]string, 0, len(cf.SubNames))
+			for _, name := range cf.SubNames {
+				sn := fmt.Sprintf("\"%v_%v_%v_%v\"", ac.Prefix, trancheType.Prefix, cf.InputNameP2, name)
+				sns = append(sns, sn)
+				// key := fmt.Sprintf("%v_%v", "inp", idx1+1) // {{.inp_1}}, {{.inp_2}}, ...
+			}
+			inp.JSBlockStrings["SummandNames"] = "\n\t" + strings.Join(sns, ",\n\t") + "\n\t"
 
 		}
 

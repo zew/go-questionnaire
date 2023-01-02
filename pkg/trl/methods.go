@@ -5,6 +5,7 @@ package trl
 
 import (
 	"fmt"
+	"strings"
 )
 
 // Tr translates by key.
@@ -110,6 +111,18 @@ func (s S) Bold() S {
 	ret := S{}
 	for key, val := range s {
 		ret[key] = fmt.Sprintf("<b>%v</b>", val)
+	}
+	return ret
+}
+
+// RemoveSomeHTML removes  <b>, </b>, &nbsp;
+func (s S) RemoveSomeHTML() S {
+	ret := S{}
+	for key, val := range s {
+		val = strings.ReplaceAll(val, "<b>", "")
+		val = strings.ReplaceAll(val, "</b>", "")
+		val = strings.ReplaceAll(val, "&nbsp;", " ")
+		ret[key] = val
 	}
 	return ret
 }

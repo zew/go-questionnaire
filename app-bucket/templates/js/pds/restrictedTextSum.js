@@ -12,10 +12,18 @@ function funcInner{{.InpMain}}(){
     }
 
     let totalInpVal = totalInp.value;
-    let totalInpInt = 0
+    let totalInpFloat = 0.0;
+    let virtual = false;
     if (totalInpVal != "") {
-        totalInpInt = parseInt(totalInpVal, 10);
+        totalInpFloat = parseInt(totalInpVal, 10);
+        totalInpFloat = parseFloat(totalInpVal);
         // alert(nameMain + " value " + iSumStr + "; " + iS);
+    } else {
+        let ph = totalInp.getAttribute('placeholder');
+        if (ph == "100") {
+            totalInpFloat = 100.0;
+            virtual = true;
+        }
     }
 
     // let summandNames = ["name1", "name2"];
@@ -30,7 +38,8 @@ function funcInner{{.InpMain}}(){
         const inpLp = document.getElementById( summandNames[i1] );
         summandValsStr.push(inpLp.value);        
         if (inpLp.value != "") {
-            let iVal = parseInt(inpLp.value, 10);
+            // let iVal = parseInt(inpLp.value, 10);
+            let iVal = parseFloat(inpLp.value);
             summandValsInt.push( iVal);
             sum += iVal;
         } else {
@@ -43,10 +52,12 @@ function funcInner{{.InpMain}}(){
     let suspicious = false;
     
     // parts adding up
-    if (sum != 0 || totalInpInt != 0) {
-        if (sum != totalInpInt) {
+    if (sum != 0 || totalInpFloat != 0) {
+        if (totalInpFloat == 100 && sum == 0.0 && virtual) {
+            // not suspicious
+        } else if (sum != totalInpFloat) {
 
-            console.log("total:    ", nameTotal, totalInpInt);
+            console.log("total:    ", nameTotal, totalInpFloat);
             console.log("summands str: ", summandValsStr);
             console.log("summands int: ", summandValsInt, " = " , sum);
             
@@ -64,7 +75,8 @@ function funcOuter{{.InpMain}}(event) {
 
     if (funcInner{{.InpMain}}()) {
         // alert("{{.msg}}");
-        let doContinue = window.confirm("{{.msg}} {{.InpMain}}");
+        // let doContinue = window.confirm("{{.msg}} {{.InpMain}}");
+        let doContinue = window.confirm("{{.msg}}");
         if (doContinue) {
             return true;
         }

@@ -1117,13 +1117,6 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	hasHeader := false
 
-	if page.Section != nil {
-		fmt.Fprintf(w, "<span class='go-quest-page-section' >%v</span>", page.Section.Tr(q.LangCode))
-		if page.Label.Tr(q.LangCode) != "" {
-			fmt.Fprint(w, "<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
-		}
-		hasHeader = true
-	}
 	if page.Label.Tr(q.LangCode) != "" {
 		fmt.Fprintf(w, "<span class='go-quest-page-header' >%v</span>", page.Label.Tr(q.LangCode))
 		hasHeader = true

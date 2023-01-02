@@ -124,7 +124,7 @@ func prio3Matrix(
 			}
 
 			inp.JSBlockStrings = map[string]string{}
-			inp.JSBlockStrings["inputBaseName"] = name
+			inp.JSBlockStrings["inputBaseName"] = fmt.Sprintf("%v_%v", ac.Prefix, name)
 			for idx1 := 0; idx1 < 3; idx1++ {
 				key := fmt.Sprintf("%v_%v", "inp", idx1+1) // {{.inp_1}}, {{.inp_2}}, ...
 				inp.JSBlockStrings[key] = fmt.Sprintf("%v_%v_prio%v", ac.Prefix, name, idx1)

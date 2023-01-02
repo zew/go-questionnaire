@@ -20,18 +20,23 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	ac := PDSAssetClasses[acIdx]
 	ac = onlySelectedTranchTypes(q, ac)
+	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
-		"en": "2. Overall (existing) Portfolio",
-		"de": "2. Overall (existing) Portfolio",
-	}
+		"en": fmt.Sprintf("%v: Overall (existing) portfolio", ac.Lbl["en"]),
+		"de": fmt.Sprintf("%v: Overall (existing) portfolio", ac.Lbl["de"]),
+	}.Outline(fmt.Sprintf("%c2.", rn))
+	// page.Short = trl.S{
+	// 	"en": "Portfolio<br>base + risk",
+	// 	"de": "Portfolio<br>base + risk",
+	// }
 	page.Short = trl.S{
-		"en": "Portfolio<br>base + risk",
-		"de": "Portfolio<br>base + risk",
+		"en": fmt.Sprintf("%v<br>base + risk", ac.Short["en"]),
+		"de": fmt.Sprintf("%v<br>base + risk", ac.Short["de"]),
 	}
-	page.CounterProgress = "2"
+	page.CounterProgress = fmt.Sprintf("%c2", rn)
 
 	page.WidthMax("58rem")
 

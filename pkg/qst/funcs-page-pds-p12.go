@@ -20,18 +20,25 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	ac := PDSAssetClasses[acIdx]
 	ac = onlySelectedTranchTypes(q, ac)
+	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
-		"en": "<span style='font-size:85%; font-weight: normal'>Portfolio changes continued: <br></span> New transactions",
-		"de": "<span style='font-size:85%; font-weight: normal'>Portfolio changes continued: <br></span> New transactions",
-	}
+		"en": fmt.Sprintf(`
+					New transactions
+				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued for %v)</span>
+				`, ac.Lbl["en"]),
+		"de": fmt.Sprintf(`
+					New transactions
+				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued for %v)</span>
+				`, ac.Lbl["de"]),
+	}.Outline(fmt.Sprintf("%c1.", rn))
 	page.Short = trl.S{
-		"en": "Portfolio changes - 2",
-		"de": "Portfolio changes - 2",
+		"en": fmt.Sprintf("%v<br>Changes 2", ac.Short["en"]),
+		"de": fmt.Sprintf("%v<br>Changes 2", ac.Short["de"]),
 	}
-	page.CounterProgress = "1b"
+	page.CounterProgress = fmt.Sprintf("%c1b", rn)
 	page.SuppressInProgressbar = true
 
 	page.WidthMax("58rem")

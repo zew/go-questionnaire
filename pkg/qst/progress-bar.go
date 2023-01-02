@@ -116,14 +116,16 @@ func (q *QuestionnaireT) ProgressBar() string {
 			fmt.Sprintf(`
 					<li 
 						%v %v
-						class="%v" data-step="%v">
-						<span  class="progress-bar-label" >
+						class="%v pb%02v" data-step="%v">
+						<span  class="progress-bar-label " >
 							%v
 						<span>
 					</li> 
 				`,
-				onclick, pointr,
+				onclick,
+				pointr,
 				completeOrActive,
+				idx, // page index strictly sequential for CSS styling
 				counterInCircle,
 				shortLbl,
 			),

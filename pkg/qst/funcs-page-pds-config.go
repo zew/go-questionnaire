@@ -62,6 +62,7 @@ type assetClass struct {
 	NameUnused   string // unusued
 	Prefix       string
 	Lbl          trl.S
+	Short        trl.S // Short label
 	TrancheTypes []trancheType
 }
 
@@ -79,6 +80,10 @@ var PDSAssetClasses = []assetClass{
 		Lbl: trl.S{
 			"en": "Corporate / direct lending",
 			"de": "Corporate / direct lending",
+		},
+		Short: trl.S{
+			"en": "Corp. lend.",
+			"de": "Corp. lend.",
 		},
 		TrancheTypes: []trancheType{
 			{
@@ -114,6 +119,10 @@ var PDSAssetClasses = []assetClass{
 			"en": "Real estate debt",
 			"de": "Real estate debt",
 		},
+		Short: trl.S{
+			"en": "Real est.",
+			"de": "Real est.",
+		},
 		TrancheTypes: []trancheType{
 			{
 				NameUnused: "tt1_wholeloan",
@@ -139,6 +148,10 @@ var PDSAssetClasses = []assetClass{
 		Lbl: trl.S{
 			"en": "Infrastructure debt",
 			"de": "Infrastructure debt",
+		},
+		Short: trl.S{
+			"en": "Infrastruct.",
+			"de": "Infrastruct.",
 		},
 		TrancheTypes: []trancheType{
 			{

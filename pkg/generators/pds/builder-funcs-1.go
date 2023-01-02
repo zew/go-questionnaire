@@ -56,6 +56,8 @@ func checkBoxCascade(
 	// for idx1 := 0; idx1 < len(inpsL1); idx1++ {
 	for idx1, ac := range qst.PDSAssetClasses {
 
+		_ = idx1
+
 		gr := page.AddGroup()
 		gr.Cols = numCols
 		gr.Style = css.NewStylesResponsive(gr.Style)
@@ -70,9 +72,6 @@ func checkBoxCascade(
 				inp.Name = fmt.Sprintf("%v_q03", ac.Prefix)
 				// inp.Name = fmt.Sprintf("%v_q03", ac.Name)
 				inp.Label = ac.Lbl
-				if idx1 > 0 {
-					inp.Label["en"] += "<br> <span style=font-size:80%>(not yet included in following pages)</span>"
-				}
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 10
 				inp.ColSpanLabel = 1

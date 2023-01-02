@@ -1,6 +1,10 @@
 package qst
 
-import "github.com/zew/go-questionnaire/pkg/trl"
+import (
+	"fmt"
+
+	"github.com/zew/go-questionnaire/pkg/trl"
+)
 
 func pdsPage4AC1(q *QuestionnaireT, page *pageT) error {
 	return pdsPage4(q, page, 0)
@@ -19,16 +23,22 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// Tranche type selection has no effect on this page.
 	// Its for the asset class as a whole
 	// ac = onlySelectedTranchTypes(q, ac)
+	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.Label = trl.S{
-		"en": "4. Qualitative questions",
-		"de": "4. Qualitative questions",
-	}
+		"en": fmt.Sprintf("%v: Qualitative questions", ac.Lbl["en"]),
+		"de": fmt.Sprintf("%v: Qualitative questions", ac.Lbl["de"]),
+	}.Outline(fmt.Sprintf("%c4.", rn))
 	page.Short = trl.S{
 		"en": "Quality",
 		"de": "Quality",
 	}
+	page.Short = trl.S{
+		"en": fmt.Sprintf("%v<br>quality", ac.Short["en"]),
+		"de": fmt.Sprintf("%v<br>quality", ac.Short["de"]),
+	}
 	page.CounterProgress = "4"
+	page.CounterProgress = fmt.Sprintf("%c4", rn)
 
 	page.WidthMax("42rem")
 

@@ -20,16 +20,18 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	ac := PDSAssetClasses[acIdx]
 	ac = onlySelectedTranchTypes(q, ac)
+	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.Label = trl.S{
-		"en": "3. Index Questions",
-		"de": "3. Index Questions",
-	}
+		"en": fmt.Sprintf("%v: Index questions", ac.Lbl["en"]),
+		"de": fmt.Sprintf("%v: Index questions", ac.Lbl["de"]),
+	}.Outline(fmt.Sprintf("%c3.", rn))
 	page.Short = trl.S{
-		"en": "Indizes",
-		"de": "Indizes",
+		"en": fmt.Sprintf("%v<br>indizes", ac.Short["en"]),
+		"de": fmt.Sprintf("%v<br>indizes", ac.Short["de"]),
 	}
-	page.CounterProgress = "3"
+
+	page.CounterProgress = fmt.Sprintf("%c3", rn)
 
 	page.WidthMax("52rem") // getting the nice "valley" alignment
 	if len(ac.TrancheTypes) == 2 {

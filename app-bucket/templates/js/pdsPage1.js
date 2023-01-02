@@ -14,6 +14,8 @@ const allCheckboxes = [
     "ac3_tt2_q031",
 ];
 
+
+
 // for fast checking
 function checkAll() {
     for (let i0 = 0; i0 < allCheckboxes.length; i0++) {
@@ -26,6 +28,39 @@ function checkAll() {
         }
     }
 }
+
+
+
+
+const someCheckboxes = [
+    "ac1_q03",
+    "ac2_q03",
+    "ac3_q03",
+
+    "ac1_tt1_q031",
+    "ac1_tt2_q031",
+    "ac1_tt3_q031",
+
+    "ac2_tt1_q031",
+    // "ac2_tt2_q031",
+
+    // "ac3_tt1_q031",
+    // "ac3_tt2_q031",
+];
+function checkSome() {
+    for (let i0 = 0; i0 < someCheckboxes.length; i0++) {
+        let elID = someCheckboxes[i0];
+        let checkBx = document.getElementById(elID);
+        if (checkBx) {
+            checkBx.checked = !checkBx.checked;
+            const evt = new Event("change");
+            checkBx.dispatchEvent(evt);
+        }
+    }
+}
+
+
+
 
 // non global block
 {

@@ -131,12 +131,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					 &nbsp;&nbsp;&nbsp;&nbsp;
 					<a href='#' onclick='checkAll();' >Check all</a>
 					</span>
-				`,
-				"de": `Wählen Sie Ihre Assetklassen.
+
 					<span style='font-size: 80%;'>
 					 &nbsp;&nbsp;&nbsp;&nbsp;
-					<a href='#' onclick='checkAll();' >Check all</a>
+					<a href='#' onclick='checkSome();' >Check some</a>
 					</span>
+
+					`,
+				"de": `Wählen Sie Ihre Assetklassen.
 				`,
 			}
 			checkBoxCascade(

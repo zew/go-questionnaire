@@ -68,6 +68,7 @@ func pdsAssetClass3(q *QuestionnaireT, pageIdx int) bool {
 }
 
 func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
+
 	ac := PDSAssetClasses[acIdx]
 
 	// inp := q.Pages[11].Groups[0].Inputs[1]

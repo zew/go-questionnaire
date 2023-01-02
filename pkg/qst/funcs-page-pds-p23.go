@@ -33,7 +33,7 @@ func pdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
 					Portfolio risk
 				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio base continued for %v)</span>
 				`, ac.Lbl["de"]),
-	}.Outline(fmt.Sprintf("%c1.", rn))
+	}.Outline(fmt.Sprintf("%c2.", rn))
 
 	page.Short = trl.S{
 		"en": "Portfolio risk",
@@ -48,6 +48,12 @@ func pdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.SuppressInProgressbar = true
 
 	page.WidthMax("58rem")
+	if len(ac.TrancheTypes) == 2 {
+		page.WidthMax("42rem")
+	}
+	if len(ac.TrancheTypes) == 1 {
+		page.WidthMax("34rem")
+	}
 
 	// dynamically recreate the groups
 	page.Groups = nil

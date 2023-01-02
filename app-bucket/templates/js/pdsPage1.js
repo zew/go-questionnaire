@@ -42,9 +42,9 @@ const someCheckboxes = [
     "ac1_tt3_q031",
 
     "ac2_tt1_q031",
-    // "ac2_tt2_q031",
+    "ac2_tt2_q031",
 
-    // "ac3_tt1_q031",
+    "ac3_tt1_q031",
     // "ac3_tt2_q031",
 ];
 function checkSome() {

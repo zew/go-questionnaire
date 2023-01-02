@@ -42,6 +42,10 @@ func rangesRowLabelsTop(
 		gr := page.AddGroup()
 		gr.Cols = numCols
 
+		if numCols == 1 {
+			gr.WidthMax("18rem")
+		}
+
 		// row1
 		for idx1, trancheType := range ac.TrancheTypes {
 

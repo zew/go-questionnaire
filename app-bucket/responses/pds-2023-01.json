@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "205af687a41e1bc37883f2d2b86455d5c5f04508066df2e2f70b9fcc5faa49a0",
+ 	"md_5": "fde3d6cc8bb660956fe66ae2fe7ed688a9d566e6f7a89d23a98ccd74763d7963",
  	"lang_codes": [
  		"en"
  	],
@@ -39,6 +39,7 @@
  				"de": "Begrüßung",
  				"en": "Greeting"
  			},
+ 			"suppress_progressbar": true,
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -89,6 +90,7 @@
  				"de": "Asset classes,\u003cbr\u003etranches",
  				"en": "Asset classes,\u003cbr\u003etranches"
  			},
+ 			"suppress_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},

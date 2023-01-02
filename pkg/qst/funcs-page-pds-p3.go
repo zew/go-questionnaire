@@ -35,10 +35,10 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page.WidthMax("52rem") // getting the nice "valley" alignment
 	if len(ac.TrancheTypes) == 2 {
-		page.WidthMax("36rem")
+		page.WidthMax("42rem")
 	}
 	if len(ac.TrancheTypes) == 1 {
-		page.WidthMax("24rem")
+		page.WidthMax("34rem")
 	}
 
 	// dynamically recreate the groups

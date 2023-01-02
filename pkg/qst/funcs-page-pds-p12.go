@@ -42,6 +42,12 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.SuppressInProgressbar = true
 
 	page.WidthMax("58rem")
+	if len(ac.TrancheTypes) == 2 {
+		page.WidthMax("42rem")
+	}
+	if len(ac.TrancheTypes) == 1 {
+		page.WidthMax("34rem")
+	}
 
 	// dynamically recreate the groups
 	page.Groups = nil

@@ -25,6 +25,17 @@ func radiosLabelsTop(
 	idxLastCol := len(ac.TrancheTypes) - 1
 	_ = idxLastCol
 
+	grMax := ""
+	if len(ac.TrancheTypes) == 3 {
+		grMax = "54rem"
+	}
+	if len(ac.TrancheTypes) == 2 {
+		grMax = "38rem"
+	}
+	if len(ac.TrancheTypes) == 1 {
+		grMax = "18rem"
+	}
+
 	grSt := css.NewStylesResponsive(nil)
 	if cf.GroupLeftIndent != "" {
 		grSt.Desktop.StyleBox.Margin = "0 0 0 " + cf.GroupLeftIndent
@@ -52,6 +63,7 @@ func radiosLabelsTop(
 		gr.Cols = numColsMajor
 		gr.BottomVSpacers = 0
 		gr.BottomVSpacers = 1
+		gr.WidthMax(grMax)
 
 		for idx1 := range ac.TrancheTypes {
 
@@ -75,6 +87,7 @@ func radiosLabelsTop(
 		if cf.GroupBottomSpacers != 0 {
 			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}
+		gr.WidthMax(grMax)
 
 		// for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
 		for idx1, trancheType := range ac.TrancheTypes {

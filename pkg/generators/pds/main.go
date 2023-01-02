@@ -36,6 +36,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.ValidationFuncName = ""
 
 		page.SuppressInProgressbar = true
+		page.SuppressProgressbar = true
 
 		page.Label = trl.S{
 			"en": "Greeting",
@@ -69,6 +70,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		// page.SuppressInProgressbar = true
+
+		page.SuppressProgressbar = true
+
 		page.ValidationFuncName = "pdsPage1"
 
 		page.Label = trl.S{

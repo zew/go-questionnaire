@@ -41,7 +41,9 @@ func init() {
 	// right margin  - exclude range radio
 	// bottom margin - dy from range display
 	styleHeaderCols2.Desktop.StyleBox.Margin = "0 0.98rem 0.5rem 0"
-	styleHeaderCols2.Desktop.StyleBox.Margin = "0 4.18rem 0.5rem 0"
+	// styleHeaderCols2.Desktop.StyleBox.Margin = "0 4.18rem 0.5rem 0"
+	// styleHeaderCols2.Desktop.StyleBox.Margin = "0 4.68rem 0.5rem 0"
+	styleHeaderCols2.Desktop.StyleBox.Margin = "0 5.18rem 0.5rem 0"
 	styleHeaderCols2.Desktop.StyleBox.Width = "100%"
 
 	*styleHeaderCols3 = *styleHeaderCols2

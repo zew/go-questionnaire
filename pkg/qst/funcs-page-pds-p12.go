@@ -148,8 +148,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		[]*rangeConf{
 			&sliderPctThreeTen,
 			&sliderPctZeroTwo,
-			&sliderPctZeroFour,
 			&sliderPctThreeTwenty,
+			&sliderPctZeroFour,
 			&sliderPctThreeTwentyfive,
 			// &sliderPctZeroHundredWide,
 		},
@@ -270,7 +270,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			nil, // unused
 			&sliderYearsZeroTen,
 			&sliderEBITDA2x10x,
-			&sliderEBITDAZeroHundred,
+			&sliderEBITDAZero150,
 			&sliderEVZeroFiveHundred,
 			nil,
 			nil,

@@ -333,6 +333,11 @@ var suffixEBITDA = trl.S{
 	"en": "x EBITDA",
 	"de": "x EBITDA",
 }
+
+var suffixInvestedCapital = trl.S{
+	"en": "x Invested cap.",
+	"de": "x Invested cap.",
+}
 var suffixPercent = trl.S{
 	"en": "%",
 	"de": "%",

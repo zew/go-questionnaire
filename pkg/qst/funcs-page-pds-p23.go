@@ -6,6 +6,8 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+// page23 is deactivated
+
 func pdsPage23AC1(q *QuestionnaireT, page *pageT) error {
 	return pdsPage23(q, page, 0)
 }

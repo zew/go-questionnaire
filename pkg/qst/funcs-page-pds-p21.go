@@ -114,7 +114,7 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		[]*rangeConf{
 			nil,
 			&sliderYearsZeroTen,
-			&sliderPctThreeTwentyfive,
+			&sliderPctZeroTwentyfive,
 			&sliderOneOnePointFive,
 		},
 	)

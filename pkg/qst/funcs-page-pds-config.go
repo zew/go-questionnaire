@@ -108,8 +108,10 @@ var PDSAssetClasses = []assetClass{
 				NameUnused: "tt3_subpikoth",
 				Prefix:     "tt3",
 				Lbl: trl.S{
-					"en": "Subordinated / PIK / Other",
-					"de": "Subordinated / PIK / Other",
+					"en": "Subordinated / mezzanine / other",
+					"de": "Subordinated / mezzanine / other",
+					// "en": "Subordinated / PIK / Other",
+					// "de": "Subordinated / PIK / Other",
 				},
 			},
 		},

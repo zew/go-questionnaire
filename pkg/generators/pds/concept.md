@@ -98,6 +98,10 @@ Todo
 
 ## RC4
 
+*  Excel file:  
+   "Ist es möglich automatisch jeweils das relevante Quartal für "QQ YYYY" einzusetzen?"  
+   Wie ist das gemeint? Letztes Quartal? Oder aktuelles Quartal?
+
 * Fragengruppe 3. Markt Sentiment        - für alle asset classes gemeinsam? Nein
 * Fragengruppe 4. Qualitative Questions  - für alle asset classes gemeinsam? Nein
 

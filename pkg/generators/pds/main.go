@@ -88,6 +88,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.CounterProgress = "௵"
 		page.CounterProgress = "᎒" // e18e92
 
+		// https://utf8-icons.com/white-square-containing-black-small-square-9635
+		page.CounterProgress = "&#9632;" // black square; https://utf8-icons.com/black-square-9632
+
 		page.WidthMax("42rem")
 
 		// gr1
@@ -131,15 +134,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			lblMain := trl.S{
 				"en": `Which asset classes do you invest in?
-					<span style='font-size: 80%;'>
-					 &nbsp;&nbsp;&nbsp;&nbsp;
-					<a href='#' onclick='checkAll();' >Check all</a>
-					</span>
 
 					<span style='font-size: 80%;'>
 					 &nbsp;&nbsp;&nbsp;&nbsp;
 					<a href='#' onclick='checkSome();' >Check some</a>
 					</span>
+
+					<span style='font-size: 80%;'>
+					 &nbsp;&nbsp;&nbsp;&nbsp;
+					<a href='#' onclick='checkAll();' >Check all</a>
+					</span>
+
 
 					`,
 				"de": `Wählen Sie Ihre Assetklassen.

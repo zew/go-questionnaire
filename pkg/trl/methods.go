@@ -146,6 +146,22 @@ func (s S) Outline(pref string) S {
 	return ret
 }
 
+func (s S) Append(sfx string) S {
+	ret := s
+	for key := range s {
+		ret[key] += sfx
+	}
+	return ret
+}
+
+func (s S) AppendS(sfx S) S {
+	ret := s
+	for key := range s {
+		ret[key] += sfx[key]
+	}
+	return ret
+}
+
 // Pad with &nbsp;
 func (s S) Pad(spaces int) S {
 	ret := S{}

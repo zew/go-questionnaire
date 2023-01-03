@@ -95,7 +95,7 @@ function checkSome() {
         let parentContainer = parentContainers[keyID];
 
         // we start at index 1, for inp00 is the master control
-        for (let i0 = 1; i0 < 20; i0++) {
+        for (let i0 = 1; i0 < 25; i0++) {
             
             let i0Str = i0.toString();
             if (i0Str.length == 1) {

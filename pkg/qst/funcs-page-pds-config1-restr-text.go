@@ -1,15 +1,20 @@
 package qst
 
-import "github.com/zew/go-questionnaire/pkg/trl"
+import (
+	"fmt"
+
+	"github.com/zew/go-questionnaire/pkg/trl"
+)
 
 // config restricted text
 type configRT struct {
-	InputNameP2    string // second token of input name;  [numdeals, volbysegm, ...]
-	Chars          int    // input characters max
-	LblRow1        trl.S  //
-	FirstRow100Pct bool   // first row of input is 100% disabled
-	LblRow2        trl.S  // question in more detail
-	Suffix         trl.S  // unit 'deals' or 'million €'
+	InputNameP2      string // second token of input name;  [numdeals, volbysegm, ...]
+	SuppressSumField bool   // dont show InputNameP2; only show Subnames...
+	Chars            int    // input characters max
+	LblRow1          trl.S  //
+	FirstRow100Pct   bool   // first row of input is 100% disabled
+	LblRow2          trl.S  // question in more detail
+	Suffix           trl.S  // unit 'deals' or 'million €'
 
 	GroupLeftIndent string
 
@@ -21,67 +26,67 @@ type configRT struct {
 }
 
 var (
-	// simple config
-	rTSingleRowPercent = configRT{
-		Chars: 4,
-		LblRow1: trl.S{
-			"de": "By segment",
-			"en": "By segment",
-		}.Outline("a)"),
-		Min:         0,
-		Max:         100,
-		Step:        0.1,
-		Suffix:      suffixPercent,
-		Placeholder: placeHolderNum,
-	}
-	rTSingleRowMill = configRT{
-		Chars: 10,
-		LblRow1: trl.S{
-			"en": "By region",
-			"de": "By region",
-		}.Outline("b)"),
-		Min:         0,
-		Max:         40000,
-		Suffix:      suffixMillionEuro,
-		Step:        0.1,
-		Placeholder: placeHolderMillion,
-	}
 
 	// multi-row configs
 	rT1 = configRT{
-		InputNameP2: "q11a_numdeals",
+		InputNameP2: "q11a_numtransact",
 		Chars:       6,
 		LblRow1: trl.S{
-			"en": "Total number of new deals",
+			"en": "Total number of transactions",
 			"de": "Gesamtzahl neue Abschlüsse",
 		}.Outline("a.)"),
-		GroupLeftIndent: outline2Indent,
+		// GroupLeftIndent: outline2Indent,
 		LblRow2: trl.S{
-			"en": `Please state the number of deals closed in Q4 2022 by market segment: `,
-			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
+			"en": fmt.Sprint(
+				// `Please state the number of deals closed in Q4 2022 by market segment: `,
+				`Please state the number of transactions closed in [quarter] [year] `,
+			),
+			"de": fmt.Sprint(
+				`Please state the number of transactions closed in [quarter] [year] `,
+			),
 		},
 		Suffix: trl.S{
 			"en": "deals",
 			"de": "Deals",
+			// "en": "transactions",
+			// "de": "Transaktionen",
 		},
-		SubNames: []string{"low", "midupper", "other"},
+
+		SubNames: []string{"floatingrate", "esgdoc", "esgratchet"},
 		SubLbls: map[string]string{
-			"low":      "Lower mid-market (0-15m € EBITDA)",
-			"midupper": "Core- and Upper mid-market (>15m € EBITDA)",
-			"other":    "Other",
+			"floatingrate": "Thereof with floating interest rate",
+			"esgdoc":       "Thereof with explicit ESG targets in the credit documentation",
+			"esgratchet":   "Thereof with ESG ratchets",
 		},
 		Placeholder: placeHolderNum,
 	}
-	rT2 = configRT{
-		InputNameP2: "q11c_volbysegm",
+
+	rT1b = configRT{
+		InputNameP2: "q11b_voltransact",
 		Chars:       10,
+		LblRow1: trl.S{
+			"en": fmt.Sprint(
+				`Please state the volume (in mn €) of transactions closed in [quarter] [year]`,
+			),
+			"de": fmt.Sprint(
+				`Please state the volume (in mn €) of transactions closed in [quarter] [year]`,
+			),
+		},
+		Suffix:      suffixMillionEuro,
+		Placeholder: placeHolderMillion,
+	}
+
+	rT2 = configRT{
+		InputNameP2:      "q11d_volbysegm",
+		SuppressSumField: true,
+		Chars:            10,
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by segment",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
-		}.Outline("c.)"),
+		}.Outline("d.)"),
 		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
+			"en": `Please state the volume (in million Euro) of deals closed in [quarter] [year] by market segment: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] [year] nach Marktsegment: `,
 		},
 		Suffix:   suffixMillionEuro,
 		Step:     0.1,
@@ -93,42 +98,53 @@ var (
 		},
 		Placeholder: placeHolderMillion,
 	}
+	rT2RealEstate = configRT{}
+
 	rT3 = configRT{
-		InputNameP2: "q11d_volbyreg",
-		Chars:       10,
+		InputNameP2:      "q11e_volbyreg",
+		SuppressSumField: true,
+		Chars:            10,
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by region",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Region",
-		}.Outline("d.)"),
+		}.Outline("e.)"),
 		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
+			"en": `Please state the volume (in million Euro) of deals closed in [quarter] [year] by region: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] [year] nach Region: `,
 		},
 		Suffix: suffixMillionEuro,
 		Step:   0.1,
 
-		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
+		// SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
+		// SubLbls: map[string]string{
+		// 	"uk":          "UK",
+		// 	"france":      "France",
+		// 	"dach":        "DACH",
+		// 	"benelux":     "Benelux",
+		// 	"nordics":     "Nordics",
+		// 	"southern_eu": "Southern Europe",
+		// 	"other":       "Other",
+		// },
+		SubNames: []string{"uk", "france", "ger", "othereur"},
 		SubLbls: map[string]string{
-			"uk":          "UK",
-			"france":      "France",
-			"dach":        "DACH",
-			"benelux":     "Benelux",
-			"nordics":     "Nordics",
-			"southern_eu": "Southern Europe",
-			"other":       "Other",
+			"uk":       "UK",
+			"france":   "France",
+			"ger":      "Germany",
+			"othereur": "Rest of Europe",
 		},
 		Placeholder: placeHolderMillion,
 	}
 	rT4 = configRT{
-		InputNameP2: "q11e_volbysect",
-		Chars:       10,
+		InputNameP2:      "q11f_volbysect",
+		SuppressSumField: true,
+		Chars:            10,
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by sector",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
-		}.Outline("e.)"),
+		}.Outline("f.)"),
 		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by sector: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Sektor: `,
+			"en": `Please state the volume (in million Euro) of deals closed in [quarter] [year] by sector: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] [year] nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
 		Step:   0.1,
@@ -163,6 +179,8 @@ var (
 		},
 		Placeholder: placeHolderMillion,
 	}
+	rT4RealEstate = configRT{}
+	rT4Infrastruc = configRT{}
 
 	//
 	r221 = configRT{
@@ -199,17 +217,98 @@ var (
 			"en": `Please enter percentages for each region`,
 			"de": `Please enter percentages for each region`,
 		},
-		Suffix:   suffixPercent,
-		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
+		Suffix: suffixPercent,
+
+		// SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
+		// SubLbls: map[string]string{
+		// 	"uk":          "UK",
+		// 	"france":      "France",
+		// 	"dach":        "DACH",
+		// 	"benelux":     "Benelux",
+		// 	"nordics":     "Nordics",
+		// 	"southern_eu": "Southern Europe",
+		// 	"other":       "Other",
+		// },
+		SubNames: []string{"uk", "france", "ger", "othereur"},
 		SubLbls: map[string]string{
-			"uk":          "UK",
-			"france":      "France",
-			"dach":        "DACH",
-			"benelux":     "Benelux",
-			"nordics":     "Nordics",
-			"southern_eu": "Southern Europe",
-			"other":       "Other",
+			"uk":       "UK",
+			"france":   "France",
+			"ger":      "Germany",
+			"othereur": "Rest of Europe",
 		},
+
 		Placeholder: placeHolderNum,
 	}
+
+	//
+	//
+	// single row configs for page 3
+	rTSingleRowPercent = configRT{
+		Chars: 4,
+		LblRow1: trl.S{
+			"de": "By segment",
+			"en": "By segment",
+		}.Outline("a)"),
+		Min:         0,
+		Max:         100,
+		Step:        0.1,
+		Suffix:      suffixPercent,
+		Placeholder: placeHolderNum,
+	}
+	// single row configs for page 3
+	rTSingleRowMill = configRT{
+		Chars: 10,
+		LblRow1: trl.S{
+			"en": "By region",
+			"de": "By region",
+		}.Outline("b)"),
+		Min:         0,
+		Max:         40000,
+		Suffix:      suffixMillionEuro,
+		Step:        0.1,
+		Placeholder: placeHolderMillion,
+	}
 )
+
+func init() {
+
+	rT2RealEstate = rT2
+	rT2RealEstate.SubNames = []string{"core", "coreplus", "valueadd", "opportun"}
+	rT2RealEstate.SubLbls = map[string]string{
+		"core":     "Core",
+		"coreplus": "Core+",
+		"valueadd": "Value add",
+		"opportun": "Opportunistic",
+	}
+
+	rT4RealEstate = rT4
+	rT4RealEstate.SubNames = []string{"office", "retail", "hotel", "residential", "logistics", "other"}
+	rT4RealEstate.SubLbls = map[string]string{
+		"office":      "Office",
+		"retail":      "Retail",
+		"hotel":       "Hospitality",
+		"residential": "Residential",
+		"logistics":   "Logistics",
+		"other":       "Other",
+	}
+
+	rT4Infrastruc = rT4
+	rT4Infrastruc.SubNames = []string{
+		"transportation",
+		"power",
+		"renewables",
+		"utilities",
+		"telecoms",
+		"social",
+		"other"}
+	rT4Infrastruc.SubLbls = map[string]string{
+		"transportation": "Transportation",
+		"power":          "Power",
+		"renewables":     "Renewables",
+		"utilities":      "Utilities",
+		"telecoms":       "Telecoms",
+		"social":         "Social",
+		"other":          "Other",
+	}
+
+}

@@ -26,8 +26,8 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: Qualitative questions", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: Qualitative questions", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Qualitative questions", ac.Lbl["en"]),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Qualitative questions", ac.Lbl["de"]),
 	}.Outline(fmt.Sprintf("%c4.", rn))
 	page.Short = trl.S{
 		"en": "Quality",

@@ -25,8 +25,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: Overall (existing) portfolio", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: Overall (existing) portfolio", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Overall (existing) portfolio", ac.Lbl["en"]),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Overall (existing) portfolio", ac.Lbl["de"]),
 	}.Outline(fmt.Sprintf("%c2.", rn))
 	// page.Short = trl.S{
 	// 	"en": "Portfolio<br>base + risk",

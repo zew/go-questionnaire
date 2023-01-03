@@ -181,12 +181,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page.GeneratorFuncName = fmt.Sprintf("pdsPage21-ac%v", i+1)
 			page.NavigationCondition = naviCondition
 		}
-		// page23
-		{
-			page := q.AddPage()
-			page.GeneratorFuncName = fmt.Sprintf("pdsPage23-ac%v", i+1)
-			page.NavigationCondition = naviCondition
-		}
+		// // page23
+		// {
+		// 	page := q.AddPage()
+		// 	page.GeneratorFuncName = fmt.Sprintf("pdsPage23-ac%v", i+1)
+		// 	page.NavigationCondition = naviCondition
+		// }
 		// page3
 		{
 			page := q.AddPage()

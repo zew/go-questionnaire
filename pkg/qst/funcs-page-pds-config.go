@@ -338,12 +338,19 @@ var suffixPercent = trl.S{
 	"de": "%",
 }
 
+var suffixNumDeals = trl.S{
+	"en": "deals",
+	"de": "Deals",
+	// "en": "transactions",
+	// "de": "Transaktionen",
+}
+
 var suffixMillionEuro = trl.S{
 	// capitalizemytitle.com/how-to-abbreviate-million/
 	// "en": "million €",
 	// "en": "MM €",
-	"en": "mn €",
-	"de": "Mio €",
+	"en": "mn&nbsp;€",
+	"de": "Mio&nbsp;€",
 }
 
 var placeHolderNum = trl.S{

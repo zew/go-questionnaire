@@ -44,10 +44,10 @@ func restrictedTextMultiCols(
 			inp.ColSpan = gr.Cols
 
 			combined := trl.S{"en": "", "de": ""}
-			combined.AppendS(cf.LblRow1)
-			combined.Append("<div style='margin-left: 2.2rem;'>")
-			combined.AppendS(cf.LblRow2)
-			combined.Append("</div>")
+			combined.Append(cf.LblRow1)
+			combined.AppendStr("<div style='margin-left: 2.2rem;'>")
+			combined.Append(cf.LblRow2)
+			combined.AppendStr("</div>")
 
 			inp.Label = combined
 
@@ -91,9 +91,10 @@ func restrictedTextMultiCols(
 					if cf.FirstRow100Pct {
 						// seems to get lost due to dynamic page?
 						inp.Response = "100" // must parse to number
-						trl.S{}.Bold()
-
 						inp.Placeholder = placeHolder100percent
+						inp.Disabled = true
+					}
+					if cf.FirstRowDisabled {
 						inp.Disabled = true
 					}
 				}
@@ -142,10 +143,13 @@ func restrictedTextMultiCols(
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
 
+				// input vertically bottom
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
+				inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "end"
+
 				if idx2 == 0 {
 					inp.Label = trl.S{
-						// "en": fmt.Sprintf("- %v", cf.SubLbls[suffx]),
-						// "de": fmt.Sprintf("- %v", cf.SubLbls[suffx]),
 						"en": fmt.Sprintf("%v", cf.SubLbls[suffx]),
 						"de": fmt.Sprintf("%v", cf.SubLbls[suffx]),
 					}
@@ -165,7 +169,7 @@ func restrictedTextMultiCols(
 
 		}
 
-		if !cf.SuppressSumField {
+		if !cf.SuppressSumField && len(cf.SubNames) > 0 {
 
 			for _, trancheType := range ac.TrancheTypes {
 

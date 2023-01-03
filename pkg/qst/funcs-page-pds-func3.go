@@ -37,6 +37,16 @@ func createRows(
 			)
 		}
 
+		if overTypes[idx1] == "restricted-text-int" {
+			restrTextRowLabelsTop(
+				page,
+				ac,
+				inpName,
+				lbls[idx1],
+				rTSingleRowNumber,
+			)
+		}
+
 		if overTypes[idx1] == "restricted-text-million" {
 			restrTextRowLabelsTop(
 				page,

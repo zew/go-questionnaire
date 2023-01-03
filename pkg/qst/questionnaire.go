@@ -480,7 +480,7 @@ type pageT struct {
 	Groups []*groupT `json:"groups,omitempty"`
 
 	// we want to migrate those to inputs of type javascript-block
-	ValidationFuncName string `json:"validation_func_name,omitempty"` // file name containing javascript validation func template
+	ValidationFuncName string `json:"validation_func_name,omitempty"` // file name containing javascript validation func template, can be comma separated such as "pdsRange,pdsPage1"
 	// there should be several strings - key/value - not just one "msg"
 	ValidationFuncMsg trl.S `json:"validation_func_msg,omitempty"`
 
@@ -1189,12 +1189,17 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	//
 	//
 	if page.ValidationFuncName != "" {
-		q.RenderJS(
-			w,
-			page.ValidationFuncName,
-			map[string]trl.S{"msg": page.ValidationFuncMsg},
-			map[string]string{},
-		)
+
+		funcNames := strings.Split(page.ValidationFuncName, ",")
+		for _, funcName := range funcNames {
+			q.RenderJS(
+				w,
+				funcName,
+				map[string]trl.S{"msg": page.ValidationFuncMsg},
+				map[string]string{},
+			)
+		}
+
 	}
 
 	ret := w.String()

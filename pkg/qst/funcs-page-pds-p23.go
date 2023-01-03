@@ -27,11 +27,11 @@ func pdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.Label = trl.S{
 		"en": fmt.Sprintf(`
 					Portfolio risk
-				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio base continued for %v)</span>
+				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio base continued: %v)</span>
 				`, ac.Lbl["en"]),
 		"de": fmt.Sprintf(`
 					Portfolio risk
-				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio base continued for %v)</span>
+				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio base continued: %v)</span>
 				`, ac.Lbl["de"]),
 	}.Outline(fmt.Sprintf("%c2.", rn))
 
@@ -52,7 +52,7 @@ func pdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page.WidthMax("42rem")
 	}
 	if len(ac.TrancheTypes) == 1 {
-		page.WidthMax("34rem")
+		page.WidthMax("38rem")
 	}
 
 	// dynamically recreate the groups

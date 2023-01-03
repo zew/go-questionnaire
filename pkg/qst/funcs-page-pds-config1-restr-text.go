@@ -1,8 +1,6 @@
 package qst
 
 import (
-	"fmt"
-
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -12,7 +10,8 @@ type configRT struct {
 	SuppressSumField bool   // dont show InputNameP2; only show Subnames...
 	Chars            int    // input characters max
 	LblRow1          trl.S  //
-	FirstRow100Pct   bool   // first row of input is 100% disabled
+	FirstRowDisabled bool   // first row of input is disabled
+	FirstRow100Pct   bool   // first row of input is disabled and set to 100%
 	LblRow2          trl.S  // question in more detail
 	Suffix           trl.S  // unit 'deals' or 'million €'
 
@@ -28,69 +27,61 @@ type configRT struct {
 var (
 
 	// multi-row configs
-	rT1 = configRT{
+	rT11a = configRT{
 		InputNameP2: "q11a_numtransact",
 		Chars:       6,
 		LblRow1: trl.S{
 			"en": "Total number of transactions",
 			"de": "Gesamtzahl neue Abschlüsse",
 		}.Outline("a.)"),
-		// GroupLeftIndent: outline2Indent,
-		LblRow2: trl.S{
-			"en": fmt.Sprint(
-				// `Please state the number of deals closed in Q4 2022 by market segment: `,
-				`Please state the number of transactions closed in [quarter] [year] `,
-			),
-			"de": fmt.Sprint(
-				`Please state the number of transactions closed in [quarter] [year] `,
-			),
-		},
-		Suffix: trl.S{
-			"en": "deals",
-			"de": "Deals",
-			// "en": "transactions",
-			// "de": "Transaktionen",
-		},
 
+		LblRow2: trl.S{
+			"en": "Thereof with...",
+			"de": "Thereof with...",
+		},
+		Suffix:   suffixNumDeals,
 		SubNames: []string{"floatingrate", "esgdoc", "esgratchet"},
 		SubLbls: map[string]string{
-			"floatingrate": "Thereof with floating interest rate",
-			"esgdoc":       "Thereof with explicit ESG targets in the credit documentation",
-			"esgratchet":   "Thereof with ESG ratchets",
+			"floatingrate": `
+				...floating interest rate
+					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
+					Please state the number of transactions with floating interest rate
+					</span>
+				`,
+			"esgdoc": `
+				...explicit ESG targets in the credit documentation
+					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
+					Please state the number of transactions with explicit ESG targets in the credit documentation.
+					</span>
+				`,
+			"esgratchet": `
+				...ESG ratchets
+					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
+					Pleases state the number of transactions with ESG ratchets.
+					</span>
+				`,
 		},
 		Placeholder: placeHolderNum,
 	}
 
-	rT1b = configRT{
+	rT11b = configRT{
 		InputNameP2: "q11b_voltransact",
 		Chars:       10,
-		LblRow1: trl.S{
-			"en": fmt.Sprint(
-				`Please state the volume (in mn €) of transactions closed in [quarter] [year]`,
-			),
-			"de": fmt.Sprint(
-				`Please state the volume (in mn €) of transactions closed in [quarter] [year]`,
-			),
-		},
+		// LblRow1: see init()
 		Suffix:      suffixMillionEuro,
+		Step:        0.1,
 		Placeholder: placeHolderMillion,
 	}
 
-	rT2 = configRT{
-		InputNameP2:      "q11d_volbysegm",
-		SuppressSumField: true,
-		Chars:            10,
-		LblRow1: trl.S{
-			"en": "Total volume of new deals by segment",
-			"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
-		}.Outline("d.)"),
-		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in [quarter] [year] by market segment: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] [year] nach Marktsegment: `,
-		},
-		Suffix:   suffixMillionEuro,
-		Step:     0.1,
-		SubNames: []string{"low", "mid", "upper"},
+	rT11dCorpLend = configRT{
+		InputNameP2: "q11d_volbysegm",
+		// SuppressSumField: true,
+		Chars: 10,
+		// LblRow1: see init()
+		FirstRowDisabled: true,
+		Suffix:           suffixMillionEuro,
+		Step:             0.1,
+		SubNames:         []string{"low", "mid", "upper"},
 		SubLbls: map[string]string{
 			"low":   "Lower mid-market (0-15m € EBITDA)",
 			"mid":   "Core mid-market  (15-50m € EBITDA)",
@@ -98,33 +89,23 @@ var (
 		},
 		Placeholder: placeHolderMillion,
 	}
-	rT2RealEstate = configRT{}
+	rT11dRealEstate = configRT{}
 
-	rT3 = configRT{
-		InputNameP2:      "q11e_volbyreg",
-		SuppressSumField: true,
-		Chars:            10,
+	rT11e = configRT{
+		InputNameP2: "q11e_volbyreg",
+		// SuppressSumField: true,
+		Chars: 10,
 		LblRow1: trl.S{
-			"en": "Total volume of new deals by region",
+			"en": "Region",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Region",
 		}.Outline("e.)"),
+		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in [quarter] [year] by region: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] [year] nach Region: `,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter] by region`,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] nach Region: `,
 		},
-		Suffix: suffixMillionEuro,
-		Step:   0.1,
-
-		// SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
-		// SubLbls: map[string]string{
-		// 	"uk":          "UK",
-		// 	"france":      "France",
-		// 	"dach":        "DACH",
-		// 	"benelux":     "Benelux",
-		// 	"nordics":     "Nordics",
-		// 	"southern_eu": "Southern Europe",
-		// 	"other":       "Other",
-		// },
+		Suffix:   suffixMillionEuro,
+		Step:     0.1,
 		SubNames: []string{"uk", "france", "ger", "othereur"},
 		SubLbls: map[string]string{
 			"uk":       "UK",
@@ -134,17 +115,18 @@ var (
 		},
 		Placeholder: placeHolderMillion,
 	}
-	rT4 = configRT{
-		InputNameP2:      "q11f_volbysect",
-		SuppressSumField: true,
-		Chars:            10,
+	rT11fCorpLend = configRT{
+		InputNameP2: "q11f_volbysect",
+		// SuppressSumField: true,
+		Chars: 10,
 		LblRow1: trl.S{
-			"en": "Total volume of new deals by sector",
+			"en": "Sector",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
 		}.Outline("f.)"),
+		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in [quarter] [year] by sector: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] [year] nach Sektor: `,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter] by sector`,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
 		Step:   0.1,
@@ -179,8 +161,8 @@ var (
 		},
 		Placeholder: placeHolderMillion,
 	}
-	rT4RealEstate = configRT{}
-	rT4Infrastruc = configRT{}
+	rT11fRealEstate = configRT{}
+	rT11fInfrastruc = configRT{}
 
 	//
 	r221 = configRT{
@@ -268,22 +250,57 @@ var (
 		Step:        0.1,
 		Placeholder: placeHolderMillion,
 	}
+
+	rTSingleRowNumber = configRT{
+		Chars:       7,
+		Min:         0,
+		Max:         1000 * 1000,
+		Step:        1,
+		Suffix:      suffixNumDeals,
+		Placeholder: placeHolderNum,
+	}
 )
 
 func init() {
+	//
+	lblB := trl.S{
+		"en": "Total transaction volume (in mn EUR)",
+		"de": "Total transaction volume (in mn EUR)",
+	}
+	lblB2 := trl.S{
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter]`,
+		"de": `Please state the volume (in mn EUR) of transactions closed in [quarter]`,
+	}
+	lblB.Append90(lblB2)
+	lblB.Outline("b.)")
+	rT11b.LblRow1 = lblB
 
-	rT2RealEstate = rT2
-	rT2RealEstate.SubNames = []string{"core", "coreplus", "valueadd", "opportun"}
-	rT2RealEstate.SubLbls = map[string]string{
+	//
+	lbld := trl.S{
+		"en": "Market segment",
+		"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
+	}
+	lblD2 := trl.S{
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter] by market segment`,
+		"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] nach Marktsegment: `,
+	}
+	// lbld.Append90(lblD2)
+	rT11dCorpLend.LblRow2 = lblD2
+	lbld.Outline("d.)")
+	rT11dCorpLend.LblRow1 = lbld
+
+	rT11dRealEstate = rT11dCorpLend
+	rT11dRealEstate.SubNames = []string{"core", "coreplus", "valueadd", "opportun"}
+	rT11dRealEstate.SubLbls = map[string]string{
 		"core":     "Core",
 		"coreplus": "Core+",
 		"valueadd": "Value add",
 		"opportun": "Opportunistic",
 	}
 
-	rT4RealEstate = rT4
-	rT4RealEstate.SubNames = []string{"office", "retail", "hotel", "residential", "logistics", "other"}
-	rT4RealEstate.SubLbls = map[string]string{
+	rT11fRealEstate = rT11fCorpLend
+	rT11fRealEstate.SubNames = []string{"office", "retail", "hotel", "residential", "logistics", "other"}
+	rT11fRealEstate.SubLbls = map[string]string{
 		"office":      "Office",
 		"retail":      "Retail",
 		"hotel":       "Hospitality",
@@ -292,8 +309,8 @@ func init() {
 		"other":       "Other",
 	}
 
-	rT4Infrastruc = rT4
-	rT4Infrastruc.SubNames = []string{
+	rT11fInfrastruc = rT11fCorpLend
+	rT11fInfrastruc.SubNames = []string{
 		"transportation",
 		"power",
 		"renewables",
@@ -301,7 +318,7 @@ func init() {
 		"telecoms",
 		"social",
 		"other"}
-	rT4Infrastruc.SubLbls = map[string]string{
+	rT11fInfrastruc.SubLbls = map[string]string{
 		"transportation": "Transportation",
 		"power":          "Power",
 		"renewables":     "Renewables",

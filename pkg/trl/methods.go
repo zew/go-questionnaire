@@ -139,25 +139,35 @@ func (s S) Size() float64 {
 
 // Outline prepends <b> pref </b>
 func (s S) Outline(pref string) S {
-	ret := S{}
+	ret := s
 	for key, val := range s {
 		ret[key] = fmt.Sprintf("<b>%v</b> &nbsp; %v", pref, val)
 	}
 	return ret
 }
 
-func (s S) Append(sfx string) S {
+func (s S) Append(sfx S) S {
 	ret := s
 	for key := range s {
-		ret[key] += sfx
+		ret[key] += sfx[key]
 	}
 	return ret
 }
 
-func (s S) AppendS(sfx S) S {
+// Append90 - indented new line and 90 percent font-size
+func (s S) Append90(sfx S) S {
 	ret := s
 	for key := range s {
-		ret[key] += sfx[key]
+		ret[key] += fmt.Sprintf("<span class=font-size-90-block >%v</span>", sfx[key])
+	}
+	return ret
+}
+
+// AppendStr - single string to all keys
+func (s S) AppendStr(sfx string) S {
+	ret := s
+	for key := range s {
+		ret[key] += sfx
 	}
 	return ret
 }

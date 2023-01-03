@@ -35,23 +35,28 @@ var sliderPctZeroHundredWide = rangeConf{
 	RangeType: `3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100`,
 }
 
+// todo: special slider display value "<2"
+// 		 0;0.5; nach links rasten;  1;1.5 nach rechts rasten
 var sliderPctThreeTen = rangeConf{
-	Min:    3,
+	Min:    0,
 	Max:    10,
 	Step:   0.5,
 	Suffix: suffixPercent,
 	// RangeType: `3--3:3;5:5;7:7;10:10`,
-	RangeType: `3--3:3;4:4;5: ;6:6;7: ;8:8;9: ;10:10`,
+	// RangeType: `3--3:3;4:4;5: ;6:6;7: ;8:8;9: ;10:10`,
+	RangeType: `3--0:<2;2:2;3: ;4:4;5: ;6:6;7: ;8:8;9: ;10:10`,
 }
 
-// todo: smaller than 1
+// todo: special slider display value ">2"
+// 		 2.25 nach links rasten
 var sliderPctZeroTwo = rangeConf{
 	Min:    0,
-	Max:    2,
+	Max:    2.5,
 	Step:   0.25,
 	Suffix: suffixPercent,
 	// RangeType: `3--0:0;0.5: ;1:1;1.5: ;2:2`,
-	RangeType: `3--0:0;0.5:0.5;1:1;1.5:1.5;2:2`,
+	// RangeType: `3--0:0;0.5:0.5;1:1;1.5:1.5;2:2`,
+	RangeType: `3--0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
 }
 
 var sliderPctZeroFour = rangeConf{
@@ -96,6 +101,7 @@ var sliderEBITDA2x10x = rangeConf{
 
 // _0- 50 mn € in  5 mn€ brackets
 // 50-100 mn € in 10 mn€ brackets
+// todo:  Einrasten auf 10 über 50
 var sliderEBITDAZeroHundred = rangeConf{
 	Min:    0,
 	Max:    100,

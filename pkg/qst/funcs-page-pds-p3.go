@@ -38,7 +38,7 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page.WidthMax("42rem")
 	}
 	if len(ac.TrancheTypes) == 1 {
-		page.WidthMax("34rem")
+		page.WidthMax("38rem")
 	}
 
 	// dynamically recreate the groups

@@ -1962,6 +1962,15 @@ input.ib-300 {     width:300px;    }
     margin-left: 2.4rem;
 }
 
+/* new line, instead of inline-block */
+.font-size-90-block {
+    font-size: 90%;
+    line-height: 110%;
+    display: block;
+    margin-left:  2.4rem;
+    margin-right: 1.2rem;
+}
+
 
 /* 
     range input CSS variables

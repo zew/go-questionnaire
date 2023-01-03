@@ -25,13 +25,9 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Overall (existing) portfolio", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Overall (existing) portfolio", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["en"], q.Survey.Quarter()),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["de"], q.Survey.Quarter()),
 	}.Outline(fmt.Sprintf("%c2.", rn))
-	// page.Short = trl.S{
-	// 	"en": "Portfolio<br>base + risk",
-	// 	"de": "Portfolio<br>base + risk",
-	// }
 	page.Short = trl.S{
 		"en": fmt.Sprintf("%v<br>base + risk", ac.Short["en"]),
 		"de": fmt.Sprintf("%v<br>base + risk", ac.Short["de"]),
@@ -43,57 +39,65 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page.WidthMax("42rem")
 	}
 	if len(ac.TrancheTypes) == 1 {
-		page.WidthMax("34rem")
+		page.WidthMax("38rem")
 	}
 
 	// dynamically recreate the groups
 	page.Groups = nil
 
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 1
-		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Label = trl.S{
-				"en": "Assets under management",
-				"de": "Assets under management",
-			}.Outline("2.1")
-			inp.ColSpan = 1
-			inp.ColSpanLabel = 1
-		}
-	}
-
 	page21Types := []string{
 		"restricted-text-million",
-		"restricted-text-million",
-		"restricted-text-million",
-		"restricted-text-million",
+		"range-pct",
+		"range-pct",
+		"range-pct",
 	}
 	page21Inputs := []string{
-		"q21a_portfolio_value",
-		"q21b_capital_called",
-		"q21c_capital_repaid",
-		"q21d_capital_reserve",
+		"q2a_vol_realized_loans",
+		"q2b_time_to_maturity",
+		"q2c_gross_irr",
+		"q2d_gross_moic",
 	}
+
 	page21Lbls := []trl.S{
 		{
-			"en": "Fair market value of current portfolio in mn €",
-			"de": "Fair market value of current portfolio in mn €",
+			"en": `Volume of realized loans`,
+			"de": `Volume of realized loans`,
 		},
 		{
-			"en": "Capital called from investor in mn €",
-			"de": "Capital called from investor in mn €",
+			"en": `Time to maturity`,
+			"de": `Time to maturity`,
 		},
 		{
-			"en": "Repaid capital either reinvested or distributed to investor in mn €",
-			"de": "Repaid capital either reinvested or distributed to investor in mn €",
+			"en": `Realized Gross IRR`,
+			"de": `Realized Gross IRR`,
 		},
 		{
-			"en": "Dry powder in mn €",
-			"de": "Dry powder in mn €",
+			"en": `Realized Gross MOIC`,
+			"de": `Realized Gross MOIC`,
 		},
+	}
+
+	page21LblsDescr := []trl.S{
+		{
+			"en": `Please state the volume (in mn EUR) of realized loans closed in [quarter]`,
+			"de": `Please state the volume (in mn EUR) of realized loans closed in [quarter]`,
+		},
+		{
+			"en": `Please state the average time to repayment of repayed loans`,
+			"de": `Please state the average time to repayment of repayed loans`,
+		},
+		{
+			"en": `Please state the average realized Gross IRR`,
+			"de": `Please state the average realized Gross IRR`,
+		},
+		{
+			"en": `Please state the average realized Gross MOIC`,
+			"de": `Please state the average realized Gross MOIC`,
+		},
+	}
+
+	for i := 0; i < len(page21Lbls); i++ {
+		page21Lbls[i].Append90(page21LblsDescr[i])
 	}
 
 	for i := 0; i < len(page21Lbls); i++ {
@@ -109,31 +113,11 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page21Lbls,
 		[]*rangeConf{
 			nil,
-			nil,
-			nil,
-			nil,
-			nil,
+			&sliderYearsZeroTen,
+			&sliderPctThreeTwentyfive,
+			&sliderOneOnePointFive,
 		},
 	)
-
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 1
-		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Label = trl.S{
-				"en": "Portfolio composition",
-				"de": "Portfolio composition",
-			}.Outline("2.2")
-			inp.ColSpan = 1
-			inp.ColSpanLabel = 1
-		}
-	}
-
-	restrictedTextMultiCols(page, ac, r221)
-	restrictedTextMultiCols(page, ac, r222)
 
 	return nil
 }

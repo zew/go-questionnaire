@@ -27,11 +27,11 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.Label = trl.S{
 		"en": fmt.Sprintf(`
 					New transactions
-				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued for %v)</span>
+				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
 				`, ac.Lbl["en"]),
 		"de": fmt.Sprintf(`
 					New transactions
-				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued for %v)</span>
+				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
 				`, ac.Lbl["de"]),
 	}.Outline(fmt.Sprintf("%c1.", rn))
 	page.Short = trl.S{
@@ -46,7 +46,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page.WidthMax("42rem")
 	}
 	if len(ac.TrancheTypes) == 1 {
-		page.WidthMax("34rem")
+		page.WidthMax("38rem")
 	}
 
 	// dynamically recreate the groups
@@ -61,8 +61,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"en": "Return (unlevered)",
-				"de": "Return (unlevered)",
+				"en": "Unlevered returns",
+				"de": "Unlevered returns",
 			}.Outline("1.2")
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
@@ -75,7 +75,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"range-pct",
 		"range-pct",
 		"range-pct",
-		"range-pct",
 	}
 	page12Inputs := []string{
 		"q12a_cash_margin",
@@ -83,58 +82,56 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"q12c_upfront_fee",
 		"q12d_fixed_rate_coupon",
 		"q12e_irr_expected",
-		"q12f_share_floating_rate",
+		// "q12f_share_floating_rate",
 	}
 	page12Lbls := []trl.S{
 		{
-			"en": `
-					Margin (over 3m Euribor) <br>
-					<span class=font-size-90 >Average cash margin (only relevant for floating rate loans)</span>`,
-			"de": `
-					Margin (over 3m Euribor) <br>
-					<span class=font-size-90 >Average cash margin (only relevant for floating rate loans)</span>`,
+			"en": `Average cash margin over the relevant base rate`,
+			"de": `Average cash margin over the relevant base rate`,
 		},
 		{
-			"en": `
-					Interest floor <br>
-					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
-			"de": `
-					Interest floor <br>
-					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
+			"en": `Average interest rate floor`,
+			"de": `Average interest rate floor`,
 		},
 		{
-			"en": `
-					Upfront fee <br>
-					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
-			"de": `
-					Upfront fee <br>
-					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
+			"en": `Average fixed rate coupon`,
+			"de": `Average fixed rate coupon`,
 		},
+		{
+			"en": `Average upfront fee`,
+			"de": `Average upfront fee`,
+		},
+		{
+			"en": `Average expected Gross IRR`,
+			"de": `Average expected Gross IRR`,
+		},
+	}
 
+	page12LblsDescr := []trl.S{
 		{
-			"en": `
-					Fixed rate coupon <br>
-					<span class=font-size-90 > Average fixed rate coupon (only relevant for fixed rate loans) </span>`,
-			"de": `
-					Fixed rate coupon <br>
-					<span class=font-size-90 > Average fixed rate coupon (only relevant for fixed rate loans) </span>`,
+			"en": `Please state the average cash margin over the relevant base rate. Only relevant for floating rate loans.`,
+			"de": `Please state the average cash margin over the relevant base rate. Only relevant for floating rate loans.`,
 		},
 		{
-			"en": `
-					 Expected IRR <br>
-					<span class=font-size-90 > Average expected IRR  </span>`,
-			"de": `
-					 Expected IRR <br>
-					<span class=font-size-90 > Average expected IRR  </span>`,
+			"en": `Please state the average interest floor. Only relevant for floating rate loans.`,
+			"de": `Please state the average interest floor. Only relevant for floating rate loans.`,
 		},
 		{
-			"en": `
-					Share of floating rate debt <br>
-					<span class=font-size-90 > Share of floating rate debt </span>`,
-			"de": `
-					Share of floating rate debt <br>
-					<span class=font-size-90 > Share of floating rate debt </span>`,
+			"en": `Please state the average fixed rate copuon. Only relevant for fixed rate loans.`,
+			"de": `Please state the average fixed rate copuon. Only relevant for fixed rate loans.`,
 		},
+		{
+			"en": `Please state the average upfront fees charged to the borrower.`,
+			"de": `Please state the average upfront fees charged to the borrower.`,
+		},
+		{
+			"en": `Please state the average expected Gross IRR.`,
+			"de": `Please state the average expected Gross IRR.`,
+		},
+	}
+
+	for i := 0; i < len(page12Lbls); i++ {
+		page12Lbls[i].Append90(page12LblsDescr[i])
 	}
 
 	for i := 0; i < len(page12Lbls); i++ {
@@ -154,7 +151,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			&sliderPctZeroFour,
 			&sliderPctThreeTwenty,
 			&sliderPctThreeTwentyfive,
-			&sliderPctZeroHundredWide,
+			// &sliderPctZeroHundredWide,
 		},
 	)
 
@@ -180,7 +177,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"range-pct",
 		"range-pct",
 		"range-pct",
-		"range-pct",
+		"restricted-text-int",
+		"restricted-text-int",
 	}
 	page13Inputs := []string{
 		"q13a_number_covenants",
@@ -189,56 +187,72 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"q13d_ebitda_avg",
 		"q13e_ev_avg",
 		"q13f_share_sponsored_or_not",
+		"q13g_share_stepdown",
 	}
 	page13Lbls := []trl.S{
 		{
-			"en": `
-					Average # of covenants <br>
-					<span class=font-size-90 > Average number of financial covenants per credit </span>`,
-			"de": `
-					Average # of covenants <br>
-					<span class=font-size-90 > Average number of financial covenants per credit </span>`,
+			"en": `Average number of covenants`,
+			"de": `Average number of covenants`,
 		},
 		{
-			"en": `
-					Contracted maturity <br>
-					<span class=font-size-90 > Average contracted maturity </span>`,
-			"de": `
-					Contracted maturity <br>
-					<span class=font-size-90 > Average contracted maturity </span>`,
+			"en": `Contracted maturity`,
+			"de": `Contracted maturity`,
 		},
 		{
-			"en": `
-					 Opening leverage <br>
-					<span class=font-size-90 > Measured as a multiple of EBITDA  </span>`,
-			"de": `
-					 Opening leverage <br>
-					<span class=font-size-90 > Measured as a multiple of EBITDA  </span>`,
+			"en": `Opening Leverage`,
+			"de": `Opening Leverage`,
 		},
 		{
-			"en": `
-					 Average EBITDA <br>
-					<span class=font-size-90 > Average EBITDA of companies ; todo: Einrasten auf 10 über 50  </span>`,
-			"de": `
-					 Average EBITDA <br>
-					<span class=font-size-90 > Average EBITDA of companies ; todo: Einrasten auf 10 über 50  </span>`,
+			"en": `Average EBITDA`,
+			"de": `Average EBITDA`,
 		},
 		{
-			"en": `
-					 Average EV <br>
-					<span class=font-size-90 > Average EV of companies </span>`,
-			"de": `
-					 Average EV <br>
-					<span class=font-size-90 > Average EV of companies </span>`,
+			"en": `Average EV`,
+			"de": `Average EV`,
 		},
 		{
-			"en": `
-					 Share of sponsored vs. sponsor-less <br>
-					<span class=font-size-90 > Percentage of deals with private equity sponsor </span>`,
-			"de": `
-					 Share of sponsored vs. sponsor-less <br>
-					<span class=font-size-90 > Percentage of deals with private equity sponsor </span>`,
+			"en": `Number of loans with PE sponsor`,
+			"de": `Number of loans with PE sponsor`,
 		},
+		{
+			"en": `Number of loans with margin step down`,
+			"de": `Number of loans with margin step down`,
+		},
+	}
+
+	page13LblsDescr := []trl.S{
+		{
+			"en": `What is the average number of financial covenants per loan?`,
+			"de": `What is the average number of financial covenants per loan?`,
+		},
+		{
+			"en": `What is the average contracted maturity?`,
+			"de": `What is the average contracted maturity?`,
+		},
+		{
+			"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+			"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+		},
+		{
+			"en": `What is the average EBITDA of borrower companies?`,
+			"de": `What is the average EBITDA of borrower companies?`,
+		},
+		{
+			"en": `What is the average enterprise value of borrower companies?`,
+			"de": `What is the average enterprise value of borrower companies?`,
+		},
+		{
+			"en": `Please state the number of transactions with a private equity sponsor.`,
+			"de": `Please state the number of transactions with a private equity sponsor.`,
+		},
+		{
+			"en": `Please state the number of transactions with a margin step down.`,
+			"de": `Please state the number of transactions with a margin step down.`,
+		},
+	}
+
+	for i := 0; i < len(page13Lbls); i++ {
+		page13Lbls[i].Append90(page13LblsDescr[i])
 	}
 
 	for i := 0; i < len(page13Lbls); i++ {
@@ -258,91 +272,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			&sliderEBITDA2x10x,
 			&sliderEBITDAZeroHundred,
 			&sliderEVZeroFiveHundred,
-			&sliderPctZeroHundredWide,
-		},
-	)
-
-	//
-	//
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 1
-		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Label = trl.S{
-				"en": "Realizations",
-				"de": "Realizations",
-			}.Outline("1.4")
-			inp.ColSpan = 1
-			inp.ColSpanLabel = 1
-		}
-	}
-
-	page14Types := []string{
-		"restricted-text-million",
-		"range-pct",
-		"range-pct",
-		"range-pct",
-	}
-	page14Inputs := []string{
-		"q14a_vol_realized_loans",
-		"q14b_time_to_maturity",
-		"q14c_gross_irr",
-		"q14d_gross_moic",
-	}
-	page14Lbls := []trl.S{
-		{
-			"en": `
-					Realisations <br>
-					<span class=font-size-90 > Volume of realized loans in € </span>`,
-			"de": `
-					Realisations <br>
-					<span class=font-size-90 > Volume of realized loans in € </span>`,
-		},
-		{
-			"en": `
-					Time to maturity <br>
-					<span class=font-size-90 > Average time to maturity of realized deals </span>`,
-			"de": `
-					Time to maturity <br>
-					<span class=font-size-90 > Average time to maturity of realized deals </span>`,
-		},
-		{
-			"en": `
-					Realized gross IRR <br>
-					<span class=font-size-90 > Average realized gross IRR </span>`,
-			"de": `
-					Realized gross IRR <br>
-					<span class=font-size-90 > Average realized gross IRR </span>`,
-		},
-		{
-			"en": `
-					Realized gross MOIC <br>
-					<span class=font-size-90 > Average realized gross MOIC </span>`,
-			"de": `
-					Realized gross MOIC <br>
-					<span class=font-size-90 > Average realized gross MOIC </span>`,
-		},
-	}
-
-	for i := 0; i < len(page14Lbls); i++ {
-		rn := rune(97 + i) // 97 is a
-		page14Lbls[i] = page14Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
-	}
-
-	createRows(
-		page,
-		ac,
-		page14Inputs,
-		page14Types,
-		page14Lbls,
-		[]*rangeConf{
 			nil,
-			&sliderYearsZeroTen,
-			&sliderPctThreeTwentyfive,
-			&sliderOneOnePointFive,
+			nil,
 		},
 	)
 

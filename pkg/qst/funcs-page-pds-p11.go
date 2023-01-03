@@ -23,11 +23,11 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 	ac = onlySelectedTranchTypes(q, ac)
 	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
-	page.ValidationFuncName = "pdsRange"
+	page.ValidationFuncName = "pdsRange,pdsPage11"
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3 months)", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3 months)", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3&nbsp;months)", ac.Lbl["en"]),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3&nbsp;months)", ac.Lbl["de"]),
 	}.Outline(fmt.Sprintf("%c1.", rn))
 	page.Short = trl.S{
 		"en": "Portfolio<br>changes",
@@ -45,7 +45,7 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page.WidthMax("42rem")
 	}
 	if len(ac.TrancheTypes) == 1 {
-		page.WidthMax("34rem")
+		page.WidthMax("38rem")
 	}
 
 	// dynamically recreate the groups
@@ -53,28 +53,36 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	//
 	// todo: current or previous quarter
-	if strings.Contains(rT1.LblRow2["en"], "[quarter]") {
-		rT1.LblRow2["en"] = strings.ReplaceAll(rT1.LblRow2["en"], "[quarter]", q.Survey.Quarter())
-		rT1.LblRow2["en"] = strings.ReplaceAll(rT1.LblRow2["en"], "[year]", "")
+	if strings.Contains(rT11a.LblRow2["en"], "[quarter]") {
+		rT11a.LblRow2["en"] = strings.ReplaceAll(rT11a.LblRow2["en"], "[quarter]", q.Survey.Quarter())
+		rT11a.LblRow2["en"] = strings.ReplaceAll(rT11a.LblRow2["en"], "[year]", "")
 	}
-
-	restrictedTextMultiCols(page, ac, rT1)
 
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.BottomVSpacers = 0
-		inp := gr.AddInput()
-		inp.Type = "textblock"
-		inp.Label = trl.S{
-			"en": "Total transaction volume (in mn €)",
-			"de": "Total transaction volume (in mn €)",
-		}.Outline("b.)")
-	}
-	restrictedTextMultiCols(page, ac, rT1b)
+		gr.BottomVSpacers = 1
 
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"en": "New transactions",
+				"de": "New transactions",
+			}.Outline("1.1")
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 1
+		}
+	}
+
+	restrictedTextMultiCols(page, ac, rT11a)
+
+	restrictedTextMultiCols(page, ac, rT11b)
+
+	// c) Average time to close a transaction
 	lblDuration := trl.S{
-		"en": "Average time to close a deal in weeks (across all tranche types)",
+		// "en": "Average time to close a deal in weeks (across all tranche types)",
+		"en": "How long does it take on average to close a transaction (across all tranche types)?",
 		"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 	}.Outline("c.)")
 
@@ -98,77 +106,20 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 	)
 
 	if acIdx == 0 {
-		restrictedTextMultiCols(page, ac, rT2)
+		restrictedTextMultiCols(page, ac, rT11dCorpLend)
 	} else {
-		restrictedTextMultiCols(page, ac, rT2RealEstate)
+		restrictedTextMultiCols(page, ac, rT11dRealEstate)
 	}
 
-	restrictedTextMultiCols(page, ac, rT3)
+	restrictedTextMultiCols(page, ac, rT11e)
 
 	if acIdx == 0 {
-		restrictedTextMultiCols(page, ac, rT4)
+		restrictedTextMultiCols(page, ac, rT11fCorpLend)
 	} else if acIdx == 1 {
-		restrictedTextMultiCols(page, ac, rT4RealEstate)
+		restrictedTextMultiCols(page, ac, rT11fRealEstate)
 	} else {
-		restrictedTextMultiCols(page, ac, rT4Infrastruc)
+		restrictedTextMultiCols(page, ac, rT11fInfrastruc)
 	}
 
-	/* 	page11fghInputs := []string{
-	   		"q11f_esg",
-	   		"q11g_ratch",
-	   		"q11h_degrees",
-	   	}
-
-	   	page11fghTypes := []string{
-	   		"range-pct",
-	   		"range-pct",
-	   		"range-pct",
-	   	}
-
-	   	page11fghLbls := []trl.S{
-	   		{
-	   			"en": `<bb>Share ESG KPIs</bb> <br>
-	   					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
-	   			"de": `<bb>Share ESG KPIs</bb> <br>
-	   					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
-	   		},
-	   		{
-	   			"en": `<bb>Share ESG ratchets</bb> <br>
-	   					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
-	   			"de": `<bb>Share ESG ratchets</bb> <br>
-	   					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
-	   		},
-	   		{
-	   			"en": `<bb>Share 1.5°C target</bb> <br>
-	   					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?</span>`,
-	   			"de": `<bb>Share 1.5°C target</bb> <br>
-	   					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?</span>`,
-	   		},
-	   	}
-
-	   	{
-
-	   		// 4cols layout
-
-	   		for i := 0; i < len(page11fghLbls); i++ {
-	   			rn := rune(102 + i) // 102 is f
-	   			page11fghLbls[i] = page11fghLbls[i].Outline(fmt.Sprintf("%c.)", rn))
-	   		}
-
-	   		createRows(
-	   			page,
-	   			ac,
-	   			page11fghInputs,
-	   			page11fghTypes,
-	   			page11fghLbls,
-	   			[]*rangeConf{
-	   				&sliderPctZeroHundredWide, // &sliderPctZeroHundredMiddle,
-	   				&sliderPctZeroHundredWide,
-	   				&sliderPctZeroHundredWide,
-	   			},
-	   		)
-
-	   	}
-	*/
 	return nil
 }

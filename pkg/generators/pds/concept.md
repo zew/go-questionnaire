@@ -98,10 +98,6 @@ Todo
 
 ## RC4
 
-*  Excel file:  
-   "Ist es möglich automatisch jeweils das relevante Quartal für "QQ YYYY" einzusetzen?"  
-   Wie ist das gemeint? Letztes Quartal? Oder aktuelles Quartal?
-
 * Fragengruppe 3. Markt Sentiment        - für alle asset classes gemeinsam? Nein
 * Fragengruppe 4. Qualitative Questions  - für alle asset classes gemeinsam? Nein
 
@@ -140,3 +136,14 @@ Prio
    bei Seitenwechsel
 
 Horizonatels Scrollen für Mobile
+
+### RC4 Fragen
+
+*  Excel file:  
+   "Ist es möglich automatisch jeweils das relevante Quartal für "QQ YYYY" einzusetzen?"  
+   Immer letztes Quartal? Oder aktuelles Quartal?
+
+* Page 1.2 - Unlevered returns... wird nicht angezeigt,  
+    wenn "Total number of transactions" für alle Tranchentypen 0 ist.  
+    wir hatten hier eine extra Checkbox auf Seite 1.1 ("Total number of transactions") besprochen;
+    aber die ist nicht nötig

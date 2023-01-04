@@ -1468,6 +1468,7 @@ func CleanseUserAgent(s string) string {
 	return s
 }
 
+// compare codebase openingSpan
 var openingDiv = regexp.MustCompile(`<div.*?>`)
 var openingP = regexp.MustCompile(`<p.*?>`)
 

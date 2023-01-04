@@ -178,15 +178,6 @@ func restrictedTextMultiCols(
 				inp.Type = "javascript-block"
 				inp.Name = "restrictedTextSum" // js filename
 
-				lblClean := cf.LblRow1.RemoveSomeHTML()
-				s1 := trl.S{
-					"en": fmt.Sprintf("Does not add up. Really continue?\n%v,  %v", lblClean["en"], trancheType.Lbl),
-					"de": fmt.Sprintf("Does not add up. Really continue?\n%v,  %v", lblClean["de"], trancheType.Lbl),
-				}
-				inp.JSBlockTrls = map[string]trl.S{
-					"msg": s1,
-				}
-
 				inp.JSBlockStrings = map[string]string{}
 				inp.JSBlockStrings["InpMain"] = fmt.Sprintf("%v_%v_%v", ac.Prefix, trancheType.Prefix, cf.InputNameP2)
 
@@ -197,6 +188,23 @@ func restrictedTextMultiCols(
 					// key := fmt.Sprintf("%v_%v", "inp", idx1+1) // {{.inp_1}}, {{.inp_2}}, ...
 				}
 				inp.JSBlockStrings["SummandNames"] = "\n\t" + strings.Join(sns, ",\n\t") + "\n\t"
+
+				lblClean := cf.LblRow1.RemoveSomeHTML()
+				s1 := trl.S{
+					"en": fmt.Sprintf("Does not add up. Really continue?\n  %v,  %v", lblClean["en"], trancheType.Lbl),
+					"de": fmt.Sprintf("Does not add up. Really continue?\n  %v,  %v", lblClean["de"], trancheType.Lbl),
+				}
+				inp.JSBlockStrings["Operator"] = "!="
+				if cf.AddendsLighterSum {
+					s1 = trl.S{
+						"en": fmt.Sprintf("Addends greater sum. Really continue?\n  %v,  %v", lblClean["en"], trancheType.Lbl),
+						"de": fmt.Sprintf("Addends greater sum. Really continue?\n  %v,  %v", lblClean["de"], trancheType.Lbl),
+					}
+					inp.JSBlockStrings["Operator"] = ">"
+				}
+				inp.JSBlockTrls = map[string]trl.S{
+					"msg": s1,
+				}
 
 			}
 		}

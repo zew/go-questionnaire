@@ -6,14 +6,15 @@ import (
 
 // config restricted text
 type configRT struct {
-	InputNameP2      string // second token of input name;  [numdeals, volbysegm, ...]
-	SuppressSumField bool   // dont show InputNameP2; only show Subnames...
-	Chars            int    // input characters max
-	LblRow1          trl.S  //
-	FirstRowDisabled bool   // first row of input is disabled
-	FirstRow100Pct   bool   // first row of input is disabled and set to 100%
-	LblRow2          trl.S  // question in more detail
-	Suffix           trl.S  // unit 'deals' or 'million €'
+	InputNameP2       string // second token of input name;  [numdeals, volbysegm, ...]
+	SuppressSumField  bool   // dont show InputNameP2; only show Subnames...
+	AddendsLighterSum bool   // addends not _equal_ but _lighter-than_ sum
+	Chars             int    // input characters max
+	LblRow1           trl.S  //
+	FirstRowDisabled  bool   // first row of input is disabled
+	FirstRow100Pct    bool   // first row of input is disabled and set to 100%
+	LblRow2           trl.S  // question in more detail
+	Suffix            trl.S  // unit 'deals' or 'million €'
 
 	GroupLeftIndent string
 
@@ -28,8 +29,9 @@ var (
 
 	// multi-row configs
 	rT11a = configRT{
-		InputNameP2: "q11a_numtransact",
-		Chars:       6,
+		InputNameP2:       "q11a_numtransact",
+		AddendsLighterSum: true,
+		Chars:             6,
 		LblRow1: trl.S{
 			"en": "Total number of transactions",
 			"de": "Gesamtzahl neue Abschlüsse",
@@ -317,7 +319,8 @@ func init() {
 		"utilities",
 		"telecoms",
 		"social",
-		"other"}
+		"other",
+	}
 	rT11fInfrastruc.SubLbls = map[string]string{
 		"transportation": "Transportation",
 		"power":          "Power",

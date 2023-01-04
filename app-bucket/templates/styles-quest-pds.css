@@ -88,7 +88,9 @@ dummy
 }
 
 
-
+/* 
+    these progress bar styles dont work, if a page is inserted or deleted
+*/
 li.pb01,
 dummy {
     background-image: linear-gradient(to right, #ccc, #ccc, var(--clr-sec));

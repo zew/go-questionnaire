@@ -1,3 +1,7 @@
+// Adding up columns - number of transactions, consisting of addend-a, addend-b and -c.
+// Addends must be equal to sum.
+// Or addends must be lighter equal to sum.
+
 function funcInner{{.InpMain}}(){
 
     // let inp1 = document.forms.frmMain.xx_main.value;
@@ -55,7 +59,8 @@ function funcInner{{.InpMain}}(){
     if (sum != 0 || totalInpFloat != 0) {
         if (totalInpFloat == 100 && sum == 0.0 && virtual) {
             // not suspicious
-        } else if (sum != totalInpFloat) {
+
+        } else if (sum {{.Operator}} totalInpFloat) {
 
             console.log("total:    ", nameTotal, totalInpFloat);
             console.log("summands str: ", summandValsStr);

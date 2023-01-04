@@ -96,7 +96,7 @@ Todo
    Oder gibt's noch andere Unterschiede?
 
 
-## RC4
+## RC5 - Punkte
 
 * Fragengruppe 3. Markt Sentiment        - für alle asset classes gemeinsam? Nein
 * Fragengruppe 4. Qualitative Questions  - für alle asset classes gemeinsam? Nein
@@ -137,30 +137,35 @@ Prio
 
 Horizonatels Scrollen für Mobile
 
-### RC4 Fragen, todo, done
+### RC5 Anmerkungen
 
-* Dezimal-Trennzeichen soll immer Komma sein;  
-  Firefox auf Komma umgestellt.  
-  Chrome war schon auf Komma.  
+* Dezimal-Trennzeichen soll immer Komma sein. Eingabe von Punkt soll möglich sein, wird aber in Komma verwandelt.  
+  In Firefox auf Komma umgestellt.  
+  In Chrome keine Änderung nötig.  
+  95%-Lösung funktioniert: Kann nicht für _alle_ Kombinationen von Betriebssysteme/Browser garantiert werden. Exoten wie Linux/Opera oder Sailfish/Firefox könnten den Punkt als Eingabe verschlucken/ignorieren.
 
-* Page 1.2 - Unlevered returns... wird nicht angezeigt,  
-    wenn "Total number of transactions" für alle Tranchentypen "0" ist.  
-    Wir hatten hier eine extra Checkbox auf Seite 1.1 (über "Total number of transactions") besprochen;
-    aber die ist so nicht nötig
+* PagesA1,B1,C1,D1 - nachfolgende Page - "Unlevered returns..." wird nicht angezeigt,  
+    wenn "Total number of transactions" für _alle_ Tranchentypen "0" ist.  
+    Wir hatten hier eine extra Checkbox auf PagesA1,B1,C1,D1 (über "Total number of transactions") besprochen;
+    aber die ist jetzt vielleicht nicht nötig?
 
-*  Frage: Excel file:  
-   "Ist es möglich automatisch jeweils das relevante Quartal für "QQ YYYY" einzusetzen?"  
-   Immer letztes Quartal? Oder aktuelles Quartal?
+* PagesA1,B1,C1,D1 - Number of deals == 0  
+     => ganze Spalte disabled  
 
+* PagesA1,B1,C1,D1 - Number of deals  
+     => Summanden _kleinergleich_  Summe  
 
-* Todo: Page 1.1 - Number of deals == 0  => ganze Spalte disabled
+* PagesA1,B1,C1,D1 - "Total transaction volume "  
+     => Wert wird kopiert nach d.), e.) und f.)  
 
-* Todo: Page 1.1 - Number of deals - part _kleiner_ gleich Summe
+--- Todo
 
-* Todo: Slider: Change the display for >2, <20, ...
+* Frage: Excel file:  
+   "QQ YYYY" ist immer Vorquartal  
 
-* Todo: Slider: Change values close to >2 ...
+* All text changes for ac2 and ac3
 
-* Todo: All text changes for ac2 and ac3
-
+* Fast alle Slider haben nicht-numerische Werte bekommen;  
+   * Slider: Change the display for >2, <20, ...
+   * Slider: Change values close to >2 ...
 

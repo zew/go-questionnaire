@@ -1,3 +1,6 @@
+// For question type matrix on page4 of PDS.
+// Radios from the same row should not be checked twice.
+
 // non global block
 {
 

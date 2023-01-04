@@ -5,6 +5,7 @@ package trl
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
 )
 
@@ -115,14 +116,24 @@ func (s S) Bold() S {
 	return ret
 }
 
-// RemoveSomeHTML removes  <b>, </b>, &nbsp;
+// stackoverflow.com/questions/37027727/
+// Compare codebase openingDiv, openingP.
+// A variation would be .*? as in `<span.*?>` with the ? as non-greedy/lazy quantifier from stackoverflow.com/questions/5583579/.
+// Notice that you can put the ? quantifier behind the single char machter `?` as in in  `http??`
+var openingSpan = regexp.MustCompile(`<span[^>]*>`)
+
+// RemoveSomeHTML removes <span *>, </span>,  <b>, </b>, &nbsp; .
 func (s S) RemoveSomeHTML() S {
 	ret := S{}
-	for key, val := range s {
-		val = strings.ReplaceAll(val, "<b>", "")
-		val = strings.ReplaceAll(val, "</b>", "")
-		val = strings.ReplaceAll(val, "&nbsp;", " ")
-		ret[key] = val
+	for key, s := range s {
+		s = openingSpan.ReplaceAllString(s, "")
+		s = strings.ReplaceAll(s, "</span>", "")
+
+		s = strings.ReplaceAll(s, "<b>", "")
+		s = strings.ReplaceAll(s, "</b>", "")
+		s = strings.ReplaceAll(s, "&nbsp;", " ")
+		s = strings.ReplaceAll(s, "&shy;", "")
+		ret[key] = s
 	}
 	return ret
 }

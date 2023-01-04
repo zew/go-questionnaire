@@ -2,7 +2,6 @@ package qst
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -50,13 +49,6 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	// dynamically recreate the groups
 	page.Groups = nil
-
-	//
-	// todo: current or previous quarter
-	if strings.Contains(rT11a.LblRow2["en"], "[quarter]") {
-		rT11a.LblRow2["en"] = strings.ReplaceAll(rT11a.LblRow2["en"], "[quarter]", q.Survey.Quarter())
-		rT11a.LblRow2["en"] = strings.ReplaceAll(rT11a.LblRow2["en"], "[year]", "")
-	}
 
 	{
 		gr := page.AddGroup()

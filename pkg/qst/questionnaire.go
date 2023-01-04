@@ -1167,6 +1167,12 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
 			}
 
+			// this is ugly - and its not localized by language
+			// introduced for PDS questionnaire
+			if strings.Contains(grpHTML, "[quarter-1]") {
+				grpHTML = strings.ReplaceAll(grpHTML, "[quarter-1]", q.Survey.Quarter(-1))
+			}
+
 			// dynamic question numbering - based on NavigationCondition, IsInNavigation()
 			// todo
 
@@ -1921,6 +1927,7 @@ func (q *QuestionnaireT) DynamicPages() error {
 		q.Hyphenize()
 		q.ComputeMaxGroups()
 		q.SetColspans()
+		// but not q.TranslationCompleteness
 		// but not q.Validate
 	}
 

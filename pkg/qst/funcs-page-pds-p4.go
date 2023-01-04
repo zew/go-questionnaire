@@ -87,46 +87,116 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// matrix2
 	{
 
-		lblMain := trl.S{
-			"en": `What GICS sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
-			"de": `What GICS sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
-		}
-		lblMainDesc := trl.S{
-			"en": `Choose from sectors based on GICS: Energy, Materials, ... , Real estate`,
-			"de": `Choose from sectors based on GICS: Energy, Materials, ... , Real estate`,
-		}
-		lblMain.Append90(lblMainDesc)
-		lblMain.Outline("4.2")
+		if acIdx == 0 {
 
-		inps := []string{
-			"01_energy",
-			"02_materials",
-			"03_industrials",
-			"04_consumer_discretionary",
-			"05_consumer_staples",
-			"06_health_care",
-			"07_financials",
-			"08_information_technology",
-			"09_communication_services",
-			"10_utilities",
-			"11_real_estate",
+			lblMain := trl.S{
+				"en": `What GICS sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
+				"de": `What GICS sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
+			}
+			lblMainDesc := trl.S{
+				"en": `Choose from sectors based on GICS: Energy, Materials, ... , Real estate`,
+				"de": `Choose from sectors based on GICS: Energy, Materials, ... , Real estate`,
+			}
+			lblMain.Append90(lblMainDesc)
+			lblMain.Outline("4.2")
+
+			inps := []string{
+				"01_energy",
+				"02_materials",
+				"03_industrials",
+				"04_consumer_discretionary",
+				"05_consumer_staples",
+				"06_health_care",
+				"07_financials",
+				"08_information_technology",
+				"09_communication_services",
+				"10_utilities",
+				"11_real_estate",
+			}
+
+			lbls := map[string]string{
+				"01_energy":                 "Energy",
+				"02_materials":              "Materials",
+				"03_industrials":            "Industrials",
+				"04_consumer_discretionary": "Consumer discretionary",
+				"05_consumer_staples":       "Consumer staples",
+				"06_health_care":            "Health care",
+				"07_financials":             "Financials",
+				"08_information_technology": "Information technology",
+				"09_communication_services": "Communication services",
+				"10_utilities":              "Utilities",
+				"11_real_estate":            "Real estate",
+			}
+
+			prio3Matrix(page, ac, "q42_gicsprio", lblMain, inps, lbls, false)
+
 		}
 
-		lbls := map[string]string{
-			"01_energy":                 "Energy",
-			"02_materials":              "Materials",
-			"03_industrials":            "Industrials",
-			"04_consumer_discretionary": "Consumer discretionary",
-			"05_consumer_staples":       "Consumer staples",
-			"06_health_care":            "Health care",
-			"07_financials":             "Financials",
-			"08_information_technology": "Information technology",
-			"09_communication_services": "Communication services",
-			"10_utilities":              "Utilities",
-			"11_real_estate":            "Real estate",
+		if acIdx == 1 || acIdx == 2 {
+
+			lblMain := trl.S{
+				"en": `What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+				"de": `What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+			}
+			lblMainDesc := trl.S{
+				"en": `Choose from sectors: Office, Retail, Hospitality, Residential, Logistics, Other.`,
+				"de": `Choose from sectors: Office, Retail, Hospitality, Residential, Logistics, Other.`,
+			}
+
+			inps := []string{
+				"01_office",
+				"02_retail",
+				"03_hospitality",
+				"04_residential",
+				"05_logistics",
+				"06_other",
+			}
+
+			lbls := map[string]string{
+				"01_office":      "Office",
+				"02_retail":      "Retail",
+				"03_hospitality": "Hospitality",
+				"04_residential": "Residential",
+				"05_logistics":   "Logistics",
+				"06_other":       "Other",
+			}
+
+			if acIdx == 2 {
+
+				lblMainDesc = trl.S{
+					"en": `Choose from sectors: Transportation, Power, Renewables, Utilities, Telecoms, Social, Other`,
+					"de": `Choose from sectors: Transportation, Power, Renewables, Utilities, Telecoms, Social, Other`,
+				}
+
+				inps = []string{
+					"01_transportation",
+					"02_power",
+					"03_renewables",
+					"04_utilities",
+					"05_telecoms",
+					"06_social",
+					"07_other",
+				}
+
+				lbls = map[string]string{
+					"01_transportation": "Transportation",
+					"02_power":          "Power",
+					"03_renewables":     "Renewables",
+					"04_utilities":      "Utilities",
+					"05_telecoms":       "Telecoms",
+					"06_social":         "Social",
+					"07_other":          "Other",
+				}
+
+			}
+
+			lblMain.Append90(lblMainDesc)
+			lblMain.Outline("4.2")
+
+			prio3Matrix(page, ac, "q42_challenge_sectors", lblMain, inps, lbls, false)
+
 		}
 
-		prio3Matrix(page, ac, "q42_gicsprio", lblMain, inps, lbls, false)
 	}
 
 	{

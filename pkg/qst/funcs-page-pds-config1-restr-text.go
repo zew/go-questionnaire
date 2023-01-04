@@ -103,8 +103,8 @@ var (
 		}.Outline("e.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter] by region`,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] nach Region: `,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by region`,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Region: `,
 		},
 		Suffix:   suffixMillionEuro,
 		Step:     0.1,
@@ -127,8 +127,8 @@ var (
 		}.Outline("f.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter] by sector`,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] nach Sektor: `,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by sector`,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
 		Step:   0.1,
@@ -270,8 +270,8 @@ func init() {
 		"de": "Total transaction volume (in mn EUR)",
 	}
 	lblB2 := trl.S{
-		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter]`,
-		"de": `Please state the volume (in mn EUR) of transactions closed in [quarter]`,
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1]`,
+		"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1]`,
 	}
 	lblB.Append90(lblB2)
 	lblB.Outline("b.)")
@@ -283,8 +283,8 @@ func init() {
 		"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
 	}
 	lblD2 := trl.S{
-		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter] by market segment`,
-		"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter] nach Marktsegment: `,
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by market segment`,
+		"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Marktsegment: `,
 	}
 	// lbld.Append90(lblD2)
 	rT11dCorpLend.LblRow2 = lblD2

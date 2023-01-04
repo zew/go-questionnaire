@@ -175,111 +175,429 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		}
 	}
 
-	page13Types := []string{
-		"radios1-4",
-		"range-pct",
-		"range-pct",
-		"range-pct",
-		"range-pct",
-		"restricted-text-int",
-		"restricted-text-int",
-	}
-	page13Inputs := []string{
-		"q13a_number_covenants",
-		"q13b_contracted_maturity",
-		"q13c_opening_leverage",
-		"q13d_ebitda_avg",
-		"q13e_ev_avg",
-		"q13f_share_sponsored_or_not",
-		"q13g_share_stepdown",
-	}
-	page13Lbls := []trl.S{
-		{
-			"en": `Average number of covenants`,
-			"de": `Average number of covenants`,
-		},
-		{
-			"en": `Contracted maturity`,
-			"de": `Contracted maturity`,
-		},
-		{
-			"en": `Opening Leverage`,
-			"de": `Opening Leverage`,
-		},
-		{
-			"en": `Average EBITDA`,
-			"de": `Average EBITDA`,
-		},
-		{
-			"en": `Average EV`,
-			"de": `Average EV`,
-		},
-		{
-			"en": `Number of loans with PE sponsor`,
-			"de": `Number of loans with PE sponsor`,
-		},
-		{
-			"en": `Number of loans with margin step down`,
-			"de": `Number of loans with margin step down`,
-		},
+	if acIdx == 0 {
+
+		page13Types := []string{
+			"radios1-4",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"restricted-text-int",
+			"restricted-text-int",
+		}
+		page13Inputs := []string{
+			"q13a_number_covenants",
+			"q13b_contracted_maturity",
+			"q13c_opening_leverage",
+			"q13d_ebitda_avg",
+			"q13e_ev_avg",
+			"q13f_share_sponsored_or_not",
+			"q13g_share_stepdown",
+		}
+		page13Lbls := []trl.S{
+			{
+				"en": `Average number of covenants`,
+				"de": `Average number of covenants`,
+			},
+			{
+				"en": `Contracted maturity`,
+				"de": `Contracted maturity`,
+			},
+			{
+				"en": `Opening Leverage`,
+				"de": `Opening Leverage`,
+			},
+			{
+				"en": `Average EBITDA`,
+				"de": `Average EBITDA`,
+			},
+			{
+				"en": `Average EV`,
+				"de": `Average EV`,
+			},
+			{
+				"en": `Number of loans with PE sponsor`,
+				"de": `Number of loans with PE sponsor`,
+			},
+			{
+				"en": `Number of loans with margin step down`,
+				"de": `Number of loans with margin step down`,
+			},
+		}
+
+		page13LblsDescr := []trl.S{
+			{
+				"en": `What is the average number of financial covenants per loan?`,
+				"de": `What is the average number of financial covenants per loan?`,
+			},
+			{
+				"en": `What is the average contracted maturity?`,
+				"de": `What is the average contracted maturity?`,
+			},
+			{
+				"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+				"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+			},
+			{
+				"en": `What is the average EBITDA of borrower companies?`,
+				"de": `What is the average EBITDA of borrower companies?`,
+			},
+			{
+				"en": `What is the average enterprise value of borrower companies?`,
+				"de": `What is the average enterprise value of borrower companies?`,
+			},
+			{
+				"en": `Please state the number of transactions with a private equity sponsor.`,
+				"de": `Please state the number of transactions with a private equity sponsor.`,
+			},
+			{
+				"en": `Please state the number of transactions with a margin step down.`,
+				"de": `Please state the number of transactions with a margin step down.`,
+			},
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			page13Lbls[i].Append90(page13LblsDescr[i])
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			rn := rune(97 + i) // 97 is a
+			page13Lbls[i] = page13Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
+		}
+
+		createRows(
+			page,
+			ac,
+			page13Inputs,
+			page13Types,
+			page13Lbls,
+			[]*rangeConf{
+				nil, // unused
+				&sliderYearsZeroTen,
+				&sliderEBITDA2x10x,
+				&sliderEBITDAZero150,
+				&sliderEVZeroFiveHundred,
+				nil,
+				nil,
+			},
+		)
 	}
 
-	page13LblsDescr := []trl.S{
-		{
-			"en": `What is the average number of financial covenants per loan?`,
-			"de": `What is the average number of financial covenants per loan?`,
-		},
-		{
-			"en": `What is the average contracted maturity?`,
-			"de": `What is the average contracted maturity?`,
-		},
-		{
-			"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
-			"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
-		},
-		{
-			"en": `What is the average EBITDA of borrower companies?`,
-			"de": `What is the average EBITDA of borrower companies?`,
-		},
-		{
-			"en": `What is the average enterprise value of borrower companies?`,
-			"de": `What is the average enterprise value of borrower companies?`,
-		},
-		{
-			"en": `Please state the number of transactions with a private equity sponsor.`,
-			"de": `Please state the number of transactions with a private equity sponsor.`,
-		},
-		{
-			"en": `Please state the number of transactions with a margin step down.`,
-			"de": `Please state the number of transactions with a margin step down.`,
-		},
+	if acIdx == 1 {
+
+		page13Types := []string{
+			"radios1-4",
+			"range-pct",
+			"range-pct",
+
+			// real estate specific
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"restricted-text-int",
+			"restricted-text-int",
+			"restricted-text-int",
+		}
+		page13Inputs := []string{
+			"q13a_number_covenants",
+			"q13b_contracted_maturity",
+			"q13c_opening_leverage",
+
+			// real estate specific
+			"q13d_opening_dscr",
+			"q13e_opening_icr",
+			"q13f_opening_debt_yield",
+			"q13g_exit_leverage",
+			"q13h_exit_dscr",
+			"q13i_exit_icr",
+			"q13j_exit_yield",
+			"q13k_num_amortizing",
+			"q13l_num_developmentrisk",
+			"q13m_num_marginstepdown",
+		}
+		page13Lbls := []trl.S{
+			{
+				"en": `Average number of covenants`,
+				"de": `Average number of covenants`,
+			},
+			{
+				"en": `Contracted maturity`,
+				"de": `Contracted maturity`,
+			},
+			{
+				"en": `Opening Leverage`,
+				"de": `Opening Leverage`,
+			},
+
+			// real estate specific
+			{
+				"en": `Opening DSCR`,
+				"de": `Opening DSCR`,
+			},
+			{
+				"en": `Opening ICR`,
+				"de": `Opening ICR`,
+			},
+			{
+				"en": `Opening Debt Yield`,
+				"de": `Opening Debt Yield`,
+			},
+			{
+				"en": `Expected Exit Leverage`,
+				"de": `Expected Exit Leverage`,
+			},
+			{
+				"en": `Expected Exit DSCR`,
+				"de": `Expected Exit DSCR`,
+			},
+			{
+				"en": `Expected Exit ICR`,
+				"de": `Expected Exit ICR`,
+			},
+			{
+				"en": `Expected Exit Yield`,
+				"de": `Expected Exit Yield`,
+			},
+			{
+				"en": `Number of amortizing loans`,
+				"de": `Number of amortizing loans`,
+			},
+			{
+				"en": `Number of loans with development risk`,
+				"de": `Number of loans with development risk`,
+			},
+			{
+				"en": `Number of loans with margin step down`,
+				"de": `Number of loans with margin step down`,
+			},
+		}
+
+		page13LblsDescr := []trl.S{
+			{
+				"en": `What is the average number of financial covenants per loan?`,
+				"de": `What is the average number of financial covenants per loan?`,
+			},
+			{
+				"en": `What is the average contracted maturity?`,
+				"de": `What is the average contracted maturity?`,
+			},
+			{
+				"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+				"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+			},
+
+			// real estate specific
+			{
+				"en": `What is the average opening DSCR?`,
+				"de": `What is the average opening DSCR?`,
+			},
+			{
+				"en": `What is the average opening interest rate coverage ratio?`,
+				"de": `What is the average opening interest rate coverage ratio?`,
+			},
+			{
+				"en": `What is the average opening debt yield?`,
+				"de": `What is the average opening debt yield?`,
+			},
+			{
+				"en": `What is the average expected exit LTV or LTC?`,
+				"de": `What is the average expected exit LTV or LTC?`,
+			},
+			{
+				"en": `What is the average expected exit DSCR?`,
+				"de": `What is the average expected exit DSCR?`,
+			},
+			{
+				"en": `What is the average expected exit interest rate coverage ratio?`,
+				"de": `What is the average expected exit interest rate coverage ratio?`,
+			},
+			{
+				"en": `What is the average expected exit debt yield?`,
+				"de": `What is the average expected exit debt yield?`,
+			},
+			{
+				"en": `Please state the number of amortizing loans.`,
+				"de": `Please state the number of amortizing loans.`,
+			},
+			{
+				"en": `Please state the number of loans with development risk.`,
+				"de": `Please state the number of loans with development risk.`,
+			},
+			{
+				"en": `Please state the number of transactions with a margin step down.`,
+				"de": `Please state the number of transactions with a margin step down.`,
+			},
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			page13Lbls[i].Append90(page13LblsDescr[i])
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			rn := rune(97 + i) // 97 is a
+			page13Lbls[i] = page13Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
+		}
+
+		createRows(
+			page,
+			ac,
+			page13Inputs,
+			page13Types,
+			page13Lbls,
+			[]*rangeConf{
+				nil,
+				&sliderYearsZeroTen,
+				&sliderEBITDA2x10x,
+
+				// real estate specific
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				nil,
+				nil,
+				nil,
+			},
+		)
 	}
 
-	for i := 0; i < len(page13Lbls); i++ {
-		page13Lbls[i].Append90(page13LblsDescr[i])
-	}
+	if acIdx == 2 {
 
-	for i := 0; i < len(page13Lbls); i++ {
-		rn := rune(97 + i) // 97 is a
-		page13Lbls[i] = page13Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
-	}
+		page13Types := []string{
+			"radios1-4",
+			"range-pct",
+			"range-pct",
 
-	createRows(
-		page,
-		ac,
-		page13Inputs,
-		page13Types,
-		page13Lbls,
-		[]*rangeConf{
-			nil, // unused
-			&sliderYearsZeroTen,
-			&sliderEBITDA2x10x,
-			&sliderEBITDAZero150,
-			&sliderEVZeroFiveHundred,
-			nil,
-			nil,
-		},
-	)
+			// infrastruct specific
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"restricted-text-int",
+			"restricted-text-int",
+		}
+		page13Inputs := []string{
+			"q13a_number_covenants",
+			"q13b_contracted_maturity",
+			"q13c_opening_leverage",
+
+			// infrastruct specific
+			"q13d_opening_dscr",
+			"q13e_minimum_leverage",
+			"q13f_minimum_dscr",
+			"q13g_num_greenfield_risk",
+			"q13h_num_margin_step_down",
+		}
+		page13Lbls := []trl.S{
+			{
+				"en": `Average number of covenants`,
+				"de": `Average number of covenants`,
+			},
+			{
+				"en": `Contracted maturity`,
+				"de": `Contracted maturity`,
+			},
+			{
+				"en": `Opening Leverage`,
+				"de": `Opening Leverage`,
+			},
+
+			// infrastruct specific
+			{
+				"en": `Opening DSCR`,
+				"de": `Opening DSCR`,
+			},
+			{
+				"en": `Expected Minimum Leverage`,
+				"de": `Expected Minimum Leverage`,
+			},
+			{
+				"en": `Expected Minimum DSCR`,
+				"de": `Expected Minimum DSCR`,
+			},
+			{
+				"en": `Number of loans with greenfield risk`,
+				"de": `Number of loans with greenfield risk`,
+			},
+			{
+				"en": `Number of loans with margin step down`,
+				"de": `Number of loans with margin step down`,
+			},
+		}
+
+		page13LblsDescr := []trl.S{
+			{
+				"en": `What is the average number of financial covenants per loan?`,
+				"de": `What is the average number of financial covenants per loan?`,
+			},
+			{
+				"en": `What is the average contracted maturity?`,
+				"de": `What is the average contracted maturity?`,
+			},
+			{
+				"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+				"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+			},
+
+			// infrastruct specific
+			{
+				"en": `What is the average opening DSCR?`,
+				"de": `What is the average opening DSCR?`,
+			},
+			{
+				"en": `What is the average expected minimum LTV?`,
+				"de": `What is the average expected minimum LTV?`,
+			},
+			{
+				"en": `What is the average expected exit DSCR?`,
+				"de": `What is the average expected exit DSCR?`,
+			},
+			{
+				"en": `Please state the number of loans with greenfield risk.`,
+				"de": `Please state the number of loans with greenfield risk.`,
+			},
+			{
+				"en": `Please state the number of transactions with a margin step down.`,
+				"de": `Please state the number of transactions with a margin step down.`,
+			},
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			page13Lbls[i].Append90(page13LblsDescr[i])
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			rn := rune(97 + i) // 97 is a
+			page13Lbls[i] = page13Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
+		}
+
+		createRows(
+			page,
+			ac,
+			page13Inputs,
+			page13Types,
+			page13Lbls,
+			[]*rangeConf{
+				nil,
+				&sliderYearsZeroTen,
+				&sliderEBITDA2x10x,
+
+				// infrastruct specific
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				&sliderPctThreeTwentyfive,
+				nil,
+				nil,
+			},
+		)
+	}
 
 	return nil
 }

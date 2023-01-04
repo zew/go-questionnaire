@@ -158,14 +158,20 @@ Horizonatels Scrollen für Mobile
 * PagesA1,B1,C1,D1 - "Total transaction volume "  
      => Wert wird kopiert nach d.), e.) und f.)  
 
+* "QQ YYYY" ist immer das Vorquartal.  
+     Für Q2-2023 wäre es Q1-2023...
+
+
 --- Todo
 
-* Frage: Excel file:  
-   "QQ YYYY" ist immer Vorquartal  
+* ?PCAG: Excel spec - Real estate debt - 1.3d bis 1.3j - ranges are missing
 
-* All text changes for ac2 and ac3
+* ?PCAG: Excel spec - Infrastruct debt - 1.3d bis 1.3f - ranges are missing
+
+<!-- * Excel - Real estate debt - question 2d.) - Multiple on Invested Capital - should really be omitted?  -->
 
 * Fast alle Slider haben nicht-numerische Werte bekommen;  
    * Slider: Change the display for >2, <20, ...
    * Slider: Change values close to >2 ...
 
+* Mobile version

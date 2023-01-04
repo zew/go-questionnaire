@@ -54,36 +54,43 @@ func plausibleTranslation(key string, s trl.S, lcs []string) error {
 
 }
 
-// TranslationCompleteness tests all multilanguage strings for completeness.
-// Use only at JSON creation time, since dynamic elements have only one language.
-func (q *QuestionnaireT) TranslationCompleteness() error {
+// Hyphenize replaces "mittelfristig" with "mittel&shy;fristig"
+// for all labels and descriptions
+func (q *QuestionnaireT) Hyphenize() {
+
 	for i1 := 0; i1 < len(q.Pages); i1++ {
-		if err := plausibleTranslation(fmt.Sprintf("page%v_sect", i1), q.Pages[i1].Section, q.LangCodes); err != nil {
-			log.Print(err)
-			return err
-		}
-		if err := plausibleTranslation(fmt.Sprintf("page%v_lbl", i1), q.Pages[i1].Label, q.LangCodes); err != nil {
-			log.Print(err)
-			return err
-		}
-		if err := plausibleTranslation(fmt.Sprintf("page%v_desc", i1), q.Pages[i1].Desc, q.LangCodes); err != nil {
-			log.Print(err)
-			return err
-		}
-		if err := plausibleTranslation(fmt.Sprintf("page%v_short", i1), q.Pages[i1].Short, q.LangCodes); err != nil {
-			log.Print(err)
-			return err
-		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
-				if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_inp%v_lbl", i1, i2, i3), q.Pages[i1].Groups[i2].Inputs[i3].Label, q.LangCodes); err != nil {
-					log.Print(err)
-					return err
+				i := q.Pages[i1].Groups[i2].Inputs[i3]
+				// s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
+				// log.Printf("Hyphenize: %v", s)
+				for lc, v := range i.Label {
+					v = trl.HyphenizeText(v)
+					q.Pages[i1].Groups[i2].Inputs[i3].Label[lc] = v
+				}
+				for lc, v := range i.Desc {
+					v := trl.HyphenizeText(v)
+					q.Pages[i1].Groups[i2].Inputs[i3].Desc[lc] = v
+				}
+				for lc, v := range i.Suffix {
+					v := trl.HyphenizeText(v)
+					q.Pages[i1].Groups[i2].Inputs[i3].Suffix[lc] = v
 				}
 			}
 		}
 	}
-	return nil
+}
+
+// ComputeMaxGroups computes the maximum number of groups
+// and puts them into q.MaxGroups
+func (q *QuestionnaireT) ComputeMaxGroups() {
+	mG := 0
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if len(q.Pages[i1].Groups) > mG {
+			mG = len(q.Pages[i1].Groups)
+		}
+	}
+	q.MaxGroups = mG
 }
 
 func (q *QuestionnaireT) SetColspans() {
@@ -127,19 +134,58 @@ func (q *QuestionnaireT) SetColspans() {
 	}
 }
 
-// Validate performs integrity tests - suitable for every request
+// TranslationCompleteness tests all multilanguage strings for completeness.
+// Use only at JSON creation time, since dynamic elements have only one language.
+func (q *QuestionnaireT) TranslationCompleteness() error {
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if err := plausibleTranslation(fmt.Sprintf("page%v_sect", i1), q.Pages[i1].Section, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		if err := plausibleTranslation(fmt.Sprintf("page%v_lbl", i1), q.Pages[i1].Label, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		if err := plausibleTranslation(fmt.Sprintf("page%v_desc", i1), q.Pages[i1].Desc, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		if err := plausibleTranslation(fmt.Sprintf("page%v_short", i1), q.Pages[i1].Short, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_inp%v_lbl", i1, i2, i3), q.Pages[i1].Groups[i2].Inputs[i3].Label, q.LangCodes); err != nil {
+					log.Print(err)
+					return err
+				}
+			}
+		}
+	}
+	return nil
+}
+
+// Validate performs integrity tests on a static base questionnaire.
+// Validate should be run for every JSON load operation.
 //
-//	waveId, langCodes valid?
-//	input type valid?
+// Checks performed:
+//
+//	waveId, langCodes valid
+//	input names uniqueness
+//	input type valid
 //	submit button jump page exists
-//	validator func exists?
-//	input names uniqueness?
+//	validator func exists
 //
-// Validate also does some initialization stuff - needed only at JSON creation time
+// Validate also does some initialization stuff.
+// This is needed only at JSON creation time.
 //
 //	Setting page and group width to 100
 //	Setting values for radiogroups
 //	Setting navigation sequence enumeration values
+//
+// Compare funcs above, which are only called on JSON creation time
+// and for DynamicPages()
 func (q *QuestionnaireT) Validate() error {
 
 	if q.Survey.Type == "" || !Mustaz09Underscore(q.Survey.Type) {
@@ -369,43 +415,4 @@ func (q *QuestionnaireT) ComputeDynamicContent(idx int) error {
 	}
 	return nil
 
-}
-
-// Hyphenize replaces "mittelfristig" with "mittel&shy;fristig"
-// for all labels and descriptions
-func (q *QuestionnaireT) Hyphenize() {
-
-	for i1 := 0; i1 < len(q.Pages); i1++ {
-		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
-			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
-				i := q.Pages[i1].Groups[i2].Inputs[i3]
-				// s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
-				// log.Printf("Hyphenize: %v", s)
-				for lc, v := range i.Label {
-					v = trl.HyphenizeText(v)
-					q.Pages[i1].Groups[i2].Inputs[i3].Label[lc] = v
-				}
-				for lc, v := range i.Desc {
-					v := trl.HyphenizeText(v)
-					q.Pages[i1].Groups[i2].Inputs[i3].Desc[lc] = v
-				}
-				for lc, v := range i.Suffix {
-					v := trl.HyphenizeText(v)
-					q.Pages[i1].Groups[i2].Inputs[i3].Suffix[lc] = v
-				}
-			}
-		}
-	}
-}
-
-// ComputeMaxGroups computes the maximum number of groups
-// and puts them into q.MaxGroups
-func (q *QuestionnaireT) ComputeMaxGroups() {
-	mG := 0
-	for i1 := 0; i1 < len(q.Pages); i1++ {
-		if len(q.Pages[i1].Groups) > mG {
-			mG = len(q.Pages[i1].Groups)
-		}
-	}
-	q.MaxGroups = mG
 }

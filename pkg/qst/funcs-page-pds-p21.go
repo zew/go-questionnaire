@@ -25,8 +25,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.ValidationFuncName = "pdsRange"
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["en"], q.Survey.Quarter()),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["de"], q.Survey.Quarter()),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["en"], q.Survey.Quarter(-1)),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c2.", rn))
 	page.Short = trl.S{
 		"en": fmt.Sprintf("%v<br>realizations", ac.Short["en"]),
@@ -79,8 +79,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page21LblsDescr := []trl.S{
 		{
-			"en": `Please state the volume (in mn EUR) of realized loans closed in [quarter]`,
-			"de": `Please state the volume (in mn EUR) of realized loans closed in [quarter]`,
+			"en": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1]`,
+			"de": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1]`,
 		},
 		{
 			"en": `Please state the average time to repayment of repayed loans`,
@@ -105,19 +105,39 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page21Lbls[i] = page21Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 	}
 
-	createRows(
-		page,
-		ac,
-		page21Inputs,
-		page21Types,
-		page21Lbls,
-		[]*rangeConf{
-			nil,
-			&sliderYearsZeroTen,
-			&sliderPctZeroTwentyfive,
-			&sliderOneOnePointFive,
-		},
-	)
+	if acIdx == 0 {
+		createRows(
+			page,
+			ac,
+			page21Inputs,
+			page21Types,
+			page21Lbls,
+			[]*rangeConf{
+				nil,
+				&sliderYearsZeroTen,
+				&sliderPctZeroTwentyfive,
+				&sliderOneOnePointFive,
+			},
+		)
+	}
+
+	if acIdx == 1 || acIdx == 2 {
+		// option four omitted
+		red := len(page21Inputs) - 1
+		createRows(
+			page,
+			ac,
+			page21Inputs[:red],
+			page21Types[:red],
+			page21Lbls[:red],
+			[]*rangeConf{
+				nil,
+				&sliderYearsZeroTen,
+				&sliderPctZeroTwentyfive,
+				// &sliderOneOnePointFive,
+			},
+		)
+	}
 
 	return nil
 }

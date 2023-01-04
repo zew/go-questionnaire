@@ -39,6 +39,10 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"de": fmt.Sprintf("%v<br>Changes 2", ac.Short["de"]),
 	}
 	page.CounterProgress = fmt.Sprintf("%c1b", rn)
+
+	// marker for naviFuncs pds_ac1-3
+	page.CounterProgress = "page12"
+
 	page.SuppressInProgressbar = true
 
 	page.WidthMax("58rem")

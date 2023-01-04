@@ -137,13 +137,30 @@ Prio
 
 Horizonatels Scrollen für Mobile
 
-### RC4 Fragen
+### RC4 Fragen, todo, done
 
-*  Excel file:  
+* Dezimal-Trennzeichen soll immer Komma sein;  
+  Firefox auf Komma umgestellt.  
+  Chrome war schon auf Komma.  
+
+* Page 1.2 - Unlevered returns... wird nicht angezeigt,  
+    wenn "Total number of transactions" für alle Tranchentypen "0" ist.  
+    Wir hatten hier eine extra Checkbox auf Seite 1.1 (über "Total number of transactions") besprochen;
+    aber die ist so nicht nötig
+
+*  Frage: Excel file:  
    "Ist es möglich automatisch jeweils das relevante Quartal für "QQ YYYY" einzusetzen?"  
    Immer letztes Quartal? Oder aktuelles Quartal?
 
-* Page 1.2 - Unlevered returns... wird nicht angezeigt,  
-    wenn "Total number of transactions" für alle Tranchentypen 0 ist.  
-    wir hatten hier eine extra Checkbox auf Seite 1.1 ("Total number of transactions") besprochen;
-    aber die ist nicht nötig
+
+* Todo: Page 1.1 - Number of deals == 0  => ganze Spalte disabled
+
+* Todo: Page 1.1 - Number of deals - part _kleiner_ gleich Summe
+
+* Todo: Slider: Change the display for >2, <20, ...
+
+* Todo: Slider: Change values close to >2 ...
+
+* Todo: All text changes for ac2 and ac3
+
+

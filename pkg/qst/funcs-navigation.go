@@ -69,9 +69,37 @@ func pdsAssetClass3(q *QuestionnaireT, pageIdx int) bool {
 
 func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 
-	ac := PDSAssetClasses[acIdx]
+	// special rule for page12
+	//  if (all number of transactions for tranche types are "0")
+	//  then skip page12
+	// depends on  setting
+	//    `page.CounterProgress = "page12"`
+	page := q.Pages[pageIdx]
+	if page.CounterProgress == "page12" {
+		// ac1_tt2_q11a_numtransact_main
+		tts := PDSAssetClasses[acIdx].TrancheTypes
+		allNull := true
+		for _, tt := range tts {
+			name := fmt.Sprintf("ac%v_%v_q11a_numtransact_main", acIdx+1, tt.Prefix)
+			inp := q.ByName(name)
+			if inp == nil { // page not initialized
+				break
+			}
+			if inp.Response == "" || inp.Response != "0" {
+				allNull = false
+				break
+			}
+		}
+		if allNull {
+			return false
+		}
 
-	// inp := q.Pages[11].Groups[0].Inputs[1]
+	}
+
+	//
+	// visibility; depending on selection on page1
+	ac := PDSAssetClasses[acIdx]
+	// inp := q.Pages[1].Groups[xxx].Inputs[yyy]
 	name := fmt.Sprintf("%v_q03", ac.Prefix)
 	inp := q.ByName(name)
 	if inp.Response != "" && inp.Response != "0" {

@@ -98,27 +98,27 @@ dummy {
 
 li.pb02,
 li.pb04,
+li.pb05,
 li.pb06,
-li.pb07,
 dummy {
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec));
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), #dadaea,  var(--clr-sec-lgt2));
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), #dadaea, #dadaea);
 }
 
-li.pb08,
+li.pb07,
+li.pb19,
 li.pb10,
-li.pb12,
-li.pb13,
+li.pb11,
 dummy {
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec));
     /* background-image: linear-gradient(to right, var(--clr-sec-lgt2), #eadada, var(--clr-sec)); */
 }
 
+li.pb12,
 li.pb14,
+li.pb15,
 li.pb16,
-li.pb18,
-li.pb19,
 dummy {
     /* background-color: red !important; */
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec));

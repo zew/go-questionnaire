@@ -29,8 +29,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["de"], q.Survey.Quarter()),
 	}.Outline(fmt.Sprintf("%c2.", rn))
 	page.Short = trl.S{
-		"en": fmt.Sprintf("%v<br>base + risk", ac.Short["en"]),
-		"de": fmt.Sprintf("%v<br>base + risk", ac.Short["de"]),
+		"en": fmt.Sprintf("%v<br>realizations", ac.Short["en"]),
+		"de": fmt.Sprintf("%v<br>realizations", ac.Short["de"]),
 	}
 	page.CounterProgress = fmt.Sprintf("%c2", rn)
 

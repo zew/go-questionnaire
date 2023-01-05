@@ -469,9 +469,12 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			)
 		}
 
+		var rangeCfg rangeConf
+		rangeCfg.New(&inp)
+
 		// range-input wrapper
 		// display flex, column-reverse
-		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
+		ctrl += fmt.Sprintf("<div class='input-wrapper-signature-%v'>", rangeCfg.CSSType)
 
 		classCSS := []string{}
 		if inp.Response == "" {
@@ -497,13 +500,25 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 				floatFormatter = "%.3f"
 			}
 			// fmStr := fmt.Sprintf("%v - %v", floatFormatter, floatFormatter)
-			resp, _ := strconv.ParseFloat(inp.Response, 64)
+			resp, err := strconv.ParseFloat(inp.Response, 64)
+			if err != nil {
+				log.Printf("inp %v - cannot convert inp.Repsonse %v to float", inp.Name, inp.Response)
+			}
 			lower := fmt.Sprintf(floatFormatter, resp)
 			upper := fmt.Sprintf(floatFormatter, resp+inp.Step)
 			// log.Printf("float formatter for %v, %v \n\t\t%v", resp, resp+inp.Step, fmStr)
 			lower = humanizeRangeDisplay(lower)
 			upper = humanizeRangeDisplay(upper)
 			dispVal = fmt.Sprintf("%v - %v", lower, upper)
+
+			if resp <= rangeCfg.LowerThreshold && rangeCfg.LowerDisplay != "" {
+				dispVal = rangeCfg.LowerDisplay
+
+			}
+
+			if resp >= rangeCfg.UpperThreshold && rangeCfg.UpperDisplay != "" {
+				dispVal = rangeCfg.UpperDisplay
+			}
 		}
 
 		//
@@ -518,6 +533,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 				onfocus='pdsRangeClick(this)' 
 				%v
 				class='%v'
+				%v
 			/>
 			`,
 			inp.Type,
@@ -526,8 +542,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Response,
 			dirty,
 			strings.Join(classCSS, " "),
-			//
-			// inp.Signature(), // for corresponding datalist list=%v
+			rangeCfg.lowerUpperAttrs(),
 		)
 
 		// '500 - 510' is the max content, defined by CSS, approx 3.9rem
@@ -603,7 +618,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			`,
 			inp.Name,
 			display, inp.Suffix[q.LangCode],
-			inp.rangeLabels(),
+			inp.rangeLabels(rangeCfg),
 		)
 
 		ctrl += noAnswer
@@ -760,31 +775,7 @@ based on an encoding in DynamicFuncParamset.
 
 [CSS-class -- [step:label];[step:label];...]
 */
-func (inp *inputT) rangeLabels() string {
-
-	xs := []float64{}  // range steps, where ticks should appear
-	lbls := []string{} // the tick-label; can be empty
-
-	if inp.DynamicFuncParamset != "" {
-
-		parts := strings.Split(inp.DynamicFuncParamset, "--")
-
-		ticksStr := parts[1]
-		pairs := strings.Split(ticksStr, ";")
-
-		for _, pairStr := range pairs {
-			pair := strings.Split(pairStr, ":")
-			// x1, _ := strconv.Atoi(pair[0])
-			pair[0] = strings.ReplaceAll(pair[0], ",", ".")
-			x1, err := strconv.ParseFloat(pair[0], 64)
-			if err != nil {
-				log.Printf("cannot convert range tick %s - %v -\n\t%+v", pair[0], err, inp)
-			}
-			xs = append(xs, x1)
-			lbls = append(lbls, pair[1])
-		}
-
-	}
+func (inp *inputT) rangeLabels(rc rangeConf) string {
 
 	// if strings.Contains(inp.DynamicFuncParamset, "1.5") {
 	// 	log.Printf("   tickS %v", inp.DynamicFuncParamset)
@@ -795,8 +786,8 @@ func (inp *inputT) rangeLabels() string {
 	// prelimin
 	ws1 := []float64{} // widths delta, first element 0, adding up to 1.000
 	{
-		xsPrelim := make([]float64, len(xs))
-		copy(xsPrelim, xs)
+		xsPrelim := make([]float64, len(rc.xs))
+		copy(xsPrelim, rc.xs)
 
 		ws0 := []float64{} // widths based on zero
 		ctr := 0.0
@@ -855,14 +846,14 @@ func (inp *inputT) rangeLabels() string {
 		ctr++
 
 		// check if current step should have a tick in xs[0]
-		if len(xs) > 0 && stp == xs[0] {
+		if len(rc.xs) > 0 && stp == rc.xs[0] {
 
 			itr1++
 			itr1++
 
 			itr2++
 
-			lbl := lbls[0]
+			lbl := rc.lbls[0]
 			// label - width 0
 			fmt.Fprintf(
 				core,
@@ -889,8 +880,8 @@ func (inp *inputT) rangeLabels() string {
 					fmt.Sprintf("%6.2f", pct), // percentage width
 				)
 
-				xs = xs[1:]     // chop off leading ticks
-				lbls = lbls[1:] // ... and labels
+				rc.xs = rc.xs[1:]     // chop off leading ticks
+				rc.lbls = rc.lbls[1:] // ... and labels
 				ws1 = ws1[1:]
 			}
 

@@ -205,16 +205,6 @@ func (inp inputT) IsReserved() bool {
 	return false
 }
 
-// Signature returns the first token from DynamicFuncParamset;
-// usually this is [1,2,3]
-func (inp inputT) Signature() string {
-	if inp.DynamicFuncParamset != "" {
-		parts := strings.Split(inp.DynamicFuncParamset, "--")
-		return fmt.Sprintf("signature-%v", parts[0])
-	}
-	return fmt.Sprintf("signature-%v-%v-%v", inp.Min, inp.Max, inp.Step)
-}
-
 // Rendering one input to HTML
 // func (inp inputT) HTML(langCode string, namePrefix string) string {
 func (inp inputT) HTML(langCode string, numCols float32) string {

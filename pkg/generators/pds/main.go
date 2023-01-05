@@ -137,7 +137,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<span style='font-size: 80%;'>
 					 &nbsp;&nbsp;&nbsp;&nbsp;
-					<a href='#' onclick='checkSome();' >Check some</a>
+					<a href='#' onclick='checkSome();' >For testing: Check some</a>
 					</span>
 
 					<span style='font-size: 80%;'>

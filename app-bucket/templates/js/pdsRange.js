@@ -79,7 +79,8 @@ function pdsRangeInput(src) {
 
             // console.log("src.value=", src.value, "data-dirty:", src.dataset.dirty);
 
-            let incr = parseFloat(src.value) + parseFloat(src.step);
+            let srcVal = parseFloat(src.value);
+            let incr = srcVal + parseFloat(src.step);
             // prevent 0.30000000004
             if (incr < 10) {
                 incr = Math.round(incr*1000)/1000;
@@ -92,6 +93,22 @@ function pdsRangeInput(src) {
             out += " - ";
             out += incr;
             display.value = out;
+
+            // 
+            if (src.dataset.ut != "") {
+                let ut = parseFloat(src.dataset.ut)
+                if (srcVal >= ut ) {
+                    display.value = src.dataset.ud;                
+                    src.value = src.getAttribute("max");
+                }
+            }
+            if (src.dataset.lt != "") {
+                let lt = parseFloat(src.dataset.lt)
+                if (srcVal <= lt) {
+                    display.value = src.dataset.ld;
+                    src.value = src.getAttribute("min");
+                }
+            }
 
             let catcher = document.getElementById(src.id + "_hidd");
             if (catcher) {

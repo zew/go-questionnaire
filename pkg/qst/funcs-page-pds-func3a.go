@@ -12,7 +12,7 @@ func rangesRowLabelsTop(
 	ac assetClass,
 	inputName string,
 	lbl trl.S,
-	cf rangeConf,
+	rcf rangeConf,
 ) {
 
 	numCols := float32(len(ac.TrancheTypes))
@@ -52,14 +52,14 @@ func rangesRowLabelsTop(
 			{
 				inp := gr.AddInput()
 				inp.Type = "range"
-				inp.DynamicFuncParamset = cf.RangeType
+				inp.DynamicFuncParamset = rcf.SerializeExtendedConfig()
 				inp.Name = fmt.Sprintf("%v_%v_%v", ac.Prefix, trancheType.Prefix, inputName)
 				inp.Label = trancheType.Lbl
 
 				// 0%-100% in 5% brackets
-				inp.Min = cf.Min
-				inp.Max = cf.Max
-				inp.Step = cf.Step
+				inp.Min = rcf.Min
+				inp.Max = rcf.Max
+				inp.Step = rcf.Step
 
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
@@ -75,9 +75,9 @@ func rangesRowLabelsTop(
 				inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"
 
 				if idx1 == idxLastCol {
-					inp.Suffix = cf.Suffix
+					inp.Suffix = rcf.Suffix
 				}
-				inp.Suffix = cf.Suffix
+				inp.Suffix = rcf.Suffix
 
 			}
 		}

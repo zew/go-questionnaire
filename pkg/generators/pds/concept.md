@@ -170,8 +170,10 @@ Horizonatels Scrollen für Mobile
 
 <!-- * Excel - Real estate debt - question 2d.) - Multiple on Invested Capital - should really be omitted?  -->
 
-* Fast alle Slider haben nicht-numerische Werte bekommen;  
-   * Slider: Change the display for >2, <20, ...
-   * Slider: Change values close to >2 ...
+* Die meisten Slider haben im letzten Excel-Dokument neue Sonderwerte bekommen; bspw. <2% und  >20%  
+   * Es wurde entsprechende Sonder-Programmierung hinzugefügt
+   * Im Ergebnis-Export können nur die "Rohwerte" gespeichert werden;  
+      eine doppelte Speicherung Rohwert _und_ angezeigter Wert (-1 => "<2%" oder 2 => 2-2.5 mn €) erzeugt zu viele riskante Sonderfälle
 
 * Mobile version
+

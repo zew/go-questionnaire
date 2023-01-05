@@ -49,13 +49,6 @@ dummy
     background-repeat: repeat-y;
 }
 
-@media screen and (max-width: 960px) {
-    .content {
-        background-image: none;
-    }
-}
-
-
 
 .pg2206 input[type="text"] {
     margin-right: 0;
@@ -63,17 +56,6 @@ dummy
 
 @media screen and (max-width: 800px) {
 
-    input[name="risks_label"] {
-        max-width: 6.1rem;
-        margin-left: 0.3rem;
-        margin-right: 0;
-    }
-
-    /* slider demo page */
-    div.pg03 {
-        /* max-width: 90%  !important;
-        zoom: 0.75; */
-    }
 }
 
 
@@ -127,3 +109,47 @@ dummy {
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), #daeaea, var(--clr-sec));
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), #daeaea, #daeaea);
 }
+
+@media screen and (max-width: 960px) {
+    .content {
+        background-image: none;
+    }
+
+    .content.cpg00,
+    .content.cpg01,
+    .content.cpg02,
+    dummy
+    {
+        background-image: none;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+    input[type=number] {
+        max-width: 4.1rem;
+    }
+
+    input[type=text] {
+        margin-left: 0.6rem;
+        max-width: 6.1rem;
+    }
+
+    input[type=radio]{
+        transform: scale(1.4);
+    }
+
+    .input-wrapper-signature-3 {
+        width: calc(100% - 3rem);
+        margin-left: 1.5rem;
+    }
+    label {
+        /* width: calc(100% - 3rem) !important;
+        margin-left: 1.5rem !important; */
+    }
+
+
+}
+

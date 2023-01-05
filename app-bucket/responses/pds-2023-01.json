@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c18f728e4cc576b27fc1473269caeb8d8e4af9fa2e49bc2a203fbb112b91d893",
+ 	"md_5": "c0cc79d7708f7a765df102b1858853b41f787f541dd597057e8a7fca7350dde9",
  	"lang_codes": [
  		"en"
  	],
@@ -313,7 +313,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -325,7 +328,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -366,7 +371,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -378,7 +386,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -419,7 +429,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -431,7 +444,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -1222,7 +1237,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -1234,7 +1252,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -1275,7 +1295,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -1287,7 +1310,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -2099,7 +2124,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -2111,7 +2139,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -2152,7 +2182,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -2164,7 +2197,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"top": "0.3rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}

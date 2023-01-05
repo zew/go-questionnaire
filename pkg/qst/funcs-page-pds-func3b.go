@@ -145,6 +145,24 @@ func radiosLabelsTop(
 					}
 				}
 
+				inp.Style.Mobile.StyleBox.Left = "0"
+				inp.Style.Mobile.StyleBox.Right = "0"
+				inp.StyleLbl.Mobile.StyleText.FontSize = 70
+
+				inp.StyleLbl.Mobile.StyleBox.Left = "0"
+				inp.StyleLbl.Mobile.StyleBox.Right = "0"
+
+				if idx2 == 0 {
+					inp.StyleLbl.Mobile.StyleBox.Left = "0.2rem"
+				}
+				if idx2 == lastIdx2 {
+					inp.StyleLbl.Mobile.StyleBox.Right = "0.2rem"
+				}
+				inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "center"
+
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.3rem 0 0"
+				inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0 0"
+
 			}
 
 		}

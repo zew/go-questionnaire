@@ -47,7 +47,7 @@
             "q11f_volbysect_healthcare",
             "q11f_volbysect_financials",
             "q11f_volbysect_information_tech",
-            "q11f_volbysect_comunication_svc",
+            "q11f_volbysect_communication_svc",
             "q11f_volbysect_utilities",
             "q11f_volbysect_real_estate",
             "q11f_volbysect_other",

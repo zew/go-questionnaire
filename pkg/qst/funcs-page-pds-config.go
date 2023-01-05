@@ -100,8 +100,8 @@ var PDSAssetClasses = []assetClass{
 				NameUnused: "tt2_unittranche",
 				Prefix:     "tt2",
 				Lbl: trl.S{
-					"en": "Unitranche",
-					"de": "Unitranche",
+					"en": "Uni&shy;tranche&nbsp;&nbsp;",
+					"de": "Uni&shy;tranche&nbsp;&nbsp;",
 				},
 			},
 			{
@@ -204,8 +204,8 @@ var PDSLbls = map[string][]trl.S{
 	},
 	"relevance1-5": {
 		{
-			"en": "Not relevant<br>(1)",
-			"de": "Not relevant<br>(1)",
+			"en": "not relevant<br>(1)",
+			"de": "not relevant<br>(1)",
 		},
 		{
 			"en": "(2)",
@@ -220,52 +220,53 @@ var PDSLbls = map[string][]trl.S{
 			"de": "(4)",
 		},
 		{
-			"en": "Potential dealbreaker<br>(5)",
-			"de": "Potential dealbreaker<br>(5)",
+			"en": "potential deal&shy;breaker<br>(5)",
+			"de": "potential deal&shy;breaker<br>(5)",
 		},
 	},
 	"improveDecline1-5": {
 		{
-			"en": "Improved",
-			"de": "Improved",
+			"en": "Im&shy;prov&shy;ed",
+			"de": "Im&shy;prov&shy;ed",
 		},
 		{
 			"en": "&nbsp;",
 			"de": "&nbsp;",
 		},
 		{
-			"en": "Same",
-			"de": "Same",
+			// yes - its terrible
+			"en": "Sa&shy;me",
+			"de": "Sa&shy;me",
 		},
 		{
 			"en": "&nbsp;",
 			"de": "&nbsp;",
 		},
 		{
-			"en": "Declined",
-			"de": "Declined",
+			"en": "De&shy;clin&shy;ed",
+			"de": "De&shy;clin&shy;ed",
 		},
 	},
-	"improveWorsen1-5": {
+	"improveworsen1-5": {
 		{
-			"en": "Improve significantly",
-			"de": "Improve significantly",
+			"en": "improve significantly",
+			"de": "improve significantly",
 		},
 		{
-			"en": "Improve slightly",
-			"de": "Improve slightly",
+			"en": "improve slightly",
+			"de": "improve slightly",
 		},
 		{
-			"en": "Stay constant",
-			"de": "Stay constant",
+			"en": "stay constant",
+			"de": "stay constant",
 		},
 		{
-			"en": "Worsen slightly",
-			"de": "Worsen slightly",
+			"en": "worsen slightly",
+			"de": "worsen slightly",
 		},
 		{
-			"en": "Worsen significantly",
-			"de": "Worsen significantly",
+			"en": "worsen significantly",
+			"de": "worsen significantly",
 		},
 	},
 	"closing-time-weeks": {
@@ -335,8 +336,8 @@ var suffixEBITDA = trl.S{
 }
 
 var suffixInvestedCapital = trl.S{
-	"en": "x Invested cap.",
-	"de": "x Invested cap.",
+	"en": "x invested cap.",
+	"de": "x invested cap.",
 }
 var suffixPercent = trl.S{
 	"en": "%",

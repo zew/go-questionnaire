@@ -155,6 +155,12 @@ func checkBoxCascade(
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Desktop.StyleText.FontSize = 90
+
+			//
+			inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+			inp.StyleLbl.Desktop.StyleBox.Top = "0"
+			inp.StyleLbl.Mobile.StyleBox.Top = "0.3rem"
+
 			inp.DisplayNone()
 
 		}

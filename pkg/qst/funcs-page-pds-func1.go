@@ -45,9 +45,10 @@ func restrictedTextMultiCols(
 
 			combined := trl.S{"en": "", "de": ""}
 			combined.Append(cf.LblRow1)
-			combined.AppendStr("<div style='margin-left: 2.2rem;'>")
-			combined.Append(cf.LblRow2)
-			combined.AppendStr("</div>")
+			combined.Append90(cf.LblRow2)
+			// combined.AppendStr("<div style='margin-left: 2.2rem;'>")
+			// combined.Append(cf.LblRow2)
+			// combined.AppendStr("</div>")
 
 			inp.Label = combined
 
@@ -111,7 +112,7 @@ func restrictedTextMultiCols(
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Margin = "0 0 0 2.2rem"
-				inp.Style.Mobile.StyleBox.Margin = "0 0 0 0rem"
+				inp.Style.Mobile.StyleBox.Margin = "0 0 0 0"
 				// inp.Style.Desktop.StyleBox.Width = "60%"
 				// inp.Style.Mobile.StyleBox.Width = "96%"
 			}
@@ -159,6 +160,7 @@ func restrictedTextMultiCols(
 
 					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 					inp.StyleLbl.Desktop.StyleBox.Margin = "0 0 0 2.2rem"
+					inp.StyleLbl.Mobile.StyleBox.Margin = "0 0 0 0"
 				}
 
 				if idx2 == idxLastCol {

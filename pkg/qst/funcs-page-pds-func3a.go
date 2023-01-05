@@ -46,6 +46,10 @@ func rangesRowLabelsTop(
 			gr.WidthMax("18rem")
 		}
 
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleGridContainer.TemplateColumns = "1fr 1fr 1fr"
+		gr.Style.Mobile.StyleGridContainer.TemplateColumns = "1fr"
+
 		// row1
 		for idx1, trancheType := range ac.TrancheTypes {
 
@@ -73,6 +77,7 @@ func rangesRowLabelsTop(
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"
+				inp.Style.Mobile.StyleBox.Margin = "0 1.4rem 0 1.4rem"
 
 				if idx1 == idxLastCol {
 					inp.Suffix = rcf.Suffix

@@ -133,6 +133,8 @@ func (s S) RemoveSomeHTML() S {
 		s = strings.ReplaceAll(s, "</b>", "")
 		s = strings.ReplaceAll(s, "&nbsp;", " ")
 		s = strings.ReplaceAll(s, "&shy;", "")
+		s = strings.ReplaceAll(s, "\u0026shy;", "")
+		s = strings.ReplaceAll(s, "\u0026nbsp;", "")
 		ret[key] = s
 	}
 	return ret

@@ -275,8 +275,9 @@ var sliderEBITDAZero150 = rangeConf{
 	Step:   5,
 	Suffix: suffixMillionEuro,
 	//
-	CSSType:     "3",
-	TicksLabels: `0:0;25:25;50:50;75:75;100:100;125:125;150:150;200:>150`,
+	CSSType: "3",
+	// TicksLabels: `0:0;25:25;50:50;75:75;100:100;125:125;150:150;200:>150`,
+	TicksLabels: `0:0;25: ;50:50;75: ;100:100;125: ;150:150;200:>150`,
 
 	UpperThreshold: 151,
 	UpperDisplay:   ">150",

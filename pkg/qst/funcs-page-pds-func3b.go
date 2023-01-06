@@ -20,12 +20,6 @@ func radiosLabelsTop(
 		return
 	}
 
-	// numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
-	numColsMajor := float32(len(ac.TrancheTypes))
-	numColsMinor := numColsMajor * cf.Cols
-	idxLastCol := len(ac.TrancheTypes) - 1
-	_ = idxLastCol
-
 	grMax := ""
 	if len(ac.TrancheTypes) == 3 {
 		grMax = "54rem"
@@ -46,7 +40,6 @@ func radiosLabelsTop(
 	if !lbl.Empty() {
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.BottomVSpacers = 1
 		gr.BottomVSpacers = 0
 		gr.Style = grSt
 		{
@@ -58,62 +51,49 @@ func radiosLabelsTop(
 		}
 	}
 
-	// row1 - asset classes
+	// master-row - or columns - asset classes
 	{
-		gr := page.AddGroup()
-		gr.Cols = numColsMajor
-
-		gr.WidthMax(grMax)
-
-		// gr.Style = css.NewStylesResponsive(gr.Style)
-		// gr.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", int(numColsMinor)) // "1fr 1fr 1fr"
-		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = strings.Repeat( "1fr ", int(cf.Cols))       // "1fr 1fr 1fr
-
-		gr.BottomVSpacers = 1
-
-		for idx1 := range ac.TrancheTypes {
-
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.ColSpan = 1
-
-			ttLbl := ac.TrancheTypes[idx1].Lbl
-			inp.Label = ttLbl
-
-			inp.StyleLbl = styleHeaderCols3
-		}
-
-	}
-
-	// radios
-	{
-		gr := page.AddGroup()
-		gr.Cols = numColsMinor
-
-		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", int(cf.Cols))       // "1fr 1fr 1fr"
-
-		if cf.Cols == 5 {
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr   1fr   1fr   1fr 1fr ", int(numColsMajor)) // "1fr 1fr 1fr"
-			gr.Style.Mobile.StyleGridContainer.TemplateColumns = strings.Repeat(" 1fr 0.7fr 0.7fr 0.7fr 1fr ", int(numColsMajor))
-		}
-
-		gr.WidthMax(grMax)
+		grMaster := page.AddGroup()
 		if cf.GroupBottomSpacers != 0 {
-			gr.BottomVSpacers = cf.GroupBottomSpacers
+			grMaster.BottomVSpacers = cf.GroupBottomSpacers
 		}
-		gr.BottomVSpacers = 3
+		grMaster.BottomVSpacers = 0
 
-		// for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
+		grMaster.Cols = float32(len(ac.TrancheTypes))
+		grMaster.ChildGroups = len(ac.TrancheTypes)
+
+		grMaster.WidthMax(grMax)
+
+		//
+		//
+		grMaster.Style = css.NewStylesResponsive(grMaster.Style)
+		grMaster.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", len(ac.TrancheTypes))
+		grMaster.Style.Mobile.StyleGridContainer.TemplateColumns = "1fr "
+
+		grMaster.Style.Desktop.StyleBox.Margin = "0 0 2.2rem 0"          // instead of BottomVSpacers
+		grMaster.Style.Mobile.StyleBox.Margin = "0 1.5rem 2.2rem 1.5rem" // left and right
+
 		for idx1, trancheType := range ac.TrancheTypes {
 
 			_ = idx1
 
-			// row1 - inputs
-			lastIdx2 := len(PDSLbls[cf.KeyLabels]) - 1
+			grChild := page.AddGroup()
+			grChild.Cols = cf.Cols
+			grChild.BottomVSpacers = 0
 
-			for idx2 := 0; idx2 < len(PDSLbls[cf.KeyLabels]); idx2++ {
-				inp := gr.AddInput()
+			// subrow 0 - tranche type name
+			{
+				inp := grChild.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = grChild.Cols
+				inp.Label = trancheType.Lbl
+				inp.StyleLbl = styleHeaderCols3
+			}
+
+			// subrow 1 - radio inputs
+			lastIdx2 := int(cf.Cols) - 1
+			for idx2 := 0; idx2 < int(cf.Cols); idx2++ {
+				inp := grChild.AddInput()
 				inp.Type = "radio"
 				inp.Name = fmt.Sprintf("%v_%v_%v", ac.Prefix, trancheType.Prefix, nm)
 				inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
@@ -125,23 +105,20 @@ func radiosLabelsTop(
 				inp.VerticalLabel()
 
 				//
-				// label styling
+				// label top or bottom
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 				if cf.LabelBottom {
 					inp.StyleLbl.Desktop.StyleGridItem.Order = 2
 				} else {
-					// top
 					inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 					inp.StyleLbl.Desktop.StyleBox.Top = "-0.3rem"
 				}
-				inp.StyleLbl.Desktop.StyleText.FontSize = 90
 
 				//
-				//
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Position = "relative"
-
+				// label styling and displacement for "dense group pattern"
+				inp.StyleLbl.Desktop.StyleText.FontSize = 85
+				inp.StyleLbl.Mobile.StyleText.FontSize = 85
 				if idx2 == 0 {
 					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
 					inp.StyleLbl.Desktop.StyleBox.Left = "0.6rem"
@@ -150,45 +127,52 @@ func radiosLabelsTop(
 					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
 					inp.StyleLbl.Desktop.StyleBox.Right = "0.6rem"
 				}
+				inp.StyleLbl.Mobile.StyleBox.Left = "0"
+				inp.StyleLbl.Mobile.StyleBox.Right = "0"
 
+				//
+				// entire input displacement for "dense group pattern"
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Position = "relative"
 				if idx2 < len(cf.XDisplacements) {
-					// if idx2 < lastIdx2/2 {
 					if idx2 <= lastIdx2/2 {
 						inp.Style.Desktop.StyleBox.Left = cf.XDisplacements[idx2]
 					} else {
 						inp.Style.Desktop.StyleBox.Right = cf.XDisplacements[idx2]
 					}
 				}
-
-				//
-				//
-				inp.StyleLbl.Mobile.StyleText.FontSize = 70
-
 				inp.Style.Mobile.StyleBox.Left = "0"
 				inp.Style.Mobile.StyleBox.Right = "0"
 
-				inp.StyleLbl.Mobile.StyleBox.Left = "0"
-				inp.StyleLbl.Mobile.StyleBox.Right = "0"
+				//
+				//
 
-				if idx2 == 0 {
-					// inp.StyleLbl.Mobile.StyleBox.Left = "0.2rem"
-					inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "right"
-					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					inp.StyleCtl.Mobile.StyleGridItem.JustifySelf = "end"
-				}
-				if idx2 == lastIdx2 {
-					// inp.StyleLbl.Mobile.StyleBox.Right = "0.2rem"
-					inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "left"
-					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					inp.StyleCtl.Mobile.StyleGridItem.JustifySelf = "start"
-				}
+				// 		/*
+				// 			inp.Style.Mobile.StyleBox.Left = "0"
+				// 			inp.Style.Mobile.StyleBox.Right = "0"
 
-				// inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.3rem 0 0"
-				// inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0 0"
+				// 			inp.StyleLbl.Mobile.StyleBox.Left = "0"
+				// 			inp.StyleLbl.Mobile.StyleBox.Right = "0"
+
+				// 			if idx2 == 0 {
+				// 				// inp.StyleLbl.Mobile.StyleBox.Left = "0.2rem"
+				// 				inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "right"
+				// 				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				// 				inp.StyleCtl.Mobile.StyleGridItem.JustifySelf = "end"
+				// 			}
+				// 			if idx2 == lastIdx2 {
+				// 				// inp.StyleLbl.Mobile.StyleBox.Right = "0.2rem"
+				// 				inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "left"
+				// 				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				// 				inp.StyleCtl.Mobile.StyleGridItem.JustifySelf = "start"
+				// 			}
+
+				// 			// inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.3rem 0 0"
+				// 			// inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0 0"
+
+				// 		*/
 
 			}
-
 		}
 	}
-
 }

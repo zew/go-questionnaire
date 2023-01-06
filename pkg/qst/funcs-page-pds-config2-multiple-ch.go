@@ -17,8 +17,8 @@ type configMC struct {
 var (
 	mCh2 = configMC{
 		KeyLabels:          "teamsize",
-		Cols:               16,
-		InpColspan:         16 / 4,
+		Cols:               4,
+		InpColspan:         1,
 		LabelBottom:        true,
 		DontKnow:           false,
 		GroupBottomSpacers: 3,
@@ -43,8 +43,8 @@ var (
 
 	mCh3 = configMC{
 		KeyLabels:   "relevance1-5",
-		Cols:        10,
-		InpColspan:  2,
+		Cols:        5,
+		InpColspan:  1,
 		LabelBottom: false,
 		DontKnow:    false,
 	}
@@ -66,8 +66,8 @@ var (
 	}
 	mCh5 = configMC{
 		KeyLabels:   "closing-time-weeks",
-		Cols:        14,
-		InpColspan:  2,
+		Cols:        7,
+		InpColspan:  1,
 		LabelBottom: false,
 		DontKnow:    false,
 

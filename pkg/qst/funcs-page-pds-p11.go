@@ -22,7 +22,7 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 	ac = onlySelectedTranchTypes(q, ac)
 	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
-	page.ValidationFuncName = "pdsPage11-a,,pdsPage11-b"
+	page.ValidationFuncName = "pdsPage11-a,pdsPage11-b"
 
 	page.Label = trl.S{
 		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3&nbsp;months)", ac.Lbl["en"]),

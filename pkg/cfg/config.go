@@ -331,6 +331,12 @@ func Example() *ConfigT {
 			// {Key: "logo-text", Val: "ZEW"}, // use localized trl.Map app_label, app_org
 			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
 			{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-zew.svg"},
+
+			// min-height for the nav bar
+			//   might be different in desktop and mobile
+			// 	  might be different depending on the contents of the navbar title
+			//      use @media screen and (max-width: 800px) {     :root {--nav-height: 4.01vh; }    }
+			//    in order to adapt the mobile height in each different questionnaire
 			{Key: "nav-height", Val: "8vh"},
 			{Key: "nav-rest-height", Val: "calc(100vh - var(--nav-height))", Desc: "we can calc() the remainder"},
 			{Key: "nav-bar-position", Val: "relative", Desc: "fixed or relative"},

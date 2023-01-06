@@ -8,6 +8,7 @@ nav {
     /* opacity: 0.8; */
 }
 
+
 @media screen and (max-width: 800px) {
     nav {
         grid-template-columns: 0.5fr 4fr 3.0em [col-menu] 2em 0.15fr;
@@ -127,6 +128,9 @@ dummy {
 
 @media screen and (max-width: 800px) {
 
+    :root {
+        --nav-height: 4.01vh;
+    }
 
     input[type=number] {
         max-width: 4.1rem;
@@ -138,7 +142,7 @@ dummy {
     }
 
     input[type=radio]{
-        transform: scale(1.4);
+        transform: scale(1.6);
         margin-left:  0;
         margin-right: 0;
         padding-left:  0;
@@ -149,6 +153,7 @@ dummy {
         width: calc(100% - 3rem);
         margin-left: 1.5rem;
     }
+
     label {
         /* width: calc(100% - 3rem) !important;
         margin-left: 1.5rem !important; */

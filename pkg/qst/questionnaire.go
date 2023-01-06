@@ -236,6 +236,8 @@ type groupT struct {
 
 	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 	Class string                `json:"class,omitempty"` // additional explicit CSS class; for example   .group-class-1 > .grid-item-lvl-1 {...}
+
+	ChildGroups int `json:"child_groups,omitempty"` // for nesting groups, number of contained groups
 }
 
 // AddInput creates a new input
@@ -1134,6 +1136,10 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	compositCntr := -1    // group counter - per page
 	nonCompositCntr := -1 // group counter - per page
+
+	childGroups := 0 // see groupT.ChildGroups
+
+	// nextGroup:
 	for loopIdx, grpIdx := range grpOrder {
 
 		if _, ok, _ := q.HasComposit(pageIdx, grpIdx); ok {
@@ -1151,6 +1157,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		} else {
 			grpHTML := q.GroupHTMLGridBased(pageIdx, grpIdx)
 
+			if page.Groups[grpIdx].ChildGroups > 0 {
+				childGroups = page.Groups[grpIdx].ChildGroups
+				ln := len(grpHTML) - len("</div>\n")
+				grpHTML = grpHTML[:ln]
+				log.Printf("page%v - group%v has childGroups %v", pageIdx, grpIdx, childGroups)
+			}
+
 			// dynamic numbering - based on group sequence per page after shuffling
 			if strings.Contains(grpHTML, "[groupID]") {
 				nonCompositCntr++
@@ -1167,15 +1180,36 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			// todo
 
 			fmt.Fprint(w, grpHTML+"\n")
+
 		}
 
-		// vertical distance at the end of groups
-		if loopIdx < len(page.Groups)-1 {
-			for i2 := 0; i2 < page.Groups[grpIdx].BottomVSpacers; i2++ {
+		if childGroups > 0 && page.Groups[grpIdx].BottomVSpacers > 0 {
+			log.Printf(`page %v group %v is a master or child group - BottomVSpacers are impossible - 
+				use margin-bottom on the master group`, pageIdx, grpIdx)
+		}
+		// =>
+		if childGroups == 0 {
+			// vertical distance at the end of groups
+			if loopIdx < len(page.Groups)-1 {
+				for i2 := 0; i2 < page.Groups[grpIdx].BottomVSpacers; i2++ {
+					fmt.Fprint(w, vspacer16)
+				}
+			} else {
 				fmt.Fprint(w, vspacer16)
 			}
-		} else {
-			fmt.Fprint(w, vspacer16)
+		}
+
+		//
+		//
+		if childGroups > 0 && page.Groups[grpIdx].ChildGroups == 0 {
+			childGroups--
+			// log.Printf("page%v - group%v   childGroups %v - of master group", pageIdx, grpIdx, childGroups)
+			if childGroups > 0 {
+				// nothing todo
+			} else if childGroups == 0 {
+				fmt.Fprintf(w, "</div>\n <!-- master group closed gr%v -->\n", grpIdx)
+				log.Printf("page%v - group%v - previous master group closed", pageIdx, grpIdx)
+			}
 		}
 
 	}

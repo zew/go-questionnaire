@@ -225,9 +225,13 @@ var PDSLbls = map[string][]trl.S{
 		},
 	},
 	"improveDecline1-5": {
+		// {
+		// 	"en": "Im&shy;prov&shy;ed",
+		// 	"de": "Im&shy;prov&shy;ed",
+		// },
 		{
-			"en": "Im&shy;prov&shy;ed",
-			"de": "Im&shy;prov&shy;ed",
+			"en": "Im&shy;prove",
+			"de": "Im&shy;prove",
 		},
 		{
 			"en": "&nbsp;",
@@ -243,8 +247,8 @@ var PDSLbls = map[string][]trl.S{
 			"de": "&nbsp;",
 		},
 		{
-			"en": "De&shy;clin&shy;ed",
-			"de": "De&shy;clin&shy;ed",
+			"en": "De&shy;cline",
+			"de": "De&shy;cline",
 		},
 	},
 	"improveworsen1-5": {
@@ -314,8 +318,8 @@ var PDSLbls = map[string][]trl.S{
 			"de": "4-5",
 		},
 		{
-			"en": ">5",
-			"de": ">5",
+			"en": "&nbsp;>5",
+			"de": "&nbsp;>5",
 		},
 	},
 }

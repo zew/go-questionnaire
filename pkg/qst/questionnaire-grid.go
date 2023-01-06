@@ -531,6 +531,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 				oninput='pdsRangeInput(this)' 
 				onclick='pdsRangeClick(this)' 
 				onfocus='pdsRangeClick(this)' 
+				ontouchstart='pdsRangeClick(this)' 
 				%v
 				class='%v'
 				%v

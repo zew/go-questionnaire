@@ -51,8 +51,8 @@ var (
 
 	mCh4 = configMC{
 		KeyLabels:       "improveDecline1-5",
-		Cols:            10,
-		InpColspan:      2,
+		Cols:            5,
+		InpColspan:      1,
 		LabelBottom:     false,
 		DontKnow:        false,
 		GroupLeftIndent: outline2Indent,

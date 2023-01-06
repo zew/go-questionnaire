@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c0cc79d7708f7a765df102b1858853b41f787f541dd597057e8a7fca7350dde9",
+ 	"md_5": "721fa4aa3b429e689508427db62285960d28e2a2199a9d4adb64372991d8c6d1",
  	"lang_codes": [
  		"en"
  	],
@@ -340,8 +340,8 @@
  							"name": "ac1_tt2_q031",
  							"type": "checkbox",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "Uni\u0026shy;tranche\u0026nbsp;\u0026nbsp;",
+ 								"en": "Uni\u0026shy;tranche\u0026nbsp;\u0026nbsp;"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

@@ -47,6 +47,10 @@ func restrTextRowLabelsTop(
 		gr := page.AddGroup()
 		gr.Cols = numCols
 
+		if numCols == 1 {
+			gr.WidthMax("18rem")
+		}
+
 		for idx1, trancheType := range ac.TrancheTypes {
 
 			{

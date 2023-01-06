@@ -2,6 +2,7 @@ package qst
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -61,9 +62,14 @@ func radiosLabelsTop(
 	{
 		gr := page.AddGroup()
 		gr.Cols = numColsMajor
-		gr.BottomVSpacers = 0
-		gr.BottomVSpacers = 1
+
 		gr.WidthMax(grMax)
+
+		// gr.Style = css.NewStylesResponsive(gr.Style)
+		// gr.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", int(numColsMinor)) // "1fr 1fr 1fr"
+		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = strings.Repeat( "1fr ", int(cf.Cols))       // "1fr 1fr 1fr
+
+		gr.BottomVSpacers = 1
 
 		for idx1 := range ac.TrancheTypes {
 
@@ -83,11 +89,20 @@ func radiosLabelsTop(
 	{
 		gr := page.AddGroup()
 		gr.Cols = numColsMinor
-		gr.BottomVSpacers = 3
+
+		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", int(cf.Cols))       // "1fr 1fr 1fr"
+
+		if cf.Cols == 5 {
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr   1fr   1fr   1fr 1fr ", int(numColsMajor)) // "1fr 1fr 1fr"
+			gr.Style.Mobile.StyleGridContainer.TemplateColumns = strings.Repeat(" 1fr 0.7fr 0.7fr 0.7fr 1fr ", int(numColsMajor))
+		}
+
+		gr.WidthMax(grMax)
 		if cf.GroupBottomSpacers != 0 {
 			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}
-		gr.WidthMax(grMax)
+		gr.BottomVSpacers = 3
 
 		// for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
 		for idx1, trancheType := range ac.TrancheTypes {
@@ -145,23 +160,31 @@ func radiosLabelsTop(
 					}
 				}
 
+				//
+				//
+				inp.StyleLbl.Mobile.StyleText.FontSize = 70
+
 				inp.Style.Mobile.StyleBox.Left = "0"
 				inp.Style.Mobile.StyleBox.Right = "0"
-				inp.StyleLbl.Mobile.StyleText.FontSize = 70
 
 				inp.StyleLbl.Mobile.StyleBox.Left = "0"
 				inp.StyleLbl.Mobile.StyleBox.Right = "0"
 
 				if idx2 == 0 {
-					inp.StyleLbl.Mobile.StyleBox.Left = "0.2rem"
+					// inp.StyleLbl.Mobile.StyleBox.Left = "0.2rem"
+					inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "right"
+					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+					inp.StyleCtl.Mobile.StyleGridItem.JustifySelf = "end"
 				}
 				if idx2 == lastIdx2 {
-					inp.StyleLbl.Mobile.StyleBox.Right = "0.2rem"
+					// inp.StyleLbl.Mobile.StyleBox.Right = "0.2rem"
+					inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "left"
+					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+					inp.StyleCtl.Mobile.StyleGridItem.JustifySelf = "start"
 				}
-				inp.StyleLbl.Mobile.StyleText.AlignHorizontal = "center"
 
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.3rem 0 0"
-				inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0 0"
+				// inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.3rem 0 0"
+				// inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0 0"
 
 			}
 

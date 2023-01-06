@@ -137,12 +137,12 @@ Prio
 
 Horizonatels Scrollen für Mobile
 
-### RC5 Anmerkungen
+### RC5 Release Notes
 
 * Dezimal-Trennzeichen soll immer Komma sein. Eingabe von Punkt soll möglich sein, wird aber in Komma verwandelt.  
   In Firefox entsprechend umgestellt.  
   In Chrome keine Änderung nötig.  
-  95%-Lösung: Kann nicht für _alle_ Kombinationen von Betriebssysteme/Browser garantiert werden. Exoten wie Linux/Opera oder Sailfish/Firefox könnten den Punkt als Eingabe verschlucken/ignorieren.
+  95%-Lösung. Kann nicht für _alle_ Kombinationen von Betriebssysteme/Browser garantiert werden. Exoten wie Linux/Opera oder Sailfish/Firefox könnten den Punkt als Eingabe verschlucken/ignorieren.
 
 * PagesA1,B1,C1,D1 - nachfolgende Page - "Unlevered returns..." wird nicht angezeigt,  
     wenn "Total number of transactions" für _alle_ Tranchentypen "0" ist.  
@@ -162,11 +162,11 @@ Horizonatels Scrollen für Mobile
      Für Q2-2023 wäre es Q1-2023...
 
 * Die meisten Slider haben im letzten Excel-Dokument neue Sonderwerte bekommen; bspw. <2% und  >20%  
-   * Es wurde entsprechende Sonder-Programmierung hinzugefügt
-   * Im Ergebnis-Export können nur die "Rohwerte" gespeichert werden;  
-      eine doppelte Speicherung Rohwert _und_ angezeigter Wert (-1 => "<2%" oder 2 => 2-2.5 mn €) erzeugt zu viele riskante Sonderfälle
+   * Es wurde entsprechende Sonder-Programmierung hinzugefügt.
+   * Im Ergebnis-Export werden nur die "Rohwerte" gespeichert sein;  
+      eine doppelte Speicherung Rohwert _und_ angezeigter Wert (-1 => "<2%" oder 2 => "2-2.5 mn €") erzeugt zu viele riskante Sonderfälle. Man muss sich einmalig ein Mapping der Rohwerte zu den Displaywerten bspw. als Excel-Makro anlegen.
 
-* Mobile version
+* Mobile display version
 
 
 --- Todo
@@ -178,9 +178,18 @@ Horizonatels Scrollen für Mobile
 <!-- * Excel - Real estate debt - question 2d.) - Multiple on Invested Capital - should really be omitted?  -->
 
 
+Test-Links
+* [Vorausgefüllte Werte](https://private-debt-survey.zew.de/d/PDS--P3XDDGD4V)
+* [Leerer Fragebogen   ](https://private-debt-survey.zew.de/a)
 
-
- 
-
-
+<!-- 
 https://localhost:8083/survey/d/PDS--P3XDDGD4V
+-->
+
+### RC6
+
+* Die 12 Radios nebeneinander =>  in mobile untereinander wie die ranges => unmöglich
+
+* Range unter Android:  
+  Der Range-Knopf teilweise nicht wieder sichtbar.
+

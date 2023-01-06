@@ -50,7 +50,9 @@ function funcInner{{.InpMain}}(){
             summandValsInt.push(0);
         }
     }
-
+    
+    // prevent 0.30000000004
+    sum = Math.round(sum * 10000) / 10000;
 
 
     let suspicious = false;

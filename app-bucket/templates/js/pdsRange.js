@@ -122,7 +122,8 @@ function pdsRangeInput(src) {
 }
 
 
-// activate an input[type=range] from de-activated visual state 
+// Activate an input[type=range] from de-activated visual state.
+// Triggered by focus, click, touchstart.
 function pdsRangeClick(src) {
 
     let isDisabled = src.classList.contains("hidethumb");

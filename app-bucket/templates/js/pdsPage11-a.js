@@ -16,7 +16,8 @@
 
     ];
 
-    let dests = {
+    // safari cannot read it inside func, if declared let or const
+    var dests = {
 
         "ac1_tt1_q11b_voltransact_main": ["ac1_tt1_q11d_volbysegm_main", "ac1_tt1_q11e_volbyreg_main","ac1_tt1_q11f_volbysect_main"],
         "ac1_tt2_q11b_voltransact_main": ["ac1_tt2_q11d_volbysegm_main", "ac1_tt2_q11e_volbyreg_main","ac1_tt2_q11f_volbysect_main"],

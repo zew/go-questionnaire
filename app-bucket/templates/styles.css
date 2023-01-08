@@ -635,13 +635,25 @@ CSS vendor prefixes
 -o-       Opera
 -khtml-   Konqueror, really old Safari
 
-*/
 
+    input[range] has several pseudo classes
+    most important are the thumb and the track
+
+    ::-webkit-slider-thumb
+    ::-moz-range-thumb
+
+    ::-webkit-slider-runnable-track
+    ::-moz-range-track
+
+*/
 input[type=range]::-webkit-slider-thumb {
-    /* -webkit-appearance: none;
-    appearance: none; */
+    /* required for custom thumb; set in range-[1,2,3].css */
+    /* -webkit-appearance: none; */
 }
 
+/*
+    some of these are superseded in range-[1,2,3].css
+*/
 input[type=range]::-webkit-slider-thumb {
     height: 100%;
     /* not working in chrome */

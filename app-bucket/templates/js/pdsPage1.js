@@ -72,7 +72,8 @@ function checkSome() {
         "ac3_q03",
     ];
 
-    const parentContainers = {
+    // safari cannot read it inside func, if declared let or const
+    var parentContainers = {
         "ac1_q03" : "pg01-grp02",
         "ac2_q03" : "pg01-grp03",
         "ac3_q03" : "pg01-grp04",
@@ -108,7 +109,7 @@ function checkSome() {
             let containers = document.getElementsByClassName(className);
             if (containers.length > 0) {
                 let container = containers[0];
-                // overriding  server side generated CSS class value for display
+                // overriding server side generated CSS class value for display
                 // for i.e. pg01-grp02-inp04 { display: grid }
                 // by setting an element style
                 if (paramShowHide) {

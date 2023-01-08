@@ -117,7 +117,7 @@ func checkBoxCascade(
 			inp.Type = "textblock"
 			inp.ColSpan = 4
 			inp.Label = trl.S{
-				"en": "Which Strategies do you engage in?",
+				"en": "Which strategies do you engage in?",
 				"de": "In welchen Strategien engagieren Sie sich?",
 			}
 			inp.ColSpanLabel = 1

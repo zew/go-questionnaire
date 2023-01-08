@@ -17,7 +17,8 @@
 
 
     // destination rumps
-    let destRumps = [
+    // safari cannot read it inside func, if declared let or const
+    var destRumps = [
             "q11a_numtransact_floatingrate",
             "q11a_numtransact_esgdoc",
             "q11a_numtransact_esgratchet",

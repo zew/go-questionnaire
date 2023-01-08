@@ -1155,9 +1155,11 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				fmt.Fprint(w, grpHTML+"\n")
 			}
 		} else {
+
 			grpHTML := q.GroupHTMLGridBased(pageIdx, grpIdx)
 
 			if page.Groups[grpIdx].ChildGroups > 0 {
+				// => this is a master group
 				childGroups = page.Groups[grpIdx].ChildGroups
 				ln := len(grpHTML) - len("</div>\n")
 				grpHTML = grpHTML[:ln]
@@ -1183,13 +1185,15 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 		}
 
+		renderBottomSpacers := true
 		if childGroups > 0 && page.Groups[grpIdx].BottomVSpacers > 0 {
-			log.Printf(`page %v group %v is a master or child group - BottomVSpacers are impossible - 
+			log.Printf(`page %v group %v is a master or child group - BottomVSpacers derail the logic - 
 				use margin-bottom on the master group`, pageIdx, grpIdx)
+			renderBottomSpacers = false
 		}
-		// =>
-		if childGroups == 0 {
-			// vertical distance at the end of groups
+
+		// vertical distance at the end of groups
+		if renderBottomSpacers {
 			if loopIdx < len(page.Groups)-1 {
 				for i2 := 0; i2 < page.Groups[grpIdx].BottomVSpacers; i2++ {
 					fmt.Fprint(w, vspacer16)

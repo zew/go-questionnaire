@@ -70,8 +70,9 @@ func radiosLabelsTop(
 		grMaster.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", len(ac.TrancheTypes))
 		grMaster.Style.Mobile.StyleGridContainer.TemplateColumns = "1fr "
 
-		grMaster.Style.Desktop.StyleBox.Margin = "0 0 2.2rem 0"          // instead of BottomVSpacers
-		grMaster.Style.Mobile.StyleBox.Margin = "0 1.5rem 2.2rem 1.5rem" // left and right
+		grMaster.Style.Desktop.StyleBox.Margin = "0 0 2.2rem 0" // instead of BottomVSpacers
+		// grMaster.Style.Mobile.StyleBox.Margin = "0 1.5rem 2.2rem 1.5rem"
+		grMaster.Style.Mobile.StyleBox.Margin = "0 2.21rem 2.2rem 2.21rem" // left and right
 
 		for idx1, trancheType := range ac.TrancheTypes {
 

@@ -69,7 +69,7 @@ func restrictedTextMultiCols(
 						inp.Step = cf.Step
 					}
 					inp.Min = 0
-					inp.Max = 1000 * 1000
+					inp.Max = 1000 * 1000 * 1000
 					// inp.Validator = "inRange100"
 
 					inp.Placeholder = cf.Placeholder

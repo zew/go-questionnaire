@@ -28,6 +28,17 @@ function pdsRangeInput(src) {
         return true
     }
 
+    let focusedEl = document.activeElement;
+    if (focusedEl) {
+        if (src.name != focusedEl.name) {
+            src.focus();
+            console.log("newly   focused: ", focusedEl.name);
+        } else {
+            // console.log("already focused: ", focusedEl.name);
+        }
+    }
+
+
     let chn = src.parentNode.childNodes;
     // console.log("child nodes num", chn.length);
 
@@ -140,6 +151,17 @@ function pdsRangeClick(src) {
     src.classList.remove("hidethumb");
     src.classList.remove("noanswer");
     src.dataset.dirty = "";
+
+
+    let focusedEl = document.activeElement;
+    if (focusedEl) {
+        if (src.name != focusedEl.name) {
+            src.focus();
+            console.log("newly   focused: ", focusedEl.name);
+        } else {
+            // console.log("already focused: ", focusedEl.name);
+        }        
+    }
 
     // make sure, there is also a value selected with the first click
     const evt = new Event("input");

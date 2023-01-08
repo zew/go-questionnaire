@@ -27,7 +27,9 @@ func init() {
 	styleHeaderCols1.Desktop.StyleText.AlignHorizontal = "left"
 
 	// left margin
-	styleHeaderCols1.Desktop.StyleBox.Margin = "0 0 0 0.4rem"
+	styleHeaderCols1.Desktop.StyleBox.Margin = "0 0 0 0.41rem"
+	styleHeaderCols1.Mobile.StyleBox.Margin = " 0"
+	styleHeaderCols1.Mobile.StyleBox.Padding = "0 0.25rem 0 0.25rem"
 	styleHeaderCols1.Desktop.StyleBox.Width = "100%"
 	styleHeaderCols1.Desktop.StyleBox.WidthMax = "6rem"
 
@@ -44,6 +46,7 @@ func init() {
 	// styleHeaderCols2.Desktop.StyleBox.Margin = "0 4.18rem 0.5rem 0"
 	// styleHeaderCols2.Desktop.StyleBox.Margin = "0 4.68rem 0.5rem 0"
 	styleHeaderCols2.Desktop.StyleBox.Margin = "0 5.18rem 0.5rem 0"
+	styleHeaderCols2.Mobile.StyleBox.Margin = "0 1.1rem 0.5rem 0"
 	styleHeaderCols2.Desktop.StyleBox.Width = "100%"
 
 	*styleHeaderCols3 = *styleHeaderCols2
@@ -305,17 +308,21 @@ var PDSLbls = map[string][]trl.S{
 		},
 	},
 	"covenants-per-credit": {
+		// &#8209; - non breaking dash,
+		//   to prevent
+		// 			0-
+		// 			1
 		{
-			"en": "0-1",
-			"de": "0-1",
+			"en": "0&#8209;1",
+			"de": "0&#8209;1",
 		},
 		{
-			"en": "2-3",
-			"de": "2-3",
+			"en": "2&#8209;3",
+			"de": "2&#8209;3",
 		},
 		{
-			"en": "4-5",
-			"de": "4-5",
+			"en": "4&#8209;5",
+			"de": "4&#8209;5",
 		},
 		{
 			"en": "&nbsp;>5",

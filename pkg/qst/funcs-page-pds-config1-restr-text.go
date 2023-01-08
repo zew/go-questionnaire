@@ -247,7 +247,7 @@ var (
 			"de": "By region",
 		}.Outline("b)"),
 		Min:         0,
-		Max:         40000,
+		Max:         100 * 1000 * 1000,
 		Suffix:      suffixMillionEuro,
 		Step:        0.1,
 		Placeholder: placeHolderMillion,

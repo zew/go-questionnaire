@@ -235,7 +235,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 				inp.StyleLbl = css.TextStart(inp.StyleLbl)
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				if col != 1 {
-					inp.Style.Desktop.StyleBox.Padding = "0 0 0 0.4rem"
+					inp.Style.Desktop.StyleBox.Padding = "0 0 0 0.405rem"
 					// inp.LabelPadRight()
 				} else {
 					inp.Style.Desktop.StyleBox.Padding = "0 0.4rem 0 0.4rem"

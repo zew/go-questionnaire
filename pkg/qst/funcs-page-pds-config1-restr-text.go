@@ -47,7 +47,7 @@ var (
 			"floatingrate": `
 				...floating interest rate
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Please state the number of transactions with floating interest rate
+					Please state the number of transactions with floating interest rate.
 					</span>
 				`,
 			"esgdoc": `
@@ -59,7 +59,7 @@ var (
 			"esgratchet": `
 				...ESG ratchets
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Pleases state the number of transactions with ESG ratchets.
+					Please state the number of transactions with ESG ratchets.
 					</span>
 				`,
 		},
@@ -103,7 +103,7 @@ var (
 		}.Outline("e.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by region`,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by region.`,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Region: `,
 		},
 		Suffix:   suffixMillionEuro,
@@ -127,7 +127,7 @@ var (
 		}.Outline("f.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by sector`,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by sector.`,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
@@ -270,8 +270,8 @@ func init() {
 		"de": "Total transaction volume (in mn EUR)",
 	}
 	lblB2 := trl.S{
-		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1]`,
-		"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1]`,
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1].`,
+		"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1].`,
 	}
 	lblB.Append90(lblB2)
 	lblB.Outline("b.)")
@@ -283,7 +283,7 @@ func init() {
 		"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
 	}
 	lblD2 := trl.S{
-		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by market segment`,
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by market segment.`,
 		"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Marktsegment: `,
 	}
 	// lbld.Append90(lblD2)

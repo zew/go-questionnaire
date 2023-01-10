@@ -205,7 +205,7 @@ func restrictedTextMultiCols(
 					inp.JSBlockStrings["Operator"] = ">"
 				}
 				inp.JSBlockTrls = map[string]trl.S{
-					"msg": s1,
+					"msg": s1.RemoveSomeHTML(),
 				}
 
 			}

@@ -96,7 +96,7 @@ Todo
    Oder gibt's noch andere Unterschiede?
 
 
-## RC5 - Punkte
+## RC4 - Punkte
 
 * Fragengruppe 3. Markt Sentiment        - für alle asset classes gemeinsam? Nein
 * Fragengruppe 4. Qualitative Questions  - für alle asset classes gemeinsam? Nein
@@ -137,25 +137,41 @@ Prio
 
 Horizonatels Scrollen für Mobile
 
-### RC5 Release Notes
+## Test-Links
+* [Leerer Fragebogen   ](https://private-debt-survey.zew.de/a)
+* [Vorausgefüllter Werte](https://private-debt-survey.zew.de/d/PDS--P3XDDGD4V)
 
-* Dezimal-Trennzeichen soll immer Komma sein. Eingabe von Punkt soll möglich sein, wird aber in Komma verwandelt.  
-  In Firefox entsprechend umgestellt.  
-  In Chrome keine Änderung nötig.  
-  95%-Lösung. Kann nicht für _alle_ Kombinationen von Betriebssysteme/Browser garantiert werden. Exoten wie Linux/Opera oder Sailfish/Firefox könnten den Punkt als Eingabe verschlucken/ignorieren.
+### RC4 Release Notes
 
-* PagesA1,B1,C1,D1 - nachfolgende Page - "Unlevered returns..." wird nicht angezeigt,  
+#### Inhatliche Anmerkungen
+
+* Teil A3/B3/C3 - Sentiment bezieht sich auf den Gesamtmarkt und nicht nur die eigenen Transaktionen. Man sollte das in einem einleitenden Satz den Teilnehmern erklären.
+
+* Teil A3/B3/C3 - Bitte prüfen Sie die bei den Fragen zu den kommenden 3 Monaten die Formulierung:  
+"Bei den Fragen zu den kommenden 3 Monaten finde ich die Formulierung seltsam: Next 3 months How do you expect the pricing (taking into account margins over the relevant reference rate and other return components like fees) for new deals ??you observed?? in the market change in the coming quarter?"
+
+* Teil A4/B4/C4 - Frage 4.3: Passt hier die Erklärung von "not relevant" zu "potential dealbreaker"? 
+
+#### Technische Anmerkungen
+
+* Request war: "Dezimal-Trennzeichen soll immer Komma sein. Eingabe von Punkt soll möglich sein, wird aber in Komma verwandelt."  
+  Firefox wurde auf Komma umgestellt.  
+  Chrome und Safari lassen sich nicht zwingen, ein Komma anzuzeigen, wenn das Betriebssystem bspw. Englisch ist.  
+  Das automatische Ersetzen von Punkt durch Komma würde diese Situation noch verschlechtern.
+  Hinweis: In der Datenbank und im Datenexport erscheint einheitlich immer ein Punkt als Dezimaltrenner.
+
+* Pages A1,B1,C1,D1 - nachfolgende Page - "Unlevered returns..." wird nicht angezeigt,  
     wenn "Total number of transactions" für _alle_ Tranchentypen "0" ist.  
-    Wir hatten hier eine extra Checkbox auf PagesA1,B1,C1,D1 (über "Total number of transactions") besprochen;
+    Wir hatten hier eine extra Checkbox auf Pages A1,B1,C1,D1 (über "Total number of transactions") besprochen;
     aber die ist jetzt vielleicht nicht nötig?
 
-* PagesA1,B1,C1,D1 - Number of deals == 0  
+* Pages A1,B1,C1,D1 - Number of deals == 0  
      => ganze Spalte disabled  
 
-* PagesA1,B1,C1,D1 - Number of deals  
-     => Summanden _kleinergleich_  Summe  
+* Pages A1,B1,C1,D1 - Number of deals  
+     => Summanden _kleiner_-gleich  Summe  
 
-* PagesA1,B1,C1,D1 - "Total transaction volume "  
+* Pages A1,B1,C1,D1 - "Total transaction volume "  
      => Wert wird kopiert nach d.), e.) und f.)  
 
 * "QQ YYYY" ist immer das Vorquartal.  
@@ -166,30 +182,19 @@ Horizonatels Scrollen für Mobile
    * Im Ergebnis-Export werden nur die "Rohwerte" gespeichert sein;  
       eine doppelte Speicherung Rohwert _und_ angezeigter Wert (-1 => "<2%" oder 2 => "2-2.5 mn €") erzeugt zu viele riskante Sonderfälle. Man muss sich einmalig ein Mapping der Rohwerte zu den Displaywerten bspw. als Excel-Makro anlegen.
 
-* Mobile display version
+* Anzeige-Version für mobile phones wurde fertiggestellt
 
 
---- Todo
+### PCAG Todo
 
-* ?PCAG: Excel spec - Real estate debt - 1.3d bis 1.3j - ranges are missing
+* Excel spec - Real estate debt - 1.3d bis 1.3j - ranges are missing
 
-* ?PCAG: Excel spec - Infrastruct debt - 1.3d bis 1.3f - ranges are missing
+* Excel spec - Infrastruct debt - 1.3d bis 1.3f - ranges are missing
 
 <!-- * Excel - Real estate debt - question 2d.) - Multiple on Invested Capital - should really be omitted?  -->
 
 
-Test-Links
-* [Vorausgefüllte Werte](https://private-debt-survey.zew.de/d/PDS--P3XDDGD4V)
-* [Leerer Fragebogen   ](https://private-debt-survey.zew.de/a)
-
 <!-- 
 https://localhost:8083/survey/d/PDS--P3XDDGD4V
 -->
-
-### RC6
-
-* Die 12 Radios nebeneinander =>  in mobile untereinander wie die ranges => unmöglich
-
-* Range unter Android:  
-  Der Range-Knopf teilweise nicht wieder sichtbar.
 

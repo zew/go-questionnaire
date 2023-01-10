@@ -79,20 +79,20 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page21LblsDescr := []trl.S{
 		{
-			"en": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1]`,
-			"de": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1]`,
+			"en": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1].`,
+			"de": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1].`,
 		},
 		{
-			"en": `Please state the average time to repayment of repayed loans`,
-			"de": `Please state the average time to repayment of repayed loans`,
+			"en": `Please state the average time to repayment of repayed loans.`,
+			"de": `Please state the average time to repayment of repayed loans.`,
 		},
 		{
-			"en": `Please state the average realized Gross IRR`,
-			"de": `Please state the average realized Gross IRR`,
+			"en": `Please state the average realized Gross IRR.`,
+			"de": `Please state the average realized Gross IRR.`,
 		},
 		{
-			"en": `Please state the average realized Gross MOIC`,
-			"de": `Please state the average realized Gross MOIC`,
+			"en": `Please state the average realized Gross MOIC.`,
+			"de": `Please state the average realized Gross MOIC.`,
 		},
 	}
 

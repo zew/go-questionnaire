@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "721fa4aa3b429e689508427db62285960d28e2a2199a9d4adb64372991d8c6d1",
+ 	"md_5": "85e9c2501f7b769924771e5cde4e95a0265cec8b2e6ec4cb8d6c51feeebcbda9",
  	"lang_codes": [
  		"en"
  	],
@@ -220,7 +220,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "In welchen Strategien engagieren Sie sich?",
- 								"en": "Which Strategies do you engage in?"
+ 								"en": "Which strategies do you engage in?"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -1144,7 +1144,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "In welchen Strategien engagieren Sie sich?",
- 								"en": "Which Strategies do you engage in?"
+ 								"en": "Which strategies do you engage in?"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -2031,7 +2031,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "In welchen Strategien engagieren Sie sich?",
- 								"en": "Which Strategies do you engage in?"
+ 								"en": "Which strategies do you engage in?"
  							},
  							"col_span": 4,
  							"col_span_label": 1,

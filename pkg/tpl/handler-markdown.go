@@ -155,7 +155,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-Type", m)
 		}
 		// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
-		w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*120))
+		w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*72))
 		bts, err := cloudio.ReadFile(path.Join(".", "content", siteName, langCode, pth))
 		if err != nil {
 			if errors.Is(err, os.ErrNotExist) {

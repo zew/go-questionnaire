@@ -113,16 +113,16 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page12LblsDescr := []trl.S{
 		{
-			"en": `Please state the average cash margin over the relevant base rate. Only relevant for floating rate loans.`,
-			"de": `Please state the average cash margin over the relevant base rate. Only relevant for floating rate loans.`,
+			"en": `Please state the average cash margin over the relevant base rate. Only relevant for <i>floating rate loans</i>.`,
+			"de": `Please state the average cash margin over the relevant base rate. Only relevant for <i>floating rate loans</i>.`,
 		},
 		{
-			"en": `Please state the average interest floor. Only relevant for floating rate loans.`,
-			"de": `Please state the average interest floor. Only relevant for floating rate loans.`,
+			"en": `Please state the average interest floor. Only relevant for <i>floating rate loans</i>.`,
+			"de": `Please state the average interest floor. Only relevant for <i>floating rate loans</i>.`,
 		},
 		{
-			"en": `Please state the average fixed rate copuon. Only relevant for fixed rate loans.`,
-			"de": `Please state the average fixed rate copuon. Only relevant for fixed rate loans.`,
+			"en": `Please state the average fixed rate copuon. Only relevant for <i>fixed rate loans</i>.`,
+			"de": `Please state the average fixed rate copuon. Only relevant for <i>fixed rate loans</i>.`,
 		},
 		{
 			"en": `Please state the average upfront fees charged to the borrower.`,
@@ -150,7 +150,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page12Types,
 		page12Lbls,
 		[]*rangeConf{
-			&sliderPctThreeTen,
+			&sliderPctTwoTen,
 			&sliderPctZeroTwo,
 			&sliderPctThreeTwenty,
 			&sliderPctZeroFour,
@@ -183,8 +183,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			"restricted-text-int",
-			"restricted-text-int",
+			// "restricted-text-int",
+			// "restricted-text-int",
 		}
 		page13Inputs := []string{
 			"q13a_number_covenants",
@@ -192,8 +192,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"q13c_opening_leverage",
 			"q13d_ebitda_avg",
 			"q13e_ev_avg",
-			"q13f_share_sponsored_or_not",
-			"q13g_share_stepdown",
+			// "q13f_share_sponsored_or_not",
+			// "q13g_share_stepdown",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -205,8 +205,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `Contracted maturity`,
 			},
 			{
-				"en": `Opening Leverage`,
-				"de": `Opening Leverage`,
+				"en": `Opening leverage`,
+				"de": `Opening leverage`,
 			},
 			{
 				"en": `Average EBITDA`,
@@ -216,14 +216,14 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `Average EV`,
 				"de": `Average EV`,
 			},
-			{
-				"en": `Number of loans with PE sponsor`,
-				"de": `Number of loans with PE sponsor`,
-			},
-			{
-				"en": `Number of loans with margin step down`,
-				"de": `Number of loans with margin step down`,
-			},
+			// {
+			// 	"en": `Number of loans with PE sponsor`,
+			// 	"de": `Number of loans with PE sponsor`,
+			// },
+			// {
+			// 	"en": `Number of loans with margin step down`,
+			// 	"de": `Number of loans with margin step down`,
+			// },
 		}
 
 		page13LblsDescr := []trl.S{
@@ -247,14 +247,14 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `What is the average enterprise value of borrower companies?`,
 				"de": `What is the average enterprise value of borrower companies?`,
 			},
-			{
-				"en": `Please state the number of transactions with a private equity sponsor.`,
-				"de": `Please state the number of transactions with a private equity sponsor.`,
-			},
-			{
-				"en": `Please state the number of transactions with a margin step down.`,
-				"de": `Please state the number of transactions with a margin step down.`,
-			},
+			// {
+			// 	"en": `Please state the number of transactions with a private equity sponsor.`,
+			// 	"de": `Please state the number of transactions with a private equity sponsor.`,
+			// },
+			// {
+			// 	"en": `Please state the number of transactions with a margin step down.`,
+			// 	"de": `Please state the number of transactions with a margin step down.`,
+			// },
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {
@@ -278,8 +278,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				&sliderEBITDA2x10x,
 				&sliderEBITDAZero150,
 				&sliderEVZeroFiveHundred,
-				nil,
-				nil,
+				// nil,
+				// nil,
 			},
 		)
 	}
@@ -299,9 +299,9 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			"restricted-text-int",
-			"restricted-text-int",
-			"restricted-text-int",
+			// "restricted-text-int",
+			// "restricted-text-int",
+			// "restricted-text-int",
 		}
 		page13Inputs := []string{
 			"q13a_number_covenants",
@@ -316,9 +316,9 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"q13h_exit_dscr",
 			"q13i_exit_icr",
 			"q13j_exit_yield",
-			"q13k_num_amortizing",
-			"q13l_num_developmentrisk",
-			"q13m_num_marginstepdown",
+			// "q13k_num_amortizing",
+			// "q13k_num_developmentrisk",
+			// "q13m_num_marginstepdown",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -330,8 +330,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `Contracted maturity`,
 			},
 			{
-				"en": `Opening Leverage`,
-				"de": `Opening Leverage`,
+				"en": `Opening leverage`,
+				"de": `Opening leverage`,
 			},
 
 			// real estate specific
@@ -344,37 +344,37 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `Opening ICR`,
 			},
 			{
-				"en": `Opening Debt Yield`,
-				"de": `Opening Debt Yield`,
+				"en": `Opening debt yield`,
+				"de": `Opening debt yield`,
 			},
 			{
-				"en": `Expected Exit Leverage`,
-				"de": `Expected Exit Leverage`,
+				"en": `Expected exit leverage`,
+				"de": `Expected exit leverage`,
 			},
 			{
-				"en": `Expected Exit DSCR`,
-				"de": `Expected Exit DSCR`,
+				"en": `Expected exit DSCR`,
+				"de": `Expected exit DSCR`,
 			},
 			{
-				"en": `Expected Exit ICR`,
-				"de": `Expected Exit ICR`,
+				"en": `Expected exit ICR`,
+				"de": `Expected exit ICR`,
 			},
 			{
-				"en": `Expected Exit Yield`,
-				"de": `Expected Exit Yield`,
+				"en": `Expected exit yield`,
+				"de": `Expected exit yield`,
 			},
-			{
-				"en": `Number of amortizing loans`,
-				"de": `Number of amortizing loans`,
-			},
-			{
-				"en": `Number of loans with development risk`,
-				"de": `Number of loans with development risk`,
-			},
-			{
-				"en": `Number of loans with margin step down`,
-				"de": `Number of loans with margin step down`,
-			},
+			// {
+			// 	"en": `Number of amortizing loans`,
+			// 	"de": `Number of amortizing loans`,
+			// },
+			// {
+			// 	"en": `Number of loans with development risk`,
+			// 	"de": `Number of loans with development risk`,
+			// },
+			// {
+			// 	"en": `Number of loans with margin step down`,
+			// 	"de": `Number of loans with margin step down`,
+			// },
 		}
 
 		page13LblsDescr := []trl.S{
@@ -387,8 +387,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `What is the average contracted maturity?`,
 			},
 			{
-				"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
-				"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+				"en": `What is the average opening LTV or LTC?`,
+				"de": `What is the average opening LTV or LTC?`,
 			},
 
 			// real estate specific
@@ -420,18 +420,18 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `What is the average expected exit debt yield?`,
 				"de": `What is the average expected exit debt yield?`,
 			},
-			{
-				"en": `Please state the number of amortizing loans.`,
-				"de": `Please state the number of amortizing loans.`,
-			},
-			{
-				"en": `Please state the number of loans with development risk.`,
-				"de": `Please state the number of loans with development risk.`,
-			},
-			{
-				"en": `Please state the number of transactions with a margin step down.`,
-				"de": `Please state the number of transactions with a margin step down.`,
-			},
+			// {
+			// 	"en": `Please state the number of amortizing loans.`,
+			// 	"de": `Please state the number of amortizing loans.`,
+			// },
+			// {
+			// 	"en": `Please state the number of loans with development risk.`,
+			// 	"de": `Please state the number of loans with development risk.`,
+			// },
+			// {
+			// 	"en": `Please state the number of transactions with a margin step down.`,
+			// 	"de": `Please state the number of transactions with a margin step down.`,
+			// },
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {
@@ -452,19 +452,20 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			[]*rangeConf{
 				nil,
 				&sliderYearsZeroTen,
-				&sliderEBITDA2x10x,
+
+				&slider30To100,
 
 				// real estate specific
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				nil,
-				nil,
-				nil,
+				&slider1To5,
+				&slider1To5,
+				&sliderPctTwoTen,
+				&slider30To100,
+				&slider1To5,
+				&slider1To5,
+				&sliderPctTwoTen,
+				// nil,
+				// nil,
+				// nil,
 			},
 		)
 	}
@@ -480,8 +481,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			"restricted-text-int",
-			"restricted-text-int",
+			// "restricted-text-int",
+			// "restricted-text-int",
 		}
 		page13Inputs := []string{
 			"q13a_number_covenants",
@@ -489,11 +490,11 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"q13c_opening_leverage",
 
 			// infrastruct specific
-			"q13d_opening_dscr",
-			"q13e_minimum_leverage",
+			"q13d_maximum_leverage",
+			"q13e_average_dscr",
 			"q13f_minimum_dscr",
-			"q13g_num_greenfield_risk",
-			"q13h_num_margin_step_down",
+			// "q13g_num_greenfield_risk",
+			// "q13h_num_margin_step_down",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -505,31 +506,31 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `Contracted maturity`,
 			},
 			{
-				"en": `Opening Leverage`,
-				"de": `Opening Leverage`,
+				"en": `Opening leverage`,
+				"de": `Opening leverage`,
 			},
 
 			// infrastruct specific
 			{
-				"en": `Opening DSCR`,
-				"de": `Opening DSCR`,
+				"en": `Expected maximum Leverage`,
+				"de": `Expected maximum Leverage`,
 			},
 			{
-				"en": `Expected Minimum Leverage`,
-				"de": `Expected Minimum Leverage`,
+				"en": `Expected average DSCR`,
+				"de": `Expected average DSCR`,
 			},
 			{
-				"en": `Expected Minimum DSCR`,
-				"de": `Expected Minimum DSCR`,
+				"en": `Expected minimum DSCR`,
+				"de": `Expected minimum DSCR`,
 			},
-			{
-				"en": `Number of loans with greenfield risk`,
-				"de": `Number of loans with greenfield risk`,
-			},
-			{
-				"en": `Number of loans with margin step down`,
-				"de": `Number of loans with margin step down`,
-			},
+			// {
+			// 	"en": `Number of loans with greenfield risk`,
+			// 	"de": `Number of loans with greenfield risk`,
+			// },
+			// {
+			// 	"en": `Number of loans with margin step down`,
+			// 	"de": `Number of loans with margin step down`,
+			// },
 		}
 
 		page13LblsDescr := []trl.S{
@@ -542,31 +543,31 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `What is the average contracted maturity?`,
 			},
 			{
-				"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
-				"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+				"en": `What is the average opening leverage?`,
+				"de": `What is the average opening leverage?`,
 			},
 
 			// infrastruct specific
 			{
-				"en": `What is the average opening DSCR?`,
-				"de": `What is the average opening DSCR?`,
+				"en": `What is the average expected maximum LTV?`,
+				"de": `What is the average expected maximum LTV?`,
 			},
 			{
-				"en": `What is the average expected minimum LTV?`,
-				"de": `What is the average expected minimum LTV?`,
+				"en": `What is the expected average DSCR?`,
+				"de": `What is the expected average DSCR?`,
 			},
 			{
-				"en": `What is the average expected exit DSCR?`,
-				"de": `What is the average expected exit DSCR?`,
+				"en": `What is the expected minimum DSCR?`,
+				"de": `What is the expected minimum DSCR?`,
 			},
-			{
-				"en": `Please state the number of loans with greenfield risk.`,
-				"de": `Please state the number of loans with greenfield risk.`,
-			},
-			{
-				"en": `Please state the number of transactions with a margin step down.`,
-				"de": `Please state the number of transactions with a margin step down.`,
-			},
+			// {
+			// 	"en": `Please state the number of loans with greenfield risk.`,
+			// 	"de": `Please state the number of loans with greenfield risk.`,
+			// },
+			// {
+			// 	"en": `Please state the number of transactions with a margin step down.`,
+			// 	"de": `Please state the number of transactions with a margin step down.`,
+			// },
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {
@@ -587,14 +588,14 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			[]*rangeConf{
 				nil,
 				&sliderYearsZeroTen,
-				&sliderEBITDA2x10x,
+				&slider50To100,
 
 				// infrastruct specific
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				&sliderPctThreeTwentyfive,
-				nil,
-				nil,
+				&slider50To100,
+				&slider1To175,
+				&slider1To175,
+				// nil,
+				// nil,
 			},
 		)
 	}

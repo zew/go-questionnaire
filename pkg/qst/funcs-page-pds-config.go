@@ -78,17 +78,26 @@ type trancheType struct {
 	Lbl                trl.S
 }
 
+// ultra short abbreviations would be
+//
+//	CDL / RED / ID
+//
+// so far unused
 var PDSAssetClasses = []assetClass{
 	{
 		NameUnused: "ac1_corplending",
 		Prefix:     "ac1",
 		Lbl: trl.S{
-			"en": "Corporate / direct lending",
-			"de": "Corporate / direct lending",
+			"en": "Corporate direct lending",
+			"de": "Corporate direct lending",
 		},
+		// Short: trl.S{
+		// 	"en": "Corp. lend.",
+		// 	"de": "Corp. lend.",
+		// },
 		Short: trl.S{
-			"en": "Corp. lend.",
-			"de": "Corp. lend.",
+			"en": "Corporate<br>Direct Lending",
+			"de": "Corporate<br>Direct Lending",
 		},
 		TrancheTypes: []trancheType{
 			{
@@ -126,9 +135,13 @@ var PDSAssetClasses = []assetClass{
 			"en": "Real estate debt",
 			"de": "Real estate debt",
 		},
+		// Short: trl.S{
+		// 	"en": "Real est.",
+		// 	"de": "Real est.",
+		// },
 		Short: trl.S{
-			"en": "Real est.",
-			"de": "Real est.",
+			"en": "Real Estate<br> Debt",
+			"de": "Real Estate<br> Debt",
 		},
 		TrancheTypes: []trancheType{
 			{
@@ -156,9 +169,13 @@ var PDSAssetClasses = []assetClass{
 			"en": "Infrastructure debt",
 			"de": "Infrastructure debt",
 		},
+		// Short: trl.S{
+		// 	"en": "Infrastruct.",
+		// 	"de": "Infrastruct.",
+		// },
 		Short: trl.S{
-			"en": "Infrastruct.",
-			"de": "Infrastruct.",
+			"en": "Infrastructure <br> Debt",
+			"de": "Infrastructure <br> Debt",
 		},
 		TrancheTypes: []trancheType{
 			{
@@ -211,16 +228,16 @@ var PDSLbls = map[string][]trl.S{
 			"de": "not relevant<br>(1)",
 		},
 		{
-			"en": "(2)",
-			"de": "(2)",
+			"en": "somewhat relevant<br>(2)",
+			"de": "somewhat relevant<br>(2)",
 		},
 		{
-			"en": "(3)",
-			"de": "(3)",
+			"en": "relevant<br>(3)",
+			"de": "relevant<br>(3)",
 		},
 		{
-			"en": "(4)",
-			"de": "(4)",
+			"en": "core principal<br>(4)",
+			"de": "core principal<br>(4)",
 		},
 		{
 			"en": "potential deal&shy;breaker<br>(5)",
@@ -233,8 +250,8 @@ var PDSLbls = map[string][]trl.S{
 		// 	"de": "Im&shy;prov&shy;ed",
 		// },
 		{
-			"en": "Im&shy;prove",
-			"de": "Im&shy;prove",
+			"en": "im&shy;proved",
+			"de": "im&shy;proved",
 		},
 		{
 			"en": "&nbsp;",
@@ -242,16 +259,16 @@ var PDSLbls = map[string][]trl.S{
 		},
 		{
 			// yes - its terrible
-			"en": "Sa&shy;me",
-			"de": "Sa&shy;me",
+			"en": "sa&shy;me",
+			"de": "sa&shy;me",
 		},
 		{
 			"en": "&nbsp;",
 			"de": "&nbsp;",
 		},
 		{
-			"en": "De&shy;cline",
-			"de": "De&shy;cline",
+			"en": "de&shy;clined",
+			"de": "de&shy;clined",
 		},
 	},
 	"improveworsen1-5": {
@@ -276,39 +293,62 @@ var PDSLbls = map[string][]trl.S{
 			"de": "worsen significantly",
 		},
 	},
+	// "closing-time-weeks-old": {
+	// 	{
+	// 		"en": "<<br>6",
+	// 		"de": "<<br>6",
+	// 	},
+
+	// 	{
+	// 		"en": "&nbsp;<br>6",
+	// 		"de": "&nbsp;<br>6",
+	// 	},
+	// 	{
+	// 		"en": "&nbsp;<br>9",
+	// 		"de": "&nbsp;<br>9",
+	// 	},
+	// 	{
+	// 		"en": "weeks<br>12",
+	// 		"de": "weeks<br>12",
+	// 	},
+	// 	{
+	// 		"en": "&nbsp;<br>15",
+	// 		"de": "&nbsp;<br>15",
+	// 	},
+	// 	{
+	// 		"en": "&nbsp;<br>18",
+	// 		"de": "&nbsp;<br>18",
+	// 	},
+	// 	{
+	// 		"en": "><br>18",
+	// 		"de": "><br>18",
+	// 	},
+	// },
 	"closing-time-weeks": {
 		{
-			"en": "<<br>6",
-			"de": "<<br>6",
+			"en": "<<br>4",
+			"de": "<<br>4",
 		},
 
 		{
-			"en": "&nbsp;<br>6",
-			"de": "&nbsp;<br>6",
+			"en": "&nbsp;<br>4&#8209;8",
+			"de": "&nbsp;<br>4&#8209;8",
 		},
 		{
-			"en": "&nbsp;<br>9",
-			"de": "&nbsp;<br>9",
+			"en": "months<br><br>8&#8209;12",
+			"de": "months<br><br>8&#8209;12",
 		},
 		{
-			"en": "weeks<br>12",
-			"de": "weeks<br>12",
+			"en": "&nbsp;<br>12&#8209;16",
+			"de": "&nbsp;<br>12&#8209;16",
 		},
 		{
-			"en": "&nbsp;<br>15",
-			"de": "&nbsp;<br>15",
-		},
-		{
-			"en": "&nbsp;<br>18",
-			"de": "&nbsp;<br>18",
-		},
-		{
-			"en": "><br>18",
-			"de": "><br>18",
+			"en": "><br>16",
+			"de": "><br>16",
 		},
 	},
 	"covenants-per-credit": {
-		// &#8209; - non breaking dash,
+		// &#8209; - non breaking dash, non-breaking hyphen
 		//   to prevent
 		// 			0-
 		// 			1

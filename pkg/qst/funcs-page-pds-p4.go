@@ -28,17 +28,14 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.Label = trl.S{
 		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Qualitative questions", ac.Lbl["en"]),
 		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Qualitative questions", ac.Lbl["de"]),
-	}.Outline(fmt.Sprintf("%c4.", rn))
-	page.Short = trl.S{
-		"en": "Quality",
-		"de": "Quality",
-	}
+	}.Outline(fmt.Sprintf("%c3.", rn))
 	page.Short = trl.S{
 		"en": fmt.Sprintf("%v<br>quality", ac.Short["en"]),
 		"de": fmt.Sprintf("%v<br>quality", ac.Short["de"]),
 	}
-	page.CounterProgress = "4"
+	page.CounterProgress = "3"
 	page.CounterProgress = fmt.Sprintf("%c4", rn)
+	page.SuppressInProgressbar = true
 
 	page.WidthMax("42rem")
 
@@ -206,8 +203,8 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `How important are ESG considerations in your investment process?`,
 		}
 		desc := trl.S{
-			"en": `Not relevant (1) to core principal in the investment process and potential dealbreaker (5)`,
-			"de": `Not relevant (1) to core principal in the investment process and potential dealbreaker (5)`,
+			"en": `Please choose the statement that describes most closely the importance of ESG considerations in your investment process.`,
+			"de": `Please choose the statement that describes most closely the importance of ESG considerations in your investment process.`,
 		}
 		esgImportance1.Append90(desc)
 		esgImportance1.Outline("4.3")

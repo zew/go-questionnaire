@@ -15,7 +15,9 @@ import (
 
 // contained checks if a path breaks of the current dir;
 // i.e.
-//    ./content/site-x/../../../etc/passwd
+//
+//	./content/site-x/../../../etc/passwd
+//
 // does break out
 func contained(pth string) bool {
 
@@ -89,7 +91,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Length", fmt.Sprintf("%v", contentLength))
 
 	// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
-	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*120))
+	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*72))
 
 	_, err = io.Copy(w, f) // most memory efficient
 	if err != nil {

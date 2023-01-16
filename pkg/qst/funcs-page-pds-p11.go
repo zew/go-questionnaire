@@ -36,6 +36,10 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"en": fmt.Sprintf("%v<br>changes", ac.Short["en"]),
 		"de": fmt.Sprintf("%v<br>changes", ac.Short["de"]),
 	}
+	page.Short = trl.S{
+		"en": fmt.Sprintf("<b>%v</b><br>New Transactions", ac.Short["en"]),
+		"de": fmt.Sprintf("<b>%v</b><br>New Transactions", ac.Short["de"]),
+	}
 
 	page.CounterProgress = fmt.Sprintf("%c1", rn)
 
@@ -67,22 +71,25 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 		}
 	}
 
-	restrictedTextMultiCols(page, ac, rT11a)
+	if acIdx == 0 {
+		restrictedTextMultiCols(page, ac, rT11aCorpLendID)
+	} else if acIdx == 1 {
+		restrictedTextMultiCols(page, ac, rT11aRealEstate)
+	} else if acIdx == 2 {
+		restrictedTextMultiCols(page, ac, rT11aCorpLendID)
+	}
 
-	restrictedTextMultiCols(page, ac, rT11b)
-
-	// c) Average time to close a transaction
+	// b) Average time to close a transaction
 	lblDuration := trl.S{
 		// "en": "Average time to close a deal in weeks (across all tranche types)",
 		"en": "How long does it take on average to close a transaction (across all tranche types)?",
 		"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
-	}.Outline("c.)")
-
+	}.Outline("b.)")
 	/*
 		dropdownsLabelsTop(
 			page,
 			ac,
-			"q11c_closing_time",
+			"q11b_closing_time",
 			lblDuration,
 			mCh5,
 		)
@@ -92,10 +99,12 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 	radiosSingleRow(
 		page,
 		ac,
-		"q11c_closing_time",
+		"q11b_closing_time",
 		lblDuration,
 		mCh5,
 	)
+
+	restrictedTextMultiCols(page, ac, rT11cVol)
 
 	if acIdx == 0 {
 		restrictedTextMultiCols(page, ac, rT11dCorpLend)
@@ -107,10 +116,13 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	if acIdx == 0 {
 		restrictedTextMultiCols(page, ac, rT11fCorpLend)
+		restrictedTextMultiCols(page, ac, rT11gCorpLend)
 	} else if acIdx == 1 {
 		restrictedTextMultiCols(page, ac, rT11fRealEstate)
+		restrictedTextMultiCols(page, ac, rT11gRealEstate)
 	} else {
 		restrictedTextMultiCols(page, ac, rT11fInfrastruc)
+		restrictedTextMultiCols(page, ac, rT11gInfraStruc)
 	}
 
 	return nil

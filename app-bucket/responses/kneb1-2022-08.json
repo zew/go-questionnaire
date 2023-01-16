@@ -9,17 +9,14 @@
  		},
  		"year": 2022,
  		"month": 8,
- 		"deadline": "2022-08-15T17:15:00+02:00",
+ 		"deadline": "2030-01-01T00:00:00+01:00",
  		"params": [
- 			{
- 				"name": "main_refinance_rate_ecb",
- 				"val": "0,5%"
- 			},
+ 			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a4151ae041a456df815d235ff71fd0a29a7b1b316ce86a24e3337b961663ab54",
+ 	"md_5": "10af00b5ccb0ac977facbec71413a3f6059aa123fa08192ee709ddc9d139766f",
  	"lang_codes": [
  		"en"
  	],
@@ -151,8 +148,7 @@
  							"label": {
  								"en": "What is your gender?"
  							},
- 							"col_span": 7,
- 							"col_span_label": 1
+ 							"col_span": 7
  						},
  						{
  							"name": "q03_gender",
@@ -249,8 +245,7 @@
  							"label": {
  								"en": "Are you currently an \u003ci\u003eexchange\u003c/i\u003e student in Mannheim?"
  							},
- 							"col_span": 7,
- 							"col_span_label": 1
+ 							"col_span": 7
  						},
  						{
  							"name": "q04_visiting_student",
@@ -346,8 +341,7 @@
  							"label": {
  								"en": "Do you already have professional experience from working in a job (other than a student job)?"
  							},
- 							"col_span": 7,
- 							"col_span_label": 1
+ 							"col_span": 7
  						},
  						{
  							"name": "q05_professional_experience",
@@ -416,8 +410,7 @@
  							"label": {
  								"en": "If yes: was this experience related to finance?"
  							},
- 							"col_span": 7,
- 							"col_span_label": 1
+ 							"col_span": 7
  						},
  						{
  							"name": "q06_professional_finance",
@@ -502,8 +495,7 @@
  							"label": {
  								"en": "Have you ever worked with a statistics program like Stata or\u0026nbspR?"
  							},
- 							"col_span": 7,
- 							"col_span_label": 1
+ 							"col_span": 7
  						},
  						{
  							"name": "q07_stata_or_r",
@@ -573,8 +565,7 @@
  								"de": "Sie schätzen Ihren Gesundheitszustand als",
  								"en": "Would you say your health\u0026nbsp;is"
  							},
- 							"col_span": 6,
- 							"col_span_label": 1
+ 							"col_span": 6
  						},
  						{
  							"type": "label-as-input",
@@ -606,7 +597,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -650,7 +641,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -694,7 +685,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -738,7 +729,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -782,7 +773,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -799,7 +790,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
  								"en": "No an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
@@ -827,7 +818,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1380,8 +1371,7 @@
  							"label": {
  								"en": "Sometimes people find that their income does not quite cover their living expenses. \n\t\t\t\t\tIn the last 12\u0026nbsp;months, has this happened to you personally?"
  							},
- 							"col_span": 5,
- 							"col_span_label": 1
+ 							"col_span": 5
  						},
  						{
  							"type": "label-as-input",
@@ -1413,7 +1403,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1457,7 +1447,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1501,7 +1491,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1545,7 +1535,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1562,7 +1552,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Keine Antwort",
+ 								"de": "Kei\u0026shy;ne Antwort",
  								"en": "No an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
@@ -1590,7 +1580,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"

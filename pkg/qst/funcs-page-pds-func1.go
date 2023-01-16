@@ -193,16 +193,20 @@ func restrictedTextMultiCols(
 
 				lblClean := cf.LblRow1.RemoveSomeHTML()
 				s1 := trl.S{
-					"en": fmt.Sprintf("Does not add up. Really continue?\n  %v,  %v", lblClean["en"], trancheType.Lbl),
-					"de": fmt.Sprintf("Does not add up. Really continue?\n  %v,  %v", lblClean["de"], trancheType.Lbl),
+					// "en": fmt.Sprintf("Does not add up. Really continue?\n  %v,  %v", lblClean["en"], trancheType.Lbl),
+					// "de": fmt.Sprintf("Does not add up. Really continue?\n  %v,  %v", lblClean["de"], trancheType.Lbl),
+					"en": fmt.Sprintf("Please check Question 1.1%v - asset class %v. The sum of transaction volumes for the individual market segments does not add up to the total transaction volume. Really continue?", lblClean["en"], trancheType.Lbl),
+					"de": fmt.Sprintf("Please check Question 1.1%v - asset class %v. The sum of transaction volumes for the individual market segments does not add up to the total transaction volume. Really continue?", lblClean["de"], trancheType.Lbl),
 				}
-				inp.JSBlockStrings["Operator"] = "!="
+				inp.JSBlockStrings["CmpOperator"] = "unequal"
 				if cf.AddendsLighterSum {
 					s1 = trl.S{
-						"en": fmt.Sprintf("Addends greater sum. Really continue?\n  %v,  %v", lblClean["en"], trancheType.Lbl),
-						"de": fmt.Sprintf("Addends greater sum. Really continue?\n  %v,  %v", lblClean["de"], trancheType.Lbl),
+						// "en": fmt.Sprintf("Addends greater sum. Really continue?\n  %v,  %v", lblClean["en"], trancheType.Lbl),
+						// "de": fmt.Sprintf("Addends greater sum. Really continue?\n  %v,  %v", lblClean["de"], trancheType.Lbl),
+						"en": fmt.Sprintf("Please check Question 1.1 a) asset class %v. The total number of transaction is smaller than the number of transactions in the subgroup below. Really continue?", trancheType.Lbl),
+						"de": fmt.Sprintf("Please check Question 1.1 a) asset class %v. The total number of transaction is smaller than the number of transactions in the subgroup below. Really continue?", trancheType.Lbl),
 					}
-					inp.JSBlockStrings["Operator"] = ">"
+					inp.JSBlockStrings["CmpOperator"] = "greater"
 				}
 				inp.JSBlockTrls = map[string]trl.S{
 					"msg": s1.RemoveSomeHTML(),

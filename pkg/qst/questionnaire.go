@@ -74,7 +74,7 @@ type inputT struct {
 	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval, i.e. 2 or 0.1
 	Min         float64 `json:"min,omitempty"`        //      ~
 	Max         float64 `json:"max,omitempty"`        //      ~
-	Disabled    bool    `json:"disabled,omitempty"`   // simple the HTML input attribute
+	Disabled    bool    `json:"disabled,omitempty"`   // simply the HTML input attribute
 	OnInvalid   trl.S   `json:"on_invalid,omitempty"` // message for javascript error messages on HTML5 invalid state - compare ErrMsg
 	Placeholder trl.S   `json:"placeholder,omitempty"`
 

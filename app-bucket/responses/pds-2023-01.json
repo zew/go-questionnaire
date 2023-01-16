@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "85e9c2501f7b769924771e5cde4e95a0265cec8b2e6ec4cb8d6c51feeebcbda9",
+ 	"md_5": "46c769634914ccfc594ae1f14c88355c1f0e386b94b9cfe3f0deb3b4e871684e",
  	"lang_codes": [
  		"en"
  	],
@@ -155,8 +155,8 @@
  							"name": "ac1_q03",
  							"type": "checkbox",
  							"label": {
- 								"de": "Corporate / direct lending",
- 								"en": "Corporate / direct lending"
+ 								"de": "Corporate direct lending",
+ 								"en": "Corporate direct lending"
  							},
  							"col_span": 5,
  							"col_span_label": 1,

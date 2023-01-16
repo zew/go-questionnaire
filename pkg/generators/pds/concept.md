@@ -198,3 +198,33 @@ Horizonatels Scrollen für Mobile
 https://localhost:8083/survey/d/PDS--P3XDDGD4V
 -->
 
+
+### RC5 Release Notes
+
+* Todo: Texte von Kirschenmann
+* Ergebnisdownload - Brückbauer
+* Spalte deaktivieren - auf den fortfolgenden Seiten
+
+* Frage 4.3: Wirklich `core principal`? Oder ist `core principle` gemeint?
+
+* Komma-Eingabe - können wir das gemeinsam am Telefon/Zoom durchdenken?
+
+
+#### Slider Rohwerte - Mapping
+
+Telefonisch besprechen
+
+Im Ergebnis-Export werden nur die "Rohwerte" gespeichert sein;
+eine doppelte Speicherung Rohwert und angezeigter Wert (-1 => "<2%" oder 2 => "2-2.5 mn €") erzeugt zu viele riskante Sonderfälle. Man muss sich einmalig ein Mapping der Rohwerte zu den Displaywerten bspw. als Excel-Makro anlegen.
+
+Zum Verständnis: bedeutet das, wenn ich beispielsweise bei Frage 1.2 a) den Schiebe auf die erste Position setze, dann wird eine 1 in die Datenbank geschrieben? Da wir ja nicht notwendiger weise alle Mikrodaten erhalten, ist es möglich das benötigte Mapping dann im Auswertungs/Aggregationsschritt durchzuführen, bevor sie uns die Daten zuschicken?
+
+#### IPhone Bugfix
+
+Ich hatte das Problem mit IPhone und Safari als letztes in RC4 korrigiert;  
+die entsprechenden Hilfsdateien werden vom Smartphone/Browser teilweise gecached, obwohl ich dem Browser eine neue Fassung anzeige...  
+Bitte versuchen Sie es nochmal.
+
+#### Progressbar/Navigation
+
+Der PCAG Vorschlag mit einer zweigliedrigen Navigation (Zeile1: Assetklasse, Zeile2: Frageblöcke X1,X2 ... X4) erscheint mir elegant. Die Logik-Programmierung (mit zwei verschachtelten Zeilen/Listen) würde ich kurzfristig riskieren. Aber die Ausarbeitung des Browserlayouts (in HTML-Sprache) ist so kurz vor Liveschaltung zu unsicher. Ich habe einen hoffentlich passablen Umsetzungsvorschlag innerhalb der bestehenden Technik eingebaut. Bitte prüfen. Wenn das unzulänglich ist, dann können wir in _Q2_-2023 die vorgeschlagene Navigationsleiste einbauen.

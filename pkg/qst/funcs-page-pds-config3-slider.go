@@ -153,7 +153,7 @@ var sliderPctZeroHundredWide = rangeConf{
 	TicksLabels: `0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100`,
 }
 
-var sliderPctThreeTen = rangeConf{
+var sliderPctTwoTen = rangeConf{
 	Min:    0,
 	Max:    12,
 	Step:   0.5,
@@ -308,4 +308,62 @@ var sliderOneOnePointFive = rangeConf{
 
 	UpperThreshold: 2.1,
 	UpperDisplay:   ">2",
+}
+
+var slider50To100 = rangeConf{
+	Min:    30,
+	Max:    120,
+	Step:   10,
+	Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `30:<50;50:50;60:60;70:70;80:80;90:90;100:100;120:>100`,
+
+	LowerThreshold: 49,
+	LowerDisplay:   "<50",
+	UpperThreshold: 101,
+	UpperDisplay:   ">100",
+}
+
+var slider1To175 = rangeConf{
+	Min:  1,
+	Max:  2.0,
+	Step: 0.05,
+	// Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `1:1;1.25:1.25;1.5:1.5;1.75:1.75;2:>1.75`,
+
+	UpperThreshold: 1.755,
+	UpperDisplay:   ">1.75",
+}
+
+var slider30To100 = rangeConf{
+	Min:    30 - 20,
+	Max:    100 + 20,
+	Step:   5,
+	Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `10:<30;30:30;50:50;75:75;100:100;120:>100`,
+
+	LowerThreshold: 29,
+	LowerDisplay:   "<30",
+	UpperThreshold: 101,
+	UpperDisplay:   ">100",
+}
+
+var slider1To5 = rangeConf{
+	Min:    1 - 1.5,
+	Max:    5 + 1.5,
+	Step:   0.25,
+	Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
+
+	LowerThreshold: 0.9,
+	LowerDisplay:   "<1",
+	UpperThreshold: 5.1,
+	UpperDisplay:   ">5",
 }

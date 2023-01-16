@@ -26,9 +26,14 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Market Sentiment", ac.Lbl["en"]),
 		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Market Sentiment", ac.Lbl["de"]),
 	}.Outline(fmt.Sprintf("%c3.", rn))
+
 	page.Short = trl.S{
-		"en": fmt.Sprintf("%v<br>sentiment", ac.Short["en"]),
-		"de": fmt.Sprintf("%v<br>sentiment", ac.Short["de"]),
+		"en": fmt.Sprintf("%v<br>Market assessment", ac.Short["en"]),
+		"de": fmt.Sprintf("%v<br>Market assessment", ac.Short["de"]),
+	}
+	page.Short = trl.S{
+		"en": fmt.Sprint("<b> &nbsp;<br> &nbsp; </b> <br>Market Assessment"),
+		"de": fmt.Sprint("<b> &nbsp;<br> &nbsp; </b> <br>Market Assessment"),
 	}
 
 	page.CounterProgress = fmt.Sprintf("%c3", rn)
@@ -44,13 +49,37 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// dynamically recreate the groups
 	page.Groups = nil
 
+	{
+		gr := page.AddGroup()
+		gr.BottomVSpacers = 1
+		gr.Cols = 1
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"en": `The following questions are aimed to capture the developments of the <i>overall market</i>.
+
+				`,
+				"de": `The following questions are aimed to capture the developments of the <i>overall market</i>.
+
+				`,
+			}
+		}
+
+	}
+
 	page3Inputs := []string{
-		"q31_financing_situation_pricing",
-		"q32_deal_quality",
-		"q33_deal_documentation",
-		"q34_deal_amount",
+		"q31_overall_environ",
+		"q32_pricing",
+		"q33_qual_documentation",
+		"q34_pipeline",
 	}
 	page3Lbls := []trl.S{
+		{
+			"en": `Overall market environment`,
+			"de": `Overall market environment`,
+		},
 		{
 			"en": `Pricing`,
 			"de": `Pricing`,
@@ -60,73 +89,91 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Quality of documentation`,
 		},
 		{
-			"en": `Quality of deals`,
-			"de": `Quality of deals`,
-		},
-		{
-			"en": `Pipeline / Deal Flow`,
-			"de": `Pipeline / Deal Flow`,
+			"en": `Pipeline / deal flow`,
+			"de": `Pipeline / deal flow`,
 		},
 	}
 
 	page3LblsDescr := []trl.S{
 		{
-			"en": `Please assess the pricing of new loans.  (higher return=improved, lower return=declined) `,
-			"de": `Please assess the pricing of new loans.  (higher return=improved, lower return=declined) `,
-		},
-
-		{
-			"en": `Please assess the quality of the deal documentation for new loans. (stricter loan documentation=improved, looser loan documentation=declined)`,
-			"de": `Please assess the quality of the deal documentation for new loans. (stricter loan documentation=improved, looser loan documentation=declined)`,
-		},
-		{
-			"en": `Please assess the deal quality of new loans with respect to the risk-return profile.`,
-			"de": `Please assess the deal quality of new loans with respect to the risk-return profile.`,
+			"en": `Please assess the overall market environment.
+					<br>
+					Note that we ask for changes in your assessment of the market environment and not the level.
+				`,
+			"de": `Please assess the overall market environment.
+					<br>
+					Note that we ask for changes in your assessment of the market environment and not the level.
+				`,
 		},
 		{
-			"en": `Please assess the development of demand for credit. `,
-			"de": `Please assess the development of demand for credit. `,
+			"en": `Please assess the attractiveness of the pricing of new loans you observe in the market relative to their risk profile. 
+					<br>
+					Note that we ask for changes in the attractiveness of the pricing and not the level.
+				`,
+			"de": `Please assess the attractiveness of the pricing of new loans you observe in the market relative to their risk profile. 
+					<br>
+					Note that we ask for changes in the attractiveness of the pricing and not the level.
+				`,
+		},
+		{
+			"en": `Please assess the quality of the deal documentation for new deals you observe in the market (stricter loan documentation=improved, looser loan documentation=declined). 
+					<br>
+					Note that we ask for changes in your assessment of the market environment and not the level.
+				`,
+			"de": `Please assess the quality of the deal documentation for new deals you observe in the market (stricter loan documentation=improved, looser loan documentation=declined). 
+					<br>
+					Note that we ask for changes in your assessment of the market environment and not the level.
+				`,
+		},
+		{
+			"en": `Please assess loan origination. 
+				<br>
+				Note that we ask for changes in loan origination and not the level.
+			`,
+			"de": `Please assess loan origination. 
+				<br>
+				Note that we ask for changes in loan origination and not the level.
+			`,
 		},
 	}
 
 	page3LblsPrevAndPast := []trl.S{
 		{
-			"en": `How did the pricing (taking into account margins over the relevant reference rate and other return components like fees) for new deals you observed in the market change over the past quarter?`,
-			"de": `How did the pricing (taking into account margins over the relevant reference rate and other return components like fees) for new deals you observed in the market change over the past quarter?`,
+			"en": `How did the overall market environment change over the past quarter?`,
+			"de": `How did the overall market environment change over the past quarter?`,
 		},
 		{
-			"en": `How do you expect the pricing (taking into account margins over the relevant reference rate and other return components like fees) for new deals you observed in the market change in the coming quarter?`,
-			"de": `How do you expect the pricing (taking into account margins over the relevant reference rate and other return components like fees) for new deals you observed in the market change in the coming quarter?`,
+			"en": `How do you expect the overall market environment to change over the coming quarter?`,
+			"de": `How do you expect the overall market environment to change over the coming quarter?`,
 		},
-
+		//
 		{
-			"en": `How did the quality of loan documentation (taking into covenant quality, enforcement rights, etc.) for new deals you observed in the market change over the past quarter? `,
-			"de": `How did the quality of loan documentation (taking into covenant quality, enforcement rights, etc.) for new deals you observed in the market change over the past quarter? `,
-		},
-		{
-			"en": `How do you expect the quality of loan documentation (taking into covenant quality, enforcement rights, etc.) for new deals you observed in the market change in the coming quarter?`,
-			"de": `How do you expect the quality of loan documentation (taking into covenant quality, enforcement rights, etc.) for new deals you observed in the market change in the coming quarter?`,
-		},
-
-		{
-			"en": `How did the risk-return profile for new deals you observed in the market change over the past quarter?`,
-			"de": `How did the risk-return profile for new deals you observed in the market change over the past quarter?`,
+			"en": `How did the attractiveness of pricing for new deals change over the past quarter?`,
+			"de": `How did the attractiveness of pricing for new deals change over the past quarter?`,
 		},
 		{
-			"en": `How do you expect  the risk-return profile for new deals you observed in the market change in the coming quarter?`,
-			"de": `How do you expect  the risk-return profile for new deals you observed in the market change in the coming quarter?`,
+			"en": `How do you expect the attractiveness of pricing for new deals to change in the coming quarter?`,
+			"de": `How do you expect the attractiveness of pricing for new deals to change in the coming quarter?`,
 		},
-
+		//
 		{
-			"en": `Apart from normal seasonal fluctuations, how did the volume of deals you observed in the market change in the last quarter?`,
-			"de": `Apart from normal seasonal fluctuations, how did the volume of deals you observed in the market change in the last quarter?`,
+			"en": `How did the quality of loan documentation (e.g. covenant quality, enforcement rights, ...) change over the past quarter? `,
+			"de": `How did the quality of loan documentation (e.g. covenant quality, enforcement rights, ...) change over the past quarter? `,
 		},
 		{
-			"en": `Apart from normal seasonal fluctuations, how do you expect the volume of deals you observe in the market change in the coming quarter?`,
-			"de": `Apart from normal seasonal fluctuations, how do you expect the volume of deals you observe in the market change in the coming quarter?`,
+			"en": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in the coming quarter?`,
+			"de": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in the coming quarter?`,
+		},
+		//
+		{
+			"en": `How did the volume of deals you observed in the market change in the last quarter?`,
+			"de": `How did the volume of deals you observed in the market change in the last quarter?`,
+		},
+		{
+			"en": `How do you expect the volume of deals to change in the coming quarter?`,
+			"de": `How do you expect the volume of deals to change in the coming quarter?`,
 		},
 	}
-	_ = page3LblsPrevAndPast
 
 	for i := 0; i < len(page3Lbls); i++ {
 		page3Lbls[i].Append90(page3LblsDescr[i])

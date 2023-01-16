@@ -28,10 +28,16 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["en"], q.Survey.Quarter(-1)),
 		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c2.", rn))
+
 	page.Short = trl.S{
 		"en": fmt.Sprintf("%v<br>realizations", ac.Short["en"]),
 		"de": fmt.Sprintf("%v<br>realizations", ac.Short["de"]),
 	}
+	page.Short = trl.S{
+		"en": fmt.Sprintf("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
+		"de": fmt.Sprintf("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
+	}
+
 	page.CounterProgress = fmt.Sprintf("%c2", rn)
 
 	page.WidthMax("58rem")

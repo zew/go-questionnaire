@@ -1,33 +1,34 @@
 {
 
-    // triggers == 0 should disable the entire column
- 
+    // sum of new transactions - changes
+    // should be copied to three other inputs in the same column
+
 
     let triggers = [
-        "ac1_tt1_q11b_voltransact_main",
-        "ac1_tt2_q11b_voltransact_main",
-        "ac1_tt3_q11b_voltransact_main",
+        "ac1_tt1_q11c_voltransact_main",
+        "ac1_tt2_q11c_voltransact_main",
+        "ac1_tt3_q11c_voltransact_main",
 
-        "ac2_tt1_q11b_voltransact_main",
-        "ac2_tt2_q11b_voltransact_main",
+        "ac2_tt1_q11c_voltransact_main",
+        "ac2_tt2_q11c_voltransact_main",
 
-        "ac3_tt1_q11b_voltransact_main",
-        "ac3_tt2_q11b_voltransact_main",
+        "ac3_tt1_q11c_voltransact_main",
+        "ac3_tt2_q11c_voltransact_main",
 
     ];
 
     // safari cannot read it inside func, if declared let or const
     var dests = {
 
-        "ac1_tt1_q11b_voltransact_main": ["ac1_tt1_q11d_volbysegm_main", "ac1_tt1_q11e_volbyreg_main","ac1_tt1_q11f_volbysect_main"],
-        "ac1_tt2_q11b_voltransact_main": ["ac1_tt2_q11d_volbysegm_main", "ac1_tt2_q11e_volbyreg_main","ac1_tt2_q11f_volbysect_main"],
-        "ac1_tt3_q11b_voltransact_main": ["ac1_tt3_q11d_volbysegm_main", "ac1_tt3_q11e_volbyreg_main","ac1_tt3_q11f_volbysect_main"],
+        "ac1_tt1_q11c_voltransact_main": ["ac1_tt1_q11d_volbysegm_main", "ac1_tt1_q11e_volbyreg_main","ac1_tt1_q11f_volbysect_main"],
+        "ac1_tt2_q11c_voltransact_main": ["ac1_tt2_q11d_volbysegm_main", "ac1_tt2_q11e_volbyreg_main","ac1_tt2_q11f_volbysect_main"],
+        "ac1_tt3_q11c_voltransact_main": ["ac1_tt3_q11d_volbysegm_main", "ac1_tt3_q11e_volbyreg_main","ac1_tt3_q11f_volbysect_main"],
 
-        "ac2_tt1_q11b_voltransact_main": ["ac2_tt1_q11d_volbysegm_main", "ac2_tt1_q11e_volbyreg_main", "ac2_tt1_q11f_volbysect_main"],
-        "ac2_tt2_q11b_voltransact_main": ["ac2_tt2_q11d_volbysegm_main", "ac2_tt2_q11e_volbyreg_main", "ac2_tt2_q11f_volbysect_main"],
+        "ac2_tt1_q11c_voltransact_main": ["ac2_tt1_q11d_volbysegm_main", "ac2_tt1_q11e_volbyreg_main", "ac2_tt1_q11f_volbysect_main"],
+        "ac2_tt2_q11c_voltransact_main": ["ac2_tt2_q11d_volbysegm_main", "ac2_tt2_q11e_volbyreg_main", "ac2_tt2_q11f_volbysect_main"],
 
-        "ac3_tt1_q11b_voltransact_main": ["ac3_tt1_q11d_volbysegm_main", "ac3_tt1_q11e_volbyreg_main", "ac3_tt1_q11f_volbysect_main"],
-        "ac3_tt2_q11b_voltransact_main": ["ac3_tt2_q11d_volbysegm_main", "ac3_tt2_q11e_volbyreg_main", "ac3_tt2_q11f_volbysect_main"],
+        "ac3_tt1_q11c_voltransact_main": ["ac3_tt1_q11d_volbysegm_main", "ac3_tt1_q11e_volbyreg_main", "ac3_tt1_q11f_volbysect_main"],
+        "ac3_tt2_q11c_voltransact_main": ["ac3_tt2_q11d_volbysegm_main", "ac3_tt2_q11e_volbyreg_main", "ac3_tt2_q11f_volbysect_main"],
 
     };
 

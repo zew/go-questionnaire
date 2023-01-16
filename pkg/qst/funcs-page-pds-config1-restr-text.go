@@ -28,7 +28,9 @@ type configRT struct {
 var (
 
 	// multi-row configs
-	rT11a = configRT{
+	//
+	// corporate lending and infrastructure debt - ID
+	rT11aCorpLendID = configRT{
 		InputNameP2:       "q11a_numtransact",
 		AddendsLighterSum: true,
 		Chars:             6,
@@ -41,8 +43,13 @@ var (
 			"en": "Thereof with...",
 			"de": "Thereof with...",
 		},
-		Suffix:   suffixNumDeals,
-		SubNames: []string{"floatingrate", "esgdoc", "esgratchet"},
+		Suffix: suffixNumDeals,
+		SubNames: []string{
+			"floatingrate",
+			"esgdoc",
+			"esgratchet",
+			"share_stepdown",
+		},
 		SubLbls: map[string]string{
 			"floatingrate": `
 				...floating interest rate
@@ -51,7 +58,7 @@ var (
 					</span>
 				`,
 			"esgdoc": `
-				...explicit ESG targets in the credit documentation
+				...explicit ESG targets in credit documentation
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
 					Please state the number of transactions with explicit ESG targets in the credit documentation.
 					</span>
@@ -62,12 +69,20 @@ var (
 					Please state the number of transactions with ESG ratchets.
 					</span>
 				`,
+			"share_stepdown": `
+				...margin step down
+					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
+					Please state the number of loans with a 
+					margin step down.
+					</span>
+				`,
 		},
 		Placeholder: placeHolderNum,
 	}
+	rT11aRealEstate = configRT{}
 
-	rT11b = configRT{
-		InputNameP2: "q11b_voltransact",
+	rT11cVol = configRT{
+		InputNameP2: "q11c_voltransact",
 		Chars:       10,
 		// LblRow1: see init()
 		Suffix:      suffixMillionEuro,
@@ -165,6 +180,87 @@ var (
 	}
 	rT11fRealEstate = configRT{}
 	rT11fInfrastruc = configRT{}
+
+	rT11gCorpLend = configRT{
+		InputNameP2:      "q11g_pe_sponsor",
+		SuppressSumField: true,
+		Chars:            10,
+		LblRow1: trl.S{
+			"en": "Private Equity Sponsor",
+			"de": "Private Equity Sponsor",
+		}.Outline("g.)"),
+		FirstRowDisabled: true,
+		LblRow2: trl.S{
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by private equity sponsor`,
+			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by private equity sponsor`,
+		},
+		Suffix: suffixMillionEuro,
+		Step:   0.1,
+
+		SubNames: []string{
+			"with",
+			"without",
+		},
+		SubLbls: map[string]string{
+			"with":    "with PE sponsor",
+			"without": "without PE sponsor",
+		},
+		Placeholder: placeHolderMillion,
+	}
+
+	rT11gRealEstate = configRT{
+		InputNameP2:      "q11g_dev_risk",
+		SuppressSumField: true,
+		Chars:            10,
+		LblRow1: trl.S{
+			"en": "Development risk",
+			"de": "Development risk",
+		}.Outline("g.)"),
+		FirstRowDisabled: true,
+		LblRow2: trl.S{
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by development risk`,
+			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by development risk`,
+		},
+		Suffix: suffixMillionEuro,
+		Step:   0.1,
+
+		SubNames: []string{
+			"with",
+			"without",
+		},
+		SubLbls: map[string]string{
+			"with":    "with development risk",
+			"without": "without development risk",
+		},
+		Placeholder: placeHolderMillion,
+	}
+
+	rT11gInfraStruc = configRT{
+		InputNameP2:      "q11g_greenfield_risk",
+		SuppressSumField: true,
+		Chars:            10,
+		LblRow1: trl.S{
+			"en": "Greenfield risk",
+			"de": "Greenfield risk",
+		}.Outline("g.)"),
+		FirstRowDisabled: true,
+		LblRow2: trl.S{
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by greenfield risk`,
+			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by greenfield risk`,
+		},
+		Suffix: suffixMillionEuro,
+		Step:   0.1,
+
+		SubNames: []string{
+			"with",
+			"without",
+		},
+		SubLbls: map[string]string{
+			"with":    "with greenfield risk",
+			"without": "without greenfield risk",
+		},
+		Placeholder: placeHolderMillion,
+	}
 
 	//
 	r221 = configRT{
@@ -264,6 +360,16 @@ var (
 )
 
 func init() {
+
+	rT11aRealEstate = rT11aCorpLendID
+	rT11aRealEstate.SubNames = append(rT11aRealEstate.SubNames, "num_amortizing")
+	rT11aRealEstate.SubLbls["num_amortizing"] = `
+		...amortizing loans
+			<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
+			Please state the number of amortizing loans.
+			</span>
+		`
+
 	//
 	lblB := trl.S{
 		"en": "Total transaction volume (in mn EUR)",
@@ -274,8 +380,8 @@ func init() {
 		"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1].`,
 	}
 	lblB.Append90(lblB2)
-	lblB.Outline("b.)")
-	rT11b.LblRow1 = lblB
+	lblB.Outline("c.)")
+	rT11cVol.LblRow1 = lblB
 
 	//
 	lbld := trl.S{

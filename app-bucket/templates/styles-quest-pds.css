@@ -164,3 +164,18 @@ dummy {
 
 }
 
+/* 
+    B1 - 1.1g) - 
+    C1 - 1.1g) - 
+    
+    das Suffix mn € wird umgebrochen
+    
+    why?
+*/
+.pg07-grp08-inp05-ctl,
+.pg12-grp08-inp05-ctl,
+dummy
+{
+    /* word-wrap: break-word; */
+    white-space: pre;
+}

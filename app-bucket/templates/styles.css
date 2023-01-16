@@ -2058,3 +2058,31 @@ input[type=radio].range-noanswer {
 
     transform: scale(0.9) !important;
 }
+
+
+
+/*
+===========================================
+	go-questionnaire specific stuff
+	mostly content rendering
+===========================================
+
+*/
+
+
+.go-quest-page-section {
+    font-size: 140%;
+    line-height: 20px;
+    font-weight: 900;
+}
+
+.go-quest-page-header {
+    font-size: 130%;
+    font-weight: bold;
+    /* line-height: 18px; */
+}
+
+.go-quest-page-desc {
+    font-size: 110%;
+    /* line-height: 18px; */
+}

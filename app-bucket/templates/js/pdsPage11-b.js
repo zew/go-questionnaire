@@ -1,7 +1,7 @@
 {
 
-    // sum of new transactions - changes 
-    // should be copied to three other inputs in the same column
+    // triggers == 0 should disable the entire column
+
 
     let triggers = [
         "ac1_tt1_q11a_numtransact_main",
@@ -20,13 +20,23 @@
     // safari cannot read it inside func, if declared let or const
     var destRumps = [
             "q11a_numtransact_floatingrate",
+            "q11a_numtransact_share_stepdown",
             "q11a_numtransact_esgdoc",
             "q11a_numtransact_esgratchet",
 
-            "q11b_voltransact_main",
+            "q11c_voltransact_main",
             "q11d_volbysegm_low",
             "q11d_volbysegm_mid",
             "q11d_volbysegm_upper",
+
+            "q11g_pe_sponsor_with",
+            "q11g_pe_sponsor_without",
+
+
+            // ac1
+            "q11a_numtransact_num_amortizing",
+            "q11g_dev_risk_with",
+            "q11g_dev_risk_without",
 
             // ac2
             "q11d_volbysegm_core",
@@ -67,6 +77,10 @@
             "q11f_volbysect_telecoms",
             "q11f_volbysect_social",
             "q11f_volbysect_other",
+
+
+            "q11g_greenfield_risk_with",
+            "q11g_greenfield_risk_without",
 
 
         ];

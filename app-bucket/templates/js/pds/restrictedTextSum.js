@@ -56,22 +56,26 @@ function funcInner{{.InpMain}}(){
 
 
     let suspicious = false;
+
+    let cmpOperation = "{{.CmpOperator }}";
     
     // parts adding up
     if (sum != 0 || totalInpFloat != 0) {
         if (totalInpFloat == 100 && sum == 0.0 && virtual) {
             // not suspicious
 
-        } else if (sum {{.Operator}} totalInpFloat) {
-
-            console.log("total:    ", nameTotal, totalInpFloat);
-            console.log("summands str: ", summandValsStr);
-            console.log("summands int: ", summandValsInt, " = " , sum);
-            
-            totalInp.focus();
-
+        } else if (cmpOperation == "greater" && (sum-0.5) > totalInpFloat) {
+            suspicious = true;
+        } else if (cmpOperation == "unequal" && ((sum + 0.5) < totalInpFloat ||  (sum - 0.5) > totalInpFloat)) {
             suspicious = true;
         }
+    }
+
+    if (suspicious) {
+        console.log("total:    ", nameTotal, totalInpFloat);
+        console.log("summands str: ", summandValsStr);
+        console.log("summands int: ", summandValsInt, " = ", sum);
+        totalInp.focus();
     }
 
     return suspicious;

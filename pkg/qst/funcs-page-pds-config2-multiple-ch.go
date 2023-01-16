@@ -66,7 +66,7 @@ var (
 	}
 	mCh5 = configMC{
 		KeyLabels:   "closing-time-weeks",
-		Cols:        7,
+		Cols:        5,
 		InpColspan:  1,
 		LabelBottom: false,
 		DontKnow:    false,
@@ -74,14 +74,21 @@ var (
 		// not yet
 		// GroupLeftIndent: outline2Indent,
 
+		// XDisplacements: []string{
+		// 	"1.46rem",
+		// 	"1.27rem",
+		// 	"0.64rem",
+		// 	"",
+		// 	"0.64rem",
+		// 	"1.27rem",
+		// 	"1.46rem",
+		// },
 		XDisplacements: []string{
-			"1.46rem",
-			"1.27rem",
-			"0.64rem",
+			"1.6rem",
+			"0.79rem",
 			"",
-			"0.64rem",
-			"1.27rem",
-			"1.46rem",
+			"0.79rem",
+			"1.6rem",
 		},
 	}
 )

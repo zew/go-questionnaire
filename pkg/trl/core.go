@@ -293,6 +293,10 @@ var coreTranslations = Map{
 		"it": "Finire questo sondaggio",
 		"pl": "Zakończyłem tę ankietę",
 	},
+	"finish_save_questionnaire": {
+		"de": "Fragebogen abschließen um die Daten final zu speichern.",
+		"en": "Finish this survey and finalize your answers.",
+	},
 	"entries_saved": {
 		"de": "Ihre Eingaben wurden gespeichert.",
 		"en": "Your entries have been saved.",

@@ -201,18 +201,23 @@ https://localhost:8083/survey/d/PDS--P3XDDGD4V
 
 ### RC5 Release Notes
 
-* Todo: Texte von Kirschenmann
-* Ergebnisdownload - Brückbauer
+* Todo: Imprint - DSGVO, Kontakt
+* Ergebnisdownload - Frank Brückbauer
 * Spalte deaktivieren - auf den fortfolgenden Seiten
 
 * Frage 4.3: Wirklich `core principal`? Oder ist `core principle` gemeint?
 
-* Komma-Eingabe - können wir das gemeinsam am Telefon/Zoom durchdenken?
 
+
+Telefonisch/Zoom besprechen:
+
+#### Komma-Eingabe
+
+* Wie soll das im englischen/angelsächsichen Chrome aussehen?
+
+* Slider display: Immer Komma?
 
 #### Slider Rohwerte - Mapping
-
-Telefonisch besprechen
 
 Im Ergebnis-Export werden nur die "Rohwerte" gespeichert sein;
 eine doppelte Speicherung Rohwert und angezeigter Wert (-1 => "<2%" oder 2 => "2-2.5 mn €") erzeugt zu viele riskante Sonderfälle. Man muss sich einmalig ein Mapping der Rohwerte zu den Displaywerten bspw. als Excel-Makro anlegen.

@@ -39,13 +39,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 
 		page.Label = trl.S{
-			"en": "Greeting",
-			"de": "Begrüßung",
+			"en": "Dear Madam / Sir,",
+			"de": "Sehr geehrter Damen und Herren",
 		}
-		page.Short = trl.S{
-			"en": "Greeting",
-			"de": "Begrüßung",
-		}
+		// page.Short = trl.S{
+		// 	"en": "Greeting",
+		// 	"de": "Begrüßung",
+		// }
 
 		page.WidthMax("42rem")
 
@@ -206,7 +206,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"en": "Finish",
+			"en": "Consent",
 			"de": "Abschluss<br><br>",
 		}
 		page.Short = trl.S{
@@ -221,60 +221,67 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 3
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": `
+						<span style='font-size:110%'>
+
+						<b>Declaration of consent according to GDPR</b> 
+						
+						<br>
+
+						We will treat the answers to this online survey strictly confidential, 
+						GDPR-compliant and only use them in anonymous or aggregated form. 
+						
+						We will pass on your answers to the questions 
+						within the ZEW Private Debt Survey to our cooperation 
+						partner Prime Capital AG in an aggregated and anonymous form. 
+					
+						 
+						In the <a href="/doc/site-imprint.md" >imprint</a> you find extensive information on data protection.						
+						</span>
+						
+						`,
+
+					"de": `---`,
+				}
+			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
-				inp.Name = "q61_dsgvo"
+				inp.Name = "q61_consent"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 6
 				inp.Validator = "must"
 				inp.Label = trl.S{
 					"en": `
-						Todo: Abstimmung des exakten Textes zwischen ZEW und Partner
-						<br>
-
-						<b>Einwilligungserklärung gemäß DSGVO</b>
-
-						<br>
-
-						Die Antworten dieser Online-Umfrage werden von uns streng vertraulich, 
-						DSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.
-
-						<br>
-
-						Im <a href="/doc/site-imprint.md" >Impressum</a> finden Sie umfangreiche Angaben zum Datenschutz.
-
-						<br>
-
-						Hiermit willige ich ein, dass meine gesammelten Daten 
-						für [Private Debt Survey] des [ZEW] verwendet werden.
-
-						<br>
-
-					`,
+						I hereby consent to my collected data being used for the ZEW Private Debt Survey.
+						`,
+					"de": `---`,
 				}
-
 				inp.ControlFirst()
 				inp.ControlTop()
 			}
 
 		}
 
-		// gr0
+		// gr1
 		{
 			labels := []trl.S{
 				{
-					"en": `Ich erkläre mich einverstanden, 
-					dass meine angegebenen Daten zu Auswertungszwecken an [partner_1] 
-					weitergeleitet werden.
+					"en": `
+	I hereby agree that the answers I have given as part of the ZEW Private Debt Survey will be passed on to Prime Capital AG in non-anonymized form. No personal data is passed on to Prime Capital AG, only the company name and the answers given in the survey. Prime Capital AG will not pass on the data received and will only process this data within the scope of the business activities of the Investment Advisory & Solutions division, in particular for the purposes of database enrichment in the context of manager selection or for the purpose of deriving capital market assumptions.					
 					`,
 				},
 
 				{
-					"en": `Meine Daten sollen <i>nicht</i> an [partner_1] 
-					weitergeleitet werden.
+					"en": `
+	I do <i>not</i> agree with my data being forwarded to Prime Capital AG in non-anonymized form. 
 					`,
 				},
 			}
@@ -291,13 +298,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"en": `
-				Todo: <br>
-				Text Weitergabe meiner Daten an [partner_2]<br>
-
-				Zusammen mit Identifikation am Anfang?<br>
-				Identifikation hierher ans Ende?<br>
-
-
+					Declaration of consent to forward answers in non-anonymized form to Prime Capital&nbsp;AG:
 				`,
 				}
 				inp.ColSpan = gr.Cols
@@ -334,10 +335,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": `Fragebogen abschließen um die Daten final zu speichern.`,
-					"de": `Fragebogen abschließen um die Daten final zu speichern.`,
-				}
+				inp.Label = trl.CoreTranslations()["finish_save_questionnaire"]
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
@@ -366,15 +364,26 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	//
 	// Report of results
 	{
-		p := q.AddPage()
-		p.NoNavigation = true
-		p.Label = trl.S{
+		page := q.AddPage()
+		page.NoNavigation = true
+		page.SuppressProgressbar = true
+		page.WidthMax("40rem")
+
+		page.Label = trl.S{
 			"de": "Ihre Eingaben sind gespeichert.",
 			"en": "Your entries have been saved.",
 		}
 		{
-			// gr := p.AddGroup()
-			// gr.Cols = 1
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": `&nbsp;`,
+					"de": `&nbsp;`,
+				}
+			}
 			// {
 			// 	inp := gr.AddInput()
 			// 	inp.Type = "dyn-textblock"

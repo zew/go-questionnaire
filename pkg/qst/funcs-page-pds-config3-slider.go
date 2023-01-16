@@ -290,8 +290,9 @@ var sliderEVZeroFiveHundred = rangeConf{
 	Step:   10,
 	Suffix: suffixMillionEuro,
 	//
-	CSSType:     "3",
-	TicksLabels: `0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500;650:>500`,
+	CSSType: "3",
+	// TicksLabels: `0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500;650:>500`,
+	TicksLabels: `0:0;50: ;100:100;150: ;200: ;250: ;300:300;350: ;400: ;450: ;500:500;650:>500`,
 
 	UpperThreshold: 501,
 	UpperDisplay:   ">500",

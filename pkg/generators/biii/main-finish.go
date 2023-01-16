@@ -207,10 +207,7 @@ func finish(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `Fragebogen abschließen um die Daten final zu speichern.`,
-					"en": ``,
-				}
+				inp.Label = trl.CoreTranslations()["finish_save_questionnaire"]
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}

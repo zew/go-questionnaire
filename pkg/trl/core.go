@@ -1,8 +1,8 @@
 package trl
 
 // CoreTranslations returns a core of transations,
-// which could be extended or overwritten by
-// in an application config
+// to be extended or overwritten by application config data.
+// To reference app translations in questionnaires, use cfg.Get().Mp[key]
 func CoreTranslations() Map {
 	return coreTranslations
 }

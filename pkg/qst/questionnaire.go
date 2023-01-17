@@ -29,6 +29,10 @@ import (
 	"github.com/zew/go-questionnaire/pkg/ctr"
 )
 
+const (
+	logChildGroups = false
+)
+
 // No line wrapping between element 1 and 2
 //
 //	But line wrapping *inside* each of them.
@@ -1134,6 +1138,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	page.ConsolidateRadioErrors(grpOrder)
 
+	pdsSpecialDisableColumns(q, page, pageIdx, 0)
+
 	compositCntr := -1    // group counter - per page
 	nonCompositCntr := -1 // group counter - per page
 
@@ -1163,7 +1169,9 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				childGroups = page.Groups[grpIdx].ChildGroups
 				ln := len(grpHTML) - len("</div>\n")
 				grpHTML = grpHTML[:ln]
-				log.Printf("page%v - group%v has childGroups %v", pageIdx, grpIdx, childGroups)
+				if logChildGroups {
+					log.Printf("page%v - group%v has childGroups %v", pageIdx, grpIdx, childGroups)
+				}
 			}
 
 			// dynamic numbering - based on group sequence per page after shuffling
@@ -1212,7 +1220,9 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				// nothing todo
 			} else if childGroups == 0 {
 				fmt.Fprintf(w, "</div>\n <!-- master group closed gr%v -->\n", grpIdx)
-				log.Printf("page%v - group%v - previous master group closed", pageIdx, grpIdx)
+				if logChildGroups {
+					log.Printf("page%v - group%v - previous master group closed", pageIdx, grpIdx)
+				}
 			}
 		}
 

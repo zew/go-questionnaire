@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -53,7 +54,7 @@ func dropdownsLabelsTop(
 				inp.DD = &DropdownT{}
 
 				if false {
-					inp.DD.AddPleaseSelect(trl.CoreTranslations()["must_one_option"])
+					inp.DD.AddPleaseSelect(cfg.Get().Mp["must_one_option"])
 					for idx2 := 0; idx2 < len(PDSLbls[cf.KeyLabels]); idx2++ {
 						inp.DD.Add(
 							fmt.Sprintf("opt_%02v", idx2),

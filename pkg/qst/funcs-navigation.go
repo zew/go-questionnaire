@@ -67,6 +67,9 @@ func pdsAssetClass3(q *QuestionnaireT, pageIdx int) bool {
 	return pdsAssetClass(q, pageIdx, 2)
 }
 
+// pdsAssetClass governs
+//   * visibility for page type 12    - based on specific page11 values
+//   * visibility for all pages       - based on page1 values
 func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 
 	// special rule for page12

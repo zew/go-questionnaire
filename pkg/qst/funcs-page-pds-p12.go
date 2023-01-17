@@ -600,5 +600,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		)
 	}
 
+	// here not possible, because necessary values in other pages are not yet fully populated at this point
+	// pdsSpecialDisableColumns(...)
+
 	return nil
 }

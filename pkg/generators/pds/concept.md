@@ -208,10 +208,22 @@ https://localhost:8083/survey/d/PDS--P3XDDGD4V
 * Frage 4.3: Wirklich `core principal`? Oder ist `core principle` gemeint?
 
 
-
 Telefonisch/Zoom besprechen:
 
-#### Komma-Eingabe
+* Versand Intro Email
+* Übermittlung der Email Adressen an ZEW
+* Angestrebter Termin für Veröffentlichung nächste Woche
+* Fortfolgende technische Fragen (kleinerer Kreis)
+
+#### Komma-Eingabe bei englischem Windows/MAC-OS unter Chrome und Safari 
+
+* Es lässt einfach nicht programmieren, denn die 
+    stackoverflow.com/questions/13412204/#13416324  
+    codepen.io/aminimalanimal/full/bdOzRG  
+
+* Navigate to  Settings > Personal> Language & input
+* click Language
+* choose Français (Canada)
 
 * Wie soll das im englischen/angelsächsichen Chrome aussehen?
 

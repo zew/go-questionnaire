@@ -133,7 +133,7 @@
     window.addEventListener('load', initPage, false);
 
 
-    console.log("script complete - 'pdsPage11-b'");
+    // console.log("script complete - 'pdsPage11-b'");
 
 
 }

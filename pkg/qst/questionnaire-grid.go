@@ -726,10 +726,10 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		// 		inside the input template:   title='%v %v'
 		// 		placeholder values:          inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 
-		// 2023-01: for PCAG number input: lang='de_DE'
+		// 2023-01: for PCAG number input: lang='de_DE' does not help
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  %v  
-				name='%v' id='%v' lang='de-DE'
+				name='%v' id='%v' 
 				style='%v'  
 				size='%v' maxlength=%v min='%v' max='%v' %v %v %v value='%v' %v %v />
 			`,

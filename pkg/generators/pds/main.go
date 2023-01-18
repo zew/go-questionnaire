@@ -327,6 +327,33 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr2
 		{
 			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "Kommentar zur Umfrage: ", "en": "Comment on the survey: "}
+				inp.Label = trl.S{
+					"de": "Wollen Sie uns noch etwas mitteilen?",
+					"en": "Any remarks or advice for us?",
+				}
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "q63_comment"
+				inp.MaxChars = 300
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+		}
+
+		// gr3
+		{
+			gr := page.AddGroup()
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Cols = 2
 			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"

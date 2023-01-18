@@ -12,8 +12,10 @@ func pdsSpecialDisableColumns(q *QuestionnaireT, page *pageT, pageIdx, acIdx int
 		return
 	}
 
-	cond2 := page.CounterProgress == "A2" || page.CounterProgress == "B2" || page.CounterProgress == "C2"
 	cond1 := page.CounterProgress == "page12"
+
+	cond2 := page.CounterProgress == "A2" || page.CounterProgress == "B2" || page.CounterProgress == "C2"
+	cond2 = false // 2023-01-18 - pages A1/B2/C2 columsn should be disabled depending on local upper field
 
 	if cond1 || cond2 {
 

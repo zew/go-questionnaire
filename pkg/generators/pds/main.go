@@ -80,8 +80,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification and asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Asset classes,<br>tranches",
-			"de": "Asset classes,<br>tranches",
+			"en": "Asset classes,<br>Tranches",
+			"de": "Asset classes,<br>Tranches",
 		}
 		page.CounterProgress = "-"
 		// https://www.fileformat.info/info/charset/UTF-8/list.htm?start=2048
@@ -131,21 +131,21 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		//
 		// gr2
+		/*
+			<span style='font-size: 80%;'>
+			 &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href='#' onclick='checkSome();' >For testing: Check some</a>
+			</span>
+
+			<span style='font-size: 80%;'>
+			 &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href='#' onclick='checkAll();' >Check all</a>
+			</span>
+
+		*/
 		{
 			lblMain := trl.S{
 				"en": `Which asset classes do you invest in?
-
-					<span style='font-size: 80%;'>
-					 &nbsp;&nbsp;&nbsp;&nbsp;
-					<a href='#' onclick='checkSome();' >For testing: Check some</a>
-					</span>
-
-					<span style='font-size: 80%;'>
-					 &nbsp;&nbsp;&nbsp;&nbsp;
-					<a href='#' onclick='checkAll();' >Check all</a>
-					</span>
-
-
 					`,
 				"de": `Wählen Sie Ihre Assetklassen.
 				`,

@@ -380,8 +380,9 @@ func basePath() string {
 
 // QuestPath returns the path to the JSON *user* questionnaire,
 // Similar to qst.QuestionnaireT.FilePath1()
-// See also userAttrs{}
-func (l *LoginT) QuestPath() string {
+// See also userAttrs{}.
+// Param suffix is appended to
+func (l *LoginT) QuestPath(suffixFN ...string) string {
 
 	userSurveyType := ""
 	userWaveID := ""
@@ -398,7 +399,12 @@ func (l *LoginT) QuestPath() string {
 		log.Printf("Error constructing path for user questionnaire file; userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
 	}
 
-	pth := path.Join(".", basePath(), userSurveyType, userWaveID, l.User) + ".json"
+	fn := l.User
+	if len(suffixFN) > 0 {
+		fn = fmt.Sprintf("%v_%v", fn, suffixFN[0])
+	}
+
+	pth := path.Join(".", basePath(), userSurveyType, userWaveID, fn) + ".json"
 	return pth
 }
 

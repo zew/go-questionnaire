@@ -509,7 +509,11 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			// log.Printf("float formatter for %v, %v \n\t\t%v", resp, resp+inp.Step, fmStr)
 			lower = humanizeRangeDisplay(lower)
 			upper = humanizeRangeDisplay(upper)
-			dispVal = fmt.Sprintf("%v - %v", lower, upper)
+			dispVal = fmt.Sprintf("%v – <%v", lower, upper)
+
+			if resp == rangeCfg.UpperLastRegular {
+				dispVal = fmt.Sprintf("%v", lower)
+			}
 
 			if resp <= rangeCfg.LowerThreshold && rangeCfg.LowerDisplay != "" {
 				dispVal = rangeCfg.LowerDisplay
@@ -549,7 +553,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		// '500 - 510' is the max content, defined by CSS, approx 3.9rem
 		maxWidthDisplay := ""
 		if inp.Max < 100 && inp.Step >= 1 {
-			maxWidthDisplay = ` style="max-width:3.3rem" `
+			maxWidthDisplay = ` style="max-width:3.5rem" `
 		}
 
 		// value indicator [rangename]_display

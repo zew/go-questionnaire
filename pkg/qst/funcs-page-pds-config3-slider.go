@@ -19,11 +19,13 @@ type rangeConf struct {
 	xs          []float64 // range steps, where ticks should appear
 	lbls        []string  // the tick-label; can be empty
 
-	LowerThreshold float64
-	LowerDisplay   string
+	LowerThreshold float64 // below this value, we lock/jump the value to Min,
+	LowerDisplay   string  // display value for min ("<0")
 
 	UpperThreshold float64
 	UpperDisplay   string
+
+	UpperLastRegular float64 // last regular upper value - for suppressing the interval
 }
 
 func (rc *rangeConf) New(inp *inputT) {
@@ -69,7 +71,7 @@ func (rc *rangeConf) New(inp *inputT) {
 	//
 	//
 	//
-	lu := strings.Split(tokensL1[2], ";") // lower upper
+	lu := strings.Split(tokensL1[2], ";") // lower upper - four values
 	//
 	lu[0] = strings.ReplaceAll(lu[0], ",", ".")
 	lowerFlt, err := strconv.ParseFloat(lu[0], 64)
@@ -87,10 +89,24 @@ func (rc *rangeConf) New(inp *inputT) {
 	rc.UpperThreshold = upperFlt
 	rc.UpperDisplay = lu[3]
 
+	lu[4] = strings.ReplaceAll(lu[4], ",", ".")
+	upperLastRegular, err := strconv.ParseFloat(lu[4], 64)
+	if err != nil {
+		log.Printf("cannot convert last regular upper  %s - %v -\n\t%+v", lu[4], err, inp.DynamicFuncParamset)
+	}
+	rc.UpperLastRegular = upperLastRegular
+
 }
 
 func (rc rangeConf) SerializeExtendedConfig() string {
-	lowerUpper := fmt.Sprintf("%5.3f;%v;%5.3f;%v", rc.LowerThreshold, rc.LowerDisplay, rc.UpperThreshold, rc.UpperDisplay)
+	lowerUpper := fmt.Sprintf(
+		"%5.3f;%v;%5.3f;%v;%5.3f",
+		rc.LowerThreshold,
+		rc.LowerDisplay,
+		rc.UpperThreshold,
+		rc.UpperDisplay,
+		rc.UpperLastRegular,
+	)
 	return fmt.Sprintf("%v--%v--%v", rc.CSSType, rc.TicksLabels, lowerUpper)
 }
 
@@ -107,11 +123,12 @@ func (rc *rangeConf) lowerUpperAttrs() string {
 	}
 
 	return fmt.Sprintf(
-		" data-lt='%v' data-ld='%v' data-ut='%v' data-ud='%v' ",
+		" data-lt='%v' data-ld='%v' data-ut='%v' data-ud='%v' data-ulr='%v'  ",
 		lt,
 		rc.LowerDisplay,
 		ut,
 		rc.UpperDisplay,
+		rc.UpperLastRegular,
 	)
 }
 
@@ -128,10 +145,11 @@ var sliderWeeksClosing = rangeConf{
 
 	TicksLabels: `3:<6;6:6;9: ;12:12;15: ;18:18;21:>18`,
 
-	LowerThreshold: 5.9,
-	LowerDisplay:   "<6",
-	UpperThreshold: 18.1,
-	UpperDisplay:   ">18",
+	LowerThreshold:   5.9,
+	LowerDisplay:     "<6",
+	UpperThreshold:   18.1,
+	UpperDisplay:     ">18",
+	UpperLastRegular: 18.0,
 }
 
 var sliderPctZeroHundredMiddle = rangeConf{
@@ -162,10 +180,11 @@ var sliderPctTwoTen = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:<2;2:2;3: ;4:4;5: ;6:6;7: ;8:8;9: ;10:10;12:>10`,
 
-	LowerThreshold: 1.9,
-	LowerDisplay:   "<2",
-	UpperThreshold: 10.1,
-	UpperDisplay:   ">10",
+	LowerThreshold:   1.9,
+	LowerDisplay:     "<2",
+	UpperThreshold:   10.1,
+	UpperDisplay:     ">10",
+	UpperLastRegular: 10.0,
 }
 
 var sliderPctZeroTwo = rangeConf{
@@ -177,8 +196,9 @@ var sliderPctZeroTwo = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
 
-	UpperThreshold: 2.1,
-	UpperDisplay:   ">2",
+	UpperThreshold:   2.1,
+	UpperDisplay:     ">2",
+	UpperLastRegular: 2.0,
 }
 
 var sliderPctThreeTwenty = rangeConf{
@@ -190,10 +210,11 @@ var sliderPctThreeTwenty = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:>20`,
 
-	LowerThreshold: 2.9,
-	LowerDisplay:   "<3",
-	UpperThreshold: 20.1,
-	UpperDisplay:   ">20",
+	LowerThreshold:   2.9,
+	LowerDisplay:     "<3",
+	UpperThreshold:   20.1,
+	UpperDisplay:     ">20",
+	UpperLastRegular: 20.0,
 }
 
 var sliderPctZeroFour = rangeConf{
@@ -205,8 +226,9 @@ var sliderPctZeroFour = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:0;1:1;2:2;3:3;4:4;5:>4`,
 
-	UpperThreshold: 4.1,
-	UpperDisplay:   ">4",
+	UpperThreshold:   4.1,
+	UpperDisplay:     ">4",
+	UpperLastRegular: 4.0,
 }
 
 var sliderPctThreeTwentyfive = rangeConf{
@@ -218,10 +240,11 @@ var sliderPctThreeTwentyfive = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:25;30:>25`,
 
-	LowerThreshold: 2.9,
-	LowerDisplay:   "<3",
-	UpperThreshold: 25.1,
-	UpperDisplay:   ">25",
+	LowerThreshold:   2.9,
+	LowerDisplay:     "<3",
+	UpperThreshold:   25.1,
+	UpperDisplay:     ">25",
+	UpperLastRegular: 25.0,
 }
 
 var sliderPctZeroTwentyfive = rangeConf{
@@ -233,10 +256,11 @@ var sliderPctZeroTwentyfive = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `-5:<0;0:0;5:5;10:10;15:15;20:20;25:25;30:>25`,
 
-	LowerThreshold: -0.1,
-	LowerDisplay:   "<0",
-	UpperThreshold: 25.1,
-	UpperDisplay:   ">25",
+	LowerThreshold:   -0.1,
+	LowerDisplay:     "<0",
+	UpperThreshold:   25.1,
+	UpperDisplay:     ">25",
+	UpperLastRegular: 25.0,
 }
 
 var sliderYearsZeroTen = rangeConf{
@@ -248,8 +272,9 @@ var sliderYearsZeroTen = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:0;2:2;4:4;6:6;8:8;10:10;12:>10`,
 
-	UpperThreshold: 10.1,
-	UpperDisplay:   ">10",
+	UpperThreshold:   10.1,
+	UpperDisplay:     ">10",
+	UpperLastRegular: 10.0,
 }
 
 var sliderEBITDA2x10x = rangeConf{
@@ -261,10 +286,11 @@ var sliderEBITDA2x10x = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:<2;2:2;4:4;6:6;8:8;10:10;12:>10`,
 
-	LowerThreshold: 1.9,
-	LowerDisplay:   "<2",
-	UpperThreshold: 10.1,
-	UpperDisplay:   ">10",
+	LowerThreshold:   1.9,
+	LowerDisplay:     "<2",
+	UpperThreshold:   10.1,
+	UpperDisplay:     ">10",
+	UpperLastRegular: 10.0,
 }
 
 // _0- 50 mn € in  5 mn€ brackets
@@ -279,8 +305,9 @@ var sliderEBITDAZero150 = rangeConf{
 	// TicksLabels: `0:0;25:25;50:50;75:75;100:100;125:125;150:150;200:>150`,
 	TicksLabels: `0:0;25: ;50:50;75: ;100:100;125: ;150:150;200:>150`,
 
-	UpperThreshold: 151,
-	UpperDisplay:   ">150",
+	UpperThreshold:   151,
+	UpperDisplay:     ">150",
+	UpperLastRegular: 150.0,
 }
 
 // 0-500mn €in 10mn€ brackets
@@ -294,8 +321,9 @@ var sliderEVZeroFiveHundred = rangeConf{
 	// TicksLabels: `0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500;650:>500`,
 	TicksLabels: `0:0;50: ;100:100;150: ;200: ;250: ;300:300;350: ;400: ;450: ;500:500;650:>500`,
 
-	UpperThreshold: 501,
-	UpperDisplay:   ">500",
+	UpperThreshold:   501,
+	UpperDisplay:     ">500",
+	UpperLastRegular: 500.0,
 }
 
 var sliderOneOnePointFive = rangeConf{
@@ -307,8 +335,9 @@ var sliderOneOnePointFive = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
 
-	UpperThreshold: 2.1,
-	UpperDisplay:   ">2",
+	UpperThreshold:   2.1,
+	UpperDisplay:     ">2",
+	UpperLastRegular: 2.0,
 }
 
 var slider50To100 = rangeConf{
@@ -320,10 +349,11 @@ var slider50To100 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `30:<50;50:50;60:60;70:70;80:80;90:90;100:100;120:>100`,
 
-	LowerThreshold: 49,
-	LowerDisplay:   "<50",
-	UpperThreshold: 101,
-	UpperDisplay:   ">100",
+	LowerThreshold:   49,
+	LowerDisplay:     "<50",
+	UpperThreshold:   101,
+	UpperDisplay:     ">100",
+	UpperLastRegular: 100.0,
 }
 
 var slider1To175 = rangeConf{
@@ -335,8 +365,9 @@ var slider1To175 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `1:1;1.25:1.25;1.5:1.5;1.75:1.75;2:>1.75`,
 
-	UpperThreshold: 1.755,
-	UpperDisplay:   ">1.75",
+	UpperThreshold:   1.755,
+	UpperDisplay:     ">1.75",
+	UpperLastRegular: 1.75,
 }
 
 var slider30To100 = rangeConf{
@@ -348,10 +379,11 @@ var slider30To100 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `10:<30;30:30;50:50;75:75;100:100;120:>100`,
 
-	LowerThreshold: 29,
-	LowerDisplay:   "<30",
-	UpperThreshold: 101,
-	UpperDisplay:   ">100",
+	LowerThreshold:   29,
+	LowerDisplay:     "<30",
+	UpperThreshold:   101,
+	UpperDisplay:     ">100",
+	UpperLastRegular: 100.0,
 }
 
 var slider1To5 = rangeConf{
@@ -363,8 +395,9 @@ var slider1To5 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
 
-	LowerThreshold: 0.9,
-	LowerDisplay:   "<1",
-	UpperThreshold: 5.1,
-	UpperDisplay:   ">5",
+	LowerThreshold:   0.9,
+	LowerDisplay:     "<1",
+	UpperThreshold:   5.1,
+	UpperDisplay:     ">5",
+	UpperLastRegular: 5.0,
 }

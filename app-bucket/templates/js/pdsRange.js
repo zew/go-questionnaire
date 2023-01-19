@@ -101,11 +101,12 @@ function pdsRangeInput(src) {
             if (src.value) {
                 out += src.value;
             }
-            out += " - ";
+            // – em dash
+            out += " – <";
             out += incr;
             display.value = out;
 
-            // 
+            // upper and lower threshold
             if (src.dataset.ut != "") {
                 let ut = parseFloat(src.dataset.ut)
                 if (srcVal >= ut ) {
@@ -118,6 +119,12 @@ function pdsRangeInput(src) {
                 if (srcVal <= lt) {
                     display.value = src.dataset.ld;
                     src.value = src.getAttribute("min");
+                }
+            }
+            if (src.dataset.ulr != "") {
+                let ulr = parseFloat(src.dataset.ulr)
+                if (srcVal == ulr) {
+                    display.value = ulr;
                 }
             }
 

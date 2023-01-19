@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3b38a010833d395c8a53439762fdbb785cf0bfbf21e07b628420622029c59b7e",
+ 	"md_5": "65c96aa3ad1973fd00faa25a2b9f27cf303dbaf1aef8a14921ee595fde8ddb83",
  	"lang_codes": [
  		"en"
  	],
@@ -83,8 +83,8 @@
  			},
  			"counter_progress": "\u0026#9632;",
  			"short": {
- 				"de": "Asset classes,\u003cbr\u003etranches",
- 				"en": "Asset classes,\u003cbr\u003etranches"
+ 				"de": "Asset classes,\u003cbr\u003eTranches",
+ 				"en": "Asset classes,\u003cbr\u003eTranches"
  			},
  			"suppress_progressbar": true,
  			"style": {
@@ -136,7 +136,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Wählen Sie Ihre Assetklassen.\n\t\t\t\t",
- 								"en": "Which asset classes do you invest in?\n\n\t\t\t\t\t\u003cspan style='font-size: 80%;'\u003e\n\t\t\t\t\t \u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\n\t\t\t\t\t\u003ca href='#' onclick='checkSome();' \u003eFor testing: Check some\u003c/a\u003e\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003cspan style='font-size: 80%;'\u003e\n\t\t\t\t\t \u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\n\t\t\t\t\t\u003ca href='#' onclick='checkAll();' \u003eCheck all\u003c/a\u003e\n\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t"
+ 								"en": "Which asset classes do you invest in?\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1

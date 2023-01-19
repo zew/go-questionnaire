@@ -485,6 +485,12 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	tpl.Exec(w, r, mp, "layout.html")
 
+	//
+	// for debugging: save questionnaire including dynamic page content and user input
+	if r.FormValue("fulldump") == "true" {
+		q2.Save1(l.QuestPath("compound"))
+	}
+
 }
 
 func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionnaireT) bool {

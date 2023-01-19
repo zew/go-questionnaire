@@ -2035,8 +2035,8 @@ input.ib-300 {     width:300px;    }
 
     text-align: right;
 
-    max-width: 3.6rem;
-    max-width: 3.9rem; /* '500 - 510' is the max content */
+    max-width: 3.9rem; 
+    max-width: 4.4rem; /* '500 - 510' is the max content - 0.5 - <0.75 */
 
     padding: 0;
     padding-right: 0.15rem;

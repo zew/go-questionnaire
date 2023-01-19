@@ -282,9 +282,11 @@ Bitte versuchen Sie es nochmal.
 
 * Email-Feld am Ende
 
-* A2 - abhängig von Frage A2 a.)   -  disable column.
+* Seiten A2,B2,C2 - Spalten disabled - abhängig von Frage A2/B2/C2 a.)
 
-* Farben in der Navi
+* Navigation: Farben ernüchtert
+
+* Range input: Upppermost regular value does not have a "...<+Step" display
 
 Transferrer: Reihenfolge
 

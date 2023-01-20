@@ -229,17 +229,23 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 	//
 	//
 	//
-	// separate CSV file with labels
-	if len(qs) > 0 {
+	// fnCreateLabels creates a separate CSV file with labels for input fields.
+	// Implemented as a closure, in order to break processing with least nested conditions
+	fnCreateLabels := func() {
+
+		if len(qs) < 1 {
+			return
+		}
 
 		nams := []string{} // input names
 		lbls := []string{} // input labels
 
-		fnCore := cfgRem.SurveyType + "-" + cfgRem.WaveID
-		pthBase := path.Join(qst.BasePath(), fnCore+".json")
+		fnCore := cfgRem.SurveyType + "-" + cfgRem.WaveID    // fmt-2023-01
+		pthBase := path.Join(qst.BasePath(), fnCore+".json") // ./responses/fmt-2023-01.json
 		qBase, err := qst.Load1(pthBase)
 		if err != nil {
 			log.Printf("loading base questionnaire error %v", err)
+			return
 		}
 
 		// enclosing every cell value in double quotes allows to include newlines
@@ -274,7 +280,9 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		}
 
 	}
+	fnCreateLabels()
 
+	//
 	log.Printf(
 		"\n\nRegular finish. %v questionnaire(s) processed\n%v non empty - %v empty\nresults in %v\n\n", len(qs),
 		nonEmpty, empty, fnCSV,

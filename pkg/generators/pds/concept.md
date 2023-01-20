@@ -280,13 +280,15 @@ Bitte versuchen Sie es nochmal.
 
 ### RC6
 
-* Email-Feld am Ende
+* Sonstiges-Feld am Ende
 
 * Seiten A2,B2,C2 - Spalten disabled - abhängig von Frage A2/B2/C2 a.)
 
 * Navigation: Farben ernüchtert
 
-* Range input: Upppermost regular value does not have a "...<+Step" display
+* Range input: Upppermost regular value should not have a "...<+Step" display
 
 Transferrer: Reihenfolge
+
+fulldump=true
 

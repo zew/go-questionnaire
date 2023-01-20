@@ -454,6 +454,18 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
+	// for debugging: save questionnaire including dynamic page content and user input;
+	if r.FormValue("fulldump") == "true" {
+		for pgIdx := 0; pgIdx < len(q.Pages); pgIdx++ {
+			err = q.ComputeDynamicContent(pgIdx)
+			if err != nil {
+				log.Printf("ComputeDynamicContent computation for page %v caused error %v", pgIdx, err)
+			}
+		}
+		q.Save1(l.QuestPath("all-dynamic-content"))
+	}
+
+	//
 	//
 	htmlTitle := fmt.Sprintf(
 		"%v %v",
@@ -484,12 +496,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// tpl.RenderStack(r, w, []string{"layout.html"}, mp)
 
 	tpl.Exec(w, r, mp, "layout.html")
-
-	//
-	// for debugging: save questionnaire including dynamic page content and user input
-	if r.FormValue("fulldump") == "true" {
-		q2.Save1(l.QuestPath("compound"))
-	}
 
 }
 

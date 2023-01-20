@@ -1,8 +1,9 @@
 // Package updater makes a change to all questionaires in a given directory;
 // can be applied to single origin json - as well as to filled out json files.
-//     updater.exe -dir ../app-bucket/responses/mul.json
-//     updater.exe -dir ../app-bucket/responses/mul/2019-02
-//     updater.exe -dir ../app-bucket/responses/mul/2019-02/23121.json
+//
+//	updater.exe -dir ../app-bucket/responses/mul.json
+//	updater.exe -dir ../app-bucket/responses/mul/2019-02
+//	updater.exe -dir ../app-bucket/responses/mul/2019-02/23121.json
 //
 // The saving to app-bucked via cloudio might fail
 // and the changes might be saved to app-dir/app-bucket/...
@@ -36,7 +37,8 @@ func main() {
 			Long:  "directory",
 			Short: "dir",
 			// DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04/11499.json",
-			DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04",
+			// DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04",
+			DefaultVal: "../../app-bucket/responses/pds/2023-01",
 			Desc:       "filename - or directory or to iterate",
 		},
 	)
@@ -75,7 +77,7 @@ func main() {
 			continue // subdirs...
 		}
 		fCounter++
-		fmt.Fprintf(w, "%3v: %v;  ", fCounter, f.Name())
+		fmt.Fprintf(w, "%3v: %16v;  ", fCounter, f.Name())
 		if fCounter%5 == 0 && fCounter != 0 {
 			fmt.Fprintf(w, "\n")
 		}
@@ -87,9 +89,9 @@ func main() {
 	cntrChanged := 0
 	for i, f := range files {
 
-		if f.Name() != "10210.json" && f.Name() != "10035.json" {
-			continue
-		}
+		// if f.Name() != "10210.json" && f.Name() != "10035.json" {
+		// 	continue
+		// }
 
 		if f.IsDir() {
 			continue // subdirs...
@@ -101,7 +103,10 @@ func main() {
 		}
 		log.Printf("%3v: opening file  %v", i, pSrc)
 
+		// path.Dir fails for ../../
 		pDst := path.Join(path.Dir(dirSrc), "updated", f.Name())
+		// instead
+		pDst = path.Join(".", "updated", f.Name())
 
 		bts, err := os.ReadFile(pSrc)
 		if err != nil {
@@ -123,13 +128,15 @@ func main() {
 		// now we might perform various changes to the questionnaire
 		// then saving the questionnaire; checksum via q.Save()
 
-		var t1 time.Time
-		q.ClosingTime = t1
-		err = q.Save1(pDst)
-		if err != nil {
-			log.Printf("%3v: Error saving %v: %v", i, pSrc, err)
+		if false {
+			var t1 time.Time
+			q.ClosingTime = t1
+			err = q.Save1(pDst)
+			if err != nil {
+				log.Printf("%3v: Error saving %v: %v", i, pSrc, err)
+			}
+			cntrChanged++
 		}
-		cntrChanged++
 
 		if false {
 			if q.ShufflingVariations > 0 {
@@ -161,6 +168,51 @@ func main() {
 			} else {
 				log.Printf("%3v: questionnaire %v - correction not needed %v", i, pSrc, search)
 			}
+		}
+
+		if true {
+
+			/*
+
+				"inputs": [
+					{
+						"type": "textblock"
+					},
+					{
+						"name": "q63_comment",
+						"type": "textarea"
+					}
+				]
+
+			*/
+
+			gr := q.Pages[17].AddGroup()
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "q63_comment"
+				inp.Type = "textarea"
+			}
+
+			grs := q.Pages[17].Groups
+			gr3 := q.Pages[17].Groups[2]
+			gr4 := q.Pages[17].Groups[3]
+
+			q.Pages[17].Groups = grs[0:2]
+			q.Pages[17].Groups = append(q.Pages[17].Groups, gr4)
+			q.Pages[17].Groups = append(q.Pages[17].Groups, gr3)
+
+			err = q.Save1(pDst)
+			if err != nil {
+				log.Printf("%3v: Error saving %v: %v", i, pSrc, err)
+			}
+			log.Printf("%3v: saving changes to %v", i, pDst)
+
+			cntrChanged++
+
 		}
 
 	}

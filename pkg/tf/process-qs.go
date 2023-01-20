@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"path"
+	"sort"
 	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/cloudio"
@@ -18,7 +19,7 @@ import (
 func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesToDownloadDir bool) (string, error) {
 
 	if cfgRem.DownloadDir == "" {
-		log.Panicf("download dir cannot be empty")
+		log.Fatal("download dir cannot be empty")
 	}
 
 	fnCSV := path.Join(cfgRem.DownloadDir, fmt.Sprintf("%v-%v.csv", cfgRem.SurveyType, cfgRem.WaveID))
@@ -36,8 +37,8 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		}
 	}
 
-	keysByQ := [][]string{} // per questionnaire
-	valsByQ := [][]string{} // per questionnaire
+	keysByQ := [][]string{} // keys per questionnaire, separate slice for every response
+	valsByQ := [][]string{} // vals per questionnaire, separate slice for every response
 
 	// CSV header stuff:
 	staticCols := []string{ // across all questionnaires
@@ -137,7 +138,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		finishes, ks, vs := q.KeysValues(true)
 
 		ks = append(staticCols, ks...)
-		keysByQ = append(keysByQ, ks)
+		keysByQ = append(keysByQ, ks) // appending to _all_ responses
 
 		formattedClosingTime := ""
 		status := "0"
@@ -154,7 +155,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 			status = "2"
 		}
 
-		// equivalent staticCols...
+		// Collecting the values for staticCols...
 		prepend := []string{
 			qs[i].UserID,                      // user_id
 			qs[i].LangCode,                    // lang_code
@@ -173,23 +174,69 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 			}
 		}
 		vs = append(prepend, vs...)
-		valsByQ = append(valsByQ, vs)
+		valsByQ = append(valsByQ, vs) // appending to _all_ responses
 
 	} // forr questionnaires
+	// all responses have been collected
+	//
 
+	//
+	// Post-processing of collected keys, vals
+	//
+	// Keys...
 	allKeysSuperset := Superset(keysByQ)
 
-	allKeysSSMap := map[string]int{}
-	for idx, v := range allKeysSuperset {
-		allKeysSSMap[v] = idx
-	}
-	valsBySuperset := [][]string{}
+	// Since the ordering from sparse data of Superset() is not perfect
+	// we resort to alphanumeric ordering - relying on the good sequential naming of the HTML inputs
+	lnStatic := len(staticCols)
+	pStatic, pSorted := allKeysSuperset[:lnStatic], allKeysSuperset[lnStatic:]
+	log.Print("pStatic ends   with ", pStatic[len(pStatic)-1])
+	log.Print("pSorted starts with ", pSorted[0])
 
+	if cfgRem.SurveyType == "pds" {
+		// custom sort columns for PDS survey
+
+		// standard "pre-sort" - necessary for custom sort below to work
+		sort.Strings(pSorted)
+		// actual custom sort
+		sort.SliceStable(
+			pSorted,
+			func(i, j int) bool {
+				// q always before other field names
+				if pSorted[i][0] == 'q' && pSorted[j][0] != 'q' {
+					return true
+				}
+				// *_main always first among equally prefixed names
+				splI := strings.Split(pSorted[i], "_")
+				splJ := strings.Split(pSorted[j], "_")
+				lstI := len(splI) - 1
+				lstJ := len(splJ) - 1
+				if lstI > 0 && lstJ > 0 {
+					prefI := strings.Join(splI[:lstI], "_")
+					prefJ := strings.Join(splJ[:lstJ], "_")
+					samePfx := prefI == prefJ
+					distSfx := splI[lstI] == "main" && splJ[lstJ] != "main"
+					if samePfx && distSfx {
+						return true
+					}
+				}
+				return pSorted[i] < pSorted[j]
+			},
+		)
+	}
+
+	allKeysSuperset = append(pStatic, pSorted...)
+
+	positionByName := map[string]int{} // looking up the ordering/sequence number of a key by its name
+	for idx, v := range allKeysSuperset {
+		positionByName[v] = idx
+	}
 	for colIdx, colName := range allKeysSuperset {
 		log.Printf("\tcol %2v  %v", colIdx, colName)
 	}
 
-	// Collect values...
+	// Values...
+	valsBySuperset := [][]string{}
 	for i1 := 0; i1 < len(valsByQ); i1++ {
 		keys := keysByQ[i1]
 		vals := valsByQ[i1]
@@ -197,7 +244,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		for i2 := 0; i2 < len(keys); i2++ {
 			v := vals[i2]
 			k := keys[i2]
-			pos := allKeysSSMap[k]
+			pos := positionByName[k]
 			valsBySuperset[i1][pos] = v
 		}
 	}

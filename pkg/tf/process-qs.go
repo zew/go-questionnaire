@@ -13,6 +13,23 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qst"
 )
 
+func loadQBase(cfgRem *RemoteConnConfigT) (*qst.QuestionnaireT, error) {
+
+	fnCore := fmt.Sprintf("%v-%v-full-dynamic-content.json", cfgRem.SurveyType, cfgRem.WaveID) // i.e pds-2023-01-full-dynamic-content or fmt-2023-01
+	pthBase := path.Join(qst.BasePath(), fnCore)                                               // ./responses/fmt-2023-01.json
+	qBase, err := qst.Load1(pthBase)
+	if err != nil {
+		pthBase = strings.ReplaceAll(pthBase, "-dynamic-content", "")
+		qBase, err = qst.Load1(pthBase) // try again with other filename
+		if err != nil {
+			log.Printf("loading base questionnaire error %v", err)
+			return nil, fmt.Errorf("loading base questionnaire error %w", err)
+		}
+	}
+	return qBase, nil
+
+}
+
 // ProcessQs iterates over qs
 // and extracts columns and values;
 // it is independent of the structure of the questionaires in qs
@@ -135,7 +152,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		}
 
 		// Prepare columns...
-		finishes, ks, vs := q.KeysValues(true)
+		finishes, ks, vs, _ := q.KeysValues(true)
 
 		ks = append(staticCols, ks...)
 		keysByQ = append(keysByQ, ks) // appending to _all_ responses
@@ -190,8 +207,8 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 	// we resort to alphanumeric ordering - relying on the good sequential naming of the HTML inputs
 	lnStatic := len(staticCols)
 	pStatic, pSorted := allKeysSuperset[:lnStatic], allKeysSuperset[lnStatic:]
-	log.Print("pStatic ends   with ", pStatic[len(pStatic)-1])
-	log.Print("pSorted starts with ", pSorted[0])
+	// log.Print("pStatic ends   with ", pStatic[len(pStatic)-1]) // page[last]
+	// log.Print("pSorted starts with ", pSorted[0]) // first qst field
 
 	if cfgRem.SurveyType == "pds" {
 		// custom sort columns for PDS survey
@@ -223,6 +240,17 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 				return pSorted[i] < pSorted[j]
 			},
 		)
+
+		func() {
+			qBase, err := loadQBase(cfgRem)
+			if err != nil {
+				return
+			}
+			_, allKeysSupersetNew, _, _ := qBase.KeysValues(true)
+			log.Printf("\n\tSuperset   %v,\n\tKeysValues %v", allKeysSuperset, allKeysSupersetNew)
+			allKeysSuperset = allKeysSupersetNew
+		}()
+
 	}
 
 	allKeysSuperset = append(pStatic, pSorted...)
@@ -287,11 +315,9 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		nams := []string{} // input names
 		lbls := []string{} // input labels
 
-		fnCore := cfgRem.SurveyType + "-" + cfgRem.WaveID    // fmt-2023-01
-		pthBase := path.Join(qst.BasePath(), fnCore+".json") // ./responses/fmt-2023-01.json
-		qBase, err := qst.Load1(pthBase)
+		qBase, err := loadQBase(cfgRem)
 		if err != nil {
-			log.Printf("loading base questionnaire error %v", err)
+			log.Print(err)
 			return
 		}
 

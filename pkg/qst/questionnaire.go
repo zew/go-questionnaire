@@ -1726,7 +1726,7 @@ func (q *QuestionnaireT) LabelsByInputNames() (lblsByNames map[string]string, ke
 // KeysValues returns all pages finish times; keys and values in defined order.
 // Empty values are also returned.
 // Major purpose is CSV export across several questionnaires.
-func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals []string) {
+func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals, types []string) {
 	// log.Printf("Collecting keys+vals for %v", q.UserID)
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].Finished.IsZero() {
@@ -1740,6 +1740,7 @@ func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals []string
 					continue
 				}
 				keys = append(keys, q.Pages[i1].Groups[i2].Inputs[i3].Name)
+				types = append(types, q.Pages[i1].Groups[i2].Inputs[i3].Type)
 				val := q.Pages[i1].Groups[i2].Inputs[i3].Response
 				if cleanse {
 					if q.Pages[i1].Groups[i2].Inputs[i3].Type == "number" {

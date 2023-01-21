@@ -455,14 +455,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// for debugging: save questionnaire including dynamic page content and user input;
-	if r.FormValue("fulldump") == "true" {
+	if r.FormValue("full-dynamic-content") == "true" {
 		for pgIdx := 0; pgIdx < len(q.Pages); pgIdx++ {
 			err = q.ComputeDynamicContent(pgIdx)
 			if err != nil {
 				log.Printf("ComputeDynamicContent computation for page %v caused error %v", pgIdx, err)
 			}
 		}
-		q.Save1(l.QuestPath("all-dynamic-content"))
+		q.Save1(l.QuestPath("full-dynamic-content"))
 	}
 
 	//
@@ -487,6 +487,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// mobile := computeMobile(w, r, q)
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Add("X-Frame-Options", "DENY")
 
 	w1 := &strings.Builder{}
 	tpl.Exec(w1, r, mp, "quest.html")

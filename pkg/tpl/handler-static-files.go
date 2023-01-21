@@ -82,7 +82,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	fInfo, err := f.Stat()
 	if err != nil {
 		s := fmt.Sprintf("StaticDownloadH: Could not get fInfo of %v: %v", fpth, err)
-		log.Printf(s)
+		log.Print(s)
 		fmt.Fprint(w, s)
 		w.WriteHeader(http.StatusNotFound) // otherwise - browser CSS files are retried eternally
 		return
@@ -91,12 +91,30 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Length", fmt.Sprintf("%v", contentLength))
 
 	// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
-	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*72))
+	stage := "public" // which stage is allowed to cache - public means proxies and CDNs
+	if m == "text/css" || m == "text/javascript" {
+		stage = "private" // browsercache only
+	}
+	w.Header().Set("Cache-Control", fmt.Sprintf("%v, max-age=%d", stage, 60*60*72))
+
+	//
+	// imagekit.io/blog/ultimate-guide-to-http-caching-for-static-assets/
+	// our etag consists of file modification date and app instance
+	etag := fmt.Sprintf(`"%v-%v"`, fInfo.ModTime().String(), cfg.Get().AppInstanceID)
+	w.Header().Set("ETag", etag)
+	if true {
+		requestedEtag := r.Header.Get("If-None-Match")
+		if requestedEtag == etag {
+			log.Printf("If-None-Match for %v - %v", fpth, etag)
+			w.WriteHeader(http.StatusNotModified) // en.wikipedia.org/wiki/HTTP_ETag
+			return
+		}
+	}
 
 	_, err = io.Copy(w, f) // most memory efficient
 	if err != nil {
 		s := fmt.Sprintf("StaticDownloadH: Could not copy file stream into response writer %v: %v", fpth, err)
-		log.Printf(s)
+		log.Print(s)
 		fmt.Fprint(w, s)
 		return
 	}

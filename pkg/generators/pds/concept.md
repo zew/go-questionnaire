@@ -288,7 +288,15 @@ Bitte versuchen Sie es nochmal.
 
 * Range input: Upppermost regular value should not have a "...<+Step" display
 
+* IPhone Safari
+  * Which Iphone
+  * Which Safari
+  * Delete the cached data for a single site by going to Settings > Safari > Advanced > Website Data > Show All Sites.
+
+
 Transferrer: Reihenfolge
 
-fulldump=true
+https://localhost:8083/survey/d/PDS--6WDWYZ5W
+
+https://localhost:8083/survey?full-dynamic-content=true
 

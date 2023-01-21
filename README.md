@@ -244,7 +244,7 @@ If you have created your survey `myquest` you need to restart the application.
 
 * `show-version=true` - show q.Version
 
-* `fulldump=true` - compute dynamic content for all pages and save as [user-id]-all-dynamic-content.json
+* `full-dynamic-content=true` - compute dynamic content for all pages and save as [user-id]-all-dynamic-content.json
 
 Persisted to session:
 

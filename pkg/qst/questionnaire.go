@@ -1726,7 +1726,11 @@ func (q *QuestionnaireT) LabelsByInputNames() (lblsByNames map[string]string, ke
 // KeysValues returns all pages finish times; keys and values in defined order.
 // Empty values are also returned.
 // Major purpose is CSV export across several questionnaires.
-func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals, types []string) {
+// Does deduplicate radio fieldnames, since they have the same value.
+func (q *QuestionnaireT) KeysValues(cleanse bool, getRangeInfo bool) (keys, vals, types, finishes []string) {
+
+	doubles := map[string]struct{}{}
+
 	// log.Printf("Collecting keys+vals for %v", q.UserID)
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].Finished.IsZero() {
@@ -1739,8 +1743,12 @@ func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals, types [
 				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
 					continue
 				}
+				if _, ok := doubles[q.Pages[i1].Groups[i2].Inputs[i3].Name]; ok {
+					continue
+				}
+				doubles[q.Pages[i1].Groups[i2].Inputs[i3].Name] = struct{}{}
+
 				keys = append(keys, q.Pages[i1].Groups[i2].Inputs[i3].Name)
-				types = append(types, q.Pages[i1].Groups[i2].Inputs[i3].Type)
 				val := q.Pages[i1].Groups[i2].Inputs[i3].Response
 				if cleanse {
 					if q.Pages[i1].Groups[i2].Inputs[i3].Type == "number" {
@@ -1749,6 +1757,24 @@ func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals, types [
 					val = EnglishTextAndNumbersOnly(val)
 				}
 				vals = append(vals, val)
+
+				typ := q.Pages[i1].Groups[i2].Inputs[i3].Type
+				if getRangeInfo {
+					if typ == "number" {
+						typ = fmt.Sprintf("%v--%v--%v", typ, q.Pages[i1].Groups[i2].Inputs[i3].Min, q.Pages[i1].Groups[i2].Inputs[i3].Max)
+					}
+					if typ == "range" {
+						if q.Pages[i1].Groups[i2].Inputs[i3].DynamicFuncParamset != "" {
+							inp := q.Pages[i1].Groups[i2].Inputs[i3]
+							// data only available from base questionnaires; not from simple answers
+							var rangeCfg rangeConf
+							rangeCfg.New(inp)
+							typ = fmt.Sprintf("%v--%v--%v--%v", typ, inp.Min, inp.Max, strings.Join(rangeCfg.lbls, "|"))
+						}
+					}
+				}
+				types = append(types, typ)
+
 			}
 		}
 	}

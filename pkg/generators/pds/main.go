@@ -221,7 +221,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 3
+			gr.BottomVSpacers = 2
 
 			{
 				inp := gr.AddInput()
@@ -244,6 +244,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						 
 						In the <a href="/doc/site-imprint.md" >imprint</a> you find extensive information on data protection.						
 						</span>
+
+						<br> <!-- vertical space for the must error message -->
+						<br> <!-- vertical space for the must error message -->
 						
 						`,
 
@@ -293,12 +296,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"en": `
 					Declaration of consent to forward answers in non-anonymized form to Prime Capital&nbsp;AG:
+					<br> <!-- vertical space for the must error message -->
+					<br> <!-- vertical space for the must error message -->
+
 				`,
 				}
 				inp.ColSpan = gr.Cols

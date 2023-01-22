@@ -13,13 +13,18 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qst"
 )
 
-func loadQBase(cfgRem *RemoteConnConfigT) (*qst.QuestionnaireT, error) {
+// loadQBaseWithFullDynamic returns the base questionnaire.
+// If a base version created with &full-dynamic-content=true is available,
+// then this is loaded.
+// Full dynamic content is needed to create the CSV labels
+// and to create the CSV column ordering.
+func loadQBaseWithFullDynamic(cfgRem *RemoteConnConfigT) (*qst.QuestionnaireT, error) {
 
 	fnCore := fmt.Sprintf("%v-%v-full-dynamic-content.json", cfgRem.SurveyType, cfgRem.WaveID) // i.e pds-2023-01-full-dynamic-content or fmt-2023-01
 	pthBase := path.Join(qst.BasePath(), fnCore)                                               // ./responses/fmt-2023-01.json
 	qBase, err := qst.Load1(pthBase)
 	if err != nil {
-		pthBase = strings.ReplaceAll(pthBase, "-dynamic-content", "")
+		pthBase = strings.ReplaceAll(pthBase, "-full-dynamic-content", "")
 		qBase, err = qst.Load1(pthBase) // try again with other filename
 		if err != nil {
 			log.Printf("loading base questionnaire error %v", err)
@@ -152,7 +157,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		}
 
 		// Prepare columns...
-		finishes, ks, vs, _ := q.KeysValues(true)
+		ks, vs, _, finishes := q.KeysValues(true, false) // keys from dynamic pages might be missing
 
 		ks = append(staticCols, ks...)
 		keysByQ = append(keysByQ, ks) // appending to _all_ responses
@@ -201,17 +206,17 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 	// Post-processing of collected keys, vals
 	//
 	// Keys...
-	allKeysSuperset := Superset(keysByQ)
+	allKeys := Superset(keysByQ) // superset over all answers; keys from dynamic pages might be missing
+	allTyps := []string{}        // only for pds
 
-	// Since the ordering from sparse data of Superset() is not perfect
-	// we resort to alphanumeric ordering - relying on the good sequential naming of the HTML inputs
-	lnStatic := len(staticCols)
-	pStatic, pSorted := allKeysSuperset[:lnStatic], allKeysSuperset[lnStatic:]
-	// log.Print("pStatic ends   with ", pStatic[len(pStatic)-1]) // page[last]
-	// log.Print("pSorted starts with ", pSorted[0]) // first qst field
-
+	//
+	// custom sort columns for PDS survey
 	if cfgRem.SurveyType == "pds" {
-		// custom sort columns for PDS survey
+
+		// Since the ordering from sparse data of Superset() is not perfect
+		// we resort to alphanumeric ordering - relying on the good sequential naming of the HTML inputs
+		lnStatic := len(staticCols)
+		pStatic, pSorted := allKeys[:lnStatic], allKeys[lnStatic:]
 
 		// standard "pre-sort" - necessary for custom sort below to work
 		sort.Strings(pSorted)
@@ -240,26 +245,33 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 				return pSorted[i] < pSorted[j]
 			},
 		)
+		allKeys = append(pStatic, pSorted...)
 
+		//
+		// since the above sorting is not good
+		//   we take keys ordering of the base questionnaire
 		func() {
-			qBase, err := loadQBase(cfgRem)
+			qBase, err := loadQBaseWithFullDynamic(cfgRem)
 			if err != nil {
 				return
 			}
-			_, allKeysSupersetNew, _, _ := qBase.KeysValues(true)
-			log.Printf("\n\tSuperset   %v,\n\tKeysValues %v", allKeysSuperset, allKeysSupersetNew)
-			allKeysSuperset = allKeysSupersetNew
+			keys, _, types, _ := qBase.KeysValues(true, true) // keys in content order
+			keys = append(staticCols, keys...)
+
+			log.Printf("\n\tSuperset   %v\n\tKeysValues %v", allKeys, keys)
+			allKeys = keys
+
+			types = append(staticCols, types...)
+			allTyps = types
 		}()
 
 	}
 
-	allKeysSuperset = append(pStatic, pSorted...)
-
 	positionByName := map[string]int{} // looking up the ordering/sequence number of a key by its name
-	for idx, v := range allKeysSuperset {
+	for idx, v := range allKeys {
 		positionByName[v] = idx
 	}
-	for colIdx, colName := range allKeysSuperset {
+	for colIdx, colName := range allKeys {
 		log.Printf("\tcol %2v  %v", colIdx, colName)
 	}
 
@@ -268,7 +280,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 	for i1 := 0; i1 < len(valsByQ); i1++ {
 		keys := keysByQ[i1]
 		vals := valsByQ[i1]
-		valsBySuperset = append(valsBySuperset, make([]string, len(allKeysSuperset)))
+		valsBySuperset = append(valsBySuperset, make([]string, len(allKeys)))
 		for i2 := 0; i2 < len(keys); i2++ {
 			v := vals[i2]
 			k := keys[i2]
@@ -281,8 +293,8 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 	var wtr = new(bytes.Buffer)
 	csvWtr := csv.NewWriter(wtr)
 	csvWtr.Comma = ';'
-	if err := csvWtr.Write(allKeysSuperset); err != nil {
-		return fnCSV, fmt.Errorf("error writing header line to csv: %w", err)
+	if err := csvWtr.Write(allKeys); err != nil {
+		return fnCSV, fmt.Errorf("error writing header line of names to csv: %w", err)
 	}
 	for _, record := range valsBySuperset {
 		if err := csvWtr.Write(record); err != nil {
@@ -302,9 +314,23 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 	}
 
 	//
+	// Extra file containing input types
+	if len(allTyps) > 0 {
+		buf := &bytes.Buffer{}
+		buf.WriteString(strings.Join(allKeys, ";"))
+		buf.WriteString("\n")
+		buf.WriteString(strings.Join(allTyps, ";"))
+		fnTypes := strings.ReplaceAll(fnCSV, ".csv", "-types.csv")
+		err = cloudio.WriteFile(fnTypes, buf, 0644)
+		if err != nil {
+			log.Printf("writing labels file failed: %v - error %v", fnTypes, err)
+		}
+	}
+
 	//
 	//
-	// fnCreateLabels creates a separate CSV file with labels for input fields.
+	//
+	// Extra file containing labels+descriptions.
 	// Implemented as a closure, in order to break processing with least nested conditions
 	fnCreateLabels := func() {
 
@@ -315,7 +341,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		nams := []string{} // input names
 		lbls := []string{} // input labels
 
-		qBase, err := loadQBase(cfgRem)
+		qBase, err := loadQBaseWithFullDynamic(cfgRem)
 		if err != nil {
 			log.Print(err)
 			return
@@ -328,7 +354,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 
 		// copy(staticLabels, staticCols)
 		byNames, _, _ := qBase.LabelsByInputNames()
-		for _, name := range allKeysSuperset {
+		for _, name := range allKeys {
 			nams = append(nams, name)
 			if lbl, ok := byNames[name]; ok {
 				if !strings.HasPrefix(lbl, excelNL) {

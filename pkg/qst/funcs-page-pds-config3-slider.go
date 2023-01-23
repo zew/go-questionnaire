@@ -132,36 +132,7 @@ func (rc *rangeConf) lowerUpperAttrs() string {
 	)
 }
 
-var sliderWeeksClosing = rangeConf{
-	Min:    3,
-	Max:    21,
-	Step:   3,
-	Suffix: suffixWeeks,
-
-	// Following fields are extended parameters,
-	// which must be crammed into
-	// DynamicFuncParamset as one string.
-	CSSType: "1",
-
-	TicksLabels: `3:<6;6:6;9: ;12:12;15: ;18:18;21:>18`,
-
-	LowerThreshold:   5.9,
-	LowerDisplay:     "<6",
-	UpperThreshold:   18.1,
-	UpperDisplay:     ">18",
-	UpperLastRegular: 18.0,
-}
-
-var sliderPctZeroHundredMiddle = rangeConf{
-	Min:    0,
-	Max:    100,
-	Step:   5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "2",
-	TicksLabels: `0:0;25:25;50:50;75:75;100:100`,
-}
-var sliderPctZeroHundredWide = rangeConf{
+var range0To100 = rangeConf{
 	Min:    0,
 	Max:    100,
 	Step:   5,
@@ -171,7 +142,21 @@ var sliderPctZeroHundredWide = rangeConf{
 	TicksLabels: `0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100`,
 }
 
-var sliderPctTwoTen = rangeConf{
+var range0To10 = rangeConf{
+	Min:    0,
+	Max:    12,
+	Step:   0.5,
+	Suffix: suffixYears,
+	//
+	CSSType:     "3",
+	TicksLabels: `0:0;2:2;4:4;6:6;8:8;10:10;12:>10`,
+
+	UpperThreshold:   10.1,
+	UpperDisplay:     ">10",
+	UpperLastRegular: 10.0,
+}
+
+var range2To10 = rangeConf{
 	Min:    0,
 	Max:    12,
 	Step:   0.5,
@@ -187,7 +172,7 @@ var sliderPctTwoTen = rangeConf{
 	UpperLastRegular: 10.0,
 }
 
-var sliderPctZeroTwo = rangeConf{
+var range0To2 = rangeConf{
 	Min:    0,
 	Max:    2.5,
 	Step:   0.25,
@@ -201,14 +186,29 @@ var sliderPctZeroTwo = rangeConf{
 	UpperLastRegular: 2.0,
 }
 
-var sliderPctThreeTwenty = rangeConf{
+var range0To2StepDot1 = rangeConf{
+	Min:    0,
+	Max:    2.55, // should be 2.5 but rounding stuff
+	Step:   0.1,
+	Suffix: suffixInvestedCapital,
+	//
+	CSSType:     "3",
+	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+
+	UpperThreshold:   2.1,
+	UpperDisplay:     ">2",
+	UpperLastRegular: 2.0,
+}
+
+var range3To20 = rangeConf{
 	Min:    -2,
 	Max:    25,
 	Step:   0.5,
 	Suffix: suffixPercent,
 	//
-	CSSType:     "3",
-	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:>20`,
+	CSSType: "3",
+	// TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:>20`,
+	TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:>20`,
 
 	LowerThreshold:   2.9,
 	LowerDisplay:     "<3",
@@ -217,28 +217,15 @@ var sliderPctThreeTwenty = rangeConf{
 	UpperLastRegular: 20.0,
 }
 
-var sliderPctZeroFour = rangeConf{
-	Min:    0,
-	Max:    5,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;1:1;2:2;3:3;4:4;5:>4`,
-
-	UpperThreshold:   4.1,
-	UpperDisplay:     ">4",
-	UpperLastRegular: 4.0,
-}
-
-var sliderPctThreeTwentyfive = rangeConf{
+var range3To25 = rangeConf{
 	Min:    -2,
 	Max:    30,
 	Step:   0.5,
 	Suffix: suffixPercent,
 	//
-	CSSType:     "3",
-	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:25;30:>25`,
+	CSSType: "3",
+	// TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:25;30:>25`,
+	TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:25;30:>25`,
 
 	LowerThreshold:   2.9,
 	LowerDisplay:     "<3",
@@ -247,7 +234,7 @@ var sliderPctThreeTwentyfive = rangeConf{
 	UpperLastRegular: 25.0,
 }
 
-var sliderPctZeroTwentyfive = rangeConf{
+var range0To25 = rangeConf{
 	Min:    -5,
 	Max:    30,
 	Step:   0.5,
@@ -263,21 +250,37 @@ var sliderPctZeroTwentyfive = rangeConf{
 	UpperLastRegular: 25.0,
 }
 
-var sliderYearsZeroTen = rangeConf{
+var range0To4 = rangeConf{
 	Min:    0,
-	Max:    12,
-	Step:   0.5,
-	Suffix: suffixYears,
+	Max:    5,
+	Step:   0.25,
+	Suffix: suffixPercent,
 	//
 	CSSType:     "3",
-	TicksLabels: `0:0;2:2;4:4;6:6;8:8;10:10;12:>10`,
+	TicksLabels: `0:0;1:1;2:2;3:3;4:4;5:>4`,
 
-	UpperThreshold:   10.1,
-	UpperDisplay:     ">10",
-	UpperLastRegular: 10.0,
+	UpperThreshold:   4.1,
+	UpperDisplay:     ">4",
+	UpperLastRegular: 4.0,
 }
 
-var sliderEBITDA2x10x = rangeConf{
+var range1To5 = rangeConf{
+	Min:    1 - 1.5,
+	Max:    5 + 1.5,
+	Step:   0.25,
+	Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
+
+	LowerThreshold:   0.9,
+	LowerDisplay:     "<1",
+	UpperThreshold:   5.1,
+	UpperDisplay:     ">5",
+	UpperLastRegular: 5.0,
+}
+
+var rangeEBITDA2x10x = rangeConf{
 	Min:    0,
 	Max:    12,
 	Step:   0.5,
@@ -295,14 +298,13 @@ var sliderEBITDA2x10x = rangeConf{
 
 // _0- 50 mn € in  5 mn€ brackets
 // 50-100 mn € in 10 mn€ brackets
-var sliderEBITDAZero150 = rangeConf{
+var rangeEBITDAZero150 = rangeConf{
 	Min:    0,
 	Max:    200,
 	Step:   5,
 	Suffix: suffixMillionEuro,
 	//
-	CSSType: "3",
-	// TicksLabels: `0:0;25:25;50:50;75:75;100:100;125:125;150:150;200:>150`,
+	CSSType:     "3",
 	TicksLabels: `0:0;25: ;50:50;75: ;100:100;125: ;150:150;200:>150`,
 
 	UpperThreshold:   151,
@@ -311,7 +313,7 @@ var sliderEBITDAZero150 = rangeConf{
 }
 
 // 0-500mn €in 10mn€ brackets
-var sliderEVZeroFiveHundred = rangeConf{
+var rangeEV0To500 = rangeConf{
 	Min:    0,
 	Max:    650,
 	Step:   10,
@@ -326,21 +328,7 @@ var sliderEVZeroFiveHundred = rangeConf{
 	UpperLastRegular: 500.0,
 }
 
-var sliderOneOnePointFive = rangeConf{
-	Min:    0,
-	Max:    2.55, // should be 2.5 but rounding stuff
-	Step:   0.1,
-	Suffix: suffixInvestedCapital,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
-
-	UpperThreshold:   2.1,
-	UpperDisplay:     ">2",
-	UpperLastRegular: 2.0,
-}
-
-var slider50To100 = rangeConf{
+var range50To100 = rangeConf{
 	Min:    30,
 	Max:    120,
 	Step:   10,
@@ -356,7 +344,7 @@ var slider50To100 = rangeConf{
 	UpperLastRegular: 100.0,
 }
 
-var slider1To175 = rangeConf{
+var range1To175 = rangeConf{
 	Min:  1,
 	Max:  2.0,
 	Step: 0.05,
@@ -370,7 +358,7 @@ var slider1To175 = rangeConf{
 	UpperLastRegular: 1.75,
 }
 
-var slider30To100 = rangeConf{
+var range30To100 = rangeConf{
 	Min:    30 - 20,
 	Max:    100 + 20,
 	Step:   5,
@@ -384,20 +372,4 @@ var slider30To100 = rangeConf{
 	UpperThreshold:   101,
 	UpperDisplay:     ">100",
 	UpperLastRegular: 100.0,
-}
-
-var slider1To5 = rangeConf{
-	Min:    1 - 1.5,
-	Max:    5 + 1.5,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
-
-	LowerThreshold:   0.9,
-	LowerDisplay:     "<1",
-	UpperThreshold:   5.1,
-	UpperDisplay:     ">5",
-	UpperLastRegular: 5.0,
 }

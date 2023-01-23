@@ -120,9 +120,9 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page21Lbls,
 			[]*rangeConf{
 				nil,
-				&sliderYearsZeroTen,
-				&sliderPctZeroTwentyfive,
-				&sliderOneOnePointFive,
+				&range0To10,
+				&range0To25,
+				&range0To2StepDot1,
 			},
 		)
 	}
@@ -138,8 +138,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page21Lbls[:red],
 			[]*rangeConf{
 				nil,
-				&sliderYearsZeroTen,
-				&sliderPctZeroTwentyfive,
+				&range0To10,
+				&range0To25,
 				// &sliderOneOnePointFive,
 			},
 		)

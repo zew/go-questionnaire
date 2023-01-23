@@ -150,11 +150,11 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page12Types,
 		page12Lbls,
 		[]*rangeConf{
-			&sliderPctTwoTen,
-			&sliderPctZeroTwo,
-			&sliderPctThreeTwenty,
-			&sliderPctZeroFour,
-			&sliderPctThreeTwentyfive,
+			&range2To10,
+			&range0To2,
+			&range3To20,
+			&range0To4,
+			&range3To25,
 			// &sliderPctZeroHundredWide,
 		},
 	)
@@ -274,10 +274,10 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Lbls,
 			[]*rangeConf{
 				nil, // unused
-				&sliderYearsZeroTen,
-				&sliderEBITDA2x10x,
-				&sliderEBITDAZero150,
-				&sliderEVZeroFiveHundred,
+				&range0To10,
+				&rangeEBITDA2x10x,
+				&rangeEBITDAZero150,
+				&rangeEV0To500,
 				// nil,
 				// nil,
 			},
@@ -451,18 +451,18 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Lbls,
 			[]*rangeConf{
 				nil,
-				&sliderYearsZeroTen,
+				&range0To10,
 
-				&slider30To100,
+				&range30To100,
 
 				// real estate specific
-				&slider1To5,
-				&slider1To5,
-				&sliderPctTwoTen,
-				&slider30To100,
-				&slider1To5,
-				&slider1To5,
-				&sliderPctTwoTen,
+				&range1To5,
+				&range1To5,
+				&range2To10,
+				&range30To100,
+				&range1To5,
+				&range1To5,
+				&range2To10,
 				// nil,
 				// nil,
 				// nil,
@@ -587,13 +587,13 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Lbls,
 			[]*rangeConf{
 				nil,
-				&sliderYearsZeroTen,
-				&slider50To100,
+				&range0To10,
+				&range50To100,
 
 				// infrastruct specific
-				&slider50To100,
-				&slider1To175,
-				&slider1To175,
+				&range50To100,
+				&range1To175,
+				&range1To175,
 				// nil,
 				// nil,
 			},

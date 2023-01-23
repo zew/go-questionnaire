@@ -60,12 +60,15 @@
                             const evt = new Event("input");
                             noAnsw.dispatchEvent(evt);
                         } else {
-                            noAnsw.checked = false;
-                            // this is not perfect yet;
-                            // we should distinguish depending on [prefix + elID]_hidd 
-                            // has a value or not.
-                            inpDst.classList.remove("noanswer");
-                            inpDst.dataset.dirty = "";
+                            if (false) {
+                                noAnsw.checked = false;
+                                // this is not perfect yet;
+                                // we should distinguish depending on [prefix + elID]_hidd 
+                                // has a value or not.
+                                inpDst.classList.remove("noanswer");
+                                inpDst.dataset.dirty = "";                                
+                            }
+
                         }
                     }
                 }
@@ -81,6 +84,7 @@
         if (inp) {
             // checkB[0].addEventListener('change', myChange);
             inp.addEventListener('change', myOnchange);
+            inp.addEventListener('input',  myOnchange);
             // console.log("onchange ", inp.name, "'pdsPage11-b'");
         }
     }

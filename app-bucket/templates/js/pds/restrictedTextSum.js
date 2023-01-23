@@ -19,7 +19,7 @@ function funcInner{{.InpMain}}(){
     let totalInpFloat = 0.0;
     let virtual = false;
     if (totalInpVal != "") {
-        totalInpFloat = parseInt(totalInpVal, 10);
+        // totalInpFloat = parseInt(totalInpVal, 10);
         totalInpFloat = parseFloat(totalInpVal);
         // alert(nameMain + " value " + iSumStr + "; " + iS);
     } else {
@@ -38,6 +38,10 @@ function funcInner{{.InpMain}}(){
     let sum = 0;
 
 
+    let suspicious = false;
+    let cmpOperation = "{{.CmpOperator }}";
+
+
     for (let i1 = 0; i1 < summandNames.length; i1++) {
         const inpLp = document.getElementById( summandNames[i1] );
         summandValsStr.push(inpLp.value);        
@@ -46,6 +50,17 @@ function funcInner{{.InpMain}}(){
             let iVal = parseFloat(inpLp.value);
             summandValsInt.push( iVal);
             sum += iVal;
+
+ 
+            if (totalInpFloat == 100 && virtual) {
+                // not suspicious
+                console.log("   strannü");
+            } else if (cmpOperation == "noneGreater" && (iVal - 0.5) > totalInpFloat) {
+                console.log("   iVal vs total:    ", iVal, totalInpFloat);
+                suspicious = true;
+                break;
+            }
+
         } else {
             summandValsInt.push(0);
         }
@@ -55,17 +70,12 @@ function funcInner{{.InpMain}}(){
     sum = Math.round(sum * 10000) / 10000;
 
 
-    let suspicious = false;
 
-    let cmpOperation = "{{.CmpOperator }}";
     
     // parts adding up
     if (sum != 0 || totalInpFloat != 0) {
         if (totalInpFloat == 100 && sum == 0.0 && virtual) {
             // not suspicious
-
-        } else if (cmpOperation == "greater" && (sum-0.5) > totalInpFloat) {
-            suspicious = true;
         } else if (cmpOperation == "unequal" && ((sum + 0.5) < totalInpFloat ||  (sum - 0.5) > totalInpFloat)) {
             suspicious = true;
         }
@@ -106,5 +116,5 @@ function funcOuter{{.InpMain}}(event) {
     if (frm) {
         frm.addEventListener('submit', funcOuter{{.InpMain}});
     }
-    console.log("   funcOuter{{.inp_1 }} registered")
+    console.log("   funcOuter{{.InpMain}} registered")
 }

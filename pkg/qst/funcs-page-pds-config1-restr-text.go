@@ -182,9 +182,9 @@ var (
 	rT11fInfrastruc = configRT{}
 
 	rT11gCorpLend = configRT{
-		InputNameP2:      "q11g_pe_sponsor",
-		SuppressSumField: true,
-		Chars:            10,
+		InputNameP2: "q11g_pe_sponsor",
+		// SuppressSumField: true,
+		Chars: 10,
 		LblRow1: trl.S{
 			"en": "Private Equity Sponsor",
 			"de": "Private Equity Sponsor",
@@ -209,9 +209,9 @@ var (
 	}
 
 	rT11gRealEstate = configRT{
-		InputNameP2:      "q11g_dev_risk",
-		SuppressSumField: true,
-		Chars:            10,
+		InputNameP2: "q11g_dev_risk",
+		// SuppressSumField: true,
+		Chars: 10,
 		LblRow1: trl.S{
 			"en": "Development risk",
 			"de": "Development risk",
@@ -236,9 +236,9 @@ var (
 	}
 
 	rT11gInfraStruc = configRT{
-		InputNameP2:      "q11g_greenfield_risk",
-		SuppressSumField: true,
-		Chars:            10,
+		InputNameP2: "q11g_greenfield_risk",
+		// SuppressSumField: true,
+		Chars: 10,
 		LblRow1: trl.S{
 			"en": "Greenfield risk",
 			"de": "Greenfield risk",

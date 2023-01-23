@@ -120,8 +120,8 @@ var PDSAssetClasses = []assetClass{
 				NameUnused: "tt3_subpikoth",
 				Prefix:     "tt3",
 				Lbl: trl.S{
-					"en": "Subordinated / mezzanine / other",
-					"de": "Subordinated / mezzanine / other",
+					"en": "Subordinated / Mezzanine / other",
+					"de": "Subordinated / Mezzanine / other",
 					// "en": "Subordinated / PIK / Other",
 					// "de": "Subordinated / PIK / Other",
 				},
@@ -224,24 +224,24 @@ var PDSLbls = map[string][]trl.S{
 	},
 	"relevance1-5": {
 		{
-			"en": "not relevant<br>(1)",
-			"de": "not relevant<br>(1)",
+			"en": "not rele&shy;vant<br>(1)",
+			"de": "not rele&shy;vant<br>(1)",
 		},
 		{
-			"en": "somewhat relevant<br>(2)",
-			"de": "somewhat relevant<br>(2)",
+			"en": "some&shy;what<br>rele&shy;vant<br>(2)",
+			"de": "some&shy;what<br>rele&shy;vant<br>(2)",
 		},
 		{
-			"en": "relevant<br>(3)",
-			"de": "relevant<br>(3)",
+			"en": "rele&shy;vant<br>(3)",
+			"de": "rele&shy;vant<br>(3)",
 		},
 		{
-			"en": "core principal<br>(4)",
-			"de": "core principal<br>(4)",
+			"en": "core prin&shy;ciple<br>(4)",
+			"de": "core prin&shy;ciple<br>(4)",
 		},
 		{
-			"en": "potential deal&shy;breaker<br>(5)",
-			"de": "potential deal&shy;breaker<br>(5)",
+			"en": "potential<br>deal&shy;breaker<br>(5)",
+			"de": "potential<br>deal&shy;breaker<br>(5)",
 		},
 	},
 	"improveDecline1-5": {

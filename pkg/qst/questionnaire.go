@@ -1021,13 +1021,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		}
 		footer.Cols = 2
 
-		lblNext := cfg.Get().Mp["page"]
-		lblNext = cfg.Get().Mp["continue_to_page_x"]
+		// lblNext := cfg.Get().Mp["page"]
+		lblNext := cfg.Get().MpSite[q.Survey.Type]["continue_to_page_x"]
 		cloneNext := lblNext.Pad(2)
 		cloneNext = cloneNext.Fill(q.NextNaviNum())
 
-		lblPrev := cfg.Get().Mp["previous"]
-		lblPrev = cfg.Get().Mp["back_to_page_x"]
+		// lblPrev := cfg.Get().Mp["previous"]
+		lblPrev := cfg.Get().MpSite[q.Survey.Type]["back_to_page_x"]
 		clonePrev := lblPrev.Pad(1)
 		clonePrev = clonePrev.Fill(q.PrevNaviNum())
 
@@ -1761,7 +1761,14 @@ func (q *QuestionnaireT) KeysValues(cleanse bool, getRangeInfo bool) (keys, vals
 				typ := q.Pages[i1].Groups[i2].Inputs[i3].Type
 				if getRangeInfo {
 					if typ == "number" {
-						typ = fmt.Sprintf("%v--%v--%v", typ, q.Pages[i1].Groups[i2].Inputs[i3].Min, q.Pages[i1].Groups[i2].Inputs[i3].Max)
+						// stackoverflow.com/questions/48337330
+						//   no scientific notation: 1e^222 => %f
+						typ = fmt.Sprintf(
+							"\"%v\n%.1f\n%.1f\"",
+							typ,
+							q.Pages[i1].Groups[i2].Inputs[i3].Min,
+							q.Pages[i1].Groups[i2].Inputs[i3].Max,
+						)
 					}
 					if typ == "range" {
 						if q.Pages[i1].Groups[i2].Inputs[i3].DynamicFuncParamset != "" {
@@ -1769,7 +1776,25 @@ func (q *QuestionnaireT) KeysValues(cleanse bool, getRangeInfo bool) (keys, vals
 							// data only available from base questionnaires; not from simple answers
 							var rangeCfg rangeConf
 							rangeCfg.New(inp)
-							typ = fmt.Sprintf("%v--%v--%v--%v", typ, inp.Min, inp.Max, strings.Join(rangeCfg.lbls, "|"))
+
+							replMin := fmt.Sprint(inp.Min)
+							if rangeCfg.lbls[0][0] == '<' {
+								replMin = rangeCfg.lbls[0]
+							}
+							replMax := fmt.Sprint(inp.Max)
+							ln := len(rangeCfg.lbls) - 1
+							if rangeCfg.lbls[ln][0] == '>' {
+								replMax = rangeCfg.lbls[ln]
+							}
+							typ = fmt.Sprintf(
+								"\"%v\n%v--%v\n%v--%v\"",
+								typ,
+								inp.Min,
+								replMin,
+								inp.Max,
+								replMax,
+								// strings.Join(rangeCfg.lbls, "|"),
+							)
 						}
 					}
 				}

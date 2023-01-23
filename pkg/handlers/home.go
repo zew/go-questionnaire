@@ -177,8 +177,18 @@ func LoginByHashID(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// MainH loads and displays the questionnaire with page and lang_code
+// MainH or "/home" loads and displays the questionnaire with page and lang_code
 func MainH(w http.ResponseWriter, r *http.Request) {
+
+	if pusher, ok := w.(http.Pusher); ok {
+		// Push is supported.
+		// https://go.dev/blog/h2push
+		if false {
+			if err := pusher.Push("/app.js", nil); err != nil {
+				log.Printf("Failed to push: %v", err)
+			}
+		}
+	}
 
 	sess := sessx.New(w, r)
 

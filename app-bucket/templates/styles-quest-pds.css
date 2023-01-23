@@ -23,8 +23,14 @@ a.button {
     margin-right: 0.5rem;
 }
 
+.input-wrapper-signature-3 input[type=text]:disabled{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
+    background-image: none;
+    background-color: white;
+}
 
 
+/* content background image */
 .content.cpg00,
 .content.cpg01,
 .content.cpg02,
@@ -55,9 +61,6 @@ dummy
     margin-right: 0;
 }
 
-@media screen and (max-width: 800px) {
-
-}
 
 
 /* group background 
@@ -177,6 +180,19 @@ dummy {
     }
 }
 
+/* overriding auto-generated width setting *//* 
+input[type=text] {
+    max-width: 10.5rem;
+} 
+*/
+
+input[name=ac1_q41_risks_label],
+input[name=ac2_q41_risks_label],
+input[name=ac3_q41_risks_label],
+dummy {
+    /* overriding auto-generated width setting */
+    max-width: 10.5rem;
+}
 
 @media screen and (max-width: 800px) {
 
@@ -188,10 +204,17 @@ dummy {
         max-width: 4.1rem;
     }
 
-    input[type=text] {
+
+    /* other prio field - make it small */
+    input[name=ac1_q41_risks_label],
+    input[name=ac2_q41_risks_label],
+    input[name=ac3_q41_risks_label],
+    dummy {
+        /* overriding auto-generated width setting */
         margin-left: 0.6rem;
-        max-width: 6.1rem;
+        max-width:   6.1rem;
     }
+
 
     input[type=radio]{
         transform: scale(1.6);
@@ -208,10 +231,6 @@ dummy {
         width: calc(100% - 3.6rem - 0.3rem );
     }
 
-    label {
-        /* width: calc(100% - 3rem) !important;
-        margin-left: 1.5rem !important; */
-    }
 
 
 }

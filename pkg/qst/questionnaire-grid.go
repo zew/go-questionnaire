@@ -245,11 +245,11 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 		gr.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", int(gr.Cols))
 	}
 
-	if gr.Style.Desktop.StyleGridContainer.GapColumn == "" {
-		// this skews column width when nesting grids
-		// => disabled 2022-06
-		// gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
-	}
+	// if gr.Style.Desktop.StyleGridContainer.GapColumn == "" {
+	// // this skews column width when nesting grids
+	// // => disabled 2022-06
+	// gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
+	// }
 	if gr.Style.Desktop.StyleGridContainer.GapRow == "" {
 		gr.Style.Desktop.StyleGridContainer.GapRow = "0.8rem"
 	}

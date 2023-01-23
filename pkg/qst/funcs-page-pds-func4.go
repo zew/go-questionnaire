@@ -73,7 +73,7 @@ func prio3Matrix(
 						"de": lbls[nm],
 						"en": lbls[nm],
 					}
-					inp.MaxChars = 18
+					inp.MaxChars = 50
 					inp.ColSpan = 3
 					inp.ColSpanLabel = 2
 					inp.ColSpanControl = 4

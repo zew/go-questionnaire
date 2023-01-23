@@ -75,8 +75,8 @@ type ConfigT struct {
 
 	CPUProfile string `json:"cpu_profile"` // CPUProfile - output filename
 
-	Mp     trl.Map     `json:"translations_generic"` // Mp     - multi language strings for entire application -       [key].Tr(lc)
-	MpSite trl.MapSite `json:"translations_site"`    // MpSite - multi language strings for specific survey -    [site][key].Tr(lc)
+	Mp     trl.Map     `json:"translations_generic"` // Mp     - multi language strings for all surveys      -  [key].Tr(lc)
+	MpSite trl.MapSite `json:"translations_site"`    // MpSite - multi language strings for specific survey  -  [site][key].Tr(lc)
 
 	// keep this last - since it trashes diff view
 	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables - no localization
@@ -489,6 +489,7 @@ func Example() *ConfigT {
 			},
 		},
 		MpSite: trl.MapSite{
+			// values for all sites
 			"default": {
 				"img_logo_icon": {
 					"default": "/img/ui/icon-forschung-zew-prim.svg",
@@ -496,7 +497,24 @@ func Example() *ConfigT {
 				"img_logo_icon_mobile": {
 					"default": "/img/ui/icon-forschung-zew-prim.svg",
 				},
+				"continue_to_page_x": {
+					"en": "Continue to page&nbsp;%v",
+					"de": "Weiter zu Seite&nbsp;%v",
+					"es": "Continuar a la pagina&nbsp;%v",
+					"fr": "Continuer à la page&nbsp;%v",
+					"it": "Continua alla pagina&nbsp;%v",
+					"pl": "Przejdź do strony&nbsp;%v",
+				},
+				"back_to_page_x": {
+					"en": "Back to page&nbsp;%v",
+					"de": "Zurück zu Seite&nbsp;%v",
+					"es": "Volver a la pagina&nbsp;%v",
+					"fr": "Retour à la page&nbsp;%v",
+					"it": "Torna alla pagina&nbsp;%v",
+					"pl": "Powrót do strony&nbsp;%v",
+				},
 			},
+			// specific sites
 			"4walls": {
 				"app_label": {
 					"en": "4walls",

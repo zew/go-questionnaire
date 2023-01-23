@@ -288,15 +288,46 @@ Bitte versuchen Sie es nochmal.
 
 * Range input: Upppermost regular value should not have a "...<+Step" display
 
-* IPhone Safari
-  * Which Iphone
-  * Which Safari
-  * Delete the cached data for a single site by going to Settings > Safari > Advanced > Website Data > Show All Sites.
+----
 
+* Marktsegmente exakt aus der Excel-Datei übernehmen
 
-Transferrer: Reihenfolge
+* Textänderungen aus der Excel-Datei
+
+* Marktsegmente zentriert - nicht machbar - vielleicht &nbsp; Zeichen?
+
+* Konsistenzchecks aggregieren - versuch ich noch -  
+  Ich verstehe den Wunsch nach "Popup Feld" - erfordert aber zu große initiale und laufende Kosten.
+
+* Range input: Erläutern - Values und Repräsentation - in Excel zeigen
+
+* Range input: Kann man den Sprung   
+    von der 1. Kategorie (<2%)  
+    zur     2. Kategorie (2-2,5%)   
+    „smoother“ gestalten?
+
+* IPhone Safari: Cache bug?
+
+* Transferrer/Ergebnisexport:  
+   * Reihenfolge der Felder - wie im Fragebogen
+   * Beschriftung der Felder aus dem Fragebogen
+   * Excel-Makro und "Datenverbindung" zur Verhinderung von Auto-Formatierung
+   * Feldtyp number und range ("slider") mit Min/Max
+   * Feldtyp range ("slider") mit "<x" und ">y" Zahlen
+
 
 https://localhost:8083/survey/d/PDS--6WDWYZ5W
+https://private-debt-survey.zew.de/d/PDS--6WDWYZ5W
+
+pbu
+https://private-debt-survey.zew.de/d/PDS--ZX36XGLA
+https://localhost:8083/survey/d/PDS--ZX36XGLA
 
 https://localhost:8083/survey?full-dynamic-content=true
 
+### Erste Runde - Termine
+
+* 30.01. Versand der Einladungsmails mit Teilnahmelinks
+* 06.02. Erinnerungsmail 
+* 10.02. zweite Erinnerung entweder per Mail oder telefonisch; 
+* 13.02. Ende der Umfrage

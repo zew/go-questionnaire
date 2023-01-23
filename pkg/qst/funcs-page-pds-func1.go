@@ -206,7 +206,7 @@ func restrictedTextMultiCols(
 						"en": fmt.Sprintf("Please check Question 1.1 a) asset class %v. The total number of transaction is smaller than the number of transactions in the subgroup below. Really continue?", trancheType.Lbl),
 						"de": fmt.Sprintf("Please check Question 1.1 a) asset class %v. The total number of transaction is smaller than the number of transactions in the subgroup below. Really continue?", trancheType.Lbl),
 					}
-					inp.JSBlockStrings["CmpOperator"] = "greater"
+					inp.JSBlockStrings["CmpOperator"] = "noneGreater"
 				}
 				inp.JSBlockTrls = map[string]trl.S{
 					"msg": s1.RemoveSomeHTML(),

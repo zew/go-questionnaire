@@ -111,6 +111,7 @@
         if (inp) {
             // checkB[0].addEventListener('change', myChange);
             inp.addEventListener('change', myOnchange);
+            inp.addEventListener('input', myOnchange);
             // console.log("onchange ", inp.name, "'pdsPage11-b'");
         }
     }

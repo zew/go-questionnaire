@@ -60,6 +60,22 @@
  			}
  		},
  		"default": {
+ 			"back_to_page_x": {
+ 				"de": "Zurück zu Seite\u0026nbsp;%v",
+ 				"en": "Back to page\u0026nbsp;%v",
+ 				"es": "Volver a la pagina\u0026nbsp;%v",
+ 				"fr": "Retour à la page\u0026nbsp;%v",
+ 				"it": "Torna alla pagina\u0026nbsp;%v",
+ 				"pl": "Powrót do strony\u0026nbsp;%v"
+ 			},
+ 			"continue_to_page_x": {
+ 				"de": "Weiter zu Seite\u0026nbsp;%v",
+ 				"en": "Continue to page\u0026nbsp;%v",
+ 				"es": "Continuar a la pagina\u0026nbsp;%v",
+ 				"fr": "Continuer à la page\u0026nbsp;%v",
+ 				"it": "Continua alla pagina\u0026nbsp;%v",
+ 				"pl": "Przejdź do strony\u0026nbsp;%v"
+ 			},
  			"img_logo_icon": {
  				"default": "/img/ui/icon-forschung-zew-prim.svg"
  			},

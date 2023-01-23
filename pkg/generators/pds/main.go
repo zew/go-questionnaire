@@ -221,7 +221,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 3
 
 			{
 				inp := gr.AddInput()

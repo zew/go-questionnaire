@@ -139,14 +139,14 @@ func pdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page23Lbls,
 		[]*rangeConf{
 			nil,
-			&sliderPctZeroHundredWide,
-			&sliderPctZeroHundredWide,
-			&sliderPctZeroHundredWide,
+			&range0To100,
+			&range0To100,
+			&range0To100,
 			nil,
-			&sliderPctZeroHundredWide,
-			&sliderPctZeroHundredWide,
-			&sliderPctZeroHundredWide,
-			&sliderPctZeroHundredWide,
+			&range0To100,
+			&range0To100,
+			&range0To100,
+			&range0To100,
 		},
 	)
 

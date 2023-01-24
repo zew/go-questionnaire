@@ -35,8 +35,8 @@ var (
 		AddendsLighterSum: true,
 		Chars:             6,
 		LblRow1: trl.S{
-			"en": "Total number of transactions",
-			"de": "Gesamtzahl neue Abschlüsse",
+			"en": "Number of transactions closed in Europe in [quarter-1]",
+			"de": "Number of transactions closed in Europe in [quarter-1]",
 		}.Outline("a.)"),
 
 		LblRow2: trl.S{
@@ -54,26 +54,25 @@ var (
 			"floatingrate": `
 				...floating interest rate
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Please state the number of transactions with floating interest rate.
+					Please state the number of transactions closed in [quarter-1] with floating interest rate.
 					</span>
 				`,
 			"esgdoc": `
-				...explicit ESG targets in credit documentation
+				...ESG targets
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Please state the number of transactions with explicit ESG targets in the credit documentation.
+					Please state the number of transactions closed in [quarter-1] where the loan documentation contains explicit ESG targets.
 					</span>
 				`,
 			"esgratchet": `
 				...ESG ratchets
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Please state the number of transactions with ESG ratchets.
+					Pleases state the number of transactions closed in [quarter-1] where the loan documentation explicitly states that margins are adjusted when specified ESG targets are achieved.
 					</span>
 				`,
 			"share_stepdown": `
 				...margin step down
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Please state the number of loans with a 
-					margin step down.
+					Pleases state the number of transactions closed in [quarter-1] where the loan documentation explicitly states that margins are adjusted when specific targets on risk KPIs (e.g. leverage) are achieved.
 					</span>
 				`,
 		},
@@ -372,8 +371,10 @@ func init() {
 
 	//
 	lblB := trl.S{
-		"en": "Total transaction volume (in mn EUR)",
-		"de": "Total transaction volume (in mn EUR)",
+		// "en": "Total transaction volume (in mn EUR)",
+		// "de": "Total transaction volume (in mn EUR)",
+		"en": "Transaction volume of deals closed in Europe in [quarter-1]",
+		"de": "Transaction volume of deals closed in Europe in [quarter-1]",
 	}
 	lblB2 := trl.S{
 		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1].`,

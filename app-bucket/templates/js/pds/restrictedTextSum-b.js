@@ -1,6 +1,6 @@
+// restrictedTextSum-b
 // Adding up columns - number of transactions, consisting of addend-a, addend-b and -c.
-// Addends must be equal to sum.
-// Or addends must be lighter equal to sum.
+// Each addend must be lighter-equal to sum.
 
 function funcInner{{.InpMain}}(){
 
@@ -39,11 +39,11 @@ function funcInner{{.InpMain}}(){
 
 
     let suspicious = false;
-    let cmpOperation = "{{.CmpOperator }}";
+    let cmpOperation = "{{.CmpOperator}}";
 
 
     for (let i1 = 0; i1 < summandNames.length; i1++) {
-        const inpLp = document.getElementById( summandNames[i1] );
+        let inpLp = document.getElementById( summandNames[i1] );
         summandValsStr.push(inpLp.value);        
         if (inpLp.value != "") {
             // let iVal = parseInt(inpLp.value, 10);
@@ -54,7 +54,6 @@ function funcInner{{.InpMain}}(){
  
             if (totalInpFloat == 100 && virtual) {
                 // not suspicious
-                console.log("   strannü");
             } else if (cmpOperation == "noneGreater" && (iVal - 0.5) > totalInpFloat) {
                 console.log("   iVal vs total:    ", iVal, totalInpFloat);
                 suspicious = true;
@@ -85,7 +84,12 @@ function funcInner{{.InpMain}}(){
         console.log("total:    ", nameTotal, totalInpFloat);
         console.log("summands str: ", summandValsStr);
         console.log("summands int: ", summandValsInt, " = ", sum);
-        totalInp.focus();
+        // totalInp.focus();
+        
+        let firstInp = document.getElementById(summandNames[0]);
+        if (firstInp) {
+            firstInp.focus();
+        }
     }
 
     return suspicious;
@@ -94,15 +98,23 @@ function funcInner{{.InpMain}}(){
 
 function funcOuter{{.InpMain}}(event) {
 
+    if (oneLWasFiredB) {
+        return true;
+    }
+
     if (funcInner{{.InpMain}}()) {
-        // alert("{{.msg}}");
-        // let doContinue = window.confirm("{{.msg}} {{.InpMain}}");
+
+        oneLWasFiredB = true;
+        setTimeout(function () {
+            oneLWasFiredB = false;
+        }, 1000);
+
+        // let doContinue = window.confirm("{.msg} {.InpMain}");
         let doContinue = window.confirm("{{.msg}}");
         if (doContinue) {
             return true;
         }
         event.preventDefault(); // not only return false - but also preventDefault()
-
         return false;
     }
 
@@ -110,11 +122,20 @@ function funcOuter{{.InpMain}}(event) {
 
 }
 
+// global and repeating code:
+// define only if not yet defined
+var frmListenersB = (frmListenersB === undefined) ? [] : frmListenersB;
+var oneLWasFiredB = (oneLWasFiredB === undefined) ? false : oneLWasFiredB;
+
+
+
 // non global block
 {
     let frm = document.forms.frmMain;
     if (frm) {
         frm.addEventListener('submit', funcOuter{{.InpMain}});
     }
-    console.log("   funcOuter{{.InpMain}} registered")
+    // frmListeners.push(funcOuter{{.InpMain}});
+    console.log("   funcOuter{{.InpMain}} registered");
+
 }

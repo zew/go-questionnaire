@@ -25,14 +25,10 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.ValidationFuncName = "pdsRange,pdsPage21"
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["en"], q.Survey.Quarter(-1)),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Realizations in %v", ac.Lbl["de"], q.Survey.Quarter(-1)),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Repaid loans in %v", ac.Lbl["en"], q.Survey.Quarter(-1)),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Repaid loans in %v", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c2.", rn))
 
-	page.Short = trl.S{
-		"en": fmt.Sprintf("%v<br>realizations", ac.Short["en"]),
-		"de": fmt.Sprintf("%v<br>realizations", ac.Short["de"]),
-	}
 	page.Short = trl.S{
 		"en": fmt.Sprintf("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
 		"de": fmt.Sprintf("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
@@ -85,20 +81,20 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page21LblsDescr := []trl.S{
 		{
-			"en": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1].`,
-			"de": `Please state the volume (in mn EUR) of realized loans closed in [quarter-1].`,
+			"en": `Please state the volume (in mn EUR) of loans repaid in [quarter-1].`,
+			"de": `Please state the volume (in mn EUR) of loans repaid in [quarter-1].`,
 		},
 		{
-			"en": `Please state the average time to repayment of repayed loans.`,
-			"de": `Please state the average time to repayment of repayed loans.`,
+			"en": `Please state the average time to repayment of loans repaid in [quarter-1].`,
+			"de": `Please state the average time to repayment of loans repaid in [quarter-1].`,
 		},
 		{
-			"en": `Please state the average realized Gross IRR.`,
-			"de": `Please state the average realized Gross IRR.`,
+			"en": `Please state the average realized Gross Interenal Rate of Return (IRR) of loans repaid in [quarter-1].`,
+			"de": `Please state the average realized Gross Interenal Rate of Return (IRR) of loans repaid in [quarter-1].`,
 		},
 		{
-			"en": `Please state the average realized Gross MOIC.`,
-			"de": `Please state the average realized Gross MOIC.`,
+			"en": `Please state the average realized Gross Multiple on Invested Capital (MOIC) of loans repaid in [quarter-1].`,
+			"de": `Please state the average realized Gross Multiple on Invested Capital (MOIC) of loans repaid in [quarter-1].`,
 		},
 	}
 
@@ -122,7 +118,7 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 				nil,
 				&range0To10,
 				&range0To25,
-				&range0To2StepDot1,
+				&range0To2b,
 			},
 		)
 	}

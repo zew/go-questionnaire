@@ -24,16 +24,22 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page.ValidationFuncName = "pdsRange"
 
+	// page.Label = trl.S{
+	// 	"en": fmt.Sprintf(`
+	// 				New transactions
+	// 			<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
+	// 			`, ac.Lbl["en"]),
+	// 	"de": fmt.Sprintf(`
+	// 				New transactions
+	// 			<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
+	// 			`, ac.Lbl["de"]),
+	// }.Outline(fmt.Sprintf("%c1.", rn))
+
 	page.Label = trl.S{
-		"en": fmt.Sprintf(`
-					New transactions
-				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
-				`, ac.Lbl["en"]),
-		"de": fmt.Sprintf(`
-					New transactions
-				<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
-				`, ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Loans issued in %v (continued)", ac.Lbl["en"], q.Survey.Quarter(-1)),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp;  Loans issued in %v (continued)", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c1.", rn))
+
 	page.Short = trl.S{
 		"en": fmt.Sprintf("%v<br>Changes 2", ac.Short["en"]),
 		"de": fmt.Sprintf("%v<br>Changes 2", ac.Short["de"]),
@@ -113,24 +119,24 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page12LblsDescr := []trl.S{
 		{
-			"en": `Please state the average cash margin over the relevant base rate. Only relevant for <i>floating rate loans</i>.`,
-			"de": `Please state the average cash margin over the relevant base rate. Only relevant for <i>floating rate loans</i>.`,
+			"de": `Pleases state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
+			"en": `Pleases state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
 		},
 		{
-			"en": `Please state the average interest floor. Only relevant for <i>floating rate loans</i>.`,
-			"de": `Please state the average interest floor. Only relevant for <i>floating rate loans</i>.`,
+			"en": `Please state the average interest floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
+			"de": `Please state the average interest floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
 		},
 		{
-			"en": `Please state the average fixed rate copuon. Only relevant for <i>fixed rate loans</i>.`,
-			"de": `Please state the average fixed rate copuon. Only relevant for <i>fixed rate loans</i>.`,
+			"en": `Please state the average fixed rate copuon for transactions closed in [quarter-1]. Only relevant for <i>fixed rate</i> loans.`,
+			"de": `Please state the average fixed rate copuon for transactions closed in [quarter-1]. Only relevant for <i>fixed rate</i> loans.`,
 		},
 		{
-			"en": `Please state the average upfront fees charged to the borrower.`,
-			"de": `Please state the average upfront fees charged to the borrower.`,
+			"en": `Please state the average upfront fees charged to the borrower for transactions closed in [quarter-1].`,
+			"de": `Please state the average upfront fees charged to the borrower for transactions closed in [quarter-1].`,
 		},
 		{
-			"en": `Please state the average expected Gross IRR.`,
-			"de": `Please state the average expected Gross IRR.`,
+			"en": `Please state the average expected Gross Internal Rate of Return (IRR) for transactions closed in [quarter-1].`,
+			"de": `Please state the average expected Gross Internal Rate of Return (IRR) for transactions closed in [quarter-1].`,
 		},
 	}
 
@@ -151,7 +157,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page12Lbls,
 		[]*rangeConf{
 			&range2To10,
-			&range0To2,
+			&range0To2a,
 			&range3To20,
 			&range0To4,
 			&range3To25,
@@ -216,45 +222,29 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `Average EV`,
 				"de": `Average EV`,
 			},
-			// {
-			// 	"en": `Number of loans with PE sponsor`,
-			// 	"de": `Number of loans with PE sponsor`,
-			// },
-			// {
-			// 	"en": `Number of loans with margin step down`,
-			// 	"de": `Number of loans with margin step down`,
-			// },
 		}
 
 		page13LblsDescr := []trl.S{
 			{
-				"en": `What is the average number of financial covenants per loan?`,
-				"de": `What is the average number of financial covenants per loan?`,
+				"en": `Please state the average number of financial covenants per loan for transactions closed in [quarter-1].`,
+				"de": `Please state the average number of financial covenants per loan for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average contracted maturity?`,
-				"de": `What is the average contracted maturity?`,
+				"en": `Please state the average contracted maturity for transactions closed in [quarter-1].`,
+				"de": `Please state the average contracted maturity for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average opening leverage, measured as a multiple of EBITDA?`,
-				"de": `What is the average opening leverage, measured as a multiple of EBITDA?`,
+				"en": `Please state the average opening leverage for transactions closed in [quarter-1]. Opening leverage is measured as a multile of EBITDA.`,
+				"de": `Please state the average opening leverage for transactions closed in [quarter-1]. Opening leverage is measured as a multile of EBITDA.`,
 			},
 			{
-				"en": `What is the average EBITDA of borrower companies?`,
-				"de": `What is the average EBITDA of borrower companies?`,
+				"en": `Please state the average EBITDA of borrower companies for transactions closed in [quarter-1].`,
+				"de": `Please state the average EBITDA of borrower companies for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average enterprise value of borrower companies?`,
-				"de": `What is the average enterprise value of borrower companies?`,
+				"en": `Please state the average enterprise value of borrower companies for transactions closed in [quarter-1].`,
+				"de": `Please state the average enterprise value of borrower companies for transactions closed in [quarter-1].`,
 			},
-			// {
-			// 	"en": `Please state the number of transactions with a private equity sponsor.`,
-			// 	"de": `Please state the number of transactions with a private equity sponsor.`,
-			// },
-			// {
-			// 	"en": `Please state the number of transactions with a margin step down.`,
-			// 	"de": `Please state the number of transactions with a margin step down.`,
-			// },
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {

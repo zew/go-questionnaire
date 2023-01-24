@@ -25,20 +25,12 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page.ValidationFuncName = "pdsPage11-a,pdsPage11-b"
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3&nbsp;months)", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp;  Portfolio changes  (past 3&nbsp;months)", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Loans issued in %v", ac.Lbl["en"], q.Survey.Quarter(-1)),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp;  Loans issued in %v", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c1.", rn))
 	page.Short = trl.S{
-		"en": "Portfolio<br>changes",
-		"de": "Portfolio<br>changes",
-	}
-	page.Short = trl.S{
-		"en": fmt.Sprintf("%v<br>changes", ac.Short["en"]),
-		"de": fmt.Sprintf("%v<br>changes", ac.Short["de"]),
-	}
-	page.Short = trl.S{
-		"en": fmt.Sprintf("<b>%v</b><br>New Transactions", ac.Short["en"]),
-		"de": fmt.Sprintf("<b>%v</b><br>New Transactions", ac.Short["de"]),
+		"en": fmt.Sprintf("<b>%v</b><br>Loans Issued", ac.Short["en"]),
+		"de": fmt.Sprintf("<b>%v</b><br>Loans Issued", ac.Short["de"]),
 	}
 
 	page.CounterProgress = fmt.Sprintf("%c1", rn)
@@ -63,8 +55,8 @@ func pdsPage11(q *QuestionnaireT, page *pageT, acIdx int) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"en": "New transactions",
-				"de": "New transactions",
+				"en": "Loans issued in [quarter-1]",
+				"de": "Loans issued in [quarter-1]",
 			}.Outline("1.1")
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1

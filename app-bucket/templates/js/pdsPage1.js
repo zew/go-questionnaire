@@ -64,7 +64,9 @@ function checkSome() {
 
 // non global block
 {
-    let frm = document.forms.frmMain;
+
+    // var for safari on IPhone7
+    var frm = document.forms.frmMain;
 
     const triggers = [
         "ac1_q03",
@@ -93,7 +95,8 @@ function checkSome() {
 
     function showHide(keyID, paramShowHide) {
 
-        let parentContainer = parentContainers[keyID];
+        // var for safari
+        var parentContainer = parentContainers[keyID];
 
         // we start at index 1, for inp00 is the master control
         for (let i0 = 1; i0 < 25; i0++) {

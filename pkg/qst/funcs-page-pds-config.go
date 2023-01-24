@@ -67,6 +67,7 @@ type assetClass struct {
 	NameUnused   string // unusued
 	Prefix       string
 	Lbl          trl.S
+	LblOld       trl.S
 	Short        trl.S // Short label
 	TrancheTypes []trancheType
 }
@@ -87,14 +88,14 @@ var PDSAssetClasses = []assetClass{
 	{
 		NameUnused: "ac1_corplending",
 		Prefix:     "ac1",
-		Lbl: trl.S{
+		LblOld: trl.S{
 			"en": "Corporate direct lending",
 			"de": "Corporate direct lending",
 		},
-		// Short: trl.S{
-		// 	"en": "Corp. lend.",
-		// 	"de": "Corp. lend.",
-		// },
+		Lbl: trl.S{
+			"en": "European Corporate Direct Lending",
+			"de": "European Corporate Direct Lending",
+		},
 		Short: trl.S{
 			"en": "Corporate<br>Direct Lending",
 			"de": "Corporate<br>Direct Lending",
@@ -120,10 +121,9 @@ var PDSAssetClasses = []assetClass{
 				NameUnused: "tt3_subpikoth",
 				Prefix:     "tt3",
 				Lbl: trl.S{
-					"en": "Subordinated / Mezzanine / other",
-					"de": "Subordinated / Mezzanine / other",
-					// "en": "Subordinated / PIK / Other",
-					// "de": "Subordinated / PIK / Other",
+					// "en": "Subordinated&nbsp;/<br>&nbsp;&nbsp;Mezzanine&nbsp;/<br>&nbsp;&nbsp;&nbsp;Other",
+					"en": "<span style='font-size:90%'>Subordinated<br>   &nbsp;&nbsp;Mezzanine<br>  &nbsp;&nbsp;&nbsp;&nbsp;Other<span>",
+					"de": "Subordinated&nbsp;/&nbsp;Mezzanine&nbsp;/&nbsp;Other",
 				},
 			},
 		},
@@ -135,10 +135,6 @@ var PDSAssetClasses = []assetClass{
 			"en": "Real estate debt",
 			"de": "Real estate debt",
 		},
-		// Short: trl.S{
-		// 	"en": "Real est.",
-		// 	"de": "Real est.",
-		// },
 		Short: trl.S{
 			"en": "Real Estate<br> Debt",
 			"de": "Real Estate<br> Debt",
@@ -169,10 +165,6 @@ var PDSAssetClasses = []assetClass{
 			"en": "Infrastructure debt",
 			"de": "Infrastructure debt",
 		},
-		// Short: trl.S{
-		// 	"en": "Infrastruct.",
-		// 	"de": "Infrastruct.",
-		// },
 		Short: trl.S{
 			"en": "Infrastructure <br> Debt",
 			"de": "Infrastructure <br> Debt",
@@ -245,10 +237,6 @@ var PDSLbls = map[string][]trl.S{
 		},
 	},
 	"improveDecline1-5": {
-		// {
-		// 	"en": "Im&shy;prov&shy;ed",
-		// 	"de": "Im&shy;prov&shy;ed",
-		// },
 		{
 			"en": "im&shy;proved",
 			"de": "im&shy;proved",
@@ -293,37 +281,6 @@ var PDSLbls = map[string][]trl.S{
 			"de": "worsen significantly",
 		},
 	},
-	// "closing-time-weeks-old": {
-	// 	{
-	// 		"en": "<<br>6",
-	// 		"de": "<<br>6",
-	// 	},
-
-	// 	{
-	// 		"en": "&nbsp;<br>6",
-	// 		"de": "&nbsp;<br>6",
-	// 	},
-	// 	{
-	// 		"en": "&nbsp;<br>9",
-	// 		"de": "&nbsp;<br>9",
-	// 	},
-	// 	{
-	// 		"en": "weeks<br>12",
-	// 		"de": "weeks<br>12",
-	// 	},
-	// 	{
-	// 		"en": "&nbsp;<br>15",
-	// 		"de": "&nbsp;<br>15",
-	// 	},
-	// 	{
-	// 		"en": "&nbsp;<br>18",
-	// 		"de": "&nbsp;<br>18",
-	// 	},
-	// 	{
-	// 		"en": "><br>18",
-	// 		"de": "><br>18",
-	// 	},
-	// },
 	"closing-time-weeks": {
 		{
 			"en": "<<br>4",
@@ -335,8 +292,8 @@ var PDSLbls = map[string][]trl.S{
 			"de": "&nbsp;<br>4&#8209;8",
 		},
 		{
-			"en": "months<br><br>8&#8209;12",
-			"de": "months<br><br>8&#8209;12",
+			"en": "weeks<br><br>8&#8209;12",
+			"de": "weeks<br><br>8&#8209;12",
 		},
 		{
 			"en": "&nbsp;<br>12&#8209;16",
@@ -347,6 +304,7 @@ var PDSLbls = map[string][]trl.S{
 			"de": "><br>16",
 		},
 	},
+
 	"covenants-per-credit": {
 		// &#8209; - non breaking dash, non-breaking hyphen
 		//   to prevent
@@ -415,8 +373,12 @@ var placeHolderNum = trl.S{
 	"de": "#",
 }
 
+//	var placeHolderMillion = trl.S{
+//		"en": "million Euro",
+//		"de": "Millionen Euro",
+//	}
 var placeHolderMillion = trl.S{
-	"en": "million Euro",
+	"en": "mn Euro",
 	"de": "Millionen Euro",
 }
 
@@ -446,11 +408,6 @@ func onlySelectedTranchTypes(q *QuestionnaireT, ac assetClass) assetClass {
 
 	acRet := ac
 	acRet.TrancheTypes = newTTs
-
-	// if len(acRet.TrancheTypes) == 0 {
-	// 	log.Printf("  %v => %v tt(s)", ac.Prefix, len(acRet.TrancheTypes))
-	// 	log.Print(util.IndentedDump(acRet))
-	// }
 
 	return acRet
 }

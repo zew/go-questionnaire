@@ -178,7 +178,7 @@ func restrictedTextMultiCols(
 				inp := gr.AddInput()
 				inp.ColSpanControl = 1
 				inp.Type = "javascript-block"
-				inp.Name = "restrictedTextSum" // js filename
+				inp.Name = "restrictedTextSum-a" // js filename
 
 				inp.JSBlockStrings = map[string]string{}
 				inp.JSBlockStrings["InpMain"] = fmt.Sprintf("%v_%v_%v", ac.Prefix, trancheType.Prefix, cf.InputNameP2)
@@ -207,6 +207,7 @@ func restrictedTextMultiCols(
 						"de": fmt.Sprintf("Please check Question 1.1 a) asset class %v. The total number of transaction is smaller than the number of transactions in the subgroup below. Really continue?", trancheType.Lbl),
 					}
 					inp.JSBlockStrings["CmpOperator"] = "noneGreater"
+					inp.Name = "restrictedTextSum-b" // js filename
 				}
 				inp.JSBlockTrls = map[string]trl.S{
 					"msg": s1.RemoveSomeHTML(),

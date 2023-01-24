@@ -122,6 +122,7 @@ function pdsRangeInput(src) {
                 }
             }
             if (src.dataset.ulr != "") {
+                // no interval for uppermost regular value
                 let ulr = parseFloat(src.dataset.ulr)
                 if (srcVal == ulr) {
                     display.value = ulr;

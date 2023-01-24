@@ -172,7 +172,7 @@ var range2To10 = rangeConf{
 	UpperLastRegular: 10.0,
 }
 
-var range0To2 = rangeConf{
+var range0To2a = rangeConf{
 	Min:    0,
 	Max:    2.5,
 	Step:   0.25,
@@ -186,7 +186,8 @@ var range0To2 = rangeConf{
 	UpperLastRegular: 2.0,
 }
 
-var range0To2StepDot1 = rangeConf{
+// different stepping
+var range0To2b = rangeConf{
 	Min:    0,
 	Max:    2.55, // should be 2.5 but rounding stuff
 	Step:   0.1,
@@ -372,4 +373,19 @@ var range30To100 = rangeConf{
 	UpperThreshold:   101,
 	UpperDisplay:     ">100",
 	UpperLastRegular: 100.0,
+}
+
+var range0To175 = rangeConf{
+	Min:    0,
+	Max:    2.0,
+	Step:   0.25,
+	Suffix: suffixPercent,
+	//
+	CSSType: "3",
+	// TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;1.75:1.75;2.0:>1.75`,
+	TicksLabels: `0:0-0.25;  0.25:0.25;  1.25:1.25;  2:>1.75`,
+
+	UpperThreshold:   1.76,
+	UpperDisplay:     ">1.75",
+	UpperLastRegular: 1.75,
 }

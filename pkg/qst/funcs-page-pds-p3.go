@@ -23,14 +23,10 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Market Sentiment", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Market Sentiment", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Market assessment in %v", ac.Lbl["en"], q.Survey.Quarter(-1)),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Market assessment in %v", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c3.", rn))
 
-	page.Short = trl.S{
-		"en": fmt.Sprintf("%v<br>Market assessment", ac.Short["en"]),
-		"de": fmt.Sprintf("%v<br>Market assessment", ac.Short["de"]),
-	}
 	page.Short = trl.S{
 		"en": fmt.Sprint("<b> &nbsp;<br> &nbsp; </b> <br>Market Assessment"),
 		"de": fmt.Sprint("<b> &nbsp;<br> &nbsp; </b> <br>Market Assessment"),
@@ -58,12 +54,10 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"en": `The following questions are aimed to capture the developments of the <i>overall market</i>.
-
-				`,
-				"de": `The following questions are aimed to capture the developments of the <i>overall market</i>.
-
-				`,
+				// "en": `The following questions are aimed to capture the developments of the <i>overall market</i>.`,
+				// "de": `The following questions are aimed to capture the developments of the <i>overall market</i>.`,
+				"en": `The following questions are related to the developments of the <i>overall European Corporate Direct Lending market</i>.`,
+				"de": `The following questions are related to the developments of the <i>overall European Corporate Direct Lending market</i>.`,
 			}
 		}
 

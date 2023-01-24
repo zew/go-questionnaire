@@ -280,7 +280,7 @@ Bitte versuchen Sie es nochmal.
 
 ### RC6
 
-* Sonstiges-Feld am Ende
+* Freitext Feld am Ende der Umfrage: "Sonstiges"
 
 * Seiten A2,B2,C2 - Spalten disabled - abhängig von Frage A2/B2/C2 a.)
 
@@ -296,15 +296,22 @@ Bitte versuchen Sie es nochmal.
 
 * Marktsegmente zentriert - nicht machbar - vielleicht &nbsp; Zeichen?
 
-* Konsistenzchecks aggregieren - versuch ich noch -  
-  Ich verstehe den Wunsch nach "Popup Feld" - erfordert aber zu große initiale und laufende Kosten.
+* Konsistenzchecks aggregieren;  
+  ist schwer.  
+  aber man kann immer nur einen Fehler anzeigen.
+
+  => meeting-2023-01-24: Zwei distinct error msgs - 1a - all others - new concise messages from J. Mellert
+
+* Ich verstehe den Wunsch nach "Popup Feld" -  
+  erfordert aber zu große initiale und laufende Kosten.
 
 * Range input: Erläutern - Values und Repräsentation - in Excel zeigen
 
 * Range input: Kann man den Sprung   
     von der 1. Kategorie (<2%)  
     zur     2. Kategorie (2-2,5%)   
-    „smoother“ gestalten?
+    „smoother“ gestalten?  
+    meeting-2023-01-24: Herr Mellert gibt Feedback
 
 * IPhone Safari: Cache bug?
 
@@ -316,12 +323,20 @@ Bitte versuchen Sie es nochmal.
    * Feldtyp range ("slider") mit "<x" und ">y" Zahlen
 
 
+* range0To175  [0%-0.25%, 0.25%-1.25%, …,1.25%-1.75%, >1.75%] - geht nur als Radio-Gruppe
+* range0To4    [0%-0.5%, 0.5%-1.5%, …,3.5%-4%, >4%]           - geht nur als Radio-Gruppe
+
+
+
+pbu
+https://localhost:8083/survey/d/PDS--ZX36XGLA
+https://private-debt-survey.zew.de/d/PDS--ZX36XGLA
+
+
+Jan Mellert
 https://localhost:8083/survey/d/PDS--6WDWYZ5W
 https://private-debt-survey.zew.de/d/PDS--6WDWYZ5W
 
-pbu
-https://private-debt-survey.zew.de/d/PDS--ZX36XGLA
-https://localhost:8083/survey/d/PDS--ZX36XGLA
 
 https://localhost:8083/survey?full-dynamic-content=true
 

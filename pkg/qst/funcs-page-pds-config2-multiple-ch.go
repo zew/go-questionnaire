@@ -49,8 +49,23 @@ var (
 		DontKnow:    false,
 	}
 
-	mCh4 = configMC{
-		KeyLabels:       "improveDecline1-5",
+	mCh4Prev = configMC{
+		KeyLabels:       "improveDecline1-5-prev",
+		Cols:            5,
+		InpColspan:      1,
+		LabelBottom:     false,
+		DontKnow:        false,
+		GroupLeftIndent: outline2Indent,
+		XDisplacements: []string{
+			"1.6rem",
+			"0.79rem",
+			"",
+			"0.79rem",
+			"1.6rem",
+		},
+	}
+	mCh4Next = configMC{
+		KeyLabels:       "improveDecline1-5-next",
 		Cols:            5,
 		InpColspan:      1,
 		LabelBottom:     false,

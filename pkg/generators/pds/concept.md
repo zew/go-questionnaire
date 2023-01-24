@@ -292,28 +292,12 @@ Bitte versuchen Sie es nochmal.
 
 * Marktsegmente exakt aus der Excel-Datei übernehmen
 
-* Textänderungen aus der Excel-Datei
-
 * Marktsegmente zentriert - nicht machbar - vielleicht &nbsp; Zeichen?
 
 * Konsistenzchecks aggregieren;  
-  ist schwer.  
-  aber man kann immer nur einen Fehler anzeigen.
+   je eine Fehlermeldung für 1a. und für 1d.-1g.
 
-  => meeting-2023-01-24: Zwei distinct error msgs - 1a - all others - new concise messages from J. Mellert
-
-* Ich verstehe den Wunsch nach "Popup Feld" -  
-  erfordert aber zu große initiale und laufende Kosten.
-
-* Range input: Erläutern - Values und Repräsentation - in Excel zeigen
-
-* Range input: Kann man den Sprung   
-    von der 1. Kategorie (<2%)  
-    zur     2. Kategorie (2-2,5%)   
-    „smoother“ gestalten?  
-    meeting-2023-01-24: Herr Mellert gibt Feedback
-
-* IPhone Safari: Cache bug?
+  => meeting-2023-01-24: New concise messages from J. Mellert
 
 * Transferrer/Ergebnisexport:  
    * Reihenfolge der Felder - wie im Fragebogen
@@ -323,9 +307,27 @@ Bitte versuchen Sie es nochmal.
    * Feldtyp range ("slider") mit "<x" und ">y" Zahlen
 
 
+* Range input: Kann man den Sprung   
+    von der 1. Kategorie (<2%)  
+    zur     2. Kategorie (2-2,5%)   
+    „smoother“ gestalten?  
+    meeting-2023-01-24: Herr Mellert gibt Feedback  
+
+    Unabhängig davon: Das "magnetische Einschnappen" zwischen <2 und 2-2.5  
+    ist jetzt fifty-fifty nach beiden Seiten
+
+
+---
+
+
 * range0To175  [0%-0.25%, 0.25%-1.25%, …,1.25%-1.75%, >1.75%] - geht nur als Radio-Gruppe
 * range0To4    [0%-0.5%, 0.5%-1.5%, …,3.5%-4%, >4%]           - geht nur als Radio-Gruppe
 
+* Textänderungen aus der Excel-Datei
+
+
+
+* IPhone Safari: Cache bug?
 
 
 pbu

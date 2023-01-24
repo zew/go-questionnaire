@@ -1,3 +1,26 @@
+function dispValue(srcValStr, srcStep){
+
+    let srcVal = parseFloat(srcValStr);
+
+    let incr = srcVal + parseFloat(srcStep);
+    // prevent 0.30000000004
+    if (incr < 10) {
+        incr = Math.round(incr * 1000) / 1000;
+    }
+
+    let out = ""
+    if (srcVal) {
+        out += srcVal;  // implicit conversion to string
+    } else if (srcVal == 0.0) {
+        out += "0"; 
+    }
+
+    // – em dash
+    out += " – <";
+    out += incr;
+    return out;
+}
+
 /*
     change or input for a input[type=range]
     updating   the corresponding 'display'
@@ -90,41 +113,48 @@ function pdsRangeInput(src) {
 
             // console.log("src.value=", src.value, "data-dirty:", src.dataset.dirty);
 
-            let srcVal = parseFloat(src.value);
-            let incr = srcVal + parseFloat(src.step);
-            // prevent 0.30000000004
-            if (incr < 10) {
-                incr = Math.round(incr*1000)/1000;
-            }
             
-            let out = ""
-            if (src.value) {
-                out += src.value;
-            }
-            // – em dash
-            out += " – <";
-            out += incr;
-            display.value = out;
+            display.value = dispValue(src.value, src.step);
 
-            // upper and lower threshold
-            if (src.dataset.ut != "") {
-                let ut = parseFloat(src.dataset.ut)
-                if (srcVal >= ut ) {
-                    display.value = src.dataset.ud;                
-                    src.value = src.getAttribute("max");
-                }
-            }
-            if (src.dataset.lt != "") {
-                let lt = parseFloat(src.dataset.lt)
-                if (srcVal <= lt) {
+            // lower and upper threshold
+
+            // lfr - lower first regular
+            if (src.dataset.lfr != "" && src.dataset.lfr != "0") {
+                let lfr = parseFloat(src.dataset.lfr);
+                let min = parseFloat(src.getAttribute("min"));
+                let half = (lfr - min) / 2;
+                let srcValFl = parseFloat(src.value);
+                
+                if (srcValFl <= lfr - half) {
                     display.value = src.dataset.ld;
                     src.value = src.getAttribute("min");
+                } else if (srcValFl <= lfr - 0.017) {
+                    src.value = src.dataset.lfr;
+                    display.value = dispValue(src.value, src.step);
                 }
             }
+
+            // ulr - upper last regular
             if (src.dataset.ulr != "") {
-                // no interval for uppermost regular value
+                let ulr = parseFloat(src.dataset.ulr);
+                let max = parseFloat(src.getAttribute("max"));
+                let half = (max - ulr) / 2;
+                let srcValFl = parseFloat(src.value);
+
+                if (srcValFl >= ulr + half) {
+                    display.value = src.dataset.ud;
+                    src.value = src.getAttribute("max");                    
+                } else if (srcValFl >= ulr - 0.017) {
+                    src.value = src.dataset.ulr;
+                    display.value = dispValue(src.value, src.step)
+                }
+            }
+
+            // no interval for last regular upper value
+            if (src.dataset.ulr != "") {
                 let ulr = parseFloat(src.dataset.ulr)
-                if (srcVal == ulr) {
+                let srcValFl = parseFloat(src.value);
+                if (srcValFl == ulr) {
                     display.value = ulr;
                 }
             }

@@ -122,7 +122,7 @@ var PDSAssetClasses = []assetClass{
 				Prefix:     "tt3",
 				Lbl: trl.S{
 					// "en": "Subordinated&nbsp;/<br>&nbsp;&nbsp;Mezzanine&nbsp;/<br>&nbsp;&nbsp;&nbsp;Other",
-					"en": "<span style='font-size:90%'>Subordinated<br>   &nbsp;&nbsp;Mezzanine<br>  &nbsp;&nbsp;&nbsp;&nbsp;Other<span>",
+					"en": "<span style='font-size:85%'>Subordinated<br>   &nbsp;&nbsp;Mezzanine<br>  &nbsp;&nbsp;&nbsp;&nbsp;Other<span>",
 					"de": "Subordinated&nbsp;/&nbsp;Mezzanine&nbsp;/&nbsp;Other",
 				},
 			},
@@ -236,10 +236,56 @@ var PDSLbls = map[string][]trl.S{
 			"de": "potential<br>deal&shy;breaker<br>(5)",
 		},
 	},
-	"improveDecline1-5": {
+	// "improveDecline1-5": {
+	// 	{
+	// 		"en": "im&shy;proved",
+	// 		"de": "im&shy;proved",
+	// 	},
+	// 	{
+	// 		"en": "&nbsp;",
+	// 		"de": "&nbsp;",
+	// 	},
+	// 	{
+	// 		// yes - its terrible
+	// 		"en": "sa&shy;me",
+	// 		"de": "sa&shy;me",
+	// 	},
+	// 	{
+	// 		"en": "&nbsp;",
+	// 		"de": "&nbsp;",
+	// 	},
+	// 	{
+	// 		"en": "de&shy;clined",
+	// 		"de": "de&shy;clined",
+	// 	},
+	// },
+	"improveDecline1-5-prev": {
 		{
-			"en": "im&shy;proved",
-			"de": "im&shy;proved",
+			"en": "un&shy;attrac&shy;tive",
+			"de": "un&shy;attrac&shy;tive",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			// yes - its terrible
+			"en": "satis&shy;factory",
+			"de": "satis&shy;factory",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			"en": "attrac&shy;tive",
+			"de": "attrac&shy;tive",
+		},
+	},
+	"improveDecline1-5-next": {
+		{
+			"en": "will<br>im&shy;prove",
+			"de": "will<br>im&shy;prove",
 		},
 		{
 			"en": "&nbsp;",
@@ -255,30 +301,8 @@ var PDSLbls = map[string][]trl.S{
 			"de": "&nbsp;",
 		},
 		{
-			"en": "de&shy;clined",
-			"de": "de&shy;clined",
-		},
-	},
-	"improveworsen1-5": {
-		{
-			"en": "improve significantly",
-			"de": "improve significantly",
-		},
-		{
-			"en": "improve slightly",
-			"de": "improve slightly",
-		},
-		{
-			"en": "stay constant",
-			"de": "stay constant",
-		},
-		{
-			"en": "worsen slightly",
-			"de": "worsen slightly",
-		},
-		{
-			"en": "worsen significantly",
-			"de": "worsen significantly",
+			"en": "will<br>de&shy;cline",
+			"de": "will<br>de&shy;cline",
 		},
 	},
 	"closing-time-weeks": {

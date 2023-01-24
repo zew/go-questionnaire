@@ -22,6 +22,8 @@ type rangeConf struct {
 	LowerThreshold float64 // below this value, we lock/jump the value to Min,
 	LowerDisplay   string  // display value for min ("<0")
 
+	LowerFirstRegular float64 // first regular lower value
+
 	UpperThreshold float64
 	UpperDisplay   string
 
@@ -89,10 +91,18 @@ func (rc *rangeConf) New(inp *inputT) {
 	rc.UpperThreshold = upperFlt
 	rc.UpperDisplay = lu[3]
 
+	//
 	lu[4] = strings.ReplaceAll(lu[4], ",", ".")
-	upperLastRegular, err := strconv.ParseFloat(lu[4], 64)
+	lowerFirstRegular, err := strconv.ParseFloat(lu[4], 64)
 	if err != nil {
-		log.Printf("cannot convert last regular upper  %s - %v -\n\t%+v", lu[4], err, inp.DynamicFuncParamset)
+		log.Printf("cannot convert first regular lower  %s - %v -\n\t%+v", lu[4], err, inp.DynamicFuncParamset)
+	}
+	rc.LowerFirstRegular = lowerFirstRegular
+
+	lu[5] = strings.ReplaceAll(lu[5], ",", ".")
+	upperLastRegular, err := strconv.ParseFloat(lu[5], 64)
+	if err != nil {
+		log.Printf("cannot convert last regular upper  %s - %v -\n\t%+v", lu[5], err, inp.DynamicFuncParamset)
 	}
 	rc.UpperLastRegular = upperLastRegular
 
@@ -100,11 +110,15 @@ func (rc *rangeConf) New(inp *inputT) {
 
 func (rc rangeConf) SerializeExtendedConfig() string {
 	lowerUpper := fmt.Sprintf(
-		"%5.3f;%v;%5.3f;%v;%5.3f",
+		"%5.3f;%v;%5.3f;%v;%5.3f;%5.3f",
+
 		rc.LowerThreshold,
 		rc.LowerDisplay,
+
 		rc.UpperThreshold,
 		rc.UpperDisplay,
+
+		rc.LowerFirstRegular,
 		rc.UpperLastRegular,
 	)
 	return fmt.Sprintf("%v--%v--%v", rc.CSSType, rc.TicksLabels, lowerUpper)
@@ -123,9 +137,11 @@ func (rc *rangeConf) lowerUpperAttrs() string {
 	}
 
 	return fmt.Sprintf(
-		" data-lt='%v' data-ld='%v' data-ut='%v' data-ud='%v' data-ulr='%v'  ",
+		" data-lt='%v' data-ld='%v' data-lfr='%v'     data-ut='%v' data-ud='%v' data-ulr='%v'  ",
 		lt,
 		rc.LowerDisplay,
+		rc.LowerFirstRegular,
+		//
 		ut,
 		rc.UpperDisplay,
 		rc.UpperLastRegular,
@@ -165,8 +181,10 @@ var range2To10 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:<2;2:2;3: ;4:4;5: ;6:6;7: ;8:8;9: ;10:10;12:>10`,
 
-	LowerThreshold:   1.9,
-	LowerDisplay:     "<2",
+	LowerThreshold:    1.9,
+	LowerDisplay:      "<2",
+	LowerFirstRegular: 2.0,
+
 	UpperThreshold:   10.1,
 	UpperDisplay:     ">10",
 	UpperLastRegular: 10.0,
@@ -207,12 +225,14 @@ var range3To20 = rangeConf{
 	Step:   0.5,
 	Suffix: suffixPercent,
 	//
-	CSSType: "3",
-	// TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:>20`,
-	TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:>20`,
+	CSSType:     "3",
+	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:>20`,
+	// TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:>20`,
 
-	LowerThreshold:   2.9,
-	LowerDisplay:     "<3",
+	LowerThreshold:    2.9,
+	LowerDisplay:      "<3",
+	LowerFirstRegular: 3.0,
+
 	UpperThreshold:   20.1,
 	UpperDisplay:     ">20",
 	UpperLastRegular: 20.0,
@@ -224,12 +244,14 @@ var range3To25 = rangeConf{
 	Step:   0.5,
 	Suffix: suffixPercent,
 	//
-	CSSType: "3",
-	// TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:25;30:>25`,
-	TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:25;30:>25`,
+	CSSType:     "3",
+	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:25;30:>25`,
+	// TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:25;30:>25`,
 
-	LowerThreshold:   2.9,
-	LowerDisplay:     "<3",
+	LowerThreshold:    2.9,
+	LowerDisplay:      "<3",
+	LowerFirstRegular: 3.0,
+
 	UpperThreshold:   25.1,
 	UpperDisplay:     ">25",
 	UpperLastRegular: 25.0,
@@ -244,8 +266,10 @@ var range0To25 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `-5:<0;0:0;5:5;10:10;15:15;20:20;25:25;30:>25`,
 
-	LowerThreshold:   -0.1,
-	LowerDisplay:     "<0",
+	LowerThreshold:    -0.1,
+	LowerDisplay:      "<0",
+	LowerFirstRegular: 0.0,
+
 	UpperThreshold:   25.1,
 	UpperDisplay:     ">25",
 	UpperLastRegular: 25.0,
@@ -274,8 +298,10 @@ var range1To5 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
 
-	LowerThreshold:   0.9,
-	LowerDisplay:     "<1",
+	LowerThreshold:    0.9,
+	LowerDisplay:      "<1",
+	LowerFirstRegular: 1.0,
+
 	UpperThreshold:   5.1,
 	UpperDisplay:     ">5",
 	UpperLastRegular: 5.0,
@@ -290,8 +316,10 @@ var rangeEBITDA2x10x = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `0:<2;2:2;4:4;6:6;8:8;10:10;12:>10`,
 
-	LowerThreshold:   1.9,
-	LowerDisplay:     "<2",
+	LowerThreshold:    1.9,
+	LowerDisplay:      "<2",
+	LowerFirstRegular: 2.0,
+
 	UpperThreshold:   10.1,
 	UpperDisplay:     ">10",
 	UpperLastRegular: 10.0,
@@ -338,8 +366,10 @@ var range50To100 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `30:<50;50:50;60:60;70:70;80:80;90:90;100:100;120:>100`,
 
-	LowerThreshold:   49,
-	LowerDisplay:     "<50",
+	LowerThreshold:    49,
+	LowerDisplay:      "<50",
+	LowerFirstRegular: 50.0,
+
 	UpperThreshold:   101,
 	UpperDisplay:     ">100",
 	UpperLastRegular: 100.0,
@@ -368,8 +398,10 @@ var range30To100 = rangeConf{
 	CSSType:     "3",
 	TicksLabels: `10:<30;30:30;50:50;75:75;100:100;120:>100`,
 
-	LowerThreshold:   29,
-	LowerDisplay:     "<30",
+	LowerThreshold:    29,
+	LowerDisplay:      "<30",
+	LowerFirstRegular: 30.0,
+
 	UpperThreshold:   101,
 	UpperDisplay:     ">100",
 	UpperLastRegular: 100.0,

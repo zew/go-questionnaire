@@ -839,12 +839,22 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 	// 	log.Printf("   ws1  %+v", ws1)
 	// }
 
+	/*
+		core is the html string builder
+		<span class=lbl-anchor>
+			  <span class=lbl>optional label</span>
+		</span>
+		<span class=tick  width=11.1% >distance block - with left|right border making the tick</span>
+
+	*/
 	core := &strings.Builder{}
 
 	itr1 := -2
 	itr2 := -1
 
 	ctr := 0.0
+	noTick := 0
+
 	for stp := inp.Min; stp <= inp.Max; stp += inp.Step {
 
 		// correcting the cumulative rounding errors of x += inp.Step - instead using _one_ multiplication
@@ -860,6 +870,12 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 			itr2++
 
 			lbl := rc.lbls[0]
+			if strings.HasSuffix(lbl, "nt") {
+				lbl = lbl[:len(lbl)-2]
+				noTick = 1
+			} else {
+				noTick = 0
+			}
 			// label - width 0
 			fmt.Fprintf(
 				core,
@@ -877,6 +893,12 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 				tickClass := " class='tick' "
 				if itr2 == 0 {
 					tickClass = " class='tick first' "
+				}
+				if noTick == 1 {
+					tickClass = " class='tick suppress-right' "
+					if itr2 == 0 {
+						tickClass = " class='tick first suppress-left' "
+					}
 				}
 
 				fmt.Fprintf(

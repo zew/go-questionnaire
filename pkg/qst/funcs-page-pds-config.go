@@ -118,12 +118,13 @@ var PDSAssetClasses = []assetClass{
 				},
 			},
 			{
-				NameUnused: "tt3_subpikoth",
+				NameUnused: "tt3_subordinated",
 				Prefix:     "tt3",
 				Lbl: trl.S{
 					// "en": "Subordinated&nbsp;/<br>&nbsp;&nbsp;Mezzanine&nbsp;/<br>&nbsp;&nbsp;&nbsp;Other",
-					"en": "<span style='font-size:85%'>Subordinated<br>   &nbsp;&nbsp;Mezzanine<br>  &nbsp;&nbsp;&nbsp;&nbsp;Other<span>",
-					"de": "Subordinated&nbsp;/&nbsp;Mezzanine&nbsp;/&nbsp;Other",
+					// "en": "<span style='font-size:85%'>Subordinated<br>   &nbsp;&nbsp;Mezzanine<br>  &nbsp;&nbsp;&nbsp;&nbsp;Other<span>",
+					"en": "Subordinated",
+					"de": "Subordinated",
 				},
 			},
 		},
@@ -261,6 +262,29 @@ var PDSLbls = map[string][]trl.S{
 	// },
 	"improveDecline1-5-prev": {
 		{
+			"en": "bad&nbsp;&nbsp;&nbsp;&nbsp;",
+			"de": "bad&nbsp;&nbsp;&nbsp;&nbsp;",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			// yes - its terrible
+			"en": "satis&shy;factory",
+			"de": "satis&shy;factory",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			"en": "&nbsp;&nbsp;good",
+			"de": "&nbsp;&nbsp;good",
+		},
+	},
+	"improveDecline1-5-prev-spec": {
+		{
 			"en": "un&shy;attrac&shy;tive",
 			"de": "un&shy;attrac&shy;tive",
 		},
@@ -375,6 +399,16 @@ var suffixInvestedCapital = trl.S{
 var suffixPercent = trl.S{
 	"en": "%",
 	"de": "%",
+}
+
+var suffixDebtService = trl.S{
+	"en": "x debt service",
+	"de": "x debt service",
+}
+
+var suffixInterestPayment = trl.S{
+	"en": "x interest payment",
+	"de": "x interest payment",
 }
 
 var suffixNumDeals = trl.S{

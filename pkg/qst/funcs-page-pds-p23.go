@@ -9,16 +9,16 @@ import (
 // page23 is deactivated
 
 func pdsPage23AC1(q *QuestionnaireT, page *pageT) error {
-	return pdsPage23(q, page, 0)
+	return UNUSEDpdsPage23(q, page, 0)
 }
 func pdsPage23AC2(q *QuestionnaireT, page *pageT) error {
-	return pdsPage23(q, page, 1)
+	return UNUSEDpdsPage23(q, page, 1)
 }
 func pdsPage23AC3(q *QuestionnaireT, page *pageT) error {
-	return pdsPage23(q, page, 2)
+	return UNUSEDpdsPage23(q, page, 2)
 }
 
-func pdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
+func UNUSEDpdsPage23(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	ac := PDSAssetClasses[acIdx]
 	ac = onlySelectedTranchTypes(q, ac)

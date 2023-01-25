@@ -30,8 +30,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 	}.Outline(fmt.Sprintf("%c2.", rn))
 
 	page.Short = trl.S{
-		"en": fmt.Sprintf("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
-		"de": fmt.Sprintf("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
+		"en": ("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
+		"de": ("<b> &nbsp;<br> &nbsp; </b> <br>Repaid Loans"),
 	}
 
 	page.CounterProgress = fmt.Sprintf("%c2", rn)
@@ -62,8 +62,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page21Lbls := []trl.S{
 		{
-			"en": `Volume of realized loans`,
-			"de": `Volume of realized loans`,
+			"en": `Volume of repaid loans`,
+			"de": `Volume of repaid loans`,
 		},
 		{
 			"en": `Time to maturity`,
@@ -89,8 +89,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Please state the average time to repayment of loans repaid in [quarter-1].`,
 		},
 		{
-			"en": `Please state the average realized Gross Interenal Rate of Return (IRR) of loans repaid in [quarter-1].`,
-			"de": `Please state the average realized Gross Interenal Rate of Return (IRR) of loans repaid in [quarter-1].`,
+			"en": `Please state the average realized Gross Internal Rate of Return (IRR) of loans repaid in [quarter-1].`,
+			"de": `Please state the average realized Gross Internal Rate of Return (IRR) of loans repaid in [quarter-1].`,
 		},
 		{
 			"en": `Please state the average realized Gross Multiple on Invested Capital (MOIC) of loans repaid in [quarter-1].`,
@@ -124,6 +124,7 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 	}
 
 	if acIdx == 1 || acIdx == 2 {
+
 		// option four omitted
 		red := len(page21Inputs) - 1
 		createRows(

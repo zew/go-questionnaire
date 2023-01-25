@@ -316,14 +316,13 @@ Bitte versuchen Sie es nochmal.
     Unabhängig davon: Das "magnetische Einschnappen" zwischen <2 und 2-2.5  
     ist jetzt fifty-fifty nach beiden Seiten
 
+* Textänderungen aus der Excel-Datei umgesetzt
 
 ---
 
 
 * range0To175  [0%-0.25%, 0.25%-1.25%, …,1.25%-1.75%, >1.75%] - geht nur als Radio-Gruppe
 * range0To4    [0%-0.5%, 0.5%-1.5%, …,3.5%-4%, >4%]           - geht nur als Radio-Gruppe
-
-* Textänderungen aus der Excel-Datei
 
 
 

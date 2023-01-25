@@ -24,17 +24,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page.ValidationFuncName = "pdsRange"
 
-	// page.Label = trl.S{
-	// 	"en": fmt.Sprintf(`
-	// 				New transactions
-	// 			<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
-	// 			`, ac.Lbl["en"]),
-	// 	"de": fmt.Sprintf(`
-	// 				New transactions
-	// 			<span style='font-size:85%%; font-weight: normal'> &nbsp;&nbsp;&nbsp; (portfolio changes continued: %v)</span>
-	// 			`, ac.Lbl["de"]),
-	// }.Outline(fmt.Sprintf("%c1.", rn))
-
 	page.Label = trl.S{
 		"en": fmt.Sprintf("%v: &nbsp;&nbsp;  Loans issued in %v (continued)", ac.Lbl["en"], q.Survey.Quarter(-1)),
 		"de": fmt.Sprintf("%v: &nbsp;&nbsp;  Loans issued in %v (continued)", ac.Lbl["de"], q.Survey.Quarter(-1)),
@@ -181,6 +170,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		}
 	}
 
+	// 1.3 switch, branch
 	if acIdx == 0 {
 
 		page13Types := []string{
@@ -198,8 +188,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"q13c_opening_leverage",
 			"q13d_ebitda_avg",
 			"q13e_ev_avg",
-			// "q13f_share_sponsored_or_not",
-			// "q13g_share_stepdown",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -289,9 +277,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			// "restricted-text-int",
-			// "restricted-text-int",
-			// "restricted-text-int",
 		}
 		page13Inputs := []string{
 			"q13a_number_covenants",
@@ -306,9 +291,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"q13h_exit_dscr",
 			"q13i_exit_icr",
 			"q13j_exit_yield",
-			// "q13k_num_amortizing",
-			// "q13k_num_developmentrisk",
-			// "q13m_num_marginstepdown",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -353,75 +335,51 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `Expected exit yield`,
 				"de": `Expected exit yield`,
 			},
-			// {
-			// 	"en": `Number of amortizing loans`,
-			// 	"de": `Number of amortizing loans`,
-			// },
-			// {
-			// 	"en": `Number of loans with development risk`,
-			// 	"de": `Number of loans with development risk`,
-			// },
-			// {
-			// 	"en": `Number of loans with margin step down`,
-			// 	"de": `Number of loans with margin step down`,
-			// },
 		}
 
 		page13LblsDescr := []trl.S{
 			{
-				"en": `What is the average number of financial covenants per loan?`,
-				"de": `What is the average number of financial covenants per loan?`,
+				"en": `Please state the average number of financial covenants per loan  for transactions closed in [quarter-1].`,
+				"de": `Please state the average number of financial covenants per loan  for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average contracted maturity?`,
-				"de": `What is the average contracted maturity?`,
+				"en": `Please state the average contracted maturity for transactions closed in [quarter-1].`,
+				"de": `Please state the average contracted maturity for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average opening LTV or LTC?`,
-				"de": `What is the average opening LTV or LTC?`,
+				"en": `Please state the average opening LTV/LTC for transactions closed in [quarter-1].`,
+				"de": `Please state the average opening LTV/LTC for transactions closed in [quarter-1].`,
 			},
 
 			// real estate specific
 			{
-				"en": `What is the average opening DSCR?`,
-				"de": `What is the average opening DSCR?`,
+				"en": `Please state the average opening Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average opening Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average opening interest rate coverage ratio?`,
-				"de": `What is the average opening interest rate coverage ratio?`,
+				"en": `Please state the average opening Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average opening Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average opening debt yield?`,
-				"de": `What is the average opening debt yield?`,
+				"en": `Please state the average average opening debt yield in [quarter-1].`,
+				"de": `Please state the average average opening debt yield in [quarter-1].`,
 			},
 			{
-				"en": `What is the average expected exit LTV or LTC?`,
-				"de": `What is the average expected exit LTV or LTC?`,
+				"en": `Please state the average expected LTV/LTC for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected LTV/LTC for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average expected exit DSCR?`,
-				"de": `What is the average expected exit DSCR?`,
+				"en": `Please state the average expected Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average expected exit interest rate coverage ratio?`,
-				"de": `What is the average expected exit interest rate coverage ratio?`,
+				"en": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average expected exit debt yield?`,
-				"de": `What is the average expected exit debt yield?`,
+				"en": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
 			},
-			// {
-			// 	"en": `Please state the number of amortizing loans.`,
-			// 	"de": `Please state the number of amortizing loans.`,
-			// },
-			// {
-			// 	"en": `Please state the number of loans with development risk.`,
-			// 	"de": `Please state the number of loans with development risk.`,
-			// },
-			// {
-			// 	"en": `Please state the number of transactions with a margin step down.`,
-			// 	"de": `Please state the number of transactions with a margin step down.`,
-			// },
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {
@@ -442,20 +400,16 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			[]*rangeConf{
 				nil,
 				&range0To10,
-
 				&range30To100,
 
 				// real estate specific
-				&range1To5,
-				&range1To5,
-				&range2To10,
+				&range1To5A,
+				&range1To5B,
+				&range2To10Experimental,
 				&range30To100,
-				&range1To5,
-				&range1To5,
-				&range2To10,
-				// nil,
-				// nil,
-				// nil,
+				&range1To5A,
+				&range1To5B,
+				&range2To10Experimental,
 			},
 		)
 	}
@@ -471,8 +425,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			// "restricted-text-int",
-			// "restricted-text-int",
 		}
 		page13Inputs := []string{
 			"q13a_number_covenants",
@@ -483,8 +435,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"q13d_maximum_leverage",
 			"q13e_average_dscr",
 			"q13f_minimum_dscr",
-			// "q13g_num_greenfield_risk",
-			// "q13h_num_margin_step_down",
 		}
 		page13Lbls := []trl.S{
 			{
@@ -513,14 +463,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `Expected minimum DSCR`,
 				"de": `Expected minimum DSCR`,
 			},
-			// {
-			// 	"en": `Number of loans with greenfield risk`,
-			// 	"de": `Number of loans with greenfield risk`,
-			// },
-			// {
-			// 	"en": `Number of loans with margin step down`,
-			// 	"de": `Number of loans with margin step down`,
-			// },
 		}
 
 		page13LblsDescr := []trl.S{
@@ -550,14 +492,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"en": `What is the expected minimum DSCR?`,
 				"de": `What is the expected minimum DSCR?`,
 			},
-			// {
-			// 	"en": `Please state the number of loans with greenfield risk.`,
-			// 	"de": `Please state the number of loans with greenfield risk.`,
-			// },
-			// {
-			// 	"en": `Please state the number of transactions with a margin step down.`,
-			// 	"de": `Please state the number of transactions with a margin step down.`,
-			// },
 		}
 
 		for i := 0; i < len(page13Lbls); i++ {
@@ -584,8 +518,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				&range50To100,
 				&range1To175,
 				&range1To175,
-				// nil,
-				// nil,
 			},
 		)
 	}

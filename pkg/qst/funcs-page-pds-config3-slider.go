@@ -15,19 +15,17 @@ type rangeConf struct {
 
 	CSSType string // CSS file containing variable
 
-	TicksLabels string    // ticks and labels; list elmeents separated by semicolon; pairs separated by colon
+	TicksLabels string    // ticks and labels; list elements separated by semicolon; pairs separated by colon
 	xs          []float64 // range steps, where ticks should appear
 	lbls        []string  // the tick-label; can be empty
 
-	LowerThreshold float64 // below this value, we lock/jump the value to Min,
-	LowerDisplay   string  // display value for min ("<0")
-
+	LowerThreshold    float64 // below this value, we lock/jump the value to Min,
+	LowerDisplay      string  // display value for min ("<0")
 	LowerFirstRegular float64 // first regular lower value
 
-	UpperThreshold float64
-	UpperDisplay   string
-
 	UpperLastRegular float64 // last regular upper value - for suppressing the interval
+	UpperThreshold   float64
+	UpperDisplay     string
 }
 
 func (rc *rangeConf) New(inp *inputT) {
@@ -62,6 +60,7 @@ func (rc *rangeConf) New(inp *inputT) {
 	for _, scaleEl := range scalePartsStr {
 		valLbl := strings.Split(scaleEl, ":")
 		valLbl[0] = strings.ReplaceAll(valLbl[0], ",", ".")
+		valLbl[0] = strings.TrimSpace(valLbl[0]) // leading space causes ParseFloat to return an
 		vl, err := strconv.ParseFloat(valLbl[0], 64)
 		if err != nil {
 			log.Printf("cannot convert range tick %s - %v -\n\t%+v", valLbl[0], err, inp.DynamicFuncParamset)
@@ -148,14 +147,103 @@ func (rc *rangeConf) lowerUpperAttrs() string {
 	)
 }
 
-var range0To100 = rangeConf{
+var range0To175 = rangeConf{
 	Min:    0,
-	Max:    100,
-	Step:   5,
+	Max:    2.0,
+	Step:   0.25,
+	Suffix: suffixPercent,
+	//
+	CSSType: "3",
+	// TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;1.75:1.75;2.0:>1.75`,
+	TicksLabels: `0:0-0.25;  0.25:0.25;  1.25:1.25;  2:>1.75`,
+
+	UpperThreshold:   1.76,
+	UpperDisplay:     ">1.75",
+	UpperLastRegular: 1.75,
+}
+var range1To175 = rangeConf{
+	Min:    1,
+	Max:    2.0,
+	Step:   0.05,
+	Suffix: suffixDebtService,
+	//
+	CSSType:     "3",
+	TicksLabels: `1:1;1.25:1.25;1.5:1.5;1.75:1.75;2:>1.75`,
+
+	UpperThreshold:   1.755,
+	UpperDisplay:     ">1.75",
+	UpperLastRegular: 1.75,
+}
+
+var range0To2a = rangeConf{
+	Min:    0,
+	Max:    2.5,
+	Step:   0.25,
 	Suffix: suffixPercent,
 	//
 	CSSType:     "3",
-	TicksLabels: `0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100`,
+	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+
+	UpperThreshold:   2.1,
+	UpperDisplay:     ">2",
+	UpperLastRegular: 2.0,
+}
+
+// different stepping from range0To2a
+var range0To2b = rangeConf{
+	Min:    0,
+	Max:    2.55, // should be 2.5 but rounding stuff
+	Step:   0.1,
+	Suffix: suffixInvestedCapital,
+	//
+	CSSType:     "3",
+	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+
+	UpperThreshold:   2.1,
+	UpperDisplay:     ">2",
+	UpperLastRegular: 2.0,
+}
+
+var range0To4 = rangeConf{
+	Min:    0,
+	Max:    5,
+	Step:   0.25,
+	Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `0:0;1:1;2:2;3:3;4:4;5:>4`,
+
+	UpperThreshold:   4.1,
+	UpperDisplay:     ">4",
+	UpperLastRegular: 4.0,
+}
+
+var range1To5A = rangeConf{
+	// Min:    1 - 1.5,
+	// Max:    5 + 1.5,
+	Min:    1 - 1.0,
+	Max:    5 + 1.0,
+	Step:   0.25,
+	Suffix: suffixDebtService,
+	//
+	CSSType: "3",
+	// TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
+	TicksLabels: `0:<1;1:1;2:2;3:3;4:4;5:5;6:>5`,
+
+	LowerThreshold:    0.9,
+	LowerDisplay:      "<1",
+	LowerFirstRegular: 1.0,
+
+	UpperThreshold:   5.1,
+	UpperDisplay:     ">5",
+	UpperLastRegular: 5.0,
+}
+
+var range1To5B = rangeConf{}
+
+func init() {
+	range1To5B = range1To5A
+	range1To5B.Suffix = suffixInterestPayment
 }
 
 var range0To10 = rangeConf{
@@ -190,33 +278,40 @@ var range2To10 = rangeConf{
 	UpperLastRegular: 10.0,
 }
 
-var range0To2a = rangeConf{
-	Min:    0,
-	Max:    2.5,
-	Step:   0.25,
+var range2To10Experimental = rangeConf{
+	Min:    1,
+	Max:    10,
+	Step:   0.5,
 	Suffix: suffixPercent,
 	//
 	CSSType:     "3",
-	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+	TicksLabels: `1:<2nt;  2: ;  3:3;   4: ;   5:nt;   5.5:5.5;   6:  ;  7: ;  8:8;  9:nt;  10:>10`,
 
-	UpperThreshold:   2.1,
-	UpperDisplay:     ">2",
-	UpperLastRegular: 2.0,
+	LowerThreshold:    1.9,
+	LowerDisplay:      "<2",
+	LowerFirstRegular: 2.0,
+
+	UpperThreshold:   9.1,
+	UpperDisplay:     ">10",
+	UpperLastRegular: 9.0,
 }
 
-// different stepping
-var range0To2b = rangeConf{
+var rangeEBITDA2x10x = rangeConf{
 	Min:    0,
-	Max:    2.55, // should be 2.5 but rounding stuff
-	Step:   0.1,
-	Suffix: suffixInvestedCapital,
+	Max:    12,
+	Step:   0.5,
+	Suffix: suffixEBITDA,
 	//
 	CSSType:     "3",
-	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+	TicksLabels: `0:<2;2:2;4:4;6:6;8:8;10:10;12:>10`,
 
-	UpperThreshold:   2.1,
-	UpperDisplay:     ">2",
-	UpperLastRegular: 2.0,
+	LowerThreshold:    1.9,
+	LowerDisplay:      "<2",
+	LowerFirstRegular: 2.0,
+
+	UpperThreshold:   10.1,
+	UpperDisplay:     ">10",
+	UpperLastRegular: 10.0,
 }
 
 var range3To20 = rangeConf{
@@ -238,6 +333,24 @@ var range3To20 = rangeConf{
 	UpperLastRegular: 20.0,
 }
 
+var range0To25 = rangeConf{
+	Min:    -5,
+	Max:    30,
+	Step:   0.5,
+	Suffix: suffixPercent,
+	//
+	CSSType:     "3",
+	TicksLabels: `-5:<0;0:0;5:5;10:10;15:15;20:20;25:25;30:>25`,
+
+	LowerThreshold:    -0.1,
+	LowerDisplay:      "<0",
+	LowerFirstRegular: 0.0,
+
+	UpperThreshold:   25.1,
+	UpperDisplay:     ">25",
+	UpperLastRegular: 25.0,
+}
+
 var range3To25 = rangeConf{
 	Min:    -2,
 	Max:    30,
@@ -257,74 +370,6 @@ var range3To25 = rangeConf{
 	UpperLastRegular: 25.0,
 }
 
-var range0To25 = rangeConf{
-	Min:    -5,
-	Max:    30,
-	Step:   0.5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `-5:<0;0:0;5:5;10:10;15:15;20:20;25:25;30:>25`,
-
-	LowerThreshold:    -0.1,
-	LowerDisplay:      "<0",
-	LowerFirstRegular: 0.0,
-
-	UpperThreshold:   25.1,
-	UpperDisplay:     ">25",
-	UpperLastRegular: 25.0,
-}
-
-var range0To4 = rangeConf{
-	Min:    0,
-	Max:    5,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;1:1;2:2;3:3;4:4;5:>4`,
-
-	UpperThreshold:   4.1,
-	UpperDisplay:     ">4",
-	UpperLastRegular: 4.0,
-}
-
-var range1To5 = rangeConf{
-	Min:    1 - 1.5,
-	Max:    5 + 1.5,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
-
-	LowerThreshold:    0.9,
-	LowerDisplay:      "<1",
-	LowerFirstRegular: 1.0,
-
-	UpperThreshold:   5.1,
-	UpperDisplay:     ">5",
-	UpperLastRegular: 5.0,
-}
-
-var rangeEBITDA2x10x = rangeConf{
-	Min:    0,
-	Max:    12,
-	Step:   0.5,
-	Suffix: suffixEBITDA,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:<2;2:2;4:4;6:6;8:8;10:10;12:>10`,
-
-	LowerThreshold:    1.9,
-	LowerDisplay:      "<2",
-	LowerFirstRegular: 2.0,
-
-	UpperThreshold:   10.1,
-	UpperDisplay:     ">10",
-	UpperLastRegular: 10.0,
-}
-
 // _0- 50 mn € in  5 mn€ brackets
 // 50-100 mn € in 10 mn€ brackets
 var rangeEBITDAZero150 = rangeConf{
@@ -341,52 +386,14 @@ var rangeEBITDAZero150 = rangeConf{
 	UpperLastRegular: 150.0,
 }
 
-// 0-500mn €in 10mn€ brackets
-var rangeEV0To500 = rangeConf{
+var range0To100 = rangeConf{
 	Min:    0,
-	Max:    650,
-	Step:   10,
-	Suffix: suffixMillionEuro,
-	//
-	CSSType: "3",
-	// TicksLabels: `0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500;650:>500`,
-	TicksLabels: `0:0;50: ;100:100;150: ;200: ;250: ;300:300;350: ;400: ;450: ;500:500;650:>500`,
-
-	UpperThreshold:   501,
-	UpperDisplay:     ">500",
-	UpperLastRegular: 500.0,
-}
-
-var range50To100 = rangeConf{
-	Min:    30,
-	Max:    120,
-	Step:   10,
+	Max:    100,
+	Step:   5,
 	Suffix: suffixPercent,
 	//
 	CSSType:     "3",
-	TicksLabels: `30:<50;50:50;60:60;70:70;80:80;90:90;100:100;120:>100`,
-
-	LowerThreshold:    49,
-	LowerDisplay:      "<50",
-	LowerFirstRegular: 50.0,
-
-	UpperThreshold:   101,
-	UpperDisplay:     ">100",
-	UpperLastRegular: 100.0,
-}
-
-var range1To175 = rangeConf{
-	Min:  1,
-	Max:  2.0,
-	Step: 0.05,
-	// Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `1:1;1.25:1.25;1.5:1.5;1.75:1.75;2:>1.75`,
-
-	UpperThreshold:   1.755,
-	UpperDisplay:     ">1.75",
-	UpperLastRegular: 1.75,
+	TicksLabels: `0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100`,
 }
 
 var range30To100 = rangeConf{
@@ -407,17 +414,36 @@ var range30To100 = rangeConf{
 	UpperLastRegular: 100.0,
 }
 
-var range0To175 = rangeConf{
-	Min:    0,
-	Max:    2.0,
-	Step:   0.25,
+var range50To100 = rangeConf{
+	Min:    30,
+	Max:    120,
+	Step:   5,
 	Suffix: suffixPercent,
 	//
-	CSSType: "3",
-	// TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;1.75:1.75;2.0:>1.75`,
-	TicksLabels: `0:0-0.25;  0.25:0.25;  1.25:1.25;  2:>1.75`,
+	CSSType:     "3",
+	TicksLabels: `30:<50;50:50;60:60;70:70;80:80;90:90;100:100;120:>100`,
 
-	UpperThreshold:   1.76,
-	UpperDisplay:     ">1.75",
-	UpperLastRegular: 1.75,
+	LowerThreshold:    49,
+	LowerDisplay:      "<50",
+	LowerFirstRegular: 50.0,
+
+	UpperThreshold:   101,
+	UpperDisplay:     ">100",
+	UpperLastRegular: 100.0,
+}
+
+// 0-500mn €in 10mn€ brackets
+var rangeEV0To500 = rangeConf{
+	Min:    0,
+	Max:    650,
+	Step:   10,
+	Suffix: suffixMillionEuro,
+	//
+	CSSType: "3",
+	// TicksLabels: `0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500;650:>500`,
+	TicksLabels: `0:0;50: ;100:100;150: ;200: ;250: ;300:300;350: ;400: ;450: ;500:500;650:>500`,
+
+	UpperThreshold:   501,
+	UpperDisplay:     ">500",
+	UpperLastRegular: 500.0,
 }

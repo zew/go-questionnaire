@@ -207,9 +207,18 @@
     border-right: 1px solid #444;
 }
 
+/* additional border left */
 .input-wrapper-signature-3 .labels span.first { 
     border-left:  3px solid darkgreen;
-    border-left: 1px solid #444;
+    border-left:  1px solid #444;
+}
+
+/* no border */
+.input-wrapper-signature-3 .labels span.suppress-right { 
+    border-right:  none;
+}
+.input-wrapper-signature-3 .labels span.suppress-left {
+    border-left: none;
 }
 
 /* labels */

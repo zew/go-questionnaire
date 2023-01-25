@@ -26,9 +26,10 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	rn := rune(65 + acIdx) // ascii 65 is A; 97 is a
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Qualitative questions", ac.Lbl["en"]),
-		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Qualitative questions", ac.Lbl["de"]),
+		"en": fmt.Sprintf("%v: &nbsp;&nbsp; Market assessment in %v (continued)", ac.Lbl["en"], q.Survey.Quarter(-1)),
+		"de": fmt.Sprintf("%v: &nbsp;&nbsp; Market assessment in %v (continued)", ac.Lbl["de"], q.Survey.Quarter(-1)),
 	}.Outline(fmt.Sprintf("%c3.", rn))
+
 	page.Short = trl.S{
 		"en": fmt.Sprintf("%v<br>quality", ac.Short["en"]),
 		"de": fmt.Sprintf("%v<br>quality", ac.Short["de"]),
@@ -46,24 +47,42 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 	{
 
 		lblMain := trl.S{
-			"en": `What are the main risks for your investment strategy over the next 3&nbsp;months? <br>Please choose three.`,
-			"de": `What are the main risks for your investment strategy over the next 3&nbsp;months? <br>Please choose three.`,
+			"en": `What do you think are the main risks for your investment strategy over the next 3 months? <br>Please rank the top three.`,
+			"de": `What do you think are the main risks for your investment strategy over the next 3 months? <br>Please rank the top three.`,
 		}
 		lblMainDesc := trl.S{
-			"en": `Choose from list - For example: Business cycle, Interest rates, ... , Other (free text)`,
-			"de": `Choose from list - For example: Business cycle, Interest rates, ... , Other (free text)`,
+			"en": `Please choose from list - for example: 
+				business cycle, 
+				interest rates, 
+				inflation/deflation, 
+				regulatory environment, 
+				supply chain disruptions, 
+				health issues (e.g. covid), 
+				demographic change, 
+				other (free text).
+				`,
+			"de": `Please choose from list - for example: 
+				business cycle, 
+				interest rates, 
+				inflation/deflation, 
+				regulatory environment, 
+				supply chain disruptions, 
+				health issues (e.g. covid), 
+				demographic change, 
+				other (free text).
+				`,
 		}
 		lblMain.Append90(lblMainDesc)
-		lblMain.Outline("4.1")
+		lblMain.Outline("3.5")
 
 		inps := []string{
 			"1_business_cycle",
 			"2_interest_rates",
 			"3_inflation_deflation",
-			"4_demographics",
+			"4_regulatory_environment",
 			"5_supply_chains",
 			"6_health_issues",
-			"7_regulatory_environment",
+			"7_demographics",
 			"8_other",
 		}
 
@@ -71,13 +90,13 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"1_business_cycle":         "Business cycle",
 			"2_interest_rates":         "Interest rates",
 			"3_inflation_deflation":    "Inflation/deflation",
-			"4_demographics":           "Demographics",
+			"4_regulatory_environment": "Regulatory environment",
 			"5_supply_chains":          "Supply chains",
 			"6_health_issues":          "Health issues",
-			"7_regulatory_environment": "Regulatory environment",
+			"7_demographics":           "Demographics",
 			"8_other":                  "Other",
 		}
-		prio3Matrix(page, ac, "q41_risks", lblMain, inps, lbls, true)
+		prio3Matrix(page, ac, "q35_risks", lblMain, inps, lbls, true)
 	}
 
 	//
@@ -87,15 +106,15 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 		if acIdx == 0 {
 
 			lblMain := trl.S{
-				"en": `What GICS sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
-				"de": `What GICS sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
+				"en": `What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three. <br>Please rank the top three.`,
+				"de": `What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three. <br>Please rank the top three.`,
 			}
 			lblMainDesc := trl.S{
-				"en": `Choose from sectors based on GICS: Energy, Materials, ... , Real estate`,
-				"de": `Choose from sectors based on GICS: Energy, Materials, ... , Real estate`,
+				"en": `Choose from sectors based on GICS: energy, materials, ... , real estate`,
+				"de": `Choose from sectors based on GICS: energy, materials, ... , real estate`,
 			}
 			lblMain.Append90(lblMainDesc)
-			lblMain.Outline("4.2")
+			lblMain.Outline("3.6")
 
 			inps := []string{
 				"01_energy",
@@ -109,6 +128,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"09_communication_services",
 				"10_utilities",
 				"11_real_estate",
+				"12_other",
 			}
 
 			lbls := map[string]string{
@@ -123,21 +143,22 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"09_communication_services": "Communication services",
 				"10_utilities":              "Utilities",
 				"11_real_estate":            "Real estate",
+				"12_other":                  "Other",
 			}
 
-			prio3Matrix(page, ac, "q42_gicsprio", lblMain, inps, lbls, false)
+			prio3Matrix(page, ac, "q36_gicsprio", lblMain, inps, lbls, true)
 
 		}
 
 		if acIdx == 1 || acIdx == 2 {
 
 			lblMain := trl.S{
-				"en": `What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-				"de": `What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+				"en": `What sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
+				"de": `What sectors do you expect to be most challenging in the next three months? <br>Please rank the top three.`,
 			}
 			lblMainDesc := trl.S{
-				"en": `Choose from sectors: Office, Retail, Hospitality, Residential, Logistics, Other.`,
-				"de": `Choose from sectors: Office, Retail, Hospitality, Residential, Logistics, Other.`,
+				"en": `Choose from sectors: office, retail, hospitality, residential, logistics, other (free text).`,
+				"de": `Choose from sectors: office, retail, hospitality, residential, logistics, other (free text).`,
 			}
 
 			inps := []string{
@@ -161,8 +182,8 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			if acIdx == 2 {
 
 				lblMainDesc = trl.S{
-					"en": `Choose from sectors: Transportation, Power, Renewables, Utilities, Telecoms, Social, Other`,
-					"de": `Choose from sectors: Transportation, Power, Renewables, Utilities, Telecoms, Social, Other`,
+					"en": `Choose from sectors: transportation, power, renewables, utilities, telecoms, social, other (free text)`,
+					"de": `Choose from sectors: transportation, power, renewables, utilities, telecoms, social, other (free text)`,
 				}
 
 				inps = []string{
@@ -188,9 +209,9 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			}
 
 			lblMain.Append90(lblMainDesc)
-			lblMain.Outline("4.2")
+			lblMain.Outline("3.6")
 
-			prio3Matrix(page, ac, "q42_challenge_sectors", lblMain, inps, lbls, false)
+			prio3Matrix(page, ac, "q36_challenge_sectors", lblMain, inps, lbls, true)
 
 		}
 
@@ -207,7 +228,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Please choose the statement that describes most closely the importance of ESG considerations in your investment process.`,
 		}
 		esgImportance1.Append90(desc)
-		esgImportance1.Outline("4.3")
+		esgImportance1.Outline("3.7")
 
 		// rejected at meeting 2022-11-14
 		// rangePercentage(qst.WrapPageT(page), "esg", esgImportance1, "importance2")
@@ -215,7 +236,7 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 		radiosSingleRow(
 			page,
 			ac,
-			"q43_esg_importance",
+			"q37_esg_importance",
 			esgImportance1,
 			mCh3,
 		)

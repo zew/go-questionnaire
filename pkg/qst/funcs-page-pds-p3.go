@@ -45,6 +45,25 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	// dynamically recreate the groups
 	page.Groups = nil
 
+	lblIntro := []trl.S{
+		{
+			"en": `The following questions are related to the developments of the <i>overall European Corporate Direct Lending market</i>.`,
+			"de": `The following questions are related to the developments of the <i>overall European Corporate Direct Lending market</i>.`,
+		},
+		{
+			"en": `The following questions are aimed to capture your views on the developments of the <i>overall European Real Estate Debt market</i>.
+			`,
+			"de": `The following questions are aimed to capture your views on the developments of the <i>overall European Real Estate Debt market</i>.
+			`,
+		},
+		{
+			"en": `The following questions are aimed to capture your views on the developments of the <i>overall Infrastructure Debt market</i>.
+			`,
+			"de": `The following questions are aimed to capture your views on the developments of the <i>overall Infrastructure Debt market</i>.
+			`,
+		},
+	}
+
 	{
 		gr := page.AddGroup()
 		gr.BottomVSpacers = 1
@@ -53,12 +72,7 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Label = trl.S{
-				// "en": `The following questions are aimed to capture the developments of the <i>overall market</i>.`,
-				// "de": `The following questions are aimed to capture the developments of the <i>overall market</i>.`,
-				"en": `The following questions are related to the developments of the <i>overall European Corporate Direct Lending market</i>.`,
-				"de": `The following questions are related to the developments of the <i>overall European Corporate Direct Lending market</i>.`,
-			}
+			inp.Label = lblIntro[acIdx]
 		}
 
 	}
@@ -132,8 +146,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		//
 		{
-			"en": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights, ...)? `,
-			"de": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights, ...)? `,
+			"en": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...)? `,
+			"de": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...)? `,
 		},
 		{
 			"en": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in the coming quarter?`,
@@ -183,13 +197,24 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 		tlbPrev3M.Append90(page3LblsPrevAndPast[2*idx1+0])
 		tlbPrev3M.Outline("a.)")
 
-		radiosLabelsTop(
-			page,
-			ac,
-			inpName+"_past3m",
-			tlbPrev3M,
-			mCh4Prev,
-		)
+		if idx1 != 1 {
+			radiosLabelsTop(
+				page,
+				ac,
+				inpName+"_past3m",
+				tlbPrev3M,
+				mCh4Prev,
+			)
+		} else {
+			radiosLabelsTop(
+				page,
+				ac,
+				inpName+"_past3m",
+				tlbPrev3M,
+				mCh4PrevSpec,
+			)
+
+		}
 
 		lblNext3M := trl.S{
 			"en": "<i>Next</i> 3&nbsp;months",

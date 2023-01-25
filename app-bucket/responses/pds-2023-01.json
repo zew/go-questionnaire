@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3dc1f2dfdd7d93bd03be3f514e33090b46513250acbfbe81aa4199faebb683c4",
+ 	"md_5": "fde84a8977b9e2f8c10d028640867a0b6bbad52ebe06f1f1d4e0620dbbfd4cb0",
  	"lang_codes": [
  		"en"
  	],
@@ -394,8 +394,8 @@
  							"name": "ac1_tt3_q031",
  							"type": "checkbox",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u0026nbsp;/\u0026nbsp;Mez\u0026shy;za\u0026shy;nine\u0026nbsp;/\u0026nbsp;Other",
- 								"en": "\u003cspan style='font-size:90%'\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003cbr\u003e   \u0026nbsp;\u0026nbsp;Mez\u0026shy;za\u0026shy;nine\u003cbr\u003e  \u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;Other\u003cspan\u003e"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

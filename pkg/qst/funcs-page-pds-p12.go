@@ -144,11 +144,11 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page12Types,
 		page12Lbls,
 		[]*rangeConf{
-			&range2To10,
-			&range0To2a,
-			&range3To20,
-			&range0To4,
-			&range3To25,
+			&range2to10a,  // ac[1-3]_q12a
+			&range0Too375, // ac[1-3]_q12b
+			&range25to200, // ac[1-3]_q12c
+			&range0Too375, // ac[1-3]_q12d
+			&range25to250, // ac[1-3]_q12e
 		},
 	)
 
@@ -177,8 +177,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			// "restricted-text-int",
-			// "restricted-text-int",
 		}
 		page13Inputs := []string{
 			"q13a_number_covenants",
@@ -249,13 +247,11 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Types,
 			page13Lbls,
 			[]*rangeConf{
-				nil, // unused
-				&range0To10,
-				&rangeEBITDA2x10x,
-				&rangeEBITDAZero150,
-				&rangeEV0To500,
-				// nil,
-				// nil,
+				nil,          // ac1_q13a
+				&range0Too10, // ac1_q13b
+				&range2to10b, // ac1_q13c
+				&range0To150, // ac1_q13d
+				&range0To500, // ac1_q13e
 			},
 		)
 	}
@@ -396,18 +392,18 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Types,
 			page13Lbls,
 			[]*rangeConf{
-				nil,
-				&range0To10,
-				&range30To100,
+				nil,          // ac2_q13a
+				&range0Too10, // ac2_q13b
+				&range2to10b, // ac2_q13c
 
 				// real estate specific
-				&range1To5A,
-				&range1To5B,
-				&range2To10Experimental,
-				&range30To100,
-				&range1To5A,
-				&range1To5B,
-				&range2To10Experimental,
+				&range075to5a, // ac2_q13d
+				&range075to5b, // ac2_q13e
+				&range2to10a,  // ac2_q13f
+				&range20to100, // ac2_q13g
+				&range075to5a, // ac2_q13h
+				&range075to5b, // ac2_q13i
+				&range2to10a,  // ac2_q13j
 			},
 		)
 	}
@@ -508,14 +504,14 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Types,
 			page13Lbls,
 			[]*rangeConf{
-				nil,
-				&range0To10,
-				&range50To100,
+				nil,           // ac3_q13a
+				&range0Too10,  // ac3_q13b
+				&range50to100, // ac3_q13c
 
 				// infrastruct specific
-				&range50To100,
-				&range1To175,
-				&range1To175,
+				&range50to100, // ac3_q13d
+				&range1to175,  // ac3_q13e
+				&range1to175,  // ac3_q13f
 			},
 		)
 	}

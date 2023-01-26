@@ -1778,13 +1778,13 @@ func (q *QuestionnaireT) KeysValues(cleanse bool, getRangeInfo bool) (keys, vals
 							rangeCfg.New(inp)
 
 							replMin := fmt.Sprint(inp.Min)
-							if rangeCfg.lbls[0][0] == '<' {
-								replMin = rangeCfg.lbls[0]
+							if rangeCfg.ls[0][0] == '<' {
+								replMin = rangeCfg.ls[0]
 							}
 							replMax := fmt.Sprint(inp.Max)
-							ln := len(rangeCfg.lbls) - 1
-							if rangeCfg.lbls[ln][0] == '>' {
-								replMax = rangeCfg.lbls[ln]
+							ln := len(rangeCfg.ls) - 1
+							if rangeCfg.ls[ln][0] == '>' {
+								replMax = rangeCfg.ls[ln]
 							}
 							typ = fmt.Sprintf(
 								"\"%v\n%v--%v\n%v--%v\"",

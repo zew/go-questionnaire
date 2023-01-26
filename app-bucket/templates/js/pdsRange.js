@@ -6,6 +6,7 @@ function dispValue(srcValStr, srcStep){
     // prevent 0.30000000004
     if (incr < 10) {
         incr = Math.round(incr * 1000) / 1000;
+        // incr = Math.round(incr * 10000) / 10000;
     }
 
     let out = ""
@@ -118,46 +119,24 @@ function pdsRangeInput(src) {
 
             // lower and upper threshold
 
-            // lfr - lower first regular
             if (src.dataset.lfr != "" && src.dataset.lfr != "0") {
                 let lfr = parseFloat(src.dataset.lfr);
-                let min = parseFloat(src.getAttribute("min"));
-                let half = (lfr - min) / 2;
                 let srcValFl = parseFloat(src.value);
-                
-                if (srcValFl <= lfr - half) {
+                if (srcValFl <= lfr) {
                     display.value = src.dataset.ld;
                     src.value = src.getAttribute("min");
-                } else if (srcValFl <= lfr - 0.017) {
-                    src.value = src.dataset.lfr;
-                    display.value = dispValue(src.value, src.step);
                 }
             }
 
-            // ulr - upper last regular
             if (src.dataset.ulr != "") {
                 let ulr = parseFloat(src.dataset.ulr);
-                let max = parseFloat(src.getAttribute("max"));
-                let half = (max - ulr) / 2;
                 let srcValFl = parseFloat(src.value);
-
-                if (srcValFl >= ulr + half) {
+                if (srcValFl >= (ulr-0.00001)) {
                     display.value = src.dataset.ud;
                     src.value = src.getAttribute("max");                    
-                } else if (srcValFl >= ulr - 0.017) {
-                    src.value = src.dataset.ulr;
-                    display.value = dispValue(src.value, src.step)
                 }
             }
 
-            // no interval for last regular upper value
-            if (src.dataset.ulr != "") {
-                let ulr = parseFloat(src.dataset.ulr)
-                let srcValFl = parseFloat(src.value);
-                if (srcValFl == ulr) {
-                    display.value = ulr;
-                }
-            }
 
             let catcher = document.getElementById(src.id + "_hidd");
             if (catcher) {

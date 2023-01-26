@@ -11,23 +11,34 @@ import (
 
 type rangeConf struct {
 	Min, Max, Step float64
-	Suffix         trl.S
+	CXLabelTick    string // cx value: label: tick
+	Lower, Upper   string
+
+	Suffix trl.S
 
 	CSSType string // CSS file containing variable
 
-	TicksLabels string // ticks and labels; list elements separated by semicolon; pairs separated by colon
-	CXLabelTick string // cx value: label: tick
+	xs []float64 // range step, where label or tick should appear
+	ls []string  // label under tick; can be empty
+	ts []string  // draw tick or not
 
-	xs   []float64 // range steps, where ticks should appear
-	lbls []string  // the tick-label; can be empty
+	cxMin, cxMax float64
+}
 
-	LowerThreshold    float64 // below this value, we lock/jump the value to Min,
-	LowerDisplay      string  // display value for min ("<0")
-	LowerFirstRegular float64 // first regular lower value
+func (rc rangeConf) SerializeExtendedConfig() string {
 
-	UpperLastRegular float64 // last regular upper value - for suppressing the interval
-	UpperThreshold   float64
-	UpperDisplay     string
+	lowerUpper := fmt.Sprintf(
+		"%v;%v",
+		rc.Lower,
+		rc.Upper,
+	)
+
+	return fmt.Sprintf(
+		"%v--%v--%v",
+		rc.CSSType,
+		rc.CXLabelTick,
+		lowerUpper,
+	)
 }
 
 func (rc *rangeConf) New(inp *inputT) {
@@ -35,17 +46,21 @@ func (rc *rangeConf) New(inp *inputT) {
 	if rc == nil {
 		*rc = rangeConf{}
 		rc.xs = []float64{}
-		rc.lbls = []string{}
+		rc.ls = []string{}
 	}
 
 	rc.Min = inp.Min
 	rc.Max = inp.Max
 	rc.Step = inp.Step
+
 	rc.Suffix = inp.Suffix
+	if rc.Suffix == nil {
+		log.Printf("invalid range config string - no suffix %s\n\t%s", inp.Name, inp.DynamicFuncParamset)
+	}
 
 	tokensL1 := strings.Split(inp.DynamicFuncParamset, "--") // tokens level 1
 	if len(tokensL1) != 3 {
-		log.Panicf("invalid range config string %s - %s", inp.Name, inp.DynamicFuncParamset)
+		log.Printf("invalid range config string %s\n\t%s", inp.Name, inp.DynamicFuncParamset)
 		return
 	}
 
@@ -53,401 +68,200 @@ func (rc *rangeConf) New(inp *inputT) {
 	//
 	//
 	rc.CSSType = tokensL1[0]
+	rc.CSSType = "3"
 
 	//
 	//
 	//
-	rc.TicksLabels = tokensL1[1]
-	scalePartsStr := strings.Split(rc.TicksLabels, ";")
+	rc.CXLabelTick = tokensL1[1]
+	scalePartsStr := strings.Split(rc.CXLabelTick, ";")
 	for _, scaleEl := range scalePartsStr {
-		valLbl := strings.Split(scaleEl, ":")
-		valLbl[0] = strings.ReplaceAll(valLbl[0], ",", ".")
-		valLbl[0] = strings.TrimSpace(valLbl[0]) // leading space causes ParseFloat to return an
-		vl, err := strconv.ParseFloat(valLbl[0], 64)
+		triple := strings.Split(scaleEl, ":")
+
+		triple[0] = strings.ReplaceAll(triple[0], ",", ".")
+		triple[0] = strings.TrimSpace(triple[0]) // leading space causes ParseFloat to return an
+		cxFl, err := strconv.ParseFloat(triple[0], 64)
 		if err != nil {
-			log.Printf("cannot convert range tick %s - %v -\n\t%+v", valLbl[0], err, inp.DynamicFuncParamset)
+			log.Printf("cannot convert range tick %s - %v -\n\t%+v", triple[0], err, inp.DynamicFuncParamset)
 		}
-		rc.xs = append(rc.xs, vl)
-		rc.lbls = append(rc.lbls, valLbl[1])
+
+		rc.xs = append(rc.xs, cxFl)
+
+		triple[1] = strings.ReplaceAll(triple[1], ">=", "≥")
+		rc.ls = append(rc.ls, triple[1])
+		rc.ts = append(rc.ts, strings.TrimSpace(triple[2]))
 	}
 
 	//
 	//
 	//
 	lu := strings.Split(tokensL1[2], ";") // lower upper - four values
+	if len(lu) != 2 {
+		log.Printf("lower upper invalid  %s \n\t%+v", inp.Name, inp.DynamicFuncParamset)
+		return
+	}
+	rc.Lower = lu[0]
+	rc.Upper = lu[1]
+
+	last := len(rc.xs) - 1
+
+	if rc.Lower == "" {
+		rc.Lower = rc.ls[0]
+	}
+	rc.cxMin = rc.xs[0]
+
+	if rc.Upper == "" {
+		rc.Upper = rc.ls[last]
+	}
+	rc.cxMax = rc.xs[last]
 	//
-	lu[0] = strings.ReplaceAll(lu[0], ",", ".")
-	lowerFlt, err := strconv.ParseFloat(lu[0], 64)
-	if err != nil {
-		log.Printf("cannot convert lower thresh %s - %v -\n\t%+v", lu[0], err, inp.DynamicFuncParamset)
-	}
-	rc.LowerThreshold = lowerFlt
-	rc.LowerDisplay = lu[1]
-	//
-	lu[2] = strings.ReplaceAll(lu[2], ",", ".")
-	upperFlt, err := strconv.ParseFloat(lu[2], 64)
-	if err != nil {
-		log.Printf("cannot convert upper thresh %s - %v -\n\t%+v", lu[0], err, inp.DynamicFuncParamset)
-	}
-	rc.UpperThreshold = upperFlt
-	rc.UpperDisplay = lu[3]
 
-	//
-	lu[4] = strings.ReplaceAll(lu[4], ",", ".")
-	lowerFirstRegular, err := strconv.ParseFloat(lu[4], 64)
-	if err != nil {
-		log.Printf("cannot convert first regular lower  %s - %v -\n\t%+v", lu[4], err, inp.DynamicFuncParamset)
-	}
-	rc.LowerFirstRegular = lowerFirstRegular
-
-	lu[5] = strings.ReplaceAll(lu[5], ",", ".")
-	upperLastRegular, err := strconv.ParseFloat(lu[5], 64)
-	if err != nil {
-		log.Printf("cannot convert last regular upper  %s - %v -\n\t%+v", lu[5], err, inp.DynamicFuncParamset)
-	}
-	rc.UpperLastRegular = upperLastRegular
-
-}
-
-func (rc rangeConf) SerializeExtendedConfig() string {
-	lowerUpper := fmt.Sprintf(
-		"%5.3f;%v;%5.3f;%v;%5.3f;%5.3f",
-
-		rc.LowerThreshold,
-		rc.LowerDisplay,
-
-		rc.UpperThreshold,
-		rc.UpperDisplay,
-
-		rc.LowerFirstRegular,
-		rc.UpperLastRegular,
-	)
-	return fmt.Sprintf("%v--%v--%v", rc.CSSType, rc.TicksLabels, lowerUpper)
 }
 
 func (rc *rangeConf) lowerUpperAttrs() string {
-
-	lt := fmt.Sprint(rc.LowerThreshold)
-	if rc.Min == 0 && rc.LowerThreshold == 0 {
-		lt = ""
-	}
-
-	ut := fmt.Sprint(rc.UpperThreshold)
-	if rc.Max == 0 && rc.UpperThreshold == 0 {
-		ut = ""
-	}
-
 	return fmt.Sprintf(
-		" data-lt='%v' data-ld='%v' data-lfr='%v'     data-ut='%v' data-ud='%v' data-ulr='%v'  ",
-		lt,
-		rc.LowerDisplay,
-		rc.LowerFirstRegular,
+		"  data-ld='%v' data-lfr='%.3f'       data-ud='%v' data-ulr='%.3f'  ",
+		rc.Lower,
+		rc.cxMin,
 		//
-		ut,
-		rc.UpperDisplay,
-		rc.UpperLastRegular,
+		rc.Upper,
+		rc.cxMax,
 	)
 }
 
-var range0To175 = rangeConf{
-	Min:    0,
-	Max:    2.0,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType: "3",
-	// TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;1.75:1.75;2.0:>1.75`,
-	TicksLabels: `0:0-0.25;  0.25:0.25;  1.25:1.25;  2:>1.75`,
+//
+//
+//
 
-	UpperThreshold:   1.76,
-	UpperDisplay:     ">1.75",
-	UpperLastRegular: 1.75,
-}
-var range1To175 = rangeConf{
-	Min:    1,
-	Max:    2.0,
-	Step:   0.05,
-	Suffix: suffixDebtService,
-	//
-	CSSType:     "3",
-	TicksLabels: `1:1;1.25:1.25;1.5:1.5;1.75:1.75;2:>1.75`,
+var (
+	range0Too10 = rangeConf{
+		Min:         0,
+		Max:         10,
+		Step:        0.5,
+		CXLabelTick: `0:0:t; 1: :t; 2:2:t; 3: :t; 4:4:t; 5: :t; 6:6:t; 7: :t; 8:8:t; 9: :t; 10:>=10:t`,
+		Suffix:      suffixYears,
+	}
 
-	UpperThreshold:   1.755,
-	UpperDisplay:     ">1.75",
-	UpperLastRegular: 1.75,
-}
+	range0To150 = rangeConf{
+		Min:         0,
+		Max:         150,
+		Step:        5,
+		CXLabelTick: `0:0:t; 25: :t; 50:50:t; 75: :t; 100:100:t; 125: :t; 150:>=150:t`,
+		Suffix:      suffixMillionEuro,
+	}
 
-var range0To2a = rangeConf{
-	Min:    0,
-	Max:    2.5,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+	range0To2 = rangeConf{
+		Min:         0,
+		Max:         2.0,
+		Step:        0.1,
+		CXLabelTick: `0:0:t; 0.5:0.5:t; 1:1:t; 1.5:1.5:t; 2:>=2:t`,
+		Suffix:      suffixInvestedCapital,
+	}
 
-	UpperThreshold:   2.1,
-	UpperDisplay:     ">2",
-	UpperLastRegular: 2.0,
-}
+	range0Too375 = rangeConf{
+		Min:         -0.25,
+		Max:         3.75,
+		Step:        0.5,
+		CXLabelTick: `-0.25:0:t; 0.25: :t; 0.75:0.75:t; 1.25: :t; 1.75:1.75:t; 2.25: :t; 2.75:2.75:t; 3.25: :t; 3.75:>=3.75:t`,
+		Lower:       "0 - <0.25",
+		Suffix:      suffixPercent,
+	}
 
-// different stepping from range0To2a
-var range0To2b = rangeConf{
-	Min:    0,
-	Max:    2.55, // should be 2.5 but rounding stuff
-	Step:   0.1,
-	Suffix: suffixInvestedCapital,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;0.5:0.5;1:1;1.5:1.5;2:2;2.5:>2`,
+	range0To500 = rangeConf{
+		Min:         0,
+		Max:         500,
+		Step:        10,
+		CXLabelTick: `0:0:t; 50: :t; 100:100:t; 150: :t; 200:200:t; 250: :t; 300:300:t; 350: :t; 400:400:t; 450: :t; 500:>=500:t`,
+		Suffix:      suffixMillionEuro,
+	}
 
-	UpperThreshold:   2.1,
-	UpperDisplay:     ">2",
-	UpperLastRegular: 2.0,
-}
+	rangeMin05To25 = rangeConf{
+		Min:         -0.5,
+		Max:         25.0,
+		Step:        0.5,
+		CXLabelTick: `-0.5:<0:nt; 5:5:t; 10:10:t; 15:15:t; 20:20:t; 25:>=25:t`,
+		Lower:       "<0",
+		Suffix:      suffixPercent,
+	}
 
-var range0To4 = rangeConf{
-	Min:    0,
-	Max:    5,
-	Step:   0.25,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;1:1;2:2;3:3;4:4;5:>4`,
+	range075to5a = rangeConf{
+		Min:  0.5,
+		Max:  5,
+		Step: 0.5,
+		// CXLabelTick: `0.75:<1:nt; 1: :t; 1.5: :t; 2:2:t; 2.5: :t; 3:3:t; 3.5: :t; 4:4:t; 4.5: :t; 5:>=5:t`,
+		CXLabelTick: `0.5:<1:nt;   1.0: :t;   1.5: :t;   2.0:2:t;   2.5: :t;   3.0:3:t;   3.5: :t;   4.0:4:t;   4.5: :t;   5.0:>=5:t`,
+		Lower:       "<1",
+		Suffix:      suffixDebtService, // only difference to range075to5b
+	}
 
-	UpperThreshold:   4.1,
-	UpperDisplay:     ">4",
-	UpperLastRegular: 4.0,
-}
+	range075to5b = rangeConf{
+		Min:  0.5,
+		Max:  5,
+		Step: 0.5,
+		// CXLabelTick: `0.75:<1:nt; 1: :t; 1.5: :t; 2:2:t; 2.5: :t; 3:3:t; 3.5: :t; 4:4:t; 4.5: :t; 5:>=5:t`,
+		CXLabelTick: `0.5:<1:nt;   1.0: :t;   1.5: :t;   2.0:2:t;   2.5: :t;   3.0:3:t;   3.5: :t;   4.0:4:t;   4.5: :t;   5.0:>=5:t`,
+		Lower:       "<1",
+		Suffix:      suffixInterestPayment, // only difference to range075to5a
+	}
 
-var range1To5A = rangeConf{
-	// Min:    1 - 1.5,
-	// Max:    5 + 1.5,
-	Min:    1 - 1.0,
-	Max:    5 + 1.0,
-	Step:   0.25,
-	Suffix: suffixDebtService,
-	//
-	CSSType: "3",
-	// TicksLabels: `-0.5:<1;1:1;2:2;3:3;4:4;5:5;6.5:>5`,
-	TicksLabels: `0:<1;1:1;2:2;3:3;4:4;5:5;6:>5`,
+	range1to175 = rangeConf{
+		Min:         1,
+		Max:         1.75 + 0.01, // rounding trouble
+		Step:        0.05,
+		CXLabelTick: `1:1:t; 1.25:1.25:t; 1.5:1.5:t; 1.75:>=1.75:t`,
+		Suffix:      suffixDebtService, // only difference to range075to5a
+		Upper:       "≥1.75",
+		// Upper:       ">=1.75",
+	}
 
-	LowerThreshold:    0.9,
-	LowerDisplay:      "<1",
-	LowerFirstRegular: 1.0,
+	range2to10a = rangeConf{
+		Min:         1.5,
+		Max:         10,
+		Step:        0.5,
+		CXLabelTick: `1.5:<2:nt; 2: :t; 3:3:t; 4: :t; 5: :t; 5.5:5.5:nt; 6: :t; 7: :t; 8:8:t; 9: :t; 10:>=10:t`,
+		Lower:       "<2",
+		Suffix:      suffixPercent,
+	}
+	range2to10b = rangeConf{
+		Min:         1.5,
+		Max:         10,
+		Step:        0.5,
+		CXLabelTick: `1.5:<2:nt; 2: :t; 3:3:t; 4: :t; 5: :t; 5.5:5.5:nt; 6: :t; 7: :t; 8:8:t; 9: :t; 10:>=10:t`,
+		Lower:       "<2",
+		Suffix:      suffixEBITDA,
+	}
 
-	UpperThreshold:   5.1,
-	UpperDisplay:     ">5",
-	UpperLastRegular: 5.0,
-}
+	// badly named
+	range25to200 = rangeConf{
+		Min:         2,
+		Max:         20,
+		Step:        0.5,
+		CXLabelTick: `2:<2.5:nt; 5:5:t; 10:10:t; 15:15:t; 20:>=20:t`,
+		Suffix:      suffixPercent,
+	}
 
-var range1To5B = rangeConf{}
+	// badly named
+	range25to250 = rangeConf{
+		Min:         2,
+		Max:         25,
+		Step:        0.5,
+		CXLabelTick: `2:<2.5:nt; 5:5:t; 10:10:t; 15:15:t; 20:20:t; 25:>=25:t`,
+		Suffix:      suffixPercent,
+	}
 
-func init() {
-	range1To5B = range1To5A
-	range1To5B.Suffix = suffixInterestPayment
-}
+	range20to100 = rangeConf{
+		Min:         20,
+		Max:         95,
+		Step:        5,
+		CXLabelTick: `20:<25:nt; 25: :t; 50:50:t; 75:75:t; 95:100:t`,
+		Suffix:      suffixPercent,
+	}
 
-var range0To10 = rangeConf{
-	Min:    0,
-	Max:    12,
-	Step:   0.5,
-	Suffix: suffixYears,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;2:2;4:4;6:6;8:8;10:10;12:>10`,
-
-	CXLabelTick: `0:0:t; 1: :t; 2:2:t; 3: :t; 4:t:t; 5: :t; 6:6:t; 7: :t; 8:8:t; 9: :t; 10:>=10:t`,
-
-	UpperThreshold:   10.1,
-	UpperDisplay:     ">10",
-	UpperLastRegular: 10.0,
-}
-
-var range2To10 = rangeConf{
-	Min:    0,
-	Max:    12,
-	Step:   0.5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:<2;2:2;3: ;4:4;5: ;6:6;7: ;8:8;9: ;10:10;12:>10`,
-
-	LowerThreshold:    1.9,
-	LowerDisplay:      "<2",
-	LowerFirstRegular: 2.0,
-
-	UpperThreshold:   10.1,
-	UpperDisplay:     ">10",
-	UpperLastRegular: 10.0,
-}
-
-var range2To10Experimental = rangeConf{
-	Min:    1,
-	Max:    10,
-	Step:   0.5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `1:<2nt;  2: ;  3:3;   4: ;   5:nt;   5.5:5.5;   6:  ;  7: ;  8:8;  9:nt;  10:>10`,
-
-	LowerThreshold:    1.9,
-	LowerDisplay:      "<2",
-	LowerFirstRegular: 2.0,
-
-	UpperThreshold:   9.1,
-	UpperDisplay:     ">10",
-	UpperLastRegular: 9.0,
-}
-
-var rangeEBITDA2x10x = rangeConf{
-	Min:    0,
-	Max:    12,
-	Step:   0.5,
-	Suffix: suffixEBITDA,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:<2;2:2;4:4;6:6;8:8;10:10;12:>10`,
-
-	LowerThreshold:    1.9,
-	LowerDisplay:      "<2",
-	LowerFirstRegular: 2.0,
-
-	UpperThreshold:   10.1,
-	UpperDisplay:     ">10",
-	UpperLastRegular: 10.0,
-}
-
-var range3To20 = rangeConf{
-	Min:    -2,
-	Max:    25,
-	Step:   0.5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:>20`,
-	// TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:>20`,
-
-	LowerThreshold:    2.9,
-	LowerDisplay:      "<3",
-	LowerFirstRegular: 3.0,
-
-	UpperThreshold:   20.1,
-	UpperDisplay:     ">20",
-	UpperLastRegular: 20.0,
-}
-
-var range0To25 = rangeConf{
-	Min:    -5,
-	Max:    30,
-	Step:   0.5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `-5:<0;0:0;5:5;10:10;15:15;20:20;25:25;30:>25`,
-
-	LowerThreshold:    -0.1,
-	LowerDisplay:      "<0",
-	LowerFirstRegular: 0.0,
-
-	UpperThreshold:   25.1,
-	UpperDisplay:     ">25",
-	UpperLastRegular: 25.0,
-}
-
-var range3To25 = rangeConf{
-	Min:    -2,
-	Max:    30,
-	Step:   0.5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `-2:<3;3:3;5:5;10:10;15:15;20:20;25:25;30:>25`,
-	// TicksLabels: `-2:<3;3: ;5:5;10:10;15:15;20:20;25:25;30:>25`,
-
-	LowerThreshold:    2.9,
-	LowerDisplay:      "<3",
-	LowerFirstRegular: 3.0,
-
-	UpperThreshold:   25.1,
-	UpperDisplay:     ">25",
-	UpperLastRegular: 25.0,
-}
-
-// _0- 50 mn € in  5 mn€ brackets
-// 50-100 mn € in 10 mn€ brackets
-var rangeEBITDAZero150 = rangeConf{
-	Min:    0,
-	Max:    200,
-	Step:   5,
-	Suffix: suffixMillionEuro,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;25: ;50:50;75: ;100:100;125: ;150:150;200:>150`,
-
-	UpperThreshold:   151,
-	UpperDisplay:     ">150",
-	UpperLastRegular: 150.0,
-}
-
-var range0To100 = rangeConf{
-	Min:    0,
-	Max:    100,
-	Step:   5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100`,
-}
-
-var range30To100 = rangeConf{
-	Min:    30 - 20,
-	Max:    100 + 20,
-	Step:   5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `10:<30;30:30;50:50;75:75;100:100;120:>100`,
-
-	LowerThreshold:    29,
-	LowerDisplay:      "<30",
-	LowerFirstRegular: 30.0,
-
-	UpperThreshold:   101,
-	UpperDisplay:     ">100",
-	UpperLastRegular: 100.0,
-}
-
-var range50To100 = rangeConf{
-	Min:    30,
-	Max:    120,
-	Step:   5,
-	Suffix: suffixPercent,
-	//
-	CSSType:     "3",
-	TicksLabels: `30:<50;50:50;60:60;70:70;80:80;90:90;100:100;120:>100`,
-
-	LowerThreshold:    49,
-	LowerDisplay:      "<50",
-	LowerFirstRegular: 50.0,
-
-	UpperThreshold:   101,
-	UpperDisplay:     ">100",
-	UpperLastRegular: 100.0,
-}
-
-// 0-500mn €in 10mn€ brackets
-var rangeEV0To500 = rangeConf{
-	Min:    0,
-	Max:    650,
-	Step:   10,
-	Suffix: suffixMillionEuro,
-	//
-	CSSType: "3",
-	// TicksLabels: `0:0;50: ;100:100;150: ;200:200;250: ;300:300;350: ;400:400;450: ;500:500;650:>500`,
-	TicksLabels: `0:0;50: ;100:100;150: ;200: ;250: ;300:300;350: ;400: ;450: ;500:500;650:>500`,
-
-	UpperThreshold:   501,
-	UpperDisplay:     ">500",
-	UpperLastRegular: 500.0,
-}
+	range50to100 = rangeConf{
+		Min:         45,
+		Max:         95,
+		Step:        5,
+		CXLabelTick: `45:<50:nt; 75:75:t; 95:100:t`,
+		Suffix:      suffixPercent,
+	}
+)

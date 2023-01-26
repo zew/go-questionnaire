@@ -471,6 +471,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 		var rangeCfg rangeConf
 		rangeCfg.New(&inp)
+		// log.Print(util.IndentedDump(rangeCfg))
 
 		// range-input wrapper
 		// display flex, column-reverse
@@ -511,18 +512,14 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			upper = humanizeRangeDisplay(upper)
 			dispVal = fmt.Sprintf("%v – <%v", lower, upper)
 
-			if resp == rangeCfg.UpperLastRegular {
-				dispVal = fmt.Sprintf("%v", lower)
+			// render response value
+			if resp == rangeCfg.cxMin {
+				dispVal = fmt.Sprintf("%v", rangeCfg.Lower)
+			}
+			if resp == rangeCfg.cxMax {
+				dispVal = fmt.Sprintf("%v", rangeCfg.Upper)
 			}
 
-			if resp <= rangeCfg.LowerThreshold && rangeCfg.LowerDisplay != "" {
-				dispVal = rangeCfg.LowerDisplay
-
-			}
-
-			if resp >= rangeCfg.UpperThreshold && rangeCfg.UpperDisplay != "" {
-				dispVal = rangeCfg.UpperDisplay
-			}
 		}
 
 		//
@@ -853,7 +850,7 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 	itr2 := -1
 
 	ctr := 0.0
-	noTick := 0
+	// noTick := 0
 
 	for stp := inp.Min; stp <= inp.Max; stp += inp.Step {
 
@@ -869,13 +866,7 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 
 			itr2++
 
-			lbl := rc.lbls[0]
-			if strings.HasSuffix(lbl, "nt") {
-				lbl = lbl[:len(lbl)-2]
-				noTick = 1
-			} else {
-				noTick = 0
-			}
+			lbl := rc.ls[0]
 			// label - width 0
 			fmt.Fprintf(
 				core,
@@ -894,10 +885,13 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 				if itr2 == 0 {
 					tickClass = " class='tick first' "
 				}
-				if noTick == 1 {
-					tickClass = " class='tick suppress-right' "
-					if itr2 == 0 {
-						tickClass = " class='tick first suppress-left' "
+
+				if len(rc.ts) > 0 {
+					if rc.ts[1] == "nt" || rc.ts[1] == "" {
+						tickClass = " class='tick suppress-right' "
+						if itr2 == 0 {
+							tickClass = " class='tick first suppress-left' "
+						}
 					}
 				}
 
@@ -908,8 +902,9 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 					fmt.Sprintf("%6.2f", pct), // percentage width
 				)
 
-				rc.xs = rc.xs[1:]     // chop off leading ticks
-				rc.lbls = rc.lbls[1:] // ... and labels
+				rc.xs = rc.xs[1:] // chop off cx steps
+				rc.ls = rc.ls[1:] // ... and labels
+				rc.ts = rc.ts[1:] // ... and ticks
 				ws1 = ws1[1:]
 			}
 

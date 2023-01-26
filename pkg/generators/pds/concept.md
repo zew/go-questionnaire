@@ -358,4 +358,5 @@ https://localhost:8083/survey?full-dynamic-content=true
 
 span class font-size-90-block style margin-left - 0.6rem - margin-top - 0.3rem
 span class font-size-90-block 
+span
 8209 - 

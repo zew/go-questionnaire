@@ -393,8 +393,8 @@ var suffixEBITDA = trl.S{
 }
 
 var suffixInvestedCapital = trl.S{
-	"en": "x invested cap.",
-	"de": "x invested cap.",
+	"en": "x Invested Cap.",
+	"de": "x Invested Cap.",
 }
 var suffixPercent = trl.S{
 	"en": "%",
@@ -402,13 +402,13 @@ var suffixPercent = trl.S{
 }
 
 var suffixDebtService = trl.S{
-	"en": "x debt service",
-	"de": "x debt service",
+	"en": "x Debt Service",
+	"de": "x Debt Service",
 }
 
 var suffixInterestPayment = trl.S{
-	"en": "x interest payment",
-	"de": "x interest payment",
+	"en": "x Interest Payment",
+	"de": "x Interest Payment",
 }
 
 var suffixNumDeals = trl.S{

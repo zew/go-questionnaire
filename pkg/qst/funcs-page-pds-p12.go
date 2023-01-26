@@ -78,10 +78,9 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page12Inputs := []string{
 		"q12a_cash_margin",
 		"q12b_interest_floor",
-		"q12c_upfront_fee",
-		"q12d_fixed_rate_coupon",
+		"q12c_fixed_rate_coupon",
+		"q12d_upfront_fee",
 		"q12e_irr_expected",
-		// "q12f_share_floating_rate",
 	}
 	page12Lbls := []trl.S{
 		{
@@ -150,7 +149,6 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			&range3To20,
 			&range0To4,
 			&range3To25,
-			// &sliderPctZeroHundredWide,
 		},
 	)
 

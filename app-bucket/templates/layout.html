@@ -83,6 +83,47 @@
 	</p>
 </div>
 
+{{if ne (.Req.Form.Get "redirected_console_log") ""}}
+
+	<div id="debugDiv" style="
+				font-family: monospace; font-size: 85%; line-height: 110%; 
+				position: absolute;
+				left: 10px; top: 10px;
+				width: 90%;
+				max-height: 20rem;
+				max-height: 10rem;
+				z-index: 110;
+				overflow-y: scroll; 
+				background-color: rgba(207, 136, 135, .22);
+			">
+			console
+	</div>
+	<script>
+		var debugDiv = document.getElementById("debugDiv");
+		if (typeof console != "undefined")
+			if (typeof console.log != 'undefined')
+				console.olog = console.log;
+			else
+				console.olog = function () { };
+
+		console.log = function (message) {
+			var args2 = [];
+			for (var i = 0; i < arguments.length; i++) {
+				args2.push(arguments[i]);
+			}			
+			console.olog(args2.join(", "));
+			debugDiv.innerHTML += args2.join(", ") + '<br>';
+			debugDiv.scrollTop = debugDiv.scrollHeight;			
+			// console.olog(message);
+		};
+		console.error = console.debug = console.info = console.log
+		// console.log("redirected?");
+	</script>
+
+
+{{end}}
+
+
 {{ template "nav-css-2020.html" . }}
 
 <!--	 

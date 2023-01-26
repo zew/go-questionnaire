@@ -15,9 +15,11 @@ type rangeConf struct {
 
 	CSSType string // CSS file containing variable
 
-	TicksLabels string    // ticks and labels; list elements separated by semicolon; pairs separated by colon
-	xs          []float64 // range steps, where ticks should appear
-	lbls        []string  // the tick-label; can be empty
+	TicksLabels string // ticks and labels; list elements separated by semicolon; pairs separated by colon
+	CXLabelTick string // cx value: label: tick
+
+	xs   []float64 // range steps, where ticks should appear
+	lbls []string  // the tick-label; can be empty
 
 	LowerThreshold    float64 // below this value, we lock/jump the value to Min,
 	LowerDisplay      string  // display value for min ("<0")
@@ -254,6 +256,8 @@ var range0To10 = rangeConf{
 	//
 	CSSType:     "3",
 	TicksLabels: `0:0;2:2;4:4;6:6;8:8;10:10;12:>10`,
+
+	CXLabelTick: `0:0:t; 1: :t; 2:2:t; 3: :t; 4:t:t; 5: :t; 6:6:t; 7: :t; 8:8:t; 9: :t; 10:>=10:t`,
 
 	UpperThreshold:   10.1,
 	UpperDisplay:     ">10",

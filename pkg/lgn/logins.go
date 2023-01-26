@@ -31,8 +31,9 @@ import (
 var errFoundButWrongPassword = fmt.Errorf("User found but wrong password")
 var errLoginNotFound = fmt.Errorf("Login not found")
 
-// exempted URL params are not hashed for login check
-// They can be freely added to the login-by-hash URL to modify app state
+// Exempted URL params are not hashed for login check.
+// They can be freely added to the login-by-hash URL to modify app state.
+// Compare package wrap paramPersister.
 var exempted = map[string]interface{}{
 	// general app control
 	"page":      nil,
@@ -43,8 +44,9 @@ var exempted = map[string]interface{}{
 	"h": nil,
 	// "attrs": nil, // user attributes at login time - must be hashed to prevent tampering
 
-	"skip_validation":  nil, // saved to session only in LoadH(), used in home()
-	"override_closure": nil, // saved to session only in LoginByHash(), used in home() and systemtest
+	"skip_validation":        nil, // saved to session only in LoadH(), used in home()
+	"override_closure":       nil, // saved to session only in LoginByHash(), used in home() and systemtest
+	"redirected_console_log": nil, //
 	// we dont use wrap.paramPersister, because its too broad
 }
 
@@ -62,6 +64,7 @@ var userAttrs = map[string]string{
 
 /*
 LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
+
 	loginIntf, ok := sess.EffectiveObj(key)
 	if !ok {
 		// log.Printf("key %v for LoginT{} is not in session", key)
@@ -71,7 +74,9 @@ LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
 	if !ok {
 		return &LoginT{}, false, fmt.Errorf("key %v for LoginT{} does not point to lgn.LoginT{} - but to %T", key, loginIntf)
 	}
+
 but because we need to declare variables of this type
+
 	type TplDataT struct {
 		...
 		L      lgn.LoginT
@@ -442,7 +447,6 @@ func GeneratePwFromChars(chars []byte, length int) string {
 //
 // Our URL now has 64 characters:
 // https://survey2.zew.de/?u=1000&sid=fmt&wid=2019-06&h=57I7U&p=12
-//
 func Md5Str(buf []byte) string {
 	hasher := sha256.New()
 	_, err := hasher.Write(buf)

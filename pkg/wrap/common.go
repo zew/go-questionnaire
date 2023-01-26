@@ -13,7 +13,6 @@ import (
 
 var lg = log.New(os.Stdout, "middleware ", log.Lshortfile|log.Ltime) // Logger with special prefix
 
-//
 // We call this once at request start
 // to persist params into the session
 func paramPersister(r *http.Request, sess *sessx.SessT) {
@@ -24,8 +23,10 @@ func paramPersister(r *http.Request, sess *sessx.SessT) {
 		return
 	}
 
-	keysToPersist := []string{"session-test-key", "request-test-key"}
 	// Update session; only if a request param was *set*.
+	// Compare package lgn exempted = map[string].
+	// The persistence seem not to work.
+	keysToPersist := []string{"session-test-key", "request-test-key", "redirected_console_log"}
 	for _, key := range keysToPersist {
 		if reqVal, ok := sess.ReqParam(key); ok {
 			lg.Printf("\tsess key SET  %17v is %-16v", key, reqVal)

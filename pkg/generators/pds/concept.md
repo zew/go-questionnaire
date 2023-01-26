@@ -334,6 +334,12 @@ https://localhost:8083/survey/d/PDS--ZX36XGLA
 https://private-debt-survey.zew.de/d/PDS--ZX36XGLA
 
 
+https://private-debt-survey.zew.de/d/PDS--ZX36XGLA?page=1&redirected_console_log=1
+
+https://private-debt-survey.zew.de/a
+https://private-debt-survey.zew.de?page=1&redirected_console_log=1
+
+
 Jan Mellert
 https://localhost:8083/survey/d/PDS--6WDWYZ5W
 https://private-debt-survey.zew.de/d/PDS--6WDWYZ5W
@@ -347,3 +353,9 @@ https://localhost:8083/survey?full-dynamic-content=true
 * 06.02. Erinnerungsmail 
 * 10.02. zweite Erinnerung entweder per Mail oder telefonisch; 
 * 13.02. Ende der Umfrage
+
+### Replacements
+
+span class font-size-90-block style margin-left - 0.6rem - margin-top - 0.3rem
+span class font-size-90-block 
+8209 - 

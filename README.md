@@ -252,6 +252,8 @@ Persisted to session:
 
 * `override_closure=true` - ignore questionnaire deadline and closure by user
 
+* `redirected_console_log` - shows a javascript console output
+
 ## Deploy to appengine
 
 ### Docs

@@ -61,4 +61,9 @@
     }
 
 
+    .range-display {
+        font-size: 115%;
+        max-width: 5.5rem;
+    }
+
 }

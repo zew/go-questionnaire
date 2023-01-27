@@ -133,8 +133,8 @@ var PDSAssetClasses = []assetClass{
 		NameUnused: "ac2_realestate",
 		Prefix:     "ac2",
 		Lbl: trl.S{
-			"en": "Real estate debt",
-			"de": "Real estate debt",
+			"en": "European  Real Estate Debt",
+			"de": "European  Real Estate Debt",
 		},
 		Short: trl.S{
 			"en": "Real Estate<br> Debt",
@@ -163,8 +163,8 @@ var PDSAssetClasses = []assetClass{
 		NameUnused: "ac3_infrastruct",
 		Prefix:     "ac3",
 		Lbl: trl.S{
-			"en": "Infrastructure debt",
-			"de": "Infrastructure debt",
+			"en": "European Infrastructure Debt",
+			"de": "European Infrastructure Debt",
 		},
 		Short: trl.S{
 			"en": "Infrastructure <br> Debt",
@@ -284,9 +284,13 @@ var PDSLbls = map[string][]trl.S{
 		},
 	},
 	"improveDecline1-5-prev-spec": {
+		// {
+		// 	"en": "un&shy;attrac&shy;tive",
+		// 	"de": "un&shy;attrac&shy;tive",
+		// },
 		{
-			"en": "un&shy;attrac&shy;tive",
-			"de": "un&shy;attrac&shy;tive",
+			"en": "bad&nbsp;&nbsp;&nbsp;&nbsp;",
+			"de": "bad&nbsp;&nbsp;&nbsp;&nbsp;",
 		},
 		{
 			"en": "&nbsp;",
@@ -301,15 +305,19 @@ var PDSLbls = map[string][]trl.S{
 			"en": "&nbsp;",
 			"de": "&nbsp;",
 		},
+		// {
+		// 	"en": "attrac&shy;tive",
+		// 	"de": "attrac&shy;tive",
+		// },
 		{
-			"en": "attrac&shy;tive",
-			"de": "attrac&shy;tive",
+			"en": "&nbsp;&nbsp;good",
+			"de": "&nbsp;&nbsp;good",
 		},
 	},
 	"improveDecline1-5-next": {
 		{
-			"en": "will<br>im&shy;prove",
-			"de": "will<br>im&shy;prove",
+			"en": "will<br>de&shy;cline",
+			"de": "will<br>de&shy;cline",
 		},
 		{
 			"en": "&nbsp;",
@@ -325,8 +333,8 @@ var PDSLbls = map[string][]trl.S{
 			"de": "&nbsp;",
 		},
 		{
-			"en": "will<br>de&shy;cline",
-			"de": "will<br>de&shy;cline",
+			"en": "will<br>im&shy;prove",
+			"de": "will<br>im&shy;prove",
 		},
 	},
 	"closing-time-weeks": {

@@ -113,9 +113,9 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 		},
 		{
 			"en": `Please assess the quality of deal documentation for new deals you observe in the market 
-				(stricter loan documentation=improved, looser loan documentation=declined). `,
+				(stricter loan documentation=good, looser loan documentation=bad). `,
 			"de": `Please assess the quality of deal documentation for new deals you observe in the market 
-				(stricter loan documentation=improved, looser loan documentation=declined). `,
+				(stricter loan documentation=good, looser loan documentation=bad). `,
 		},
 		{
 			"en": `Please assess the deal flow you observe in the market.`,
@@ -130,8 +130,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Over the past quarter, how do you assess the overall market environment?`,
 		},
 		{
-			"en": `How do you expect the overall market environment to change over the coming quarter?`,
-			"de": `How do you expect the overall market environment to change over the coming quarter?`,
+			"en": `How do you expect the overall market environment to change [quarter-0]?`,
+			"de": `How do you expect the overall market environment to change [quarter-0]?`,
 		},
 
 		//
@@ -140,8 +140,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Over the past quarter, how attractive is the pricing of new loans you observed in the market?`,
 		},
 		{
-			"en": `How do you expect the attractiveness of pricing of new loans to change in the coming quarter?`,
-			"de": `How do you expect the attractiveness of pricing of new loans to change in the coming quarter?`,
+			"en": `How do you expect the attractiveness of pricing of new loans to change in [quarter-0]?`,
+			"de": `How do you expect the attractiveness of pricing of new loans to change in [quarter-0]?`,
 		},
 
 		//
@@ -150,8 +150,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...)? `,
 		},
 		{
-			"en": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in the coming quarter?`,
-			"de": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in the coming quarter?`,
+			"en": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in [quarter-0]?`,
+			"de": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in [quarter-0]?`,
 		},
 
 		//
@@ -160,8 +160,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"de": `Over the past quarter, how do you assess the deal flow in the market?`,
 		},
 		{
-			"en": `How do you expect the deal flow to change in the coming quarter?`,
-			"de": `How do you expect the deal flow to change in the coming quarter?`,
+			"en": `How do you expect the deal flow to change in [quarter-0]?`,
+			"de": `How do you expect the deal flow to change in [quarter-0]?`,
 		},
 	}
 

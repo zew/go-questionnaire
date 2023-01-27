@@ -80,8 +80,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification and asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Asset classes,<br>Tranches",
-			"de": "Asset classes,<br>Tranches",
+			"en": "Asset Class Selection,<br>Tranches",
+			"de": "Asset Class Selection,<br>Tranches",
 		}
 		page.CounterProgress = "-"
 		// https://www.fileformat.info/info/charset/UTF-8/list.htm?start=2048

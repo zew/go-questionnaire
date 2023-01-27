@@ -118,7 +118,7 @@ But keep an eye on the application log.
 		}
 
 		pathPrefixed := cfg.Pref("d/" + encoded)
-		if fe.Host == "https://survey2.zew.de" {
+		if fe.Host == "https://survey2.zew.de" || fe.Host == "https://private-debt-survey.zew.de" {
 			pathPrefixed = path.Join("/", "d", encoded) // this host hast no prefix
 		}
 

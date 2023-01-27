@@ -893,6 +893,11 @@ func (inp *inputT) rangeLabels(rc rangeConf) string {
 							tickClass = " class='tick first suppress-left' "
 						}
 					}
+					if rc.ts[0] == "nt" {
+						if itr2 == 0 {
+							tickClass = " class='tick first suppress-left' "
+						}
+					}
 				}
 
 				fmt.Fprintf(

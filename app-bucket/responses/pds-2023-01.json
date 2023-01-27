@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "fde84a8977b9e2f8c10d028640867a0b6bbad52ebe06f1f1d4e0620dbbfd4cb0",
+ 	"md_5": "d27084788d8fd9131a99f1240e81bcf77ba39dd91ec22e34dfa5b5bf8b85b86a",
  	"lang_codes": [
  		"en"
  	],
@@ -83,8 +83,8 @@
  			},
  			"counter_progress": "\u0026#9632;",
  			"short": {
- 				"de": "Asset classes,\u003cbr\u003eTranches",
- 				"en": "Asset classes,\u003cbr\u003eTranches"
+ 				"de": "Asset Class Selection,\u003cbr\u003eTranches",
+ 				"en": "Asset Class Selection,\u003cbr\u003eTranches"
  			},
  			"suppress_progressbar": true,
  			"style": {
@@ -783,8 +783,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003eWhat are your Assets Under Man\u0026shy;age\u0026shy;ment in this asset class?",
- 								"en": "\u003cbr\u003eWhat are your Assets Under Man\u0026shy;age\u0026shy;ment in this asset class?"
+ 								"de": "\u003cbr\u003eWhat are your Assets under Man\u0026shy;age\u0026shy;ment in this asset class?",
+ 								"en": "\u003cbr\u003eWhat are your Assets under Man\u0026shy;age\u0026shy;ment in this asset class?"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -1075,8 +1075,8 @@
  							"name": "ac2_q03",
  							"type": "checkbox",
  							"label": {
- 								"de": "Real estate debt",
- 								"en": "Real estate debt"
+ 								"de": "European  Real Estate Debt",
+ 								"en": "European  Real Estate Debt"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -1670,8 +1670,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003eWhat are your Assets Under Man\u0026shy;age\u0026shy;ment in this asset class?",
- 								"en": "\u003cbr\u003eWhat are your Assets Under Man\u0026shy;age\u0026shy;ment in this asset class?"
+ 								"de": "\u003cbr\u003eWhat are your Assets under Man\u0026shy;age\u0026shy;ment in this asset class?",
+ 								"en": "\u003cbr\u003eWhat are your Assets under Man\u0026shy;age\u0026shy;ment in this asset class?"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -1962,8 +1962,8 @@
  							"name": "ac3_q03",
  							"type": "checkbox",
  							"label": {
- 								"de": "Infrastructure debt",
- 								"en": "Infrastructure debt"
+ 								"de": "European Infrastructure Debt",
+ 								"en": "European Infrastructure Debt"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -2557,8 +2557,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003eWhat are your Assets Under Man\u0026shy;age\u0026shy;ment in this asset class?",
- 								"en": "\u003cbr\u003eWhat are your Assets Under Man\u0026shy;age\u0026shy;ment in this asset class?"
+ 								"de": "\u003cbr\u003eWhat are your Assets under Man\u0026shy;age\u0026shy;ment in this asset class?",
+ 								"en": "\u003cbr\u003eWhat are your Assets under Man\u0026shy;age\u0026shy;ment in this asset class?"
  							},
  							"col_span": 4,
  							"col_span_label": 1,

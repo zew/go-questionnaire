@@ -116,9 +116,9 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page21Lbls,
 			[]*rangeConf{
 				nil,             // q2a
-				&range0Too10,    // q2b
-				&rangeMin05To25, // q2c
-				&range0To2,      // q2d
+				&range0to10,     // q2b
+				&rangeMin05to25, // q2c
+				&range0to2,      // q2d
 			},
 		)
 	}
@@ -135,8 +135,8 @@ func pdsPage21(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page21Lbls[:red],
 			[]*rangeConf{
 				nil,             // q2a
-				&range0Too10,    // q2b
-				&rangeMin05To25, // q2c
+				&range0to10,     // q2b
+				&rangeMin05to25, // q2c
 				// &range0To2,      // q2d
 			},
 		)

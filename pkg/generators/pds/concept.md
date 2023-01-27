@@ -5,13 +5,13 @@
 Alternative Anlageklassen
 Private debt
 
-Sebastian Stehling - Dept Leader
-Jan Mellert  - Investment Advisory and Solutions
-Daniel Huss  - Leiter Manager Selektion
+Sebastian S.  - Dept Leader
+Jan M.        - Investment Advisory and Solutions
+Daniel H.     - Leiter Manager Selektion
 
-Corp lending debt - 80 Teilnehmer
-Infrastruct - 30
-Real estate - 80
+Corp lending - 80 Teilnehmer
+Infrastruct  - 30
+Real estate  - 80
 
 Unternehmen
     Drei Assetklassen
@@ -320,13 +320,9 @@ Bitte versuchen Sie es nochmal.
 
 ---
 
+* IPhone Mysterium lösen
 
-* range0To175  [0%-0.25%, 0.25%-1.25%, …,1.25%-1.75%, >1.75%] - geht nur als Radio-Gruppe
-* range0To4    [0%-0.5%, 0.5%-1.5%, …,3.5%-4%, >4%]           - geht nur als Radio-Gruppe
-
-
-
-* IPhone Safari: Cache bug?
+* Email-Anschreiben - Ich versende noch ein paar Test-Emails
 
 
 pbu
@@ -346,6 +342,9 @@ https://private-debt-survey.zew.de/d/PDS--6WDWYZ5W
 
 
 https://localhost:8083/survey?full-dynamic-content=true
+
+### Logins
+
 
 ### Erste Runde - Termine
 

@@ -250,7 +250,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 			errMsg += fmt.Sprintf("Invalid request token: %v\n", err)
 		}
 	} else if !ok && r.Method == "POST" {
-		errMsg += fmt.Sprintf("Missing request token\n")
+		errMsg += "Missing request token\n"
 	}
 
 	//
@@ -289,6 +289,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
         <script> document.getElementById('submit').focus(); </script>
         {{if gt (len .Links  ) 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
         {{if gt (len .List   ) 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
+        {{if gt (len .List   ) 0 }} <textarea name="just-for-copying" cols="130" rows="40">{{.List   }}</textarea>{{end}}
 </form>
 	
 </body>
@@ -375,14 +376,19 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		}
 
 		pfx := cfg.PrefTS()
-		if fe.Host == "https://survey2.zew.de" {
+		if fe.Host == "https://survey2.zew.de" || fe.Host == "https://private-debt-survey.zew.de" {
 			pfx = ""
 		}
 
-		url := fmt.Sprintf("%v?%v", fe.Host+pfx, queryString)
+		url1 := fmt.Sprintf("%v?%v", fe.Host+pfx, queryString)
 
-		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> \t ", url, i)
-		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)
+		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> \t ", url1, i)
+
+		if r.Form.Get("show-ids") != "false" {
+			fmt.Fprintf(b2, "%4v\t%v\n", i, url1)
+		} else {
+			fmt.Fprintf(b2, "%v\r", url1)
+		}
 
 		fmt.Fprint(b1, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 

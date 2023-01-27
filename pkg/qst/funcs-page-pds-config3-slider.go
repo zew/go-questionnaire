@@ -134,7 +134,7 @@ func (rc *rangeConf) lowerUpperAttrs() string {
 //
 
 var (
-	range0Too10 = rangeConf{
+	range0to10 = rangeConf{
 		Min:         0,
 		Max:         10,
 		Step:        0.5,
@@ -142,7 +142,7 @@ var (
 		Suffix:      suffixYears,
 	}
 
-	range0To150 = rangeConf{
+	range0to150 = rangeConf{
 		Min:         0,
 		Max:         150,
 		Step:        5,
@@ -150,7 +150,7 @@ var (
 		Suffix:      suffixMillionEuro,
 	}
 
-	range0To2 = rangeConf{
+	range0to2 = rangeConf{
 		Min:         0,
 		Max:         2.0,
 		Step:        0.1,
@@ -158,7 +158,7 @@ var (
 		Suffix:      suffixInvestedCapital,
 	}
 
-	range0Too375 = rangeConf{
+	range0to375 = rangeConf{
 		Min:         -0.25,
 		Max:         3.75,
 		Step:        0.5,
@@ -167,7 +167,7 @@ var (
 		Suffix:      suffixPercent,
 	}
 
-	range0To500 = rangeConf{
+	range0to500 = rangeConf{
 		Min:         0,
 		Max:         500,
 		Step:        10,
@@ -175,7 +175,7 @@ var (
 		Suffix:      suffixMillionEuro,
 	}
 
-	rangeMin05To25 = rangeConf{
+	rangeMin05to25 = rangeConf{
 		Min:         -0.5,
 		Max:         25.0,
 		Step:        0.5,
@@ -189,7 +189,7 @@ var (
 		Max:  5,
 		Step: 0.5,
 		// CXLabelTick: `0.75:<1:nt; 1: :t; 1.5: :t; 2:2:t; 2.5: :t; 3:3:t; 3.5: :t; 4:4:t; 4.5: :t; 5:>=5:t`,
-		CXLabelTick: `0.5:<1:nt;   1.0: :t;   1.5: :t;   2.0:2:t;   2.5: :t;   3.0:3:t;   3.5: :t;   4.0:4:t;   4.5: :t;   5.0:>=5:t`,
+		CXLabelTick: `0.5:<1:nt;  1.0: :t;  1.5: :t;  2.0:2:t;  2.5: :t;  3.0:3:t;  3.5: :t;  4.0:4:t;  4.5: :t;  5.0:>=5:t`,
 		Lower:       "<1",
 		Suffix:      suffixDebtService, // only difference to range075to5b
 	}
@@ -199,16 +199,17 @@ var (
 		Max:  5,
 		Step: 0.5,
 		// CXLabelTick: `0.75:<1:nt; 1: :t; 1.5: :t; 2:2:t; 2.5: :t; 3:3:t; 3.5: :t; 4:4:t; 4.5: :t; 5:>=5:t`,
-		CXLabelTick: `0.5:<1:nt;   1.0: :t;   1.5: :t;   2.0:2:t;   2.5: :t;   3.0:3:t;   3.5: :t;   4.0:4:t;   4.5: :t;   5.0:>=5:t`,
+		CXLabelTick: `0.5:<1:nt;  1.0: :t;  1.5: :t;  2.0:2:t;  2.5: :t;  3.0:3:t;  3.5: :t;  4.0:4:t;  4.5: :t;  5.0:>=5:t`,
 		Lower:       "<1",
 		Suffix:      suffixInterestPayment, // only difference to range075to5a
 	}
 
 	range1to175 = rangeConf{
-		Min:         1,
-		Max:         1.75 + 0.01, // rounding trouble
-		Step:        0.05,
-		CXLabelTick: `1:1:t; 1.25:1.25:t; 1.5:1.5:t; 1.75:>=1.75:t`,
+		Min:  0.95,
+		Max:  1.75 + 0.01, // rounding trouble
+		Step: 0.05,
+		// CXLabelTick: `0.95:1:t; 1.25:1.25:t; 1.5:1.5:t; 1.75:>=1.75:t`,
+		CXLabelTick: `0.95:<1:nt; 1.0: :t; 1.25:1.25:t; 1.5:1.5:t; 1.75:>=1.75:t`,
 		Suffix:      suffixDebtService, // only difference to range075to5a
 		Upper:       "≥1.75",
 		// Upper:       ">=1.75",
@@ -258,10 +259,11 @@ var (
 	}
 
 	range50to100 = rangeConf{
-		Min:         45,
-		Max:         95,
-		Step:        5,
-		CXLabelTick: `45:<50:nt; 75:75:t; 95:100:t`,
+		Min:  45,
+		Max:  95,
+		Step: 5,
+		// CXLabelTick: `45:<50:nt; 75:75:t; 95:100:t`,
+		CXLabelTick: `45:<50:nt; 50:50:t; 75:75:t; 95:100:t`,
 		Suffix:      suffixPercent,
 	}
 )

@@ -263,8 +263,8 @@ func checkBoxCascade(
 			inp.Type = "textblock"
 			inp.ColSpan = 4
 			inp.Label = trl.S{
-				"de": `<br>What are your Assets Under Management in this asset class?`,
-				"en": `<br>What are your Assets Under Management in this asset class?`,
+				"de": `<br>What are your Assets under Management in this asset class?`,
+				"en": `<br>What are your Assets under Management in this asset class?`,
 			}
 			inp.ColSpanLabel = 1
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)

@@ -117,7 +117,9 @@ var (
 		}.Outline("e.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by region.`,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by region.
+				You can leave fields without a transaction empty.
+			`,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Region: `,
 		},
 		Suffix:   suffixMillionEuro,
@@ -141,7 +143,9 @@ var (
 		}.Outline("f.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by sector.`,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by sector.
+				You can leave fields without a transaction empty.
+			`,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
@@ -165,14 +169,14 @@ var (
 			"energy":            "Energy",
 			"materials":         "Materials",
 			"industrials":       "Industrials",
-			"consumer_disc":     "Consumer discretionary",
-			"consumer_stap":     "Consumer staples",
-			"healthcare":        "Health care",
+			"consumer_disc":     "Consumer Discretionary",
+			"consumer_stap":     "Consumer Staples",
+			"healthcare":        "Health Care",
 			"financials":        "Financials",
-			"information_tech":  "Information technology",
-			"communication_svc": "Communication services",
+			"information_tech":  "Information Technology",
+			"communication_svc": "Communication Services",
 			"utilities":         "Utilities",
-			"real_estate":       "Real estate",
+			"real_estate":       "Real Estate",
 			"other":             "Other",
 		},
 		Placeholder: placeHolderMillion,
@@ -190,8 +194,12 @@ var (
 		}.Outline("g.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by private equity sponsor`,
-			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by private equity sponsor`,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by private equity sponsor.
+				You can leave fields without a transaction empty.
+			`,
+			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by private equity sponsor.
+			You can leave fields without a transaction empty.
+			`,
 		},
 		Suffix: suffixMillionEuro,
 		Step:   0.1,
@@ -390,7 +398,9 @@ func init() {
 		"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
 	}
 	lblD2 := trl.S{
-		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by market segment.`,
+		"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by market segment. 
+				You can leave fields without a transaction empty.
+			`,
 		"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in [quarter-1] nach Marktsegment: `,
 	}
 	// lbld.Append90(lblD2)

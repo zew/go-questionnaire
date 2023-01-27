@@ -111,12 +111,12 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"en": `Pleases state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
 		},
 		{
-			"en": `Please state the average interest floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
-			"de": `Please state the average interest floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
+			"en": `Please state the average interest rate floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
+			"de": `Please state the average interest rate floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
 		},
 		{
-			"en": `Please state the average fixed rate copuon for transactions closed in [quarter-1]. Only relevant for <i>fixed rate</i> loans.`,
-			"de": `Please state the average fixed rate copuon for transactions closed in [quarter-1]. Only relevant for <i>fixed rate</i> loans.`,
+			"en": `Please state the average fixed rate coupon for transactions closed in [quarter-1]. Only relevant for <i>fixed rate</i> loans.`,
+			"de": `Please state the average fixed rate coupon for transactions closed in [quarter-1]. Only relevant for <i>fixed rate</i> loans.`,
 		},
 		{
 			"en": `Please state the average upfront fees charged to the borrower for transactions closed in [quarter-1].`,
@@ -145,9 +145,9 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 		page12Lbls,
 		[]*rangeConf{
 			&range2to10a,  // ac[1-3]_q12a
-			&range0Too375, // ac[1-3]_q12b
+			&range0to375,  // ac[1-3]_q12b
 			&range25to200, // ac[1-3]_q12c
-			&range0Too375, // ac[1-3]_q12d
+			&range0to375,  // ac[1-3]_q12d
 			&range25to250, // ac[1-3]_q12e
 		},
 	)
@@ -218,8 +218,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `Please state the average contracted maturity for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `Please state the average opening leverage for transactions closed in [quarter-1]. Opening leverage is measured as a multile of EBITDA.`,
-				"de": `Please state the average opening leverage for transactions closed in [quarter-1]. Opening leverage is measured as a multile of EBITDA.`,
+				"en": `Please state the average opening leverage for transactions closed in [quarter-1]. Opening leverage is measured as a multiple of EBITDA.`,
+				"de": `Please state the average opening leverage for transactions closed in [quarter-1]. Opening leverage is measured as a multiple of EBITDA.`,
 			},
 			{
 				"en": `Please state the average EBITDA of borrower companies for transactions closed in [quarter-1].`,
@@ -248,10 +248,10 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Lbls,
 			[]*rangeConf{
 				nil,          // ac1_q13a
-				&range0Too10, // ac1_q13b
+				&range0to10,  // ac1_q13b
 				&range2to10b, // ac1_q13c
-				&range0To150, // ac1_q13d
-				&range0To500, // ac1_q13e
+				&range0to150, // ac1_q13d
+				&range0to500, // ac1_q13e
 			},
 		)
 	}
@@ -355,24 +355,24 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 				"de": `Please state the average opening Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `Please state the average average opening debt yield in [quarter-1].`,
-				"de": `Please state the average average opening debt yield in [quarter-1].`,
+				"en": `Please state the average opening debt yield in [quarter-1].`,
+				"de": `Please state the average opening debt yield in [quarter-1].`,
 			},
 			{
-				"en": `Please state the average expected LTV/LTC for transactions closed in [quarter-1].`,
-				"de": `Please state the average expected LTV/LTC for transactions closed in [quarter-1].`,
+				"en": `Please state the average expected exit LTV/LTC for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected exit LTV/LTC for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `Please state the average expected Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
-				"de": `Please state the average expected Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
+				"en": `Please state the average expected exit Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected exit Debt-Service Coverage Ratio (DSCR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
-				"de": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"en": `Please state the average expected exit Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected exit Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
-				"de": `Please state the average expected Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"en": `Please state the average expected exit Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
+				"de": `Please state the average expected exit Interest Coverage Ratio (ICR) for transactions closed in [quarter-1].`,
 			},
 		}
 
@@ -392,9 +392,9 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Types,
 			page13Lbls,
 			[]*rangeConf{
-				nil,          // ac2_q13a
-				&range0Too10, // ac2_q13b
-				&range2to10b, // ac2_q13c
+				nil,           // ac2_q13a
+				&range0to10,   // ac2_q13b
+				&range20to100, // ac2_q13c
 
 				// real estate specific
 				&range075to5a, // ac2_q13d
@@ -461,30 +461,30 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		page13LblsDescr := []trl.S{
 			{
-				"en": `What is the average number of financial covenants per loan?`,
-				"de": `What is the average number of financial covenants per loan?`,
+				"en": `Please state the average number of financial covenants per loan for transactions closed in [quarter-1].`,
+				"de": `Please state the average number of financial covenants per loan for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average contracted maturity?`,
-				"de": `What is the average contracted maturity?`,
+				"en": `Please state  the average contracted maturity for transactions closed in [quarter-1].`,
+				"de": `Please state  the average contracted maturity for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the average opening leverage?`,
-				"de": `What is the average opening leverage?`,
+				"en": `Please state  the average opening LTV for transactions closed in [quarter-1].`,
+				"de": `Please state  the average opening LTV for transactions closed in [quarter-1].`,
 			},
 
 			// infrastruct specific
 			{
-				"en": `What is the average expected maximum LTV?`,
-				"de": `What is the average expected maximum LTV?`,
+				"en": `Please state  the average expected maximum LTV  for transactions closed in [quarter-1].`,
+				"de": `Please state  the average expected maximum LTV  for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the expected average DSCR?`,
-				"de": `What is the expected average DSCR?`,
+				"en": `Please state  the average of the expected average Debt-Service Coverage Ratio (DSCR)  for transactions closed in [quarter-1].`,
+				"de": `Please state  the average of the expected average Debt-Service Coverage Ratio (DSCR)  for transactions closed in [quarter-1].`,
 			},
 			{
-				"en": `What is the expected minimum DSCR?`,
-				"de": `What is the expected minimum DSCR?`,
+				"en": `Please state  the average expected minimum Debt-Service Coverage Ratio (DSCR)   for transactions closed in [quarter-1].`,
+				"de": `Please state  the average expected minimum Debt-Service Coverage Ratio (DSCR)   for transactions closed in [quarter-1].`,
 			},
 		}
 
@@ -505,7 +505,7 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 			page13Lbls,
 			[]*rangeConf{
 				nil,           // ac3_q13a
-				&range0Too10,  // ac3_q13b
+				&range0to10,   // ac3_q13b
 				&range50to100, // ac3_q13c
 
 				// infrastruct specific

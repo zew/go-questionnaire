@@ -107,8 +107,8 @@ func pdsPage12(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page12LblsDescr := []trl.S{
 		{
-			"de": `Pleases state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
-			"en": `Pleases state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
+			"de": `Please state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
+			"en": `Please state the average cash margin over the relevant base rate for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,
 		},
 		{
 			"en": `Please state the average interest rate floor for transactions closed in [quarter-1]. Only relevant for <i>floating rate</i> loans.`,

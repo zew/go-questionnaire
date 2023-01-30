@@ -80,8 +80,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification and asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Asset Class Selection,<br>Tranches",
-			"de": "Asset Class Selection,<br>Tranches",
+			"en": "Asset Class <br>Selection,<br>Tranches",
+			"de": "Asset Class <br>Selection,<br>Tranches",
 		}
 		page.CounterProgress = "-"
 		// https://www.fileformat.info/info/charset/UTF-8/list.htm?start=2048
@@ -102,7 +102,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "text"
 				inp.Name = "q01_identification"
-				inp.MaxChars = 24
+				inp.MaxChars = 32
 				inp.Placeholder = trl.S{
 					"en": "name of manager",
 					"de": "Name Manager",

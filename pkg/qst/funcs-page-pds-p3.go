@@ -28,8 +28,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	}.Outline(fmt.Sprintf("%c3.", rn))
 
 	page.Short = trl.S{
-		"en": ("<b> &nbsp;<br> &nbsp; </b> <br>Market Assessment"),
-		"de": ("<b> &nbsp;<br> &nbsp; </b> <br>Market Assessment"),
+		"en": ("<b> &nbsp;<br> &nbsp; </b> Market<br>Assessment"),
+		"de": ("<b> &nbsp;<br> &nbsp; </b> Market<br>Assessment"),
 	}
 
 	page.CounterProgress = fmt.Sprintf("%c3", rn)
@@ -57,9 +57,9 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 			`,
 		},
 		{
-			"en": `The following questions are aimed to capture your views on the developments of the <i>overall Infrastructure Debt market</i>.
+			"en": `The following questions are aimed to capture your views on the developments of the <i>overall European Infrastructure Debt market</i>.
 			`,
-			"de": `The following questions are aimed to capture your views on the developments of the <i>overall Infrastructure Debt market</i>.
+			"de": `The following questions are aimed to capture your views on the developments of the <i>overall European Infrastructure Debt market</i>.
 			`,
 		},
 	}
@@ -104,8 +104,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	page3LblsDescr := []trl.S{
 		{
-			"en": `Over the past quarter, how do you assess the overall market environment?`,
-			"de": `Over the past quarter, how do you assess the overall market environment?`,
+			"en": `Please assess the overall market environment over the past quarter.`,
+			"de": `Please assess the overall market environment over the past quarter.`,
 		},
 		{
 			"de": `Please assess the attractiveness of the pricing of new loans relative to their risk profile. `,
@@ -126,8 +126,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	page3LblsPrevAndPast := []trl.S{
 		//
 		{
-			"en": `Over the past quarter, how do you assess the overall market environment?`,
-			"de": `Over the past quarter, how do you assess the overall market environment?`,
+			"en": `Over the past quarter, please provide your assessment of the overall market environment?`,
+			"de": `Over the past quarter, please provide your assessment of the overall market environment?`,
 		},
 		{
 			"en": `How do you expect the overall market environment to change [quarter-0]?`,
@@ -136,8 +136,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		//
 		{
-			"en": `Over the past quarter, how attractive is the pricing of new loans you observed in the market?`,
-			"de": `Over the past quarter, how attractive is the pricing of new loans you observed in the market?`,
+			"en": `How attractive is the pricing of new loans you observed in the market over the past quarter?`,
+			"de": `How attractive is the pricing of new loans you observed in the market over the past quarter?`,
 		},
 		{
 			"en": `How do you expect the attractiveness of pricing of new loans to change in [quarter-0]?`,
@@ -146,8 +146,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		//
 		{
-			"en": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...)? `,
-			"de": `Over the past quarter, how do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...)? `,
+			"en": `How do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...) over the past quarter? `,
+			"de": `How do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...) over the past quarter? `,
 		},
 		{
 			"en": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in [quarter-0]?`,
@@ -156,8 +156,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 		//
 		{
-			"en": `Over the past quarter, how do you assess the deal flow in the market?`,
-			"de": `Over the past quarter, how do you assess the deal flow in the market?`,
+			"en": `How do you assess the deal flow in the market over the past quarter?`,
+			"de": `How do you assess the deal flow in the market over the past quarter?`,
 		},
 		{
 			"en": `How do you expect the deal flow to change in [quarter-0]?`,

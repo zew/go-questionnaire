@@ -87,13 +87,13 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 		}
 
 		lbls := map[string]string{
-			"1_business_cycle":         "Business cycle",
-			"2_interest_rates":         "Interest rates",
-			"3_inflation_deflation":    "Inflation/deflation",
-			"4_regulatory_environment": "Regulatory environment",
-			"5_supply_chains":          "Supply chains",
-			"6_health_issues":          "Health issues",
-			"7_demographics":           "Demographics",
+			"1_business_cycle":         "Business Cycle",
+			"2_interest_rates":         "Interest Rates",
+			"3_inflation_deflation":    "Inflation/Deflation",
+			"4_regulatory_environment": "Regulatory Environment",
+			"5_supply_chains":          "Supply Chain Disruptions",
+			"6_health_issues":          "Health Issues (e.g. Covid)",
+			"7_demographics":           "Demographic Change",
 			"8_other":                  "Other",
 		}
 		prio3Matrix(page, ac, "q35_risks", lblMain, inps, lbls, true)
@@ -106,8 +106,8 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 		if acIdx == 0 {
 
 			lblMain := trl.S{
-				"en": `What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three. Please rank the top three.`,
-				"de": `What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three. Please rank the top three.`,
+				"en": `What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three. `,
+				"de": `What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three. `,
 			}
 			// lblMainDesc := trl.S{
 			// 	"en": `Choose from sectors based on GICS: energy, materials, ... , real estate`,

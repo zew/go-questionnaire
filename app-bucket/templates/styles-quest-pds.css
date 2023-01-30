@@ -200,6 +200,10 @@ dummy {
     max-width: 10.5rem;
 }
 
+input[name=q01_identification]{
+    max-width: 13.5rem;
+}
+
 @media screen and (max-width: 800px) {
 
     :root {
@@ -227,6 +231,9 @@ dummy {
         max-width:   6.1rem;
     }
 
+    input[name=q01_identification] {
+        max-width: 12.5rem;
+    }
 
     input[type=radio]{
         transform: scale(1.6);

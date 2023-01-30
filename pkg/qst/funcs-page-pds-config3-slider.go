@@ -263,7 +263,7 @@ var (
 		Max:  95,
 		Step: 5,
 		// CXLabelTick: `45:<50:nt; 75:75:t; 95:100:t`,
-		CXLabelTick: `45:<50:nt; 50:50:t; 75:75:t; 95:100:t`,
+		CXLabelTick: `45:<50:nt; 50: :t; 75:75:t; 95:100:t`,
 		Suffix:      suffixPercent,
 	}
 )

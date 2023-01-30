@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d27084788d8fd9131a99f1240e81bcf77ba39dd91ec22e34dfa5b5bf8b85b86a",
+ 	"md_5": "ea8ef279ce7271d30d01d41cc6f7500e3ea03eb9177c45819b10cf34c9bc906f",
  	"lang_codes": [
  		"en"
  	],
@@ -114,7 +114,7 @@
  						{
  							"name": "q01_identification",
  							"type": "text",
- 							"max_chars": 24,
+ 							"max_chars": 32,
  							"placeholder": {
  								"de": "Name Manager",
  								"en": "name of manager"

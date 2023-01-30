@@ -320,17 +320,38 @@ Bitte versuchen Sie es nochmal.
 
 ---
 
-* IPhone Mysterium lösen
+#### IPhone issues
+
+* Our Internet-Testing service showed a working page for IPhone 7; but this holds only for IPhones which were updated to IOS 11 or later.
+
+* We chose another internet based smartphone testing service for "really old" IPhone 7.
+
+* Results:  
+
+   * __IPhone6__ (2014) and older - without updates, these phones are too old to communicate with ZEW server encryption; but they should work after updating to IOS Version >= 11
+
+   * __IPhone7__ (2016) - incomplete support of HTML5 standard "grid" extension. Thus pages 2... are not shown. Works, if updated to [IOS 11 of 2017](https://de.wikipedia.org/wiki/IOS_11) or later.
+   
+   * __IPhone8__ (2017) - works out of the box 
+
+=> Summary:  Smartphones where the core software is older than five years have issues. 
+
+Only up to ~10 percent of answers are submitted by Smartphone. Of these, only a very small percentage  devices should be older than six years _and_ have an operating system older than five years.
+
 
 * Email-Anschreiben - Ich versende noch ein paar Test-Emails
+
+* Anforderungen zu Zeilentrennung
+* Anforderungen zu Silbentrennung
 
 
 pbu
 https://localhost:8083/survey/d/PDS--ZX36XGLA
 https://private-debt-survey.zew.de/d/PDS--ZX36XGLA
+https://localhost:8083/survey?u=138484021&sid=pds&wid=2023-01&p=1&h=2GokfnCaAKRdU0tzqeElEBa_o2FIWDXo5T5MhxA_cN0
 
-
-https://private-debt-survey.zew.de/d/PDS--ZX36XGLA?page=1&redirected_console_log=1
+https://private-debt-survey.zew.de?u=138484021&sid=pds&wid=2023-01&p=1&h=2GokfnCaAKRdU0tzqeElEBa_o2FIWDXo5T5MhxA_cN0
+https://private-debt-survey.zew.de/?page=1&redirected_console_log=1
 
 https://private-debt-survey.zew.de/a
 https://private-debt-survey.zew.de?page=1&redirected_console_log=1
@@ -339,7 +360,7 @@ https://private-debt-survey.zew.de?page=1&redirected_console_log=1
 Jan Mellert
 https://localhost:8083/survey/d/PDS--6WDWYZ5W
 https://private-debt-survey.zew.de/d/PDS--6WDWYZ5W
-
+https://private-debt-survey.zew.de?u=130947013&sid=pds&wid=2023-01&p=1&h=CsgObPwl8tvQ0Me9Ot1JB1MDOj0OD9vwfBGsc5Xftmw
 
 https://localhost:8083/survey?full-dynamic-content=true
 

@@ -35,8 +35,8 @@ var (
 		AddendsLighterSum: true,
 		Chars:             6,
 		LblRow1: trl.S{
-			"en": "Number of transactions closed in Europe in [quarter-1]",
-			"de": "Number of transactions closed in Europe in [quarter-1]",
+			"en": "Number of transactions closed in Europe in&nbsp;[quarter-1]",
+			"de": "Number of transactions closed in Europe in&nbsp;[quarter-1]",
 		}.Outline("a.)"),
 
 		LblRow2: trl.S{
@@ -66,13 +66,13 @@ var (
 			"esgratchet": `
 				...ESG ratchets
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Pleases state the number of transactions closed in [quarter-1] where the loan documentation explicitly states that margins are adjusted when specified ESG targets are achieved.
+					Please state the number of transactions closed in [quarter-1] where the loan documentation explicitly states that margins are adjusted when specified ESG targets are achieved.
 					</span>
 				`,
 			"share_stepdown": `
 				...margin step down
 					<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-					Pleases state the number of transactions closed in [quarter-1] where the loan documentation explicitly states that margins are adjusted when specific targets on risk KPIs (e.g. leverage) are achieved.
+					Please state the number of transactions closed in [quarter-1] where the loan documentation explicitly states that margins are adjusted when specific targets on risk KPIs (e.g. leverage) are achieved.
 					</span>
 				`,
 		},
@@ -252,8 +252,8 @@ var (
 		}.Outline("g.)"),
 		FirstRowDisabled: true,
 		LblRow2: trl.S{
-			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by greenfield risk`,
-			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by greenfield risk`,
+			"en": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by greenfield risk.`,
+			"de": `Please state the volume (in mn EUR) of transactions closed in [quarter-1] by greenfield risk.`,
 		},
 		Suffix: suffixMillionEuro,
 		Step:   0.1,
@@ -373,7 +373,7 @@ func init() {
 	rT11aRealEstate.SubLbls["num_amortizing"] = `
 		...amortizing loans
 			<span class=font-size-90-block style='margin-left: 0.6rem; margin-top: 0.3rem;' >
-			Please state the number of amortizing loans.
+			Please state the number of transactions closed in [quarter-1] where the loan is amortizing.
 			</span>
 		`
 
@@ -413,7 +413,7 @@ func init() {
 	rT11dRealEstate.SubLbls = map[string]string{
 		"core":     "Core",
 		"coreplus": "Core+",
-		"valueadd": "Value add",
+		"valueadd": "Value Add",
 		"opportun": "Opportunistic",
 	}
 

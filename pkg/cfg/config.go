@@ -75,8 +75,12 @@ type ConfigT struct {
 
 	CPUProfile string `json:"cpu_profile"` // CPUProfile - output filename
 
-	Mp     trl.Map     `json:"translations_generic"` // Mp     - multi language strings for all surveys      -  [key].Tr(lc)
-	MpSite trl.MapSite `json:"translations_site"`    // MpSite - multi language strings for specific survey  -  [site][key].Tr(lc)
+	// Mp     - multi language strings for _all_      surveys   -  [key].Tr(lc)
+	Mp trl.Map `json:"translations_generic"`
+	// MpSite - multi language strings for _specific_ survey    -  [site][key].Tr(lc)
+	// Contains 'default' key as fallback.
+	// Use configT.Val() and qst.QuestionnaireT.SiteSpecificTrl() for comfort
+	MpSite trl.MapSite `json:"translations_site"`
 
 	// keep this last - since it trashes diff view
 	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables - no localization
@@ -254,8 +258,8 @@ func (c *ConfigT) Tr(langCode, key string) string {
 // Val for site and language specific values in templates;
 // function falls back to key "default";
 // i.e. {{ cfg.Val .Site "en"      "app_label"}}
-//
-//	{{ cfg.Val .Site "default" "img_logo_icon"}}
+// or   {{ cfg.Val .Site "default" "img_logo_icon"}}
+// compare qst.QuestionaireT.SiteSpecificTrl
 func (c *ConfigT) Val(site, langCode, key string) string {
 	// site key missing
 	if _, ok := c.MpSite[site]; !ok {
@@ -405,12 +409,12 @@ func Example() *ConfigT {
 
 		Profiles: map[string]map[string]string{
 			"fmt1": {
-				"lang_code":               "de",
-				"main_refinance_rate_ecb": "3.5",
+				"lang_code": "de",
+				"rate_fed":  "3.5", // main_refinance_rate_ecb is a survey param
 			},
 			"fmt2": {
-				"lang_code":               "en",
-				"main_refinance_rate_ecb": "3.5",
+				"lang_code": "en",
+				"rate_fed":  "3.5",
 			},
 		},
 		AnonymousSurveyID: "4walls",

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ea8ef279ce7271d30d01d41cc6f7500e3ea03eb9177c45819b10cf34c9bc906f",
+ 	"md_5": "2af5f4f75bd86ba07dc8bd75c8b99b488929ff90c54be1ef0652eca5156f3c11",
  	"lang_codes": [
  		"en"
  	],
@@ -83,8 +83,8 @@
  			},
  			"counter_progress": "\u0026#9632;",
  			"short": {
- 				"de": "Asset Class Selection,\u003cbr\u003eTranches",
- 				"en": "Asset Class Selection,\u003cbr\u003eTranches"
+ 				"de": "Asset Class \u003cbr\u003eSelection,\u003cbr\u003eTranches",
+ 				"en": "Asset Class \u003cbr\u003eSelection,\u003cbr\u003eTranches"
  			},
  			"suppress_progressbar": true,
  			"style": {

@@ -28,8 +28,8 @@ func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 	}.Outline(fmt.Sprintf("%c3.", rn))
 
 	page.Short = trl.S{
-		"en": ("<b> &nbsp;<br> &nbsp; </b> Market<br>Assessment"),
-		"de": ("<b> &nbsp;<br> &nbsp; </b> Market<br>Assessment"),
+		"en": ("<b> &nbsp;<br> &nbsp; </b> Market<br>&nbsp;&nbsp;Assessment"),
+		"de": ("<b> &nbsp;<br> &nbsp; </b> Market<br>&nbsp;&nbsp;Assessment"),
 	}
 
 	page.CounterProgress = fmt.Sprintf("%c3", rn)

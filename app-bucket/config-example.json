@@ -423,11 +423,11 @@
  	"profiles": {
  		"fmt1": {
  			"lang_code": "de",
- 			"main_refinance_rate_ecb": "3.5"
+ 			"rate_fed": "3.5"
  		},
  		"fmt2": {
  			"lang_code": "en",
- 			"main_refinance_rate_ecb": "3.5"
+ 			"rate_fed": "3.5"
  		}
  	},
  	"direct_login_ranges": [

@@ -969,6 +969,32 @@ func (q *QuestionnaireT) RenderJS(
 
 }
 
+// SiteSpecificTrl returns a survey type or site specific configuration resource string.
+// Compare cfg.ConfigT.SiteSpecificTrl
+// and its usage in templates: {{ cfg.SiteSpecificTrl ...
+func (q *QuestionnaireT) SiteSpecificTrl(key string) trl.S {
+
+	ssp := cfg.Get().MpSite // survey specific multi language strings - [site][key]
+
+	// key and survey type do not exist?
+	if _, ok := ssp[q.Survey.Type][key]; !ok {
+		// fallback for all sites exists?
+		if _, ok := ssp["default"][key]; ok {
+			log.Printf("MpSite key %v found in 'default' but not for survey type %v", key, q.Survey.Type)
+			return ssp["default"][key]
+		}
+		log.Printf("MpSite key %v  not available for survey type %v and no 'default' ", key, q.Survey.Type)
+		return trl.S{
+			"en": fmt.Sprintf("MpSite key %v  not available for survey type %v and no 'default' ", key, q.Survey.Type),
+			"de": fmt.Sprintf("MpSite key %v  not available for survey type %v and no 'default' ", key, q.Survey.Type),
+		}
+	}
+
+	log.Printf("MpSite key %v found for survey  %v", key, q.Survey.Type)
+	return ssp[q.Survey.Type][key]
+
+}
+
 // PageHTML generates HTML for a specific page of the questionnaire
 func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
@@ -1022,12 +1048,14 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		footer.Cols = 2
 
 		// lblNext := cfg.Get().Mp["page"]
-		lblNext := cfg.Get().MpSite[q.Survey.Type]["continue_to_page_x"]
+		// lblNext := cfg.Get().MpSite[q.Survey.Type]["continue_to_page_x"]
+		lblNext := q.SiteSpecificTrl("continue_to_page_x")
 		cloneNext := lblNext.Pad(2)
 		cloneNext = cloneNext.Fill(q.NextNaviNum())
 
 		// lblPrev := cfg.Get().Mp["previous"]
-		lblPrev := cfg.Get().MpSite[q.Survey.Type]["back_to_page_x"]
+		// lblPrev := cfg.Get().MpSite[q.Survey.Type]["back_to_page_x"]
+		lblPrev := q.SiteSpecificTrl("back_to_page_x")
 		clonePrev := lblPrev.Pad(1)
 		clonePrev = clonePrev.Fill(q.PrevNaviNum())
 

@@ -1,10 +1,11 @@
 package fmt
 
-// todo: inflation fields for JS dynamic
-// MonthsShift year
+// todo: inflation fields for JS dynamic - see JSBlockStrings
+// 			see inflationRange.js
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -51,7 +52,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	page := q.AddPage()
 	// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{
-		// "de": "Sonderfrage: Inflation und Geldpolitik",
 		"de": "Sonderfrage: Inflation, Inflationstreiber und Geldpolitik",
 		"en": "Special Questions: Inflation, its causes, and monetary policy ",
 	}
@@ -257,7 +257,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		//
 		//
 		// second to fourth row: inputs
-		for i := 2022; i <= 2024; i++ {
+		for i := q.Survey.Year; i <= q.Survey.Year+2; i++ {
 
 			{
 				inp := gr.AddInput()
@@ -414,25 +414,35 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		)
 		idxThreeMonthsBefore := trl.MonthsShift(int(q.Survey.Month), -3)
 		monthMinus3 := trl.MonthByInt(idxThreeMonthsBefore)
+
+		loc := time.Now().Location()
+		yearMinus1Q := time.Date(q.Survey.Year, time.Month(q.Survey.Month), 2, 0, 0, 0, 0, loc)
+		yearMinus1Q = yearMinus1Q.Local().AddDate(0, -3, 0)
+
 		gb.MainLabel = trl.S{
 			"de": fmt.Sprintf(`<b>2.</b> &nbsp; 
 				Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision 
-				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. %v 2022) bewogen 
+				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. %v %v) bewogen 
 				und wenn ja, nach oben (+) oder unten (-)?
 				<br>
 				<br>
-				<b>Für die Jahre 2022, 2023 und 2024</b>
-			`, monthMinus3.Tr("de"),
+				<b>Für die Jahre %d, %d und %d</b>
+			`,
+				monthMinus3.Tr("de"), yearMinus1Q.Year(),
+				q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2,
 			),
 			"en": fmt.Sprintf(`<b>2.</b> &nbsp;
 				What are the main factors leading you to change your inflation forecasts
-				for the euro area (in comparison to your forecasts as of %v 2022).
+				for the euro area (in comparison to your forecasts as of %v %v).
 				(+) means increase in inflation forecast,
 				(-) means decrease in inflation forecast.
 				<br>
 				<br>
-				<b>For the years 2022, 2023, and 2024</b>
-			`, monthMinus3.Tr("en")),
+				<b>For the years %d, %d, and %d</b>
+			`,
+				monthMinus3.Tr("en"), yearMinus1Q.Year(),
+				q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2,
+			),
 		}
 		gr := page.AddGrid(gb)
 		gr.BottomVSpacers = 1
@@ -529,24 +539,24 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"en": "in 6&nbsp;months",
 			},
 			{
-				"de": "Ende 2022",
-				"en": "End of 2022",
+				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+0),
+				"en": fmt.Sprintf("End of %v", q.Survey.Year+0),
 			},
 			{
-				"de": "Ende 2023",
-				"en": "End of 2023",
+				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+1),
+				"en": fmt.Sprintf("End of %v", q.Survey.Year+1),
 			},
 			{
-				"de": "Ende 2024",
-				"en": "End of 2024",
+				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+2),
+				"en": fmt.Sprintf("End of %v", q.Survey.Year+2),
 			},
 		}
 
 		inputs := []string{
 			"ezb6",
-			"ezb2022",
-			"ezb2023",
-			"ezb2024",
+			fmt.Sprintf("ezb%d", q.Survey.Year+0),
+			fmt.Sprintf("ezb%d", q.Survey.Year+1),
+			fmt.Sprintf("ezb%d", q.Survey.Year+2),
 		}
 
 		// rows 2...5

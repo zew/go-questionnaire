@@ -1,9 +1,9 @@
 const frmM = document.forms.frmMain;
 
 const inputNamesMatrix = {
-    "inf2022": ["inf2022_under4", "inf2022_between4and6", "inf2022_between6and8","inf2022_between8and10", "inf2022_above10"],
     "inf2023": ["inf2023_under4", "inf2023_between4and6", "inf2023_between6and8","inf2023_between8and10", "inf2023_above10"],
     "inf2024": ["inf2024_under4", "inf2024_between4and6", "inf2024_between6and8","inf2024_between8and10", "inf2024_above10"],
+    "inf2025": ["inf2025_under4", "inf2025_between4and6", "inf2025_between6and8","inf2025_between8and10", "inf2025_above10"],
 };
 
 const globRowKeys = Object.keys(inputNamesMatrix);
@@ -68,6 +68,15 @@ let validateRowVals = evt => {
                 // not only return false - but also preventDefault()
                 if (evt.preventDefault) {
                     evt.preventDefault(); 
+                }
+
+                try {
+                    let inpFoc = document.getElementById(inputNamesMatrix["inf2023"][0] );
+                    if (inpFoc) {
+                        inpFoc.focus();
+                    }                    
+                } catch (error) {
+                    
                 }
                 return false;
             }

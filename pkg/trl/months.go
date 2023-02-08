@@ -12,7 +12,7 @@ func EnglishMonths() []string {
 	mn := make([]string, 0, 12) // month names
 
 	for i := 1; i < 13; i++ {
-		t := time.Date(2022, time.Month(i), 2, 0, 0, 0, 0, loc)
+		t := time.Date(2022, time.Month(i), 2, 0, 0, 0, 0, loc) // 2022 is not relevant, any year
 		m := fmt.Sprintln(t.Month())
 		mn = append(mn, m)
 	}

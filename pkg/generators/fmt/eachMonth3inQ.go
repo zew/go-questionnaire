@@ -3,6 +3,7 @@ package fmt
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -17,10 +18,27 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
+	include = include || q.Survey.Year == 2023 && q.Survey.Month == 3
 
-	// !!!
-	// update the 3 month reference "compared to [now minus three months]"
-	// !!!
+	// not 3 as in m2 of q
+	monthsBack := 6
+
+	idxThreeMonthsBefore := trl.MonthsShift(int(q.Survey.Month), -monthsBack)
+	monthMinus3 := trl.MonthByInt(idxThreeMonthsBefore)
+
+	loc := time.Now().Location()
+	yearMinus1Q := time.Date(q.Survey.Year, time.Month(q.Survey.Month), 2, 0, 0, 0, 0, loc)
+	yearMinus1Q = yearMinus1Q.Local().AddDate(0, -monthsBack, 0)
+
+	if false {
+		log.Print(
+			monthMinus3.Tr("de"),
+			yearMinus1Q.Year(),
+			q.Survey.Year+0,
+			q.Survey.Year+1,
+			q.Survey.Year+2,
+		)
+	}
 
 	if !include {
 		return nil
@@ -309,41 +327,45 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `
-				<p style=''>
-					<b>3.</b>  &nbsp;
-					Haben Entwicklungen der folgenden Faktoren 
-					Sie zu einer Revision Ihrer Einschätzungen 
-					zum Rendite-Risiko-Profil der einzelnen Assetklassen
-					im <b><i>Eurogebiet</i></b> 
-					gegenüber September 2022 bewogen?
-				</p>
+					"de": fmt.Sprintf(`
+						<p style=''>
+							<b>3.</b>  &nbsp;
+							Haben Entwicklungen der folgenden Faktoren 
+							Sie zu einer Revision Ihrer Einschätzungen 
+							zum Rendite-Risiko-Profil der einzelnen Assetklassen
+							im <b><i>Eurogebiet</i></b> 
+							gegenüber %v %v bewogen?
+						</p>
 
-				<p style=''>
-					Und wenn ja, nach oben (+) oder unten (-)
-				</p>
+						<p style=''>
+							Und wenn ja, nach oben (+) oder unten (-)
+						</p>
 
-					`,
+						`,
+						monthMinus3.Tr("de"),
+						yearMinus1Q.Year(),
+					),
 
-					"en": `
-				<p style=''>
-					<b>3.</b>  &nbsp;
+					"en": fmt.Sprintf(`
+						<p style=''>
+							<b>3.</b>  &nbsp;
 
-					Did developments in the following areas
-					lead you to change your assessment 
-					of the return-risk profiles
-					of the following four asset classes 
-					(compared to September 2022)
-					in the <b><i>euro area</i></b>?
+							Did developments in the following areas
+							lead you to change your assessment 
+							of the return-risk profiles
+							of the following four asset classes 
+							(compared to %v %v)
+							in the <b><i>euro area</i></b>?
 
-				</p>
+						</p>
 
-				<p style=''>
-					(+) = upward change, (-) = downward change
-				</p>
-					
-
-					`,
+						<p style=''>
+							(+) = upward change, (-) = downward change
+						</p>
+						`,
+						monthMinus3.Tr("en"),
+						yearMinus1Q.Year(),
+					),
 				}
 				inp.ColSpanLabel = 1
 			}

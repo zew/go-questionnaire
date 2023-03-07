@@ -5,6 +5,8 @@ package wrap
 import (
 	"context"
 	"fmt"
+	"log"
+	"net"
 	"net/http"
 	"strings"
 	"time"
@@ -35,7 +37,34 @@ func LogAndRecover(innerHandler http.Handler) http.Handler {
 	}
 }
 
-//
+func getIP(r *http.Request) string {
+
+	strIPs := r.Header.Get("X-Forwarded-For")
+	if strIPs != "" {
+		ips := strings.Split(strIPs, ",")
+		for _, ip := range ips {
+			netIP := net.ParseIP(ip)
+			if netIP != nil {
+				return ip
+			}
+		}
+		log.Printf("could not extract IP from 'X-Forwarded-For' %v", strIPs)
+	}
+
+	ip, _, err := net.SplitHostPort(r.RemoteAddr)
+	if err != nil {
+		log.Printf("could not split IP from remote addr %v: %v", r.RemoteAddr, err)
+		return "0.0.0.0"
+	}
+	netIP := net.ParseIP(ip)
+	if netIP != nil {
+		return ip
+	}
+
+	log.Printf("could not extract IP from remote addr %v", r.RemoteAddr)
+	return "0.0.0.0"
+}
+
 // 1. Logging each request
 // 2. Recover from panic
 // 3. Execute inner handler
@@ -47,7 +76,7 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	// lg.Printf("------------------------------------------")
 	if !strings.HasSuffix(rNew.URL.Path, "favicon.ico") {
 		if !util.StaticExtension(rNew) {
-			lg.Printf("%-60v | referr %v", shortened, util.UrlBeautify(rNew.Referer()))
+			lg.Printf("[%v] %-60v | referr %v", getIP(rNew), shortened, util.UrlBeautify(rNew.Referer()))
 		}
 	}
 
@@ -121,7 +150,6 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	}()
 }
 
-//
 // UseLogRecover is an alternative way to create the same middle ware
 func UseLogRecover(inner http.Handler, aParam int) http.Handler {
 	// Possible stuff outside the closure

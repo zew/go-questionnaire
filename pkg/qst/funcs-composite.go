@@ -49,4 +49,5 @@ var CompositeFuncs = map[string]CompositeFuncT{
 	"GroupPreferencesPOP3":                   cppat.GroupPreferencesPOP3,                   //
 	"QuestForOrg":                            cpbiii.QuestForOrg,                           //
 	"Special202212Q3":                        cpfmt.Special202212Q3,                        //
+	"Special202303":                          cpfmt.Special202303,                          //
 }

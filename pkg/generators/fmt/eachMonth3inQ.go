@@ -20,6 +20,10 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 3
 
+	if !include {
+		return nil
+	}
+
 	// not 3 as in m2 of q
 	monthsBack := 6
 
@@ -29,20 +33,6 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	loc := time.Now().Location()
 	yearMinus1Q := time.Date(q.Survey.Year, time.Month(q.Survey.Month), 2, 0, 0, 0, 0, loc)
 	yearMinus1Q = yearMinus1Q.Local().AddDate(0, -monthsBack, 0)
-
-	if false {
-		log.Print(
-			monthMinus3.Tr("de"),
-			yearMinus1Q.Year(),
-			q.Survey.Year+0,
-			q.Survey.Year+1,
-			q.Survey.Year+2,
-		)
-	}
-
-	if !include {
-		return nil
-	}
 
 	// q1
 	var rowLabelsAssetClassesEuroZoneQ3 = []trl.S{

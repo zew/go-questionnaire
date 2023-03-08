@@ -23,17 +23,19 @@ func special202303(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{
 			"de": "Korrelation Anlageklassen",
-			"en": "Correlation asset classes",
+			"en": "Correlation of asset classes",
 		}
 		page.Short = trl.S{
-			"de": "Korrelation<br>Anlageklassen",
-			"en": "Correlation<br>Asset classes",
+			"de": "<br>Korrelation",
+			"en": "<br>Correlation",
 		}
 		page.WidthMax("80rem")
 
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.WidthMax("45rem")
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -60,7 +62,7 @@ func special202303(q *qst.QuestionnaireT) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 3
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite"

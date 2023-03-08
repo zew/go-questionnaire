@@ -64,3 +64,12 @@ nav a.title span.survey-wave-id {
         margin-right: 0;
     }
 }
+
+
+/* special 2023-03 */
+table.table-special-202303 tr:first-child td {
+    background-color: var(--clr-sec-lgt1);
+}
+table.table-special-202303 td:first-child {
+    background-color: var(--clr-sec-lgt1);
+}

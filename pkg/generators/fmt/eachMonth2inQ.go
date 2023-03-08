@@ -34,6 +34,16 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
+	// not 6 as in m3 of q
+	monthsBack := 3
+
+	idxThreeMonthsBefore := trl.MonthsShift(int(q.Survey.Month), -monthsBack)
+	monthMinus3 := trl.MonthByInt(idxThreeMonthsBefore)
+
+	loc := time.Now().Location()
+	yearMinus1Q := time.Date(q.Survey.Year, time.Month(q.Survey.Month), 2, 0, 0, 0, 0, loc)
+	yearMinus1Q = yearMinus1Q.Local().AddDate(0, -monthsBack, 0)
+
 	lblStyleRight := css.NewStylesResponsive(nil)
 	lblStyleRight.Desktop.StyleText.AlignHorizontal = "right"
 	lblStyleRight.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
@@ -412,12 +422,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			radioVals6,
 			rowLabelsEconomicAreasShort,
 		)
-		idxThreeMonthsBefore := trl.MonthsShift(int(q.Survey.Month), -3)
-		monthMinus3 := trl.MonthByInt(idxThreeMonthsBefore)
-
-		loc := time.Now().Location()
-		yearMinus1Q := time.Date(q.Survey.Year, time.Month(q.Survey.Month), 2, 0, 0, 0, 0, loc)
-		yearMinus1Q = yearMinus1Q.Local().AddDate(0, -3, 0)
 
 		gb.MainLabel = trl.S{
 			"de": fmt.Sprintf(`<b>2.</b> &nbsp; 

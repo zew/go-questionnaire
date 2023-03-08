@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c4afc8276b69f868cfc7804c757f47eb6a976084dc5bf2712a693e7651d928c9",
+ 	"md_5": "50388f6e0aedaa0e3af74ba52b19a6111e098c8fa36b1e15efc6ea4a743c66a4",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5636,8 +5636,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e \n\t\t\t\t\t\t\tgegenüber Dezember 2022 bewogen?\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t\t\t(compared to December 2022)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e \n\t\t\t\t\t\t\tgegenüber September 2022 bewogen?\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t\t\t(compared to September 2022)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -9038,15 +9038,15 @@
  		{
  			"label": {
  				"de": "Korrelation Anlageklassen",
- 				"en": "Correlation asset classes"
+ 				"en": "Correlation of asset classes"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Korrelation\u003cbr\u003eAnlageklassen",
- 				"en": "Correlation\u003cbr\u003eAsset classes"
+ 				"de": "\u003cbr\u003eKorrelation",
+ 				"en": "\u003cbr\u003eCorrelation"
  			},
  			"style": {
  				"desktop": {
@@ -9069,7 +9069,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -9080,10 +9080,28 @@
  							},
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "45rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
@@ -9092,27 +9110,27 @@
  							"dynamic_func": "Special202303__0__0"
  						},
  						{
- 							"name": "ass_stock_bondgovt",
+ 							"name": "ass_corr_stock_bondgovt",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "ass_stock_bondcorp",
+ 							"name": "ass_corr_stock_bondcorp",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "ass_stock_realestate",
+ 							"name": "ass_corr_stock_realestate",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "ass_bondgovt_bondcorp",
+ 							"name": "ass_corr_bondgovt_bondcorp",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "ass_bondgovt_realestate",
+ 							"name": "ass_corr_bondgovt_realestate",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "ass_bond_realestateprv",
+ 							"name": "ass_corr_bond_realestateprv",
  							"type": "dyn-composite-scalar"
  						}
  					]

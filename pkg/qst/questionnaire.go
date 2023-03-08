@@ -990,7 +990,7 @@ func (q *QuestionnaireT) SiteSpecificTrl(key string) trl.S {
 		}
 	}
 
-	log.Printf("MpSite key %v found for survey  %v", key, q.Survey.Type)
+	// log.Printf("MpSite key %v found for survey  %v", key, q.Survey.Type)
 	return ssp[q.Survey.Type][key]
 
 }

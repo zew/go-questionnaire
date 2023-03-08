@@ -2,61 +2,78 @@ package cpfmt
 
 import (
 	"fmt"
+	"log"
 	"strings"
 
 	qstif "github.com/zew/go-questionnaire/pkg/qstif"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func selectInput(lc, inpName string) string {
+func selectInput(langCode, inpName, inpValue string) string {
 
-	if lc == "de" {
-		return fmt.Sprintf(`
+	ret := ""
+
+	if langCode == "de" {
+		ret = fmt.Sprintf(`
 		<select name="%v" type="select">
-			<option value="">bitte wählen</option>
-			<option value="">stark positiv korreliert</option>
-			<option value="">leicht positiv korreliert</option>
-			<option value="">unkorreliert</option>
-			<option value="">leicht negativ korreliert</option>
-			<option value="">stark negativ korreliert</option>
-			<option value="">keine Angabe</option>
+			<option value="" >bitte wählen</option>
+			<option value="1">stark positiv korreliert</option>
+			<option value="2">leicht positiv korreliert</option>
+			<option value="3">unkorreliert</option>
+			<option value="4">leicht negativ korreliert</option>
+			<option value="5">stark negativ korreliert</option>
+			<option value="6">keine Angabe</option>
         </select>	
 		`,
 			inpName,
 		)
 
+	} else {
+		ret = fmt.Sprintf(`
+		<select name="%v" type="select">
+			<option value="" >please select</option>
+			<option value="1">strongly positively correlated</option>
+			<option value="2">slightly positively correlated</option>
+			<option value="3">uncorrelated</option>
+			<option value="4">slightly negatively correlated</option>
+			<option value="5">strongly negatively correlated</option>
+			<option value="6">no answer</option>
+        </select>	
+		`,
+			inpName,
+		)
 	}
 
-	return fmt.Sprintf(`
-		<select name="%v" type="select">
-			<option value="">please select</option>
-			<option value="">strongly positively correlated</option>
-			<option value="" selected>slightly positively correlated</option>
-			<option value="">uncorrelated</option>
-			<option value="">slightly negatively correlated</option>
-			<option value="">strongly negatively correlated</option>
-			<option value="">no answer</option>
-        </select>	
-	`,
-		inpName,
-	)
+	anchor := fmt.Sprintf(`value="%v"`, inpValue)
+	ret = strings.ReplaceAll(ret, anchor, anchor+" selected")
+
+	return ret
 }
 
 func Special202303(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	inpNames := []string{
-		"ass_stock_bondgovt",
-		"ass_stock_bondcorp",
-		"ass_stock_realestate",
+		"ass_corr_stock_bondgovt",
+		"ass_corr_stock_bondcorp",
+		"ass_corr_stock_realestate",
 
-		"ass_bondgovt_bondcorp",
-		"ass_bondgovt_realestate",
+		"ass_corr_bondgovt_bondcorp",
+		"ass_corr_bondgovt_realestate",
 
-		"ass_bond_realestateprv",
+		"ass_corr_bond_realestateprv",
 	}
 
 	if preflight {
 		return "", inpNames, nil
+	}
+
+	inpValues := make([]string, 0, len(inpNames))
+	for _, n := range inpNames {
+		v, err := q.ResponseByName(n)
+		if err != nil {
+			log.Printf("could not find input name %v: %v", n, err)
+		}
+		inpValues = append(inpValues, v)
 	}
 
 	// if q.UserIDInt() < -100*1000 {
@@ -108,38 +125,59 @@ func Special202303(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string,
 	fmt.Fprint(sb, `
 		<style>
 
-			table{
-				width: 98%;
+			table.table-special-202303 {
+				width:     99%;
 				max-width: 75rem;
 				min-width: 60rem;
-				margin: 1.5rem auto;
-				background-color: aliceblue;
-				border: 1px solid blanchedalmond;
-			}
-			
-		
-			table, th, td {
-				border: 1px solid black;
-				border-collapse: collapse;
-			}    
 
-			td {
-				text-align: center;
+				margin: 0.1rem auto;
+
+				background-color: transparent;
+				/* border: 1px solid blanchedalmond; */
+
+			}
+
+
+			table.table-special-202303,
+			table.table-special-202303 td,
+			dummy {
+				border-collapse: collapse;
+				border: 1px solid black;
+				border: none;
+			}
+
+			table.table-special-202303 td,
+			dummy {
+				border: 2px solid var(--clr-sec);
+			}
+
+
+			table.table-special-202303 td {
+				text-align:     center;
 				vertical-align: middle;
 
-
 				padding: 0.4rem 0.2rem;
-				width:   18.5%;
+				width: 18.5%;
 			}
 
-			td:first-child {
-				width:   18%;
+			table.table-special-202303 td:first-child {
+				width: 18%;
 				text-align: right;
 				padding-right: 0.7rem;
 			}
 
-			td:nth-child(2) {
-				width:   12%;
+			table.table-special-202303 td:nth-child(2) {
+				width: 12%;
+			}
+
+
+
+
+			table.table-special-202303 tr:first-child td {
+				background-color: var(--clr-sec-lgt1);
+			}
+			table.table-special-202303 td:first-child {
+				background-color: var(--clr-sec-lgt1);
 			}
 
 
@@ -148,9 +186,9 @@ func Special202303(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string,
 	`)
 
 	tplContainer := `
-    <table border="border: 1px solid grey">
+    <table border="border: 1px solid grey" class="table-special-202303" >
         <tr>    
-            <td> %v </td>
+            <td> <span style="font-size: 85%%">  %v  </span> </td>
             <td> %v </td>
             <td> %v </td>
             <td> %v </td>
@@ -203,16 +241,16 @@ func Special202303(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string,
 		headerLbls[4].Tr(lc),
 
 		rowLbls[0].Tr(lc),
-		selectInput(lc, inpNames[0]),
-		selectInput(lc, inpNames[1]),
-		selectInput(lc, inpNames[2]),
+		selectInput(lc, inpNames[0], inpValues[0]),
+		selectInput(lc, inpNames[1], inpValues[1]),
+		selectInput(lc, inpNames[2], inpValues[2]),
 
 		rowLbls[1].Tr(lc),
-		selectInput(lc, inpNames[3]),
-		selectInput(lc, inpNames[4]),
+		selectInput(lc, inpNames[3], inpValues[3]),
+		selectInput(lc, inpNames[4], inpValues[4]),
 
 		rowLbls[2].Tr(lc),
-		selectInput(lc, inpNames[5]),
+		selectInput(lc, inpNames[5], inpValues[5]),
 	)
 
 	return sb.String(), inpNames, nil

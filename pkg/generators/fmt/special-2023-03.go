@@ -35,7 +35,7 @@ func special202303(q *qst.QuestionnaireT) error {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-			gr.WidthMax("45rem")
+			// gr.WidthMax("45rem")
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -44,14 +44,14 @@ func special202303(q *qst.QuestionnaireT) error {
 						Mit Blick auf die nächsten sechs Monate 
 						erwarte ich die folgenden Korrelationen zwischen den Gesamtrenditen 
 						der folgenden Anlageklassen (breit gestreute Indizes) 
-						aus dem Eurogebiet. 
+						aus dem&nbsp;<b><i>Eurogebiet</i></b>. 
 					`,
 
 					"en": `
 						Over the coming 6 months, 
 						I expect the following correlations 
 						between the total returns of the following asset classes 
-						in the euro area.
+						in the&nbsp;<b><i>euro&nbsp;area</i></b>.
 					`,
 				}.Outline("4.")
 				inp.ColSpanLabel = 1

@@ -490,7 +490,7 @@ func labelsPlusPlusMinusMinus() []trl.S {
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "No answer",
+			"en": "no answer",
 		},
 	}
 

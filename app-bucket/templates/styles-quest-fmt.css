@@ -68,8 +68,20 @@ nav a.title span.survey-wave-id {
 
 /* special 2023-03 */
 table.table-special-202303 tr:first-child td {
-    background-color: var(--clr-sec-lgt1);
+    border-top:none;
+}
+table.table-special-202303 tr:last-child td {
+    border-bottom:none;
 }
 table.table-special-202303 td:first-child {
+    border-left:none;
     background-color: var(--clr-sec-lgt1);
+}
+table.table-special-202303 td:last-child {
+    border-right:none;
+}
+
+table.table-special-202303 tr:first-child td:first-child {
+    border-top-left-radius: 2.4rem;
+    /* background-color: green !important; */
 }

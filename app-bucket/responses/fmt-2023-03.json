@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "50388f6e0aedaa0e3af74ba52b19a6111e098c8fa36b1e15efc6ea4a743c66a4",
+ 	"md_5": "d8d634cb56c06d0a703466afcfffef91851c43552e7838620f927dd4dad39565",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5016,7 +5016,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e Indizes.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e Indizes.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil von … beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
  								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile  \n\t\t\t\t\tof the following \u003cb\u003e\u003ci\u003eglobal\u003c/i\u003e\u003c/b\u003e asset classes for the next 6 months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -5645,17 +5645,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "30rem"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -5899,7 +5895,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "No an\u0026shy;swer"
+ 								"en": "no an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6177,7 +6173,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"en": "Political situation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6235,7 +6231,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Current valuation multiples"
+ 								"en": "Current market valuation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6742,7 +6738,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "No an\u0026shy;swer"
+ 								"en": "no an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7020,7 +7016,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"en": "Political situation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7078,7 +7074,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Current valuation multiples"
+ 								"en": "Current market valuation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7585,7 +7581,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "No an\u0026shy;swer"
+ 								"en": "no an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7863,7 +7859,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"en": "Political situation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7921,7 +7917,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Current valuation multiples"
+ 								"en": "Current market valuation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8428,7 +8424,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "No an\u0026shy;swer"
+ 								"en": "no an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -8706,7 +8702,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"en": "Political situation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8764,7 +8760,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Current valuation multiples"
+ 								"en": "Current market valuation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -9075,30 +9071,12 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMit Blick auf die nächsten sechs Monate \n\t\t\t\t\t\terwarte ich die folgenden Korrelationen zwi\u0026shy;schen den Ge\u0026shy;samtrenditen \n\t\t\t\t\t\tder folgenden Anlageklassen (breit gestreute Indizes) \n\t\t\t\t\t\taus dem Euro\u0026shy;gebiet. \n\t\t\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tOver the coming 6 months, \n\t\t\t\t\t\tI expect the following correlations \n\t\t\t\t\t\tbe\u0026shy;tween the total returns of the following asset classes \n\t\t\t\t\t\tin the euro area.\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMit Blick auf die nächsten sechs Monate \n\t\t\t\t\t\terwarte ich die folgenden Korrelationen zwi\u0026shy;schen den Ge\u0026shy;samtrenditen \n\t\t\t\t\t\tder folgenden Anlageklassen (breit gestreute Indizes) \n\t\t\t\t\t\taus dem\u0026nbsp;\u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e. \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tOver the coming 6 months, \n\t\t\t\t\t\tI expect the following correlations \n\t\t\t\t\t\tbe\u0026shy;tween the total returns of the following asset classes \n\t\t\t\t\t\tin the\u0026nbsp;\u003cb\u003e\u003ci\u003eeuro\u0026nbsp;area\u003c/i\u003e\u003c/b\u003e.\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "45rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 3,

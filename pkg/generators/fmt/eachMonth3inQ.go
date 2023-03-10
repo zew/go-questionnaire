@@ -159,12 +159,14 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Politische Rahmen&shy;bedingungen",
-			"en": "Political framework",
+			// "en": "Political framework",
+			"en": "Political situation",
 		},
 		{
 			"de": "Aktuelle Markt&shy;bewertung",
 			// "en": "Market valuation",
-			"en": "Current valuation multiples",
+			// "en": "Current valuation multiples",
+			"en": "Current market valuation",
 		},
 		{
 			// "de": "Krieg Russ&shy;land - Ukraine",
@@ -281,7 +283,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				</p>
 
 				<p style=''>
-					Das Rendite-Risiko-Profil beurteile ich …
+					Das Rendite-Risiko-Profil von … beurteile ich …
 				</p>
 				`,
 				"en": `
@@ -311,8 +313,8 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.WidthMax = "30rem"
-			gr.Style.Mobile.StyleBox.WidthMax = "100%"
+			// gr.Style.Desktop.StyleBox.WidthMax = "30rem"
+			// gr.Style.Mobile.StyleBox.WidthMax = "100%"
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

@@ -430,6 +430,7 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 }
 
 // Type page contains groups with inputs
+// compare WrappedPageT
 type pageT struct {
 	Section trl.S `json:"section,omitempty"`     // extra strong before label in content - summary headline for multiple pages
 	Label   trl.S `json:"label,omitempty"`       // headline, set to "" to prevent rendering

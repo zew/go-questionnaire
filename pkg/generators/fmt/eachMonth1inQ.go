@@ -218,11 +218,12 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Wechselkurse",
-			"en": "Exchange rates",
+			"en": "Exchange rates (relative to the Euro)",
 		},
 		{
 			"de": "Int. Handelskonflikte",
-			"en": "Intl. trade conflicts",
+			// "en": "Intl. trade conflicts",
+			"en": "Intl. trade disputes",
 		},
 		{
 			"de": "EZB-Geldpolitik",
@@ -230,29 +231,41 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "US-Geldpolitik",
-			"en": "FED monetary policy",
+			// "en": "FED monetary policy",
+			"en": "US monetary policy",
 		},
 		{
-			"de": "Corona Pandemie",
+			// https://www.duden.de/rechtschreibung/Coronapandemie
+			"de": "Coronapandemie",
 			"en": "Corona pandemic",
 		},
 		{
 			"de": "Internationale Lieferengpässe",
-			"en": "International supply bottlenecks",
+			"en": "International supply chain bottlenecks",
+			// "en": "International supply bottlenecks",
 			// "en": "Supply chain disruptions",
 			// -	Supply chain bottlenecks
 		},
 		{
-			"de": "Engpässe bei Rohstoffen",
-			"en": "Raw material shortages",
+			"de": "Energiepreise",
+			"en": "Energy prices",
 		},
 		{
-			"de": "Inflation (außer Energie)",
+			"de": "Engpässe bei Rohstoffen",
+			// "en": "Raw material shortages",
+			"en": "Raw material bottlenecks",
+		},
+		{
+			"de": "Inflation (ohne Energiepreise)",
 			"en": "Inflation (excl. energy prices)",
 		},
 		{
-			"de": "Energiepreise",
-			"en": "Energy prices",
+			"de": "Krieg in der Ukraine",
+			"en": "War in Ukraine",
+		},
+		{
+			"de": "Spannungen im Bankensytem",
+			"en": "Tensions in the banking sector",
 		},
 	}
 
@@ -273,9 +286,11 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_mp_fed",
 				"rev_corona",
 				"rev_supply_disrupt",
+				"rev_energy_prices",
 				"rev_shortages_raw_mat",
 				"rev_inflation",
-				"rev_energy_prices",
+				"rev_ukraine",
+				"rev_banking_strain",
 				// "rev_free",
 			},
 			radioVals6,

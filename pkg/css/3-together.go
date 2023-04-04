@@ -193,6 +193,13 @@ func ItemStartCA(sr *StylesResponsive) *StylesResponsive {
 	return sr
 }
 
+// ItemEndCA aligns the item at the end on the cross-axis
+func ItemEndCA(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleGridItem.AlignSelf = "end"
+	return sr
+}
+
 // ItemStartMA aligns the item at the start on the main-axis
 func ItemStartMA(sr *StylesResponsive) *StylesResponsive {
 	sr = NewStylesResponsive(sr)
@@ -238,10 +245,10 @@ func TextEnd(sr *StylesResponsive) *StylesResponsive {
 	return sr
 }
 
-// TextCACenter makes the text content centered on the cross axis
-//     cross axis of text stuff can only take effect,
-// 		if some text has less height than the bounding box;
-//      for instance due to one extra large word
+// TextCACenter makes the text content centered on the cross axis.
+// Cross axis of text stuff can only take effect,
+// if some text has less height than the bounding box;
+// for instance due to one extra large word.
 func TextCACenter(sr *StylesResponsive) *StylesResponsive {
 	sr = NewStylesResponsive(sr)
 	sr.Desktop.StyleText.AlignVertical = "middle"

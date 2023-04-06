@@ -28,7 +28,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		"en": "Special: Short- and Medium-Term Economic Growth",
 	}
 	page.Short = trl.S{
-		"de": "Wirtschafts-<br>Wachstum",
+		"de": "Wirtschafts-<br>wachstum",
 		"en": "Economic<br>Growth",
 	}
 	page.WidthMax("42rem")
@@ -210,7 +210,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	rowLabelsEconomicAreas := []trl.S{
 		{
 			"de": "Konjunkturdaten Deutschland",
-			"en": "Economic development Germany",
+			"en": "Economic development<br>Germany",
 		},
 		{
 			"de": "Exportmärkte",
@@ -218,12 +218,13 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Wechselkurse",
-			"en": "Exchange rates (relative to the Euro)",
+			// "en": "Exchange rates (relative to the Euro)",
+			"en": "Exchange rates",
 		},
 		{
 			"de": "Int. Handelskonflikte",
-			// "en": "Intl. trade conflicts",
-			"en": "Intl. trade disputes",
+			"en": "Intl. trade conflicts",
+			// "en": "Intl. trade disputes",
 		},
 		{
 			"de": "EZB-Geldpolitik",
@@ -231,18 +232,18 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "US-Geldpolitik",
-			// "en": "FED monetary policy",
-			"en": "US monetary policy",
+			"en": "FED monetary policy",
+			// "en": "US monetary policy",
 		},
 		{
 			// https://www.duden.de/rechtschreibung/Coronapandemie
-			"de": "Coronapandemie",
+			"de": "Corona Pandemie",
 			"en": "Corona pandemic",
 		},
 		{
 			"de": "Internationale Lieferengpässe",
-			"en": "International supply chain bottlenecks",
-			// "en": "International supply bottlenecks",
+			// "en": "International supply chain bottlenecks",
+			"en": "International supply bottlenecks",
 			// "en": "Supply chain disruptions",
 			// -	Supply chain bottlenecks
 		},
@@ -252,8 +253,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Engpässe bei Rohstoffen",
-			// "en": "Raw material shortages",
-			"en": "Raw material bottlenecks",
+			"en": "Raw material shortages",
+			// "en": "Raw material bottlenecks",
 		},
 		{
 			"de": "Inflation (ohne Energiepreise)",

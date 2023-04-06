@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "78a3a3f739f038109e86bce02970b0755a8a6e275fab76a72083535b2b120c63",
+ 	"md_5": "acab639d125a59909716e4519358e505e7e3948cfd2d97f4adb47b9220b99dd6",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4557,7 +4557,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Wirtschafts-\u003cbr\u003eWachstum",
+ 				"de": "Wirtschafts-\u003cbr\u003ewachstum",
  				"en": "Economic\u003cbr\u003eGrowth"
  			},
  			"style": {
@@ -5370,7 +5370,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
- 								"en": "Eco\u0026shy;nom\u0026shy;ic de\u0026shy;vel\u0026shy;op\u0026shy;ment Ger\u0026shy;ma\u0026shy;ny"
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic de\u0026shy;vel\u0026shy;op\u0026shy;ment\u003cbr\u003eGer\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5486,7 +5486,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Wechsel\u0026shy;kurse",
- 								"en": "Exchange rates (relative to the Euro)"
+ 								"en": "Exchange rates"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5544,7 +5544,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Int. Handels\u0026shy;konflikte",
- 								"en": "Intl. trade disputes"
+ 								"en": "Intl. trade conflicts"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5660,7 +5660,7 @@
  							"type": "radio",
  							"label": {
  								"de": "US-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "US monetary policy"
+ 								"en": "FED monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5717,7 +5717,7 @@
  							"name": "rev_corona",
  							"type": "radio",
  							"label": {
- 								"de": "Coronapandemie",
+ 								"de": "Corona Pandemie",
  								"en": "Corona pandemic"
  							},
  							"col_span_label": 3.6,
@@ -5776,7 +5776,7 @@
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
- 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply chain bottlenecks"
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply bottlenecks"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5892,7 +5892,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Engpässe bei Rohstoffen",
- 								"en": "Raw material bottlenecks"
+ 								"en": "Raw material shortages"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6231,7 +6231,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Inflation, BIP \u003cbr\u003eund DAX Renditen",
+ 				"de": "Inflation, BIP \u003cbr\u003eund DAX-Renditen",
  				"en": "Inflation, GDP \u003cbr\u003eand DAX returns"
  			},
  			"style": {
@@ -6358,8 +6358,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate auf Sicht von 12\u0026nbsp;Monaten",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on rate in 12\u0026nbsp;months (HCPI April 2024 vs. HCPI April 2023)"
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate auf Sicht von \u003ci\u003e12\u0026nbsp;Monaten\u003c/i\u003e\n\t\t\t\t\t\t\t(HVPI April 2024 vs. HVPI April 2023)\n\t\t\t\t\t\t\t",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on rate in \u003ci\u003e12\u0026nbsp;months\u003c/i\u003e \n\t\t\t\t\t\t\t(HCPI April 2024 vs. HCPI April 2023)\n\t\t\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6422,8 +6422,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Durchschnittliche jährliche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land auf\n\t\t\t\t\t\t\tSicht von 36\u0026nbsp;Monaten",
- 								"en": "\u003ci\u003e\u003cu\u003eAv\u0026shy;er\u0026shy;age\u003c/u\u003e\u003c/i\u003e in\u0026shy;fla\u0026shy;ti\u0026shy;on rate over the next 36\u0026nbsp;months (HCPI April 2026 vs. HCPI April 2023)"
+ 								"de": "Durchschnittliche jährliche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land auf\n\t\t\t\t\t\t\tSicht von \u003ci\u003e36\u0026nbsp;Monaten\u003c/i\u003e\n\t\t\t\t\t\t\t(HVPI April 2026 vs. HVPI April 2023)\n\t\t\t\t\t\t\t",
+ 								"en": "\u003ci\u003e\u003cu\u003eAv\u0026shy;er\u0026shy;age\u003c/u\u003e\u003c/i\u003e in\u0026shy;fla\u0026shy;ti\u0026shy;on rate over the next \u003ci\u003e36\u0026nbsp;months\u003c/i\u003e \n\t\t\t\t\t\t\t(HCPI April 2026 vs. HCPI April 2023)\n\t\t\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6512,7 +6512,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; Auf Sicht von 12\u0026nbsp;Monaten, was sind Ihre Pro\u0026shy;gno\u0026shy;sen für die Wachstumsrate \n\t\t\t\t\t\tdes realen Bruttoinlandprodukts in Deutsch\u0026shy;land bzw. die Rendite des DAX?",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; Looking ahead\n\t\t\t\t\t\t\t\u003ci\u003e12\u003c/i\u003e\u0026nbsp;months, what are your forecasts for the  \n\t\t\t\t\t\t\t\u003ci\u003eannual growth rate of real German GDP\u003c/i\u003e\n\t\t\t\t\t\t\t\tand the \n\t\t\t\t\t\t\t\u003ci\u003ereturn\u003c/i\u003e\n\t\t\t\t\t\t\t\tof the\n\t\t\t\t\t\t\t\u003ci\u003eDAX\u003c/i\u003e?"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; Looking ahead\n\t\t\t\t\t\t\t\u003ci\u003e12\u003c/i\u003e\u0026nbsp;months, what are your forecasts for the  \n\t\t\t\t\t\t\t\u003ci\u003eannual growth rate of German real GDP\u003c/i\u003e\n\t\t\t\t\t\t\t\tand the \n\t\t\t\t\t\t\t\u003ci\u003ereturn\u003c/i\u003e\n\t\t\t\t\t\t\t\tof the\n\t\t\t\t\t\t\t\u003ci\u003eDAX\u003c/i\u003e?"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -6608,8 +6608,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "BIP-Wachstumsrate in Deutsch\u0026shy;land auf Sicht von 12\u0026nbsp;Monaten",
- 								"en": "Real German GDP growth in 12\u0026nbsp;months (GDP Q1 2024 vs. GDP Q1 2023)"
+ 								"de": "BIP-Wachstumsrate in Deutsch\u0026shy;land auf Sicht von 12\u0026nbsp;Monaten\n\t\t\t\t\t\t\t(BIP Q1 2024 vs. BIP Q1 2023)\n\t\t\t\t\t\t\t",
+ 								"en": "German real GDP growth in 12\u0026nbsp;months \n\t\t\t\t\t\t\t(GDP Q1 2024 vs. GDP Q1 2023)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6672,8 +6672,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "DAX-Rendite über die nächsten 12\u0026nbsp;Monaten",
- 								"en": "Return of the DAX over the next 12\u0026nbsp;months (DAX April 2024 vs. April 2023)"
+ 								"de": "DAX-Rendite über die nächsten 12\u0026nbsp;Monate\n\t\t\t\t\t\t\t(DAX April 2024 vs. April 2023)\t\t\n\t\t\t\t\t\t\t",
+ 								"en": "Return of the DAX over the next 12\u0026nbsp;months \n\t\t\t\t\t\t\t(DAX April 2024 vs. April 2023)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6758,7 +6758,7 @@
  		},
  		{
  			"label": {
- 				"de": "Spezialfragen: Spannungen im Bankensystem und deren wirtschaftlichen Folgen",
+ 				"de": "Spezialfragen: Spannungen im Bankensystem und deren wirtschaftliche Folgen",
  				"en": "Special question: tensions in the banking system and their economic implications"
  			},
  			"description": {
@@ -6796,8 +6796,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Mit Blick auf die nächsten 6 Monate, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem auf die folgenden wirt\u0026shy;schaft\u0026shy;lichen\n\t\t\t\t\t\tVariablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = kei\u0026shy;ne Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)\n\t\n\t\t\t",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Looking ahead 6 months, what do you think will be the overall impact of the recent tensions in the banking sector on the following eco\u0026shy;nom\u0026shy;ic variables?"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Mit Blick auf die nächsten \u003ci\u003e6 Monate\u003c/i\u003e, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem \n\t\t\t\t\t\tauf die folgenden wirt\u0026shy;schaft\u0026shy;lichen Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = kei\u0026shy;ne Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)\n\t\n\t\t\t",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Looking ahead \u003ci\u003e6 months\u003c/i\u003e, what do you think will be the overall impact of the recent tensions in the banking sector on the following eco\u0026shy;nom\u0026shy;ic variables?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7479,7 +7479,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Leitzins der FED",
- 								"en": "Fed's fund rate"
+ 								"en": "Fed funds rate"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7560,8 +7560,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; Mit Blick auf die nächsten 2 Jahre, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem auf die folgenden wirt\u0026shy;schaft\u0026shy;lichen Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = kei\u0026shy;ne Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)",
- 								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; Looking ahead 2 years, what do you think will be the overall impact of the recent tensions in the banking sector on the following eco\u0026shy;nom\u0026shy;ic variables?"
+ 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; Mit Blick auf die nächsten \u003ci\u003e2 Jahre\u003c/i\u003e, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem \n\t\t\t\t\t\tauf die folgenden wirt\u0026shy;schaft\u0026shy;lichen Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = kei\u0026shy;ne Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)",
+ 								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; Looking ahead \u003ci\u003e2 years\u003c/i\u003e, what do you think will be the overall impact of the recent tensions in the banking sector on the following eco\u0026shy;nom\u0026shy;ic variables?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -8243,7 +8243,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Leitzins der FED",
- 								"en": "Fed's fund rate"
+ 								"en": "Fed funds rate"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,

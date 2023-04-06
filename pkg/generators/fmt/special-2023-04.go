@@ -118,7 +118,7 @@ func special202304(q *qst.QuestionnaireT) error {
 			"en": "Special questions: Inflation, GDP growth and DAX returns",
 		}
 		page.Short = trl.S{
-			"de": "Inflation, BIP <br>und DAX Renditen",
+			"de": "Inflation, BIP <br>und DAX-Renditen",
 			"en": "Inflation, GDP <br>and DAX returns",
 		}
 		page.WidthMax("42rem")
@@ -157,12 +157,20 @@ func special202304(q *qst.QuestionnaireT) error {
 
 			rows := []trl.S{
 				{
-					"de": `Inflationsrate auf Sicht von 12&nbsp;Monaten`,
-					"en": `Inflation rate in 12&nbsp;months (HCPI April 2024 vs. HCPI April 2023)`,
+					"de": `Inflationsrate auf Sicht von <i>12&nbsp;Monaten</i>
+							(HVPI April 2024 vs. HVPI April 2023)
+							`,
+					"en": `Inflation rate in <i>12&nbsp;months</i> 
+							(HCPI April 2024 vs. HCPI April 2023)
+							`,
 				}, {
 					"de": `Durchschnittliche jährliche Inflationsrate in Deutschland auf
-							Sicht von 36&nbsp;Monaten`,
-					"en": `<i><u>Average</u></i> inflation rate over the next 36&nbsp;months (HCPI April 2026 vs. HCPI April 2023)`,
+							Sicht von <i>36&nbsp;Monaten</i>
+							(HVPI April 2026 vs. HVPI April 2023)
+							`,
+					"en": `<i><u>Average</u></i> inflation rate over the next <i>36&nbsp;months</i> 
+							(HCPI April 2026 vs. HCPI April 2023)
+							`,
 				},
 			}
 
@@ -187,7 +195,7 @@ func special202304(q *qst.QuestionnaireT) error {
 						des realen Bruttoinlandprodukts in Deutschland bzw. die Rendite des DAX?`,
 				"en": `Looking ahead
 							<i>12</i>&nbsp;months, what are your forecasts for the  
-							<i>annual growth rate of real German GDP</i>
+							<i>annual growth rate of German real GDP</i>
 								and the 
 							<i>return</i>
 								of the
@@ -206,11 +214,17 @@ func special202304(q *qst.QuestionnaireT) error {
 
 			rows := []trl.S{
 				{
-					"de": `BIP-Wachstumsrate in Deutschland auf Sicht von 12&nbsp;Monaten`,
-					"en": `Real German GDP growth in 12&nbsp;months (GDP Q1 2024 vs. GDP Q1 2023)`,
+					"de": `BIP-Wachstumsrate in Deutschland auf Sicht von 12&nbsp;Monaten
+							(BIP Q1 2024 vs. BIP Q1 2023)
+							`,
+					"en": `German real GDP growth in 12&nbsp;months 
+							(GDP Q1 2024 vs. GDP Q1 2023)`,
 				}, {
-					"de": `DAX-Rendite über die nächsten 12&nbsp;Monaten`,
-					"en": `Return of the DAX over the next 12&nbsp;months (DAX April 2024 vs. April 2023)`,
+					"de": `DAX-Rendite über die nächsten 12&nbsp;Monate
+							(DAX April 2024 vs. April 2023)		
+							`,
+					"en": `Return of the DAX over the next 12&nbsp;months 
+							(DAX April 2024 vs. April 2023)`,
 				},
 			}
 
@@ -231,7 +245,7 @@ func special202304(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Spezialfragen: Spannungen im Bankensystem und deren wirtschaftlichen Folgen",
+			"de": "Spezialfragen: Spannungen im Bankensystem und deren wirtschaftliche Folgen",
 			"en": "Special question: tensions in the banking system and their economic implications",
 		}
 		page.Short = trl.S{
@@ -290,16 +304,16 @@ func special202304(q *qst.QuestionnaireT) error {
 					},
 					{
 						"de": `Leitzins der FED`,
-						"en": `Fed's fund rate`,
+						"en": `Fed funds rate`,
 					},
 				},
 			)
 			gb.MainLabel = trl.S{
-				"de": `Mit Blick auf die nächsten 6 Monate, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem auf die folgenden wirtschaftlichen
-						Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = keine Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)
+				"de": `Mit Blick auf die nächsten <i>6 Monate</i>, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem 
+						auf die folgenden wirtschaftlichen Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = keine Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)
 	
 			`,
-				"en": `Looking ahead 6 months, what do you think will be the overall impact of the recent tensions in the banking sector on the following economic variables?`,
+				"en": `Looking ahead <i>6 months</i>, what do you think will be the overall impact of the recent tensions in the banking sector on the following economic variables?`,
 			}.Outline("5.")
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 4
@@ -353,13 +367,14 @@ func special202304(q *qst.QuestionnaireT) error {
 					},
 					{
 						"de": `Leitzins der FED`,
-						"en": `Fed's fund rate`,
+						"en": `Fed funds rate`,
 					},
 				},
 			)
 			gb.MainLabel = trl.S{
-				"de": `Mit Blick auf die nächsten 2 Jahre, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem auf die folgenden wirtschaftlichen Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = keine Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)`,
-				"en": `Looking ahead 2 years, what do you think will be the overall impact of the recent tensions in the banking sector on the following economic variables?`,
+				"de": `Mit Blick auf die nächsten <i>2 Jahre</i>, was glauben Sie, wie sich die jüngsten Spannungen im Bankensystem 
+						auf die folgenden wirtschaftlichen Variablen auswirken werden? (++ = starker Anstieg, + = leichter Anstieg, 0 = keine Auswirkungen, - = leichter Rückgang, -- = starker Rückgang)`,
+				"en": `Looking ahead <i>2 years</i>, what do you think will be the overall impact of the recent tensions in the banking sector on the following economic variables?`,
 			}.Outline("6.")
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 3

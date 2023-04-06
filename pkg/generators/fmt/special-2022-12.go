@@ -166,11 +166,11 @@ func special202212(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": "BIP-Wachstumsrate in Deutschland, 2023",
-					"en": "Growth rate of annual real German GDP, 2023",
+					"en": "Growth rate of annual German real GDP, 2023",
 				},
 				{
 					"de": "Durchschn. BIP-Wachstumsrate in Deutschland pro Jahr, 2023&#8209;2025",
-					"en": "Avg. growth rate of annual real German GDP per year, 2023&#8209;2025",
+					"en": "Avg. growth rate of annual German real GDP per year, 2023&#8209;2025",
 				},
 			}
 

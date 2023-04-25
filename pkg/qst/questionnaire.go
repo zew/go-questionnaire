@@ -126,6 +126,10 @@ type inputT struct {
 	StyleLbl *css.StylesResponsive `json:"style_label,omitempty"`
 	StyleCtl *css.StylesResponsive `json:"style_control,omitempty"`
 
+	// strings - for javascript file templates, i.e.
+	//   let  yrs = {{.Yrs}}
+	// translations  - for messages
+	// 	  window.confirm("{{.msg}}")
 	JSBlockStrings map[string]string `json:"js_block_strings,omitempty"`
 	JSBlockTrls    map[string]trl.S  `json:"js_block_translations,omitempty"`
 }

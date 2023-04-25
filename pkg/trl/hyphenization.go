@@ -139,6 +139,7 @@ var hyph = []string{
 	"über|haupt",
 	"Um|welt|öko|no|mie",
 	"un|ent|schieden",
+	"un|ter",
 	"Un|ter|neh|men",
 	"un|ver|än|dert",
 	"un|wich|tig",

@@ -1,29 +1,54 @@
 const frmM = document.forms.frmMain;
 
-const inputNamesMatrix = {
-    "inf2023": ["inf2023_under4", "inf2023_between4and6", "inf2023_between6and8","inf2023_between8and10", "inf2023_above10"],
-    "inf2024": ["inf2024_under4", "inf2024_between4and6", "inf2024_between6and8","inf2024_between8and10", "inf2024_above10"],
-    "inf2025": ["inf2025_under4", "inf2025_between4and6", "inf2025_between6and8","inf2025_between8and10", "inf2025_above10"],
-};
+
+// ["inf2023", "inf2024", "inf2025"]
+let  yrs = {{.Yrs}}
+let ivls = {{.Ivls}}
+
+
+// let inputNamesMatrix = {
+//     "inf2023": ["inf2023_under4", "inf2023_between4and6", "inf2023_between6and8","inf2023_between8and10", "inf2023_above10"],
+//     "inf2024": ["inf2024_under4", "inf2024_between4and6", "inf2024_between6and8","inf2024_between8and10", "inf2024_above10"],
+//     "inf2025": ["inf2025_under4", "inf2025_between4and6", "inf2025_between6and8","inf2025_between8and10", "inf2025_above10"],
+// };
+var inputNamesMatrix = {}
+var inps = []
+
+yrs.forEach(yr => {
+    inputNamesMatrix[yr] = []
+    ivls.forEach(ivl => {
+        const nm = `${yr}_${ivl}`;
+        inputNamesMatrix[yr].push(nm)
+        inps.push(frmM[nm])
+    });
+});
+
+
+
 
 const globRowKeys = Object.keys(inputNamesMatrix);
 
+// console.log(inputNamesMatrix)
+// console.log(inps)
+// console.log(globRowKeys)
 
 
-let validateRowVals = evt => {
+
+let validateRow = evt => {
 
 
     let srcName = evt.srcElement.name;
-    let rowKey = srcName.substring(0, 7); // neighbours            
+    // neighbours - identified by prefix inf2023_..., inf2024_... 
+    let rowKey = srcName.substring(0, 7); 
 
     const inpNames = inputNamesMatrix[rowKey]; // siblings on row
 
-    let inps = inpNames.map(nme => {
+    let inpsRow = inpNames.map(nme => {
         return frmM[nme]; // input objects on row
     });
 
     let filled = false;  // at least one field is filled ?
-    let vals = inps.map(inp => {
+    let vals = inpsRow.map(inp => {
         let val = 0;
         if (inp.value != "") {
             val = parseInt(inp.value, 10);
@@ -71,7 +96,8 @@ let validateRowVals = evt => {
                 }
 
                 try {
-                    let inpFoc = document.getElementById(inputNamesMatrix["inf2023"][0] );
+                    // let inpFoc = document.getElementById(inputNamesMatrix["inf2023"][0] );
+                    let inpFoc = inpsRow[0];
                     if (inpFoc) {
                         inpFoc.focus();
                     }                    
@@ -93,20 +119,20 @@ let validateRowVals = evt => {
 
 
 // register on each input
-globRowKeys.forEach( key => {
-    let inps = inputNamesMatrix[key].map(nme => {
-        return frmM[nme];
-    });
-    inps.forEach( inp => {
+inps.forEach( inp => {
+    if (inp) {
         // console.log(`listener added - ${inp.name}`);
-        inp.addEventListener('blur', validateRowVals);
-    });
+        inp.addEventListener('blur', validateRow);
+    } else {
+        console.log(`cannot find - ${inp}`);
+    }
 });
 
 
-function validateRowValsAll(evt) {
 
-    // validateRowVals for every row
+function validateAllRows(evt) {
+
+    // validateRow for every row
     let rowStates = globRowKeys.map( key => {
         let fakeInp = document.createElement("input");
         fakeInp.name = inputNamesMatrix[key][0];
@@ -114,7 +140,7 @@ function validateRowValsAll(evt) {
             type: "submit",
             srcElement: fakeInp,
         }
-        return validateRowVals( fakeEvt );
+        return validateRow( fakeEvt );
     });
     
     
@@ -133,6 +159,6 @@ function validateRowValsAll(evt) {
 
 // register on form
 if (frmM) {
-    frmM.addEventListener('submit', validateRowValsAll);
+    frmM.addEventListener('submit', validateAllRows);
 }
 

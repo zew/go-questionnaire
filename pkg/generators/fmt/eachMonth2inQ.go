@@ -1,10 +1,8 @@
 package fmt
 
-// todo: inflation fields for JS dynamic - see JSBlockStrings
-// 			see inflationRange.js
-
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/pkg/css"
@@ -69,7 +67,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		"de": "Inflation,<br>Geldpolitik",
 		"en": "Inflation,<br>Monetary Policy",
 	}
-	page.WidthMax("48rem")
+	page.WidthMax("54rem")
 
 	{
 		gr := page.AddGroup()
@@ -133,20 +131,29 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	//
 	//
 	// gr2
+	inpNamesInfRanges := []string{
+		// 	"under2", "between2and3", "between3and4", "above4",
+		"under2", "between2and4", "between4and6", "between6and8", "between8and10", "above10",
+	}
 	{
 
 		// colspan := float32(2 + 4*3 + 2 + 2)
 
 		gr := page.AddGroup()
-		gr.Cols = 6
+		gr.Cols = 9
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Mobile.StyleGridContainer.GapRow = "0.02rem"
-		gr.ColWidths("1.6fr    2.7fr 3.1fr 3.1fr 3.4fr 2.4fr    2.4fr  1.4fr")
+
+		colWidthsA := "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
+		colWidthsB := "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
+		gr.Style.Desktop.StyleGridContainer.TemplateColumns = colWidthsA
+		gr.ColWidths(colWidthsA)
+		gr.Style.Mobile.StyleGridContainer.TemplateColumns = colWidthsB
 
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpan = 8
+			inp.ColSpan = 9
 			inp.Label = trl.S{
 				"de": `<b>1b.</b> &nbsp; Wir möchten gerne von Ihnen erfahren, 
 						für wie wahrscheinlich Sie bestimmte Ausprägungen 
@@ -193,23 +200,27 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 		labels := []trl.S{
 			{
-				"de": "unter <br>4&nbsp;Prozent",
-				"en": "below <br>4&nbsp;percent",
+				"de": "unter <br>2&nbsp;Prozent",
+				"en": "below <br>2&nbsp;percent",
 			},
 			{
-				"de": "zwischen 4 u.  <br>6&nbsp;Prozent",
-				"en": "between  4 and <br>6&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;2 u.  <br><4&nbsp;Prozent",
+				"en": "between  2 and <br><4&nbsp;percent",
 			},
 			{
-				"de": "zwischen 6 u.  <br>8&nbsp;Prozent",
-				"en": "between  6 and <br>8&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;4 u.  <br><6&nbsp;Prozent",
+				"en": "between  4 and <br><6&nbsp;percent",
 			},
 			{
-				"de": "zwischen 8 u.  <br>10&nbsp;Prozent",
+				"de": "zwischen<br>&nbsp;&nbsp;6 u.  <br><8&nbsp;Prozent",
+				"en": "between  6 and <br><8&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;8 u.  <br>10&nbsp;Prozent",
 				"en": "between  8 and <br>10&nbsp;percent",
 			},
 			{
-				"de": "größer als 10&nbsp;Prozent",
+				"de": "größer <br> 10&nbsp;Prozent",
 				"en": "above  <br>10&nbsp;percent",
 			},
 		}
@@ -226,6 +237,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Desktop.StyleText.LineHeight = 118
+			inp.StyleLbl.Mobile.StyleText.FontSize = 87
 		}
 
 		//
@@ -279,25 +291,20 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				}
 			}
 
-			// inpNames := []string{
-			// 	"under2", "between2and3", "between3and4", "above4",
-			// }
-			inpNames := []string{
-				"under4", "between4and6", "between6and8", "between8and10", "above10",
-			}
-
-			for _, inpname := range inpNames {
+			for _, inpname := range inpNamesInfRanges {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("inf%v_%v", i, inpname)
 				inp.Suffix = trl.S{"de": "%", "en": "%"}
-				// inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.ColSpan = 1
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 0
 				inp.MaxChars = 3
+
+				// inp.Style = css.NewStylesResponsive(inp.Style)
+				// inp.Style.Mobile.StyleBox.WidthMax = "1.2rem"
 			}
 
 			// last two cols
@@ -306,8 +313,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.Label = trl.S{
-					"de": "100&nbsp;%",
-					"en": "100&nbsp;%",
+					"de": "&nbsp;&nbsp;100%",
+					"en": "&nbsp;&nbsp;100%",
 				}
 				inp.Style = css.ItemStartMA(inp.Style)
 				inp.Style = css.TextStart(inp.Style)
@@ -319,6 +326,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				inp.Name = fmt.Sprintf("inf%v__noanswer", i)
 				inp.ColSpanControl = 1
 				inp.Style = css.ItemStartMA(inp.Style)
+				inp.Style = css.ItemCenteredMCA(inp.Style)
 			}
 
 		}
@@ -339,12 +347,21 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"msg": s1,
 			}
 
-			// inp.JSBlockStrings = map[string]string{}
-			// inp.JSBlockStrings["inputBaseName"] = name
-			// for idx1 := 0; idx1 < 3; idx1++ {
-			// 	key := fmt.Sprintf("%v_%v", "inp", idx1+1) // {{.inp_1}}, {{.inp_2}}, ...
-			// 	inp.JSBlockStrings[key] = fmt.Sprintf("%v_prio%v", name, idx1)
-			// }
+			inp.JSBlockStrings = map[string]string{}
+
+			yrs := []string{} // years
+			for yr := q.Survey.Year; yr <= q.Survey.Year+2; yr++ {
+				key := fmt.Sprintf("\"%v%v\"", "inf", yr)
+				yrs = append(yrs, key)
+			}
+			inp.JSBlockStrings["Yrs"] = "[" + strings.Join(yrs, ", ") + "]"
+
+			ivls := []string{} // intervals
+			for _, name := range inpNamesInfRanges {
+				ivl := fmt.Sprintf("\"%v\"", name)
+				ivls = append(ivls, ivl)
+			}
+			inp.JSBlockStrings["Ivls"] = "[" + strings.Join(ivls, ", ") + "]"
 
 		}
 

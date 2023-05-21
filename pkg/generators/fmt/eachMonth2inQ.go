@@ -133,7 +133,12 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	// gr2
 	inpNamesInfRanges := []string{
 		// 	"under2", "between2and3", "between3and4", "above4",
-		"under2", "between2and4", "between4and6", "between6and8", "between8and10", "above10",
+		"under2",
+		"between2and4",
+		"between4and6",
+		"between6and8",
+		"between8and10",
+		"above10",
 	}
 	{
 
@@ -204,20 +209,20 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"en": "below <br>2&nbsp;percent",
 			},
 			{
-				"de": "zwischen<br>&nbsp;&nbsp;2 u.  <br><4&nbsp;Prozent",
-				"en": "between  2 and <br><4&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
 			},
 			{
-				"de": "zwischen<br>&nbsp;&nbsp;4 u.  <br><6&nbsp;Prozent",
-				"en": "between  4 and <br><6&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
 			},
 			{
-				"de": "zwischen<br>&nbsp;&nbsp;6 u.  <br><8&nbsp;Prozent",
-				"en": "between  6 and <br><8&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
 			},
 			{
-				"de": "zwischen<br>&nbsp;&nbsp;8 u.  <br>10&nbsp;Prozent",
-				"en": "between  8 and <br>10&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;8 und  <br>10&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;8 and  <br>10&nbsp;percent",
 			},
 			{
 				"de": "größer <br> 10&nbsp;Prozent",
@@ -556,8 +561,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 		lbls := []trl.S{
 			{
-				"de": "in 6&nbsp;Monaten",
-				"en": "in 6&nbsp;months",
+				"de": "In 6&nbsp;Monaten",
+				"en": "In 6&nbsp;months",
 			},
 			{
 				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+0),

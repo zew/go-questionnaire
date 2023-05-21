@@ -15,13 +15,13 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "3.5%"
+ 				"val": "3.75%"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3ceabe0a6d383551ef70b638de6d4a8ac5a392b5680b7692cfeebed3d7582e00",
+ 	"md_5": "82ae2aab79f44e6f9f8321cacedca925fb39d329dbbbe8f45db6cfd6726f1dd0",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4784,8 +4784,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;2 u.  \u003cbr\u003e\u003c4\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;tween  2 and \u003cbr\u003e\u003c4\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;2 und  \u003cbr\u003e\u003c4\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;2 and  \u003cbr\u003e\u003c4\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4829,8 +4829,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;4 u.  \u003cbr\u003e\u003c6\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;tween  4 and \u003cbr\u003e\u003c6\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;4 und  \u003cbr\u003e\u003c6\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;4 and  \u003cbr\u003e\u003c6\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4874,8 +4874,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;6 u.  \u003cbr\u003e\u003c8\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;tween  6 and \u003cbr\u003e\u003c8\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;6 und  \u003cbr\u003e\u003c8\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;6 and  \u003cbr\u003e\u003c8\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4919,8 +4919,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;8 u.  \u003cbr\u003e10\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;tween  8 and \u003cbr\u003e10\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;8 und  \u003cbr\u003e10\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;8 and  \u003cbr\u003e10\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6542,8 +6542,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 3.5%) erwarte ich \n\t\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 3.5%) to be \n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 3.75%) erwarte ich \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 3.75%) to be \n\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -6551,8 +6551,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "in 6\u0026nbsp;Monaten",
- 								"en": "in 6\u0026nbsp;months"
+ 								"de": "In 6\u0026nbsp;Monaten",
+ 								"en": "In 6\u0026nbsp;months"
  							},
  							"col_span": 3,
  							"col_span_label": 1,

@@ -840,7 +840,6 @@ select {
 
 option {
     padding: 0.3em 0.14rem;
-    /* color: var(--clr-inp-focus); */
     background-color: transparent;
     border: none;
 }
@@ -984,8 +983,8 @@ input[type=checkbox],
 input[type=radio],
 input[type=range],
 dummy {
-    color:        var(--clr-inp-focus);
-    accent-color: var(--clr-inp-focus);
+    color:        var(--clr-pri);
+    accent-color: var(--clr-pri);
 }
 
 /* 'focus rectangle' for radios and checkboxes  */
@@ -993,7 +992,8 @@ input[type=checkbox]:focus,
 input[type=radio]:focus,
 input[type=range]:focus,
 dummy {
-     /* scale(2) also scales the focus rectangle :( */
+    accent-color: var(--clr-inp-focus);
+    /* scale(2) also scales the focus rectangle :( */
     box-shadow:
         0 0 0 0.090em var(--clr-sec-lgt2),
         0 0 0 0.110em var(--clr-pri-hov);

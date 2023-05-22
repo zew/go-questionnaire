@@ -254,6 +254,8 @@ Persisted to session:
 
 * `redirected_console_log` - shows a javascript console output
 
+* `save_complete_questionnaire` - saving not only the answers but the full scaffold to file
+
 ## Deploy to appengine
 
 ### Docs

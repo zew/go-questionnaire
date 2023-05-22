@@ -114,6 +114,8 @@ func radiosLabelsTop(
 				} else {
 					inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 					inp.StyleLbl.Desktop.StyleBox.Top = "-0.3rem"
+					inp.StyleLbl.Desktop.StyleBox.Top = "-0.13rem"
+					inp.StyleLbl.Desktop.StyleBox.Top = "-0.03rem"
 				}
 
 				//

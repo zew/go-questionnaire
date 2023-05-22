@@ -66,6 +66,25 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	// page0a - consent 1
+	{
+		page := q.AddPage()
+		page.SuppressInProgressbar = true
+		page.SuppressProgressbar = true
+		page.WidthMax("40rem")
+
+		// page.Label = trl.S{
+		// 	"en": "Dear Madam / Sir,",
+		// 	"de": "Sehr geehrter Damen und Herren",
+		// }
+
+		consent(
+			qst.WrapPageT(page),
+			1,
+		)
+
+	}
+
 	// page1 - asset classes
 	{
 		page := q.AddPage()
@@ -80,8 +99,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification and asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Asset Class <br>Selection,<br>Tranches",
-			"de": "Asset Class <br>Selection,<br>Tranches",
+			"en": "Asset Class Selection,<br>Tranches",
+			"de": "Asset Class Selection,<br>Tranches",
 		}
 		page.CounterProgress = "-"
 		// https://www.fileformat.info/info/charset/UTF-8/list.htm?start=2048
@@ -146,6 +165,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			lblMain := trl.S{
 				"en": `Which asset classes do you invest in?
+
+			<span style='font-size: 80%;'>
+			 &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href='#' onclick='checkSome();' >For testing: Check some</a>
+			</span>
+
+			<span style='font-size: 80%;'>
+			 &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href='#' onclick='checkAll();' >Check all</a>
+			</span>
+
+
 					`,
 				"de": `Wählen Sie Ihre Assetklassen.
 				`,
@@ -159,47 +190,63 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	for i := 0; i < 3; i++ {
+	/*
+		for i := 0; i < 3; i++ {
 
-		naviCondition := fmt.Sprintf("pds_ac%v", i+1)
+			naviCondition := fmt.Sprintf("pds_ac%v", i+1)
 
-		// page11
-		{
-			page := q.AddPage()
-			page.GeneratorFuncName = fmt.Sprintf("pdsPage11-ac%v", i+1)
-			page.NavigationCondition = naviCondition
-		}
-		// page12
-		{
-			page := q.AddPage()
-			page.GeneratorFuncName = fmt.Sprintf("pdsPage12-ac%v", i+1)
-			page.NavigationCondition = naviCondition
-		}
-		// page21
-		{
-			page := q.AddPage()
-			page.GeneratorFuncName = fmt.Sprintf("pdsPage21-ac%v", i+1)
-			page.NavigationCondition = naviCondition
-		}
-		// // page23
-		// {
-		// 	page := q.AddPage()
-		// 	page.GeneratorFuncName = fmt.Sprintf("pdsPage23-ac%v", i+1)
-		// 	page.NavigationCondition = naviCondition
-		// }
-		// page3
-		{
-			page := q.AddPage()
-			page.GeneratorFuncName = fmt.Sprintf("pdsPage3-ac%v", i+1)
-			page.NavigationCondition = naviCondition
-		}
-		// page4
-		{
-			page := q.AddPage()
-			page.GeneratorFuncName = fmt.Sprintf("pdsPage4-ac%v", i+1)
-			page.NavigationCondition = naviCondition
+			// page11
+			{
+				page := q.AddPage()
+				page.GeneratorFuncName = fmt.Sprintf("pdsPage11-ac%v", i+1)
+				page.NavigationCondition = naviCondition
+			}
+			// page12
+			{
+				page := q.AddPage()
+				page.GeneratorFuncName = fmt.Sprintf("pdsPage12-ac%v", i+1)
+				page.NavigationCondition = naviCondition
+			}
+			// page21
+			{
+				page := q.AddPage()
+				page.GeneratorFuncName = fmt.Sprintf("pdsPage21-ac%v", i+1)
+				page.NavigationCondition = naviCondition
+			}
+			// // page23
+			// {
+			// 	page := q.AddPage()
+			// 	page.GeneratorFuncName = fmt.Sprintf("pdsPage23-ac%v", i+1)
+			// 	page.NavigationCondition = naviCondition
+			// }
+			// page3
+			{
+				page := q.AddPage()
+				page.GeneratorFuncName = fmt.Sprintf("pdsPage3-ac%v", i+1)
+				page.NavigationCondition = naviCondition
+			}
+			// page4
+			{
+				page := q.AddPage()
+				page.GeneratorFuncName = fmt.Sprintf("pdsPage4-ac%v", i+1)
+				page.NavigationCondition = naviCondition
+			}
+
 		}
 
+	*/
+
+	// page3
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = fmt.Sprintf("pdsPage3-ac%v", "x")
+		// page.NavigationCondition = naviCondition
+	}
+	// page4
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = fmt.Sprintf("pdsPage4-ac%v", "x")
+		// page.NavigationCondition = naviCondition
 	}
 
 	// page6 - finish
@@ -217,119 +264,70 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 		page.WidthMax("40rem")
 
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 3
+		consent(
+			qst.WrapPageT(page),
+			2,
+		)
 
+		/*
+			// gr1
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": `
-						<span style='font-size:110%'>
+				labels := []trl.S{
+					{
+						"en": `
+						I hereby agree that the answers I have given as part of the ZEW Private Debt Survey will be passed on to Prime Capital AG in non-anonymized form. No personal data is passed on to Prime Capital AG, only the company name and the answers given in the survey. Prime Capital AG will not pass on the data received and will only process this data within the scope of the business activities of the Investment Advisory & Solutions division, in particular for the purposes of database enrichment in the context of manager selection or for the purpose of deriving capital market assumptions.
+						`,
+					},
 
-						<b>Declaration of consent according to GDPR</b> 
-						
-						<br>
+					{
+						"en": `
+						I do <i>not</i> agree with my data being forwarded to Prime Capital AG in non-anonymized form.
+						`,
+					},
+				}
+				radioValues := []string{
+					"datasharing_yes",
+					// "datasharing_anonymous",
+					"datasharing_not",
+				}
 
-						We will treat the answers to this online survey strictly confidential, 
-						GDPR-compliant and only use them in anonymous or aggregated form. 
-						
-						We will pass on your answers to the questions 
-						within the ZEW Private Debt Survey to our cooperation 
-						partner Prime Capital AG in an aggregated and anonymous form. 
-					
-						 
-						In the <a href="/doc/site-imprint.md" >imprint</a> you find extensive information on data protection.						
-						</span>
-
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 2
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"en": `
+						Declaration of consent to forward answers in non-anonymized form to Prime Capital&nbsp;AG:
 						<br> <!-- vertical space for the must error message -->
 						<br> <!-- vertical space for the must error message -->
-						
-						`,
 
-					"de": `---`,
-				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "checkbox"
-				inp.Name = "q61_consent"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 6
-				inp.Validator = "must"
-				inp.Label = trl.S{
-					"en": `
-						I hereby consent to my collected data being used for the ZEW Private Debt Survey.
-						`,
-					"de": `---`,
-				}
-				inp.ControlFirst()
-				inp.ControlTop()
-			}
-
-		}
-
-		// gr1
-		{
-			labels := []trl.S{
-				{
-					"en": `
-	I hereby agree that the answers I have given as part of the ZEW Private Debt Survey will be passed on to Prime Capital AG in non-anonymized form. No personal data is passed on to Prime Capital AG, only the company name and the answers given in the survey. Prime Capital AG will not pass on the data received and will only process this data within the scope of the business activities of the Investment Advisory & Solutions division, in particular for the purposes of database enrichment in the context of manager selection or for the purpose of deriving capital market assumptions.					
 					`,
-				},
-
-				{
-					"en": `
-	I do <i>not</i> agree with my data being forwarded to Prime Capital AG in non-anonymized form. 
-					`,
-				},
-			}
-			radioValues := []string{
-				"datasharing_yes",
-				// "datasharing_anonymous",
-				"datasharing_not",
-			}
-
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 2
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": `
-					Declaration of consent to forward answers in non-anonymized form to Prime Capital&nbsp;AG:
-					<br> <!-- vertical space for the must error message -->
-					<br> <!-- vertical space for the must error message -->
-
-				`,
+					}
+					inp.ColSpan = gr.Cols
 				}
-				inp.ColSpan = gr.Cols
+
+				for idx, label := range labels {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "q62_sharing"
+					rad.ValueRadio = radioValues[idx]
+
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+
+					rad.ControlFirst()
+					rad.ControlTop()
+
+					rad.Validator = "mustRadioGroup"
+
+				}
 			}
-
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q62_sharing"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = 1
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-
-				rad.ControlFirst()
-				rad.ControlTop()
-
-				rad.Validator = "mustRadioGroup"
-
-			}
-		}
+		*/
 
 		// gr2
 		{

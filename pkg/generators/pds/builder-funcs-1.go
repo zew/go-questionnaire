@@ -306,3 +306,66 @@ func checkBoxCascade(
 
 	}
 }
+
+// consent for repeating DSGVO
+func consent(
+	page *qst.WrappedPageT,
+	instance int,
+) {
+
+	// gr0
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 3
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"en": `
+						<span style='font-size:110%'>
+
+						<b>Declaration of consent according to GDPR</b> 
+						
+						<br>
+
+						We will treat the answers to this online survey strictly confidential, 
+						GDPR-compliant and only use them in anonymous or aggregated form. 
+						
+						We will pass on your answers to the questions 
+						within the ZEW Private Debt Survey to our cooperation 
+						partner Prime Capital AG in an aggregated and anonymous form. 
+					
+						 
+						In the <a href="/doc/site-imprint.md" >imprint</a> you find extensive information on data protection.						
+						</span>
+
+						<br> <!-- vertical space for the must error message -->
+						<br> <!-- vertical space for the must error message -->
+						
+						`,
+
+				"de": `---`,
+			}
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "checkbox"
+			inp.Name = fmt.Sprintf("q61_consent_%v", instance)
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 6
+			inp.Validator = "must"
+			inp.Label = trl.S{
+				"en": `
+						I hereby consent to my collected data being used for the ZEW Private Debt Survey.
+						`,
+				"de": `---`,
+			}
+			inp.ControlFirst()
+			inp.ControlTop()
+		}
+	}
+
+}

@@ -43,6 +43,10 @@ var funcPGs = map[string]funcPageGeneratorT{
 	"pdsPage4-ac1": pdsPage4AC1,
 	"pdsPage4-ac2": pdsPage4AC2,
 	"pdsPage4-ac3": pdsPage4AC3,
+
+	//
+	"pdsPage3-acx": pdsPage3ACX,
+	"pdsPage4-acx": pdsPage4ACX,
 }
 
 func pageFuncExample(q *QuestionnaireT, page *pageT) error {

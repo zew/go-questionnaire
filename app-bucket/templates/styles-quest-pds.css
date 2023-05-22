@@ -195,6 +195,9 @@ input[name=ac3_q36_gicsprio_label],
 input[name=ac1_q36_challenge_sectors_label],
 input[name=ac2_q36_challenge_sectors_label],
 input[name=ac3_q36_challenge_sectors_label],
+
+input[name=acx_q35_risks_label],
+
 dummy {
     /* overriding auto-generated width setting */
     max-width: 10.5rem;
@@ -225,6 +228,8 @@ input[name=q01_identification]{
     input[name=ac1_q36_challenge_sectors_label],
     input[name=ac2_q36_challenge_sectors_label],
     input[name=ac3_q36_challenge_sectors_label],
+ 
+    input[name=acx_q35_risks_label],
     dummy {
         /* overriding auto-generated width setting */
         margin-left: 0.6rem;

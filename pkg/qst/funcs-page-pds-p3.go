@@ -16,6 +16,10 @@ func pdsPage3AC3(q *QuestionnaireT, page *pageT) error {
 	return pdsPage3(q, page, 2)
 }
 
+func pdsPage3ACX(q *QuestionnaireT, page *pageT) error {
+	return pdsPage3X(q, page)
+}
+
 func pdsPage3(q *QuestionnaireT, page *pageT, acIdx int) error {
 
 	ac := PDSAssetClasses[acIdx]

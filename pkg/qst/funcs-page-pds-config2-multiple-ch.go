@@ -96,6 +96,22 @@ var (
 			"1.6rem",
 		},
 	}
+	// only KeyLabels different
+	mCh4Next2 = configMC{
+		KeyLabels:       "improveDecline1-5-next-2",
+		Cols:            5,
+		InpColspan:      1,
+		LabelBottom:     false,
+		DontKnow:        false,
+		GroupLeftIndent: outline2Indent,
+		XDisplacements: []string{
+			"1.6rem",
+			"0.79rem",
+			"",
+			"0.79rem",
+			"1.6rem",
+		},
+	}
 	mCh5 = configMC{
 		KeyLabels:   "closing-time-weeks",
 		Cols:        5,

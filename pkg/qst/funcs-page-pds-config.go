@@ -89,8 +89,8 @@ var PDSAssetClasses = []assetClass{
 		NameUnused: "ac1_corplending",
 		Prefix:     "ac1",
 		LblOld: trl.S{
-			"en": "Corporate direct lending",
-			"de": "Corporate direct lending",
+			"en": "Corporate Direct Lending",
+			"de": "Corporate Direct Lending",
 		},
 		Lbl: trl.S{
 			"en": "European Corporate Direct Lending",
@@ -191,6 +191,43 @@ var PDSAssetClasses = []assetClass{
 	},
 }
 
+// PDSAssetClassGlob
+var PDSAssetClassGlob = assetClass{
+	NameUnused: "acx_global",
+	Prefix:     "acx",
+	Lbl: trl.S{
+		"en": "Global",
+		"de": "Global",
+	},
+	Short: trl.S{
+		"de": "Global",
+		"en": "Global",
+	},
+	TrancheTypes: []trancheType{
+		{
+			Prefix: "tt1",
+			Lbl: trl.S{
+				"en": "Corporate Direct Lending",
+				"de": "Corporate Direct Lending",
+			},
+		},
+		{
+			Prefix: "tt2",
+			Lbl: trl.S{
+				"en": "European  Real Estate Debt",
+				"de": "European  Real Estate Debt",
+			},
+		},
+		{
+			Prefix: "tt3",
+			Lbl: trl.S{
+				"en": "European Infrastructure Debt",
+				"de": "European Infrastructure Debt",
+			},
+		},
+	},
+}
+
 var lblDont = trl.S{
 	"de": "Don´t know",
 	"en": "Don´t know",
@@ -284,10 +321,6 @@ var PDSLbls = map[string][]trl.S{
 		},
 	},
 	"improveDecline1-5-prev-spec": {
-		// {
-		// 	"en": "un&shy;attrac&shy;tive",
-		// 	"de": "un&shy;attrac&shy;tive",
-		// },
 		{
 			"en": "bad&nbsp;&nbsp;&nbsp;&nbsp;",
 			"de": "bad&nbsp;&nbsp;&nbsp;&nbsp;",
@@ -297,18 +330,13 @@ var PDSLbls = map[string][]trl.S{
 			"de": "&nbsp;",
 		},
 		{
-			// yes - its terrible
-			"en": "satis&shy;factory",
-			"de": "satis&shy;factory",
+			"en": "not change",
+			"de": "not change",
 		},
 		{
 			"en": "&nbsp;",
 			"de": "&nbsp;",
 		},
-		// {
-		// 	"en": "attrac&shy;tive",
-		// 	"de": "attrac&shy;tive",
-		// },
 		{
 			"en": "&nbsp;&nbsp;good",
 			"de": "&nbsp;&nbsp;good",
@@ -324,9 +352,30 @@ var PDSLbls = map[string][]trl.S{
 			"de": "&nbsp;",
 		},
 		{
-			// yes - its terrible
-			"en": "sa&shy;me",
-			"de": "sa&shy;me",
+			"en": "not change",
+			"de": "not change",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			"en": "will<br>im&shy;prove",
+			"de": "will<br>im&shy;prove",
+		},
+	},
+	"improveDecline1-5-next-2": {
+		{
+			"en": "<span  style='font-size:90%'> will de&shy;te&shy;ri&shy;o&shy;rate  </span>",
+			"de": "<span  style='font-size:90%'> will de&shy;te&shy;ri&shy;o&shy;rate  </span>",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			"en": "not change",
+			"de": "not change",
 		},
 		{
 			"en": "&nbsp;",
@@ -462,6 +511,32 @@ func onlySelectedTranchTypes(q *QuestionnaireT, ac assetClass) assetClass {
 	for i := 0; i < ln; i++ {
 		//                               ("ac1_tt1_q031")
 		names = append(names, fmt.Sprintf("%v_%v_q031", ac.Prefix, ac.TrancheTypes[i].Prefix))
+	}
+
+	newTTs := make([]trancheType, 0, ln)
+	for i, name := range names {
+		inp := q.ByName(name)
+		if inp.Response != "" && inp.Response != "0" {
+			newTTs = append(newTTs, ac.TrancheTypes[i])
+		}
+	}
+
+	acRet := ac
+	acRet.TrancheTypes = newTTs
+
+	return acRet
+}
+
+func onlySelectedTranchTypes2(q *QuestionnaireT, ac assetClass) assetClass {
+
+	ln := len(ac.TrancheTypes)
+
+	// iterate over all
+	names := make([]string, 0, ln)
+	for i := 0; i < ln; i++ {
+		//                               ( "ac1_q03")
+		//                               ( "ac2_q03")
+		names = append(names, fmt.Sprintf("ac%v_q03", i+1))
 	}
 
 	newTTs := make([]trancheType, 0, ln)

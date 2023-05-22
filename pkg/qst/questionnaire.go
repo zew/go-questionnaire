@@ -1221,6 +1221,9 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			if strings.Contains(grpHTML, "[quarter-0]") {
 				grpHTML = strings.ReplaceAll(grpHTML, "[quarter-0]", q.Survey.Quarter(0))
 			}
+			if strings.Contains(grpHTML, "[quarter-p1]") {
+				grpHTML = strings.ReplaceAll(grpHTML, "[quarter-p1]", q.Survey.Quarter(1))
+			}
 
 			// dynamic question numbering - based on NavigationCondition, IsInNavigation()
 			// todo

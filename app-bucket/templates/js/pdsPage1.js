@@ -76,20 +76,20 @@ function checkSome() {
 
     // safari cannot read it inside func, if declared let or const
     var parentContainers = {
-        "ac1_q03" : "pg01-grp02",
-        "ac2_q03" : "pg01-grp03",
-        "ac3_q03" : "pg01-grp04",
+        "ac1_q03" : "pg02-grp02",
+        "ac2_q03" : "pg02-grp03",
+        "ac3_q03" : "pg02-grp04",
     };
 
     UNUSED_subInputs = [
         " ... inp00 should remain visible",
-        "pg01-grp04-inp01",
-        "pg01-grp04-inp02",
-        "pg01-grp04-inp03",
-        "pg01-grp04-inp04",
-        "pg01-grp04-inp05",
-        "pg01-grp04-inp06",
-        "pg01-grp04-inp07",
+        "pg02-grp04-inp01",
+        "pg02-grp04-inp02",
+        "pg02-grp04-inp03",
+        "pg02-grp04-inp04",
+        "pg02-grp04-inp05",
+        "pg02-grp04-inp06",
+        "pg02-grp04-inp07",
         "..."
     ];
 
@@ -106,14 +106,14 @@ function checkSome() {
                 i0Str = "0" + i0Str;
             }
             const className = parentContainer + "-inp" + i0Str;
-            // console.log("classname", className) // for example pg01-grp04-inp11
+            // console.log("classname", className) // for example pg02-grp04-inp11
             
             // getting div elements, having this classname...
             let containers = document.getElementsByClassName(className);
             if (containers.length > 0) {
                 let container = containers[0];
                 // overriding server side generated CSS class value for display
-                // for i.e. pg01-grp02-inp04 { display: grid }
+                // for i.e. pg02-grp02-inp04 { display: grid }
                 // by setting an element style
                 if (paramShowHide) {
                     container.style.display = "grid"; // not block

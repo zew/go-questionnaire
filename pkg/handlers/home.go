@@ -463,6 +463,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if sess.EffectiveStr("save_complete_questionnaire") == "true" {
+		err = q.Save1(l.QuestPath())
+		if err != nil {
+			helper(w, r, err, "Saving complete questionnaire to file caused error")
+			return
+		}
+	}
+
 	//
 	// for debugging: save questionnaire including dynamic page content and user input;
 	if r.FormValue("full-dynamic-content") == "true" {

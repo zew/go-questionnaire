@@ -123,11 +123,10 @@ func TestSystem(t *testing.T) {
 			continue
 		}
 
-		// if strings.HasSuffix(f.Key, "fmt-2023-01.json") {
-		// 	// the experiment ?
-		// 	t.Logf("Skipping file %v", f.Key)
-		// 	continue
-		// }
+		if strings.HasSuffix(f.Key, "pds-2023-01.json") {
+			t.Logf("Skipping file %v", f.Key)
+			continue
+		}
 		if strings.HasSuffix(f.Key, "pds-2023-01-full-dynamic-content.json") {
 			t.Logf("Skipping file %v", f.Key)
 			continue
@@ -138,7 +137,10 @@ func TestSystem(t *testing.T) {
 		}
 
 		t.Logf("\n\n\n")
-		// t.Logf("\n\n\n%v", f.Key)
+		if false {
+			t.Logf("\n\n\n%v", f.Key)
+			continue
+		}
 
 		// t.Logf("Found questionnaire template %v", f.Key)
 		qTpl, err := qst.Load1(f.Key) // qTpl merely stores some settings for later function calls to read

@@ -76,12 +76,12 @@ func pdsPage4X(q *QuestionnaireT, page *pageT) error {
 				"en": fmt.Sprintf(`
 					<i>%v</i>: 
 					What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-					ac.TrancheTypes[0].Lbl,
+					ac.Get("ac1").Lbl,
 				),
 				"de": fmt.Sprintf(`
 					<i>%v</i>: 
 					What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-					ac.TrancheTypes[0].Lbl,
+					ac.Get("ac1").Lbl,
 				),
 			}
 			lblMain.Outline(fmt.Sprintf("2.%v", counter))
@@ -127,12 +127,12 @@ func pdsPage4X(q *QuestionnaireT, page *pageT) error {
 				"en": fmt.Sprintf(`
 					<i>%v</i>: 
 					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-					ac.TrancheTypes[1].Lbl,
+					ac.Get("ac2").Lbl,
 				),
 				"de": fmt.Sprintf(`
 					<i>%v</i>: 
 					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-					ac.TrancheTypes[1].Lbl,
+					ac.Get("ac2").Lbl,
 				),
 			}
 
@@ -166,12 +166,12 @@ func pdsPage4X(q *QuestionnaireT, page *pageT) error {
 				"en": fmt.Sprintf(`
 					<i>%v</i>: 
 					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-					ac.TrancheTypes[2].Lbl,
+					ac.Get("ac3").Lbl,
 				),
 				"de": fmt.Sprintf(`
 					<i>%v</i>: 
 					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
-					ac.TrancheTypes[2].Lbl,
+					ac.Get("ac3").Lbl,
 				),
 			}
 

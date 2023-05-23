@@ -237,6 +237,15 @@ func (ac assetClass) Has(key string) bool {
 	return false
 }
 
+func (ac assetClass) Get(key string) trancheType {
+	for _, tt := range ac.TrancheTypes {
+		if tt.Prefix == key {
+			return tt
+		}
+	}
+	return trancheType{}
+}
+
 var lblDont = trl.S{
 	"de": "Don´t know",
 	"en": "Don´t know",

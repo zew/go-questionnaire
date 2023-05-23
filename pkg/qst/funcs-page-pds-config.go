@@ -205,27 +205,36 @@ var PDSAssetClassGlob = assetClass{
 	},
 	TrancheTypes: []trancheType{
 		{
-			Prefix: "tt1",
+			Prefix: "ac1",
 			Lbl: trl.S{
 				"en": "Corporate Direct Lending",
 				"de": "Corporate Direct Lending",
 			},
 		},
 		{
-			Prefix: "tt2",
+			Prefix: "ac2",
 			Lbl: trl.S{
 				"en": "European  Real Estate Debt",
 				"de": "European  Real Estate Debt",
 			},
 		},
 		{
-			Prefix: "tt3",
+			Prefix: "ac3",
 			Lbl: trl.S{
 				"en": "European Infrastructure Debt",
 				"de": "European Infrastructure Debt",
 			},
 		},
 	},
+}
+
+func (ac assetClass) Has(key string) bool {
+	for _, tt := range ac.TrancheTypes {
+		if tt.Prefix == key {
+			return true
+		}
+	}
+	return false
 }
 
 var lblDont = trl.S{

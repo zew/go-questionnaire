@@ -309,6 +309,7 @@ func checkBoxCascade(
 
 // consent for repeating DSGVO
 func consent(
+	q *qst.QuestionnaireT,
 	page *qst.WrappedPageT,
 	instance int,
 ) {
@@ -349,6 +350,7 @@ func consent(
 				"de": `---`,
 			}
 		}
+
 		{
 			inp := gr.AddInput()
 			inp.Type = "checkbox"
@@ -356,13 +358,12 @@ func consent(
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 6
-			inp.Validator = "must"
+			// inp.Validator = "must"
 			inp.Label = trl.S{
-				"en": `
-						I hereby consent to my collected data being used for the ZEW Private Debt Survey.
-						`,
-				"de": `---`,
+				"en": `I hereby consent to my collected data being used for the ZEW Private Debt Survey.`,
+				"de": `I hereby consent to my collected data being used for the ZEW Private Debt Survey.`,
 			}
+			// inp.Response = "1"
 			inp.ControlFirst()
 			inp.ControlTop()
 		}

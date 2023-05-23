@@ -10,6 +10,7 @@ func pdsPage4X(q *QuestionnaireT, page *pageT) error {
 
 	// ac := PDSAssetClasses[0]
 	ac := PDSAssetClassGlob
+	ac = onlySelectedTranchTypes2(q, ac)
 
 	page.Label = trl.S{
 		"en": fmt.Sprintf("European Private Debt Markets in %v (continued)", q.Survey.Quarter(0)),
@@ -34,8 +35,8 @@ func pdsPage4X(q *QuestionnaireT, page *pageT) error {
 	// matrix1
 	{
 		lblMain := trl.S{
-			"en": `What do you think are the main risks for your investment strategy over the next 3&nbsp;months? Please rank the top three.`,
-			"de": `What do you think are the main risks for your investment strategy over the next 3&nbsp;months? Please rank the top three.`,
+			"en": `<i>All asset classes</i>: What do you think are the main risks for your investment strategy over the next 3&nbsp;months? Please rank the top three.`,
+			"de": `<i>All asset classes</i>: What do you think are the main risks for your investment strategy over the next 3&nbsp;months? Please rank the top three.`,
 		}
 		lblMain.Outline("2.1")
 
@@ -63,19 +64,160 @@ func pdsPage4X(q *QuestionnaireT, page *pageT) error {
 		prio3Matrix(page, ac, "q35_risks", lblMain, inps, lbls, true)
 	}
 
+	counter := 2
+
+	//
+	// matrix2
+	{
+
+		if ac.Has("ac1") {
+
+			lblMain := trl.S{
+				"en": fmt.Sprintf(`
+					<i>%v</i>: 
+					What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+					ac.TrancheTypes[0].Lbl,
+				),
+				"de": fmt.Sprintf(`
+					<i>%v</i>: 
+					What GICS sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+					ac.TrancheTypes[0].Lbl,
+				),
+			}
+			lblMain.Outline(fmt.Sprintf("2.%v", counter))
+			counter++
+
+			inps := []string{
+				"01_energy",
+				"02_materials",
+				"03_industrials",
+				"04_consumer_discretionary",
+				"05_consumer_staples",
+				"06_health_care",
+				"07_financials",
+				"08_information_technology",
+				"09_communication_services",
+				"10_utilities",
+				"11_real_estate",
+				"12_other",
+			}
+
+			lbls := map[string]string{
+				"01_energy":                 "Energy",
+				"02_materials":              "Materials",
+				"03_industrials":            "Industrials",
+				"04_consumer_discretionary": "Consumer Discretionary",
+				"05_consumer_staples":       "Consumer Staples",
+				"06_health_care":            "Health Care",
+				"07_financials":             "Financials",
+				"08_information_technology": "Information Technology",
+				"09_communication_services": "Communication Services",
+				"10_utilities":              "Utilities",
+				"11_real_estate":            "Real Estate",
+				"12_other":                  "Other",
+			}
+
+			prio3Matrix(page, ac, "ac1_q36_gicsprio", lblMain, inps, lbls, true)
+
+		}
+
+		if ac.Has("ac2") {
+
+			lblMain := trl.S{
+				"en": fmt.Sprintf(`
+					<i>%v</i>: 
+					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+					ac.TrancheTypes[1].Lbl,
+				),
+				"de": fmt.Sprintf(`
+					<i>%v</i>: 
+					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+					ac.TrancheTypes[1].Lbl,
+				),
+			}
+
+			lblMain.Outline(fmt.Sprintf("2.%v", counter))
+			counter++
+
+			inps := []string{
+				"01_office",
+				"02_retail",
+				"03_hospitality",
+				"04_residential",
+				"05_logistics",
+				"06_other",
+			}
+
+			lbls := map[string]string{
+				"01_office":      "Office",
+				"02_retail":      "Retail",
+				"03_hospitality": "Hospitality",
+				"04_residential": "Residential",
+				"05_logistics":   "Logistics",
+				"06_other":       "Other",
+			}
+
+			prio3Matrix(page, ac, "ac2_q36_challenge_sectors", lblMain, inps, lbls, true)
+
+		}
+		if ac.Has("ac3") {
+
+			lblMain := trl.S{
+				"en": fmt.Sprintf(`
+					<i>%v</i>: 
+					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+					ac.TrancheTypes[2].Lbl,
+				),
+				"de": fmt.Sprintf(`
+					<i>%v</i>: 
+					What sectors do you expect to be most challenging in the next three months? Please rank the top three.`,
+					ac.TrancheTypes[2].Lbl,
+				),
+			}
+
+			lblMain.Outline(fmt.Sprintf("2.%v", counter))
+			counter++
+
+			inps := []string{
+				"01_transportation",
+				"02_power",
+				"03_renewables",
+				"04_utilities",
+				"05_telecoms",
+				"06_social",
+				"07_other",
+			}
+
+			lbls := map[string]string{
+				"01_transportation": "Transportation",
+				"02_power":          "Power",
+				"03_renewables":     "Renewables",
+				"04_utilities":      "Utilities",
+				"05_telecoms":       "Telecoms",
+				"06_social":         "Social",
+				"07_other":          "Other",
+			}
+
+			prio3Matrix(page, ac, "ac3_q36_challenge_sectors", lblMain, inps, lbls, true)
+
+		}
+
+	}
+
 	//
 	//
 	{
 		esgImportance1 := trl.S{
-			"en": `How important are ESG considerations in your in­vest­ment process?`,
-			"de": `How important are ESG considerations in your in­vest­ment process?`,
+			"en": `<i>All asset classes</i>: How important are ESG considerations in your investment process?`,
+			"de": `<i>All asset classes</i>: How important are ESG considerations in your investment process?`,
 		}
 		desc := trl.S{
-			"en": `Please choose the statement that describes most closely the importance of ESG considerations in your in­vest­ment process. `,
-			"de": `Please choose the statement that describes most closely the importance of ESG considerations in your in­vest­ment process. `,
+			"en": `Please choose the statement that describes most closely the importance of ESG considerations in your investment process. `,
+			"de": `Please choose the statement that describes most closely the importance of ESG considerations in your investment process. `,
 		}
 		esgImportance1.Append90(desc)
-		esgImportance1.Outline("2.2")
+		esgImportance1.Outline(fmt.Sprintf("2.%v", counter))
+		counter++
 
 		radiosSingleRow(
 			page,

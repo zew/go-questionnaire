@@ -244,7 +244,9 @@ If you have created your survey `myquest` you need to restart the application.
 
 * `show-version=true` - show q.Version
 
-* `full-dynamic-content=true` - compute dynamic content for all pages and save as [user-id]-all-dynamic-content.json
+* `full-dynamic-content=true` - compute dynamic content for all pages   
+   and save as [user-id]-all-dynamic-content.json;  
+   saving not only the answers but the full scaffold to file
 
 Persisted to session:
 
@@ -253,8 +255,6 @@ Persisted to session:
 * `override_closure=true` - ignore questionnaire deadline and closure by user
 
 * `redirected_console_log` - shows a javascript console output
-
-* `save_complete_questionnaire` - saving not only the answers but the full scaffold to file
 
 ## Deploy to appengine
 

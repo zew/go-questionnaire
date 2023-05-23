@@ -71,6 +71,7 @@ import (
 	"log"
 	"os"
 	"path"
+	"strings"
 	"testing"
 	"time"
 
@@ -113,8 +114,6 @@ func TestSystem(t *testing.T) {
 	t.Logf("iterating *.json files in ... /%v ", tplDir)
 	for _, f := range *files {
 
-		t.Logf("\n\n\n")
-
 		if f.IsDir {
 			t.Logf("Skipping directory %v", f.Key)
 			continue
@@ -123,6 +122,23 @@ func TestSystem(t *testing.T) {
 			t.Logf("Skipping non json file %v", f.Key)
 			continue
 		}
+
+		// if strings.HasSuffix(f.Key, "fmt-2023-01.json") {
+		// 	// the experiment ?
+		// 	t.Logf("Skipping file %v", f.Key)
+		// 	continue
+		// }
+		if strings.HasSuffix(f.Key, "pds-2023-01-full-dynamic-content.json") {
+			t.Logf("Skipping file %v", f.Key)
+			continue
+		}
+		if strings.HasSuffix(f.Key, "pds-2023-04-full-dynamic-content.json") {
+			t.Logf("Skipping file %v", f.Key)
+			continue
+		}
+
+		t.Logf("\n\n\n")
+		// t.Logf("\n\n\n%v", f.Key)
 
 		// t.Logf("Found questionnaire template %v", f.Key)
 		qTpl, err := qst.Load1(f.Key) // qTpl merely stores some settings for later function calls to read

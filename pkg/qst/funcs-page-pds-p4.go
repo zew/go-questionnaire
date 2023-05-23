@@ -54,29 +54,6 @@ func pdsPage4(q *QuestionnaireT, page *pageT, acIdx int) error {
 			"en": `What do you think are the main risks for your investment strategy over the next 3 months? Please rank the top three.`,
 			"de": `What do you think are the main risks for your investment strategy over the next 3 months? Please rank the top three.`,
 		}
-		// lblMainDesc := trl.S{
-		// 	"en": `Please choose from list - for example:
-		// 		business cycle,
-		// 		interest rates,
-		// 		inflation/deflation,
-		// 		regulatory environment,
-		// 		supply chain disruptions,
-		// 		health issues (e.g. covid),
-		// 		demographic change,
-		// 		other (free text).
-		// 		`,
-		// 	"de": `Please choose from list - for example:
-		// 		business cycle,
-		// 		interest rates,
-		// 		inflation/deflation,
-		// 		regulatory environment,
-		// 		supply chain disruptions,
-		// 		health issues (e.g. covid),
-		// 		demographic change,
-		// 		other (free text).
-		// 		`,
-		// }
-		// lblMain.Append90(lblMainDesc)
 		lblMain.Outline("3.5")
 
 		inps := []string{

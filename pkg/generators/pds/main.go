@@ -73,12 +73,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 		page.WidthMax("40rem")
 
-		// page.Label = trl.S{
-		// 	"en": "Dear Madam / Sir,",
-		// 	"de": "Sehr geehrter Damen und Herren",
-		// }
+		page.Label = trl.S{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		}
 
 		consent(
+			&q,
 			qst.WrapPageT(page),
 			1,
 		)
@@ -265,6 +266,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("40rem")
 
 		consent(
+			&q,
 			qst.WrapPageT(page),
 			2,
 		)

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "305de0f963b4cc34f7e4ff85dad1a6fb6034f66b6accc3928860fb9cbd584743",
+ 	"md_5": "43edd440cf3f7cdc4cce91282b40ac7e66b5a39d69f1b48ae467687e1850f7e1",
  	"lang_codes": [
  		"en"
  	],
@@ -74,8 +74,8 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_2",
- 				"en": "PageLabel_2"
+ 				"de": "\u0026nbsp;",
+ 				"en": "\u0026nbsp;"
  			},
  			"description": {
  				"de": "",
@@ -119,13 +119,12 @@
  							"name": "q61_consent_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "---",
- 								"en": "\n\t\t\t\t\t\tI hereby consent to my collected data being used for the ZEW Private Debt Survey.\n\t\t\t\t\t\t"
+ 								"de": "I hereby consent to my collected data being used for the ZEW Private Debt Survey.",
+ 								"en": "I hereby consent to my collected data being used for the ZEW Private Debt Survey."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"validator": "must",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3011,13 +3010,12 @@
  							"name": "q61_consent_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "---",
- 								"en": "\n\t\t\t\t\t\tI hereby consent to my collected data being used for the ZEW Private Debt Survey.\n\t\t\t\t\t\t"
+ 								"de": "I hereby consent to my collected data being used for the ZEW Private Debt Survey.",
+ 								"en": "I hereby consent to my collected data being used for the ZEW Private Debt Survey."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"validator": "must",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},

@@ -190,7 +190,7 @@ var presets = map[string]map[int]map[string]string{
 		},
 	},
 	"pds": {
-		1: {
+		2: {
 			"ac1_q03":      "1",
 			"ac1_tt1_q031": "1",
 			"ac1_tt2_q031": "1",

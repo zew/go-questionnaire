@@ -365,6 +365,23 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 		}
 	}
+	if q.Survey.Type == "pds" {
+		if prevPage == 1 {
+			inp := q.ByName("q61_consent_1")
+			val := inp.Response
+			dst := q.ByName("q61_consent_2")
+			dst.Response = val
+			log.Printf("q61_consent_2 set to %v", val)
+
+		}
+		if prevPage == 5 {
+			inp := q.ByName("q61_consent_2")
+			val := inp.Response
+			dst := q.ByName("q61_consent_1")
+			dst.Response = val
+			log.Printf("q61_consent_1 set to %v", val)
+		}
+	}
 
 	inpNamesS := make([]string, 0, len(savedFields)) // input names sorted
 	for inpName := range savedFields {
@@ -463,17 +480,9 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if sess.EffectiveStr("save_complete_questionnaire") == "true" {
-		err = q.Save1(l.QuestPath())
-		if err != nil {
-			helper(w, r, err, "Saving complete questionnaire to file caused error")
-			return
-		}
-	}
-
 	//
 	// for debugging: save questionnaire including dynamic page content and user input;
-	if r.FormValue("full-dynamic-content") == "true" {
+	if sess.EffectiveStr("full-dynamic-content") == "true" {
 		for pgIdx := 0; pgIdx < len(q.Pages); pgIdx++ {
 			err = q.ComputeDynamicContent(pgIdx)
 			if err != nil {

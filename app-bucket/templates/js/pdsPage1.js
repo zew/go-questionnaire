@@ -138,6 +138,40 @@ function checkSome() {
     }
 
 
+
+    function validateForm(event) {
+
+        const anySelect = false
+        for (let i = 0; i < triggers.length; i++) {
+            const chkID = triggers[i];
+            let checkBx = document.getElementById(chkID);
+            if (checkBx) {
+                if (checkBx.checked) {
+                    anySelect = true;
+                    break;
+                }
+            }        
+        }
+
+
+        if (!anySelect) {
+            let doContinue = window.confirm("Please select at least one asset class.");
+            // if (doContinue) {
+            //     return true;
+            // }
+            event.preventDefault(); // not only return false - but also preventDefault()
+            return false;
+        }
+
+        return true;
+
+    }
+
+
+
+
+
+
     for (let i0 = 0; i0 < triggers.length; i0++) {
         const elID = triggers[i0];
         let checkBx = document.getElementById(elID);
@@ -159,6 +193,10 @@ function checkSome() {
                 // checkB[0].addEventListener('change', myChange);
                 checkBx.dispatchEvent(evt);
             }
+        }
+
+        if (frm) {
+            frm.addEventListener('submit', validateForm);
         }
     }
 

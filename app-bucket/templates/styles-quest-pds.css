@@ -210,6 +210,11 @@ input[name=q01_identification]{
     max-width: 13.5rem;
 }
 
+/* For testing: Check some... */
+.testing-helper{
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
 
     :root {

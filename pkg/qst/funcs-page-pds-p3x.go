@@ -106,50 +106,51 @@ func pdsPage3X(q *QuestionnaireT, page *pageT) error {
 	page3LblsPrevAndPast := []trl.S{
 		//
 		{
+			"en": `How do you assess the overall market environment during the previous quarter?`,
+			"de": `How do you assess the overall market environment during the previous quarter?`,
+		},
+		{
 			"en": `Compared to the last quarter, how do you expect the overall market environment to change in the current quarter?`,
 			"de": `Compared to the last quarter, how do you expect the overall market environment to change in the current quarter?`,
 		},
+
+		//
+		//
 		{
-			//  [quarter-0]
-			//  [quarter-0]
+			"en": `Relative to the risk profile, how attractive was the pricing of new loans you observed in the market during the previous quarter?`,
+			"de": `Relative to the risk profile, how attractive was the pricing of new loans you observed in the market during the previous quarter?`,
+		},
+		{
 			"en": `Compared to the last quarter, how do you expect the attractiveness of the pricing of new loans (relative to the risk profile) to change in the current quarter?`,
 			"de": `Compared to the last quarter, how do you expect the attractiveness of the pricing of new loans (relative to the risk profile) to change in the current quarter?`,
 		},
 
 		//
+		//
+		{
+			"en": `How do you assess the quality of deal documentation (e.g. covenant quality, enforcement rights, etc.) for new deals you observed in the market during the previous quarter (stricter loan documentation=good, looser loan documentation=bad)`,
+			"de": `How do you assess the quality of deal documentation (e.g. covenant quality, enforcement rights, etc.) for new deals you observed in the market during the previous quarter (stricter loan documentation=good, looser loan documentation=bad)`,
+		},
 		{
 			"en": `Compared to the last quarter, how do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, etc.) to change in the current quarter?`,
 			"de": `Compared to the last quarter, how do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, etc.) to change in the current quarter?`,
+		},
+
+		//
+		{
+			"en": `How do you assess the deal flow you observed in the market during the previous quarter?`,
+			"de": `How do you assess the deal flow you observed in the market during the previous quarter?`,
 		},
 		{
 			"en": `Compared to the last quarter, how do you expect the deal flow to change in the current quarter?`,
 			"de": `Compared to the last quarter, how do you expect the deal flow to change in the current quarter?`,
 		},
-
-		//
-		{
-			"en": `How do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...) over the past quarter? `,
-			"de": `How do you assess the quality of loan documentation (e.g. covenant quality, enforcement rights,&nbsp;...) over the past quarter? `,
-		},
-		{
-			"en": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in [quarter-0]?`,
-			"de": `How do you expect the quality of loan documentation (e.g. covenant quality, enforcement rights, …) to change in [quarter-0]?`,
-		},
-
-		//
-		{
-			"en": `How do you assess the deal flow in the market over the past quarter?`,
-			"de": `How do you assess the deal flow in the market over the past quarter?`,
-		},
-		{
-			"en": `How do you expect the deal flow to change in [quarter-0]?`,
-			"de": `How do you expect the deal flow to change in [quarter-0]?`,
-		},
 	}
 
-	for i := 0; i < len(page3Lbls); i++ {
-		page3Lbls[i].Append90(page3LblsDescr[i])
-	}
+	// for i := 0; i < len(page3Lbls); i++ {
+	// 	page3Lbls[i].Append90(page3LblsDescr[i])
+	// }
+	_ = page3LblsDescr
 
 	for i := 0; i < len(page3Lbls); i++ {
 		// page3Lbls[i] = page3Lbls[i].Outline(fmt.Sprintf("3.%v", i+1))

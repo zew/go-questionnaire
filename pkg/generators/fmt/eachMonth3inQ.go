@@ -19,6 +19,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 3
+	include = include || q.Survey.Year == 2023 && q.Survey.Month == 6
 
 	if !include {
 		return nil
@@ -118,7 +119,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		"politics",   // political framework
 		"valuation",  // market valuation
 		"warukraine", //
-		"covid19",    //
+		// "covid19",    //
 	}
 
 	var labelsQ3Assets = []trl.S{
@@ -173,11 +174,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			"de": "Russ&shy;land-Ukraine-Krieg",
 			"en": "Russia's war with Ukraine",
 		},
-		{
-			// "de": "Covid-19 Pandemie",
-			"de": "Corona-Pandemie",
-			"en": "Covid-19 pandemic",
-		},
+		// {
+		// 	// "de": "Covid-19 Pandemie",
+		// 	"de": "Corona-Pandemie",
+		// 	"en": "Covid-19 pandemic",
+		// },
 	}
 
 	//
@@ -186,6 +187,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	//
 	//
 	{
+
 		page := q.AddPage()
 		page.Label = trl.S{
 			"de": "Sonderfrage: Anlageklassen im Eurogebiet und weltweit",

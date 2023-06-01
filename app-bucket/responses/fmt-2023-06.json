@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8ef82ac7d48492a3020ca6b73481219c2b5b7297eda21c354da4d0c74059d6dc",
+ 	"md_5": "c33529f2f5635a8ef1a37f25fa6835938b69332eaa6b4a4f128e3b9b226bfa0b",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4553,7 +4553,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\t\t\t\t\t\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten Indizes \n\t\t\t\t\tfür das \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil von … beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile of the following asset classes \n\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e for the next 6 months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile of the following asset classes \n\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e for the next 6\u0026nbsp;months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -4879,6 +4879,58 @@
  						},
  						{
  							"name": "ass_euro_bonds_govt",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsindexierte Staatsanleihen",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on-linked government bonds"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -5017,7 +5069,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e Indizes.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil von … beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile  \n\t\t\t\t\tof the following \u003cb\u003e\u003ci\u003eglobal\u003c/i\u003e\u003c/b\u003e asset classes for the next 6 months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile  \n\t\t\t\t\tof the following \u003cb\u003e\u003ci\u003eglobal\u003c/i\u003e\u003c/b\u003e asset classes for the next 6\u0026nbsp;months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -5343,6 +5395,58 @@
  						},
  						{
  							"name": "ass_global_bonds_govt",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ass_global_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsindexierte Staatsanleihen",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on-linked government bonds"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ass_global_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_global_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_global_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_global_bonds_govt_infadj",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -5636,8 +5740,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e \n\t\t\t\t\t\t\tgegenüber Dezember 2022 bewogen?\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t\t\t(compared to December 2022)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e \n\t\t\t\t\t\t\tgegenüber März 2023 bewogen?\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t\t\t(compared to March 2023)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6450,7 +6554,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e3.2.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tStaats\u0026shy;anleihen\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e3.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tSovereign bonds\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e3.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tGovt. bonds\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1

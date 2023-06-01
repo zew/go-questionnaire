@@ -27,6 +27,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 	// not 3 as in m2 of q
 	monthsBack := 6
+	monthsBack = 3
 
 	idxThreeMonthsBefore := trl.MonthsShift(int(q.Survey.Month), -monthsBack)
 	monthMinus3 := trl.MonthByInt(idxThreeMonthsBefore)
@@ -46,6 +47,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			"en": "Govt. bonds",
 		},
 		{
+			"de": "Inflationsindexierte Staatsanleihen",
+			"en": "Inflation-linked government bonds",
+		},
+
+		{
 			"de": "Unter&shy;nehmens&shy;anleihen",
 			"en": "Corporate bonds",
 		},
@@ -58,10 +64,12 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	var inputNamesAssetClassesEuroZoneQ3 = []string{
 		"ass_euro_stocks",
 		"ass_euro_bonds_govt",
+		"ass_euro_bonds_govt_infadj",
 		"ass_euro_bonds_corp",
 		"ass_euro_re",
 	}
 
+	//
 	// q2
 	var lblsQ2 = []trl.S{
 		{
@@ -71,6 +79,10 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		{
 			"de": "Staats&shy;anleihen",
 			"en": "Govt. bonds",
+		},
+		{
+			"de": "Inflationsindexierte Staatsanleihen",
+			"en": "Inflation-linked government bonds",
 		},
 		{
 			"de": "Unter&shy;nehmens&shy;anleihen",
@@ -97,6 +109,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	var namesQ2 = []string{
 		"ass_global_stocks",
 		"ass_global_bonds_govt",
+		"ass_global_bonds_govt_infadj",
 		"ass_global_bonds_corp",
 		"ass_global_re",
 		"ass_global_gold",
@@ -129,7 +142,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Staats&shy;anleihen",
-			"en": "Sovereign bonds",
+			"en": "Govt. bonds",
 		},
 		{
 			"de": "Unter&shy;nehmens&shy;anleihen",
@@ -238,7 +251,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>1.</b> &nbsp;
 					How do you assess the return-risk profile of the following asset classes 
-					in the <b><i>euro area</i></b> for the next 6 months? 
+					in the <b><i>euro area</i></b> for the next 6&nbsp;months? 
 
 					Please consider well-diversified indices.
 					
@@ -292,7 +305,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>2.</b> &nbsp;
 					How do you assess the return-risk profile  
-					of the following <b><i>global</i></b> asset classes for the next 6 months? 
+					of the following <b><i>global</i></b> asset classes for the next 6&nbsp;months? 
 
 					Please consider well-diversified indices.
 					

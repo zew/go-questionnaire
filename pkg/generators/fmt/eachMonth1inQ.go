@@ -78,7 +78,9 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		/*
 			Quarterly estimates.
 			Quarterly results are published by Destatis six weeks after quarter ends. I.e. 15.May for Q1.
-			We dont want estimates, if final results are already published.
+			We      want *estimates*,  if final results are not     published yet.
+			Put another way
+			We dont want *estimates*,  if final results are already published.
 
 			We are in first MonthOfQuarter() == 1, i.e. April.
 
@@ -235,11 +237,11 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"en": "FED monetary policy",
 			// "en": "US monetary policy",
 		},
-		{
-			// https://www.duden.de/rechtschreibung/Coronapandemie
-			"de": "Corona Pandemie",
-			"en": "Corona pandemic",
-		},
+		// {
+		// 	// https://www.duden.de/rechtschreibung/Coronapandemie
+		// 	"de": "Corona Pandemie",
+		// 	"en": "Corona pandemic",
+		// },
 		{
 			"de": "Internationale Lieferengpässe",
 			// "en": "International supply chain bottlenecks",
@@ -285,7 +287,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_trade_conflicts",
 				"rev_mp_ecb",
 				"rev_mp_fed",
-				"rev_corona",
+				// "rev_corona",  // sunsetted 2023-07
 				"rev_supply_disrupt",
 				"rev_energy_prices",
 				"rev_shortages_raw_mat",

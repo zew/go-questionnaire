@@ -536,6 +536,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": "DAX",
+				// "de": "DAX (Deutschl.)",
 				"en": "DAX (Germany)",
 			},
 			{

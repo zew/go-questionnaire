@@ -7,16 +7,16 @@
  		"name": {
  			"en": "Financial Literacy Test"
  		},
- 		"year": 2022,
- 		"month": 8,
- 		"deadline": "2030-01-01T00:00:00+01:00",
+ 		"year": 2023,
+ 		"month": 6,
+ 		"deadline": "2023-06-28T23:59:00+02:00",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "10af00b5ccb0ac977facbec71413a3f6059aa123fa08192ee709ddc9d139766f",
+ 	"md_5": "d8116130c190d510067c92ee2b428253f7ba1286ee84679956fc0f5d87fbb689",
  	"lang_codes": [
  		"en"
  	],

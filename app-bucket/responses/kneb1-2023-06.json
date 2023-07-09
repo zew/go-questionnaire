@@ -18,29 +18,26 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8cf27432e009b92fafeade2e6ce8fe43870dec55e6987cba69d97292b43a0028",
+ 	"md_5": "875ed1dcfdd551957be52e8bfe3ced5836691e37afd7f98d451f60d8d930c162",
  	"lang_codes": [
- 		"de",
- 		"en"
+ 		"de"
  	],
  	"lang_code": "de",
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 4,
+ 	"max_groups": 6,
  	"pages": [
  		{
  			"label": {
- 				"de": "Chart",
- 				"en": "Chart"
+ 				"de": "Sehr geehrte Damen und Herren",
+ 				"en": "Dear Madam / Sir,"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"short": {
- 				"de": "Chart",
- 				"en": "Chart"
- 			},
+ 			"suppress_progressbar": true,
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -62,7 +59,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
@@ -70,7 +67,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"dynamic_func": "RenderStaticContent",
- 							"dynamic_func_paramset": "./echart/inner.html"
+ 							"dynamic_func_paramset": "./welcome-page.html"
  						}
  					]
  				}
@@ -120,14 +117,14 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sind Sie…",
- 								"en": "What is your gender?"
+ 								"de": "\u003cb\u003eD1.\u003c/b\u003e \u0026nbsp; Sind Sie…",
+ 								"en": "\u003cb\u003eD1.\u003c/b\u003e \u0026nbsp; What is your gender?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
  						},
  						{
- 							"name": "q01_gender",
+ 							"name": "qd1_gender",
  							"type": "radio",
  							"label": {
  								"de": "Männlich",
@@ -156,7 +153,7 @@
  							}
  						},
  						{
- 							"name": "q01_gender",
+ 							"name": "qd1_gender",
  							"type": "radio",
  							"label": {
  								"de": "Weiblich",
@@ -185,7 +182,7 @@
  							}
  						},
  						{
- 							"name": "q01_gender",
+ 							"name": "qd1_gender",
  							"type": "radio",
  							"label": {
  								"de": "Divers",
@@ -220,12 +217,12 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "q02_birthyear",
+ 							"name": "qd2_birthyear",
  							"type": "dropdown",
  							"max_chars": 10,
  							"label": {
- 								"de": "In welchem Jahr sind Sie geboren?",
- 								"en": "Your year of birth?"
+ 								"de": "\u003cb\u003eD2.\u003c/b\u003e \u0026nbsp; In welchem Jahr sind Sie geboren?",
+ 								"en": "\u003cb\u003eD2.\u003c/b\u003e \u0026nbsp; Your year of birth?"
  							},
  							"col_span": 6,
  							"col_span_label": 2,
@@ -925,14 +922,14 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "In welchem Bundesland wohnen Sie?",
- 								"en": "Which German state you live in?"
+ 								"de": "\u003cb\u003eD3.\u003c/b\u003e \u0026nbsp; In welchem Bundesland wohnen Sie?",
+ 								"en": "\u003cb\u003eD3.\u003c/b\u003e \u0026nbsp; Which German state you live in?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Baden-Württemberg",
@@ -961,7 +958,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Bayern",
@@ -990,7 +987,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Berlin",
@@ -1019,7 +1016,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Brandenburg",
@@ -1048,7 +1045,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Bremen",
@@ -1077,7 +1074,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Hamburg",
@@ -1106,7 +1103,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Hessen",
@@ -1135,7 +1132,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Mecklenburg-Vorpommern",
@@ -1164,7 +1161,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Niedersachsen",
@@ -1193,7 +1190,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Nordrhein-Westfalen",
@@ -1222,7 +1219,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Rheinland-Pfalz",
@@ -1251,7 +1248,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Saarland",
@@ -1280,7 +1277,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Sachsen",
@@ -1309,7 +1306,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Sachsen-Anhalt",
@@ -1338,7 +1335,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Schleswig-Holstein",
@@ -1367,7 +1364,7 @@
  							}
  						},
  						{
- 							"name": "q03_german_state",
+ 							"name": "qd3_german_state",
  							"type": "radio",
  							"label": {
  								"de": "Thüringen",
@@ -1396,42 +1393,1415 @@
  							}
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Alter, Herkunft, Erfahrungen 2",
+ 				"en": "Age, origin, experience 2"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Soziodemo-\u003cbr\u003egraphie 2",
+ 				"en": "Sociodemo-\u003cbr\u003egraphics 1"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 4,
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
  					"inputs": [
  						{
- 							"name": "q04_age",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 1,
- 							"min": 15,
- 							"max": 100,
+ 							"type": "textblock",
  							"label": {
- 								"de": "Wie alt sind Sie?",
- 								"en": "How old are you?"
+ 								"de": "\u003cb\u003eD4.\u003c/b\u003e \u0026nbsp; Welchen höchs\u0026shy;ten allgemeinbildenden Schulabschluss haben Sie?",
+ 								"en": "\u003cb\u003eD4.\u003c/b\u003e \u0026nbsp; Which is your highest degree?"
  							},
- 							"suffix": {
- 								"de": "\u0026nbsp; Jahre",
- 								"en": "\u0026nbsp; years"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 3,
- 							"col_span_control": 2,
- 							"validator": "inRange100"
+ 							"col_span": 6,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "q05_country_birth",
- 							"type": "text",
- 							"max_chars": 20,
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
  							"label": {
- 								"de": "In welchem Land sind Sie geborden?",
- 								"en": "What is your country of birth?"
+ 								"de": "Hauptschul-/ Volksschulabschluss",
+ 								"en": "Primary school"
  							},
- 							"col_span": 4,
- 							"col_span_label": 3,
- 							"col_span_control": 2
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "hauptschule",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mitt\u0026shy;le\u0026shy;re Reife/ Realschulabschluss/ Polytechnische Oberschule, 10. Klasse",
+ 								"en": "Secondary school"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "realschule",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Fachhochschulreife",
+ 								"en": "College"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "fachhochschule",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Allgemeine oder fachgebundene Hochschulreife/ Abitur",
+ 								"en": "High school"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "abitur",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eD5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tHaben Sie eine abgeschlossene Berufsausbil\u0026shy;dung?  \u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003e Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchs\u0026shy;ten an. \u003c/small\u003e\n\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eD5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd5_vocational_no",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Nein, kei\u0026shy;ne abgeschlossene Berufsausbil\u0026shy;dung",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd5_vocational_yes",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Ja, abgeschlossene Berufsausbil\u0026shy;dung",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd5_vocational_highschool",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Ja, Hoch\u0026shy;schul\u0026shy;abschluss (Fachhochschule oder Universität)",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eD6.\u003c/b\u003e \u0026nbsp; Welchen Familienstand haben Sie?",
+ 								"en": "\u003cb\u003eD6.\u003c/b\u003e \u0026nbsp; What is your marital status?"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd6_family_status",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ledig ohne Partner/in im Haushalt",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "single_livingalone",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd6_family_status",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ledig mit Partner/in im Haushalt",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "unmarried_livingtogether",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd6_family_status",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Verheiratet und zusammenlebend",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "married_livingtogether",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd6_family_status",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geschieden/getrennt lebend/verwitwet ohne Partner/in im Haushalt",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "divorcedwidowed_livingalone",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd6_family_status",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geschieden/getrennt lebend/verwitwet mit Partner/in im Haushalt",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "divorcedwidowed_livingtogether",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eD7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tSind Sie zurzeit in irgendeiner Weise erwerbstätig? \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tUn\u0026shy;ter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eD7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Vollzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 35\u0026nbsp;Stunden oder mehr",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "above35hours",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Teilzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 15 bis un\u0026shy;ter 35\u0026nbsp;Stunden",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "between15and35hours",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geringfügig beschäftigt mit einer wöchentlichen Arbeitszeit un\u0026shy;ter 15\u0026nbsp;Stunden",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "upto15hours",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Gelegentlich erwerbstätig",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "occasionally",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In kei\u0026shy;ner Weise erwerbstätig",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "none",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWenn Sie einmal von den Erwerbstätigkeiten absehen, was von dem Folgenden trifft dann auf Sie zu?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd7a_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hausfrau / Hausmann",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "housewife",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Arbeitslos",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "unemployed",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In Ausbil\u0026shy;dung, Schule, Lehre, Studium oder Umschulung",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "ineducation",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wehr- oder Ersatzdienst",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "military",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mutterschafts-/ Erziehungsurlaub bzw. Elternzeit",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "parental",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sonstiges",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "other",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tSind Sie zurzeit…\t\t\t\t\t",
+ 								"en": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Arbeiter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "worker",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Angestellter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "employee",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Beamter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "civilservant",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Selbständig ohne Mitarbeiter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "selfemployedalone",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Selbständig mit Mitarbeitern",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "selfemployedwithemployees",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			],
+ 			"validation_func_name": "knebPageD2",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Chart",
+ 				"en": "Chart"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Chart",
+ 				"en": "Chart"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "./echart/inner.html"
  						}
  					]
  				}

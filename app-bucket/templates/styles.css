@@ -334,6 +334,15 @@ svg:not(:root) {
     overflow: hidden;
 }
 
+small {
+    font-size: 93%;
+    display: inline-block;
+    line-height: 125%;
+    padding-top:  0.3rem;
+    padding-bottom:  0.15rem;
+    /* padding-left: 0.2rem; */
+}
+
 ol, ul {
     list-style: none;
 }

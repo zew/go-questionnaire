@@ -46,7 +46,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				Punktprognose der Wachstumsrate des deutschen BIP <br>
 				<div class='vspacer-08' ></div>
 				<p style='font-size: 90%'>
-				Bei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum 
+				Bei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum 
 						des realen & saisonbereinigten BIP angeben. 
 				Bei den Jahreswerten die Jahreswachstumsrate des realen BIP.
 				</p>

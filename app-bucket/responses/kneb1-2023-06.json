@@ -2,30 +2,35 @@
  	"survey": {
  		"type": "kneb1",
  		"org": {
+ 			"de": "ZEW",
  			"en": "ZEW"
  		},
  		"name": {
+ 			"de": "Financial Literacy Test",
  			"en": "Financial Literacy Test"
  		},
  		"year": 2023,
  		"month": 6,
- 		"deadline": "2023-06-28T23:59:00+02:00",
+ 		"deadline": "2030-01-01T00:00:00+01:00",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d8116130c190d510067c92ee2b428253f7ba1286ee84679956fc0f5d87fbb689",
+ 	"md_5": "8cf27432e009b92fafeade2e6ce8fe43870dec55e6987cba69d97292b43a0028",
  	"lang_codes": [
+ 		"de",
  		"en"
  	],
+ 	"lang_code": "de",
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 7,
+ 	"max_groups": 4,
  	"pages": [
  		{
  			"label": {
+ 				"de": "Chart",
  				"en": "Chart"
  			},
  			"description": {
@@ -33,6 +38,7 @@
  				"en": ""
  			},
  			"short": {
+ 				"de": "Chart",
  				"en": "Chart"
  			},
  			"style": {
@@ -72,9 +78,11 @@
  		},
  		{
  			"section": {
+ 				"de": "Soziodemographie",
  				"en": "Sociodemographics"
  			},
  			"label": {
+ 				"de": "Alter, Herkunft, Erfahrungen",
  				"en": "Age, origin, experience"
  			},
  			"description": {
@@ -82,6 +90,7 @@
  				"en": ""
  			},
  			"short": {
+ 				"de": "Soziodemo-\u003cbr\u003egraphie",
  				"en": "Sociodemo-\u003cbr\u003egraphics"
  			},
  			"style": {
@@ -105,58 +114,26 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"name": "q01_age",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 1,
- 							"min": 15,
- 							"max": 150,
- 							"label": {
- 								"en": "How old are you?"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp; years"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 2,
- 							"validator": "inRange100"
- 						},
- 						{
- 							"name": "q02_country_birth",
- 							"type": "text",
- 							"max_chars": 20,
- 							"label": {
- 								"en": "What is your country of birth?"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
  					"bottom_vspacers": 3,
- 					"columns": 7,
+ 					"columns": 6,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
+ 								"de": "Sind Sie…",
  								"en": "What is your gender?"
  							},
- 							"col_span": 7
+ 							"col_span": 6,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "q03_gender",
+ 							"name": "q01_gender",
  							"type": "radio",
  							"label": {
- 								"de": "Male"
+ 								"de": "Männlich",
+ 								"en": "Male"
  							},
- 							"col_span": 7,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "male",
@@ -179,12 +156,13 @@
  							}
  						},
  						{
- 							"name": "q03_gender",
+ 							"name": "q01_gender",
  							"type": "radio",
  							"label": {
- 								"de": "Female"
+ 								"de": "Weiblich",
+ 								"en": "Female"
  							},
- 							"col_span": 7,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "female",
@@ -207,12 +185,13 @@
  							}
  						},
  						{
- 							"name": "q03_gender",
+ 							"name": "q01_gender",
  							"type": "radio",
  							"label": {
- 								"de": "Diverse"
+ 								"de": "Divers",
+ 								"en": "Diverse"
  							},
- 							"col_span": 7,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "diverse",
@@ -238,25 +217,731 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 7,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "q02_birthyear",
+ 							"type": "dropdown",
+ 							"max_chars": 10,
+ 							"label": {
+ 								"de": "In welchem Jahr sind Sie geboren?",
+ 								"en": "Your year of birth?"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4,
+ 							"drop_down": {
+ 								"Name": "",
+ 								"AutoSubmit": false,
+ 								"Disabled": false,
+ 								"Attrs": null,
+ 								"LC": "",
+ 								"Options": [
+ 									{
+ 										"Key": "",
+ 										"Val": {
+ 											"de": "Bitte eine Option wählen",
+ 											"en": "Please choose one option",
+ 											"es": "Por favor elija una opción",
+ 											"fr": "Veuillez choisir une option",
+ 											"it": "Si prega di selezionare una opzione",
+ 											"pl": "Proszę wybrać jedną z opcji"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1930",
+ 										"Val": {
+ 											"de": "1930",
+ 											"en": "1930"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1931",
+ 										"Val": {
+ 											"de": "1931",
+ 											"en": "1931"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1932",
+ 										"Val": {
+ 											"de": "1932",
+ 											"en": "1932"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1933",
+ 										"Val": {
+ 											"de": "1933",
+ 											"en": "1933"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1934",
+ 										"Val": {
+ 											"de": "1934",
+ 											"en": "1934"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1935",
+ 										"Val": {
+ 											"de": "1935",
+ 											"en": "1935"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1936",
+ 										"Val": {
+ 											"de": "1936",
+ 											"en": "1936"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1937",
+ 										"Val": {
+ 											"de": "1937",
+ 											"en": "1937"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1938",
+ 										"Val": {
+ 											"de": "1938",
+ 											"en": "1938"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1939",
+ 										"Val": {
+ 											"de": "1939",
+ 											"en": "1939"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1940",
+ 										"Val": {
+ 											"de": "1940",
+ 											"en": "1940"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1941",
+ 										"Val": {
+ 											"de": "1941",
+ 											"en": "1941"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1942",
+ 										"Val": {
+ 											"de": "1942",
+ 											"en": "1942"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1943",
+ 										"Val": {
+ 											"de": "1943",
+ 											"en": "1943"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1944",
+ 										"Val": {
+ 											"de": "1944",
+ 											"en": "1944"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1945",
+ 										"Val": {
+ 											"de": "1945",
+ 											"en": "1945"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1946",
+ 										"Val": {
+ 											"de": "1946",
+ 											"en": "1946"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1947",
+ 										"Val": {
+ 											"de": "1947",
+ 											"en": "1947"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1948",
+ 										"Val": {
+ 											"de": "1948",
+ 											"en": "1948"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1949",
+ 										"Val": {
+ 											"de": "1949",
+ 											"en": "1949"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1950",
+ 										"Val": {
+ 											"de": "1950",
+ 											"en": "1950"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1951",
+ 										"Val": {
+ 											"de": "1951",
+ 											"en": "1951"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1952",
+ 										"Val": {
+ 											"de": "1952",
+ 											"en": "1952"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1953",
+ 										"Val": {
+ 											"de": "1953",
+ 											"en": "1953"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1954",
+ 										"Val": {
+ 											"de": "1954",
+ 											"en": "1954"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1955",
+ 										"Val": {
+ 											"de": "1955",
+ 											"en": "1955"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1956",
+ 										"Val": {
+ 											"de": "1956",
+ 											"en": "1956"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1957",
+ 										"Val": {
+ 											"de": "1957",
+ 											"en": "1957"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1958",
+ 										"Val": {
+ 											"de": "1958",
+ 											"en": "1958"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1959",
+ 										"Val": {
+ 											"de": "1959",
+ 											"en": "1959"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1960",
+ 										"Val": {
+ 											"de": "1960",
+ 											"en": "1960"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1961",
+ 										"Val": {
+ 											"de": "1961",
+ 											"en": "1961"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1962",
+ 										"Val": {
+ 											"de": "1962",
+ 											"en": "1962"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1963",
+ 										"Val": {
+ 											"de": "1963",
+ 											"en": "1963"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1964",
+ 										"Val": {
+ 											"de": "1964",
+ 											"en": "1964"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1965",
+ 										"Val": {
+ 											"de": "1965",
+ 											"en": "1965"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1966",
+ 										"Val": {
+ 											"de": "1966",
+ 											"en": "1966"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1967",
+ 										"Val": {
+ 											"de": "1967",
+ 											"en": "1967"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1968",
+ 										"Val": {
+ 											"de": "1968",
+ 											"en": "1968"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1969",
+ 										"Val": {
+ 											"de": "1969",
+ 											"en": "1969"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1970",
+ 										"Val": {
+ 											"de": "1970",
+ 											"en": "1970"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1971",
+ 										"Val": {
+ 											"de": "1971",
+ 											"en": "1971"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1972",
+ 										"Val": {
+ 											"de": "1972",
+ 											"en": "1972"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1973",
+ 										"Val": {
+ 											"de": "1973",
+ 											"en": "1973"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1974",
+ 										"Val": {
+ 											"de": "1974",
+ 											"en": "1974"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1975",
+ 										"Val": {
+ 											"de": "1975",
+ 											"en": "1975"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1976",
+ 										"Val": {
+ 											"de": "1976",
+ 											"en": "1976"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1977",
+ 										"Val": {
+ 											"de": "1977",
+ 											"en": "1977"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1978",
+ 										"Val": {
+ 											"de": "1978",
+ 											"en": "1978"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1979",
+ 										"Val": {
+ 											"de": "1979",
+ 											"en": "1979"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1980",
+ 										"Val": {
+ 											"de": "1980",
+ 											"en": "1980"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1981",
+ 										"Val": {
+ 											"de": "1981",
+ 											"en": "1981"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1982",
+ 										"Val": {
+ 											"de": "1982",
+ 											"en": "1982"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1983",
+ 										"Val": {
+ 											"de": "1983",
+ 											"en": "1983"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1984",
+ 										"Val": {
+ 											"de": "1984",
+ 											"en": "1984"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1985",
+ 										"Val": {
+ 											"de": "1985",
+ 											"en": "1985"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1986",
+ 										"Val": {
+ 											"de": "1986",
+ 											"en": "1986"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1987",
+ 										"Val": {
+ 											"de": "1987",
+ 											"en": "1987"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1988",
+ 										"Val": {
+ 											"de": "1988",
+ 											"en": "1988"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1989",
+ 										"Val": {
+ 											"de": "1989",
+ 											"en": "1989"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1990",
+ 										"Val": {
+ 											"de": "1990",
+ 											"en": "1990"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1991",
+ 										"Val": {
+ 											"de": "1991",
+ 											"en": "1991"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1992",
+ 										"Val": {
+ 											"de": "1992",
+ 											"en": "1992"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1993",
+ 										"Val": {
+ 											"de": "1993",
+ 											"en": "1993"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1994",
+ 										"Val": {
+ 											"de": "1994",
+ 											"en": "1994"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1995",
+ 										"Val": {
+ 											"de": "1995",
+ 											"en": "1995"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1996",
+ 										"Val": {
+ 											"de": "1996",
+ 											"en": "1996"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1997",
+ 										"Val": {
+ 											"de": "1997",
+ 											"en": "1997"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1998",
+ 										"Val": {
+ 											"de": "1998",
+ 											"en": "1998"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1999",
+ 										"Val": {
+ 											"de": "1999",
+ 											"en": "1999"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2000",
+ 										"Val": {
+ 											"de": "2000",
+ 											"en": "2000"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2001",
+ 										"Val": {
+ 											"de": "2001",
+ 											"en": "2001"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2002",
+ 										"Val": {
+ 											"de": "2002",
+ 											"en": "2002"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2003",
+ 										"Val": {
+ 											"de": "2003",
+ 											"en": "2003"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2004",
+ 										"Val": {
+ 											"de": "2004",
+ 											"en": "2004"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2005",
+ 										"Val": {
+ 											"de": "2005",
+ 											"en": "2005"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2006",
+ 										"Val": {
+ 											"de": "2006",
+ 											"en": "2006"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2007",
+ 										"Val": {
+ 											"de": "2007",
+ 											"en": "2007"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2008",
+ 										"Val": {
+ 											"de": "2008",
+ 											"en": "2008"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2009",
+ 										"Val": {
+ 											"de": "2009",
+ 											"en": "2009"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2010",
+ 										"Val": {
+ 											"de": "2010",
+ 											"en": "2010"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2011",
+ 										"Val": {
+ 											"de": "2011",
+ 											"en": "2011"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2012",
+ 										"Val": {
+ 											"de": "2012",
+ 											"en": "2012"
+ 										},
+ 										"Selected": false
+ 									}
+ 								]
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"en": "Are you currently an \u003ci\u003eexchange\u003c/i\u003e student in Mannheim?"
+ 								"de": "In welchem Bundesland wohnen Sie?",
+ 								"en": "Which German state you live in?"
  							},
- 							"col_span": 7
+ 							"col_span": 6,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "q04_visiting_student",
+ 							"name": "q03_german_state",
  							"type": "radio",
  							"label": {
- 								"de": "Yes"
+ 								"de": "Baden-Württemberg",
+ 								"en": "Baden-Württemberg"
  							},
- 							"col_span": 7,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "yes",
+ 							"value_radio": "baden_wuerttemberg",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -276,15 +961,16 @@
  							}
  						},
  						{
- 							"name": "q04_visiting_student",
+ 							"name": "q03_german_state",
  							"type": "radio",
  							"label": {
- 								"de": "No"
+ 								"de": "Bayern",
+ 								"en": "Bavaria"
  							},
- 							"col_span": 7,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "no",
+ 							"value_radio": "bayern",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -304,22 +990,401 @@
  							}
  						},
  						{
- 							"name": "q04a_country_study",
- 							"type": "text",
- 							"max_chars": 20,
+ 							"name": "q03_german_state",
+ 							"type": "radio",
  							"label": {
- 								"en": "If yes: from which country?"
+ 								"de": "Berlin",
+ 								"en": "Berlin"
  							},
- 							"col_span": 7,
- 							"col_span_label": 2,
- 							"col_span_control": 5,
- 							"style": {
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "berlin",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 2.1rem"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
  									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Brandenburg",
+ 								"en": "Brandenburg"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "brandenburg",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Bremen",
+ 								"en": "Bremen"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "bremen",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hamburg",
+ 								"en": "Hamburg"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "hamburg",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hessen",
+ 								"en": "Hesse"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "hessen",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mecklenburg-Vorpommern",
+ 								"en": "Mecklenburg-Vorpommern"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "mecklenburg_vorpommern",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Niedersachsen",
+ 								"en": "Lower Saxony"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "niedersachsen",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nordrhein-Westfalen",
+ 								"en": "North Rhine-Westphalia"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "nordrhein_westfalen",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Rheinland-Pfalz",
+ 								"en": "Rhineland-Palatinate"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "rheinland_pfalz",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Saarland",
+ 								"en": "Saarland"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "saarland",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sachsen",
+ 								"en": "Saxony"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "sachsen",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sachsen-Anhalt",
+ 								"en": "Saxony-Anhalt"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "sachsen_anhalt",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Schleswig-Holstein",
+ 								"en": "Schleswig-Holstein"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "schleswig_holstein",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_german_state",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Thüringen",
+ 								"en": "Thuringia"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "thueringen",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
  									"text_style": {}
  								},
  								"mobile": {
@@ -334,1336 +1399,41 @@
  				},
  				{
  					"bottom_vspacers": 1,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "Do you already have professional experience from working in a job (other than a student job)?"
- 							},
- 							"col_span": 7
- 						},
- 						{
- 							"name": "q05_professional_experience",
- 							"type": "radio",
- 							"label": {
- 								"de": "Yes"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"value_radio": "yes",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q05_professional_experience",
- 							"type": "radio",
- 							"label": {
- 								"de": "No"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"value_radio": "no",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "If yes: was this experience related to finance?"
- 							},
- 							"col_span": 7
- 						},
- 						{
- 							"name": "q06_professional_finance",
- 							"type": "radio",
- 							"label": {
- 								"de": "Yes"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"value_radio": "yes",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q06_professional_finance",
- 							"type": "radio",
- 							"label": {
- 								"de": "No"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"value_radio": "no",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 4rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "Have you ever worked with a statistics program like Stata or\u0026nbspR?"
- 							},
- 							"col_span": 7
- 						},
- 						{
- 							"name": "q07_stata_or_r",
- 							"type": "radio",
- 							"label": {
- 								"de": "Yes"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"value_radio": "yes",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q07_stata_or_r",
- 							"type": "radio",
- 							"label": {
- 								"de": "No"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"value_radio": "no",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Sie schätzen Ihren Gesundheitszustand als",
- 								"en": "Would you say your health\u0026nbsp;is"
- 							},
- 							"col_span": 6
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Sehr gut",
- 								"en": "Very good"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Gut",
- 								"en": "Good"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Durchschnittlich",
- 								"en": "Fair"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Schlecht",
- 								"en": "Bad"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Sehr schlecht",
- 								"en": "Very bad"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "No an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q07_health",
- 							"type": "radio",
- 							"label": {
- 								"de": ""
- 							},
- 							"col_span_control": 1,
- 							"value_radio": "very_good",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q07_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "good"
- 						},
- 						{
- 							"name": "q07_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "average"
- 						},
- 						{
- 							"name": "q07_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "bad"
- 						},
- 						{
- 							"name": "q07_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "very_bad"
- 						},
- 						{
- 							"name": "q07_health",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "no_answer"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1.4fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
- 		},
- 		{
- 			"section": {
- 				"en": "Financial decisions"
- 			},
- 			"label": {
- 				"en": "Wealth, assets"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"en": "Financial\u003cbr\u003edecisions"
- 			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "40rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 2,
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "q08_income",
+ 							"name": "q04_age",
  							"type": "number",
- 							"max_chars": 9,
+ 							"max_chars": 4,
  							"step": 1,
- 							"max": 9223372036854776000,
+ 							"min": 15,
+ 							"max": 100,
  							"label": {
- 								"en": "\n\t\t\t\t\t\u003cb\u003eWhat is your current income?\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tPlease consider all sources of current income from work, transfers from your parents, stipends etc.\n\t\t\t\t"
+ 								"de": "Wie alt sind Sie?",
+ 								"en": "How old are you?"
  							},
  							"suffix": {
- 								"en": "\u0026nbsp€"
+ 								"de": "\u0026nbsp; Jahre",
+ 								"en": "\u0026nbsp; years"
  							},
  							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 4,
- 					"inputs": [
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange100"
+ 						},
  						{
- 							"type": "textblock",
+ 							"name": "q05_country_birth",
+ 							"type": "text",
+ 							"max_chars": 20,
  							"label": {
- 								"en": "\u003cb\u003eWhat is approximately the amount of wealth you own\u003c/b\u003e"
+ 								"de": "In welchem Land sind Sie geborden?",
+ 								"en": "What is your country of birth?"
  							},
  							"col_span": 4,
- 							"col_span_label": 4
- 						},
- 						{
- 							"name": "q09a_wealth_liquid",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "In cash (also on a debit account, sav\u0026shy;ings account etc.)"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "q09b_wealth_fungible",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "In assets, e.g. in stocks, bonds, mutual funds etc."
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "q09c_wealth_re",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "In real estate"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "q09d_wealth_other",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "In other valuables (e.g. cars, durables, art etc.)"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "\u003cb\u003eWhat is the amount of debt you owe\u003c/b\u003e"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4
- 						},
- 						{
- 							"name": "q10a_debt_bank",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "To a bank"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "q10b_debt_other",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "To another institution"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "q10c_debt_parents",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "To your parents"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "q10d_debt_friends",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 1,
- 							"max": 9223372036854776000,
- 							"label": {
- 								"en": "To other friends or relatives"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbsp€"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "\u003cb\u003eDo you currently own/use any of the following financial products?\u003c/b\u003e"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "q11_asset_investment_account",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "An in\u0026shy;vest\u0026shy;ment account"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_savings_account",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "A sav\u0026shy;ings account"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_stocks",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Stocks and shares"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_mutual",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Mutual funds"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_bonds",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Bonds"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_credit_card",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "A credit card"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_insurance",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "An insurance contract (except mandatory health insurance)"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_mobile_account",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "A mobile phone payment app (e.g. Google pay, Apple pay etc.)"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_crypto",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Crypto assets (e.g. Bitcoin) or ICOs (Initial Coin Offerings)"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q11_asset_no_answer",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "No an\u0026shy;swer"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
+ 							"col_span_label": 3,
  							"col_span_control": 2
  						}
  					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "\u003cb\u003eDo you do any of the following for yourself or your household?\u003c/b\u003e"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "q12_beh_planning",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Make a plan to manage your income and expenses"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q12_beh_expenses_notes",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Keep a note of your spending"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q12_beh_money_stashes",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Keep money for bills separate from day-to-day spending money"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q12_beh_planning_due_payments",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Make a note of upcoming bills to make sure you  don't miss them"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q12_beh_app",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Use a banking app or money man\u0026shy;age\u0026shy;ment tool to keep track of your outgoings"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q12_beh_automatic_payments",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "Arrange automatic payments for regular outgoings"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "q12_beh_no_reply",
- 							"type": "checkbox",
- 							"label": {
- 								"en": "No an\u0026shy;swer"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 5,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 5,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"en": "Sometimes people find that their income does not quite cover their living expenses. \n\t\t\t\t\tIn the last 12\u0026nbsp;months, has this happened to you personally?"
- 							},
- 							"col_span": 5
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Ja",
- 								"en": "Yes"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Nein",
- 								"en": "No"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Weiß nicht",
- 								"en": "Do not know"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Nicht anwendbar",
- 								"en": "Not ap\u0026shy;pli\u0026shy;ca\u0026shy;ble"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Kei\u0026shy;ne Antwort",
- 								"en": "No an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13_broke_before_paycheck",
- 							"type": "radio",
- 							"label": {
- 								"en": ""
- 							},
- 							"col_span_control": 1,
- 							"value_radio": "yes",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13_broke_before_paycheck",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "no"
- 						},
- 						{
- 							"name": "q13_broke_before_paycheck",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "dont_know"
- 						},
- 						{
- 							"name": "q13_broke_before_paycheck",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "not_applicable"
- 						},
- 						{
- 							"name": "q13_broke_before_paycheck",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "no_answer"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   1fr    1fr    1fr    1fr    1.4fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
  				}
  			]
  		},

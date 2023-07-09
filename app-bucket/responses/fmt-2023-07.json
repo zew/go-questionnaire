@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ee213dd04e8955978cfe033fa835250d4fe3372c74831d71fd5c3d97bcedcdf6",
+ 	"md_5": "cd41f41859b594582936909e17792cf76a672d85168c38edd7f7b2c0b8a485cb",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2820,7 +2820,7 @@
  							"name": "sto_dax",
  							"type": "radio",
  							"label": {
- 								"de": "DAX (Deutschl.)",
+ 								"de": "DAX",
  								"en": "DAX (Ger\u0026shy;ma\u0026shy;ny)"
  							},
  							"col_span_label": 2,
@@ -4587,7 +4587,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktpro\u0026shy;gno\u0026shy;se der Wachstumsrate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktpro\u0026shy;gno\u0026shy;se der Wachstumsrate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPoint forecast of the growth rate of the \u003cb\u003eGerman GDP\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, \n\t\t\t\tplease indicate non-annualized quarterly \n\t\t\t\treal \u0026 seasonally adjusted GDP growth. \n\t\t\t\tFor the yearly values, \n\t\t\t\tplease indicate the annual real GDP growth rate.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,

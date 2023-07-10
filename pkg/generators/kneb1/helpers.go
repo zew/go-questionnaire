@@ -2,6 +2,12 @@ package kneb1
 
 import "github.com/zew/go-questionnaire/pkg/trl"
 
+var radioVals11 = []string{
+	"0", "1", "2", "3", "4",
+	"5",
+	"6", "7", "8", "9", "10",
+}
+
 // no first col labels
 var columnTemplate5a = []float32{
 	0, 1,
@@ -28,6 +34,28 @@ var columnTemplate6a = []float32{
 	0, 1,
 	0, 1,
 	0.4, 1,
+}
+
+// no first col labels
+var columnTemplate11 = []float32{
+
+	0, 1,
+
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+
+	0, 1,
+
+	0, 1,
+
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+
+	// 0.4, 1,
 }
 
 func labelsGoodBad6() []trl.S {
@@ -622,5 +650,63 @@ func pessimistic7() []trl.S {
 	}
 
 	return tm
+
+}
+
+func labelsRisk() []trl.S {
+
+	return []trl.S{
+		{
+			"de": "gar nicht risikobereit <br>0",
+			"en": "no risk at all <br>0",
+		},
+
+		// 1-4
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 5 ",
+			"en": " 5 ",
+		},
+
+		// 6-9
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		{
+			"de": "sehr risikobereit <br>10 ",
+			"en": "very fond of risk <br>10 ",
+		},
+	}
 
 }

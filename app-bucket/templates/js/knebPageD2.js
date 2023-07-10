@@ -6,6 +6,7 @@ function showHideSubQuestions(showHide, classOfSubQuestion) {
         // console.log(`containers[${subRadio}] style is ${containers[0].style.display}`);
         if (showHide) {
             containers[0].style.display = ""; // not block
+            containers[0].style.marginBottom = "3rem"
             console.log(`containers[${classOfSubQuestion}] shown`);
         } else {
             containers[0].style.display = "none";

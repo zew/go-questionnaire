@@ -123,6 +123,8 @@ func (gb *GridBuilder) dumpCols() {
 // -----------------------------------------------------------------
 
 // NewGridBuilderRadios - see NewGridBuilderRadiosWithValidator
+//
+// firstColLabels only appear, if columnTemplate has space > 0 for them
 func NewGridBuilderRadios(
 	columnTemplate []float32,
 	hdrLabels []trl.S,
@@ -235,6 +237,7 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 		inp.Type = "textblock"
 		inp.Label = gb.MainLabel
 		inp.ColSpan = gr.Cols
+		inp.ColSpanLabel = 1
 	}
 
 	// second row - headers - preflight

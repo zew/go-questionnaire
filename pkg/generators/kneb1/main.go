@@ -151,19 +151,19 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": "Your year of birth?",
 				}.Outline("D2.")
 				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
+				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 4
 
 				//
 				inp.DD = &qst.DropdownT{}
-				if true {
+				if false {
 					inp.DD.AddPleaseSelect(cfg.Get().Mp["must_one_option"])
 				} else {
 					inp.DD.Add(
 						"",
 						trl.S{
-							"de": " Bitte wählen",
-							"en": " Please choose",
+							"de": " Bitte ein Jahr wählen ",
+							"en": " Please choose a year ",
 						},
 					)
 				}
@@ -431,7 +431,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
-			var inpNames = []string{
+			var radioValues = []string{
 				"no",
 				"yes",
 				"highschool",
@@ -457,7 +457,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": `
 						Haben Sie eine abgeschlossene Berufsausbildung?  <br>
 						<small> Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchsten an. </small>
-
 					`,
 					"en": `
 						todo
@@ -469,16 +468,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 0
 			}
 			for idx, label := range labels {
-				inp := gr.AddInput()
-				inp.Type = "checkbox"
-				inp.Name = "qd5_vocational_" + inpNames[idx]
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qd5_vocational_training"
+				rad.ValueRadio = radioValues[idx]
 
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 6
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
 
-				inp.Label = label
-				inp.ControlFirst()
+				rad.Label = label
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
 			}
 		}
 
@@ -519,8 +522,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": "Welchen Familienstand haben Sie?",
-					"en": "What is your marital status?",
+					"de": `Welchen Familienstand haben Sie?`,
+					"en": `What is your marital status?`,
 				}.Outline("D6.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
@@ -750,6 +753,55 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.LabelTop()
 				rad.ControlTop()
 			}
+		}
+
+	}
+
+	// page 3
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Generelles Risiko",
+			"en": "Risk in general",
+		}
+		page.Short = trl.S{
+			"de": "Generelles<br>Risiko",
+			"en": "Risk<br>in general",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				labelsRisk(),
+				[]string{"m1_risk"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+				// []trl.S{{"de": `abc1212`, "en": `abc1212`}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wie schätzen Sie sich persönlich ein: 
+					Sind Sie im Allgemeinen ein risikobereiter Mensch 
+					oder versuchen Sie, Risiken zu vermeiden?
+
+					<small>
+					Antworten Sie bitte anhand der folgenden Skala, 
+					wobei der Wert 0 bedeutet: gar nicht risikobereit 
+					und der Wert 10: sehr risikobereit.
+					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+					</small>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("M1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+
 		}
 
 	}

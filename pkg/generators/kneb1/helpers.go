@@ -2,10 +2,22 @@ package kneb1
 
 import "github.com/zew/go-questionnaire/pkg/trl"
 
+var radioVals5 = []string{
+	"1", "2",
+	"3",
+	"4", "5",
+}
+
+var radioVals7 = []string{
+	"1", "2", "3",
+	"4",
+	"5", "6", "7",
+}
+
 var radioVals11 = []string{
-	"0", "1", "2", "3", "4",
-	"5",
-	"6", "7", "8", "9", "10",
+	"1", "2", "3", "4", "5",
+	"6",
+	"7", "8", "9", "10", "11",
 }
 
 // no first col labels
@@ -37,6 +49,40 @@ var columnTemplate6a = []float32{
 }
 
 // no first col labels
+var columnTemplate5 = []float32{
+
+	0, 1,
+
+	0, 1,
+
+	0, 1, // middle
+
+	0, 1,
+
+	0, 1,
+
+	// 0.4, 1,
+}
+
+// no first col labels
+var columnTemplate7 = []float32{
+
+	0, 1,
+
+	0, 1,
+	0, 1,
+
+	0, 1, // middle
+
+	0, 1,
+	0, 1,
+
+	0, 1,
+
+	// 0.4, 1,
+}
+
+// no first col labels
 var columnTemplate11 = []float32{
 
 	0, 1,
@@ -46,13 +92,13 @@ var columnTemplate11 = []float32{
 	0, 1,
 	0, 1,
 
-	0, 1,
+	0, 1, // middle
 
 	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
 
-	0, 1,
-	0, 1,
-	0, 1,
 	0, 1,
 
 	// 0.4, 1,
@@ -656,9 +702,10 @@ func pessimistic7() []trl.S {
 func labelsRisk() []trl.S {
 
 	return []trl.S{
+
 		{
-			"de": "gar nicht risikobereit <br>0",
-			"en": "no risk at all <br>0",
+			"de": "<small>gar nicht risikobereit</small> 0",
+			"en": "<small>no risk at all</small>         0",
 		},
 
 		// 1-4
@@ -703,9 +750,274 @@ func labelsRisk() []trl.S {
 			"en": " &nbsp; ",
 		},
 
+		//
 		{
-			"de": "sehr risikobereit <br>10 ",
-			"en": "very fond of risk <br>10 ",
+			"de": "<small>sehr risikobereit</small>   10",
+			"en": "<small>very fond of risk</small>   10",
+		},
+	}
+
+}
+
+func labelsPositiveAspects() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>nur an die positiven Seiten</small> 1",
+			"en": "<small>positiv aspects only</small> 1",
+		},
+
+		// 2-3
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 4 ",
+			"en": " 4 ",
+		},
+
+		// 5-6
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		{
+			"de": "<small>nur an die negativen Seiten</small> 7",
+			"en": "<small>negative aspects only</small> 7",
+		},
+	}
+
+}
+
+func labelsImportantSituations() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>kleine Alltagssituationen</small> 1",
+			"en": "<small>small everyday life</small> 1",
+		},
+
+		// 2-3
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 4 ",
+			"en": " 4 ",
+		},
+
+		// 5-6
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		{
+			"de": "<small>große, wichtige Situationen</small> 7",
+			"en": "<small>big important occasions</small> 7",
+		},
+	}
+
+}
+
+func labelsReturns() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>kleine Gewinne</small> 1",
+			"en": "<small>small returns</small> 1",
+		},
+
+		// 2-3
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 4 ",
+			"en": " 4 ",
+		},
+
+		// 5-6
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		{
+			"de": "<small>große Gewinne</small> 7",
+			"en": "<small>large returns</small> 7",
+		},
+	}
+}
+
+func labelsLosses() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>kleine Verluste</small> <div>1</div>",
+			"en": "<small>small losses</small>    <div>1</div>",
+		},
+
+		// 2-3
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 4 ",
+			"en": " 4 ",
+		},
+
+		// 5-6
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		{
+			"de": "<small>große Verluste</small> <div>7</div>",
+			"en": "<small>large losses</small>   <div>7</div>",
+		},
+	}
+
+}
+
+func labelsFinRisk() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>nicht bereit, ein Risiko einzugehen</small> <div>1</div>",
+			"en": "<small>not prepared to take any risk</small>       <div>1</div>",
+		},
+
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 3 ",
+			"en": " 3 ",
+		},
+
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		{
+			"de": "<small>bereit, ein erhebliches Risiko einzugehen, um potenziell eine höhere Rendite zu erzielen</small> <div>5</div>",
+			"en": "<small>prepared to take a considerable risk, for higher potential returns</small>                       <div>5</div>",
+		},
+	}
+
+}
+
+func labelsSelfKnowledge() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>sehr gering</small> 0",
+			"en": "<small>very small </small> 0",
+		},
+
+		// 1-4
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		// center
+		{
+			"de": " 5 ",
+			"en": " 5 ",
+		},
+
+		// 6-9
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+
+		//
+		{
+			"de": "<small>sehr hoch</small>   10",
+			"en": "<small>very high</small>   10",
 		},
 	}
 

@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
+	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -363,8 +364,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page.Short = trl.S{
 			"de": "Soziodemo-<br>graphie 2",
-			"en": "Sociodemo-<br>graphics 1",
+			"en": "Sociodemo-<br>graphics 2",
 		}
+		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
 		page.ValidationFuncName = "knebPageD2"
@@ -777,10 +779,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate11,
 				labelsRisk(),
-				[]string{"m1_risk"},
+				[]string{"qm1_risk"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
-				// []trl.S{{"de": `abc1212`, "en": `abc1212`}},
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -801,7 +802,490 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}.Outline("M1.")
 			gr := page.AddGrid(gb)
 			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
 
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
+						<small>(Mehrfachnennung möglich)</small>
+					`,
+					"en": `todo`,
+				}.Outline("M2.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qm2_risk_free"
+				inp.MaxChars = 200
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+		}
+
+		// gr2
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsPositiveAspects(),
+				[]string{"qm3_averse"},
+				radioVals7,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Haben Sie eher an die negativen oder
+					 positiven Seiten des Risikos gedacht?
+
+					<small>
+					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: 
+					nur an die negativen Seiten und der 
+					Wert 7: nur an die positiven Seiten.
+					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+					</small>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("M3.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr3
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsImportantSituations(),
+				[]string{"qm4_occasions"},
+				radioVals7,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Haben Sie eher an kleine Alltagssituationen 
+					oder an große, wichtige Situationen gedacht?
+
+					<small>
+					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: 
+					kleine Alltagssituationen und der Wert 7: 
+					große, wichtige Situationen.
+					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+
+					</small>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("M4.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr4
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsReturns(),
+				[]string{"qm5_returns"},
+				radioVals7,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Haben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?
+		
+					<small>
+					Antworten Sie bitte anhand der folgenden Skala, 
+					wobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7: 
+					große Gewinne.
+					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+					</small>
+				`,
+				"en": `
+							todo
+						`,
+			}.Outline("M5.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr5
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsLosses(),
+				[]string{"qm6_losses"},
+				radioVals7,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Haben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?
+		
+					<small>
+					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: 
+					kleine Verluste und der Wert 7: große Verluste.
+					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+					</small>
+				`,
+				"en": `
+							todo
+						`,
+			}.Outline("M6.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+	// page 4
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Finanzielles Risiko",
+			"en": "Financial risk",
+		}
+		page.Short = trl.S{
+			"de": "Finanzielles<br>Risiko",
+			"en": "Financial<br>risk",
+		}
+		page.WidthMax("42rem")
+		// page.WidthMax("48rem")
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				labelsFinRisk(),
+				[]string{"qf1_risk"},
+				radioVals5,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen.
+		
+					<small>
+					Bewerten Sie bitte anhand der Skala von 1 bis 5. 
+					</small>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("F1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
+						<small>(Mehrfachnennung möglich)</small>
+					`,
+					"en": `todo`,
+				}.Outline("F2.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf2_risk_free"
+				inp.MaxChars = 200
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+		}
+
+		// gr2
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `Denken Sie bitte einmal an die Risiken und Chance im Zusammenhang mit dem Finanzmarkt. 
+						Was kommt Ihnen dabei in den Sinn?
+
+						<br>
+						<br>
+						Chancen<br>
+						<small>(Mehrfachnennung möglich)</small>
+					`,
+					"en": `todo`,
+				}.Outline("F3.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf3_chance1"
+				inp.MaxChars = 120
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf3_chance2"
+				inp.MaxChars = 120
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf3_chance3"
+				inp.MaxChars = 120
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Risiken<br>
+						<small>(Mehrfachnennung möglich)</small>
+					`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf3_risk1"
+				inp.MaxChars = 120
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf3_risk2"
+				inp.MaxChars = 120
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qf3_risk3"
+				inp.MaxChars = 120
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+
+		}
+
+	}
+
+	// page 5
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Präferenzen und Einschätzungen",
+			"en": "Preferences and assessments",
+		}
+		page.Short = trl.S{
+			"de": "Präferenzen,<br>Einschätzungen",
+			"en": "Preferences,<br>assessments",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				labelsSelfKnowledge(),
+				[]string{"qp1_risk"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("P1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		lblsQP2aTo2d := labelsSelfKnowledge()
+		lblsQP2aTo2d[0] = trl.S{
+			"de": "<small>stimme gar nicht zu</small> 0",
+			"en": "<small>dont agree at all</small> 0",
+		}
+		lblsQP2aTo2d[10] = trl.S{
+			"de": "<small>stimme voll und ganz zu</small> 10",
+			"en": "<small>agree completely</small>        10",
+		}
+
+		// gr1
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lblsQP2aTo2d,
+				[]string{"qp2a_boring"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+				Wie sehr stimmen Sie den folgenden Aussagen zu?
+
+				<br>
+				<br>
+
+				<b>a)</b>&nbsp; Persönliche Finanzen finde ich langweilig.
+				
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("P2.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr2
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lblsQP2aTo2d,
+				[]string{"qp2b_fear"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+				<b>b)</b>&nbsp; Ich habe große Angst vor finanziellen Verlusten.
+				
+				`,
+				"en": `
+					todo
+				`,
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr3
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lblsQP2aTo2d,
+				[]string{"qp2c_trust_people"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+				<b>c)</b>&nbsp; Im Allgemeinen kann man den Menschen vertrauen.
+				
+				`,
+				"en": `
+					todo
+				`,
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr4
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lblsQP2aTo2d,
+				[]string{"qp2d_trust_institutions"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+				<b>d)</b>&nbsp; Im Allgemeinen kann man Banken und Finanzinstitutionen in Deutschland vertrauen.
+				
+				`,
+				"en": `
+					todo
+				`,
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
 	}

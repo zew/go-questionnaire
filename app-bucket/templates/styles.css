@@ -335,9 +335,9 @@ svg:not(:root) {
 }
 
 small {
-    font-size: 93%;
+    font-size: 91%;
     display: inline-block;
-    line-height: 125%;
+    line-height: 120%;
     padding-top:  0.3rem;
     padding-bottom:  0.15rem;
     /* padding-left: 0.2rem; */

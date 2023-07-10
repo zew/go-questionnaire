@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e4153d297fd60ebd7022f267e59c6a6c14d2c4cba90c7e888867b9d0d1399de5",
+ 	"md_5": "cfae888c085c78b4dcfe124ff628b65c1cf4a473261bf4544de51c5e87d5fd1a",
  	"lang_codes": [
  		"de"
  	],
@@ -1403,8 +1403,9 @@
  			},
  			"short": {
  				"de": "Soziodemo-\u003cbr\u003egraphie 2",
- 				"en": "Sociodemo-\u003cbr\u003egraphics 1"
+ 				"en": "Sociodemo-\u003cbr\u003egraphics 2"
  			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -2841,7 +2842,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"columns": 11,
  					"inputs": [
  						{
@@ -2856,8 +2857,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit \u003cbr\u003e0",
- 								"en": "no risk at all \u003cbr\u003e0"
+ 								"de": "\u003csmall\u003egar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003eno risk at all\u003c/small\u003e         0"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3296,8 +3297,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit \u003cbr\u003e10 ",
- 								"en": "very fond of risk \u003cbr\u003e10 "
+ 								"de": "\u003csmall\u003esehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\u003c/small\u003e   10",
+ 								"en": "\u003csmall\u003every fond of risk\u003c/small\u003e   10"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3338,14 +3339,14 @@
  							}
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"label": {
  								"de": "",
  								"en": ""
  							},
  							"col_span_control": 1,
- 							"value_radio": "0",
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -3364,71 +3365,5250 @@
  							}
  						},
  						{
- 							"name": "m1_risk",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "8"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "9"
  						},
  						{
- 							"name": "m1_risk",
+ 							"name": "qm1_risk",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qm1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
  								"auto_flow": "row",
- 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr "
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eM2.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eM2.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qm2_risk_free",
+ 							"type": "textarea",
+ 							"max_chars": 200,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.12rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eM3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an die neg\u0026shy;ativen oder\n\t\t\t\t\t pos\u0026shy;itiven Seiten des Risikos gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: \n\t\t\t\t\tnur an die neg\u0026shy;ativen Seiten und der \n\t\t\t\t\tWert 7: nur an die pos\u0026shy;itiven Seiten.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003eM3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003enur an die pos\u0026shy;itiven Seiten\u003c/small\u003e 1",
+ 								"en": "\u003csmall\u003epo\u0026shy;si\u0026shy;tiv aspects only\u003c/small\u003e 1"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 4 ",
+ 								"en": " 4 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003enur an die neg\u0026shy;ativen Seiten\u003c/small\u003e 7",
+ 								"en": "\u003csmall\u003eneg\u0026shy;ative aspects only\u003c/small\u003e 7"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qm3_averse",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an kleine Alltagssituationen \n\t\t\t\t\toder an große, wich\u0026shy;tige Situationen gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: \n\t\t\t\t\tkleine Alltagssituationen und der Wert 7: \n\t\t\t\t\tgroße, wich\u0026shy;tige Situationen.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003ekleine Alltagssituationen\u003c/small\u003e 1",
+ 								"en": "\u003csmall\u003esmall everyday life\u003c/small\u003e 1"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 4 ",
+ 								"en": " 4 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003egroße, wich\u0026shy;tige Situationen\u003c/small\u003e 7",
+ 								"en": "\u003csmall\u003ebig important occasions\u003c/small\u003e 7"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qm4_occasions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?\n\t\t\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7: \n\t\t\t\t\tgroße Gewinne.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003ekleine Gewinne\u003c/small\u003e 1",
+ 								"en": "\u003csmall\u003esmall returns\u003c/small\u003e 1"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 4 ",
+ 								"en": " 4 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003egroße Gewinne\u003c/small\u003e 7",
+ 								"en": "\u003csmall\u003elarge returns\u003c/small\u003e 7"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qm5_returns",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?\n\t\t\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: \n\t\t\t\t\tkleine Verluste und der Wert 7: große Verluste.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003ekleine Verluste\u003c/small\u003e \u003cdiv\u003e1\u003c/div\u003e",
+ 								"en": "\u003csmall\u003esmall losses\u003c/small\u003e    \u003cdiv\u003e1\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 4 ",
+ 								"en": " 4 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003egroße Verluste\u003c/small\u003e \u003cdiv\u003e7\u003c/div\u003e",
+ 								"en": "\u003csmall\u003elarge losses\u003c/small\u003e   \u003cdiv\u003e7\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qm6_losses",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Finanzielles Risiko",
+ 				"en": "Financial risk"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Finanzielles\u003cbr\u003eRisiko",
+ 				"en": "Financial\u003cbr\u003erisk"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko einzugehen.\n\t\t\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 1 bis 5. \n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003enicht bereit, ein Risiko einzugehen\u003c/small\u003e \u003cdiv\u003e1\u003c/div\u003e",
+ 								"en": "\u003csmall\u003enot prepared to take any risk\u003c/small\u003e       \u003cdiv\u003e1\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 3 ",
+ 								"en": " 3 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003ebereit, ein erhebliches Risiko einzugehen, um potenziell eine höhere Rendite zu erzielen\u003c/small\u003e \u003cdiv\u003e5\u003c/div\u003e",
+ 								"en": "\u003csmall\u003eprepared to take a considerable risk, for higher po\u0026shy;ten\u0026shy;tial returns\u003c/small\u003e                       \u003cdiv\u003e5\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qf1_risk",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qf1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qf1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qf1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qf1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qf2_risk_free",
+ 							"type": "textarea",
+ 							"max_chars": 200,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.12rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eF3.\u003c/b\u003e \u0026nbsp; Denken Sie bitte einmal an die Risiken und Chance im Zusammenhang mit dem Finanzmarkt. \n\t\t\t\t\t\tWas kommt Ihnen dabei in den Sinn?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tChancen\u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eF3.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qf3_chance1",
+ 							"type": "textarea",
+ 							"max_chars": 120,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qf3_chance2",
+ 							"type": "textarea",
+ 							"max_chars": 120,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qf3_chance3",
+ 							"type": "textarea",
+ 							"max_chars": 120,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\tRisiken\u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qf3_risk1",
+ 							"type": "textarea",
+ 							"max_chars": 120,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qf3_risk2",
+ 							"type": "textarea",
+ 							"max_chars": 120,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qf3_risk3",
+ 							"type": "textarea",
+ 							"max_chars": 120,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.12rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Präferenzen und Einschätzungen",
+ 				"en": "Preferences and assessments"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Präferenzen,\u003cbr\u003eEinschätzungen",
+ 				"en": "Preferences,\u003cbr\u003eassessments"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eP1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t",
+ 								"en": "\u003cb\u003eP1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003esehr gering\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003every small \u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003esehr hoch\u003c/small\u003e   10",
+ 								"en": "\u003csmall\u003every high\u003c/small\u003e   10"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qp1_risk",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eP2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWie sehr stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Persönliche Finanzen finde ich langweilig.\n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003eP2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me gar nicht zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003edont agree at all\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me voll und ganz zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003eagree com\u0026shy;plete\u0026shy;ly\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qp2a_boring",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cb\u003eb)\u003c/b\u003e\u0026nbsp; Ich habe große Angst vor finanziellen Verlusten.\n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me gar nicht zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003edont agree at all\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me voll und ganz zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003eagree com\u0026shy;plete\u0026shy;ly\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qp2b_fear",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cb\u003ec)\u003c/b\u003e\u0026nbsp; Im Allgemeinen kann man den Menschen vertrauen.\n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me gar nicht zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003edont agree at all\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me voll und ganz zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003eagree com\u0026shy;plete\u0026shy;ly\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qp2c_trust_people",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cb\u003ed)\u003c/b\u003e\u0026nbsp; Im Allgemeinen kann man Banken und Finanzinstitutionen in Deutsch\u0026shy;land vertrauen.\n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me gar nicht zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003edont agree at all\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003estim\u0026shy;me voll und ganz zu\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003eagree com\u0026shy;plete\u0026shy;ly\u003c/small\u003e 0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qp2d_trust_institutions",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
  							},
  							"box_style": {
  								"display": "grid"

@@ -1315,207 +1315,110 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "<small>agree completely</small>        7",
 		}
 
-		// gr0
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1a_saving"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
+		//
+		//
+		inputs := []string{
+			"saving",
+			"knowledge",
+			"secure",
+			"oversight",
+			"avoidance",
+			"procrastination",
+			"emphasis",
+			"fear",
+		}
+		lbls := []trl.S{
+			{
 				"de": `
-					Inwiefern stimmen Sie den folgenden Aussagen zu?
-					
-					<small>
-					Antworten Sie auf der Skala von 
-					1: "Stimme überhaupt nicht zu" 
-					bis 
-					7: "Stimme voll und ganz zu" .
-					</small>
+			Inwiefern stimmen Sie den folgenden Aussagen zu?
+			
+			<small>
+			Antworten Sie auf der Skala von 
+			1: "Stimme überhaupt nicht zu" 
+			bis 
+			7: "Stimme voll und ganz zu" .
+			</small>
 
-					<br>
-					<br>
-	
-					<b>a)</b>&nbsp; Ich spare genug für die Rente.
-						
+			<br>
+			<br>
+
+			<b>%c)</b>&nbsp; Ich spare genug für die Rente.
+				
+		`,
+				"en": `
+			<b>%c)</b>&nbsp; todo.
+		`,
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.
 				`,
 				"en": `
-					todo
+					<b>%c)</b>&nbsp; todo.
 				`,
-			}
-
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Ich fühle mich gut für das Alter abgesichert.
+				`,
+				"en": `
+					<b>%c)</b>&nbsp; todo.
+				`,
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche.
+				`,
+				"en": `
+					<b>%c)</b>&nbsp; todo.
+				`,
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.
+				`,
+				"en": `
+					<b>%c)</b>&nbsp; todo.
+				`,
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.
+				`,
+				"en": `
+					<b>%c)</b>&nbsp; todo.
+				`,
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Mir ist es wichtig, dass ich für das Alter ausreichend abgesichert bin.
+				`,
+				"en": `
+					<b>%c)</b>&nbsp; todo.
+				`,
+			},
+			{
+				"de": `	
+					<b>%c)</b>&nbsp; Ich habe Angst vor Armut im Alter.
+				`,
+				"en": `
+					<b>%c)</b>&nbsp; todo.
+				`,
+			},
 		}
 
-		// gr1
-		{
+		for i := 0; i < len(inputs); i++ {
+			rn := rune(97 + i) // ascii 65 is A; 97 is a
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate7,
 				lblsQV1to6,
-				[]string{"qv1b_knowledge"},
+				[]string{fmt.Sprintf("qv1%c_%s", rn, inputs[i])},
 				radioVals7,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>b)</b>&nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.
-				`,
-				"en": `
-					todo
-				`,
-			}
+			gb.MainLabel = lbls[i].Fill(rn)
 			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr2
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1c_secure"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>c)</b>&nbsp; Ich fühle mich gut für das Alter abgesichert..
-				`,
-				"en": `
-					todo
-				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr3
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1d_oversight"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>d)</b>&nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche
-				`,
-				"en": `
-					todo
-				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr4
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1e_avoidance"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>e)</b>&nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.
-				`,
-				"en": `
-					todo
-				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr5
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1f_procrastination"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>f)</b>&nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.
-				`,
-				"en": `
-					todo
-				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr6
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1g_emphasis"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>g)</b>&nbsp; Mir ist es wichtig, dass ich für das Alter ausreichend abgesichert bin.
-				`,
-				"en": `
-					todo
-				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr7
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				lblsQV1to6,
-				[]string{"qv1h_fear"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `	
-					<b>h)</b>&nbsp; Ich habe Angst vor Armut im Alter.
-				`,
-				"en": `
-					todo
-				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
+			// _ = gr
 			gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"

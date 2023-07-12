@@ -1,6 +1,69 @@
 package kneb1
 
-import "github.com/zew/go-questionnaire/pkg/trl"
+import (
+	"github.com/zew/go-questionnaire/pkg/css"
+	"github.com/zew/go-questionnaire/pkg/qst"
+	"github.com/zew/go-questionnaire/pkg/trl"
+)
+
+func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, indent bool) {
+
+	gr := page.AddGroup()
+	gr.Cols = 8 + 1
+	gr.WidthMax("40rem")
+	gr.BottomVSpacers = 2
+
+	if indent {
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleBox.Margin = "0 0 0 1.2rem"
+	}
+	var radioValues = []string{
+		"yes",
+		"no",
+	}
+	var labels = []trl.S{
+		{
+			"de": "ja",
+			"en": "yes",
+		},
+		{
+			"de": "nein",
+			"en": "no",
+		},
+	}
+	{
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.Label = lbl.Outline(outlineNumber)
+		inp.ColSpan = gr.Cols
+		inp.ColSpanLabel = 1
+		inp.ColSpanControl = 0
+	}
+
+	//
+	{
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.Label = trl.S{"de": "", "en": ""}
+		inp.ColSpan = 1
+		inp.ColSpanLabel = 1
+		inp.ColSpanControl = 0
+	}
+	for idx, label := range labels {
+		rad := gr.AddInput()
+		rad.Type = "radio"
+		rad.Name = inputName
+		rad.ValueRadio = radioValues[idx]
+
+		rad.ColSpan = gr.Cols
+		rad.ColSpan = 4
+		rad.ColSpanLabel = 1
+		rad.ColSpanControl = 6
+
+		rad.Label = label
+		rad.ControlFirst()
+	}
+}
 
 var radioVals4 = []string{
 	"1", "2",
@@ -83,13 +146,9 @@ var columnTemplate4 = []float32{
 var columnTemplate5 = []float32{
 
 	0, 1,
-
 	0, 1,
-
 	0, 1, // middle
-
 	0, 1,
-
 	0, 1,
 
 	// 0.4, 1,
@@ -1133,7 +1192,25 @@ func labelsInterestOverTwoYears() []trl.S {
 func labelsStimmeZuOderNicht() []trl.S {
 
 	return []trl.S{
+		{
+			"de": "<small>stimme zu</small>        ",
+			"en": "<small>agree</small>            ",
+		},
+		{
+			"de": "<small>stimme nicht zu</small>  ",
+			"en": "<small>dont agree</small>       ",
+		},
+		{
+			"de": "<small>weiß nicht</small>        ",
+			"en": "<small>dont know </small>        ",
+		},
+		{
+			"de": "<small>keine Angabe</small>      ",
+			"en": "<small>no answer   </small>      ",
+		},
+	}
 
+	return []trl.S{
 		{
 			"de": "<small>stimme zu</small>         <div>1</div>",
 			"en": "<small>agree</small>             <div>1</div>",
@@ -1235,6 +1312,82 @@ func labelsExpectedValueRisk() []trl.S {
 		},
 		{
 			"de": "ich weiß nicht",
+			"en": "todo",
+		},
+	}
+
+}
+
+func labelsPensionAdvice() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "dieses Jahr",
+			"en": "todo",
+		},
+		{
+			"de": "im letzten Jahr",
+			"en": "todo",
+		},
+		{
+			"de": "in den letzten 5 Jahren",
+			"en": "todo",
+		},
+		{
+			"de": "vor mehr als 5 Jahren",
+			"en": "todo",
+		},
+		{
+			"de": "noch nie",
+			"en": "todo",
+		},
+	}
+
+}
+
+func labelsFrequency() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "oft",
+			"en": "todo",
+		},
+		{
+			"de": "manchmal",
+			"en": "todo",
+		},
+		{
+			"de": "selten",
+			"en": "todo",
+		},
+		{
+			"de": "niemals",
+			"en": "todo",
+		},
+	}
+
+}
+
+func labelsWhoIsCompetent() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "Mein Partner/ Meine Partnerin",
+			"en": "todo",
+		},
+		{
+			"de": "Familie",
+			"en": "todo",
+		},
+		{
+			"de": "Freunde und Bekannte",
+			"en": "todo",
+		},
+		{
+			"de": "Bankberater/in",
 			"en": "todo",
 		},
 	}

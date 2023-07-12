@@ -97,16 +97,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var labels = []trl.S{
 				{
-					"de": "Männlich",
-					"en": "Male",
+					"de": "männlich",
+					"en": "male",
 				},
 				{
-					"de": "Weiblich",
-					"en": "Female",
+					"de": "weiblich",
+					"en": "female",
 				},
 				{
-					"de": "Divers",
-					"en": "Diverse",
+					"de": "divers",
+					"en": "diverse",
 				},
 			}
 			{
@@ -1682,7 +1682,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate11,
 				lbls,
-				[]string{"qe1_confidence"},
+				[]string{"qe1_confidence_before"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
@@ -1730,6 +1730,495 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
+		}
+
+	}
+
+	// page x+0
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Erfahrungen mit Finanzen",
+			"en": "Experience in finance",
+		}
+		page.Short = trl.S{
+			"de": "Erfahrungen<br>Finanzen",
+			"en": "Experience<br>in finance",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		//
+		//
+		//
+		lblsQX1 := labelsSelfKnowledge()
+		lblsQX1[0] = trl.S{
+			"de": "<small>überhaupt nicht</small>     <div>0</div>",
+			"en": "<small>not at all     </small>     <div>0</div>",
+		}
+		lblsQX1[10] = trl.S{
+			"de": "<small>sehr gerne</small> <div>10</div>",
+			"en": "<small>very like </small> <div>10</div>",
+		}
+		lblsQX2 := labelsSelfKnowledge()
+		lblsQX2[0] = trl.S{
+			"de": "<small>überhaupt nicht</small>     <div>0</div>",
+			"en": "<small>not at all     </small>     <div>0</div>",
+		}
+		lblsQX2[10] = trl.S{
+			"de": "<small>sehr viel</small> <div>10</div>",
+			"en": "<small>very much</small> <div>10</div>",
+		}
+		inputs := []string{
+			"qx1_discuss",
+			"qx2_decisionfear",
+			"qx3_worry",
+			"qx4_instinct",
+		}
+		lbls := []trl.S{
+			{
+				"de": `
+					Unterhalten Sie sich gerne über Geld und Geldanlagen?				`,
+				"en": `
+					todo
+				`,
+			},
+			{
+				"de": `
+					Haben Sie Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen?			
+				`,
+				"en": `
+					todo
+				`,
+			},
+			{
+				"de": `
+					Machen Sie sich Sorgen über den Erfolg Ihrer finanziellen Entscheidungen?
+				`,
+				"en": `
+					todo
+				`,
+			},
+			{
+				"de": `
+					Sind Sie der Meinung, dass Investitionsentscheidungen am Ende nur vom Instinkt abhängen?			
+				`,
+				"en": `
+					todo
+				`,
+			},
+		}
+
+		for i := 0; i < len(inputs); i++ {
+
+			hdrs := lblsQX1
+			if i > 0 {
+				hdrs = lblsQX2
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				hdrs,
+				[]string{inputs[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lbls[i]
+			if i == 0 || true {
+				gb.MainLabel.Outline(fmt.Sprintf("X%v.", i+1))
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Haben Sie während Ihrer Schul- oder Berufsausbildung an Vorlesungen, 
+					Kursen oder Fortbildungen zum Thema Finanzen oder dem Umgang mit Geld teilgenommen?
+				`,
+				"en": `todo`,
+			},
+			"qx5_courses",
+			"X5.",
+			false,
+		)
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`
+						Wir stellen Ihnen nun eine Frage zum Finanzvermögen: <br>
+
+						Haben Sie (d.h. Ihr Haushalt) im Jahr <i>%d</i> eine der folgenden Vermögensarten besessen? <br>
+					
+						<small>
+						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, 
+						beantworten Sie die Fragen bitte für sich selbst.
+						</small>
+					
+					`, time.Now().Year(),
+					),
+					"en": `todo`,
+				}.Outline("X6.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+
+		}
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Sparanlagen
+
+					<br>
+
+					<small>
+					(z.B. Sparbücher, Festgeldkonten, Tagesgeldkonten oder Sparverträge)
+					</small>
+				`,
+				"en": `todo`,
+			},
+			"qx6a_savingaccount",
+			"a)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Bausparverträge
+
+					<br>
+					
+					<small>
+					(die noch nicht in Darlehen umgewandelt wurden)						
+					</small>
+				`,
+				"en": `todo`,
+			},
+			"qx6b_realestatesa",
+			"b)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Festverzinsliche Wertpapiere
+
+					<br>
+					
+					<small>
+					(z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds) 						
+					</small>
+				`,
+				"en": `todo`,
+			},
+			"qx6c_bonds",
+			"c)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Aktien oder Aktienfonds und Immobilienfonds
+
+					<br>
+					
+					<small>
+					(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
+					</small>
+				`,
+				"en": `todo`,
+			},
+			"qx6d_stocks",
+			"d)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Sonstige Wertpapiere
+
+					<br>
+					
+					<small>
+					(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen)
+					</small>
+				`,
+				"en": `todo`,
+			},
+			"qx6e_other",
+			"e)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Gold
+				`,
+				"en": `todo`,
+			},
+			"qx6f_gold",
+			"f)",
+			true,
+		)
+
+	}
+
+	// page x+1
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Erfahrungen mit Beratung",
+			"en": "Experience with advice",
+		}
+		page.Short = trl.S{
+			"de": "Erfahrungen<br>Beratung",
+			"en": "Experience<br>with advice",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		page.ValidationFuncName = "knebPageCounseling"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
+		//
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				labelsPensionAdvice(),
+				[]string{"qb1_pensionadvice"},
+				radioVals5,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wann haben Sie sich das letzte Mal zum Thema Altersvorsorge beraten lassen?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("B1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr1
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsFrequency(),
+				[]string{"qb2_frequency"},
+				radioVals4,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wie oft sprechen Sie mit Ihrem Berater oder Ihrer Beraterin?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("B2.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr2
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsFrequency(),
+				[]string{"qb3_frequency"},
+				radioVals4,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wie oft sprechen Sie mit Ihrer Familie oder Ihren Freunden über Finanzen?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("B3.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Haben Sie selbst schon einmal einer Person finanzielle Ratschläge gegeben?
+				`,
+				"en": `todo`,
+			},
+			"qb4_advisingself",
+			"B4.",
+			false,
+		)
+
+		//
+		//
+		lblsQX1 := labelsSelfKnowledge()
+		lblsQX1[0] = trl.S{
+			"de": "<small>überhaupt nicht</small>     <div>0</div>",
+			"en": "<small>not at all     </small>     <div>0</div>",
+		}
+		lblsQX1[10] = trl.S{
+			"de": "<small>sehr viel</small> <div>10</div>",
+			"en": "<small>very much</small> <div>10</div>",
+		}
+		inputs := []string{
+			"qb5_fearofloss",
+			"qb6_delegate",
+		}
+		lbls := []trl.S{
+			{
+				"de": `
+					Haben Sie Angst, bei finanziellen Entscheidungen Verluste zu machen?	
+				`,
+				"en": `
+					todo
+				`,
+			},
+			{
+				"de": `
+					Würden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?
+				`,
+				"en": `
+					todo
+				`,
+			},
+		}
+
+		for i := 0; i < len(inputs); i++ {
+
+			hdrs := lblsQX1
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				hdrs,
+				[]string{inputs[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lbls[i]
+			if i == 0 || true {
+				gb.MainLabel.Outline(fmt.Sprintf("B%v.", i+5))
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr last
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsWhoIsCompetent(),
+				[]string{"qb7_whocompetent"},
+				radioVals4,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wer könnte finanzielle Entscheidungen am besten für Sie treffen?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("B7.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+	// page x+2
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Selbstvetrauen nach Experiment",
+			"en": "Confidence after experiment",
+		}
+		page.Short = trl.S{
+			"de": "Selbstvetrauen<br>nachher",
+			"en": "Confidence<br>after",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+
+			lbls := labelsSelfKnowledge()
+			lbls[0] = trl.S{
+				"de": "<small>kein Vertrauen in die eigenen Fähigkeiten</small>     <div>0</div>",
+				"en": "<small>todo</small>     <div>0</div>",
+			}
+			lbls[10] = trl.S{
+				"de": "<small>hohes Vertrauen in die eigenen Fähigkeiten</small> <div>10</div>",
+				"en": "<small>todo</small> <div>10</div>",
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{"qe1_confidence_after"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+					`,
+				"en": `
+						todo
+					`,
+			}.Outline("E1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
 	}

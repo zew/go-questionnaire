@@ -32,7 +32,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 	// q.Variations = 1
 
-	// page0
+	// page 0
 	{
 		page := q.AddPage()
 		page.ValidationFuncName = ""
@@ -44,7 +44,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Dear Madam / Sir,",
 			"de": "Sehr geehrte Damen und Herren",
 		}
-		// page.Short = trl.S{
+		// pge.Short = trl.S{
 		// 	"en": "Greeting",
 		// 	"de": "Begrüßung",
 		// }
@@ -978,7 +978,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Financial<br>risk",
 		}
 		page.WidthMax("42rem")
-		// page.WidthMax("48rem")
 
 		// gr0
 		{
@@ -1173,26 +1172,26 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
-		lblsQP2aTo2d := labelsSelfKnowledge()
-		lblsQP2aTo2d[0] = trl.S{
-			"de": "<small>stimme gar nicht zu</small> 0",
-			"en": "<small>dont agree at all</small> 0",
+		//
+		//
+		//
+		lblsQP2 := labelsSelfKnowledge()
+		lblsQP2[0] = trl.S{
+			"de": "<small>stimme gar nicht zu</small>     <div>0</div>",
+			"en": "<small>dont agree at all  </small>     <div>0</div>",
 		}
-		lblsQP2aTo2d[10] = trl.S{
-			"de": "<small>stimme voll und ganz zu</small> 10",
-			"en": "<small>agree completely</small>        10",
+		lblsQP2[10] = trl.S{
+			"de": "<small>stimme voll und ganz zu</small> <div>10</div>",
+			"en": "<small>agree completely       </small> <div>10</div>",
 		}
-
-		// gr1
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lblsQP2aTo2d,
-				[]string{"qp2a_boring"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
+		inputs := []string{
+			"qp2a_boring",
+			"qp2b_fear",
+			"qp2c_trust_people",
+			"qp2d_trust_institutions",
+		}
+		lbls := []trl.S{
+			{
 				"de": `
 				Wie sehr stimmen Sie den folgenden Aussagen zu?
 
@@ -1205,24 +1204,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("P2.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr2
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lblsQP2aTo2d,
-				[]string{"qp2b_fear"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
+			},
+			{
 				"de": `
 				<b>b)</b>&nbsp; Ich habe große Angst vor finanziellen Verlusten.
 				
@@ -1230,24 +1213,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr3
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lblsQP2aTo2d,
-				[]string{"qp2c_trust_people"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
+			},
+			{
 				"de": `
 				<b>c)</b>&nbsp; Im Allgemeinen kann man den Menschen vertrauen.
 				
@@ -1255,24 +1222,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-		// gr4
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lblsQP2aTo2d,
-				[]string{"qp2d_trust_institutions"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
+			},
+			{
 				"de": `
 				<b>d)</b>&nbsp; Im Allgemeinen kann man Banken und Finanzinstitutionen in Deutschland vertrauen.
 				
@@ -1280,6 +1231,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
+			},
+		}
+
+		for i := 0; i < len(inputs); i++ {
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lblsQP2,
+				[]string{inputs[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lbls[i]
+			if i == 0 {
+				gb.MainLabel.Outline("P2.")
 			}
 			gr := page.AddGrid(gb)
 			_ = gr
@@ -1290,7 +1255,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 5
+	// page 6
 	{
 		page := q.AddPage()
 
@@ -1419,6 +1384,318 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = lbls[i].Fill(rn)
 			gr := page.AddGrid(gb)
 			// _ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+	// page 7
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Financial numeracy and literacy",
+			"en": "Financial numeracy and literacy",
+		}
+		page.Short = trl.S{
+			"de": "Financial<br>literacy",
+			"en": "Financial<br>literacy",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// a func to create questions 1a, 2a, 3a, 4a
+		howSicher := func(inputName, outlineNumber string) {
+
+			lblsQF1a := labelsSelfKnowledge()
+			lblsQF1a[0] = trl.S{
+				"de": "<small>nicht sicher</small>     <div>0</div>",
+				"en": "<small>not sure</small>         <div>0</div>",
+			}
+			lblsQF1a[10] = trl.S{
+				"de": "<small>sehr sicher</small>      <div>10</div>",
+				"en": "<small>very sure</small>        <div>10</div>",
+			}
+
+			// append one more
+			lblsQF1aCp := make([]trl.S, len(lblsQF1a)+1)
+			copy(lblsQF1aCp, lblsQF1a)
+			lblsQF1aCp[11] = trl.S{
+				"de": "<small style='padding-left: 3.0rem; text-align: left'>ich weiß die Antwort nicht, ich habe geraten</small> ",
+				"en": "<small style='padding-left: 3.0rem; text-align: left'>I dont know the answer, I guessed.</small>           ",
+			}
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate12,
+				lblsQF1aCp,
+				[]string{inputName},
+				radioVals12,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+						Wie sicher sind Sie sich bei Ihrer Antwort? .
+					`,
+				"en": `
+						todo
+					`,
+			}.Outline(outlineNumber)
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 4
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+
+		}
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				labelsInterestOverTwoYears(),
+				[]string{"qfl1_interest"},
+				radioVals5,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Angenommen, Sie haben 100&nbsp;€ Guthaben auf Ihrem Sparkonto. 
+					Dieses Guthaben wird mit 2% pro Jahr verzinst, 
+					und Sie lassen es 5&nbsp;Jahre auf diesem Konto. 
+					Was meinen Sie: Wie hoch wird ihr Guthaben nach 5&nbsp;Jahren sein?				
+					<div style='color:red'>ist das richtig? fünf Jahre? </div>
+					<div style='color:red'>Außerdem: Nummer unter Labels?</div>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("FL1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr1
+		howSicher("qfl1a_free", "FL1a.")
+
+		// gr2
+		{
+			lbls := labelsInterestOverTwoYears()
+			lbls[0] = trl.S{
+				"de": "<small>mehr</small>    ",
+				"en": "<small>more</small>    ",
+			}
+			lbls[1] = trl.S{
+				"de": "<small>genauso viel</small>    ",
+				"en": "<small>equal</small>           ",
+			}
+			lbls[2] = trl.S{
+				"de": "<small>weniger als heute</small>  ",
+				"en": "<small>less than today</small>    ",
+			}
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				lbls,
+				[]string{"qfl2_inflation"},
+				radioVals5,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Angenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr 
+					und die Inflationsrate beträgt 2% pro Jahr. 
+					Was glauben Sie: 
+					Werden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel, 
+					mehr oder weniger als heute kaufen können?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("FL2.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr3
+		howSicher("qfl2a_free", "FL2a.")
+
+		// gr4
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsStimmeZuOderNicht(),
+				[]string{"qfl3_portfoliorisk"},
+				radioVals4,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Stimmen Sie der folgenden Aussage zu: 
+					„Die Anlage in Aktien eines einzelnen Unternehmens ist weniger riskant 
+					als die Anlage in einem Fonds mit Aktien ähnlicher Unternehmen“?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("FL3.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr5
+		howSicher("qfl3a_free", "FL3a.")
+
+		// gr6
+		{
+			gb := qst.NewGridBuilderRadios(
+				colsStockMarket,
+				labelsStockMarketPurpose(),
+				[]string{"qfl4_stockmarketpurpose"},
+				radioVals6,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Was ist die Hauptfunktion des Aktienmarktes?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("FL4.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+			gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
+
+		}
+
+		// gr7
+		howSicher("qfl4a_free", "FL4a.")
+
+		// gr8
+		{
+			gb := qst.NewGridBuilderRadios(
+				colsAssetClasses,
+				labelsAssetClassVola(),
+				[]string{"qfl5_assetclassvola"},
+				radioVals6,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("FL5.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+			gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
+
+		}
+
+		// gr9
+		howSicher("qfl5a_free", "FL5a.")
+
+		// gr10
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsExpectedValueRisk(),
+				[]string{"qfl6_expectedvalue"},
+				radioVals4,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten 
+					sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde. 
+					
+					Gleichzeitig besteht eine 10%-ige Chance, 
+					dass er die Klimaanlage in seinem Haus ersetzen muss, 
+					was 4.000 Euro kosten würde. 
+					
+					Welches ist das größere finanzielle Risiko für Malik?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("FL6.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		// gr11
+		howSicher("qfl6a_free", "FL6a.")
+
+	}
+
+	// page 8
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Selbstvetrauen vor Experiment",
+			"en": "Confidence before experiment",
+		}
+		page.Short = trl.S{
+			"de": "Selbstvetrauen<br>vorher",
+			"en": "Confidence<br>before",
+		}
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+
+			lbls := labelsSelfKnowledge()
+			lbls[0] = trl.S{
+				"de": "<small>kein Vertrauen in die eigenen Fähigkeiten</small>     <div>0</div>",
+				"en": "<small>todo</small>     <div>0</div>",
+			}
+			lbls[10] = trl.S{
+				"de": "<small>hohes Vertrauen in die eigenen Fähigkeiten</small> <div>10</div>",
+				"en": "<small>todo</small> <div>10</div>",
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{"qe1_confidence"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("E1.")
+			gr := page.AddGrid(gb)
+			_ = gr
 			gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"

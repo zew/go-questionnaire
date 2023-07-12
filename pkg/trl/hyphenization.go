@@ -16,6 +16,7 @@ var hyph = []string{
 	// www.duden.de/rechtschreibung/Abweichung
 
 	// reduced hyphenization
+	"Aktien|markt",
 	"unter|bewertet", // 	"be|wer|tet",
 	"über|bewertet",
 	"Über|wa|chung",

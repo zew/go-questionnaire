@@ -2,10 +2,20 @@ package kneb1
 
 import "github.com/zew/go-questionnaire/pkg/trl"
 
+var radioVals4 = []string{
+	"1", "2",
+	"3", "4",
+}
 var radioVals5 = []string{
 	"1", "2",
 	"3",
 	"4", "5",
+}
+var radioVals6 = []string{
+	"1", "2",
+	"3",
+	"4", "5",
+	"6",
 }
 
 var radioVals7 = []string{
@@ -18,6 +28,13 @@ var radioVals11 = []string{
 	"1", "2", "3", "4", "5",
 	"6",
 	"7", "8", "9", "10", "11",
+}
+
+var radioVals12 = []string{
+	"1", "2", "3", "4", "5",
+	"6",
+	"7", "8", "9", "10", "11",
+	"12",
 }
 
 // no first col labels
@@ -49,6 +66,20 @@ var columnTemplate6a = []float32{
 }
 
 // no first col labels
+var columnTemplate4 = []float32{
+
+	0, 1,
+
+	0, 1,
+
+	0, 1,
+
+	0, 1,
+
+	// 0.4, 1,
+}
+
+// no first col labels
 var columnTemplate5 = []float32{
 
 	0, 1,
@@ -61,6 +92,28 @@ var columnTemplate5 = []float32{
 
 	0, 1,
 
+	// 0.4, 1,
+}
+
+// no first col labels
+var colsStockMarket = []float32{
+	0, 2,
+	0, 2,
+	0, 2,
+	0, 1.5,
+	0, 1,
+	0, 1,
+	// 0.4, 1,
+}
+
+// no first col labels
+var colsAssetClasses = []float32{
+	0, 2,
+	0, 2,
+	0, 2,
+	0, 2,
+	0, 1,
+	0, 1,
 	// 0.4, 1,
 }
 
@@ -100,6 +153,30 @@ var columnTemplate11 = []float32{
 	0, 1,
 
 	0, 1,
+
+	// 0.4, 1,
+}
+
+// no first col labels
+var columnTemplate12 = []float32{
+
+	0, 1,
+
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+
+	0, 1, // middle
+
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+
+	0, 1,
+
+	0, 2.5, // dont know - guessed
 
 	// 0.4, 1,
 }
@@ -796,7 +873,7 @@ func labelsPositiveAspects() []trl.S {
 
 		{
 			"de": "<small>nur an die negativen Seiten</small> 7",
-			"en": "<small>negative aspects only</small> 7",
+			"en": "<small>negative aspects only</small>       7",
 		},
 	}
 
@@ -839,7 +916,7 @@ func labelsImportantSituations() []trl.S {
 
 		{
 			"de": "<small>große, wichtige Situationen</small> 7",
-			"en": "<small>big important occasions</small> 7",
+			"en": "<small>big important occasions</small>     7",
 		},
 	}
 
@@ -1018,6 +1095,147 @@ func labelsSelfKnowledge() []trl.S {
 		{
 			"de": "<small>sehr hoch</small>   10",
 			"en": "<small>very high</small>   10",
+		},
+	}
+
+}
+
+func labelsInterestOverTwoYears() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>höher als 102&nbsp;€</small>      ",
+			"en": "<small>higher than 102&nbsp;€</small>    ",
+		},
+		{
+			"de": "<small>genau   102&nbsp;€</small>        ",
+			"en": "<small>exactly 102&nbsp;€</small>        ",
+		},
+		{
+			"de": "<small>niedriger als 102&nbsp;€</small>  ",
+			"en": "<small>lower than 102&nbsp;€</small>     ",
+		},
+		// -1
+		{
+			"de": "<small>weiß nicht</small>                ",
+			"en": "<small>dont know </small>                ",
+		},
+		// -2
+		{
+			"de": "<small>keine Angabe</small>              ",
+			"en": "<small>no answer   </small>              ",
+		},
+	}
+
+}
+
+func labelsStimmeZuOderNicht() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "<small>stimme zu</small>         <div>1</div>",
+			"en": "<small>agree</small>             <div>1</div>",
+		},
+		{
+			"de": "<small>stimme nicht zu</small>   <div>2</div>",
+			"en": "<small>dont agree</small>        <div>2</div>",
+		},
+		{
+			"de": "<small>weiß nicht</small>         <div>-1</div>",
+			"en": "<small>dont know </small>         <div>-1</div>",
+		},
+		{
+			"de": "<small>keine Angabe</small>       <div>-2</div>",
+			"en": "<small>no answer   </small>       <div>-2</div>",
+		},
+	}
+
+}
+
+func labelsStockMarketPurpose() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "Der Aktienmarkt hilft Aktiengewinne vorherzusagen.",
+			"en": "todo",
+		},
+		{
+			"de": "Der Aktienmarkt führt zu einer Erhöhung der Aktienpreise.",
+			"en": "todo",
+		},
+		{
+			"de": "Der Aktienmarkt führt Käufer und Verkäufer von Aktien zusammen.",
+			"en": "todo",
+		},
+		{
+			"de": "Nichts davon.",
+			"en": "todo",
+		},
+		{
+			"de": "weiß nicht",
+			"en": "todo",
+		},
+		{
+			"de": "keine Angabe",
+			"en": "todo",
+		},
+	}
+
+}
+
+func labelsAssetClassVola() []trl.S {
+
+	return []trl.S{
+
+		{
+			"de": "Sparbücher",
+			"en": "todo",
+		},
+		{
+			"de": "Termineinlagen",
+			"en": "todo",
+		},
+		{
+			"de": "Festverzinsliche Wertpapiere",
+			"en": "todo",
+		},
+		{
+			"de": "Aktien",
+			"en": "todo",
+		},
+		{
+			"de": "weiß nicht",
+			"en": "todo",
+		},
+		{
+			"de": "keine Angabe",
+			"en": "todo",
+		},
+	}
+
+}
+
+func labelsExpectedValueRisk() []trl.S {
+
+	return []trl.S{
+		{
+			"de": "die Autoreparatur",
+			"en": "todo",
+		},
+		{
+			"de": "der Austausch der Klimaanlage",
+			"en": "todo",
+		},
+		{
+			"de": "man kann es nicht im voraus wissen",
+			"en": "todo",
+		},
+		{
+			"de": "ich weiß nicht",
+			"en": "todo",
 		},
 	}
 

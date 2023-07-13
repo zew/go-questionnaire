@@ -8,6 +8,64 @@ import (
 
 func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, indent bool) {
 
+	twoAnswers(
+		page,
+		lbl,
+		inputName, outlineNumber, indent,
+		//
+		[]string{
+			"yes",
+			"no",
+		},
+		[]trl.S{
+			{
+				"de": "ja",
+				"en": "yes",
+			},
+			{
+				"de": "nein",
+				"en": "no",
+			},
+		},
+	)
+
+}
+
+func meOrTogether(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, indent bool) {
+
+	twoAnswers(
+		page,
+		lbl,
+		inputName, outlineNumber, indent,
+		//
+		[]string{
+			"1",
+			"2",
+		},
+		[]trl.S{
+			{
+				"de": "eher ich",
+				"en": "rather me",
+			},
+			{
+				"de": "ich gemeinsam mit Partner(in) / anderem Haushaltsmitglied",
+				"en": "me together with partner or other household member(s)",
+			},
+		},
+	)
+
+}
+
+func twoAnswers(
+	page qst.WrappedPageT,
+	lbl trl.S,
+	inputName, outlineNumber string,
+	indent bool,
+	//
+	radioValues []string,
+	labels []trl.S,
+) {
+
 	gr := page.AddGroup()
 	gr.Cols = 8 + 1
 	gr.WidthMax("40rem")
@@ -16,20 +74,6 @@ func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, in
 	if indent {
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleBox.Margin = "0 0 0 1.2rem"
-	}
-	var radioValues = []string{
-		"yes",
-		"no",
-	}
-	var labels = []trl.S{
-		{
-			"de": "ja",
-			"en": "yes",
-		},
-		{
-			"de": "nein",
-			"en": "no",
-		},
 	}
 	{
 		inp := gr.AddInput()
@@ -40,7 +84,7 @@ func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, in
 		inp.ColSpanControl = 0
 	}
 
-	//
+	// vertical spacer
 	{
 		inp := gr.AddInput()
 		inp.Type = "textblock"
@@ -56,7 +100,10 @@ func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, in
 		rad.ValueRadio = radioValues[idx]
 
 		rad.ColSpan = gr.Cols
-		rad.ColSpan = 4
+		rad.ColSpan = 2
+		if idx > 0 {
+			rad.ColSpan = gr.Cols - 2 - 1
+		}
 		rad.ColSpanLabel = 1
 		rad.ColSpanControl = 6
 
@@ -1210,25 +1257,6 @@ func labelsStimmeZuOderNicht() []trl.S {
 		},
 	}
 
-	return []trl.S{
-		{
-			"de": "<small>stimme zu</small>         <div>1</div>",
-			"en": "<small>agree</small>             <div>1</div>",
-		},
-		{
-			"de": "<small>stimme nicht zu</small>   <div>2</div>",
-			"en": "<small>dont agree</small>        <div>2</div>",
-		},
-		{
-			"de": "<small>weiß nicht</small>         <div>-1</div>",
-			"en": "<small>dont know </small>         <div>-1</div>",
-		},
-		{
-			"de": "<small>keine Angabe</small>       <div>-2</div>",
-			"en": "<small>no answer   </small>       <div>-2</div>",
-		},
-	}
-
 }
 
 func labelsStockMarketPurpose() []trl.S {
@@ -1248,7 +1276,7 @@ func labelsStockMarketPurpose() []trl.S {
 			"en": "todo",
 		},
 		{
-			"de": "Nichts davon.",
+			"de": "nichts davon",
 			"en": "todo",
 		},
 		{

@@ -362,11 +362,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Alter, Herkunft, Erfahrungen 2",
 			"en": "Age, origin, experience 2",
 		}
-		page.Short = trl.S{
-			"de": "Soziodemo-<br>graphie 2",
-			"en": "Sociodemo-<br>graphics 2",
-		}
 		page.SuppressInProgressbar = true
+		// page.Short = trl.S{
+		// 	"de": "Soziodemo-<br>graphie 2",
+		// 	"en": "Sociodemo-<br>graphics 2",
+		// }
 		page.WidthMax("42rem")
 
 		page.ValidationFuncName = "knebPageD2"
@@ -771,6 +771,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Generelles<br>Risiko",
 			"en": "Risk<br>in general",
 		}
+		page.Short = trl.S{
+			"de": "Risiko",
+			"en": "Risk",
+		}
 		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
@@ -973,10 +977,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Finanzielles Risiko",
 			"en": "Financial risk",
 		}
-		page.Short = trl.S{
-			"de": "Finanzielles<br>Risiko",
-			"en": "Financial<br>risk",
-		}
+		page.SuppressInProgressbar = true
+		// page.Short = trl.S{
+		// 	"de": "Finanzielles<br>Risiko",
+		// 	"en": "Financial<br>risk",
+		// }
+
 		page.WidthMax("42rem")
 
 		// gr0
@@ -1141,9 +1147,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Präferenzen und Einschätzungen",
 			"en": "Preferences and assessments",
 		}
+
 		page.Short = trl.S{
-			"de": "Präferenzen,<br>Einschätzungen",
-			"en": "Preferences,<br>assessments",
+			// including next page
+			"de": "Präferenzen,<br>Einschätzungen<br>Vorsorge",
+			"en": "Preferences,<br>assessments<br>provisions",
 		}
 		page.WidthMax("42rem")
 		page.WidthMax("48rem")
@@ -1263,10 +1271,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Vorsorgeplanung ",
 			"en": "Foresight",
 		}
-		page.Short = trl.S{
-			"de": "Vorsorgeplanung",
-			"en": "Foresight",
-		}
+		page.SuppressInProgressbar = true
+		// page.Short = trl.S{
+		// 	"de": "Vorsorgeplanung",
+		// 	"en": "Foresight",
+		// }
 		page.WidthMax("42rem")
 		page.WidthMax("44rem")
 
@@ -1466,7 +1475,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					und Sie lassen es 5&nbsp;Jahre auf diesem Konto. 
 					Was meinen Sie: Wie hoch wird ihr Guthaben nach 5&nbsp;Jahren sein?				
 					<div style='color:red'>ist das richtig? fünf Jahre? </div>
-					<div style='color:red'>Außerdem: Nummer unter Labels?</div>
 				`,
 				"en": `
 					todo
@@ -1556,96 +1564,212 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr5
 		howSicher("qfl3a_free", "FL3a.")
 
+		//
 		// gr6
 		{
-			gb := qst.NewGridBuilderRadios(
-				colsStockMarket,
-				labelsStockMarketPurpose(),
-				[]string{"qfl4_stockmarketpurpose"},
-				radioVals6,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Was ist die Hauptfunktion des Aktienmarktes?
-				`,
-				"en": `
-					todo
-				`,
-			}.Outline("FL4.")
-			gr := page.AddGrid(gb)
-			_ = gr
+			gr := page.AddGroup()
+			gr.Cols = 6
 			gr.BottomVSpacers = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
-			gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
+			{
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": "Was ist die Hauptfunktion des Aktienmarktes?",
+						"en": "todo",
+					}.Outline("FL4.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
 
+				for idx, label := range labelsStockMarketPurpose() {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qfl4_stockmarketpurpose"
+					rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+					rad.ColSpan = gr.Cols / 2
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+				}
+			}
 		}
+
+		// // gr6
+		// if false {
+		// 	gb := qst.NewGridBuilderRadios(
+		// 		colsStockMarket,
+		// 		labelsStockMarketPurpose(),
+		// 		[]string{"qfl4_stockmarketpurpose"},
+		// 		radioVals6,
+		// 		[]trl.S{{"de": ``, "en": ``}},
+		// 	)
+		// 	gb.MainLabel = trl.S{
+		// 		"de": `
+		// 			Was ist die Hauptfunktion des Aktienmarktes?
+		// 			<div style='color:red'>D3</div>
+		// 		`,
+		// 		"en": `
+		// 			todo
+		// 		`,
+		// 	}.Outline("FL4.")
+		// 	gr := page.AddGrid(gb)
+		// 	_ = gr
+		// 	gr.BottomVSpacers = 1
+		// 	gr.Style = css.NewStylesResponsive(gr.Style)
+		// 	gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		// 	gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+		// 	gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
+
+		// }
 
 		// gr7
 		howSicher("qfl4a_free", "FL4a.")
 
+		//
 		// gr8
 		{
-			gb := qst.NewGridBuilderRadios(
-				colsAssetClasses,
-				labelsAssetClassVola(),
-				[]string{"qfl5_assetclassvola"},
-				radioVals6,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?
-				`,
-				"en": `
-					todo
-				`,
-			}.Outline("FL5.")
-			gr := page.AddGrid(gb)
-			_ = gr
+			gr := page.AddGroup()
+			gr.Cols = 6
 			gr.BottomVSpacers = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
-			gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
+			{
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": "Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?",
+						"en": "todo",
+					}.Outline("FL5.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
 
+				for idx, label := range labelsAssetClassVola() {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qfl5_assetclassvola"
+					rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+					rad.ColSpan = gr.Cols / 2
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+				}
+			}
 		}
+
+		// // gr8
+		// {
+		// 	gb := qst.NewGridBuilderRadios(
+		// 		colsAssetClasses,
+		// 		labelsAssetClassVola(),
+		// 		[]string{"qfl5_assetclassvola"},
+		// 		radioVals6,
+		// 		[]trl.S{{"de": ``, "en": ``}},
+		// 	)
+		// 	gb.MainLabel = trl.S{
+		// 		"de": `
+		// 			Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?
+		// 		`,
+		// 		"en": `
+		// 			todo
+		// 		`,
+		// 	}.Outline("FL5.")
+		// 	gr := page.AddGrid(gb)
+		// 	_ = gr
+		// 	gr.BottomVSpacers = 1
+		// 	gr.Style = css.NewStylesResponsive(gr.Style)
+		// 	gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		// 	gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+		// 	gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
+		// }
 
 		// gr9
 		howSicher("qfl5a_free", "FL5a.")
 
+		//
 		// gr10
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate4,
-				labelsExpectedValueRisk(),
-				[]string{"qfl6_expectedvalue"},
-				radioVals4,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten 
-					sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde. 
-					
-					Gleichzeitig besteht eine 10%-ige Chance, 
-					dass er die Klimaanlage in seinem Haus ersetzen muss, 
-					was 4.000 Euro kosten würde. 
-					
-					Welches ist das größere finanzielle Risiko für Malik?
-				`,
-				"en": `
-					todo
-				`,
-			}.Outline("FL6.")
-			gr := page.AddGrid(gb)
-			_ = gr
+			gr := page.AddGroup()
+			gr.Cols = 6
 			gr.BottomVSpacers = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			{
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+						Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten 
+						sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde. 
+						
+						Gleichzeitig besteht eine 10%-ige Chance, 
+						dass er die Klimaanlage in seinem Haus ersetzen muss, 
+						was 4.000 Euro kosten würde. 
+						
+						Welches ist das größere finanzielle Risiko für Malik?
+							
+						`,
+						"en": "todo",
+					}.Outline("FL6.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+
+				for idx, label := range labelsExpectedValueRisk() {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qfl6_expectedvalue"
+					rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+					rad.ColSpan = gr.Cols / 2
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+				}
+			}
 		}
+
+		// // gr10
+		// {
+		// 	gb := qst.NewGridBuilderRadios(
+		// 		columnTemplate4,
+		// 		labelsExpectedValueRisk(),
+		// 		[]string{"qfl6_expectedvalue"},
+		// 		radioVals4,
+		// 		[]trl.S{{"de": ``, "en": ``}},
+		// 	)
+		// 	gb.MainLabel = trl.S{
+		// 		"de": `
+		// 			Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
+		// 			sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
+
+		// 			Gleichzeitig besteht eine 10%-ige Chance,
+		// 			dass er die Klimaanlage in seinem Haus ersetzen muss,
+		// 			was 4.000 Euro kosten würde.
+
+		// 			Welches ist das größere finanzielle Risiko für Malik?
+		// 		`,
+		// 		"en": `
+		// 			todo
+		// 		`,
+		// 	}.Outline("FL6.")
+		// 	gr := page.AddGrid(gb)
+		// 	_ = gr
+		// 	gr.BottomVSpacers = 1
+		// 	gr.Style = css.NewStylesResponsive(gr.Style)
+		// 	gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		// }
 
 		// gr11
 		howSicher("qfl6a_free", "FL6a.")
@@ -1657,12 +1781,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"de": "Selbstvetrauen vor Experiment",
+			"de": "Selbstvertrauen vor Experiment",
 			"en": "Confidence before experiment",
 		}
+
+		// for next three pages
 		page.Short = trl.S{
-			"de": "Selbstvetrauen<br>vorher",
-			"en": "Confidence<br>before",
+			"de": "Experiment",
+			"en": "Epxperiment",
 		}
 		page.WidthMax("42rem")
 		page.WidthMax("48rem")
@@ -1708,13 +1834,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"en": "Chart",
-			"de": "Chart",
+			"en": "Experiment-Chart",
+			"de": "Experiment chart",
 		}
-		page.Short = trl.S{
-			"de": "Chart",
-			"en": "Chart",
-		}
+		page.SuppressInProgressbar = true
+		// page.Short = trl.S{
+		// 	"de": "Chart",
+		// 	"en": "Chart",
+		// }
 		page.WidthMax("42rem")
 
 		// gr0
@@ -1739,12 +1866,66 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 
 		page.Label = trl.S{
+			"de": "Selbstvertrauen nach Experiment",
+			"en": "Confidence after experiment",
+		}
+		page.SuppressInProgressbar = true
+		// page.Short = trl.S{
+		// 	"de": "Selbstvertrauen<br>nachher",
+		// 	"en": "Confidence<br>after",
+		// }
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+
+			lbls := labelsSelfKnowledge()
+			lbls[0] = trl.S{
+				"de": "<small>kein Vertrauen in die eigenen Fähigkeiten</small>     <div>0</div>",
+				"en": "<small>todo</small>     <div>0</div>",
+			}
+			lbls[10] = trl.S{
+				"de": "<small>hohes Vertrauen in die eigenen Fähigkeiten</small> <div>10</div>",
+				"en": "<small>todo</small> <div>10</div>",
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{"qe1_confidence_after"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+					`,
+				"en": `
+						todo
+					`,
+			}.Outline("E1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+	// page x+1
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
 			"de": "Erfahrungen mit Finanzen",
 			"en": "Experience in finance",
 		}
+
+		// includes next page
 		page.Short = trl.S{
-			"de": "Erfahrungen<br>Finanzen",
-			"en": "Experience<br>in finance",
+			"de": "Erfahrungen<br>Finanzen,<br>Beratung",
+			"en": "Experience<br>finance,<br>advice",
 		}
 		page.WidthMax("42rem")
 		page.WidthMax("48rem")
@@ -1883,6 +2064,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 					Sparanlagen
 
+					<span style='color:red' >Klammern weglassen?</span>
+
 					<br>
 
 					<small>
@@ -1987,7 +2170,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page x+1
+	// page x+2
 	{
 		page := q.AddPage()
 
@@ -1995,10 +2178,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Erfahrungen mit Beratung",
 			"en": "Experience with advice",
 		}
-		page.Short = trl.S{
-			"de": "Erfahrungen<br>Beratung",
-			"en": "Experience<br>with advice",
-		}
+
+		page.SuppressInProgressbar = true
+		// page.Short = trl.S{
+		// 	"de": "Erfahrungen<br>Beratung",
+		// 	"en": "Experience<br>with advice",
+		// }
 		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
@@ -2172,65 +2357,444 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page x+2
+	// page x+3
 	{
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"de": "Selbstvetrauen nach Experiment",
-			"en": "Confidence after experiment",
+			"de": "Haushaltseinkommen und Vermögen",
+			"en": "Household income and assets",
 		}
 		page.Short = trl.S{
-			"de": "Selbstvetrauen<br>nachher",
-			"en": "Confidence<br>after",
+			"de": "Haushalts-<br>einkommen<br>Vermögen",
+			"en": "Household income,<br>assets",
 		}
 		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
-		// gr0
+		// gr 0
 		{
-
-			lbls := labelsSelfKnowledge()
-			lbls[0] = trl.S{
-				"de": "<small>kein Vertrauen in die eigenen Fähigkeiten</small>     <div>0</div>",
-				"en": "<small>todo</small>     <div>0</div>",
-			}
-			lbls[10] = trl.S{
-				"de": "<small>hohes Vertrauen in die eigenen Fähigkeiten</small> <div>10</div>",
-				"en": "<small>todo</small> <div>10</div>",
-			}
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lbls,
-				[]string{"qe1_confidence_after"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`
+						Wer ist in Ihrem Haushalt hauptsächlich für folgendes zuständig?
 					`,
-				"en": `
+					),
+					"en": `todo`,
+				}.Outline("H1.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+		}
+
+		// gr 1
+		meOrTogether(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					alltägliche Einkäufe (z.B. Lebensmitteleinkäufe)
+				`,
+				"en": `todo`,
+			},
+			"qh1a_shopping",
+			"a)",
+			true,
+		)
+
+		// gr 2
+		meOrTogether(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					größere Anschaffungen (z.B. Möbel, Auto)
+				`,
+				"en": `todo`,
+			},
+			"qh1b_largerpurchases",
+			"b)",
+			true,
+		)
+
+		// gr 3
+		meOrTogether(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Essensplanung und -zubereitung
+				`,
+				"en": `todo`,
+			},
+			"qh1c_foodpreparation",
+			"c)",
+			true,
+		)
+
+		// gr 4
+		meOrTogether(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Entscheidungen über Spar- und Finanzanlagen
+				`,
+				"en": `todo`,
+			},
+			"qh1d_financialdecisions",
+			"d)",
+			true,
+		)
+
+		// gr5
+		{
+			gr := page.AddGroup()
+			gr.Cols = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Wie hoch schätzen Sie, 
+						ist das <i>monatlich</i> verfügbare Nettoeinkommen Ihres Haushalts, 
+						also dasjenige Geld, das dem gesamten Haushalt nach Abzug 
+						von Steuern und Sozialversicherungsbeiträgen zur Deckung der Ausgaben
+						 zur Verfügung steht? 
+					`,
+					"en": `
 						todo
 					`,
-			}.Outline("E1.")
-			gr := page.AddGrid(gb)
-			_ = gr
+				}.Outline("H2.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dropdown"
+				inp.Name = "qh2_income"
+				inp.MaxChars = 20
+				inp.MaxChars = 10
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+
+				//
+				inp.DD = &qst.DropdownT{}
+				if false {
+					inp.DD.AddPleaseSelect(cfg.Get().Mp["must_one_option"])
+				} else {
+					inp.DD.Add(
+						"",
+						trl.S{
+							"de": " Bitte einen Bereich wählen ",
+							"en": " Please choose a range",
+						},
+					)
+				}
+				ranges := []int{
+					0,
+					500,
+					750,
+					1000,
+					1000,
+					1250,
+					1500,
+					2000,
+					2500,
+					3000,
+					3000,
+					3500,
+					4000,
+					4500,
+					5000,
+					//
+					7500,
+					10000,
+					15000,
+				}
+				for i := 0; i < len(ranges); i++ {
+
+					rLow := ranges[i]
+					rHigh := -1
+					if i < len(ranges)-1 {
+						rHigh = ranges[i+1]
+					}
+					opt := fmt.Sprintf("upto%d", rHigh)
+					chLbl := trl.S{
+						"de": fmt.Sprintf("%d€ bis unter %d€", rLow, rHigh),
+						"en": fmt.Sprintf("%d€ to under  %d€", rLow, rHigh),
+					}
+					if i == 0 {
+						chLbl = trl.S{
+							"de": fmt.Sprintf("unter %d€", rHigh),
+							"en": fmt.Sprintf("under %d€", rHigh),
+						}
+
+					}
+					if rHigh == -1 {
+						opt = "over15000"
+						chLbl = trl.S{
+							"de": fmt.Sprintf("%d€ und mehr", rLow),
+							"en": fmt.Sprintf("%d€ and more", rLow),
+						}
+
+					}
+					inp.DD.Add(opt, chLbl)
+
+				}
+				inp.DD.Add(
+					"noanswer",
+					trl.S{
+						"de": " keine Angabe",
+						"en": " no answer",
+					},
+				)
+
+			}
+		}
+
+		// gr 6
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`
+						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
+						
+						Haben Sie (d.h. Ihr Haushalt) im <i>Dezember %d </i>
+						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
+
+						<small>
+						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, 
+						beantworten Sie die Fragen bitte für sich selbst.
+						</small>
+					
+					`,
+						// december previous year - for 2023: 2022
+						time.Now().Year()-1,
+					),
+					"en": `todo`,
+				}.Outline("H1.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+		}
+
+		// gr 7
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Private Lebensversicherungen
+					<small> 
+					(z.B. klassische und fondsge¬bundene Kapitallebensversicherungen, 
+						<i>nicht</i> reine Risikolebensversicherungen 
+						oder Direktversicherungen über den Arbeitgeber)
+					</small> 
+				
+				`,
+				"en": `todo`,
+			},
+			"qh3a_lifeinsurance",
+			"a)",
+			true,
+		)
+
+		// gr 8
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Betriebliche Lebensversicherungen
+					<small> 
+					(z. B. Direktversicherungen)
+					</small> 
+				
+				`,
+				"en": `todo`,
+			},
+			"qh3b_directinsurance",
+			"b)",
+			true,
+		)
+
+		// gr 9
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Sonstige betriebliche Altersvorsorge 
+					<small> 
+					(z. B. Betriebsrenten aus Pensions- oder Unterstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen) 
+					</small> 
+				
+				`,
+				"en": `todo`,
+			},
+			"qh3c_otherpensions",
+			"c)",
+			true,
+		)
+
+		// gr 10
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Staatlich geförderte private Altersvorsorge („Riester- Rente“)
+					<small> 
+					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten) 
+					</small> 
+				
+				`,
+				"en": `todo`,
+			},
+			"qh3d_otherpensions",
+			"d)",
+			true,
+		)
+
+		// gr 11
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+					Private Rentenversicherungen 
+					<small> 
+					(z.B. private Rentenversicherungsverträge, die nicht staatlich gefördert werden bzw. abgeschlossen wurden, bevor es solche Fördermöglichkeiten gab) 
+					</small> 				
+				`,
+				"en": `todo`,
+			},
+			"qh3e_privatepensions",
+			"e)",
+			true,
+		)
+
+		//
+		//
+		// comment
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
 			gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "Kommentar zur Umfrage: ", "en": "Comment on the survey: "}
+				inp.Label = trl.S{
+					"de": `
+						<hr>
+						<br>
+						<em>Zum Abschluss des Fragebogens</em><br>
+						Wollen Sie uns noch etwas mitteilen?
+					`,
+					"en": `
+						<hr>
+						<br>
+						<em>Finish</em><br>
+						Any remarks or advice for us?
+					`,
+				}
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "comment"
+				inp.MaxChars = 300
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+		}
+
+		// advance to last page "data saved"
+		{
+			gr := page.AddGroup()
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Cols = 2
+			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"
+			// gr.Width = 80
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "", "en": ""}
+				// inp.Label = trl.S{
+				// 	"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
+				// 	"en": "By clicking, you will receive a summary of your answers.",
+				// }
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
+				inp.Label = cfg.Get().Mp["end"]
+				inp.Label = cfg.Get().Mp["finish_questionnaire"]
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				inp.AccessKey = "n"
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+				// inp.StyleCtl.Desktop.StyleBox.WidthMin = "8rem" // does not help with button
+			}
 		}
 
 	}
 
 	// Report of results
 	{
-		p := q.AddPage()
-		p.NoNavigation = true
-		p.Label = trl.S{
+		page := q.AddPage()
+		page.NoNavigation = true
+		page.Label = trl.S{
 			"de": "Ihre Eingaben sind gespeichert.",
 			"en": "Your entries have been saved.",
 		}
+
+		page.WidthMax("calc(100% - 1.2rem)")
+		page.WidthMax("40rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.ColSpanControl = 1
+				inp.DynamicFunc = "ResponseStatistics"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.ColSpanControl = 1
+				inp.DynamicFunc = "PersonalLink"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "site-imprint.md"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
 	}
 
 	(&q).Hyphenize()

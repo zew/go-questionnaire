@@ -18,14 +18,14 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "db1cf27226db597d9e405a8c152e3f03e22a40ce8fa13a71b1ec6024b7051d3d",
+ 	"md_5": "1fb6763c9420ac8edf05d80a553c43317c4d1a52360b50691ca233aa07d6cbe1",
  	"lang_codes": [
  		"de"
  	],
  	"lang_code": "de",
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 12,
+ 	"max_groups": 14,
  	"pages": [
  		{
  			"label": {
@@ -1400,10 +1400,6 @@
  			"description": {
  				"de": "",
  				"en": ""
- 			},
- 			"short": {
- 				"de": "Soziodemo-\u003cbr\u003egraphie 2",
- 				"en": "Sociodemo-\u003cbr\u003egraphics 2"
  			},
  			"suppress_in_progressbar": true,
  			"style": {
@@ -2818,8 +2814,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Generelles\u003cbr\u003eRisiko",
- 				"en": "Risk\u003cbr\u003ein general"
+ 				"de": "Risiko",
+ 				"en": "Risk"
  			},
  			"style": {
  				"desktop": {
@@ -5115,10 +5111,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"short": {
- 				"de": "Finanzielles\u003cbr\u003eRisiko",
- 				"en": "Financial\u003cbr\u003erisk"
- 			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5576,8 +5569,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Präferenzen,\u003cbr\u003eEinschätzungen",
- 				"en": "Preferences,\u003cbr\u003eassessments"
+ 				"de": "Präferenzen,\u003cbr\u003eEinschätzungen\u003cbr\u003eVorsorge",
+ 				"en": "Preferences,\u003cbr\u003eassessments\u003cbr\u003eprovisions"
  			},
  			"style": {
  				"desktop": {
@@ -8635,10 +8628,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"short": {
- 				"de": "Vorsorgeplanung",
- 				"en": "Foresight"
- 			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -11941,7 +11931,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto. \n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst, \n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto. \n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\t\t\t\t\n\t\t\t\t\t\u003cdiv style='color:red'\u003eist das richtig? fünf Jahre? \u003c/div\u003e\n\t\t\t\t\t\u003cdiv style='color:red'\u003eAußerdem: Nummer un\u0026shy;ter Labels?\u003c/div\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eFL1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto. \n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst, \n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto. \n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\t\t\t\t\n\t\t\t\t\t\u003cdiv style='color:red'\u003eist das richtig? fünf Jahre? \u003c/div\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eFL1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -14771,267 +14761,32 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWas ist die Hauptfunktion des Aktien\u0026shy;marktes?\n\t\t\t\t",
- 								"en": "\u003cb\u003eFL4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003cb\u003eFL4.\u003c/b\u003e \u0026nbsp; Was ist die Hauptfunktion des Aktien\u0026shy;marktes?",
+ 								"en": "\u003cb\u003eFL4.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "qfl4_stockmarketpurpose",
+ 							"type": "radio",
  							"label": {
  								"de": "Der Aktien\u0026shy;markt hilft Aktiengewinne vorherzusagen.",
  								"en": "todo"
  							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "0",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "end"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Der Aktien\u0026shy;markt führt zu einer Erhöhung der Aktienpreise.",
- 								"en": "todo"
- 							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Der Aktien\u0026shy;markt führt Käufer und Verkäufer von Aktien zusammen.",
- 								"en": "todo"
- 							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Nichts davon.",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1.5,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "weiß nicht",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -15045,19 +14800,22 @@
  							"name": "qfl4_stockmarketpurpose",
  							"type": "radio",
  							"label": {
- 								"de": "",
- 								"en": ""
+ 								"de": "Der Aktien\u0026shy;markt führt zu einer Erhöhung der Aktienpreise.",
+ 								"en": "todo"
  							},
- 							"col_span_control": 2,
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -15070,57 +14828,120 @@
  						{
  							"name": "qfl4_stockmarketpurpose",
  							"type": "radio",
- 							"col_span_control": 2,
- 							"value_radio": "2"
+ 							"label": {
+ 								"de": "Der Aktien\u0026shy;markt führt Käufer und Verkäufer von Aktien zusammen.",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl4_stockmarketpurpose",
  							"type": "radio",
- 							"col_span_control": 2,
- 							"value_radio": "3"
+ 							"label": {
+ 								"de": "nichts davon",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl4_stockmarketpurpose",
  							"type": "radio",
- 							"col_span_control": 1.5,
- 							"value_radio": "4"
+ 							"label": {
+ 								"de": "weiß nicht",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "4",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl4_stockmarketpurpose",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "qfl4_stockmarketpurpose",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "5",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   2fr    2fr    2fr    1.5fr    1fr    1fr ",
- 								"column_gap": "0.8rem",
- 								"row_gap": "0.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 4,
@@ -15784,267 +15605,32 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWelche der folgenden Anlageformen zeigt im Laufe der Zeit die höchs\u0026shy;ten Ertragsschwankungen?\n\t\t\t\t",
- 								"en": "\u003cb\u003eFL5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003cb\u003eFL5.\u003c/b\u003e \u0026nbsp; Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchs\u0026shy;ten Ertragsschwankungen?",
+ 								"en": "\u003cb\u003eFL5.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "qfl5_assetclassvola",
+ 							"type": "radio",
  							"label": {
  								"de": "Sparbücher",
  								"en": "todo"
  							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "0",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "end"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Termineinlagen",
- 								"en": "todo"
- 							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Festverzinsliche Wertpapiere",
- 								"en": "todo"
- 							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Aktien",
- 								"en": "todo"
- 							},
- 							"col_span_control": 2,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "weiß nicht",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -16058,19 +15644,22 @@
  							"name": "qfl5_assetclassvola",
  							"type": "radio",
  							"label": {
- 								"de": "",
- 								"en": ""
+ 								"de": "Termineinlagen",
+ 								"en": "todo"
  							},
- 							"col_span_control": 2,
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -16083,57 +15672,120 @@
  						{
  							"name": "qfl5_assetclassvola",
  							"type": "radio",
- 							"col_span_control": 2,
- 							"value_radio": "2"
+ 							"label": {
+ 								"de": "Festverzinsliche Wertpapiere",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl5_assetclassvola",
  							"type": "radio",
- 							"col_span_control": 2,
- 							"value_radio": "3"
+ 							"label": {
+ 								"de": "Aktien",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl5_assetclassvola",
  							"type": "radio",
- 							"col_span_control": 2,
- 							"value_radio": "4"
+ 							"label": {
+ 								"de": "weiß nicht",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "4",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl5_assetclassvola",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "qfl5_assetclassvola",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "5",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   2fr    2fr    2fr    2fr    1fr    1fr ",
- 								"column_gap": "0.8rem",
- 								"row_gap": "0.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 4,
@@ -16792,184 +16444,37 @@
  				},
  				{
  					"bottom_vspacers": 1,
- 					"columns": 4,
+ 					"columns": 6,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten \n\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde. \n\t\t\t\t\t\n\t\t\t\t\tGleichzeitig besteht eine 10%-ige Chance, \n\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss, \n\t\t\t\t\twas 4.000 Euro kosten würde. \n\t\t\t\t\t\n\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\t\t\t\t",
- 								"en": "\u003cb\u003eFL6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003cb\u003eFL6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten \n\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde. \n\t\t\t\t\t\t\n\t\t\t\t\t\tGleichzeitig besteht eine 10%-ige Chance, \n\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss, \n\t\t\t\t\t\twas 4.000 Euro kosten würde. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t",
+ 								"en": "\u003cb\u003eFL6.\u003c/b\u003e \u0026nbsp; todo"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "qfl6_expectedvalue",
+ 							"type": "radio",
  							"label": {
  								"de": "die Autoreparatur",
  								"en": "todo"
  							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "0",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "end"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "der Austausch der Klimaanlage",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "man kann es nicht im voraus wissen",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "ich weiß nicht",
- 								"en": "todo"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -16983,19 +16488,22 @@
  							"name": "qfl6_expectedvalue",
  							"type": "radio",
  							"label": {
- 								"de": "",
- 								"en": ""
+ 								"de": "der Austausch der Klimaanlage",
+ 								"en": "todo"
  							},
- 							"col_span_control": 1,
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -17008,42 +16516,62 @@
  						{
  							"name": "qfl6_expectedvalue",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"label": {
+ 								"de": "man kann es nicht im voraus wissen",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "qfl6_expectedvalue",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "qfl6_expectedvalue",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   1fr    1fr    1fr    1fr ",
- 								"row_gap": "0.2rem"
+ 							"label": {
+ 								"de": "ich weiß nicht",
+ 								"en": "todo"
  							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 4,
@@ -17704,7 +17232,7 @@
  		},
  		{
  			"label": {
- 				"de": "Selbstvetrauen vor Experiment",
+ 				"de": "Selbstvertrauen vor Experiment",
  				"en": "Confidence before experiment"
  			},
  			"description": {
@@ -17712,8 +17240,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Selbstvetrauen\u003cbr\u003evorher",
- 				"en": "Confidence\u003cbr\u003ebefore"
+ 				"de": "Experiment",
+ 				"en": "Epxperiment"
  			},
  			"style": {
  				"desktop": {
@@ -18344,17 +17872,14 @@
  		},
  		{
  			"label": {
- 				"de": "Chart",
- 				"en": "Chart"
+ 				"de": "Experiment chart",
+ 				"en": "Experiment-Chart"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"short": {
- 				"de": "Chart",
- 				"en": "Chart"
- 			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -18392,6 +17917,643 @@
  		},
  		{
  			"label": {
+ 				"de": "Selbstvertrauen nach Experiment",
+ 				"en": "Confidence after experiment"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003ekein Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003ehohes Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
+ 								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qe1_confidence_after",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
  				"de": "Erfahrungen mit Finanzen",
  				"en": "Experience in finance"
  			},
@@ -18400,8 +18562,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Erfahrungen\u003cbr\u003eFinanzen",
- 				"en": "Experience\u003cbr\u003ein finance"
+ 				"de": "Erfahrungen\u003cbr\u003eFinanzen,\u003cbr\u003eBeratung",
+ 				"en": "Experience\u003cbr\u003efinance,\u003cbr\u003eadvice"
  			},
  			"style": {
  				"desktop": {
@@ -20872,7 +21034,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -20901,7 +21063,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -20965,7 +21127,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tSparanlagen\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Sparbücher, Festgeldkonten, Tagesgeldkonten oder Sparverträge)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tSparanlagen\n\n\t\t\t\t\t\u003cspan style='color:red' \u003eKlammern weglassen?\u003c/span\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Sparbücher, Festgeldkonten, Tagesgeldkonten oder Sparverträge)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 9,
@@ -20987,7 +21149,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -21016,7 +21178,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -21088,7 +21250,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -21117,7 +21279,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -21189,7 +21351,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -21218,7 +21380,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -21290,7 +21452,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -21319,7 +21481,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -21391,7 +21553,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -21420,7 +21582,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -21492,7 +21654,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -21521,7 +21683,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -21575,10 +21737,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"short": {
- 				"de": "Erfahrungen\u003cbr\u003eBeratung",
- 				"en": "Experience\u003cbr\u003ewith advice"
- 			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -22443,7 +22602,7 @@
  								"de": "ja",
  								"en": "yes"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "yes",
@@ -22472,7 +22631,7 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 6,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -23987,16 +24146,16 @@
  		},
  		{
  			"label": {
- 				"de": "Selbstvetrauen nach Experiment",
- 				"en": "Confidence after experiment"
+ 				"de": "Haushaltseinkommen und Vermögen",
+ 				"en": "Household income and assets"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Selbstvetrauen\u003cbr\u003enachher",
- 				"en": "Confidence\u003cbr\u003eafter"
+ 				"de": "Haushalts-\u003cbr\u003eeinkommen\u003cbr\u003eVermögen",
+ 				"en": "Household income,\u003cbr\u003eassets"
  			},
  			"style": {
  				"desktop": {
@@ -24019,519 +24178,62 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 2,
- 					"columns": 11,
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003eH1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWer ist in Ihrem Haushalt hauptsächlich für folgendes zuständig?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eH1.\u003c/b\u003e \u0026nbsp; todo"
  							},
- 							"col_span": 11,
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\talltägliche Einkäufe (z.B. Lebensmitteleinkäufe)\n\t\t\t\t",
+ 								"en": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "\u003csmall\u003ekein Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
- 								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " 5 ",
- 								"en": " 5 "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "\u003csmall\u003ehohes Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
- 								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qe1_confidence_after",
- 							"type": "radio",
+ 							"type": "textblock",
  							"label": {
  								"de": "",
  								"en": ""
  							},
- 							"col_span_control": 1,
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh1a_shopping",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "eher ich",
+ 								"en": "rather me"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -24542,76 +24244,1157 @@
  							}
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1a_shopping",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"label": {
+ 								"de": "ich gemeinsam mit Partner(in) / anderem Haushaltsmit\u0026shy;glied",
+ 								"en": "me together with partner or other household member(s)"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eb)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tgrö\u0026shy;ßere Anschaffungen (z.B. Möbel, Auto)\n\t\t\t\t",
+ 								"en": "\u003cb\u003eb)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "qe1_confidence_after",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1b_largerpurchases",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"label": {
+ 								"de": "eher ich",
+ 								"en": "rather me"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1b_largerpurchases",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"label": {
+ 								"de": "ich gemeinsam mit Partner(in) / anderem Haushaltsmit\u0026shy;glied",
+ 								"en": "me together with partner or other household member(s)"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ec)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEssensplanung und -zubereitung\n\t\t\t\t",
+ 								"en": "\u003cb\u003ec)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "qe1_confidence_after",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1c_foodpreparation",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "7"
+ 							"label": {
+ 								"de": "eher ich",
+ 								"en": "rather me"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1c_foodpreparation",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "8"
+ 							"label": {
+ 								"de": "ich gemeinsam mit Partner(in) / anderem Haushaltsmit\u0026shy;glied",
+ 								"en": "me together with partner or other household member(s)"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ed)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEntscheidungen über Spar- und Finanzanlagen\n\t\t\t\t",
+ 								"en": "\u003cb\u003ed)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "qe1_confidence_after",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "9"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1d_financialdecisions",
  							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "10"
+ 							"label": {
+ 								"de": "eher ich",
+ 								"en": "rather me"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "qe1_confidence_after",
+ 							"name": "qh1d_financialdecisions",
  							"type": "radio",
+ 							"label": {
+ 								"de": "ich gemeinsam mit Partner(in) / anderem Haushaltsmit\u0026shy;glied",
+ 								"en": "me together with partner or other household member(s)"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eH2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie hoch schätzen Sie, \n\t\t\t\t\t\tist das \u003ci\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare Nettoeinkommen Ihres Haushalts, \n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug \n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht? \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eH2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_income",
+ 							"type": "dropdown",
+ 							"max_chars": 10,
+ 							"col_span": 2,
  							"col_span_control": 1,
- 							"value_radio": "11"
+ 							"drop_down": {
+ 								"Name": "",
+ 								"AutoSubmit": false,
+ 								"Disabled": false,
+ 								"Attrs": null,
+ 								"LC": "",
+ 								"Options": [
+ 									{
+ 										"Key": "",
+ 										"Val": {
+ 											"de": " Bitte einen Bereich wählen ",
+ 											"en": " Please choose a range"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto500",
+ 										"Val": {
+ 											"de": "unter 500€",
+ 											"en": "under 500€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto750",
+ 										"Val": {
+ 											"de": "500€ bis unter 750€",
+ 											"en": "500€ to under  750€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto1000",
+ 										"Val": {
+ 											"de": "750€ bis unter 1000€",
+ 											"en": "750€ to under  1000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto1000",
+ 										"Val": {
+ 											"de": "1000€ bis unter 1000€",
+ 											"en": "1000€ to under  1000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto1250",
+ 										"Val": {
+ 											"de": "1000€ bis unter 1250€",
+ 											"en": "1000€ to under  1250€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto1500",
+ 										"Val": {
+ 											"de": "1250€ bis unter 1500€",
+ 											"en": "1250€ to under  1500€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto2000",
+ 										"Val": {
+ 											"de": "1500€ bis unter 2000€",
+ 											"en": "1500€ to under  2000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto2500",
+ 										"Val": {
+ 											"de": "2000€ bis unter 2500€",
+ 											"en": "2000€ to under  2500€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto3000",
+ 										"Val": {
+ 											"de": "2500€ bis unter 3000€",
+ 											"en": "2500€ to under  3000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto3000",
+ 										"Val": {
+ 											"de": "3000€ bis unter 3000€",
+ 											"en": "3000€ to under  3000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto3500",
+ 										"Val": {
+ 											"de": "3000€ bis unter 3500€",
+ 											"en": "3000€ to under  3500€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto4000",
+ 										"Val": {
+ 											"de": "3500€ bis unter 4000€",
+ 											"en": "3500€ to under  4000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto4500",
+ 										"Val": {
+ 											"de": "4000€ bis unter 4500€",
+ 											"en": "4000€ to under  4500€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto5000",
+ 										"Val": {
+ 											"de": "4500€ bis unter 5000€",
+ 											"en": "4500€ to under  5000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto7500",
+ 										"Val": {
+ 											"de": "5000€ bis unter 7500€",
+ 											"en": "5000€ to under  7500€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto10000",
+ 										"Val": {
+ 											"de": "7500€ bis unter 10000€",
+ 											"en": "7500€ to under  10000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "upto15000",
+ 										"Val": {
+ 											"de": "10000€ bis unter 15000€",
+ 											"en": "10000€ to under  15000€"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "over15000",
+ 										"Val": {
+ 											"de": "15000€ und mehr",
+ 											"en": "15000€ and more"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "noanswer",
+ 										"Val": {
+ 											"de": " keine Angabe",
+ 											"en": " no answer"
+ 										},
+ 										"Selected": false
+ 									}
+ 								]
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eH1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im \u003ci\u003eDezember 2022 \u003c/i\u003e\n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eH1.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPrivate Lebensversi\u0026shy;cherungen\n\t\t\t\t\t\u003csmall\u003e \n\t\t\t\t\t(z.B. klassische und fondsge¬bundene Kapitallebensversi\u0026shy;cherungen, \n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen \n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber)\n\t\t\t\t\t\u003c/small\u003e \n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003ea)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh3a_lifeinsurance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh3a_lifeinsurance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eb)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBetriebliche Lebensversi\u0026shy;cherungen\n\t\t\t\t\t\u003csmall\u003e \n\t\t\t\t\t(z. B. Direktversi\u0026shy;cherungen)\n\t\t\t\t\t\u003c/small\u003e \n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003eb)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh3b_directinsurance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh3b_directinsurance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ec)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tSonstige betriebliche Altersvorsorge \n\t\t\t\t\t\u003csmall\u003e \n\t\t\t\t\t(z. B. Betriebsrenten aus Pensions- oder Un\u0026shy;terstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen) \n\t\t\t\t\t\u003c/small\u003e \n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003ec)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh3c_otherpensions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh3c_otherpensions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ed)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tStaatlich geförderte private Altersvorsorge („Riester- Rente“)\n\t\t\t\t\t\u003csmall\u003e \n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten) \n\t\t\t\t\t\u003c/small\u003e \n\t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003ed)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh3d_otherpensions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh3d_otherpensions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ee)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPrivate Rentenversi\u0026shy;cherungen \n\t\t\t\t\t\u003csmall\u003e \n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die nicht staatlich gefördert werden bzw. abgeschlossen wurden, bevor es solche Fördermöglichkeiten gab) \n\t\t\t\t\t\u003c/small\u003e \t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003ee)\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh3e_privatepensions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh3e_privatepensions",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003chr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cem\u003eZum Abschluss des Fragebogens\u003c/em\u003e\u003cbr\u003e\n\t\t\t\t\t\tWollen Sie uns noch etwas mitteilen?\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003chr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cem\u003eFinish\u003c/em\u003e\u003cbr\u003e\n\t\t\t\t\t\tAny remarks or advice for us?\n\t\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "comment",
+ 							"type": "textarea",
+ 							"max_chars": 300,
+ 							"col_span_control": 1
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
  								"row_gap": "0.2rem"
  							},
- 							"box_style": {
- 								"display": "grid"
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
  							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Fragebogen abschließen",
+ 								"en": "Finish this survey",
+ 								"es": "Terminé esta encuesta",
+ 								"fr": "Terminer ce sondage",
+ 								"it": "Finire questo sondaggio",
+ 								"pl": "Zakończyłem tę ankietę"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"response": "14",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "3fr 1fr"
+ 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
@@ -24635,7 +25418,50 @@
  				"en": ""
  			},
  			"no_navigation": true,
- 			"finished": "0001-01-01T00:00:00Z"
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "40rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ResponseStatistics"
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PersonalLink"
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "site-imprint.md"
+ 						}
+ 					]
+ 				}
+ 			]
  		}
  	]
  }

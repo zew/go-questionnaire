@@ -1059,7 +1059,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 						<br>
 						<br>
-						Chancen<br>
+						<b>Chancen</b><br>
 						<small>(Mehrfachnennung möglich)</small>
 					`,
 					"en": `todo`,
@@ -1099,7 +1099,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Risiken<br>
+						<b>Risiken</b><br>
 						<small>(Mehrfachnennung möglich)</small>
 					`,
 					"en": `todo`,
@@ -1906,9 +1906,137 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}.Outline("E1.")
 			gr := page.AddGrid(gb)
 			_ = gr
-			gr.BottomVSpacers = 2
+			// gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		//
+		//
+		// gr1
+		{
+
+			lbls := labelsSelfKnowledge()
+			lbls[0] = trl.S{
+				"de": "<small>ganz und gar uninformiert</small>     <div>0</div>",
+				"en": "<small>todo</small>     <div>0</div>",
+			}
+			lbls[10] = trl.S{
+				"de": "<small>ganz und gar informiert</small>       <div>10</div>",
+				"en": "<small>todo</small> <div>10</div>",
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{"qe2_feelinginformed"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Wie informiert fühlen Sie sich über das gezeigte Szenario?
+					`,
+				"en": `
+					todo
+				`,
+			}.Outline("E2.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			// gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						In wieweit stimmen Sie folgenden Aussagen zu:
+					`,
+					"en": `todo`,
+				}.Outline("E3.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			inputs := []string{
+				"qe3a_comprehensive",
+				"qe3b_helplful",
+				"qe3c_complex",
+			}
+			lblsQ := []trl.S{
+				{
+					"de": `Die Beschreibung des Portfolios ist verständlich.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Die Beschreibung des Portfolios ist hilfreich.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Die Beschreibung des Portfolios ist kompliziert.`,
+					"en": `todo`,
+				},
+			}
+
+			for i := 0; i < len(inputs); i++ {
+
+				lbls := labelsSelfKnowledge()
+				lbls[0] = trl.S{
+					"de": "<small>trifft ganz und gar nicht zu</small>     <div>0</div>",
+					"en": "<small>todo</small>     <div>0</div>",
+				}
+				lbls[10] = trl.S{
+					"de": "<small>trifft voll und ganz zu</small>       <div>10</div>",
+					"en": "<small>todo</small> <div>10</div>",
+				}
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate11,
+					lbls,
+					[]string{inputs[i]},
+					radioVals11,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				gb.MainLabel = lblsQ[i].Outline(fmt.Sprintf("%c)", rune(97+i)))
+				gr := page.AddGrid(gb)
+				_ = gr
+				// gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `Haben Sie eine weitere Anmerkung zu der Darstellung im Tool?`,
+					"en": `todo`,
+				}.Outline("E4.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "qe4_tool_free"
+				inp.MaxChars = 200
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
 		}
 
 	}
@@ -2507,7 +2635,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					1500,
 					2000,
 					2500,
-					3000,
 					3000,
 					3500,
 					4000,

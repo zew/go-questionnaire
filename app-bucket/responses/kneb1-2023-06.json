@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b89d2f4ec5719095ded4b1b907802f81b2f0a1b03a5c8eba4f373a69b0c395d9",
+ 	"md_5": "32d8c648bdb414fc02915632b4248b3b9f9addc87b5f7d4e3078ae1fcb3144f3",
  	"lang_codes": [
  		"de"
  	],
@@ -17872,8 +17872,8 @@
  		},
  		{
  			"label": {
- 				"de": "Experiment chart",
- 				"en": "Experiment-Chart"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -17884,7 +17884,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "42rem"
+ 						"width_max": "52rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -17901,7 +17901,72 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "section",
+ 							"type": "hidden"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "./slide-show/index.html"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "52rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "share_safe_bg",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "share_risky_bg",
+ 							"type": "hidden"
+ 						}
+ 					]
+ 				},
+ 				{
  					"columns": 1,
  					"inputs": [
  						{
@@ -27176,14 +27241,6 @@
  										"Selected": false
  									},
  									{
- 										"Key": "upto3000",
- 										"Val": {
- 											"de": "3000€ bis unter 3000€",
- 											"en": "3000€ to under  3000€"
- 										},
- 										"Selected": false
- 									},
- 									{
  										"Key": "upto3500",
  										"Val": {
  											"de": "3000€ bis unter 3500€",
@@ -27843,7 +27900,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "14",
+ 							"response": "15",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

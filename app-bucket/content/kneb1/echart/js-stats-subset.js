@@ -1,4 +1,5 @@
-// github.com/chen0040/js-stats
+// a few statistics functions
+// from github.com/chen0040/js-stats
 
 var jsstats = jsstats || {};
 

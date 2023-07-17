@@ -1,0 +1,261 @@
+
+
+	<!-- <link rel="stylesheet" href="/{{AppPrefix}}/doc/kneb1/slide-show/dist/reset.css"> -->
+	<link rel="stylesheet" href="/{{AppPrefix}}/doc/kneb1/slide-show/dist/reveal.css">
+	<!-- <link rel="stylesheet" href="/{{AppPrefix}}/doc/kneb1/slide-show/dist/theme/solarized.css"> -->
+	<!-- <link rel="stylesheet" href="/{{AppPrefix}}/doc/kneb1/slide-show/dist/theme/--global.css"> -->
+	<script src="/{{AppPrefix}}/doc/kneb1/slide-show/dist/reveal.js"></script>
+
+
+	<style>
+		
+		.reveal-viewport {
+			background: #fdf6e3;
+			/* background-color: var(--r-background-color); */
+			background-color: transparent;
+		}
+
+
+
+
+	</style>
+
+	<!--  
+		a-pics croppings
+		260x320
+		1240x720
+
+		b-pics croppings
+		275x320
+		1450x720
+	-->
+
+	<div id="content-flex">
+
+		<div class="reveal deck2">
+			<div class="slides">
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<!-- 
+					<img class="fragment fade-left" 
+						src="/{{AppPrefix}}/doc/kneb1/slide-show/a01.png" alt=""
+					> -->
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a01.png" alt=""  data-id="box">
+
+
+					 
+				</section>
+
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a02.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a03.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a04.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a05.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a06.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="4200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a07.png" alt=""  data-id="box">
+
+				</section>
+
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b01.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b02.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b03.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b04.png" alt=""  data-id="box">
+
+				</section>
+
+				<section
+					data-autoslide="1200"
+					data-auto-animate
+				>
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b05.png" alt=""  data-id="box">
+
+				</section>
+
+				
+<!-- 
+				<section>
+					<ol>
+						<li class="fragment fade-left" >Raise by 0.5 pct</li>
+						<li class="fragment fade-left" >Raise by 0.25 pct</li>
+						<li class="fragment fade-left" >Stay put</li>
+					</ol>
+					<div class="fragment fade-left">
+						aaa
+					</div>
+
+
+				</section>
+ -->
+
+
+
+			</div><!--  slides -->
+		</div>    <!--  reveal container -->
+	</div>		  <!--  content-flex -->
+
+
+
+
+
+
+	<script>
+
+		let props = {
+
+
+			// only react to keys when focused
+			// keyboardCondition: 'focused' ,
+
+
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsLayout: 'edges',
+
+			slideNumber: false,
+			slideNumber: "c/t",
+			hashOneBasedIndex: true,
+			autoAnimate: true,
+
+
+
+			hash: true,
+
+			// disable following five
+			disableLayout: false,
+			// fixes aspect ratio
+			// width:  860,
+			// height: 400,
+
+			// 4 percent padding
+			margin:    0.12,
+			margin:    0.01,
+			margin:    0.03,
+
+			// bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 2.0,
+
+
+			// between slides
+			// ======================
+
+			// none/fade/slide/convex/concave/zoom
+			transition: 'zoom',
+			transition: 'concave',
+			transition: 'slide',
+			// default/fast/slow
+			transitionSpeed: 'fast',
+			transitionSpeed: 'default',
+
+			// none/fade/slide/convex/concave/zoom
+			backgroundTransition: 'fade',
+			backgroundTransition: 'zoom',
+			backgroundTransition: 'slide',
+
+			// use 'autoSlide' only on single slides and fragments - by attribute data-autoslide
+			// autoSlide: 1500,
+
+
+
+			// plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+			// plugins: [ RevealMarkdown, RevealSearch, RevealMath, RevealAnything  ],
+			// plugins: [ RevealMarkdown, RevealSearch, RevealMath, RevealZoom, RevealAnything  ],
+			plugins: [],
+
+
+
+		};
+
+
+		let deck2 = new Reveal( document.querySelector('.deck2'), props );
+		document.querySelector( '.deck2' ).style.width  = '56rem';
+		document.querySelector( '.deck2' ).style.width  = '98%';
+
+		// min height does not seem to work; percentages dont work
+		// document.querySelector( '.deck2' ).style.height = '44rem';
+		document.querySelector( '.deck2' ).style.height = screen.height - 140  +"px";
+		document.querySelector( '.deck2' ).style.height = window.innerHeight - 240  +"px";
+		// document.querySelector( '.deck2' ).style.height = window.innerHeight - 10  +"rem";
+		
+
+		// document.getElementById("page-wrapper").style.minHeight = screen.height - 10  +"px";
+
+
+		// document.querySelector( '.deck2' ).style.margin = '0.5rem 3rem';
+		document.querySelector( '.deck2' ).style.margin = '0.5rem auto';
+		deck2.initialize({embedded: true });
+
+	</script>
+
+
+
+

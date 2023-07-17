@@ -1,5 +1,7 @@
 # Caroline Knebel Experiment
 
+* Treatment is not yet coded
+
 Testing under <https://survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#>
 
 STRG+F5 - zum Neuladen der Seite

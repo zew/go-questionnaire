@@ -1,4 +1,4 @@
-// 
+// echart configuration
 
 // github.com/apache/echarts
 // github.com/ecomfe/echarts-stat
@@ -110,6 +110,11 @@ for (let i = 0; i <= 300/w; i++) {
 
 // console.log(ds2.source);
 
+// getData compiles data for eChart options object
+// usage: 
+//       myChart.setOption({
+//          dataset: getData(),
+//       });
 function getData() {
 
     counterDraws++;
@@ -346,28 +351,6 @@ option = {
 };
 
 option && myChart.setOption(option);
-
-function nextStep() {
-    myChart.setOption({
-        dataset: getData(),
-        // series: {
-        //     data: makeRandomData()
-        // }
-    });
-    return false;
-}
-
-
-function forever() {
-    setInterval(() => {
-        myChart.setOption({
-            dataset: getData(),
-            // series: {
-            //     data: makeRandomData()
-            // }
-        });
-    }, 200); 
-    return false;
-}
+console.log(`echart config and creation complete`)
 
 

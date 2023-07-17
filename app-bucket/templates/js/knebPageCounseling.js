@@ -1,3 +1,6 @@
+// const pageID = "pg12-grp01";
+const pageID = "pg13-grp01";
+
 function showHideSubQuestions(showHide, classOfSubQuestion) {
 
     let containers = document.getElementsByClassName(classOfSubQuestion);
@@ -26,7 +29,7 @@ function showB2(event) {
     // console.log(`showD7a called -${rad1.value}-`);
     let rad1Checked = rad1.checked;
     console.log(`inp1 checked ${rad1Checked}: `);
-    showHideSubQuestions( !rad1Checked, "pg12-grp01");
+    showHideSubQuestions( !rad1Checked, pageID);
 
     return true;
 }
@@ -43,7 +46,7 @@ function showB7(event) {
     // console.log(`showD7a called -${rad1.value}-`);
     let rad1Checked =  rad2.checked  || rad3.checked || rad4.checked || rad5.checked || rad6.checked|| rad7.checked ;
     console.log(`inp2 checked ${rad1Checked}: `);
-    showHideSubQuestions( rad1Checked, "pg12-grp06");
+    showHideSubQuestions( rad1Checked, pageID);
 
     return true;
 }

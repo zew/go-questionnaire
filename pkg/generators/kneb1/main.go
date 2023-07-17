@@ -1829,6 +1829,51 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	// page chart introduction
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "Experiment-Chart-Introduction",
+			"de": "Experiment chart-Introduction",
+		}
+		page.Label = trl.S{
+			"en": "",
+			"de": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+		page.WidthMax("52rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "section"
+			}
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./slide-show/index.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+	}
+
 	// page chart
 	{
 		page := q.AddPage()
@@ -1837,18 +1882,40 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Experiment-Chart",
 			"de": "Experiment chart",
 		}
+		page.Label = trl.S{
+			"en": "",
+			"de": "",
+		}
 		page.SuppressInProgressbar = true
 		// page.Short = trl.S{
 		// 	"de": "Chart",
 		// 	"en": "Chart",
 		// }
 		page.WidthMax("42rem")
+		page.WidthMax("52rem")
 
 		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "share_safe_bg"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "share_risky_bg"
+			}
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"

@@ -183,9 +183,16 @@
 			slideNumber: false,
 			slideNumber: "c/t",
 			hashOneBasedIndex: true,
-			autoAnimate: true,
+			
+			// useful for globally _disabling_ auto-animation
+			//    same as slide  data-auto-animate
+			// autoAnimate: true,
 
-
+			// auto animate detail properties
+			// autoAnimateMatcher: null,
+			// autoAnimateEasing: 'ease',
+			// autoAnimateDuration: 1.0,
+			// autoAnimateUnmatched: true,
 
 			hash: true,
 
@@ -195,10 +202,11 @@
 			// width:  860,
 			// height: 400,
 
-			// 4 percent padding
+			// percent padding - 0.01 is one percent
 			margin:    0.12,
 			margin:    0.01,
 			margin:    0.03,
+			margin:    0.003,
 
 			// bounds for smallest/largest possible scale to apply to content
 			minScale: 0.2,

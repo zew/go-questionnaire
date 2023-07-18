@@ -13,7 +13,117 @@
   Mit der folgenden interaktiven Graphik möchten wir Ihnen die Chancen und Risiken bei einer Anlage am Kapitalmarkt verdeutlichen und erklären.
 </p>
 
+<style>
+  .panel{
+    background-color: #ddd;
+    width: 30%;
+    margin: 0;
+  }
+  .panel1{
+    margin-right: 0.6rem;
+  }
+  .panel2{
+    width: 70%;
+  }
+  .panel p {
+    margin: 0;
+    padding:    0.5rem;
+    padding-bottom: 0;
+  }
+  .panel p.right {
+    text-align: right;
+    margin-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+  .panel p.right a {
+    display: inline-block;
+    font-size: 140%;
+    padding: 0 0.24rem;
+    font-weight: bold;
+  }
 
+  .knob-container {
+    padding: 0.2rem 0.8rem;
+    max-width: 12rem;
+    /* border: 1px solid #d2c; */
+  }
+
+  div.knob {
+    display: inline-block;
+    border-radius: 0.2rem;
+    border: 1px solid #22c;
+    padding: 0.2rem;
+    margin: 0.25rem;
+    color: #22c;
+  }
+
+  div.knob-inverse {
+    background-color: #22c;
+    color: #fff;    
+  }
+  div.knob-grey {
+    background-color: #ccc;
+    color: #888;    
+    border: 1px solid #ccc;
+  }
+</style>
+
+<div style="display: flex; flex-direction: row;">
+  <div class="panel panel1">
+    <p>
+      Ihr erwartetes Vermögen
+    </p>
+    <p class="right">
+      <strong>11.100 €</strong>
+    </p>
+
+    <p>
+      Sparbetrag
+    </p>
+    <p class="right" style="margin-right: 0.46rem">
+      <a href="">-</a>  <strong>100 €</strong>  <a href="">+</a>
+    </p>
+
+    <button style="margin: 0.7rem;">Werte zurücksetzen</button>
+
+    <p style="margin-top: 0.8rem;">
+      Ihr Aktienanteil
+    </p>
+    <div class="knob-container" >
+      <div class="knob">10&nbsp;% </div>
+      <div class="knob">20&nbsp;% </div>
+      <div class="knob">30&nbsp;% </div>
+      <div class="knob">40&nbsp;% </div>
+      <div class="knob">50&nbsp;% </div>
+      <div class="knob knob-inverse">60&nbsp;% </div>
+      <div class="knob">70&nbsp;% </div>
+      <div class="knob">80&nbsp;% </div>
+      <div class="knob knob-grey">90&nbsp;% </div>
+      <div class="knob knob-grey">100&nbsp;%</div>
+      
+    </div>
+  
+    <br>
+
+    <p>
+      <input type="number" size=3  disabled name="share_safe"  id="">
+      <input type="number" size=3  disabled name="share_risky" id="">
+
+    </p>
+    <p>
+
+      <a href="#" onclick="javascript:nextStep();">Next Step</a> 
+      &nbsp; &nbsp; &nbsp; 
+      <a href="#" onclick="javascript:forever();" >Step forever</a>
+    </p>
+  
+
+  </div>
+
+
+  <div class="panel panel2" id="chart_container"></div>  
+</div>
 
 
 
@@ -35,21 +145,12 @@
       autofocus
   >
 </div>
-<div class="slider-container">
-  <input type="number" size=3  disabled name="share_safe"  id="">
-  <input type="number" size=3  disabled name="share_risky" id="">
-  <br>
-  <br>
-  &nbsp; <a href="#" onclick="javascript:nextStep();">Next Step</a>
-  &nbsp; &nbsp;
-  &nbsp; <a href="#" onclick="javascript:forever();" >Step forever</a>
-</div>
 
 
 
 <!-- <input name="chart_output" type="text" value="0" /> -->
 
-<div id="chart_container" ></div>
+<!-- <div id="chart_container" ></div> -->
 
 
 

@@ -10,12 +10,12 @@
 // import ecStat from './ecStat.js';
 
 
-// survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#
 
 var chartDom = document.getElementById('chart_container');
 // console.log(chartDom);
 var myChart = echarts.init(chartDom);
-var option;
+var opt1;
+var opt2;
 
 
 
@@ -185,7 +185,7 @@ function getData() {
     ];
 }
 
-option = {
+opt1 = {
     dataset: getData(),
     tooltip: {},
     grid: [
@@ -350,7 +350,69 @@ option = {
     ],
 };
 
-option && myChart.setOption(option);
+var dataXAxix = [];
+let iStart = new Date().getFullYear()
+for (let i = iStart; i <= iStart+15; i++) {
+    dataXAxix.push(i);    
+}
+console.log(dataXAxix)
+
+
+var dataReturns = [];
+for (let i = 0; i <= 15; i++) {
+    dataReturns.push(250+i*2000);    
+}
+console.log(dataReturns)
+
+
+opt2 = {
+    title: {
+        // text: 'ECharts Getting Started Example'
+    },
+    tooltip: {},
+    legend: {
+        // data: ['sales']
+    },    
+    xAxis: {
+        // type: 'category',
+        type: 'time',
+        type: 'value',
+        scale: true,
+        axisLabel: {
+            formatter: function (vl, index) {
+                return vl + ' ';
+            },        
+        },
+        // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+        // data: dataXAxix,
+        // min: dataXAxix[0]-2,
+        // min: 2000,
+        // min: 'dataMin',
+        min: function (vl) {
+            // this returns dataReturns.min and max 
+            console.log(`min ${vl.min} max ${vl.max} `)
+            return vl.min;
+        },
+        min: iStart,
+        max: iStart+15,
+    },
+    yAxis: {
+        type: 'value',
+        name: 'y-axis-name',            
+    },
+    series: [
+        {
+            name: 'series1',            
+            type: 'line',
+            // data: dataReturns,
+            data: [150, 2000, 4000, 4000, 4500, 6000],
+        }
+    ]
+};
+
+// opt1 && myChart.setOption(opt1);
+opt2 && myChart.setOption(opt2);
 console.log(`echart config and creation complete`)
 
 

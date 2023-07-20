@@ -19,7 +19,7 @@ function forever() {
             //     data: makeRandomData()
             // }
         });
-    }, 200); 
+    }, 200);
     return false;
 }
 
@@ -39,7 +39,7 @@ let initPage = (inst) => {
 
     var safe     = document.getElementsByName("share_safe")[0];
     var risky    = document.getElementsByName("share_risky")[0];
-    
+
     var safeBG   = document.getElementById("share_safe_bg");
     var riskyBG  = document.getElementById("share_risky_bg");
 
@@ -50,28 +50,45 @@ let initPage = (inst) => {
         risky.value = riskyBG.value;
         slider.value = risky.value;
     }
-    safe.value = 100 - slider.value;
-    risky.value = slider.value;    
+
+    try {
+        safe.value = 100 - slider.value;
+        risky.value = slider.value;
+    } catch (error) {
+
+    }
 
 
 
     // update
-    slider.oninput = function () {
-        safe.value = 100 - this.value;
-        risky.value = this.value;
+    let funcUpdate = function () {
 
-        // console.log(`safe.value = ${safe.value}`)
+        try {
+            safe.value = 100 - this.value;
+            risky.value = this.value;
 
-        if(safeBG){
-            safeBG.value = safe.value;
-            // console.log(`safeBG.value = ${safeBG.value}`)
-        } else {
-            console.log(`safeBG undefined`)
+            // console.log(`safe.value = ${safe.value}`)
+
+            if(safeBG){
+                safeBG.value = safe.value;
+                // console.log(`safeBG.value = ${safeBG.value}`)
+            } else {
+                console.log(`safeBG undefined`)
+            }
+            if(riskyBG){
+                riskyBG.value = risky.value;
+            }
+
+        } catch (error) {
+
         }
-        if(riskyBG){
-            riskyBG.value = risky.value;
-        }
-    }
+
+    } // end of update func
+
+
+    // slider.oninput = funcUpdate
+
+
     console.log(`page init complete`)
 }
 

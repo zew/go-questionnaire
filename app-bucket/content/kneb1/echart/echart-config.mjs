@@ -105,13 +105,13 @@ var ds2 = {
     source: []
 };
 for (let i = 0; i <= 300/w; i++) {
-    ds2.source.push([wh + i*w, 0]);    
+    ds2.source.push([wh + i*w, 0]);
 }
 
 // console.log(ds2.source);
 
 // getData compiles data for eChart options object
-// usage: 
+// usage:
 //       myChart.setOption({
 //          dataset: getData(),
 //       });
@@ -119,24 +119,24 @@ function getData() {
 
     counterDraws++;
 
-    if (false) {   
+    if (false) {
         try {
             // both cases lead to infinity
-            console.log( "icnp(0.0):", normDist.invCumulativeProbability(0)    );        
-            console.log( "icnp(1.0):", normDist.invCumulativeProbability(1.0)  );        
+            console.log( "icnp(0.0):", normDist.invCumulativeProbability(0)    );
+            console.log( "icnp(1.0):", normDist.invCumulativeProbability(1.0)  );
         } catch (error) {
             console.error(error);
         }
     }
 
-    // 
+    //
     // random draws - mapped to normal dist.
     for (let i = ds1.source.length; i < (counterDraws+1); i++) {
         let linDraw = Math.random(); // a number from 0 to <1
 
         while (linDraw == 0.0) {
             // just avoid 0.0, because it creates infinity below
-            linDraw = Math.random(); 
+            linDraw = Math.random();
         }
 
         let draw  = normDist.invCumulativeProbability(linDraw)
@@ -149,7 +149,7 @@ function getData() {
     // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
 
 
-    // 
+    //
     // histogram data
     let i0 = ds1.source.length - 1
     if (counterDraws == counterDrawsInit+1) {
@@ -203,8 +203,8 @@ opt1 = {
         {
             type:  'value',
             type:  'category',
-            // do not include zero position 
-            scale:  true,  
+            // do not include zero position
+            scale:  true,
             gridIndex: 0
         },
         {
@@ -291,7 +291,7 @@ opt1 = {
                 opacity: 0.4,
             },
 
-            // color does not work as symbolSize 
+            // color does not work as symbolSize
             // color: function (value, params) {
             //     return getColor();
             // },
@@ -327,13 +327,13 @@ opt1 = {
 
                     // x:        params.rect.x + 1,
                     dx: 2,
-                    y:        params.rect.y + 1,       
+                    y:        params.rect.y + 1,
                     fontSize: fs,
                     // not working
                     //   opacity: 0.2,
                     //   color: '#AA0101',
                 };
-            },  
+            },
             encode: { x: 1, y: 0, itemName: 4 },
             datasetIndex: 1
         },
@@ -353,14 +353,14 @@ opt1 = {
 var dataXAxix = [];
 let iStart = new Date().getFullYear()
 for (let i = iStart; i <= iStart+15; i++) {
-    dataXAxix.push(i);    
+    dataXAxix.push(i);
 }
 console.log(dataXAxix)
 
 
 var dataReturns = [];
 for (let i = 0; i <= 15; i++) {
-    dataReturns.push(250+i*2000);    
+    dataReturns.push(250+i*2000);
 }
 console.log(dataReturns)
 
@@ -368,20 +368,51 @@ console.log(dataReturns)
 opt2 = {
     title: {
         // text: 'ECharts Getting Started Example'
+        text: 'Auszahlungen',
+        left: '1%'
     },
     tooltip: {},
+    toolbox: {
+        show: true,
+        right: 10,
+        feature: {
+            saveAsImage: { show: true },
+            // magicType:   { show: true, type: ['stack', 'tiled'] },
+            dataZoom: { yAxisIndex: 'none' },
+            restore: {},
+        }
+    },
+    grid: {
+        left: '12%',
+        left: '16%',
+        bottom: '7%',
+      },    
     legend: {
         // data: ['sales']
-    },    
+    },
     xAxis: {
         // type: 'category',
         type: 'time',
         type: 'value',
+
+        // only in numerical axis, i.e., type: 'value'.
+        //    show zero position only, if justified by data
+        //    if min and max are set, this setting has no meaning
         scale: true,
+
+        // animation only makes sense for series
+        animation: false,
+
         axisLabel: {
+            // compare  axisLabel. formatter
             formatter: function (vl, index) {
                 return vl + ' ';
-            },        
+            },
+            textStyle: {
+                color: function (vl, index) {
+                    return vl >= 2030 ? 'green' : 'red';
+                }
+            },
         },
         // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
@@ -390,24 +421,134 @@ opt2 = {
         // min: 2000,
         // min: 'dataMin',
         min: function (vl) {
-            // this returns dataReturns.min and max 
+            // this returns dataReturns.min and max
             console.log(`min ${vl.min} max ${vl.max} `)
             return vl.min;
         },
-        min: iStart,
+
+        min: iStart+0,
         max: iStart+15,
+
+        // show label of the min/max tick
+        //    seems ineffective, labels are shown anyway
+        showMinLabel: false,
+        showMaxLabel: false,
+
+        // number of ticks - recommendation
+        splitNumber: 8,
+        // number of ticks - mandatory
+        interval: 3,
+        interval: 2,
+
+
+        axisTick: {
+            show: false,
+            show: true,
+            length: 4,
+        },
+        minorTick: {
+            show: true,
+        },
+        // inverse: true,
+        axisLine: {
+            // show: false,
+            // whether axis lies on the other's origin position - where value is 0 on axis.
+            onZero: false,
+            onZero: true,
+        },
+
     },
     yAxis: {
         type: 'value',
-        name: 'y-axis-name',            
+        name: 'y-axis-name',
+        min: 0,
+        max: 40*1000,
+
+        axisLabel: {
+            // compare  axisLabel.formatter
+            formatter: function (vl, index) {
+                // adjust grid.left
+                let vl1 = vl.toFixed(0)
+                vl1 = vl1 + ' €';
+                vl1 = vl1.replace("000 €", ".000 €", )
+                return vl1;
+            },
+        },
+
     },
     series: [
         {
-            name: 'series1',            
+            // name - only if we want it to be shown
+            // name: 'series1',
             type: 'line',
-            // data: dataReturns,
-            data: [150, 2000, 4000, 4000, 4500, 6000],
-        }
+
+            symbol: 'emptyCircle',
+            symbolSize: 6,
+            showSymbol: true,
+            animation: false,
+            animation: true,
+            animationDelay:    0,
+            animationDuration: 4000,
+
+            // explanation for encode: 
+            //      see 10 lines below - 'data'
+            //      see     https://echarts.apache.org/en/option.html#
+            //      search  'series-line. encode' 
+            encode: { 
+                x: 0, 
+                y: 1, 
+                itemName: 2, 
+                tooltip: [0, 1, 2],
+             },
+            data: [
+                // [col1, col2, col3 ... ]
+                // [dimX, dimY, other dimensions ...
+                // In cartesian (grid), "dimX" and "dimY" correspond to xAxis and yAxis respectively.
+                //    see      https://echarts.apache.org/en/option.html#series-line
+                //    search   'Relationship between "value" and axis.type'
+                //
+                [2023,     950, 'item-1'  ],
+                [2024,    2900, 'item-2'  ],
+                [2025,    4400, 'item-3'  ],
+                [2026,    5000, 'item-4'  ],
+                [2027,    6500, 'item-5'  ],
+                [2029,   13500, 'item-6'  ],
+                [2029.5, 13800, 'item-7'  ],
+                [2030,        , 'item-8'  ],
+                [2031,   22000, 'item-9'  ],
+                [2034,   24000, 'item-10'  ],
+                [2036,   26000, 'item-11'  ],
+                [2037,   36000, 'item-12'  ],
+            ],
+        },
+
+
+        {
+            // name - only if we want it to be shown
+            // name: 'series2',
+            type: 'line',
+
+            symbol: 'emptyCircle',
+            symbolSize: 4,
+            showSymbol: true,
+            animation: false,
+            animation: true,
+            animationDelay:    4000,
+            animationDuration: 4000,
+
+            // see first series for explanation of "encode" and "data" config
+            data: [
+                [2023,    175],
+                [2024,   2200],
+                [2025,   4000],
+                [2026,   4000],
+                [2027,   4500],
+                [2030,   4500],
+                [2036,  24000],
+                [2037,  33000],
+            ],
+        },
+
     ]
 };
 

@@ -19,10 +19,17 @@ var opt2;
 
 
 
-var colorPalette = ['#d87c7c', '#919e8b', '#d7ab82', '#6e7074', '#61a0a8', '#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'];
+// var colorPalette = ['#d87c7c', '#919e8b', '#d7ab82', '#6e7074', '#61a0a8', '#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'];
+var colorPalette = [
+    '#229',
+    '#22b',
+    '#22c',
+    '#22d',
+    'var(--clr-pri-hov);',
+    ];
 function getColor() {
     let idx = colorPalette.length % counterDraws;
-    return colorPalette[idx];
+    return colorPalette[seriesIdx];
 }
 
 
@@ -365,6 +372,9 @@ for (let i = 0; i <= 15; i++) {
 console.log(dataReturns)
 
 
+let seriesIdx = -1;
+let animDuration = 800;
+
 opt2 = {
     title: {
         // text: 'ECharts Getting Started Example'
@@ -384,7 +394,8 @@ opt2 = {
     },
     grid: {
         left: '12%',
-        left: '16%',
+        left: '13%',
+        right: '3%',
         bottom: '7%',
       },    
     legend: {
@@ -481,14 +492,15 @@ opt2 = {
             // name - only if we want it to be shown
             // name: 'series1',
             type: 'line',
-
+            dummy: seriesIdx++,
+            color: colorPalette[seriesIdx],
             symbol: 'emptyCircle',
             symbolSize: 6,
             showSymbol: true,
             animation: false,
             animation: true,
-            animationDelay:    0,
-            animationDuration: 4000,
+            animationDelay:    seriesIdx * animDuration,
+            animationDuration: animDuration,
 
             // explanation for encode: 
             //      see 10 lines below - 'data'
@@ -522,19 +534,20 @@ opt2 = {
             ],
         },
 
-
         {
             // name - only if we want it to be shown
             // name: 'series2',
             type: 'line',
+            dummy: seriesIdx++,
+            color: colorPalette[seriesIdx],
 
             symbol: 'emptyCircle',
             symbolSize: 4,
             showSymbol: true,
             animation: false,
             animation: true,
-            animationDelay:    4000,
-            animationDuration: 4000,
+            animationDelay:    seriesIdx * animDuration,
+            animationDuration: animDuration,
 
             // see first series for explanation of "encode" and "data" config
             data: [

@@ -1,23 +1,36 @@
 
 // UI funcs
 function nextStep() {
+    let dta = getData();
     myChart.setOption({
-        dataset: getData(),
-        // series: {
-        //     data: makeRandomData()
-        // }
+        // dataset: dta,
+        series: [
+            {
+              data: dta,
+            },
+            {
+              data: dta,
+            }
+        ],
     });
+    console.log("next step complete", myChart, dta)
     return false;
 }
 
 
 function forever() {
+    let dta = getData();
     setInterval(() => {
         myChart.setOption({
-            dataset: getData(),
-            // series: {
-            //     data: makeRandomData()
-            // }
+            // dataset: dta,
+            series: [
+                {
+                    data: dta,
+                },
+                {
+                    data: dta,
+                }
+            ],    
         });
     }, 200);
     return false;
@@ -32,7 +45,7 @@ function fcSpin(upOrDown){
         }
         if (upOrDown==='down') {
             inp.value =  parseInt(inp.value) - 10;
-        }            
+        }
         console.log(`upOrDown = ${upOrDown}, val = ${inp.value}`)
     }
 }
@@ -50,8 +63,8 @@ let initPage = (inst) => {
 
     var slider   = document.getElementById("sliderInner");
 
-    var safe     = document.getElementsByName("share_safe")[0];
-    var risky    = document.getElementsByName("share_risky")[0];
+    // var safe     = document.getElementsByName("share_safe")[0];
+    // var risky    = document.getElementsByName("share_risky")[0];
 
     var safeBG   = document.getElementById("share_safe_bg");
     var riskyBG  = document.getElementById("share_risky_bg");
@@ -59,22 +72,20 @@ let initPage = (inst) => {
     // init
     // if (safeBG && safeBG.value != ""  && safeBG.value != 0) {
     if (safeBG && safeBG.value != "" ) {
-        safe.value  = safeBG.value;
-        risky.value = riskyBG.value;
-        // slider.value = risky.value;
+        // safe.value  = safeBG.value;
+        // risky.value = riskyBG.value;
     }
 
-    try {
-        safe.value = 100 - slider.value;
-        risky.value = slider.value;
-    } catch (error) {
+    // try {
+    //     safe.value = 100 - slider.value;
+    //     risky.value = slider.value;
+    // } catch (error) {
 
-    }
+    // }
 
     let knobs = [...document.getElementsByClassName("knob")];
 
     let knobReset = kn => kn.classList.remove("knob-inverse")
-    
 
     let knobClick = (evt) => {
         try {
@@ -83,16 +94,9 @@ let initPage = (inst) => {
             inner = inner.replace("&nbsp;%","");
             let val = parseInt(inner)
 
-            safe.value = 100 - val
-            risky.value = val;
+            safeBG.value = 100 - val
+            riskyBG.value = val;
 
-            if(safeBG){
-                safeBG.value = safe.value;
-                riskyBG.value = risky.value;
-                // console.log(`safeBG.value = ${safeBG.value}`)
-            } else {
-                console.error(`safeBG undefined`)
-            }
 
             knobs.forEach(knobReset);
             src.classList.add("knob-inverse")
@@ -102,8 +106,20 @@ let initPage = (inst) => {
             console.error(`knob click error`, err)
         }
     }
+
+    let knobKey = (evt) => {
+        if (evt.code !== "Tab") {
+            // consume evt - so it doesn't get handled twice - unless user moves focus
+            evt.preventDefault();
+        }
+        if (evt.code === "Space" ||  evt.code === "Enter") {
+            knobClick(evt)
+        }
+    }
+
     let assignEvent = function(kn) {
         kn.onclick = knobClick
+        kn.onkeyup = knobKey
         // console.log("test", kn);
     }
     console.log(`found ${knobs.length} knobs`)

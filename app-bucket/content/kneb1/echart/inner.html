@@ -16,14 +16,16 @@
 <style>
   .panel{
     background-color: #ddd;
-    width: 30%;
+    background-color: var(--clr-sec);;
     margin: 0;
+    margin-bottom: 1.4rem;
   }
   .panel1{
+    width: 28%;
     margin-right: 0.6rem;
   }
   .panel2{
-    width: 70%;
+    width: 72%;
   }
   .panel p {
     margin: 0;
@@ -92,7 +94,7 @@
       Ihr erwartetes Vermögen
     </p>
     <p class="right">
-      <strong>11.100 €</strong>
+      <strong>11.100 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
     </p>
 
     <p>
@@ -104,11 +106,17 @@
       <a tabindex="-1" href="#" onclick="fcSpin('down')" class="spinner" >&ndash;  </a>  
       
         <input 
-        tabindex="1"
+          tabindex="1"
           type="number" name="sparbetrag" id="sparbetrag"
           value="110"
           min="0" max="300" step="10" 
-          style="display: inline-block; max-width: 3rem; font-weight: bold;"
+          style="
+            display: inline-block; 
+            max-width: 3rem; 
+            font-weight: bolder;
+            color: var(--clr-pri);
+            border: 1px solid var(--clr-pri);
+            "
         >€
       
         <a tabindex="-1" href="#" onclick="fcSpin('up')"  class="spinner">+ &nbsp;&nbsp;&nbsp;</a>
@@ -120,32 +128,27 @@
       Ihr Aktienanteil
     </p>
     <div class="knob-container" >
-      <div tabindex="2" href=# name="mydiv"  class="knob">10&nbsp;% </div>
-      <div tabindex="3" href=# name="mydiv"  class="knob">20&nbsp;% </div>
-      <div tabindex="4" href=# name="mydiv"  class="knob">30&nbsp;% </div>
-      <div tabindex="5" href=# name="mydiv"  class="knob">40&nbsp;% </div>
-      <div tabindex="6" href=# name="mydiv"  class="knob">50&nbsp;% </div>
-      <div tabindex="7" href=# name="mydiv"  class="knob knob-inverse">60&nbsp;% </div>
-      <div tabindex="8" href=# name="mydiv"  class="knob">70&nbsp;% </div>
-      <div tabindex="9" href=# name="mydiv"  class="knob">80&nbsp;% </div>
-      <div tabindex="10" href=# name="mydiv"  class="knob knob-grey">90&nbsp;% </div>
-      <div tabindex="11" href=# name="mydiv"  class="knob knob-grey">100&nbsp;%</div>
+      <div tabindex="2"  href=#  class="knob">10&nbsp;% </div>
+      <div tabindex="3"  href=#  class="knob">20&nbsp;% </div>
+      <div tabindex="4"  href=#  class="knob">30&nbsp;% </div>
+      <div tabindex="5"  href=#  class="knob">40&nbsp;% </div>
+      <div tabindex="6"  href=#  class="knob">50&nbsp;% </div>
+      <div tabindex="7"  href=#  class="knob knob-inverse">60&nbsp;% </div>
+      <div tabindex="8"  href=#  class="knob">70&nbsp;% </div>
+      <div tabindex="9"  href=#  class="knob">80&nbsp;% </div>
+      <div tabindex="10" href=#  class="knob knob-grey">90&nbsp;% </div>
+      <div tabindex="11" href=#  class="knob knob-grey">100&nbsp;%</div>
       
     </div>
   
     <br>
 
+<!-- 
     <p>
       <input type="number" size=3  disabled name="share_safe"  id="">
       <input type="number" size=3  disabled name="share_risky" id="">
-
     </p>
-    <p>
-
-      <a href="#" onclick="javascript:nextStep();">Next Step</a> 
-      &nbsp; &nbsp; &nbsp; 
-      <a href="#" onclick="javascript:forever();" >Step forever</a>
-    </p>
+ -->
   
 
   </div>
@@ -153,6 +156,12 @@
 
   <div class="panel panel2" id="chart_container"></div>  
 </div>
+
+<p>
+  <a href="#" onclick="javascript:nextStep();">Next Step</a> 
+  &nbsp; &nbsp; &nbsp; 
+  <a href="#" onclick="javascript:forever();" >Step forever</a>
+</p>
 
 
 

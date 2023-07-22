@@ -25,7 +25,7 @@ var colorPalette = [
     '#22b',
     '#22c',
     '#22d',
-    'var(--clr-pri-hov);',
+    // 'var(--clr-pri-hov);',
     ];
 function getColor() {
     let idx = colorPalette.length % counterDraws;
@@ -63,38 +63,10 @@ var ds1Example = {
     ]
 };
 
-// risky asset histogram
-var ds2Example = {
-    source: [
-        [ 25, 0],
-        [ 75, 0],
-        [125, 0],
-        [175, 0],
-        [225, 0],
-        [275, 0],
-    ]
-};
 
 
-// riskless asset histogram
-var ds3 = {
-    source: [
-        [25,  0],
-        [75, 10],
-        [125, 0],
-        [175, 0],
-        [225, 0],
-        [275, 0],
-    ]
-};
-
-
-var ds1 = {
-    source: []
-};
 var counterDrawsInit = 4 ;
 var counterDraws = counterDrawsInit;  // counter for getData
-
 
 
 // Carolin-01-start
@@ -125,6 +97,7 @@ for (let i = 0; i <= 300/w; i++) {
 function getData() {
 
     counterDraws++;
+    let a = 600*counterDraws;
 
     if (false) {
         try {
@@ -138,244 +111,69 @@ function getData() {
 
     //
     // random draws - mapped to normal dist.
-    for (let i = ds1.source.length; i < (counterDraws+1); i++) {
-        let linDraw = Math.random(); // a number from 0 to <1
+    if (false) {
+        for (let i = ds1.source.length; i < (counterDraws+1); i++) {
+            let linDraw = Math.random(); // a number from 0 to <1
 
-        while (linDraw == 0.0) {
-            // just avoid 0.0, because it creates infinity below
-            linDraw = Math.random();
+            while (linDraw == 0.0) {
+                // just avoid 0.0, because it creates infinity below
+                linDraw = Math.random();
+            }
+
+            let draw  = normDist.invCumulativeProbability(linDraw)
+            // console.log(`   lin draw ${linDraw} => draw  ${draw}`);
+
+            let subAr = ["draw", draw];
+            ds1.source.push(subAr);
         }
-
-        let draw  = normDist.invCumulativeProbability(linDraw)
-        // console.log(`   lin draw ${linDraw} => draw  ${draw}`);
-
-        let subAr = ["draw", draw];
-        ds1.source.push(subAr);
     }
-
     // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
 
 
-    //
-    // histogram data
-    let i0 = ds1.source.length - 1
-    if (counterDraws == counterDrawsInit+1) {
-        i0 = 0;
-    }
-    for (let i = i0; i < ds1.source.length; i++) {
-        let val    = Math.floor(ds1.source[i][1]);
-        let binId  = Math.round(val/w)*w + wh;
-        let binIdx = (binId - wh) / w;
-        // console.log(`   val ${val} => binId ${binId} - => binIdx ${binIdx}`);
-        ds2.source[binIdx][1]++;
-        if (ds2.source[binIdx][1] > maxXHisto) {
-            maxXHisto = ds2.source[binIdx][1];
-        }
-
-    }
-
-    ds3.source[2] = [75, maxXHisto];
-
-    // console.log(`counterDraws ${counterDraws} - ds2a: `, ds2a.source);
 
     return [
-        ds1,
-        ds2,
-        ds3,
-        {
-            transform: {
-                type: 'ecStat:histogram',
-                // print: true,
-                config: { dimensions: [1] }
-            }
-        },
+        // [col1, col2, col3 ... ]
+        // [dimX, dimY, other dimensions ...
+        // In cartesian (grid), "dimX" and "dimY" correspond to xAxis and yAxis respectively.
+        //    see      https://echarts.apache.org/en/option.html#series-line
+        //    search   'Relationship between "value" and axis.type'
+        //
+        [2023,     950+a,    175+a , 'item-1'   ],
+        [2024,    2900+a,   2200+a , 'item-2'   ],
+        [2025,    4400+a,   4000+a , 'item-3'   ],
+        [2026,    5000+a,   4000+a , 'item-4'   ],
+        [2027,    6500+a,   4500+a , 'item-5'   ],
+        [2029,   13500+a,   4500+a , 'item-6'   ],
+        [2029.5, 13800+a,   7800+a , 'item-7'   ],
+        [2030,          ,   8000+a , 'item-8'   ],
+        [2031,   22000+a,  20000+a , 'item-9'   ],
+        [2034,   24000+a,  23000+a , 'item-10'  ],
+        [2036,   26000+a,  24000+a , 'item-11'  ],
+        [2037,   36000+a,  33000+a , 'item-12'  ],
     ];
+
 }
 
-opt1 = {
-    dataset: getData(),
-    tooltip: {},
-    grid: [
-        {
-            top:    '04%',
-            right:  '75%',
-        },
-        {
-            top:    '04%',
-            left:   '35%',
-            width:  '50%',
-        }
-    ],
-    xAxis: [
-        {
-            type:  'value',
-            type:  'category',
-            // do not include zero position
-            scale:  true,
-            gridIndex: 0
-        },
-        {
-            scale: true,
-            gridIndex: 1,
-            inverse: true,
-            min: 0,
-            max: function(){
-                return getMax();
-            },
-        },
-    ],
-    yAxis: [
-        {
-            gridIndex: 0,
-            min: 0,
-            max: 300,
-        },
-        {
-            gridIndex: 1,
-            // min: 0,
-            // max: 350,
-            // must be category: https://github.com/apache/echarts/issues/15960
-            //      or https://echarts.apache.org/en/option.html#series-custom
-            type: 'category',
-            // axisTick:  { show: false },
-            // axisLabel: { show: false },
-            // axisLine:  { show: false },
-
-            axisLine: {
-                // necessary for position: right to take effect
-                onZero: false,
-            },
-            position: 'right',
-        },
-        {
-            gridIndex: 1,
-            type: 'category',
-            axisLine: {
-                // necessary for position: right to take effect
-                onZero: false,
-            },
-            position: 'right',
-        }
 
 
-    ],
-    series: [
-        {
-            name: 'random draws',
-            type: 'scatter',
-            color: '#d87c7c',
-            xAxisIndex: 0,
-            yAxisIndex: 0,
-            encode: { tooltip: [0, 1] },
-            symbol: 'emptyCircle',
-            symbol: 'circle',
-            // symbolOffset only works for the entire series
-            //   symbolOffset: [  -33, 10],
-            //   symbolOffset: [ Math.floor((Math.random() *  44)) -22],
-            symbolSize: function (value, params) {
-                // console.log(`symbolSize`, params.data);
-                // console.log(`symbolSize`, params.dataIndex, counterDraws);
-                let a1 = params.dataIndex + 1;
-                let a2 = counterDraws;
-                if (a1 == a2) {
-                    return 10;
-                }
-                params.color = '#919e8b';  // does not affect
-                return 3;
-                // return value;
-            },
-            itemStyle: {
-                // borderWidth: 3,
-                // borderColor: '#EE6666',
-
-                // color function not possible
-                // color: function (value, params) {
-                //     return '#919e8b';
-                // },
-                // color: 'yellow',
-
-
-                opacity: 0.4,
-            },
-
-            // color does not work as symbolSize
-            // color: function (value, params) {
-            //     return getColor();
-            // },
-            // color: getColor(),
-
-            datasetIndex: 0,
-        },
-        {
-            name: 'histogram',
-            type: 'bar',
-            color: '#d87c7c',
-            xAxisIndex: 1,
-            yAxisIndex: 1,
-            barWidth: '99.3%',
-            barWidth: '4px',
-            label: {
-                show: true,
-                position: 'center',
-                position: 'left',
-                position: 'right',
-                // distance to host graphic element
-                distance: 55,
-                offset: [10,0],
-            },
-            // label position - free func
-            //   echarts.apache.org/en/option.html#series-bar
-            labelLayout(params) {
-                let fs = 12;
-                if (params.rect.width < 1.0) {
-                    fs = 0;
-                }
-                return {
-
-                    // x:        params.rect.x + 1,
-                    dx: 2,
-                    y:        params.rect.y + 1,
-                    fontSize: fs,
-                    // not working
-                    //   opacity: 0.2,
-                    //   color: '#AA0101',
-                };
-            },
-            encode: { x: 1, y: 0, itemName: 4 },
-            datasetIndex: 1
-        },
-        {
-            name: 'histogram2',
-            type: 'bar',
-            xAxisIndex: 1,
-            yAxisIndex: 2,
-            barWidth: '32px',
-            encode: { x: 1, y: 0, itemName: 4 },
-            datasetIndex: 2
-        },
-
-    ],
-};
-
-var dataXAxix = [];
+var dataXAxix = []; // unused
 let iStart = new Date().getFullYear()
 for (let i = iStart; i <= iStart+15; i++) {
     dataXAxix.push(i);
 }
-// console.log(dataXAxix)
-
-
-var dataReturns = [];
+var dataReturns = []; // unused
 for (let i = 0; i <= 15; i++) {
     dataReturns.push(250+i*2000);
 }
-// console.log(dataReturns)
+
 
 
 let seriesIdx = -1;
 let animDuration = 800;
 
 opt2 = {
+    // echarts.apache.org/handbook/en/concepts/dataset/
+    // dataset: [],
     title: {
         // text: 'ECharts Getting Started Example'
         text: 'Auszahlungen',
@@ -393,9 +191,9 @@ opt2 = {
         }
     },
     grid: {
-        left: '12%',
-        left: '13%',
-        right: '3%',
+        left:  '12%',
+        left:  '13%',
+        right:  '3%',
         top:    '7%',
         bottom: '7%',
       },    
@@ -426,18 +224,16 @@ opt2 = {
                 // }
             },
         },
-        // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
         // data: dataXAxix,
         // min: dataXAxix[0]-2,
         // min: 2000,
         // min: 'dataMin',
         min: function (vl) {
-            // this returns dataReturns.min and max
+            // this effectively returns dataReturns.min and max
             console.log(`min ${vl.min} max ${vl.max} `)
             return vl.min;
         },
-
         min: iStart+0,
         max: iStart+15,
 
@@ -520,19 +316,20 @@ opt2 = {
                 //    see      https://echarts.apache.org/en/option.html#series-line
                 //    search   'Relationship between "value" and axis.type'
                 //
-                [2023,     950,   175  , 'item-1'  ],
-                [2024,    2900,   2200 , 'item-2'  ],
-                [2025,    4400,   4000 , 'item-3'  ],
-                [2026,    5000,   4000 , 'item-4'  ],
-                [2027,    6500,   4500 , 'item-5'  ],
-                [2029,   13500,   4500 , 'item-6'  ],
-                [2029.5, 13800,   7800 , 'item-7'  ],
-                [2030,        ,   8000 , 'item-8'  ],
-                [2031,   22000,  20000 , 'item-9'  ],
+                [2023,     950,   175  , 'item-1'   ],
+                [2024,    2900,   2200 , 'item-2'   ],
+                [2025,    4400,   4000 , 'item-3'   ],
+                [2026,    5000,   4000 , 'item-4'   ],
+                [2027,    6500,   4500 , 'item-5'   ],
+                [2029,   13500,   4500 , 'item-6'   ],
+                [2029.5, 13800,   7800 , 'item-7'   ],
+                [2030,        ,   8000 , 'item-8'   ],
+                [2031,   22000,  20000 , 'item-9'   ],
                 [2034,   24000,  23000 , 'item-10'  ],
                 [2036,   26000,  24000 , 'item-11'  ],
                 [2037,   36000,  33000 , 'item-12'  ],
             ],
+            data: getData(),
         },
 
         {
@@ -550,18 +347,6 @@ opt2 = {
             animationDelay:    seriesIdx * animDuration,
             animationDuration: animDuration,
 
-            // see first series for explanation of "encode" and "data" config
-            data: [
-                [2023,    175],
-                [2024,   2200],
-                [2025,   4000],
-                [2026,   4000],
-                [2027,   4500],
-                [2030,   4500],
-                [2036,  24000],
-                [2037,  33000],
-            ],
-
             // same data struct, but
             // y: 2 instead of 1
             encode: { 
@@ -570,21 +355,7 @@ opt2 = {
                 itemName: 3, 
                 tooltip: [0, 2, 3],
              },
-            data: [
-                [2023,     950,   175  , 'item-1'  ],
-                [2024,    2900,   2200 , 'item-2'  ],
-                [2025,    4400,   4000 , 'item-3'  ],
-                [2026,    5000,   4000 , 'item-4'  ],
-                [2027,    6500,   4500 , 'item-5'  ],
-                [2029,   13500,   4500 , 'item-6'  ],
-                [2029.5, 13800,   7800 , 'item-7'  ],
-                [2030,        ,   8000 , 'item-8'  ],
-                [2031,   22000,  20000 , 'item-9'  ],
-                [2034,   24000,  23000 , 'item-10'  ],
-                [2036,   26000,  24000 , 'item-11'  ],
-                [2037,   36000,  33000 , 'item-12'  ],
-            ],
-
+             data: getData(),
         },
 
 

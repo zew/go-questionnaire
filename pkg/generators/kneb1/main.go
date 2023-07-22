@@ -1909,6 +1909,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "hidden"
 				inp.Name = "share_risky_bg"
 			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "sparbetrag_bg"
+			}
 		}
 
 		// gr1

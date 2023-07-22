@@ -23,6 +23,19 @@ function forever() {
     return false;
 }
 
+function fcSpin(upOrDown){
+    let inp = document.getElementById("sparbetrag")
+    if (inp) {
+        console.log(`upOrDown = ${upOrDown}, val = ${inp.value}`)
+        if (upOrDown==='up') {
+            inp.value =  parseInt(inp.value) + 10;
+        }
+        if (upOrDown==='down') {
+            inp.value =  parseInt(inp.value) - 10;
+        }            
+        console.log(`upOrDown = ${upOrDown}, val = ${inp.value}`)
+    }
+}
 
 
 let initPage = (inst) => {
@@ -48,7 +61,7 @@ let initPage = (inst) => {
     if (safeBG && safeBG.value != "" ) {
         safe.value  = safeBG.value;
         risky.value = riskyBG.value;
-        slider.value = risky.value;
+        // slider.value = risky.value;
     }
 
     try {
@@ -58,35 +71,44 @@ let initPage = (inst) => {
 
     }
 
+    let knobs = [...document.getElementsByClassName("knob")];
 
+    let knobReset = kn => kn.classList.remove("knob-inverse")
+    
 
-    // update
-    let funcUpdate = function () {
-
+    let knobClick = (evt) => {
         try {
-            safe.value = 100 - this.value;
-            risky.value = this.value;
+            let src = evt.srcElement;
+            let inner = src.innerHTML;
+            inner = inner.replace("&nbsp;%","");
+            let val = parseInt(inner)
 
-            // console.log(`safe.value = ${safe.value}`)
+            safe.value = 100 - val
+            risky.value = val;
 
             if(safeBG){
                 safeBG.value = safe.value;
+                riskyBG.value = risky.value;
                 // console.log(`safeBG.value = ${safeBG.value}`)
             } else {
-                console.log(`safeBG undefined`)
-            }
-            if(riskyBG){
-                riskyBG.value = risky.value;
+                console.error(`safeBG undefined`)
             }
 
-        } catch (error) {
+            knobs.forEach(knobReset);
+            src.classList.add("knob-inverse")
 
+
+        } catch (err) {
+            console.error(`knob click error`, err)
         }
+    }
+    let assignEvent = function(kn) {
+        kn.onclick = knobClick
+        // console.log("test", kn);
+    }
+    console.log(`found ${knobs.length} knobs`)
+    knobs.forEach(assignEvent);
 
-    } // end of update func
-
-
-    // slider.oninput = funcUpdate
 
 
     console.log(`page init complete`)

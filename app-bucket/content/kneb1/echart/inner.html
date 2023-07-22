@@ -41,7 +41,16 @@
     font-size: 140%;
     padding: 0 0.24rem;
     font-weight: bold;
+
+    position: relative;
+    top: 0px;
+    margin: 0 0.4rem;
+    /* background-color: #888; */
   }
+  .panel p.right a.spinner {
+    top: 0.06rem;
+  }
+
 
   .knob-container {
     padding: 0.2rem 0.8rem;
@@ -50,17 +59,25 @@
   }
 
   div.knob {
+    cursor: pointer;
+
     display: inline-block;
+
     border-radius: 0.2rem;
-    border: 1px solid #22c;
     padding: 0.2rem;
     margin: 0.25rem;
-    color: #22c;
+
+    color: var(--clr-pri);
+    /* border: 1px solid var(--clr-pri-hov); */
+    border: 1px solid var(--clr-pri);
+    /* font-weight: bolder; */
   }
 
   div.knob-inverse {
-    background-color: #22c;
+    background-color: var(--clr-pri-hov);
+    background-color: var(--clr-pri);
     color: #fff;    
+    color: var(--clr-sec);    
   }
   div.knob-grey {
     background-color: #ccc;
@@ -82,25 +99,37 @@
       Sparbetrag
     </p>
     <p class="right" style="margin-right: 0.46rem">
-      <a href="">-</a>  <strong>100 €</strong>  <a href="">+</a>
+
+      
+      <a tabindex="-1" href="#" onclick="fcSpin('down')" class="spinner" >&ndash;  </a>  
+      
+        <input 
+        tabindex="1"
+          type="number" name="sparbetrag" id="sparbetrag"
+          value="110"
+          min="0" max="300" step="10" 
+          style="display: inline-block; max-width: 3rem; font-weight: bold;"
+        >€
+      
+        <a tabindex="-1" href="#" onclick="fcSpin('up')"  class="spinner">+ &nbsp;&nbsp;&nbsp;</a>
     </p>
 
-    <button style="margin: 0.7rem;">Werte zurücksetzen</button>
+    <button tabindex="13" style="margin: 0.7rem;">Werte zurücksetzen</button>
 
     <p style="margin-top: 0.8rem;">
       Ihr Aktienanteil
     </p>
     <div class="knob-container" >
-      <div class="knob">10&nbsp;% </div>
-      <div class="knob">20&nbsp;% </div>
-      <div class="knob">30&nbsp;% </div>
-      <div class="knob">40&nbsp;% </div>
-      <div class="knob">50&nbsp;% </div>
-      <div class="knob knob-inverse">60&nbsp;% </div>
-      <div class="knob">70&nbsp;% </div>
-      <div class="knob">80&nbsp;% </div>
-      <div class="knob knob-grey">90&nbsp;% </div>
-      <div class="knob knob-grey">100&nbsp;%</div>
+      <div tabindex="2" href=# name="mydiv"  class="knob">10&nbsp;% </div>
+      <div tabindex="3" href=# name="mydiv"  class="knob">20&nbsp;% </div>
+      <div tabindex="4" href=# name="mydiv"  class="knob">30&nbsp;% </div>
+      <div tabindex="5" href=# name="mydiv"  class="knob">40&nbsp;% </div>
+      <div tabindex="6" href=# name="mydiv"  class="knob">50&nbsp;% </div>
+      <div tabindex="7" href=# name="mydiv"  class="knob knob-inverse">60&nbsp;% </div>
+      <div tabindex="8" href=# name="mydiv"  class="knob">70&nbsp;% </div>
+      <div tabindex="9" href=# name="mydiv"  class="knob">80&nbsp;% </div>
+      <div tabindex="10" href=# name="mydiv"  class="knob knob-grey">90&nbsp;% </div>
+      <div tabindex="11" href=# name="mydiv"  class="knob knob-grey">100&nbsp;%</div>
       
     </div>
   
@@ -126,27 +155,6 @@
 </div>
 
 
-<!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
-<!-- 
-  
-  
-  <link rel="stylesheet" href="/{{AppPrefix}}/doc/kneb1/echart/slider.css">
-  
-  <div class="slider-container">
-    <input 
-    type="range" 
-    
-    class="slider" 
-    id="sliderInner"
-    
-    min="0" 
-    max="100" 
-    step="10" 
-    value="50" 
-    autofocus
-    >
-  </div>
--->
 
 
 

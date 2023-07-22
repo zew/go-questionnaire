@@ -362,14 +362,14 @@ let iStart = new Date().getFullYear()
 for (let i = iStart; i <= iStart+15; i++) {
     dataXAxix.push(i);
 }
-console.log(dataXAxix)
+// console.log(dataXAxix)
 
 
 var dataReturns = [];
 for (let i = 0; i <= 15; i++) {
     dataReturns.push(250+i*2000);
 }
-console.log(dataReturns)
+// console.log(dataReturns)
 
 
 let seriesIdx = -1;
@@ -388,14 +388,15 @@ opt2 = {
         feature: {
             saveAsImage: { show: true },
             // magicType:   { show: true, type: ['stack', 'tiled'] },
-            dataZoom: { yAxisIndex: 'none' },
-            restore: {},
+            // dataZoom: { yAxisIndex: 'none' },
+            // restore: {},
         }
     },
     grid: {
         left: '12%',
         left: '13%',
         right: '3%',
+        top:    '7%',
         bottom: '7%',
       },    
     legend: {
@@ -416,13 +417,13 @@ opt2 = {
 
         axisLabel: {
             // compare  axisLabel. formatter
-            formatter: function (vl, index) {
+            formatter: function (vl, idx) {
                 return vl + ' ';
             },
             textStyle: {
-                color: function (vl, index) {
-                    return vl >= 2030 ? 'green' : 'red';
-                }
+                // color: function (vl, idx) {
+                //     return vl >= 2030 ? 'green' : 'red';
+                // }
             },
         },
         // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -471,7 +472,7 @@ opt2 = {
     },
     yAxis: {
         type: 'value',
-        name: 'y-axis-name',
+        // name: 'y-axis-name',
         min: 0,
         max: 40*1000,
 
@@ -509,8 +510,8 @@ opt2 = {
             encode: { 
                 x: 0, 
                 y: 1, 
-                itemName: 2, 
-                tooltip: [0, 1, 2],
+                itemName: 3, 
+                tooltip: [0, 1, 3],
              },
             data: [
                 // [col1, col2, col3 ... ]
@@ -519,18 +520,18 @@ opt2 = {
                 //    see      https://echarts.apache.org/en/option.html#series-line
                 //    search   'Relationship between "value" and axis.type'
                 //
-                [2023,     950, 'item-1'  ],
-                [2024,    2900, 'item-2'  ],
-                [2025,    4400, 'item-3'  ],
-                [2026,    5000, 'item-4'  ],
-                [2027,    6500, 'item-5'  ],
-                [2029,   13500, 'item-6'  ],
-                [2029.5, 13800, 'item-7'  ],
-                [2030,        , 'item-8'  ],
-                [2031,   22000, 'item-9'  ],
-                [2034,   24000, 'item-10'  ],
-                [2036,   26000, 'item-11'  ],
-                [2037,   36000, 'item-12'  ],
+                [2023,     950,   175  , 'item-1'  ],
+                [2024,    2900,   2200 , 'item-2'  ],
+                [2025,    4400,   4000 , 'item-3'  ],
+                [2026,    5000,   4000 , 'item-4'  ],
+                [2027,    6500,   4500 , 'item-5'  ],
+                [2029,   13500,   4500 , 'item-6'  ],
+                [2029.5, 13800,   7800 , 'item-7'  ],
+                [2030,        ,   8000 , 'item-8'  ],
+                [2031,   22000,  20000 , 'item-9'  ],
+                [2034,   24000,  23000 , 'item-10'  ],
+                [2036,   26000,  24000 , 'item-11'  ],
+                [2037,   36000,  33000 , 'item-12'  ],
             ],
         },
 
@@ -560,7 +561,33 @@ opt2 = {
                 [2036,  24000],
                 [2037,  33000],
             ],
+
+            // same data struct, but
+            // y: 2 instead of 1
+            encode: { 
+                x: 0, 
+                y: 2, 
+                itemName: 3, 
+                tooltip: [0, 2, 3],
+             },
+            data: [
+                [2023,     950,   175  , 'item-1'  ],
+                [2024,    2900,   2200 , 'item-2'  ],
+                [2025,    4400,   4000 , 'item-3'  ],
+                [2026,    5000,   4000 , 'item-4'  ],
+                [2027,    6500,   4500 , 'item-5'  ],
+                [2029,   13500,   4500 , 'item-6'  ],
+                [2029.5, 13800,   7800 , 'item-7'  ],
+                [2030,        ,   8000 , 'item-8'  ],
+                [2031,   22000,  20000 , 'item-9'  ],
+                [2034,   24000,  23000 , 'item-10'  ],
+                [2036,   26000,  24000 , 'item-11'  ],
+                [2037,   36000,  33000 , 'item-12'  ],
+            ],
+
         },
+
+
 
     ]
 };

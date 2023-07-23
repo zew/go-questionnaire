@@ -38,3 +38,36 @@ Die Achsenbeschriftungen sind ebenfalls noch unschön.
 
 Schließlich ist das Histogramm noch nicht exakt beim Mittelwert von 153.0 zentriert, so dass die grünen Balken auch bei großen Zahlen immer etwas skewed sind. Auch könnte man die Balken noch feiner machen (resolution 1, statt wie jetzt 5)...
 
+
+## MSCI world return and sigma
+
+<https://investingintheweb.com/blog/msci-world-index-historical-data/>
+
+In Dollar, in the last 10 years (to April 30th, 2023), the MSCI World Index has had an annualised return of 9.29% 
+  (MSCI World Total Net Return).
+	$100 invested on April 30th, 2013, would be worth $243 on April 30th, 2023.
+	1,0929^10=2,43
+
+In Dollar, in the last 37 years to 1987, the MSCI World Index has had an annualised return of 8.06% 
+  (MSCI World Total Net Return). 
+	1,0806^37=17,6
+
+Annualised standard deviation of 14.62%
+Inflation rate for the US has been roughly 2.60% during the same period
+Sharpe ratio of 0.61 - Überrendite bei vergleichbarem Risiko
+
+In Euro, for last 10 years to 2013, the MSCI World Index in EUR has had an annualised return of 9.09%.
+	1,0909^10=2,39
+In Euro, for last 25 years to 1998, the MSCI World Index in EUR has had an annualised return of 5.90%.
+	1,059^25=4,19
+
+90 percent confidene interval is 1.645 standard deviations from the mean; 
+<https://i1.wp.com/makemeanalyst.com/wp-content/uploads/2017/05/Confidence-Coefficients-for-90-Confidence.png?resize=760%2C492>
+
+
+
+<https://www.companisto.com/en/academy/recht-steuern-und-hilfsthemen/bruttorendite-vs-nettorendite-wie-wird-der-ertrag-richtig-gemessen>
+gross return
+ % taxation, inflation, costs (management fees)
+net return or real return or Total Net Return 
+

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "32d8c648bdb414fc02915632b4248b3b9f9addc87b5f7d4e3078ae1fcb3144f3",
+ 	"md_5": "9e5b6dd059b1fd4ba23997b062e6fd6cf8e600c025c32e1b5ce58bddf7e50ae4",
  	"lang_codes": [
  		"de"
  	],
@@ -17962,6 +17962,10 @@
  						},
  						{
  							"name": "share_risky_bg",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "sparbetrag_bg",
  							"type": "hidden"
  						}
  					]

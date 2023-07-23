@@ -13,11 +13,18 @@
   Mit der folgenden interaktiven Graphik möchten wir Ihnen die Chancen und Risiken bei einer Anlage am Kapitalmarkt verdeutlichen und erklären.
 </p>
 
+<p style="color:red">
+  Anlagezeitraum ist einerseits 20 Jahre - andererseits ist im Chart eine vertikale Linie bei 2029 (sieben Jahre)
+  <br>
+  See MSCI world return and sigma in issues.md
+</p>
+
 <style>
   .panel{
     background-color: #ddd;
     background-color: var(--clr-sec);;
     margin: 0;
+    margin-top: 0.7rem;
     margin-bottom: 1.4rem;
   }
   .panel1{
@@ -122,7 +129,6 @@
         <a tabindex="-1" href="#" onclick="fcSpin('up')"  class="spinner">+ &nbsp;&nbsp;&nbsp;</a>
     </p>
 
-    <button tabindex="13" style="margin: 0.7rem;">Werte zurücksetzen</button>
 
     <p style="margin-top: 0.8rem;">
       Ihr Aktienanteil
@@ -140,8 +146,11 @@
       <div tabindex="11" href=#  class="knob knob-grey">100&nbsp;%</div>
       
     </div>
-  
+
     <br>
+
+    <button tabindex="13" style="margin: 0.7rem;padding: 0.2rem 0.8rem">Werte zurücksetzen</button>
+    
 
 <!-- 
     <p>
@@ -157,12 +166,13 @@
   <div class="panel panel2" id="chart_container"></div>  
 </div>
 
+<!-- 
 <p>
   <a href="#" onclick="javascript:nextStep();">Next Step</a> 
   &nbsp; &nbsp; &nbsp; 
   <a href="#" onclick="javascript:forever();" >Step forever</a>
 </p>
-
+ -->
 
 
 

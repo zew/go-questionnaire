@@ -13,7 +13,7 @@ function nextStep() {
             }
         ],
     });
-    console.log("next step complete", myChart, dta)
+    // console.log("next step complete", myChart, dta)
     return false;
 }
 
@@ -36,6 +36,7 @@ function forever() {
     return false;
 }
 
+// "Sparbetrag" increase and decrease - onclick event handler
 function fcSpin(upOrDown){
     let inp = document.getElementById("sparbetrag")
     if (inp) {
@@ -76,13 +77,6 @@ let initPage = (inst) => {
         // risky.value = riskyBG.value;
     }
 
-    // try {
-    //     safe.value = 100 - slider.value;
-    //     risky.value = slider.value;
-    // } catch (error) {
-
-    // }
-
     let knobs = [...document.getElementsByClassName("knob")];
 
     let knobReset = kn => kn.classList.remove("knob-inverse")
@@ -117,13 +111,13 @@ let initPage = (inst) => {
         }
     }
 
-    let assignEvent = function(kn) {
+    let assignEvents = function(kn) {
         kn.onclick = knobClick
         kn.onkeyup = knobKey
         // console.log("test", kn);
     }
     console.log(`found ${knobs.length} knobs`)
-    knobs.forEach(assignEvent);
+    knobs.forEach(assignEvents);
 
 
 

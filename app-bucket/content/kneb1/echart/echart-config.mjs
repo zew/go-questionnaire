@@ -17,77 +17,78 @@ var myChart = echarts.init(chartDom);
 var opt1;
 var opt2;
 
+// JavaScript does not have the function rgba(...)
+//      and there is no 'hash' notation for RGBA - similar to #224 for RGB.
+// => We create two phantom DOM elements, and create RGBA colors on them.
+const du0 = document.createElement("p");  // dummy0
+du0.style.backgroundColor = 'rgba(16,16,222,0.4)'
+const du1 = document.createElement("p"); // dummy1
+du1.style.backgroundColor = 'rgba(16,16,252,0.9)'
 
 
-// var colorPalette = ['#d87c7c', '#919e8b', '#d7ab82', '#6e7074', '#61a0a8', '#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'];
 var colorPalette = [
+    du0.style.backgroundColor,
+    du1.style.backgroundColor,
+    du0.style.backgroundColor,
     '#229',
     '#22b',
+    '#229',
     '#22c',
     '#22d',
     // 'var(--clr-pri-hov);',
     ];
-function getColor() {
-    let idx = colorPalette.length % counterDraws;
-    return colorPalette[seriesIdx];
-}
-
-
-// histogram config
-// ======================
-
-const w  = 10;   // width
-const wh = w/2;  // width half
-
-var maxXHisto = 0;
-function getMax() {
-    return maxXHisto + 2;
-}
-
-
-
-// risky asset random draws
-var ds1Example = {
-    source: [
-        [10.3, 143],
-        [10.6, 214],
-        [10.8, 251],
-        [10.0, 176],
-        [10.1, 221],
-        [10.2, 188],
-        [10.4, 191],
-        [10.0, 196],
-        [10.9, 177],
-        [10.9, 153],
-        [10.3, 201],
-    ]
-};
-
-
-
-var counterDrawsInit = 4 ;
-var counterDraws = counterDrawsInit;  // counter for getData
 
 
 // Carolin-01-start
-var mn = 0.0; // mean
-var sd = 1.0; // standard deviation
 
-var mn = 153.0; // mean
-var sd = 15.89; // standard deviation
+
+let yr = new Date().getFullYear()
+let az = 20; // "Anlagehorizont"
+let sb = 100.0; // sparbetrag
+let sby = 12* sb; // sparbetrag per year
+
+// standardized normal distribution
+let mn = 0.0; // mean
+let sd = 1.0; // standard deviation
+
+// normal distribution of 
+// MSCI world for € investments since 1998 (25yrs)
+mn = 0.059
+sd = 0.1462
+
+// 90 confidence interval - multiple of sd 
+let ci90 = 1.645 * sd
+
+let p05 = mn * (1-ci90)
+let p95 = mn * (1+ci90)
+
+console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
+
+let p05p1 = 1 + p05  // worst case plus one
+let mnp1  = 1 + mn  // mean plus one
+let p95p1 = 1 + p95  // worst case plus one
+
+console.log(`pct05+1 ${p05p1}  -- mn+1 ${mnp1}   pct95+1 ${p95p1}`)
+
+
 
 // github.com/chen0040/js-stats
-var normDist = new jsstats.NormalDistribution(mn, sd);
+// used for converting random draws from [0,1] into norm dist probs
+let normDist = new jsstats.NormalDistribution(mn, sd);
 
 
-var ds2 = {
-    source: []
-};
-for (let i = 0; i <= 300/w; i++) {
-    ds2.source.push([wh + i*w, 0]);
-}
+
+
+// unused primitive series...
+let dataXAxix = []; // unused
+for (let i = yr; i <= yr+az; i++) { dataXAxix.push(i); }
+let dataReturns = []; // unused
+for (let i = 0; i <= az; i++) {     dataReturns.push(250+i*2000); }
+
 
 // console.log(ds2.source);
+
+
 
 // getData compiles data for eChart options object
 // usage:
@@ -95,19 +96,6 @@ for (let i = 0; i <= 300/w; i++) {
 //          dataset: getData(),
 //       });
 function getData() {
-
-    counterDraws++;
-    let a = 600*counterDraws;
-
-    if (false) {
-        try {
-            // both cases lead to infinity
-            console.log( "icnp(0.0):", normDist.invCumulativeProbability(0)    );
-            console.log( "icnp(1.0):", normDist.invCumulativeProbability(1.0)  );
-        } catch (error) {
-            console.error(error);
-        }
-    }
 
     //
     // random draws - mapped to normal dist.
@@ -128,6 +116,23 @@ function getData() {
         }
     }
     // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
+
+    if (true){
+        let ds = []
+        let c0=0, c1=0, c2=0
+        for (let i = 0; i <= az; i++) { 
+            // return on existing balance
+            c0 *= p05p1; c1 *= mnp1; c2 *=p95p1;
+            // additional annuity 
+            c0 += sby; c1 += sby; c2 +=sby;
+            let row = [yr+i, c0, c1, c2, `item${i}` ]
+            // console.log(i, i+yr, mnp1**i);
+            // console.log(row);
+            ds.push( row );
+         }
+        // console.log(ds);
+        return ds
+    }
 
 
 
@@ -150,24 +155,16 @@ function getData() {
         [2034,   24000+a,  23000+a , 'item-10'  ],
         [2036,   26000+a,  24000+a , 'item-11'  ],
         [2037,   36000+a,  33000+a , 'item-12'  ],
+        [2043,   38000+a,  34000+a , 'item-12'  ],
     ];
 
 }
 
 
 
-var dataXAxix = []; // unused
-let iStart = new Date().getFullYear()
-for (let i = iStart; i <= iStart+15; i++) {
-    dataXAxix.push(i);
-}
-var dataReturns = []; // unused
-for (let i = 0; i <= 15; i++) {
-    dataReturns.push(250+i*2000);
-}
 
 
-
+// chart config variables
 let seriesIdx = -1;
 let animDuration = 800;
 
@@ -194,7 +191,8 @@ opt2 = {
         left:  '12%',
         left:  '13%',
         right:  '3%',
-        top:    '7%',
+        top:    '8.5%',
+        top:    '9%',
         bottom: '7%',
       },    
     legend: {
@@ -234,8 +232,8 @@ opt2 = {
             console.log(`min ${vl.min} max ${vl.max} `)
             return vl.min;
         },
-        min: iStart+0,
-        max: iStart+15,
+        min: yr+0,
+        max: yr+az,
 
         // show label of the min/max tick
         //    seems ineffective, labels are shown anyway
@@ -292,7 +290,7 @@ opt2 = {
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
             symbol: 'emptyCircle',
-            symbolSize: 6,
+            symbolSize: 4,
             showSymbol: true,
             animation: false,
             animation: true,
@@ -306,7 +304,7 @@ opt2 = {
             encode: { 
                 x: 0, 
                 y: 1, 
-                itemName: 3, 
+                itemName: 4, 
                 tooltip: [0, 1, 3],
              },
             data: [
@@ -340,7 +338,7 @@ opt2 = {
             color: colorPalette[seriesIdx],
 
             symbol: 'emptyCircle',
-            symbolSize: 4,
+            symbolSize: 8,
             showSymbol: true,
             animation: false,
             animation: true,
@@ -352,11 +350,39 @@ opt2 = {
             encode: { 
                 x: 0, 
                 y: 2, 
-                itemName: 3, 
+                itemName: 4, 
                 tooltip: [0, 2, 3],
              },
              data: getData(),
         },
+
+
+
+        {
+            type: 'line',
+            dummy: seriesIdx++,
+            color: colorPalette[seriesIdx],
+
+            symbol: 'emptyCircle',
+            symbolSize: 4,
+            showSymbol: true,
+            animation: false,
+            animation: true,
+            animationDelay:    seriesIdx * animDuration,
+            animationDuration: animDuration,
+
+            // same data struct, but
+            // y: 2 instead of 1
+            encode: { 
+                x: 0, 
+                y: 3, 
+                itemName: 4, 
+                tooltip: [0, 2, 3],
+             },
+             data: getData(),
+        },
+
+
 
 
 

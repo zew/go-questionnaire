@@ -1,42 +1,6 @@
 // echart configuration
 
-// github.com/apache/echarts
-// github.com/ecomfe/echarts-stat
-// github.com/ecomfe/awesome-echarts
-// echarts.apache.org/examples/en/editor.html?c=bar-histogram
 
-// import does not work; possibly because of stackoverflow.com/questions/71022803
-// import * as echarts from './echarts.min.js';
-// import ecStat from './ecStat.js';
-
-
-
-var chartDom = document.getElementById('chart_container');
-// console.log(chartDom);
-var myChart = echarts.init(chartDom);
-var opt1;
-var opt2;
-
-// JavaScript does not have the function rgba(...)
-//      and there is no 'hash' notation for RGBA - similar to #224 for RGB.
-// => We create two phantom DOM elements, and create RGBA colors on them.
-const du0 = document.createElement("p");  // dummy0
-du0.style.backgroundColor = 'rgba(16,16,222,0.4)'
-const du1 = document.createElement("p"); // dummy1
-du1.style.backgroundColor = 'rgba(16,16,252,0.9)'
-
-
-var colorPalette = [
-    du0.style.backgroundColor,
-    du1.style.backgroundColor,
-    du0.style.backgroundColor,
-    '#229',
-    '#22b',
-    '#229',
-    '#22c',
-    '#22d',
-    // 'var(--clr-pri-hov);',
-    ];
 
 
 // Carolin-01-start
@@ -51,12 +15,12 @@ let sby = 12* sb; // sparbetrag per year
 let mn = 0.0; // mean
 let sd = 1.0; // standard deviation
 
-// normal distribution of 
+// normal distribution of
 // MSCI world for € investments since 1998 (25yrs)
 mn = 0.059
 sd = 0.1462
 
-// 90 confidence interval - multiple of sd 
+// 90 confidence interval - multiple of sd
 let ci90 = 1.645 * sd
 
 let p05 = mn * (1-ci90)
@@ -90,85 +54,163 @@ for (let i = 0; i <= az; i++) {     dataReturns.push(250+i*2000); }
 
 
 
-// getData compiles data for eChart options object
-// usage:
-//       myChart.setOption({
-//          dataset: getData(),
-//       });
-function getData() {
 
-    //
-    // random draws - mapped to normal dist.
-    if (false) {
-        for (let i = ds1.source.length; i < (counterDraws+1); i++) {
-            let linDraw = Math.random(); // a number from 0 to <1
-
-            while (linDraw == 0.0) {
-                // just avoid 0.0, because it creates infinity below
-                linDraw = Math.random();
-            }
-
-            let draw  = normDist.invCumulativeProbability(linDraw)
-            // console.log(`   lin draw ${linDraw} => draw  ${draw}`);
-
-            let subAr = ["draw", draw];
-            ds1.source.push(subAr);
+// stackoverflow.com/questions/1479319/
+var myInstance = (function () {
+    var privateVar = '';
+    function privateMethod() {
+    }
+    // public interface
+    return {
+        publicMethod1: function () {
+        },
+        publicMethod2: function () {
         }
-    }
-    // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
-
-    if (true){
-        let ds = []
-        let c0=0, c1=0, c2=0
-        for (let i = 0; i <= az; i++) { 
-            // return on existing balance
-            c0 *= p05p1; c1 *= mnp1; c2 *=p95p1;
-            // additional annuity 
-            c0 += sby; c1 += sby; c2 +=sby;
-            let row = [yr+i, c0, c1, c2, `item${i}` ]
-            // console.log(i, i+yr, mnp1**i);
-            // console.log(row);
-            ds.push( row );
-         }
-        // console.log(ds);
-        return ds
-    }
+    };
+})();
 
 
+var dataObject = (function () {
 
-    return [
-        // [col1, col2, col3 ... ]
-        // [dimX, dimY, other dimensions ...
-        // In cartesian (grid), "dimX" and "dimY" correspond to xAxis and yAxis respectively.
-        //    see      https://echarts.apache.org/en/option.html#series-line
-        //    search   'Relationship between "value" and axis.type'
+    var ds = []; // private
+
+    var resetDataPriv = () => {ds = [] }
+
+    // computeDataPriv compiles data for eChart options object
+    // usage:
+    //       myChart.setOption({
+    //          dataset: dataObject.computeData(),
+    //       });
+    var computeDataPriv = () => {
         //
-        [2023,     950+a,    175+a , 'item-1'   ],
-        [2024,    2900+a,   2200+a , 'item-2'   ],
-        [2025,    4400+a,   4000+a , 'item-3'   ],
-        [2026,    5000+a,   4000+a , 'item-4'   ],
-        [2027,    6500+a,   4500+a , 'item-5'   ],
-        [2029,   13500+a,   4500+a , 'item-6'   ],
-        [2029.5, 13800+a,   7800+a , 'item-7'   ],
-        [2030,          ,   8000+a , 'item-8'   ],
-        [2031,   22000+a,  20000+a , 'item-9'   ],
-        [2034,   24000+a,  23000+a , 'item-10'  ],
-        [2036,   26000+a,  24000+a , 'item-11'  ],
-        [2037,   36000+a,  33000+a , 'item-12'  ],
-        [2043,   38000+a,  34000+a , 'item-12'  ],
-    ];
+        // random draws - mapped to normal dist.
+        if (false) {
+            for (let i = ds1.source.length; i < (counterDraws+1); i++) {
+                let linDraw = Math.random(); // a number from 0 to <1
 
-}
+                while (linDraw == 0.0) {
+                    // just avoid 0.0, because it creates infinity below
+                    linDraw = Math.random();
+                }
+
+                let draw  = normDist.invCumulativeProbability(linDraw)
+                // console.log(`   lin draw ${linDraw} => draw  ${draw}`);
+
+                let subAr = ["draw", draw];
+                ds1.source.push(subAr);
+            }
+        }
+        // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
+
+        if (ds === undefined || ds.length == 0) {
+            ds = []
+            let c0=0, c1=0, c2=0
+            for (let i = 0; i <= az; i++) {
+                // return on existing balance
+                c0 *= p05p1; c1 *= mnp1; c2 *=p95p1;
+                // additional annuity
+                c0 += sby; c1 += sby; c2 +=sby;
+                let row = [yr+i, c0, c1, c2, `item${i}` ]
+                // console.log(i, i+yr, mnp1**i);
+                // console.log(row);
+                ds.push( row );
+            }
+            // console.log(ds);
+            console.log(`dataObject - ds recomputed - length ${ds.length}`);
+
+            console.log(ds);
+
+        }
+
+        return ds
 
 
+
+        return [
+            // [col1, col2, col3 ... ]
+            // [dimX, dimY, other dimensions ...
+            // In cartesian (grid), "dimX" and "dimY" correspond to xAxis and yAxis respectively.
+            //    see      https://echarts.apache.org/en/option.html#series-line
+            //    search   'Relationship between "value" and axis.type'
+            //
+            [2023,     950+a,    175+a , 'item-1'   ],
+            [2024,    2900+a,   2200+a , 'item-2'   ],
+            [2025,    4400+a,   4000+a , 'item-3'   ],
+            [2026,    5000+a,   4000+a , 'item-4'   ],
+            [2027,    6500+a,   4500+a , 'item-5'   ],
+            [2029,   13500+a,   4500+a , 'item-6'   ],
+            [2029.5, 13800+a,   7800+a , 'item-7'   ],
+            [2030,          ,   8000+a , 'item-8'   ],
+            [2031,   22000+a,  20000+a , 'item-9'   ],
+            [2034,   24000+a,  23000+a , 'item-10'  ],
+            [2036,   26000+a,  24000+a , 'item-11'  ],
+            [2037,   36000+a,  33000+a , 'item-12'  ],
+            [2043,   38000+a,  34000+a , 'item-12'  ],
+        ];
+
+    }
+
+    // public interface
+    return {
+        resetData:   resetDataPriv,
+        computeData: computeDataPriv,
+    };
+
+
+})();
+
+
+
+let vertMarkerYr = yr + az/2;
+let vertMarker1 = [
+    {
+        name: 'Ihr gewählter Anlagehorizont',
+        xAxis: 2029-0.3,
+        xAxis: vertMarkerYr - 0.12,
+    },
+    {
+        xAxis: vertMarkerYr + 0.12,
+    }
+];
+let vertMarker2 = [
+    {
+        name: 'Evening Peak',
+        xAxis: 2034,
+    },
+    {
+        xAxis: 2036,
+    }
+];
+// used on second series in setOptions
+let markArea = {
+    itemStyle: {
+      color: 'rgba(255, 173, 177, 0.4)'
+    },
+    data: [vertMarker1, vertMarker2],
+    data: [vertMarker1],
+};
 
 
 
 // chart config variables
-let seriesIdx = -1;
-let animDuration = 800;
+var seriesIdx = -1;
+var animDuration = 800;
+var colorPalette = [
+    'rgba( 2,134,228,0.6)',
+    'rgba( 0,105,180,0.9)',
+    'rgba( 2,134,228,0.6)',
+    '#229',
+    '#22b',
+    '#229',
+    '#22c',
+    '#22d',
+    // 'var(--clr-pri-hov);',
+    ];
 
-opt2 = {
+
+
+
+var optEchart = {
     // echarts.apache.org/handbook/en/concepts/dataset/
     // dataset: [],
     title: {
@@ -194,7 +236,7 @@ opt2 = {
         top:    '8.5%',
         top:    '9%',
         bottom: '7%',
-      },    
+      },
     legend: {
         // data: ['sales']
     },
@@ -289,23 +331,26 @@ opt2 = {
             type: 'line',
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
+            
+            showSymbol: true,
+            showSymbol: false,
             symbol: 'emptyCircle',
             symbolSize: 4,
-            showSymbol: true,
+
             animation: false,
             animation: true,
             animationDelay:    seriesIdx * animDuration,
             animationDuration: animDuration,
 
-            // explanation for encode: 
+            // explanation for encode:
             //      see 10 lines below - 'data'
             //      see     https://echarts.apache.org/en/option.html#
-            //      search  'series-line. encode' 
-            encode: { 
-                x: 0, 
-                y: 1, 
-                itemName: 4, 
-                tooltip: [0, 1, 3],
+            //      search  'series-line. encode'
+            encode: {
+                x: 0,
+                y: 1,
+                itemName: 4,
+                tooltip: [0, 1, 4],
              },
             data: [
                 // [col1, col2, col3 ... ]
@@ -327,7 +372,7 @@ opt2 = {
                 [2036,   26000,  24000 , 'item-11'  ],
                 [2037,   36000,  33000 , 'item-12'  ],
             ],
-            data: getData(),
+            data: dataObject.computeData(),
         },
 
         {
@@ -336,10 +381,11 @@ opt2 = {
             type: 'line',
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
-
-            symbol: 'emptyCircle',
-            symbolSize: 8,
+            
             showSymbol: true,
+            symbol: 'circle',
+            symbolSize: 6,
+
             animation: false,
             animation: true,
             animationDelay:    seriesIdx * animDuration,
@@ -347,13 +393,14 @@ opt2 = {
 
             // same data struct, but
             // y: 2 instead of 1
-            encode: { 
-                x: 0, 
-                y: 2, 
-                itemName: 4, 
-                tooltip: [0, 2, 3],
+            encode: {
+                x: 0,
+                y: 2,
+                itemName: 4,
+                tooltip: [0, 2, 4],
              },
-             data: getData(),
+             data: dataObject.computeData(),
+             markArea: markArea,
         },
 
 
@@ -362,24 +409,27 @@ opt2 = {
             type: 'line',
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
-
+            
+            showSymbol: true,
+            showSymbol: false,
             symbol: 'emptyCircle',
             symbolSize: 4,
-            showSymbol: true,
+
             animation: false,
             animation: true,
             animationDelay:    seriesIdx * animDuration,
+            animationDelay:            0 * animDuration,
             animationDuration: animDuration,
 
             // same data struct, but
             // y: 2 instead of 1
-            encode: { 
-                x: 0, 
-                y: 3, 
-                itemName: 4, 
-                tooltip: [0, 2, 3],
+            encode: {
+                x: 0,
+                y: 3,
+                itemName: 4,
+                tooltip: [0, 3, 4],
              },
-             data: getData(),
+             data: dataObject.computeData(),
         },
 
 
@@ -389,8 +439,5 @@ opt2 = {
     ]
 };
 
-// opt1 && myChart.setOption(opt1);
-opt2 && myChart.setOption(opt2);
-console.log(`echart config and creation complete`)
-
+// creation of chart object => common.js - initPage()
 

@@ -1,6 +1,16 @@
 # Caroline Knebel Experiment
 
+* Radio-Werte sind immer 1...5 oder 1...10 - `Weiß nicht` ist dann bspw. 9 und `keine Antwort` ist 10  
+  Sonst Fehlergefahr
+
 * Treatment is not yet coded
+
+* Mobile phone:  
+	Layout des Experiments für Smartphones würde nicht-triviiale Umordnung erforden.  
+	a.) aufwändig
+	b.) Verfälschungen zwischen Smartphone-Teilnehmern und PC-Teilnehmern durch Anordnung
+	=> Idee: Keine Anpassung des Layouts für Smartphones  
+	=> Der Panelprovider sollte erzwingen, dass die Teilnehmer über einen Desktop-Computer (PC,Apple) antworten  
 
 Testing under <https://survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#>
 

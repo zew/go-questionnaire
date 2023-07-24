@@ -1,7 +1,7 @@
 
 // UI funcs
 function nextStep() {
-    let dta = getData();
+    let dta = dataObject.computeData();
     myChart.setOption({
         // dataset: dta,
         series: [
@@ -19,7 +19,7 @@ function nextStep() {
 
 
 function forever() {
-    let dta = getData();
+    let dta = dataObject.computeData();
     setInterval(() => {
         myChart.setOption({
             // dataset: dta,
@@ -120,6 +120,15 @@ let initPage = (inst) => {
     knobs.forEach(assignEvents);
 
 
+    // 
+    let chartDom = document.getElementById('chart_container');
+    // console.log(chartDom);
+    let myChart = echarts.init(chartDom);
+    
+    optEchart && myChart.setOption(optEchart);
+    console.log(`echart config and creation complete`)
+    
+
 
     console.log(`page init complete`)
 }
@@ -130,3 +139,5 @@ window.addEventListener('load', initPage, false);
 
 
 // console.log(`common.js loaded`)
+
+

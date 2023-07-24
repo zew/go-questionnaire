@@ -12,6 +12,9 @@
 	=> Idee: Keine Anpassung des Layouts für Smartphones  
 	=> Der Panelprovider sollte erzwingen, dass die Teilnehmer über einen Desktop-Computer (PC,Apple) antworten  
 
+* Rendite und Standardabweichung der Aktien-Anlage:  
+  Detaillierte Diskussion 
+
 Testing under <https://survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#>
 
 Test URLs

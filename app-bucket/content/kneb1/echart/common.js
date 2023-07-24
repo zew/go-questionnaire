@@ -1,18 +1,34 @@
+var myChart;
+
+function refresh() {
+
+    dataObject.resetData()
+
+    // setOption or resize
+    myChart.resize();
+
+    if (true) {
+        myChart.setOption({
+            series: [
+                {
+                    data: dataObject.computeData(),
+                },
+                {
+                    data: dataObject.computeData(),
+                },
+                {
+                    data: dataObject.computeData(),
+                },
+            ]
+        });                
+    }
+}
+
 
 // UI funcs
 function nextStep() {
     let dta = dataObject.computeData();
-    myChart.setOption({
-        // dataset: dta,
-        series: [
-            {
-              data: dta,
-            },
-            {
-              data: dta,
-            }
-        ],
-    });
+    refresh();
     // console.log("next step complete", myChart, dta)
     return false;
 }
@@ -21,17 +37,7 @@ function nextStep() {
 function forever() {
     let dta = dataObject.computeData();
     setInterval(() => {
-        myChart.setOption({
-            // dataset: dta,
-            series: [
-                {
-                    data: dta,
-                },
-                {
-                    data: dta,
-                }
-            ],    
-        });
+        refresh();
     }, 200);
     return false;
 }
@@ -53,6 +59,7 @@ function fcSpin(upOrDown){
 
 
 let initPage = (inst) => {
+
     // const evt = new Event("input");
     const evt = new Event("change");
     // let checkBx = document.getElementById(elID);
@@ -62,20 +69,22 @@ let initPage = (inst) => {
     //     frm.addEventListener('submit', validateForm);
     // }
 
-    var slider   = document.getElementById("sliderInner");
 
-    // var safe     = document.getElementsByName("share_safe")[0];
-    // var risky    = document.getElementsByName("share_risky")[0];
 
-    var safeBG   = document.getElementById("share_safe_bg");
-    var riskyBG  = document.getElementById("share_risky_bg");
+    let sbChange = (evt) => {
+        let src = evt.srcElement;
 
-    // init
-    // if (safeBG && safeBG.value != ""  && safeBG.value != 0) {
-    if (safeBG && safeBG.value != "" ) {
-        // safe.value  = safeBG.value;
-        // risky.value = riskyBG.value;
+        sb = src.value;
+
+        sbInpBG.value = src.value;
+
+        refresh();
+
+        console.log(`sbChange ${sb}`)
     }
+
+    sbInp.onchange = sbChange
+
 
     let knobs = [...document.getElementsByClassName("knob")];
 
@@ -91,10 +100,11 @@ let initPage = (inst) => {
             safeBG.value = 100 - val
             riskyBG.value = val;
 
-
             knobs.forEach(knobReset);
             src.classList.add("knob-inverse")
 
+            refresh();
+            console.log(`knobClick new val ${riskyBG.value}`)
 
         } catch (err) {
             console.error(`knob click error`, err)
@@ -120,10 +130,12 @@ let initPage = (inst) => {
     knobs.forEach(assignEvents);
 
 
+
+
     // 
     let chartDom = document.getElementById('chart_container');
     // console.log(chartDom);
-    let myChart = echarts.init(chartDom);
+    myChart = echarts.init(chartDom);
     
     optEchart && myChart.setOption(optEchart);
     console.log(`echart config and creation complete`)

@@ -3,22 +3,28 @@
 
 
 
+
+
 // Carolin-01-start
 
+// already defined and initialized
+// var sb = 100.0; // sparbetrag - 
+// var safeBG  = document.getElementById("share_safe_bg");
 
 let yr = new Date().getFullYear()
 let az = 20; // "Anlagehorizont"
-let sb = 100.0; // sparbetrag
-let sby = 12* sb; // sparbetrag per year
 
 // standardized normal distribution
 let mn = 0.0; // mean
 let sd = 1.0; // standard deviation
 
-// normal distribution of
+// normal distribution of stock asset
 // MSCI world for € investments since 1998 (25yrs)
 mn = 0.059
 sd = 0.1462
+
+// bond fund - two percent real returns - quite optimistic
+let mnbd1 = 1 + 0.02
 
 // 90 confidence interval - multiple of sd
 let ci90 = 1.645 * sd
@@ -70,7 +76,7 @@ var myInstance = (function () {
 })();
 
 
-var dataObject = (function () {
+var dataObjectCreate = (function () {
 
     var ds = []; // private
 
@@ -105,9 +111,23 @@ var dataObject = (function () {
         if (ds === undefined || ds.length == 0) {
             ds = []
             let c0=0, c1=0, c2=0
+
+            let ss; 
+            try {
+                ss = parseFloat(safeBG.value) / 100.0  // safe share [0...1]                
+            } catch (err) {
+                console.error(`cannot parse safeBG.value ${safeBG.value} - ${err}`)
+            }
+
+            let rs = 1 - ss ;  // risky share [0...1]
+            console.log(`safe - risky - ${ss} - ${rs}`)
+
+            let sby = 12* sb; // sparbetrag per year
             for (let i = 0; i <= az; i++) {
                 // return on existing balance
-                c0 *= p05p1; c1 *= mnp1; c2 *=p95p1;
+                c0 = p05p1 * c0 * rs + mnbd1 * c0 * ss  
+                c1 = mnp1  * c1 * rs + mnbd1 * c1 * ss 
+                c2 = p95p1 * c2 * rs + mnbd1 * c2 * ss 
                 // additional annuity
                 c0 += sby; c1 += sby; c2 +=sby;
                 let row = [yr+i, c0, c1, c2, `item${i}` ]
@@ -117,8 +137,7 @@ var dataObject = (function () {
             }
             // console.log(ds);
             console.log(`dataObject - ds recomputed - length ${ds.length}`);
-
-            console.log(ds);
+            // console.log(ds);
 
         }
 
@@ -157,8 +176,10 @@ var dataObject = (function () {
     };
 
 
-})();
+});
 
+
+var dataObject = dataObjectCreate();
 
 
 let vertMarkerYr = yr + az/2;

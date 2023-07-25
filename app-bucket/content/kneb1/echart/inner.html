@@ -1,12 +1,12 @@
 
 <p>
-  In diesem Teil unserer Umfrage geht es um Investitionsentscheidungen im Rahmen der Altersvorsorge. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand. 
-  
-  Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist. 
+  In diesem Teil unserer Umfrage geht es um Investitionsentscheidungen im Rahmen der Altersvorsorge. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
+
+  Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist.
 </p>
 
 <p>
-  Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vor: Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen. 
+  Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vor: Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen.
 </p>
 
 <p>
@@ -14,10 +14,7 @@
 </p>
 
 <p style="color:red">
-  Powerpoint-Vorlage: Anlagezeitraum ist "20 Jahre" - aber im Chart ist eine vertikale Linie bei 2029 (sieben Jahre).
-  Vertikale Linie "Anlagehorziont"  mehr nach rechts?
-  <br>
-  See MSCI world return and sigma in issues.md
+  F12  - console:  Change Anlagezeitraum; bspw. az=30  - change Anlagehorizont bspw. azV = 25; - click on "Aktienanteil" for refresh
 </p>
 
 <style>
@@ -85,7 +82,7 @@
 
   div.knob-grey {
     background-color: #ccc;
-    color: #888;    
+    color: #888;
     border: 1px solid #ccc;
   }
 
@@ -93,8 +90,8 @@
   div.knob-inverse {
     background-color: var(--clr-pri-hov);
     background-color: var(--clr-pri);
-    color: #fff;    
-    color: var(--clr-sec);    
+    color: #fff;
+    color: var(--clr-sec);
   }
 
 </style>
@@ -113,23 +110,23 @@
     </p>
     <p class="right" style="margin-right: 0.46rem">
 
-      
-      <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>  
-      
-        <input 
+
+      <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>
+
+        <input
           tabindex="1"
           type="number" name="sparbetrag" id="sparbetrag"
           value="110"
-          min="0" max="300" step="10" 
+          min="0" max="300" step="10"
           style="
-            display: inline-block; 
-            max-width: 3rem; 
+            display: inline-block;
+            max-width: 3rem;
             font-weight: bolder;
             color: var(--clr-pri);
             border: 1px solid var(--clr-pri);
             "
         >€
-      
+
         <a tabindex="-1" href="#" class="spinner" id="elUp">+ &nbsp;&nbsp;&nbsp;</a>
     </p>
 
@@ -138,6 +135,7 @@
       Ihr Aktienanteil
     </p>
     <div class="knob-container" >
+      <div tabindex="2"  href=#  class="knob" style="min-width: 2.7rem">0&nbsp;% </div>
       <div tabindex="2"  href=#  class="knob">10&nbsp;% </div>
       <div tabindex="3"  href=#  class="knob">20&nbsp;% </div>
       <div tabindex="4"  href=#  class="knob">30&nbsp;% </div>
@@ -148,33 +146,33 @@
       <div tabindex="9"  href=#  class="knob">80&nbsp;% </div>
       <div tabindex="10" href=#  class="knob knob-grey">90&nbsp;% </div>
       <div tabindex="11" href=#  class="knob knob-grey">100&nbsp;%</div>
-      
+
     </div>
 
     <br>
 
     <button tabindex="13" style="margin: 0.7rem;padding: 0.2rem 0.8rem" id="elReset"
      >Werte zurücksetzen</button>
-    
 
-<!-- 
+
+<!--
     <p>
       <input type="number" size=3  disabled name="share_safe"  id="">
       <input type="number" size=3  disabled name="share_risky" id="">
     </p>
  -->
-  
+
 
   </div>
 
 
-  <div class="panel panel2" id="chart_container"></div>  
+  <div class="panel panel2" id="chart_container"></div>
 </div>
 
-<!-- 
+<!--
 <p>
-  <a href="#" onclick="javascript:nextStep();">Next Step</a> 
-  &nbsp; &nbsp; &nbsp; 
+  <a href="#" onclick="javascript:nextStep();">Next Step</a>
+  &nbsp; &nbsp; &nbsp;
   <a href="#" onclick="javascript:forever();" >Step forever</a>
 </p>
  -->
@@ -209,7 +207,7 @@
     if (sbInp) {
         sbInp.value = sb;
     }
-    
+
     var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
     var riskyBG  = document.getElementById("share_risky_bg");
     if (safeBG && safeBG.value != "" ) {
@@ -227,14 +225,15 @@
 </script>
 
 
-<!-- 
+<!--
   loading as a module needs apache conf mime types file
       application/javascript				mjs
-  for local files, there is a browser extension, which does not work
+  for local files, there is a browser extension, which does not work;
+  loading as module also requires https.
 -->
 <!-- <script type="module"          src="chart.mjs"></script> -->
-<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echart-config.mjs"></script>
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echart-config.mjs?v=001"></script>
 
 
-<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/ui.js"></script>
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/ui.js?v=001"></script>
 

@@ -6,30 +6,36 @@
 * Treatment is not yet coded;  
   Wie werden die Treatment Gruppen festgelegt?  
   Via Panelanbieter?  
-  Nach Sequenz (gerade ID => Gruppe 1, ungerade => 2)
+  Nach Sequenz (gerade ID => Gruppe 1, ungerade => 2)?
 
-* Radio-Werte sind immer 1...5 oder 1...10 - `Weiß nicht` ist dann bspw. 9 und `keine Antwort` ist 10  
+* Radio-Werte sind immer 1...5 oder 1...10 -   
+  `Weiß nicht` ist dann bspw. 9 und `keine Antwort` ist 10  
   Sonst Fehlergefahr
 
-* "guided tour" vor Experiment - ist jetzt mit relativ unschönen Bildern aus Powerpoint.  
+* "Guided tour" vor Experiment - ist jetzt mit relativ unschönen Bildern aus Powerpoint.  
   Aktualisierung, wenn das Experiment-Layout final ist.
+
+* Set `ah=30` and `ahV=25` in the debugging console, to change the chart
+
+* Die Berechnung erfolgt in `echart-config.mjs`  
+  `pComputeData()...`
 
 * Rendite und Standardabweichung der Aktien-Anlage:  
   Detaillierte Diskussion unten: [MSCI world returns and sigma]
 
-* Which deflated returns for safe assets (`mnbd1`)?  
+* Which deflated returns should we use for the _safe_ asset (`mnbd1`)?  
   Currently its set to 1 percent.
 
 * Bei Anlagehorizont von 10 Jahren dominieren die Einzahlungen.  
-  Die relative höhere Aktien-Rendite schlägt nach 30 oder 40 Jahren viel stärker durch.  
+  Die relativ höhere Aktien-Rendite schlägt nach 30 oder 40 Jahren viel stärker durch.  
   Spaßeshalber kann `az = 50` gesetzt werden.
 
 * Y-Max wird ab 40 TSD dynamisch erhöht - in Schritten von 40.000.  
   Vertikale Abstände einerseits nicht zu klein.  
   Andererseits sollen sie nicht nach oben ausbrechen.  
-  Anlagehorizont nicht in die Mitte, sondern bei 80%? 
+  `Anlagehorizont` nicht in die Mitte, sondern mehr nach rechts? Bei 80%? 
 
-* Experiment doest not yet work on Apple Browsers (Iphon, Mac)
+* Experiment does not yet work on Apple Browsers (Iphone, Mac)
 
 * Mobile phone:  
 	Layout des Experiments für Smartphones würde nicht-triviiale Umordnung erforden.  
@@ -48,7 +54,7 @@ Knebel
 * <https://survey2.zew.de?u=9992&sid=kneb1&wid=2023-06&p=1&h=S1LMUHYI8fpY2fHsaUsjiCHdSyckr7vsDnzcUnZyc0c>
 * <https://survey2.zew.de?u=9993&sid=kneb1&wid=2023-06&p=1&h=06OApCzf6-CuvXgyXTDRfDZfJNOZ7TnSmpVSyctmtbM>
 
-STRG+F5 - zum Neuladen der Seite
+
 
 ## MSCI world returns and sigma
 

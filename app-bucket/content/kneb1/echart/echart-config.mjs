@@ -1,3 +1,5 @@
+"strict mode";
+
 // echart configuration
 
 // Carolin Knebel computations and parameters - start
@@ -7,7 +9,10 @@
 // var safeBG  = document.getElementById("share_safe_bg");
 
 let yr = new Date().getFullYear()
-let az = 20; // "Anlagehorizont"
+let az  = 20; // "Anlagehorizont"
+let azV = 10; // "Vertical line"
+
+
 // az = 50; // "Anlagehorizont"
 
 // riskless rate
@@ -61,8 +66,8 @@ for (let i = 0; i <= az; i++) {     dataReturns.push(250+i*2000); }
 
 
 
-
 // stackoverflow.com/questions/1479319/
+// "class" dataObjectCreate() below is created in this pattern:
 var myInstance = (function () {
     var privateVar = '';
     function privateMethod() {
@@ -79,34 +84,39 @@ var myInstance = (function () {
 
 var dataObjectCreate = (function () {
 
-    var ds = []; // private
-    var maxY = 40 * 1000; 
+    // private members
+    var ds = [];
+    var maxY = 40 * 1000;
 
+    // private method
     var pResetData = () => {
         ds = [];
         maxY = 40 * 1000;
     }
 
+    // private method
     // get max Y
-    var pMaxY = () => { 
-        pComputeData()  
+    var pMaxY = () => {
+        pComputeData()
         if (maxY < 40 * 1000) {
             return 40 * 1000
         }
-        return maxY 
+        return maxY
     }
 
+    // private method
     // get the future value
     var pFV = () => {
 
         // pComputeData()  // => FV is always defined...
-        
+
         if (ds === undefined || ds.length == 0) {
             return 0
         }
         let idxHalfAZ = Math.round(ds.length/2); // index half of "Anlagezeitraum"
+        idxHalfAZ = azV; // index half of "Anlagezeitraum"
         try {
-            // 
+            //
             let idx2 = 2 // idx 0 => years, idx 1 => lower bound, idx 2 => mean returns
             let fv = ds[idxHalfAZ][idx2]
             return fv
@@ -114,6 +124,8 @@ var dataObjectCreate = (function () {
             return "FV of ds failed"
         }
     }
+
+    // private method
     // computeDataPriv compiles data for eChart options object
     // usage:
     //       myChart.setOption({
@@ -177,7 +189,8 @@ var dataObjectCreate = (function () {
             // maxY = (Math.round(maxY/20000) +1)*20000
 
             // steps of 40.000
-            maxY = (Math.round(maxY/40000) +1)*40000
+            // maxY = (Math.round(maxY/40000) +1)*40000
+            maxY = (Math.round(maxY/40000) +0.2)*40000
 
             // console.log(ds);
             console.log(`pComputeData - ds recomputed - length ${ds.length} - maxY = ${Math.round(maxY)}`);
@@ -228,42 +241,49 @@ var dataObjectCreate = (function () {
 var dataObject = dataObjectCreate();
 
 
-let vertMarkerYr = yr + az/2;
-let vertMarker1 = [
-    {
-        name: 'Ihr gewählter Anlagehorizont',
-        xAxis: 2029-0.3,
-        xAxis: vertMarkerYr - 0.08,
-    },
-    {
-        xAxis: vertMarkerYr + 0.08,
-    }
-];
-let vertMarker2 = [
-    {
-        name: 'Evening Peak',
-        xAxis: 2034,
-    },
-    {
-        xAxis: 2036,
-    }
-];
-// used on second series in setOptions
-let markArea = {
-    label: {
-        // show: false,
-        color: 'rgba( 0,105,180,0.99)',
-      },
-    // animation: true,
-    // animationDurationUpdate: 200,
-    itemStyle: {
-      color: 'rgba(255, 188, 188, 0.6)',
-      color: 'rgba( 0,105,180,0.299)',
+getVerticalArea = function(argYryr, argAzV){
 
-    },
-    data: [vertMarker1, vertMarker2],
-    data: [vertMarker1],
-};
+    let vertMarkerYr = argYryr + argAzV;
+    let vertMarker1 = [
+        {
+            name: 'Ihr Anlagehorizont',
+            xAxis: 2029-0.3,
+            xAxis: vertMarkerYr - 0.08,
+        },
+        {
+            xAxis: vertMarkerYr + 0.08,
+        }
+    ];
+    let vertMarker2 = [
+        {
+            name: 'Evening Peak',
+            xAxis: 2034,
+        },
+        {
+            xAxis: 2036,
+        }
+    ];
+    // used on second series in setOptions
+    let markArea = {
+        label: {
+            // show: false,
+            color: 'rgba( 0,105,180,0.99)',
+          },
+        // animation: true,
+        // animationDurationUpdate: 200,
+        itemStyle: {
+          color: 'rgba(255, 188, 188, 0.6)',
+          color: 'rgba( 0,105,180,0.299)',
+
+        },
+        data: [vertMarker1, vertMarker2],
+        data: [vertMarker1],
+    };
+
+    return markArea;
+
+}
+
 
 
 
@@ -309,7 +329,7 @@ var optEchart = {
         left:  '13%',
         right:  '3%',
         top:    '8.5%',
-        top:    '9%',
+        top:    '9.8%',
         bottom: '7%',
       },
     legend: {
@@ -476,7 +496,7 @@ var optEchart = {
                 tooltip: [0, 2, 4],
              },
              data: dataObject.computeData(),
-             markArea: markArea,
+             markArea: getVerticalArea(yr, azV),
         },
 
 

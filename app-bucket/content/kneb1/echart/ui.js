@@ -1,3 +1,5 @@
+"strict mode";
+
 var myChart;
 
 function refresh(chartObj, dataObj) {
@@ -9,6 +11,9 @@ function refresh(chartObj, dataObj) {
 
     if (true) {
         chartObj.setOption({
+            'xAxis': {
+                max: yr+az,
+            },
             'yAxis': {
                 max: dataObject.maxY(),
             },
@@ -18,12 +23,13 @@ function refresh(chartObj, dataObj) {
                 },
                 {
                     data: dataObject.computeData(),
+                    markArea: getVerticalArea(yr, azV),
                 },
                 {
                     data: dataObject.computeData(),
                 },
             ]
-        });                
+        });
     }
 
     let elFV = document.getElementById('elFV');
@@ -94,11 +100,13 @@ let pageLoaded = (inst) => {
                 inp.value =  parseInt(inp.value) - 10;
             }
             console.log(`upOrDown = ${upOrDown}, val = ${inp.value}`)
-    
+
+            evt.preventDefault();
+
             sb = inp.value;
-            sbInpBG.value = inp.value;        
+            sbInpBG.value = inp.value;
             refresh(myChart, dataObject);
-    
+
         }
         // sbChange(evt)
     }
@@ -178,13 +186,13 @@ let pageLoaded = (inst) => {
 
 
 
-    // 
+    //
     let chartDom = document.getElementById('chart_container');
     myChart = echarts.init(chartDom);
-    
+
     optEchart && myChart.setOption(optEchart);
     console.log(`echart config and creation complete`)
-    
+
 
 
     let elReset = document.getElementById('elReset');
@@ -208,7 +216,7 @@ let pageLoaded = (inst) => {
             });
 
             refresh(myChart, dataObject);
-            
+
 
             console.log(`reset clicked`)
             evt.preventDefault();

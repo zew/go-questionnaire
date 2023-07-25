@@ -14,7 +14,8 @@
 </p>
 
 <p style="color:red">
-  Anlagezeitraum ist einerseits 20 Jahre - andererseits ist im Chart eine vertikale Linie bei 2029 (sieben Jahre)
+  Powerpoint-Vorlage: Anlagezeitraum ist "20 Jahre" - aber im Chart ist eine vertikale Linie bei 2029 (sieben Jahre).
+  Vertikale Linie "Anlagehorziont"  mehr nach rechts?
   <br>
   See MSCI world return and sigma in issues.md
 </p>
@@ -82,17 +83,20 @@
     /* font-weight: bolder; */
   }
 
+  div.knob-grey {
+    background-color: #ccc;
+    color: #888;    
+    border: 1px solid #ccc;
+  }
+
+  /* order: after knob-grey */
   div.knob-inverse {
     background-color: var(--clr-pri-hov);
     background-color: var(--clr-pri);
     color: #fff;    
     color: var(--clr-sec);    
   }
-  div.knob-grey {
-    background-color: #ccc;
-    color: #888;    
-    border: 1px solid #ccc;
-  }
+
 </style>
 
 <div style="display: flex; flex-direction: row;">
@@ -101,7 +105,7 @@
       Ihr erwartetes Vermögen
     </p>
     <p class="right">
-      <strong>11.100 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <strong><span id="elFV">-</span> €</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
 
     <p>
@@ -110,7 +114,7 @@
     <p class="right" style="margin-right: 0.46rem">
 
       
-      <a tabindex="-1" href="#" onclick="fcSpin('down')" class="spinner" >&ndash;  </a>  
+      <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>  
       
         <input 
           tabindex="1"
@@ -126,7 +130,7 @@
             "
         >€
       
-        <a tabindex="-1" href="#" onclick="fcSpin('up')"  class="spinner">+ &nbsp;&nbsp;&nbsp;</a>
+        <a tabindex="-1" href="#" class="spinner" id="elUp">+ &nbsp;&nbsp;&nbsp;</a>
     </p>
 
 
@@ -139,7 +143,7 @@
       <div tabindex="4"  href=#  class="knob">30&nbsp;% </div>
       <div tabindex="5"  href=#  class="knob">40&nbsp;% </div>
       <div tabindex="6"  href=#  class="knob">50&nbsp;% </div>
-      <div tabindex="7"  href=#  class="knob knob-inverse">60&nbsp;% </div>
+      <div tabindex="7"  href=#  class="knob">60&nbsp;% </div>
       <div tabindex="8"  href=#  class="knob">70&nbsp;% </div>
       <div tabindex="9"  href=#  class="knob">80&nbsp;% </div>
       <div tabindex="10" href=#  class="knob knob-grey">90&nbsp;% </div>
@@ -149,7 +153,8 @@
 
     <br>
 
-    <button tabindex="13" style="margin: 0.7rem;padding: 0.2rem 0.8rem">Werte zurücksetzen</button>
+    <button tabindex="13" style="margin: 0.7rem;padding: 0.2rem 0.8rem" id="elReset"
+     >Werte zurücksetzen</button>
     
 
 <!-- 
@@ -212,23 +217,24 @@
         safeBG.value = 50
         riskyBG.value = 100 - safeBG.value
     }
+
+
+
     console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
 
 
 
 </script>
 
-<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/common.js"></script>
 
 <!-- 
   loading as a module needs apache conf mime types file
       application/javascript				mjs
-
-  for local files, there is browser extension, which does not work
-
+  for local files, there is a browser extension, which does not work
 -->
 <!-- <script type="module"          src="chart.mjs"></script> -->
 <script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echart-config.mjs"></script>
 
 
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/ui.js"></script>
 

@@ -5,6 +5,12 @@
 </head>
 <body style="height: 100%; margin: 0">
 
+<input type='hidden'   name='share_safe_bg'  id='share_safe_bg'    value=''    />
+<input type='hidden'   name='share_risky_bg' id='share_risky_bg'   value=''    />
+<input type='hidden'   name='sparbetrag_bg'  id='sparbetrag_bg'    value=''    />
+ 
+
+
 
 <!-- 
 
@@ -13,42 +19,176 @@
       * remove the outer HTML body tags;
         but keep the CSS links from the HTML head
 
-      * prefix all js and css resources by /{{AppPrefix}}/doc/kneb1/echart/
+      * prefix all js and css resources by 
+
+      * also add two hidden inputs
 
  -->
 
-<!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
-<link rel="stylesheet" href="slider.css">
 
-<div class="slider-container">
-  <input 
-      type="range" 
 
-      class="slider" 
-      id="sliderInner"
 
-      min="0" 
-      max="100" 
-      step="10" 
-      value="50" 
-      autofocus
-  >
+ <style>
+  .panel{
+    background-color: #ddd;
+    background-color: var(--clr-sec);;
+    margin: 0;
+    margin-top: 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  .panel1{
+    width: 28%;
+    margin-right: 0.6rem;
+  }
+  .panel2{
+    width: 72%;
+  }
+  .panel p {
+    margin: 0;
+    padding:    0.5rem;
+    padding-bottom: 0;
+  }
+  .panel p.right {
+    text-align: right;
+    margin-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+  .panel p.right a {
+    display: inline-block;
+    font-size: 140%;
+    padding: 0 0.24rem;
+    font-weight: bold;
+
+    position: relative;
+    top: 0px;
+    margin: 0 0.4rem;
+    /* background-color: #888; */
+  }
+  .panel p.right a.spinner {
+    top: 0.06rem;
+  }
+
+
+  .knob-container {
+    padding: 0.2rem 0.8rem;
+    max-width: 12rem;
+    /* border: 1px solid #d2c; */
+  }
+
+  div.knob {
+    cursor: pointer;
+
+    display: inline-block;
+
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    margin: 0.25rem;
+
+    color: var(--clr-pri);
+    /* border: 1px solid var(--clr-pri-hov); */
+    border: 1px solid var(--clr-pri);
+    /* font-weight: bolder; */
+  }
+
+  div.knob-inverse {
+    background-color: var(--clr-pri-hov);
+    background-color: var(--clr-pri);
+    color: #fff;    
+    color: var(--clr-sec);    
+  }
+  div.knob-grey {
+    background-color: #ccc;
+    color: #888;    
+    border: 1px solid #ccc;
+  }
+</style>
+
+<div style="display: flex; flex-direction: row;">
+  <div class="panel panel1">
+    <p>
+      Ihr erwartetes Vermögen
+    </p>
+    <p class="right">
+      <strong>11.100 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+    </p>
+
+    <p>
+      Sparbetrag
+    </p>
+    <p class="right" style="margin-right: 0.46rem">
+
+      
+      <a tabindex="-1" href="#" onclick="fcSpin('down')" class="spinner" >&ndash;  </a>  
+      
+        <input 
+          tabindex="1"
+          type="number" name="sparbetrag" id="sparbetrag"
+          value="110"
+          min="0" max="300" step="10" 
+          style="
+            display: inline-block; 
+            max-width: 3rem; 
+            font-weight: bolder;
+            color: var(--clr-pri);
+            border: 1px solid var(--clr-pri);
+            "
+        >€
+      
+        <a tabindex="-1" href="#" onclick="fcSpin('up')"  class="spinner">+ &nbsp;&nbsp;&nbsp;</a>
+    </p>
+
+
+    <p style="margin-top: 0.8rem;">
+      Ihr Aktienanteil
+    </p>
+    <div class="knob-container" >
+      <div tabindex="2"  href=#  class="knob">10&nbsp;% </div>
+      <div tabindex="3"  href=#  class="knob">20&nbsp;% </div>
+      <div tabindex="4"  href=#  class="knob">30&nbsp;% </div>
+      <div tabindex="5"  href=#  class="knob">40&nbsp;% </div>
+      <div tabindex="6"  href=#  class="knob">50&nbsp;% </div>
+      <div tabindex="7"  href=#  class="knob knob-inverse">60&nbsp;% </div>
+      <div tabindex="8"  href=#  class="knob">70&nbsp;% </div>
+      <div tabindex="9"  href=#  class="knob">80&nbsp;% </div>
+      <div tabindex="10" href=#  class="knob knob-grey">90&nbsp;% </div>
+      <div tabindex="11" href=#  class="knob knob-grey">100&nbsp;%</div>
+      
+    </div>
+
+    <br>
+
+    <button tabindex="13" style="margin: 0.7rem;padding: 0.2rem 0.8rem">Werte zurücksetzen</button>
+    
+
+<!-- 
+    <p>
+      <input type="number" size=3  disabled name="share_safe"  id="">
+      <input type="number" size=3  disabled name="share_risky" id="">
+    </p>
+ -->
+  
+
+  </div>
+
+
+  <div class="panel panel2" id="chart_container"></div>  
 </div>
-<div class="slider-container">
-  <input type="number" size=3  disabled name="share_safe"  id="">
-  <input type="number" size=3  disabled name="share_risky" id="">
-  <br>
-  <br>
-  &nbsp; <a href="#" onclick="javascript:nextStep();">Next Step</a>
-  &nbsp; &nbsp;
-  &nbsp; <a href="#" onclick="javascript:forever();" >Step forever</a>
-</div>
+
+<!-- 
+<p>
+  <a href="#" onclick="javascript:nextStep();">Next Step</a> 
+  &nbsp; &nbsp; &nbsp; 
+  <a href="#" onclick="javascript:forever();" >Step forever</a>
+</p>
+ -->
+
 
 
 
 <!-- <input name="chart_output" type="text" value="0" /> -->
 
-<div id="chart_container" ></div>
+<!-- <div id="chart_container" ></div> -->
 
 
 
@@ -58,6 +198,34 @@
 
 <script type="text/javascript" src="echarts.min.js"></script>
 <script type="text/javascript" src="js-stats-subset.js"></script>
+
+
+<script>
+
+    // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
+    // init
+    var sb = 100.0; // sparbetrag - defined in echart-config.mjs
+    var sbInp   = document.getElementById("sparbetrag");
+    var sbInpBG = document.getElementById("sparbetrag_bg");
+    if (sbInpBG && sbInpBG.value !== "") {
+        sb = parseInt(sbInpBG.value);
+    }
+    if (sbInp) {
+        sbInp.value = sb;
+    }
+    
+    var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
+    var riskyBG  = document.getElementById("share_risky_bg");
+    if (safeBG && safeBG.value != "" ) {
+    } else if (safeBG && safeBG.value === "" ) {
+        safeBG.value = 50
+        riskyBG.value = 100 - safeBG.value
+    }
+    console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
+
+
+
+</script>
 
 <script type="text/javascript" src="common.js"></script>
 
@@ -69,7 +237,10 @@
 
 -->
 <!-- <script type="module"          src="chart.mjs"></script> -->
-<script type="text/javascript" src="chart.mjs"></script>
+<script type="text/javascript" src="echart-config.mjs"></script>
+
+
+
 
 
 </body>

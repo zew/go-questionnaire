@@ -1,18 +1,20 @@
 // echart configuration
 
-
-
-
-
-
-// Carolin-01-start
+// Carolin Knebel computations and parameters - start
 
 // already defined and initialized
-// var sb = 100.0; // sparbetrag - 
+// var sb = 100.0; // sparbetrag
 // var safeBG  = document.getElementById("share_safe_bg");
 
 let yr = new Date().getFullYear()
 let az = 20; // "Anlagehorizont"
+// az = 50; // "Anlagehorizont"
+
+// riskless rate
+// bond fund - two percent real returns - quite optimistic
+let mnbd1 = 1 + 0.01
+
+
 
 // standardized normal distribution
 let mn = 0.0; // mean
@@ -23,23 +25,22 @@ let sd = 1.0; // standard deviation
 mn = 0.059
 sd = 0.1462
 
-// bond fund - two percent real returns - quite optimistic
-let mnbd1 = 1 + 0.02
-
 // 90 confidence interval - multiple of sd
 let ci90 = 1.645 * sd
 
 let p05 = mn * (1-ci90)
 let p95 = mn * (1+ci90)
 
-console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
+// console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
 
 let p05p1 = 1 + p05  // worst case plus one
-let mnp1  = 1 + mn  // mean plus one
+let mnp1  = 1 + mn   // mean plus one
 let p95p1 = 1 + p95  // worst case plus one
 
-console.log(`pct05+1 ${p05p1}  -- mn+1 ${mnp1}   pct95+1 ${p95p1}`)
+p05p1 = Math.round(10000 * p05p1) / 10000;
+p95p1 = Math.round(10000 * p95p1) / 10000;
 
+console.log(`pct05+1, mn+1, pct95+1   [${p05p1}, ${mnp1}, ${p95p1}]`)
 
 
 // github.com/chen0040/js-stats
@@ -79,15 +80,46 @@ var myInstance = (function () {
 var dataObjectCreate = (function () {
 
     var ds = []; // private
+    var maxY = 40 * 1000; 
 
-    var resetDataPriv = () => {ds = [] }
+    var pResetData = () => {
+        ds = [];
+        maxY = 40 * 1000;
+    }
 
+    // get max Y
+    var pMaxY = () => { 
+        pComputeData()  
+        if (maxY < 40 * 1000) {
+            return 40 * 1000
+        }
+        return maxY 
+    }
+
+    // get the future value
+    var pFV = () => {
+
+        // pComputeData()  // => FV is always defined...
+        
+        if (ds === undefined || ds.length == 0) {
+            return 0
+        }
+        let idxHalfAZ = Math.round(ds.length/2); // index half of "Anlagezeitraum"
+        try {
+            // 
+            let idx2 = 2 // idx 0 => years, idx 1 => lower bound, idx 2 => mean returns
+            let fv = ds[idxHalfAZ][idx2]
+            return fv
+        } catch (error) {
+            return "FV of ds failed"
+        }
+    }
     // computeDataPriv compiles data for eChart options object
     // usage:
     //       myChart.setOption({
     //          dataset: dataObject.computeData(),
     //       });
-    var computeDataPriv = () => {
+    var pComputeData = () => {
         //
         // random draws - mapped to normal dist.
         if (false) {
@@ -112,9 +144,9 @@ var dataObjectCreate = (function () {
             ds = []
             let c0=0, c1=0, c2=0
 
-            let ss; 
+            let ss;
             try {
-                ss = parseFloat(safeBG.value) / 100.0  // safe share [0...1]                
+                ss = parseFloat(safeBG.value) / 100.0  // safe share [0...1]
             } catch (err) {
                 console.error(`cannot parse safeBG.value ${safeBG.value} - ${err}`)
             }
@@ -125,9 +157,9 @@ var dataObjectCreate = (function () {
             let sby = 12* sb; // sparbetrag per year
             for (let i = 0; i <= az; i++) {
                 // return on existing balance
-                c0 = p05p1 * c0 * rs + mnbd1 * c0 * ss  
-                c1 = mnp1  * c1 * rs + mnbd1 * c1 * ss 
-                c2 = p95p1 * c2 * rs + mnbd1 * c2 * ss 
+                c0 = p05p1 * c0 * rs + mnbd1 * c0 * ss
+                c1 = mnp1  * c1 * rs + mnbd1 * c1 * ss
+                c2 = p95p1 * c2 * rs + mnbd1 * c2 * ss
                 // additional annuity
                 c0 += sby; c1 += sby; c2 +=sby;
                 let row = [yr+i, c0, c1, c2, `item${i}` ]
@@ -135,8 +167,20 @@ var dataObjectCreate = (function () {
                 // console.log(row);
                 ds.push( row );
             }
+
+            maxY = ds[az][2]
+
+            // steps of 10.000
+            // maxY = (Math.round(maxY/10000) +1)*10000
+
+            // steps of 20.000
+            // maxY = (Math.round(maxY/20000) +1)*20000
+
+            // steps of 40.000
+            maxY = (Math.round(maxY/40000) +1)*40000
+
             // console.log(ds);
-            console.log(`dataObject - ds recomputed - length ${ds.length}`);
+            console.log(`pComputeData - ds recomputed - length ${ds.length} - maxY = ${Math.round(maxY)}`);
             // console.log(ds);
 
         }
@@ -148,7 +192,7 @@ var dataObjectCreate = (function () {
         return [
             // [col1, col2, col3 ... ]
             // [dimX, dimY, other dimensions ...
-            // In cartesian (grid), "dimX" and "dimY" correspond to xAxis and yAxis respectively.
+            // In cartesian (grid), "dimX" and "dimY" correspond to xAxis and yAxiis respectively.
             //    see      https://echarts.apache.org/en/option.html#series-line
             //    search   'Relationship between "value" and axis.type'
             //
@@ -171,8 +215,10 @@ var dataObjectCreate = (function () {
 
     // public interface
     return {
-        resetData:   resetDataPriv,
-        computeData: computeDataPriv,
+        resetData:   pResetData,
+        FV:          pFV,
+        maxY:        pMaxY,
+        computeData: pComputeData,
     };
 
 
@@ -187,10 +233,10 @@ let vertMarker1 = [
     {
         name: 'Ihr gewählter Anlagehorizont',
         xAxis: 2029-0.3,
-        xAxis: vertMarkerYr - 0.12,
+        xAxis: vertMarkerYr - 0.08,
     },
     {
-        xAxis: vertMarkerYr + 0.12,
+        xAxis: vertMarkerYr + 0.08,
     }
 ];
 let vertMarker2 = [
@@ -204,8 +250,16 @@ let vertMarker2 = [
 ];
 // used on second series in setOptions
 let markArea = {
+    label: {
+        // show: false,
+        color: 'rgba( 0,105,180,0.99)',
+      },
+    // animation: true,
+    // animationDurationUpdate: 200,
     itemStyle: {
-      color: 'rgba(255, 173, 177, 0.4)'
+      color: 'rgba(255, 188, 188, 0.6)',
+      color: 'rgba( 0,105,180,0.299)',
+
     },
     data: [vertMarker1, vertMarker2],
     data: [vertMarker1],
@@ -246,7 +300,7 @@ var optEchart = {
         feature: {
             saveAsImage: { show: true },
             // magicType:   { show: true, type: ['stack', 'tiled'] },
-            // dataZoom: { yAxisIndex: 'none' },
+            // dataZoom: { yAxiisIndex: 'none' },
             // restore: {},
         }
     },
@@ -331,7 +385,8 @@ var optEchart = {
         type: 'value',
         // name: 'y-axis-name',
         min: 0,
-        max: 40*1000,
+        max: 40 * 1000, // init
+        max: dataObject.maxY(),
 
         axisLabel: {
             // compare  axisLabel.formatter
@@ -352,7 +407,7 @@ var optEchart = {
             type: 'line',
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
-            
+
             showSymbol: true,
             showSymbol: false,
             symbol: 'emptyCircle',
@@ -402,7 +457,7 @@ var optEchart = {
             type: 'line',
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
-            
+
             showSymbol: true,
             symbol: 'circle',
             symbolSize: 6,
@@ -430,7 +485,7 @@ var optEchart = {
             type: 'line',
             dummy: seriesIdx++,
             color: colorPalette[seriesIdx],
-            
+
             showSymbol: true,
             showSymbol: false,
             symbol: 'emptyCircle',

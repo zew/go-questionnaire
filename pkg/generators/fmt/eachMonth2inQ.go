@@ -149,11 +149,12 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Mobile.StyleGridContainer.GapRow = "0.02rem"
 
-		colWidthsA := "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
-		colWidthsB := "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
-		gr.Style.Desktop.StyleGridContainer.TemplateColumns = colWidthsA
-		gr.ColWidths(colWidthsA)
-		gr.Style.Mobile.StyleGridContainer.TemplateColumns = colWidthsB
+		colsDesktp := "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
+		// if contents as a whole are simply too wide - then the relative numbers below have no effect
+		colsMobile := "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
+		gr.Style.Desktop.StyleGridContainer.TemplateColumns = colsDesktp
+		gr.ColWidths(colsDesktp)
+		gr.Style.Mobile.StyleGridContainer.TemplateColumns = colsMobile
 
 		{
 			inp := gr.AddInput()
@@ -287,12 +288,19 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		for i := q.Survey.Year; i <= q.Survey.Year+2; i++ {
 
 			{
+				// introducing a line-break of the year 2023 into 20<br>23
+				// but only for mobile
+				// CSS class mobile-brkr is defined in styles-quest-fmt.css
+				yrStr := fmt.Sprint(i)
+				// yrStr = strings.ReplaceAll(yrStr, "202", "20&shy;2") // line break in first colum for mobile view
+				// yrStr = strings.ReplaceAll(yrStr, "202", "20&thinsp;2")                   // line break in first colum for mobile view
+				yrStr = strings.ReplaceAll(yrStr, "202", "20<span class='mobile-brkr'></span>2") // line break in first colum for mobile view
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.Label = trl.S{
-					"de": fmt.Sprint(i),
-					"en": fmt.Sprint(i),
+					"de": yrStr,
+					"en": yrStr,
 				}
 			}
 
@@ -409,10 +417,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"de": "Internationale Lieferengpässe",
 				"en": "International supply bottlenecks",
 			},
-			{
-				"de": "Corona-Pandemie",
-				"en": "Covid pandemic",
-			},
+			// {
+			// 	"de": "Corona-Pandemie",
+			// 	"en": "Covid pandemic",
+			// },
 			{
 				"de": "Grüne Transformation",
 				"en": "Green transformation",
@@ -437,7 +445,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"rev_mp_ecb",
 				"rev_trade_conflicts",
 				"rev_supply_shortages",
-				"rev_corona",
+				// "rev_corona",
 				"rev_green_trafo",
 				"rev_war_ukraine",
 			},

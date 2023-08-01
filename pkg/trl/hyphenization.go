@@ -24,6 +24,7 @@ var hyph = []string{
 	"Einlagen|sicherungs|fonds",
 	"Entschädigungs|fall ",
 	"Hoch|schul|abschluss",
+	"Konjunktur|entwicklung",
 	"Bildungs|abschluss",
 	"Prozent|punkt",
 	"Un|ter|gren|ze",

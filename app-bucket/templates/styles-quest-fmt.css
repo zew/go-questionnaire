@@ -49,8 +49,18 @@ nav a.title span.survey-wave-id {
     }
 }
 
-
-
+.mobile-brkr {
+    display: none;    
+}
+/* second month of quarter - inflation  */
+@media screen and (max-width: 800px) {
+    .pg06-grp01 {
+        overflow-x: scroll;    
+    }
+    .mobile-brkr {
+        display: inline-block;    
+    }
+}
 
 /* special 2022_01 */
 .pg06 input[type="text"] {

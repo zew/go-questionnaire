@@ -28,7 +28,7 @@ function showD7a(event) {
         // console.log(`showD7a called -${rad1.value}-`);
         let rad1Checked = rad1.checked;
         console.log(`inp1 checked ${rad1Checked}: `);
-        showHideSubQuestions(rad1Checked, "pg02-grp04");
+        showHideSubQuestions(rad1Checked, "{{.pageID}}-grp02");
     }
 
     {
@@ -39,7 +39,7 @@ function showD7a(event) {
         // console.log(`showD7a called -${rad1.value}-`);
         let rad1Checked = rad1.checked;
         console.log(`inp1 checked ${rad1Checked}: `);
-        showHideSubQuestions(rad1Checked, "pg02-grp05");
+        showHideSubQuestions(rad1Checked, "{{.pageID}}-grp03");
     }
 
 
@@ -48,17 +48,20 @@ function showD7a(event) {
 }
 
 
-if (document.forms.frmMain.qd7_employmentnone) {
-    document.forms.frmMain.qd7_employmentabove35hours.addEventListener('change',showD7a);
-    document.forms.frmMain.qd7_employmentbetween15and35hours.addEventListener('change',showD7a);
-    document.forms.frmMain.qd7_employmentupto15hours.addEventListener('change',showD7a);
-    document.forms.frmMain.qd7_employmentoccasionally.addEventListener('change',showD7a);
-    document.forms.frmMain.qd7_employmentnone.addEventListener('change',showD7a);
-    console.log("handlers assigned");
-}
 
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
+
+    if (document.forms.frmMain.qd7_employmentnone) {
+        document.forms.frmMain.qd7_employmentabove35hours.addEventListener('change',showD7a);
+        document.forms.frmMain.qd7_employmentbetween15and35hours.addEventListener('change',showD7a);
+        document.forms.frmMain.qd7_employmentupto15hours.addEventListener('change',showD7a);
+        document.forms.frmMain.qd7_employmentoccasionally.addEventListener('change',showD7a);
+        document.forms.frmMain.qd7_employmentnone.addEventListener('change',showD7a);
+        console.log("handlers assigned");
+    }
+    
+
     showD7a();
     const first = document.getElementById("qd7_employmentnone");
     // first.focus();

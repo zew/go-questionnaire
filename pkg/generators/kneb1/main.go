@@ -27,8 +27,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		"de": "ZEW",
 	}
 	q.Survey.Name = trl.S{
-		"en": "Financial Literacy Test",
-		"de": "Financial Literacy Test",
+		"en": "Umfrage zum Thema Finanzentscheidungen",
+		"de": "Umfrage zum Thema Finanzentscheidungen",
 	}
 	// q.Variations = 1
 
@@ -72,13 +72,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Section = trl.S{
-			"de": "Soziodemographie",
-			"en": "Sociodemographics",
-		}
+		// page.Section = trl.S{
+		// 	"de": "Soziodemographie",
+		// 	"en": "Sociodemographics",
+		// }
 		page.Label = trl.S{
 			"de": "Alter, Herkunft, Erfahrungen",
 			"en": "Age, origin, experience",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
 		}
 		page.Short = trl.S{
 			"de": "Soziodemo-<br>graphie",
@@ -115,7 +119,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": "Sind Sie…",
 					"en": "What is your gender?",
-				}.Outline("D1.")
+				}.OutlineHid("D1.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -150,7 +154,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": "In welchem Jahr sind Sie geboren?",
 					"en": "Your year of birth?",
-				}.Outline("D2.")
+				}.OutlineHid("D2.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 4
@@ -278,7 +282,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.Label = trl.S{
 						"de": "In welchem Bundesland wohnen Sie?",
 						"en": "Which German state you live in?",
-					}.Outline("D3.")
+					}.OutlineHid("D3.")
 					inp.ColSpan = gr.Cols
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 0
@@ -362,20 +366,19 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Alter, Herkunft, Erfahrungen 2",
 			"en": "Age, origin, experience 2",
 		}
-		page.SuppressInProgressbar = true
-		// page.Short = trl.S{
-		// 	"de": "Soziodemo-<br>graphie 2",
-		// 	"en": "Sociodemo-<br>graphics 2",
-		// }
-		page.WidthMax("42rem")
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
 
-		page.ValidationFuncName = "knebPageD2"
-		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
 
 		// gr0
 		{
 			gr := page.AddGroup()
-			gr.Cols = 6
+			// single column
+			gr.Cols = 3
 			var radioValues = []string{
 				"hauptschule",
 				"realschule",
@@ -406,7 +409,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": "Welchen höchsten allgemeinbildenden Schulabschluss haben Sie?",
 					"en": "Which is your highest degree?",
-				}.Outline("D4.")
+				}.OutlineHid("D4.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -433,6 +436,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
+			// single column
+			gr.Cols = 3
 			var radioValues = []string{
 				"no",
 				"yes",
@@ -464,7 +469,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						todo
 
 					`,
-				}.Outline("D5.")
+				}.OutlineHid("D5.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -486,11 +491,29 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.ControlTop()
 			}
 		}
+	}
 
-		// gr6
+	// page 2-split
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// page.ValidationFuncName = "knebPageD2"
+		// page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
+		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
+			// single column
+			gr.Cols = 3
 			var radioValues = []string{
 				"single_livingalone",
 				"unmarried_livingtogether",
@@ -526,7 +549,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `Welchen Familienstand haben Sie?`,
 					"en": `What is your marital status?`,
-				}.Outline("D6.")
+				}.OutlineHid("D6.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -549,10 +572,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr7
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
+			// single column
+			gr.Cols = 3
 			var radioValues = []string{
 				"above35hours",
 				"between15and35hours",
@@ -596,7 +621,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `
 						todo
 					`,
-				}.Outline("D7.")
+				}.OutlineHid("D7.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -619,10 +644,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr7
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
+			// single column
+			gr.Cols = 3
 			gr.BottomVSpacers = 0
 			var radioValues = []string{
 				"housewife",
@@ -668,7 +695,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `
 						todo
 					`,
-				}.Outline("D7a.")
+				}.OutlineHid("D7a.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -691,10 +718,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr8
+		// gr3
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
+			// single column
+			gr.Cols = 3
 			gr.BottomVSpacers = 0
 			var radioValues = []string{
 				"worker",
@@ -734,7 +763,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `
 						todo
 					`,
-				}.Outline("D7a.")
+				}.OutlineHid("D7a.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -755,6 +784,26 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.LabelTop()
 				rad.ControlTop()
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebPageD2" // js filename
+
+				// s1 := trl.S{
+				// 	"de": "Keine Prio zweimal",
+				// 	"en": "Priorities not twice",
+				// }
+				// inp.JSBlockTrls = map[string]trl.S{
+				// 	"msg": s1,
+				// }
+
+				inp.JSBlockStrings = map[string]string{}
+				inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
+
+			}
+
 		}
 
 	}
@@ -767,6 +816,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Generelles Risiko",
 			"en": "Risk in general",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		page.Short = trl.S{
 			"de": "Generelles<br>Risiko",
 			"en": "Risk<br>in general",
@@ -803,13 +857,28 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("M1.")
+			}.OutlineHid("M1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
+
+	}
+	// page 3-split
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
+		page.SuppressInProgressbar = true
+
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
 
 		// gr1
 		{
@@ -826,7 +895,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<small>(Mehrfachnennung möglich)</small>
 					`,
 					"en": `todo`,
-				}.Outline("M2.")
+				}.OutlineHid("M2.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -865,7 +934,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("M3.")
+			}.OutlineHid("M3.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -898,7 +967,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("M4.")
+			}.OutlineHid("M4.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -929,7 +998,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 							todo
 						`,
-			}.Outline("M5.")
+			}.OutlineHid("M5.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -959,7 +1028,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 							todo
 						`,
-			}.Outline("M6.")
+			}.OutlineHid("M6.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -977,6 +1046,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Finanzielles Risiko",
 			"en": "Financial risk",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		page.SuppressInProgressbar = true
 		// page.Short = trl.S{
 		// 	"de": "Finanzielles<br>Risiko",
@@ -1005,7 +1079,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("F1.")
+			}.OutlineHid("F1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -1028,7 +1102,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<small>(Mehrfachnennung möglich)</small>
 					`,
 					"en": `todo`,
-				}.Outline("F2.")
+				}.OutlineHid("F2.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -1063,7 +1137,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<small>(Mehrfachnennung möglich)</small>
 					`,
 					"en": `todo`,
-				}.Outline("F3.")
+				}.OutlineHid("F3.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -1147,6 +1221,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Präferenzen und Einschätzungen",
 			"en": "Preferences and assessments",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
 
 		page.Short = trl.S{
 			// including next page
@@ -1172,7 +1250,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("P1.")
+			}.OutlineHid("P1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -1252,7 +1330,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = lbls[i]
 			if i == 0 {
-				gb.MainLabel.Outline("P2.")
+				gb.MainLabel.OutlineHid("P2.")
 			}
 			gr := page.AddGrid(gb)
 			_ = gr
@@ -1271,6 +1349,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Vorsorgeplanung ",
 			"en": "Foresight",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		page.SuppressInProgressbar = true
 		// page.Short = trl.S{
 		// 	"de": "Vorsorgeplanung",
@@ -1408,6 +1491,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Financial numeracy and literacy",
 			"en": "Financial numeracy and literacy",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		page.Short = trl.S{
 			"de": "Financial<br>literacy",
 			"en": "Financial<br>literacy",
@@ -1450,7 +1538,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 						todo
 					`,
-			}.Outline(outlineNumber)
+			}.OutlineHid(outlineNumber)
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 4
@@ -1479,7 +1567,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("FL1.")
+			}.OutlineHid("FL1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -1524,7 +1612,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("FL2.")
+			}.OutlineHid("FL2.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -1553,7 +1641,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("FL3.")
+			}.OutlineHid("FL3.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -1577,7 +1665,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.Label = trl.S{
 						"de": "Was ist die Hauptfunktion des Aktienmarktes?",
 						"en": "todo",
-					}.Outline("FL4.")
+					}.OutlineHid("FL4.")
 					inp.ColSpan = gr.Cols
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 0
@@ -1616,7 +1704,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// 		"en": `
 		// 			todo
 		// 		`,
-		// 	}.Outline("FL4.")
+		// 	}.OutlineHid("FL4.")
 		// 	gr := page.AddGrid(gb)
 		// 	_ = gr
 		// 	gr.BottomVSpacers = 1
@@ -1643,7 +1731,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.Label = trl.S{
 						"de": "Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?",
 						"en": "todo",
-					}.Outline("FL5.")
+					}.OutlineHid("FL5.")
 					inp.ColSpan = gr.Cols
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 0
@@ -1681,7 +1769,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// 		"en": `
 		// 			todo
 		// 		`,
-		// 	}.Outline("FL5.")
+		// 	}.OutlineHid("FL5.")
 		// 	gr := page.AddGrid(gb)
 		// 	_ = gr
 		// 	gr.BottomVSpacers = 1
@@ -1718,7 +1806,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 							
 						`,
 						"en": "todo",
-					}.Outline("FL6.")
+					}.OutlineHid("FL6.")
 					inp.ColSpan = gr.Cols
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 0
@@ -1763,7 +1851,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// 		"en": `
 		// 			todo
 		// 		`,
-		// 	}.Outline("FL6.")
+		// 	}.OutlineHid("FL6.")
 		// 	gr := page.AddGrid(gb)
 		// 	_ = gr
 		// 	gr.BottomVSpacers = 1
@@ -1783,6 +1871,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{
 			"de": "Selbstvertrauen vor Experiment",
 			"en": "Confidence before experiment",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
 		}
 
 		// for next three pages
@@ -1819,7 +1911,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("E1.")
+			}.OutlineHid("E1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -1941,6 +2033,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Selbstvertrauen nach Experiment",
 			"en": "Confidence after experiment",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		page.SuppressInProgressbar = true
 		// page.Short = trl.S{
 		// 	"de": "Selbstvertrauen<br>nachher",
@@ -1975,7 +2072,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 						todo
 					`,
-			}.Outline("E1.")
+			}.OutlineHid("E1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			// gr.BottomVSpacers = 2
@@ -2011,7 +2108,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("E2.")
+			}.OutlineHid("E2.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			// gr.BottomVSpacers = 2
@@ -2031,7 +2128,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						In wieweit stimmen Sie folgenden Aussagen zu:
 					`,
 					"en": `todo`,
-				}.Outline("E3.")
+				}.OutlineHid("E3.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -2074,7 +2171,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					radioVals11,
 					[]trl.S{{"de": ``, "en": ``}},
 				)
-				gb.MainLabel = lblsQ[i].Outline(fmt.Sprintf("%c)", rune(97+i)))
+				gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
 				gr := page.AddGrid(gb)
 				_ = gr
 				// gr.BottomVSpacers = 2
@@ -2096,7 +2193,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `Haben Sie eine weitere Anmerkung zu der Darstellung im Tool?`,
 					"en": `todo`,
-				}.Outline("E4.")
+				}.OutlineHid("E4.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -2120,6 +2217,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{
 			"de": "Erfahrungen mit Finanzen",
 			"en": "Experience in finance",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
 		}
 
 		// includes next page
@@ -2206,7 +2307,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = lbls[i]
 			if i == 0 || true {
-				gb.MainLabel.Outline(fmt.Sprintf("X%v.", i+1))
+				gb.MainLabel.OutlineHid(fmt.Sprintf("X%v.", i+1))
 			}
 			gr := page.AddGrid(gb)
 			_ = gr
@@ -2250,7 +2351,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					`, time.Now().Year(),
 					),
 					"en": `todo`,
-				}.Outline("X6.")
+				}.OutlineHid("X6.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -2378,6 +2479,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Erfahrungen mit Beratung",
 			"en": "Experience with advice",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
 
 		page.SuppressInProgressbar = true
 		// page.Short = trl.S{
@@ -2407,7 +2512,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("B1.")
+			}.OutlineHid("B1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -2431,7 +2536,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("B2.")
+			}.OutlineHid("B2.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -2455,7 +2560,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("B3.")
+			}.OutlineHid("B3.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -2522,7 +2627,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = lbls[i]
 			if i == 0 || true {
-				gb.MainLabel.Outline(fmt.Sprintf("B%v.", i+5))
+				gb.MainLabel.OutlineHid(fmt.Sprintf("B%v.", i+5))
 			}
 			gr := page.AddGrid(gb)
 			_ = gr
@@ -2547,7 +2652,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 					todo
 				`,
-			}.Outline("B7.")
+			}.OutlineHid("B7.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 1
@@ -2565,6 +2670,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Haushaltseinkommen und Vermögen",
 			"en": "Household income and assets",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		page.Short = trl.S{
 			"de": "Haushalts-<br>einkommen<br>Vermögen",
 			"en": "Household income,<br>assets",
@@ -2586,7 +2696,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					`,
 					),
 					"en": `todo`,
-				}.Outline("H1.")
+				}.OutlineHid("H1.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -2667,7 +2777,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `
 						todo
 					`,
-				}.Outline("H2.")
+				}.OutlineHid("H2.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -2783,7 +2893,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						time.Now().Year()-1,
 					),
 					"en": `todo`,
-				}.Outline("H1.")
+				}.OutlineHid("H1.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0

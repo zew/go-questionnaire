@@ -6,8 +6,8 @@
  			"en": "ZEW"
  		},
  		"name": {
- 			"de": "Financial Literacy Test",
- 			"en": "Financial Literacy Test"
+ 			"de": "Umfrage zum Thema Finanzentscheidungen",
+ 			"en": "Umfrage zum Thema Finanzentscheidungen"
  		},
  		"year": 2023,
  		"month": 6,
@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9e5b6dd059b1fd4ba23997b062e6fd6cf8e600c025c32e1b5ce58bddf7e50ae4",
+ 	"md_5": "ccf381e2060e2d1755aa1c284d2ded657b0c33c11525969e98f018f93acd5524",
  	"lang_codes": [
  		"de"
  	],
@@ -74,13 +74,9 @@
  			]
  		},
  		{
- 			"section": {
- 				"de": "Soziodemographie",
- 				"en": "Sociodemographics"
- 			},
  			"label": {
- 				"de": "Alter, Herkunft, Erfahrungen",
- 				"en": "Age, origin, experience"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -1394,8 +1390,8 @@
  		},
  		{
  			"label": {
- 				"de": "Alter, Herkunft, Erfahrungen 2",
- 				"en": "Age, origin, experience 2"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -1424,7 +1420,7 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 6,
+ 					"columns": 3,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -1432,7 +1428,7 @@
  								"de": "\u003cb\u003eD4.\u003c/b\u003e \u0026nbsp; Welchen höchs\u0026shy;ten allgemeinbildenden Schulabschluss haben Sie?",
  								"en": "\u003cb\u003eD4.\u003c/b\u003e \u0026nbsp; Which is your highest degree?"
  							},
- 							"col_span": 6,
+ 							"col_span": 3,
  							"col_span_label": 1
  						},
  						{
@@ -1623,7 +1619,7 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 6,
+ 					"columns": 3,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -1631,7 +1627,7 @@
  								"de": "\u003cb\u003eD5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tHaben Sie eine abgeschlossene Berufsausbil\u0026shy;dung?  \u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003e Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchs\u0026shy;ten an. \u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003cb\u003eD5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\n\t\t\t\t\t"
  							},
- 							"col_span": 6,
+ 							"col_span": 3,
  							"col_span_label": 1
  						},
  						{
@@ -1773,10 +1769,42 @@
  							}
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 6,
+ 					"columns": 3,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -1784,7 +1812,7 @@
  								"de": "\u003cb\u003eD6.\u003c/b\u003e \u0026nbsp; Welchen Familienstand haben Sie?",
  								"en": "\u003cb\u003eD6.\u003c/b\u003e \u0026nbsp; What is your marital status?"
  							},
- 							"col_span": 6,
+ 							"col_span": 3,
  							"col_span_label": 1
  						},
  						{
@@ -2021,7 +2049,7 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 6,
+ 					"columns": 3,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -2029,7 +2057,7 @@
  								"de": "\u003cb\u003eD7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tSind Sie zurzeit in irgendeiner Weise erwerbstätig? \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tUn\u0026shy;ter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003cb\u003eD7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
- 							"col_span": 6,
+ 							"col_span": 3,
  							"col_span_label": 1
  						},
  						{
@@ -2265,7 +2293,7 @@
  					]
  				},
  				{
- 					"columns": 6,
+ 					"columns": 3,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -2273,7 +2301,7 @@
  								"de": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWenn Sie einmal von den Erwerbstätigkeiten absehen, was von dem Folgenden trifft dann auf Sie zu?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
- 							"col_span": 6,
+ 							"col_span": 3,
  							"col_span_label": 1
  						},
  						{
@@ -2555,7 +2583,7 @@
  					]
  				},
  				{
- 					"columns": 6,
+ 					"columns": 3,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -2563,7 +2591,7 @@
  								"de": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tSind Sie zurzeit…\t\t\t\t\t",
  								"en": "\u003cb\u003eD7a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
- 							"col_span": 6,
+ 							"col_span": 3,
  							"col_span_label": 1
  						},
  						{
@@ -2795,19 +2823,23 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "knebPageD2",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"pageID": "pg03"
+ 							}
  						}
  					]
  				}
- 			],
- 			"validation_func_name": "knebPageD2",
- 			"validation_func_msg": {
- 				"de": "no javascript dialog message needed"
- 			}
+ 			]
  		},
  		{
  			"label": {
- 				"de": "Generelles Risiko",
- 				"en": "Risk in general"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -3441,7 +3473,38 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"columns": 1,
@@ -5104,8 +5167,8 @@
  		},
  		{
  			"label": {
- 				"de": "Finanzielles Risiko",
- 				"en": "Financial risk"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -5561,8 +5624,8 @@
  		},
  		{
  			"label": {
- 				"de": "Präferenzen und Einschätzungen",
- 				"en": "Preferences and assessments"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -8621,8 +8684,8 @@
  		},
  		{
  			"label": {
- 				"de": "Vorsorgeplanung ",
- 				"en": "Foresight"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -11893,8 +11956,8 @@
  		},
  		{
  			"label": {
- 				"de": "Financial numeracy and literacy",
- 				"en": "Financial numeracy and literacy"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -17232,8 +17295,8 @@
  		},
  		{
  			"label": {
- 				"de": "Selbstvertrauen vor Experiment",
- 				"en": "Confidence before experiment"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -17986,8 +18049,8 @@
  		},
  		{
  			"label": {
- 				"de": "Selbstvertrauen nach Experiment",
- 				"en": "Confidence after experiment"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -21096,8 +21159,8 @@
  		},
  		{
  			"label": {
- 				"de": "Erfahrungen mit Finanzen",
- 				"en": "Experience in finance"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -24272,8 +24335,8 @@
  		},
  		{
  			"label": {
- 				"de": "Erfahrungen mit Beratung",
- 				"en": "Experience with advice"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -26688,8 +26751,8 @@
  		},
  		{
  			"label": {
- 				"de": "Haushaltseinkommen und Vermögen",
- 				"en": "Household income and assets"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -27904,7 +27967,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "15",
+ 							"response": "17",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

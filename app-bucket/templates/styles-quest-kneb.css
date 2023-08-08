@@ -1,0 +1,10 @@
+.survey-wave-id {
+    display: none;
+}
+.survey-org {
+    display: none;
+}
+
+nav .logo {
+    display: none !important; 
+}

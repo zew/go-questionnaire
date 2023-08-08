@@ -27,6 +27,7 @@ func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, in
 				"en": "no",
 			},
 		},
+		false,
 	)
 
 }
@@ -41,6 +42,7 @@ func meOrTogether(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber str
 		[]string{
 			"1",
 			"2",
+			"3",
 		},
 		[]trl.S{
 			{
@@ -51,7 +53,12 @@ func meOrTogether(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber str
 				"de": "ich gemeinsam mit Partner(in) / anderem Haushaltsmitglied",
 				"en": "me together with partner or other household member(s)",
 			},
+			{
+				"de": "eher Partner(in) / anderes Haushaltsmitglied",
+				"en": "todo",
+			},
 		},
+		true,
 	)
 
 }
@@ -64,6 +71,7 @@ func twoAnswers(
 	//
 	radioValues []string,
 	labels []trl.S,
+	vertical bool,
 ) {
 
 	gr := page.AddGroup()
@@ -84,8 +92,8 @@ func twoAnswers(
 		inp.ColSpanControl = 0
 	}
 
-	// vertical spacer
-	{
+	if !vertical {
+		// vertical spacer
 		inp := gr.AddInput()
 		inp.Type = "textblock"
 		inp.Label = trl.S{"de": "", "en": ""}
@@ -104,6 +112,10 @@ func twoAnswers(
 		if idx > 0 {
 			rad.ColSpan = gr.Cols - 2 - 1
 		}
+		if vertical {
+			rad.ColSpan = gr.Cols
+		}
+
 		rad.ColSpanLabel = 1
 		rad.ColSpanControl = 6
 
@@ -1203,6 +1215,23 @@ func labelsSelfKnowledge() []trl.S {
 			"en": "<small>very high</small>   10",
 		},
 	}
+
+}
+
+func labelsSelfKnowledgeXX() []trl.S {
+
+	lbls := labelsSelfKnowledge()
+
+	lbls[0] = trl.S{
+		"de": "<small>kein Vertrauen</small>     <div>0</div>",
+		"en": "<small>todo</small>     <div>0</div>",
+	}
+	lbls[10] = trl.S{
+		"de": "<small>hohes Vertrauen</small> <div>10</div>",
+		"en": "<small>todo</small> <div>10</div>",
+	}
+
+	return lbls
 
 }
 

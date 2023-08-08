@@ -612,7 +612,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Sind Sie zurzeit in irgendeiner Weise erwerbstätig? 
+						Sind Sie zurzeit in irgendeiner Weise erwerbstätig?
 						<br>
 						<small>
 						Unter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?
@@ -843,13 +843,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Wie schätzen Sie sich persönlich ein: 
-					Sind Sie im Allgemeinen ein risikobereiter Mensch 
+					Wie schätzen Sie sich persönlich ein:
+					Sind Sie im Allgemeinen ein risikobereiter Mensch
 					oder versuchen Sie, Risiken zu vermeiden?
 
 					<small>
-					Antworten Sie bitte anhand der folgenden Skala, 
-					wobei der Wert 0 bedeutet: gar nicht risikobereit 
+					Antworten Sie bitte anhand der folgenden Skala,
+					wobei der Wert 0 bedeutet: gar nicht risikobereit
 					und der Wert 10: sehr risikobereit.
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 					</small>
@@ -925,8 +925,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					 positiven Seiten des Risikos gedacht?
 
 					<small>
-					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: 
-					nur an die negativen Seiten und der 
+					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
+					nur an die negativen Seiten und der
 					Wert 7: nur an die positiven Seiten.
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 					</small>
@@ -953,12 +953,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Haben Sie eher an kleine Alltagssituationen 
+					Haben Sie eher an kleine Alltagssituationen
 					oder an große, wichtige Situationen gedacht?
 
 					<small>
-					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: 
-					kleine Alltagssituationen und der Wert 7: 
+					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
+					kleine Alltagssituationen und der Wert 7:
 					große, wichtige Situationen.
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 
@@ -987,10 +987,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					Haben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?
-		
+
 					<small>
-					Antworten Sie bitte anhand der folgenden Skala, 
-					wobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7: 
+					Antworten Sie bitte anhand der folgenden Skala,
+					wobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:
 					große Gewinne.
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 					</small>
@@ -1018,9 +1018,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					Haben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?
-		
+
 					<small>
-					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet: 
+					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
 					kleine Verluste und der Wert 7: große Verluste.
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 					</small>
@@ -1071,9 +1071,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen.
-		
+
 					<small>
-					Bewerten Sie bitte anhand der Skala von 1 bis 5. 
+					Bewerten Sie bitte anhand der Skala von 1 bis 5.
 					</small>
 				`,
 				"en": `
@@ -1098,7 +1098,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
+					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem finanziellen Risiko beantwortet haben?
 						<small>(Mehrfachnennung möglich)</small>
 					`,
 					"en": `todo`,
@@ -1128,7 +1128,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Denken Sie bitte einmal an die Risiken und Chance im Zusammenhang mit dem Finanzmarkt. 
+					"de": `Denken Sie bitte einmal an die Risiken und Chance im Zusammenhang mit dem Finanzmarkt.
 						Was kommt Ihnen dabei in den Sinn?
 
 						<br>
@@ -1285,7 +1285,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				<br>
 
 				<b>a)</b>&nbsp; Persönliche Finanzen finde ich langweilig.
-				
+
 				`,
 				"en": `
 					todo
@@ -1294,7 +1294,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"de": `
 				<b>b)</b>&nbsp; Ich habe große Angst vor finanziellen Verlusten.
-				
+
 				`,
 				"en": `
 					todo
@@ -1303,7 +1303,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"de": `
 				<b>c)</b>&nbsp; Im Allgemeinen kann man den Menschen vertrauen.
-				
+
 				`,
 				"en": `
 					todo
@@ -1312,7 +1312,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"de": `
 				<b>d)</b>&nbsp; Im Allgemeinen kann man Banken und Finanzinstitutionen in Deutschland vertrauen.
-				
+
 				`,
 				"en": `
 					todo
@@ -1388,11 +1388,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"de": `
 			Inwiefern stimmen Sie den folgenden Aussagen zu?
-			
+
 			<small>
-			Antworten Sie auf der Skala von 
-			1: "Stimme überhaupt nicht zu" 
-			bis 
+			Antworten Sie auf der Skala von
+			1: "Stimme überhaupt nicht zu"
+			bis
 			7: "Stimme voll und ganz zu" .
 			</small>
 
@@ -1400,14 +1400,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			<br>
 
 			<b>%c)</b>&nbsp; Ich spare genug für die Rente.
-				
+
 		`,
 				"en": `
 			<b>%c)</b>&nbsp; todo.
 		`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.
 				`,
 				"en": `
@@ -1415,7 +1415,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Ich fühle mich gut für das Alter abgesichert.
 				`,
 				"en": `
@@ -1423,7 +1423,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche.
 				`,
 				"en": `
@@ -1431,7 +1431,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.
 				`,
 				"en": `
@@ -1439,7 +1439,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.
 				`,
 				"en": `
@@ -1447,7 +1447,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Mir ist es wichtig, dass ich für das Alter ausreichend abgesichert bin.
 				`,
 				"en": `
@@ -1455,7 +1455,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 			},
 			{
-				"de": `	
+				"de": `
 					<b>%c)</b>&nbsp; Ich habe Angst vor Armut im Alter.
 				`,
 				"en": `
@@ -1533,7 +1533,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-						Wie sicher sind Sie sich bei Ihrer Antwort? .
+						Wie sicher sind Sie sich bei Ihrer Antwort?
 					`,
 				"en": `
 						todo
@@ -1558,11 +1558,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Angenommen, Sie haben 100&nbsp;€ Guthaben auf Ihrem Sparkonto. 
-					Dieses Guthaben wird mit 2% pro Jahr verzinst, 
-					und Sie lassen es 5&nbsp;Jahre auf diesem Konto. 
-					Was meinen Sie: Wie hoch wird ihr Guthaben nach 5&nbsp;Jahren sein?				
-					<div style='color:red'>ist das richtig? fünf Jahre? </div>
+					Angenommen, Sie haben 100&nbsp;€ Guthaben auf Ihrem Sparkonto.
+					Dieses Guthaben wird mit 2% pro Jahr verzinst,
+					und Sie lassen es 5&nbsp;Jahre auf diesem Konto.
+					Was meinen Sie: Wie hoch wird ihr Guthaben nach 5&nbsp;Jahren sein?
 				`,
 				"en": `
 					todo
@@ -1603,10 +1602,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Angenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr 
-					und die Inflationsrate beträgt 2% pro Jahr. 
-					Was glauben Sie: 
-					Werden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel, 
+					Angenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr
+					und die Inflationsrate beträgt 2% pro Jahr.
+					Was glauben Sie:
+					Werden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel,
 					mehr oder weniger als heute kaufen können?
 				`,
 				"en": `
@@ -1634,8 +1633,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Stimmen Sie der folgenden Aussage zu: 
-					„Die Anlage in Aktien eines einzelnen Unternehmens ist weniger riskant 
+					Stimmen Sie der folgenden Aussage zu:
+					„Die Anlage in Aktien eines einzelnen Unternehmens ist weniger riskant
 					als die Anlage in einem Fonds mit Aktien ähnlicher Unternehmen“?
 				`,
 				"en": `
@@ -1795,15 +1794,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
-						Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten 
-						sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde. 
-						
-						Gleichzeitig besteht eine 10%-ige Chance, 
-						dass er die Klimaanlage in seinem Haus ersetzen muss, 
-						was 4.000 Euro kosten würde. 
-						
+						Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
+						sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
+
+						Gleichzeitig besteht eine 10%-ige Chance,
+						dass er die Klimaanlage in seinem Haus ersetzen muss,
+						was 4.000 Euro kosten würde.
+
 						Welches ist das größere finanzielle Risiko für Malik?
-							
+
 						`,
 						"en": "todo",
 					}.OutlineHid("FL6.")
@@ -1888,15 +1887,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr0
 		{
 
-			lbls := labelsSelfKnowledge()
-			lbls[0] = trl.S{
-				"de": "<small>kein Vertrauen in die eigenen Fähigkeiten</small>     <div>0</div>",
-				"en": "<small>todo</small>     <div>0</div>",
-			}
-			lbls[10] = trl.S{
-				"de": "<small>hohes Vertrauen in die eigenen Fähigkeiten</small> <div>10</div>",
-				"en": "<small>todo</small> <div>10</div>",
-			}
+			lbls := labelsSelfKnowledgeXX()
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate11,
 				lbls,
@@ -1907,6 +1898,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+					<br>
+					Antworten Sie bitte anhand der folgenden Skala,
+					wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
+					und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
+
 				`,
 				"en": `
 					todo
@@ -2049,15 +2045,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr0
 		{
 
-			lbls := labelsSelfKnowledge()
-			lbls[0] = trl.S{
-				"de": "<small>kein Vertrauen in die eigenen Fähigkeiten</small>     <div>0</div>",
-				"en": "<small>todo</small>     <div>0</div>",
-			}
-			lbls[10] = trl.S{
-				"de": "<small>hohes Vertrauen in die eigenen Fähigkeiten</small> <div>10</div>",
-				"en": "<small>todo</small> <div>10</div>",
-			}
+			lbls := labelsSelfKnowledgeXX()
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate11,
 				lbls,
@@ -2068,6 +2056,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+						<br>
+						Antworten Sie bitte anhand der folgenden Skala,
+						wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
+						und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
+
 					`,
 				"en": `
 						todo
@@ -2268,7 +2261,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": `
-					Haben Sie Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen?			
+					Haben Sie Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen?
 				`,
 				"en": `
 					todo
@@ -2284,7 +2277,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": `
-					Sind Sie der Meinung, dass Investitionsentscheidungen am Ende nur vom Instinkt abhängen?			
+					Sind Sie der Meinung, dass Investitionsentscheidungen am Ende nur vom Instinkt abhängen?
 				`,
 				"en": `
 					todo
@@ -2320,7 +2313,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Haben Sie während Ihrer Schul- oder Berufsausbildung an Vorlesungen, 
+					Haben Sie während Ihrer Schul- oder Berufsausbildung an Vorlesungen,
 					Kursen oder Fortbildungen zum Thema Finanzen oder dem Umgang mit Geld teilgenommen?
 				`,
 				"en": `todo`,
@@ -2342,12 +2335,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						Wir stellen Ihnen nun eine Frage zum Finanzvermögen: <br>
 
 						Haben Sie (d.h. Ihr Haushalt) im Jahr <i>%d</i> eine der folgenden Vermögensarten besessen? <br>
-					
+
 						<small>
-						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, 
+						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt,
 						beantworten Sie die Fragen bitte für sich selbst.
 						</small>
-					
+
 					`, time.Now().Year(),
 					),
 					"en": `todo`,
@@ -2365,12 +2358,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 					Sparanlagen
 
-					<span style='color:red' >Klammern weglassen?</span>
-
 					<br>
 
 					<small>
-					(z.B. Sparbücher, Festgeldkonten, Tagesgeldkonten oder Sparverträge)
+					z.B. Sparbücher, Festgeldkonten, Tagesgeldkonten oder Sparverträge
 					</small>
 				`,
 				"en": `todo`,
@@ -2387,9 +2378,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Bausparverträge
 
 					<br>
-					
+
 					<small>
-					(die noch nicht in Darlehen umgewandelt wurden)						
+					die noch nicht in Darlehen umgewandelt wurden
 					</small>
 				`,
 				"en": `todo`,
@@ -2406,9 +2397,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Festverzinsliche Wertpapiere
 
 					<br>
-					
+
 					<small>
-					(z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds) 						
+					z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
 					</small>
 				`,
 				"en": `todo`,
@@ -2425,9 +2416,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Aktien oder Aktienfonds und Immobilienfonds
 
 					<br>
-					
+
 					<small>
-					(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
+					auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen
 					</small>
 				`,
 				"en": `todo`,
@@ -2444,9 +2435,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Sonstige Wertpapiere
 
 					<br>
-					
+
 					<small>
-					(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen)
+					z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
 					</small>
 				`,
 				"en": `todo`,
@@ -2599,7 +2590,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		lbls := []trl.S{
 			{
 				"de": `
-					Haben Sie Angst, bei finanziellen Entscheidungen Verluste zu machen?	
+					Haben Sie Angst, bei finanziellen Entscheidungen Verluste zu machen?
 				`,
 				"en": `
 					todo
@@ -2692,7 +2683,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
-						Wer ist in Ihrem Haushalt hauptsächlich für folgendes zuständig?
+						Wer ist in Ihrem Haushalt hauptsächlich für Folgendes zuständig?
 					`,
 					),
 					"en": `todo`,
@@ -2768,11 +2759,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Wie hoch schätzen Sie, 
-						ist das <i>monatlich</i> verfügbare Nettoeinkommen Ihres Haushalts, 
-						also dasjenige Geld, das dem gesamten Haushalt nach Abzug 
+						Wie hoch schätzen Sie,
+						ist das <i>monatlich</i> verfügbare Nettoeinkommen Ihres Haushalts,
+						also dasjenige Geld, das dem gesamten Haushalt nach Abzug
 						von Steuern und Sozialversicherungsbeiträgen zur Deckung der Ausgaben
-						 zur Verfügung steht? 
+						 zur Verfügung steht?
 					`,
 					"en": `
 						todo
@@ -2879,15 +2870,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
 						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
-						
+
 						Haben Sie (d.h. Ihr Haushalt) im <i>Dezember %d </i>
 						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
 
 						<small>
-						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, 
+						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt,
 						beantworten Sie die Fragen bitte für sich selbst.
 						</small>
-					
+
 					`,
 						// december previous year - for 2023: 2022
 						time.Now().Year()-1,
@@ -2906,12 +2897,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			trl.S{
 				"de": `
 					Private Lebensversicherungen
-					<small> 
-					(z.B. klassische und fondsge¬bundene Kapitallebensversicherungen, 
-						<i>nicht</i> reine Risikolebensversicherungen 
-						oder Direktversicherungen über den Arbeitgeber)
-					</small> 
-				
+
+					<small>
+					<br>
+					z.B. klassische und fondsgebundene Kapitallebensversicherungen,
+						<i>nicht</i> reine Risikolebensversicherungen
+						oder Direktversicherungen über den Arbeitgeber
+					</small>
+
 				`,
 				"en": `todo`,
 			},
@@ -2926,10 +2919,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			trl.S{
 				"de": `
 					Betriebliche Lebensversicherungen
-					<small> 
+					<small>
 					(z. B. Direktversicherungen)
-					</small> 
-				
+					</small>
+
 				`,
 				"en": `todo`,
 			},
@@ -2943,11 +2936,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Sonstige betriebliche Altersvorsorge 
-					<small> 
-					(z. B. Betriebsrenten aus Pensions- oder Unterstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen) 
-					</small> 
-				
+					Sonstige betriebliche Altersvorsorge
+					<small>
+					(z. B. Betriebsrenten aus Pensions- oder Unterstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)
+					</small>
+
 				`,
 				"en": `todo`,
 			},
@@ -2962,10 +2955,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			trl.S{
 				"de": `
 					Staatlich geförderte private Altersvorsorge („Riester- Rente“)
-					<small> 
-					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten) 
-					</small> 
-				
+					<small>
+					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)
+					</small>
+
 				`,
 				"en": `todo`,
 			},
@@ -2979,10 +2972,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Private Rentenversicherungen 
-					<small> 
-					(z.B. private Rentenversicherungsverträge, die nicht staatlich gefördert werden bzw. abgeschlossen wurden, bevor es solche Fördermöglichkeiten gab) 
-					</small> 				
+					Private Rentenversicherungen
+					<small>
+					(z.B. private Rentenversicherungsverträge, die nicht staatlich gefördert werden bzw. abgeschlossen wurden, bevor es solche Fördermöglichkeiten gab)
+					</small>
 				`,
 				"en": `todo`,
 			},

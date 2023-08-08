@@ -12,6 +12,9 @@ let yr = new Date().getFullYear()
 let az  = 20; // "Anlagehorizont"
 let azV = 10; // "Vertical line"
 
+az  = 25; 
+azV = 20; 
+
 
 // az = 50; // "Anlagehorizont"
 
@@ -106,22 +109,23 @@ var dataObjectCreate = (function () {
 
     // private method
     // get the future value
-    var pFV = () => {
+    var pFVs = () => {
 
         // pComputeData()  // => FV is always defined...
 
         if (ds === undefined || ds.length == 0) {
             return 0
         }
-        let idxHalfAZ = Math.round(ds.length/2); // index half of "Anlagezeitraum"
-        idxHalfAZ = azV; // index half of "Anlagezeitraum"
+        let idxHalfAZ = azV; // index half of "Anlagezeitraum"
         try {
             //
             let idx2 = 2 // idx 0 => years, idx 1 => lower bound, idx 2 => mean returns
-            let fv = ds[idxHalfAZ][idx2]
-            return fv
+            let fv05 = ds[idxHalfAZ][idx2-1]
+            let fv   = ds[idxHalfAZ][idx2-0]
+            let fv95 = ds[idxHalfAZ][idx2+1]
+            return [fv05, fv, fv95]
         } catch (error) {
-            return "FV of ds failed"
+            return ["FV05 of ds failed", "FV of ds failed", "FV95 of ds failed"]
         }
     }
 
@@ -229,7 +233,7 @@ var dataObjectCreate = (function () {
     // public interface
     return {
         resetData:   pResetData,
-        FV:          pFV,
+        FV:          pFVs,
         maxY:        pMaxY,
         computeData: pComputeData,
     };
@@ -310,7 +314,7 @@ var optEchart = {
     // dataset: [],
     title: {
         // text: 'ECharts Getting Started Example'
-        text: 'Auszahlungen',
+        text: 'Angespartes Vermögen',
         left: '1%'
     },
     tooltip: {},

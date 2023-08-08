@@ -32,12 +32,29 @@ function refresh(chartObj, dataObj) {
         });
     }
 
+    let arrayFVs = dataObj.FV()
+
     let elFV = document.getElementById('elFV');
     if (elFV) {
-        elFV.innerHTML = Math.round(dataObj.FV())
+        elFV.innerHTML = Math.round(arrayFVs[1])
     } else {
         console.error(`did not find elFV`)
     }
+
+    let elFV05 = document.getElementById('elFV05');
+    if (elFV05) {
+        elFV05.innerHTML = Math.round(arrayFVs[0])
+    } else {
+        console.error(`did not find elFV95`)
+    }
+
+    let elFV95 = document.getElementById('elFV95');
+    if (elFV95) {
+        elFV95.innerHTML = Math.round(arrayFVs[2])
+    } else {
+        console.error(`did not find elFV95`)
+    }
+
 
 }
 
@@ -176,13 +193,29 @@ let pageLoaded = (inst) => {
         }
     });
 
+    let arrayFVs = dataObject.FV()
 
     let elFV = document.getElementById('elFV');
     if (elFV) {
-        elFV.innerHTML = Math.round(dataObject.FV())
+        elFV.innerHTML = Math.round(arrayFVs[1])
     } else {
         console.error(`did not find elFV`)
     }
+
+    let elFV05 = document.getElementById('elFV05');
+    if (elFV05) {
+        elFV05.innerHTML = Math.round(arrayFVs[0])
+    } else {
+        console.error(`did not find elFV95`)
+    }
+
+    let elFV95 = document.getElementById('elFV95');
+    if (elFV95) {
+        elFV95.innerHTML = Math.round(arrayFVs[2])
+    } else {
+        console.error(`did not find elFV95`)
+    }
+
 
 
 

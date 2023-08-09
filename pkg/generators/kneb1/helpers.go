@@ -2,6 +2,7 @@ package kneb1
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -127,16 +128,7 @@ func twoAnswers(
 }
 
 // splitting eight questions with answers 0-7 onto three pages
-func eightTimes0to7(q *qst.QuestionnaireT, idx0, idx1 int) {
-
-	// page.Label = trl.S{
-	// 	"de": "Vorsorgeplanung ",
-	// 	"en": "Foresight",
-	// }
-	// page.Short = trl.S{
-	// 	"de": "Vorsorgeplanung",
-	// 	"en": "Foresight",
-	// }
+func vorsorgeplanung8x7(q *qst.QuestionnaireT, idx0, idx1 int) {
 
 	lblsQV1to6 := labelsImportantSituations()
 	lblsQV1to6[0] = trl.S{
@@ -240,9 +232,12 @@ func eightTimes0to7(q *qst.QuestionnaireT, idx0, idx1 int) {
 		},
 	}
 
-	// page 6
 	{
 		page := q.AddPage()
+		// page.Label = trl.S{
+		// 	"de": "Vorsorgeplanung ",
+		// 	"en": "Foresight",
+		// }
 		page.Label = trl.S{
 			"de": "",
 			"en": "",
@@ -272,6 +267,330 @@ func eightTimes0to7(q *qst.QuestionnaireT, idx0, idx1 int) {
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
+	}
+
+}
+
+// questions X1, X2, X3, X4 - identical structure - over two pages
+func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
+
+	//
+	//
+	//
+	lblsQX1 := labelsSelfKnowledge()
+	lblsQX1[0] = trl.S{
+		"de": "<small>überhaupt nicht</small>     <div>0</div>",
+		"en": "<small>not at all     </small>     <div>0</div>",
+	}
+	lblsQX1[10] = trl.S{
+		"de": "<small>sehr gerne</small> <div>10</div>",
+		"en": "<small>very like </small> <div>10</div>",
+	}
+	lblsQX2 := labelsSelfKnowledge()
+	lblsQX2[0] = trl.S{
+		"de": "<small>überhaupt nicht</small>     <div>0</div>",
+		"en": "<small>not at all     </small>     <div>0</div>",
+	}
+	lblsQX2[10] = trl.S{
+		"de": "<small>sehr viel</small> <div>10</div>",
+		"en": "<small>very much</small> <div>10</div>",
+	}
+
+	inputsP1 := []string{
+		"qx1_discuss",
+		"qx2_decisionfear",
+	}
+	inputsP2 := []string{
+		"qx3_worry",
+		"qx4_instinct",
+	}
+	lblsP1 := []trl.S{
+		{
+			"de": `
+				Unterhalten Sie sich gerne über Geld und Geldanlagen?				`,
+			"en": `
+				todo
+			`,
+		},
+		{
+			"de": `
+				Haben Sie Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen?
+			`,
+			"en": `
+				todo
+			`,
+		},
+	}
+	lblsP2 := []trl.S{
+		{
+			"de": `
+				Machen Sie sich Sorgen über den Erfolg Ihrer finanziellen Entscheidungen?
+			`,
+			"en": `
+				todo
+			`,
+		},
+		{
+			"de": `
+				Sind Sie der Meinung, dass Investitionsentscheidungen am Ende nur vom Instinkt abhängen?
+			`,
+			"en": `
+				todo
+			`,
+		},
+	}
+
+	// page-a
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Erfahrungen mit Finanzen",
+			"en": "Experience in finance",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.Short = trl.S{
+			"de": "Erfahrungen<br>Finanzen,<br>Beratung",
+			"en": "Experience<br>finance,<br>advice",
+		}
+		page.WidthMax("48rem")
+
+		for i := 0; i < len(inputsP1); i++ {
+
+			hdrs := lblsQX1
+			if i > 0 {
+				hdrs = lblsQX2
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				hdrs,
+				[]string{inputsP1[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lblsP1[i]
+			if i == 0 || true {
+				gb.MainLabel.OutlineHid(fmt.Sprintf("X%v.", i+1))
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+	}
+
+	// page-b
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		for i := 0; i < len(inputsP2); i++ {
+
+			hdrs := lblsQX2
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				hdrs,
+				[]string{inputsP2[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lblsP2[i]
+			if i == 0 || true {
+				gb.MainLabel.OutlineHid(fmt.Sprintf("X%v.", i+1+2))
+			}
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+	}
+
+}
+
+// X5. onto one page
+// X6. onto one page
+func erfahrungMitFinanzenSplit2(q *qst.QuestionnaireT, idx0, idx1 int) {
+
+	// page-a
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Haben Sie während Ihrer Schul- oder Berufsausbildung an Vorlesungen,
+				Kursen oder Fortbildungen zum Thema Finanzen oder dem Umgang mit Geld teilgenommen?
+			`,
+				"en": `todo`,
+			},
+			"qx5_courses",
+			"X5.",
+			false,
+		)
+
+	}
+
+	// page-b
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`
+					Wir stellen Ihnen nun eine Frage zum Finanzvermögen: <br>
+
+					Haben Sie (d.h. Ihr Haushalt) im Jahr <i>%d</i> eine der folgenden Vermögensarten besessen? <br>
+
+					<small>
+					Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt,
+					beantworten Sie die Fragen bitte für sich selbst.
+					</small>
+
+				`, time.Now().Year(),
+					),
+					"en": `todo`,
+				}.OutlineHid("X6.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+
+		}
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Sparanlagen
+
+				<br>
+
+				<small>
+				z.B. Sparbücher, Festgeldkonten, Tagesgeldkonten oder Sparverträge
+				</small>
+			`,
+				"en": `todo`,
+			},
+			"qx6a_savingaccount",
+			"a)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Bausparverträge
+
+				<br>
+
+				<small>
+				die noch nicht in Darlehen umgewandelt wurden
+				</small>
+			`,
+				"en": `todo`,
+			},
+			"qx6b_realestatesa",
+			"b)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Festverzinsliche Wertpapiere
+
+				<br>
+
+				<small>
+				z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
+				</small>
+			`,
+				"en": `todo`,
+			},
+			"qx6c_bonds",
+			"c)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Aktien oder Aktienfonds und Immobilienfonds
+
+				<br>
+
+				<small>
+				auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen
+				</small>
+			`,
+				"en": `todo`,
+			},
+			"qx6d_stocks",
+			"d)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Sonstige Wertpapiere
+
+				<br>
+
+				<small>
+				z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
+				</small>
+			`,
+				"en": `todo`,
+			},
+			"qx6e_other",
+			"e)",
+			true,
+		)
+
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Gold
+			`,
+				"en": `todo`,
+			},
+			"qx6f_gold",
+			"f)",
+			true,
+		)
 	}
 
 }
@@ -320,6 +639,14 @@ func howSicher(page qst.WrappedPageT, inputName, outlineNumber string) {
 
 }
 
+var radioVals2 = []string{
+	"1", "2",
+}
+
+var radioVals3 = []string{
+	"1", "2",
+	"3",
+}
 var radioVals4 = []string{
 	"1", "2",
 	"3", "4",
@@ -353,6 +680,21 @@ var radioVals12 = []string{
 	"6",
 	"7", "8", "9", "10", "11",
 	"12",
+}
+
+// no first col labels
+var columnTemplate2 = []float32{
+	0, 1,
+	0, 1,
+	// 0.4, 1,
+}
+
+// no first col labels
+var columnTemplate3 = []float32{
+	0, 1,
+	0, 1, // middle
+	0, 1,
+	// 0.4, 1,
 }
 
 // no first col labels
@@ -1472,14 +1814,14 @@ func labelsStimmeZuOderNicht() []trl.S {
 			"de": "<small>stimme nicht zu</small>  ",
 			"en": "<small>dont agree</small>       ",
 		},
-		{
-			"de": "<small>weiß nicht</small>        ",
-			"en": "<small>dont know </small>        ",
-		},
-		{
-			"de": "<small>keine Angabe</small>      ",
-			"en": "<small>no answer   </small>      ",
-		},
+		// {
+		// 	"de": "<small>weiß nicht</small>        ",
+		// 	"en": "<small>dont know </small>        ",
+		// },
+		// {
+		// 	"de": "<small>keine Angabe</small>      ",
+		// 	"en": "<small>no answer   </small>      ",
+		// },
 	}
 
 }
@@ -1504,14 +1846,14 @@ func labelsStockMarketPurpose() []trl.S {
 			"de": "nichts davon",
 			"en": "todo",
 		},
-		{
-			"de": "weiß nicht",
-			"en": "todo",
-		},
-		{
-			"de": "keine Angabe",
-			"en": "todo",
-		},
+		// {
+		// 	"de": "weiß nicht",
+		// 	"en": "todo",
+		// },
+		// {
+		// 	"de": "keine Angabe",
+		// 	"en": "todo",
+		// },
 	}
 
 }
@@ -1536,14 +1878,14 @@ func labelsAssetClassVola() []trl.S {
 			"de": "Aktien",
 			"en": "todo",
 		},
-		{
-			"de": "weiß nicht",
-			"en": "todo",
-		},
-		{
-			"de": "keine Angabe",
-			"en": "todo",
-		},
+		// {
+		// 	"de": "weiß nicht",
+		// 	"en": "todo",
+		// },
+		// {
+		// 	"de": "keine Angabe",
+		// 	"en": "todo",
+		// },
 	}
 
 }
@@ -1563,10 +1905,10 @@ func labelsExpectedValueRisk() []trl.S {
 			"de": "man kann es nicht im voraus wissen",
 			"en": "todo",
 		},
-		{
-			"de": "ich weiß nicht",
-			"en": "todo",
-		},
+		// {
+		// 	"de": "ich weiß nicht",
+		// 	"en": "todo",
+		// },
 	}
 
 }
@@ -1604,6 +1946,10 @@ func labelsFrequency() []trl.S {
 	return []trl.S{
 
 		{
+			"de": "immer",
+			"en": "todo",
+		},
+		{
 			"de": "oft",
 			"en": "todo",
 		},
@@ -1628,7 +1974,7 @@ func labelsWhoIsCompetent() []trl.S {
 	return []trl.S{
 
 		{
-			"de": "Mein Partner/ Meine Partnerin",
+			"de": "mein Partner/ meine Partnerin",
 			"en": "todo",
 		},
 		{

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0e3e2d90977e3ec19b361b1815513025ceb00cb453474768be3b29772d3d5c98",
+ 	"md_5": "476fa0a13291b4fe36b7a54fe1556707512dca6b0eefb3aa93039000833c04db",
  	"lang_codes": [
  		"de"
  	],
@@ -2830,6 +2830,12 @@
  							"col_span_control": 1,
  							"js_block_strings": {
  								"pageID": "pg03"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "no javascript dialog message needed",
+ 									"en": "no javascript dialog message needed"
+ 								}
  							}
  						}
  					]
@@ -5203,7 +5209,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko einzugehen.\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 1 bis 5.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko einzugehen.\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert 1 bedeutet: nicht bereit, ein Risiko einzugehen \n\t\t\t\t\tund der Wert 5: bereit, ein erhebliches Risiko einzugehen, \n\t\t\t\t\tum potenziell eine höhere Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -5500,7 +5506,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"columns": 1,
@@ -5508,7 +5546,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem finanziellen Risiko beantwortet haben?\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWoran haben Sie gedacht, als Sie die Frage nach dem \u003ci\u003efinanziellen\u003c/i\u003e Risiko beantwortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 1,
@@ -5538,7 +5576,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"columns": 1,
@@ -5557,7 +5627,8 @@
  							"type": "textarea",
  							"max_chars": 120,
  							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "must"
  						},
  						{
  							"name": "qf3_chance2",
@@ -5587,7 +5658,8 @@
  							"type": "textarea",
  							"max_chars": 120,
  							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "must"
  						},
  						{
  							"name": "qf3_risk2",
@@ -6260,7 +6332,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"columns": 11,
@@ -8714,14 +8818,93 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eP6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\n\t\t\t\t\t\tStellen Sie sich vor, Sie haben 2500\u0026nbsp;Euro in der Lotterie gewonnen\n\t\t\t\t\t\tund können dieses Geld in ein Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren.\n\n\t\t\t\t\t\tDie Chance, dass das Un\u0026shy;ter\u0026shy;neh\u0026shy;men erfolgreich ist, liegt bei 50 Pro\u0026shy;zent.\n\n\t\t\t\t\t\tIm Erfolgsfall verdoppelt sich Ihre Investition nach einem Jahr.\n\n\t\t\t\t\t\tBei Misserfolg verlieren Sie die Hälfte der investierten Summe.\n\t\t\t\t\t\tWelchen Anteil der 2500\u0026nbsp;Euro würden Sie in dieses Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eP6.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qp6_risky_investment",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "\t\t\t\t\t\n\t\t\t\t\t\tIch würde \n\t\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"suffix": {
+ 								"de": "\t\t\t\t\t\n\t\t\t\t\t\t% in das Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren \n\t\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eP7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tCertainty equivalent experiment\u003cbr\u003e\n\t\t\t\t\t\tSiehe Menkhoff und Sakha (2016, 2017) Appendix A.3.\u003cbr\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eP7.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "44rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
  					"bottom_vspacers": 2,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\tInwiefern stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\u003csmall\u003e\n\t\t\tAntworten Sie auf der Skala von\n\t\t\t1: \"Stim\u0026shy;me über\u0026shy;haupt nicht zu\"\n\t\t\tbis\n\t\t\t7: \"Stim\u0026shy;me voll und ganz zu\" .\n\t\t\t\u003c/small\u003e\n\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cbr\u003e\n\n\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Ich spare genug für die Rente.\n\n\t\t",
- 								"en": "\n\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; todo.\n\t\t"
+ 								"de": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\tInwiefern stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\u003csmall\u003e\n\t\tAntworten Sie auf der Skala von\n\t\t1: \"Stim\u0026shy;me über\u0026shy;haupt nicht zu\"\n\t\tbis\n\t\t7: \"Stim\u0026shy;me voll und ganz zu\" .\n\t\t\u003c/small\u003e\n\n\t\t\u003cbr\u003e\n\t\t\u003cbr\u003e\n\n\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Ich spare genug für die Rente.\n\n\t",
+ 								"en": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; todo.\n\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9125,8 +9308,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003eb)\u003c/b\u003e\u0026nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003eb)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003eb)\u003c/b\u003e\u0026nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003eb)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9530,8 +9713,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003ec)\u003c/b\u003e\u0026nbsp; Ich fühle mich gut für das Alter abgesi\u0026shy;chert.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003ec)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003ec)\u003c/b\u003e\u0026nbsp; Ich fühle mich gut für das Alter abgesi\u0026shy;chert.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003ec)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9927,7 +10110,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "44rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"columns": 7,
@@ -9935,8 +10150,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003ed)\u003c/b\u003e\u0026nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003ed)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003ed)\u003c/b\u003e\u0026nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003ed)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -10340,8 +10555,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003ee)\u003c/b\u003e\u0026nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003ee)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003ee)\u003c/b\u003e\u0026nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003ee)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -10745,8 +10960,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003ef)\u003c/b\u003e\u0026nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003ef)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003ef)\u003c/b\u003e\u0026nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003ef)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -11142,7 +11357,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "44rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"columns": 7,
@@ -11150,8 +11397,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003eg)\u003c/b\u003e\u0026nbsp; Mir ist es wich\u0026shy;tig, dass ich für das Alter ausreichend abgesi\u0026shy;chert bin.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003eg)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003eg)\u003c/b\u003e\u0026nbsp; Mir ist es wich\u0026shy;tig, dass ich für das Alter ausreichend abgesi\u0026shy;chert bin.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003eg)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -11555,8 +11802,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003eh)\u003c/b\u003e\u0026nbsp; Ich habe Angst vor Armut im Alter.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003eh)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cb\u003eh)\u003c/b\u003e\u0026nbsp; Ich habe Angst vor Armut im Alter.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003eh)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -11989,7 +12236,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 5,
  					"inputs": [
  						{
@@ -12292,7 +12539,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 4,
  					"columns": 12,
@@ -12947,9 +13226,41 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 5,
  					"inputs": [
  						{
@@ -13252,7 +13563,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 4,
  					"columns": 12,
@@ -13907,9 +14250,41 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 4,
  					"inputs": [
  						{
@@ -14162,7 +14537,39 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 4,
  					"columns": 12,
@@ -14817,9 +15224,41 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 6,
  					"inputs": [
  						{
@@ -15006,7 +15445,39 @@
  							}
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 4,
  					"columns": 12,
@@ -15661,9 +16132,41 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 6,
  					"inputs": [
  						{
@@ -15850,7 +16353,39 @@
  							}
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 4,
  					"columns": 12,
@@ -16505,9 +17040,41 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 6,
  					"inputs": [
  						{
@@ -16636,7 +17203,39 @@
  							}
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 4,
  					"columns": 12,
@@ -18001,7 +18600,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "52rem"
+ 						"width_max": "58rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -18045,6 +18644,84 @@
  							"dynamic_func_paramset": "./echart/inner.html"
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Zurück",
+ 								"en": "todo"
+ 							},
+ 							"accesskey": "p",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"response": "30",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Werte speichern und weiter",
+ 								"en": "todo"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"response": "30",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "3fr 1fr"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},
@@ -26743,12 +27420,27 @@
  							"text_style": {}
  						}
  					}
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "knebPageCounseling",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"pageID": "pg32"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "no javascript dialog message needed",
+ 									"en": "no javascript dialog message needed"
+ 								}
+ 							}
+ 						}
+ 					]
  				}
- 			],
- 			"validation_func_name": "knebPageCounseling",
- 			"validation_func_msg": {
- 				"de": "no javascript dialog message needed"
- 			}
+ 			]
  		},
  		{
  			"label": {
@@ -28048,7 +28740,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "17",
+ 							"response": "34",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

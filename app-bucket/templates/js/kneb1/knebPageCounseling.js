@@ -1,5 +1,5 @@
-// const pageID = "pg12-grp01";
-const pageID = "pg13-grp01";
+// const pageID = "pg13-grp01";
+const pageID = "{{.pageID}}-grp01";
 
 function showHideSubQuestions(showHide, classOfSubQuestion) {
 
@@ -52,32 +52,37 @@ function showB7(event) {
 }
 
 
-if (document.forms.frmMain.qb1_pensionadvice1) {
-    document.forms.frmMain.qb1_pensionadvice1.addEventListener('change', showB2);
-    document.forms.frmMain.qb1_pensionadvice2.addEventListener('change', showB2);
-    document.forms.frmMain.qb1_pensionadvice3.addEventListener('change', showB2);
-    document.forms.frmMain.qb1_pensionadvice4.addEventListener('change', showB2);
-    document.forms.frmMain.qb1_pensionadvice5.addEventListener('change', showB2);
-    console.log("handlers assigned 1");
-}
-
-if (document.forms.frmMain.qb6_delegate1) {
-    document.forms.frmMain.qb6_delegate1.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate2.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate3.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate4.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate5.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate6.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate7.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate8.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate9.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate10.addEventListener('change', showB7);
-    document.forms.frmMain.qb6_delegate11.addEventListener('change', showB7);
-    console.log("handlers assigned 2");
-}
 
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
+
+    if (document.forms.frmMain.qb1_pensionadvice1) {
+        document.forms.frmMain.qb1_pensionadvice1.addEventListener('change', showB2);
+        document.forms.frmMain.qb1_pensionadvice2.addEventListener('change', showB2);
+        document.forms.frmMain.qb1_pensionadvice3.addEventListener('change', showB2);
+        document.forms.frmMain.qb1_pensionadvice4.addEventListener('change', showB2);
+        document.forms.frmMain.qb1_pensionadvice5.addEventListener('change', showB2);
+        console.log("handlers assigned 1");
+    }
+    
+    if (document.forms.frmMain.qb6_delegate1) {
+        document.forms.frmMain.qb6_delegate1.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate2.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate3.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate4.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate5.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate6.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate7.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate8.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate9.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate10.addEventListener('change', showB7);
+        document.forms.frmMain.qb6_delegate11.addEventListener('change', showB7);
+        console.log("handlers assigned 2");
+    }
+    
+
+
+
     showB2();
     showB7();
     const first = document.getElementById("qb1_pensionadvice1");

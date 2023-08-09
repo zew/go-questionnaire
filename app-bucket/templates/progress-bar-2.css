@@ -11,11 +11,11 @@ ol.progress {
 
   position: relative;
   width: 100%;
-  width: calc(100% - 4rem);
+  width: calc(100% - 1.3rem);
 
   margin:  0 auto;
   padding: 0;
-  padding: 0.4em 0;
+  padding-bottom: 0.4em;
 
   display:         flex;
   flex-direction:  row;
@@ -164,3 +164,28 @@ ol.progress {
 }
 
 
+
+
+
+ol.progress-line {
+
+  position: relative;
+  width: 100%;
+  /* width: calc(100% - 4rem); */
+  /* border: 1px solid grey; */
+
+  margin:  0 auto;
+  padding: 0;
+
+  color: var(--clr-pri);
+  background-color: var(--clr-pri);
+  background-color: transparent;
+
+  /* border: inherit; */
+
+}
+
+ol.progress-line div.progress-line-bar {
+  background-color: var(--clr-pri);
+  min-height: 0.35rem;
+}

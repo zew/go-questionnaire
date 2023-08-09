@@ -1,6 +1,8 @@
 package kneb1
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -122,6 +124,200 @@ func twoAnswers(
 		rad.Label = label
 		rad.ControlFirst()
 	}
+}
+
+// splitting eight questions with answers 0-7 onto three pages
+func eightTimes0to7(q *qst.QuestionnaireT, idx0, idx1 int) {
+
+	// page.Label = trl.S{
+	// 	"de": "Vorsorgeplanung ",
+	// 	"en": "Foresight",
+	// }
+	// page.Short = trl.S{
+	// 	"de": "Vorsorgeplanung",
+	// 	"en": "Foresight",
+	// }
+
+	lblsQV1to6 := labelsImportantSituations()
+	lblsQV1to6[0] = trl.S{
+		"de": "<small>stimme überhaupt nicht zu</small> 0",
+		"en": "<small>dont agree at all</small>         0",
+	}
+	lblsQV1to6[6] = trl.S{
+		"de": "<small>stimme voll und ganz zu</small> 7",
+		"en": "<small>agree completely</small>        7",
+	}
+
+	//
+	//
+	inputs := []string{
+		"saving",
+		"knowledge",
+		"secure",
+		"oversight",
+		"avoidance",
+		"procrastination",
+		"emphasis",
+		"fear",
+	}
+	lbls := []trl.S{
+		{
+			"de": `
+		Inwiefern stimmen Sie den folgenden Aussagen zu?
+
+		<small>
+		Antworten Sie auf der Skala von
+		1: "Stimme überhaupt nicht zu"
+		bis
+		7: "Stimme voll und ganz zu" .
+		</small>
+
+		<br>
+		<br>
+
+		<b>%c)</b>&nbsp; Ich spare genug für die Rente.
+
+	`,
+			"en": `
+		<b>%c)</b>&nbsp; todo.
+	`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Ich fühle mich gut für das Alter abgesichert.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Mir ist es wichtig, dass ich für das Alter ausreichend abgesichert bin.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+		{
+			"de": `
+				<b>%c)</b>&nbsp; Ich habe Angst vor Armut im Alter.
+			`,
+			"en": `
+				<b>%c)</b>&nbsp; todo.
+			`,
+		},
+	}
+
+	// page 6
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+		page.WidthMax("44rem")
+
+		for i := idx0; i <= idx1; i++ {
+			// for i := 0; i < len(inputs); i++ {
+			rn := rune(97 + i) // ascii 65 is A; 97 is a
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				lblsQV1to6,
+				[]string{fmt.Sprintf("qv1%c_%s", rn, inputs[i])},
+				radioVals7,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lbls[i].Fill(rn)
+			if i == 0 {
+				gb.MainLabel.OutlineHid("V.")
+			}
+			gr := page.AddGrid(gb)
+			// _ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+}
+
+// a func to create questions 1a, 2a, 3a, 4a
+func howSicher(page qst.WrappedPageT, inputName, outlineNumber string) {
+
+	lblsQF1a := labelsSelfKnowledge()
+	lblsQF1a[0] = trl.S{
+		"de": "<small>nicht sicher</small>     <div>0</div>",
+		"en": "<small>not sure</small>         <div>0</div>",
+	}
+	lblsQF1a[10] = trl.S{
+		"de": "<small>sehr sicher</small>      <div>10</div>",
+		"en": "<small>very sure</small>        <div>10</div>",
+	}
+
+	// append one more
+	lblsQF1aCp := make([]trl.S, len(lblsQF1a)+1)
+	copy(lblsQF1aCp, lblsQF1a)
+	lblsQF1aCp[11] = trl.S{
+		"de": "<small style='padding-left: 3.0rem; text-align: left'>ich weiß die Antwort nicht, ich habe geraten</small> ",
+		"en": "<small style='padding-left: 3.0rem; text-align: left'>I dont know the answer, I guessed.</small>           ",
+	}
+
+	gb := qst.NewGridBuilderRadios(
+		columnTemplate12,
+		lblsQF1aCp,
+		[]string{inputName},
+		radioVals12,
+		[]trl.S{{"de": ``, "en": ``}},
+	)
+	gb.MainLabel = trl.S{
+		"de": `
+						Wie sicher sind Sie sich bei Ihrer Antwort?
+					`,
+		"en": `
+						todo
+					`,
+	}.OutlineHid(outlineNumber)
+	gr := page.AddGrid(gb)
+	_ = gr
+	gr.BottomVSpacers = 4
+	gr.Style = css.NewStylesResponsive(gr.Style)
+	gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+
 }
 
 var radioVals4 = []string{

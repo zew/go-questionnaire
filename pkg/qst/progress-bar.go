@@ -136,3 +136,23 @@ func (q *QuestionnaireT) ProgressBar() string {
 
 	return b.String()
 }
+
+func (q *QuestionnaireT) ProgressBarLine() string {
+
+	if len(q.Pages) < 3 {
+		// avoid division by zero
+		return ""
+	}
+
+	fill := float64(q.CurrPage) / float64(len(q.Pages)-1) * 100
+
+	b := &strings.Builder{}
+
+	fmt.Fprint(b, "\n")
+	fmt.Fprint(b, fmt.Sprintf("\t\t\t\t<ol class='progress-line'>\n"))
+	fmt.Fprint(b, fmt.Sprintf("<div  class='progress-line-bar' style='width:%.1f%%'></div>", fill))
+	fmt.Fprint(b, fmt.Sprintf("</ol>"))
+
+	return b.String()
+
+}

@@ -8,3 +8,10 @@
 nav .logo {
     display: none !important; 
 }
+
+/* no navi buttons on experiment page */
+.pg29-grp03    {
+    display: none !important; 
+}
+
+

@@ -123,6 +123,7 @@ var dataObjectCreate = (function () {
             let fv05 = ds[idxHalfAZ][idx2-1]
             let fv   = ds[idxHalfAZ][idx2-0]
             let fv95 = ds[idxHalfAZ][idx2+1]
+            console.log( "fv05, fv, fv95", [fv05, fv, fv95])
             return [fv05, fv, fv95]
         } catch (error) {
             return ["FV05 of ds failed", "FV of ds failed", "FV95 of ds failed"]

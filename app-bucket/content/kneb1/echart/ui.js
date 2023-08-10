@@ -227,7 +227,6 @@ let pageLoaded = (inst) => {
     console.log(`echart config and creation complete`)
 
 
-
     let elReset = document.getElementById('elReset');
     if (elReset) {
         elReset.onclick = (evt) => {
@@ -257,6 +256,9 @@ let pageLoaded = (inst) => {
     } else {
         console.error(`did not find elReset`)
     }
+
+
+    addMarkPoint(myChart);
 
 
     console.log(`page loaded complete`)

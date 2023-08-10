@@ -99,7 +99,7 @@ let graphicElements = [{
 }];
 
 // option.graphic = graphicElements;
-function setIt(chartObj) {
+function addGraphicElements(chartObj) {
   chartObj.setOption(
     {
       'graphic': graphicElements,
@@ -112,7 +112,7 @@ function setIt(chartObj) {
 let lk = document.createElement("A");
 lk.setAttribute("href","#")
 lk.innerHTML = "graphic elements"
-lk.setAttribute("onclick","setIt(myChart)")
+lk.setAttribute("onclick","addGraphicElements(myChart)")
 
 var body = document.getElementsByTagName("body")[0];
 var lastchild = body.lastChild;

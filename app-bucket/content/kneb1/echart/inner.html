@@ -22,7 +22,7 @@
 
 </div>
 
-<!-- 
+<!--
 <p style="color:red">
   F12  - console:  Change Anlagezeitraum; bspw. az=30  - change Anlagehorizont bspw. azV = 25; - click on "Aktienanteil" for refresh
 </p>
@@ -105,6 +105,35 @@
     color: var(--clr-sec);
   }
 
+
+/* https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
+.tooltip-1 {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.tooltip-1[title]:hover::after {
+  position: absolute;
+  display:  inline-block;
+  width:    44rem;
+  bottom:  0.6rem;
+  left:     calc(100% + -2.5rem);
+
+
+  /* white-space: nowrap; */
+  padding: 0.2rem 0.4rem;
+  background-color: var(--clr-sec-drk2);
+  border: 1px solid #111111;
+  z-index: 99999;
+
+  /* visibility: hidden; */
+
+  content:  attr(title);
+
+}
+
 </style>
 
 <div style="display: flex; flex-direction: row;">
@@ -117,14 +146,14 @@
     </p>
 
     <p>
-      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei 
+      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
     </p>
     <p class="right">
       <strong><span id="elFV">-</span> €</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
 
     <p>
-      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>     
+      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
     </p>
     <p class="right">
       <strong><span id="elFV95">-</span> €</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -133,14 +162,23 @@
 
 
 
+    <span class="tooltip-1"
+title="Die Anleihe, ist ein Wertpapier, für das der Anleger im Regelfall Zinsen erhält. Mit einer Anleihe überlässt der Anleger dem Aussteller der Anleihe einen bestimmten Betrag für eine gewisse Zeit.
+Kursschwankungen von Anleihen sind in der Regel geringer als beispielsweise bei Aktien. Auch bei Anleihen sind Kursverluste möglich.
+Quelle : BaFin- https://www.bafin.de/DE/Verbraucher/GeldanlageWertpapiere/Produkte/Schuldverschreibungen/Schuldverschreibung_node.html.
+Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendite erhält. Allerdings wird das angesparte Vermögen durch die risikofreie Anlage geringer ausfallen, da keine (hohen) Gewinne erzielt werden."
 
-    <p>
-      Sparbetrag
-    </p>
-    <p class="right" style="margin-right: 0.46rem">
+    >
 
 
-      <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>
+
+      <p>
+        Sparbetrag
+      </p>
+
+      <p style="margin-right: 0.46rem" class="right" >
+
+        <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>
 
         <input
           tabindex="1"
@@ -158,6 +196,8 @@
 
         <a tabindex="-1" href="#" class="spinner" id="elUp">+ &nbsp;&nbsp;&nbsp;</a>
     </p>
+
+    </span>  <!-- tooltip -->
 
 
     <p style="margin-top: 0.8rem;">
@@ -259,4 +299,5 @@
 
 
 <script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/ui.js?v=001"></script>
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/markpoint.js?v=001"></script>
 

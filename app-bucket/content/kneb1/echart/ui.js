@@ -2,61 +2,6 @@
 
 var myChart;
 
-function refresh(chartObj, dataObj) {
-
-    dataObj.resetData()
-
-    // setOption or resize
-    // chartObj.resize();
-
-    if (true) {
-        chartObj.setOption({
-            'xAxis': {
-                max: yr+az,
-            },
-            'yAxis': {
-                max: dataObject.maxY(),
-            },
-            series: [
-                {
-                    data: dataObject.computeData(),
-                },
-                {
-                    data: dataObject.computeData(),
-                    markArea: getVerticalArea(yr, azV),
-                },
-                {
-                    data: dataObject.computeData(),
-                },
-            ]
-        });
-    }
-
-    let arrayFVs = dataObj.FV()
-
-    let elFV = document.getElementById('elFV');
-    if (elFV) {
-        elFV.innerHTML = Math.round(arrayFVs[1])
-    } else {
-        console.error(`did not find elFV`)
-    }
-
-    let elFV05 = document.getElementById('elFV05');
-    if (elFV05) {
-        elFV05.innerHTML = Math.round(arrayFVs[0])
-    } else {
-        console.error(`did not find elFV95`)
-    }
-
-    let elFV95 = document.getElementById('elFV95');
-    if (elFV95) {
-        elFV95.innerHTML = Math.round(arrayFVs[2])
-    } else {
-        console.error(`did not find elFV95`)
-    }
-
-
-}
 
 
 // UI funcs
@@ -193,7 +138,7 @@ let pageLoaded = (inst) => {
         }
     });
 
-    let arrayFVs = dataObject.FV()
+    let arrayFVs = dataObject.FVs()
 
     let elFV = document.getElementById('elFV');
     if (elFV) {
@@ -258,7 +203,7 @@ let pageLoaded = (inst) => {
     }
 
 
-    addMarkPoint(myChart);
+    // addMarkPoint(myChart);
 
 
     console.log(`page loaded complete`)

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8a3cb5f054e6533b9320dc8740d45609e3fcf5dafd5713a1a651574f4027051d",
+ 	"md_5": "2dd35859c45860fd77f3496cbfd7e252ea25bacf3751e3fc158d5bbb84e77786",
  	"lang_codes": [
  		"de"
  	],
@@ -2882,7 +2882,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert 10: sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert 10: sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -3519,7 +3519,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM2.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eM2.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003e(Mehrfachnennung möglich)\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003cb\u003eM2.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 1,
@@ -3557,7 +3557,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an die neg\u0026shy;ativen oder\n\t\t\t\t\t pos\u0026shy;itiven Seiten des Risikos gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tnur an die neg\u0026shy;ativen Seiten und der\n\t\t\t\t\tWert 7: nur an die pos\u0026shy;itiven Seiten.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an die neg\u0026shy;ativen oder\n\t\t\t\t\t pos\u0026shy;itiven Seiten des Risikos gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tnur an die neg\u0026shy;ativen Seiten und der\n\t\t\t\t\tWert 7: nur an die pos\u0026shy;itiven Seiten.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 7,
@@ -3962,7 +3962,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an kleine Alltagssituationen\n\t\t\t\t\toder an große, wich\u0026shy;tige Situationen gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Alltagssituationen und der Wert 7:\n\t\t\t\t\tgroße, wich\u0026shy;tige Situationen.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an kleine Alltagssituationen\n\t\t\t\t\toder an große, wich\u0026shy;tige Situationen gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Alltagssituationen und der Wert 7:\n\t\t\t\t\tgroße, wich\u0026shy;tige Situationen.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 7,
@@ -4367,7 +4367,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:\n\t\t\t\t\tgroße Gewinne.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:\n\t\t\t\t\tgroße Gewinne.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 7,
@@ -4772,7 +4772,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Verluste und der Wert 7: große Verluste.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Verluste und der Wert 7: große Verluste.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 7,
@@ -5209,7 +5209,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko einzugehen.\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert 1 bedeutet: nicht bereit, ein Risiko einzugehen \n\t\t\t\t\tund der Wert 5: bereit, ein erhebliches Risiko einzugehen, \n\t\t\t\t\tum potenziell eine höhere Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko einzugehen.\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert 1 bedeutet: nicht bereit, ein Risiko einzugehen \n\t\t\t\t\tund der Wert 5: bereit, ein erhebliches Risiko einzugehen, \n\t\t\t\t\tum potenziell eine höhere Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -5546,7 +5546,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWoran haben Sie gedacht, als Sie die Frage nach dem \u003ci\u003efinanziellen\u003c/i\u003e Risiko beantwortet haben?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWoran haben Sie gedacht, als Sie die Frage nach dem \u003ci\u003efinanziellen\u003c/i\u003e Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 1,
@@ -7582,7 +7582,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eP4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIm Allgemeinen kann man den Menschen vertrauen.\n\n\t\t\t\t",
+ 								"de": "\u003cb\u003eP4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIm Allgemeinen kann man den Menschen ver\u0026shy;trau\u0026shy;en.\n\n\t\t\t\t",
  								"en": "\u003cb\u003eP4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -8187,7 +8187,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eP5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIm Allgemeinen kann man Banken und Finanzinstitutionen in Deutsch\u0026shy;land vertrauen.\n\n\t\t\t\t",
+ 								"de": "\u003cb\u003eP5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIm Allgemeinen kann man Banken und Finanzinstitutionen in Deutsch\u0026shy;land ver\u0026shy;trau\u0026shy;en.\n\n\t\t\t\t",
  								"en": "\u003cb\u003eP5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -8840,7 +8840,7 @@
  								"en": "todo"
  							},
  							"suffix": {
- 								"de": "\t\t\t\t\t\n\t\t\t\t\t\t% in das Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren \n\t\t\t\t\t",
+ 								"de": "\t\t\t\t\t\n\t\t\t\t\t\t% in das Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren. \n\t\t\t\t\t",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -8903,7 +8903,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\tInwiefern stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\u003csmall\u003e\n\t\tAntworten Sie auf der Skala von\n\t\t1: \"Stim\u0026shy;me über\u0026shy;haupt nicht zu\"\n\t\tbis\n\t\t7: \"Stim\u0026shy;me voll und ganz zu\" .\n\t\t\u003c/small\u003e\n\n\t\t\u003cbr\u003e\n\t\t\u003cbr\u003e\n\n\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Ich spare genug für die Rente.\n\n\t",
+ 								"de": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\tInwiefern stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\u003csmall\u003e\n\t\tAnt\u0026shy;worten Sie auf der Skala von\n\t\t1: \"Stim\u0026shy;me über\u0026shy;haupt nicht zu\"\n\t\tbis\n\t\t7: \"Stim\u0026shy;me voll und ganz zu\" .\n\t\t\u003c/small\u003e\n\n\t\t\u003cbr\u003e\n\t\t\u003cbr\u003e\n\n\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Ich spare genug für die Rente.\n\n\t",
  								"en": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; todo.\n\t"
  							},
  							"col_span": 7,
@@ -12479,7 +12479,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Antwort?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eFL1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eFL1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 12,
@@ -12972,7 +12972,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Antwort nicht, ich habe geraten\u003c/small\u003e ",
+ 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Ant\u0026shy;wort nicht, ich habe ge\u0026shy;ra\u0026shy;ten\u003c/small\u003e ",
  								"en": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eI dont know the an\u0026shy;swer, I guessed.\u003c/small\u003e           "
  							},
  							"col_span_control": 2.5,
@@ -13403,7 +13403,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL2a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Antwort?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eFL2a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eFL2a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 12,
@@ -13896,7 +13896,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Antwort nicht, ich habe geraten\u003c/small\u003e ",
+ 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Ant\u0026shy;wort nicht, ich habe ge\u0026shy;ra\u0026shy;ten\u003c/small\u003e ",
  								"en": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eI dont know the an\u0026shy;swer, I guessed.\u003c/small\u003e           "
  							},
  							"col_span_control": 2.5,
@@ -14277,7 +14277,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Antwort?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eFL3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eFL3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 12,
@@ -14770,7 +14770,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Antwort nicht, ich habe geraten\u003c/small\u003e ",
+ 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Ant\u0026shy;wort nicht, ich habe ge\u0026shy;ra\u0026shy;ten\u003c/small\u003e ",
  								"en": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eI dont know the an\u0026shy;swer, I guessed.\u003c/small\u003e           "
  							},
  							"col_span_control": 2.5,
@@ -15127,7 +15127,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Antwort?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eFL4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eFL4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 12,
@@ -15620,7 +15620,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Antwort nicht, ich habe geraten\u003c/small\u003e ",
+ 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Ant\u0026shy;wort nicht, ich habe ge\u0026shy;ra\u0026shy;ten\u003c/small\u003e ",
  								"en": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eI dont know the an\u0026shy;swer, I guessed.\u003c/small\u003e           "
  							},
  							"col_span_control": 2.5,
@@ -15977,7 +15977,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL5a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Antwort?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eFL5a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eFL5a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 12,
@@ -16470,7 +16470,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Antwort nicht, ich habe geraten\u003c/small\u003e ",
+ 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Ant\u0026shy;wort nicht, ich habe ge\u0026shy;ra\u0026shy;ten\u003c/small\u003e ",
  								"en": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eI dont know the an\u0026shy;swer, I guessed.\u003c/small\u003e           "
  							},
  							"col_span_control": 2.5,
@@ -16798,7 +16798,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL6a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Antwort?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eFL6a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eFL6a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 12,
@@ -17291,7 +17291,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Antwort nicht, ich habe geraten\u003c/small\u003e ",
+ 								"de": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eich weiß die Ant\u0026shy;wort nicht, ich habe ge\u0026shy;ra\u0026shy;ten\u003c/small\u003e ",
  								"en": "\u003csmall style='padding-left: 3.0rem; text-align: left'\u003eI dont know the an\u0026shy;swer, I guessed.\u003c/small\u003e           "
  							},
  							"col_span_control": 2.5,
@@ -17488,7 +17488,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 0 bedeutet: Kein Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\tund der Wert 10: Hohes Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t",
+ 								"de": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t",
  								"en": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -17497,7 +17497,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ekein Vertrauen\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"de": "\u003csmall\u003ekein Ver\u0026shy;trau\u0026shy;en\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -17937,7 +17937,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ehohes Vertrauen\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
+ 								"de": "\u003csmall\u003ehohes Ver\u0026shy;trau\u0026shy;en\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -20147,7 +20147,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eE5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie informiert fühlen Sie sich über das gezeigte Szenario?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eE5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie in\u0026shy;for\u0026shy;miert fühlen Sie sich über das gezeigte Szenario?\n\t\t\t\t\t",
  								"en": "\u003cb\u003eE5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -20156,7 +20156,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003eganz und gar uninformiert\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"de": "\u003csmall\u003eganz und gar un\u0026shy;in\u0026shy;for\u0026shy;miert\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -20596,7 +20596,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003eganz und gar informiert\u003c/small\u003e       \u003cdiv\u003e10\u003c/div\u003e",
+ 								"de": "\u003csmall\u003eganz und gar in\u0026shy;for\u0026shy;miert\u003c/small\u003e       \u003cdiv\u003e10\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -20975,7 +20975,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eE8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAntworten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Vertrauen in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eE8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t\t",
  								"en": "\u003cb\u003eE8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
@@ -20984,7 +20984,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ekein Vertrauen\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"de": "\u003csmall\u003ekein Ver\u0026shy;trau\u0026shy;en\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -21424,7 +21424,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ehohes Vertrauen\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
+ 								"de": "\u003csmall\u003ehohes Ver\u0026shy;trau\u0026shy;en\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
  							},
  							"col_span_control": 1,

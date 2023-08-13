@@ -234,7 +234,7 @@ var dataObjectCreate = (function () {
     // public interface
     return {
         resetData:   pResetData,
-        FV:          pFVs,
+        FVs:          pFVs,
         maxY:        pMaxY,
         computeData: pComputeData,
     };
@@ -501,7 +501,12 @@ var optEchart = {
                 tooltip: [0, 2, 4],
              },
              data: dataObject.computeData(),
+
              markArea: getVerticalArea(yr, azV),
+            //  markPoint: getMarkpointConfig( [30000, 33000, 34000] ),
+             markPoint: getMarkpointConfig( dataObject.FVs() ),
+
+
         },
 
 
@@ -531,6 +536,8 @@ var optEchart = {
                 tooltip: [0, 3, 4],
              },
              data: dataObject.computeData(),
+
+
         },
 
 
@@ -539,6 +546,65 @@ var optEchart = {
 
     ]
 };
+
+function refresh(chartObj, dataObj) {
+
+    dataObj.resetData()
+
+    // setOption or resize
+    // chartObj.resize();
+
+    if (true) {
+        chartObj.setOption({
+            'xAxis': {
+                max: yr+az,
+            },
+            'yAxis': {
+                max: dataObject.maxY(),
+            },
+            series: [
+                {
+                    data: dataObj.computeData(),
+                },
+                {
+                    data: dataObj.computeData(),
+                    markArea:  getVerticalArea(yr, azV),
+                    // markPoint: getMarkpointConfig( [30000, 33000, 34000] ),
+                    markPoint: getMarkpointConfig( dataObj.FVs() ),
+                },
+                {
+                    data: dataObj.computeData(),
+                },
+            ]
+        });
+    }
+
+    let arrayFVs = dataObj.FVs()
+
+    let elFV = document.getElementById('elFV');
+    if (elFV) {
+        elFV.innerHTML = Math.round(arrayFVs[1])
+    } else {
+        console.error(`did not find elFV`)
+    }
+
+    let elFV05 = document.getElementById('elFV05');
+    if (elFV05) {
+        elFV05.innerHTML = Math.round(arrayFVs[0])
+    } else {
+        console.error(`did not find elFV95`)
+    }
+
+    let elFV95 = document.getElementById('elFV95');
+    if (elFV95) {
+        elFV95.innerHTML = Math.round(arrayFVs[2])
+    } else {
+        console.error(`did not find elFV95`)
+    }
+
+
+}
+
 
 // creation of chart object => common.js - initPage()
 

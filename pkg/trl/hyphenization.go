@@ -16,6 +16,8 @@ var hyph = []string{
 	// www.duden.de/rechtschreibung/Abweichung
 
 	// reduced hyphenization
+	"All|tags|si|tu|a|ti|on",
+	"All|tags|si|tu|a|ti|on|en",
 	"Aktien|markt",
 	"unter|bewertet", // 	"be|wer|tet",
 	"über|bewertet",
@@ -41,7 +43,9 @@ var hyph = []string{
 	"Ab|wei|chung",
 	"Ana|ly|se",
 	"Ana|ly|sen",
+	"All|tag",  // www.duden.de/rechtschreibung/Alltag
 	"An|ga|be", // www.duden.de/rechtschreibung/Angabe
+	"Ant|wort", // www.duden.de/rechtschreibung/Antwort
 	"Arbeits|markt|öko|no|mie",
 	"as|so|zi|ie|rt",
 	"auf|wer|ten",
@@ -76,6 +80,7 @@ var hyph = []string{
 	"Finanz|wirt|schaft",
 	"For|schung",
 	"ge|samt",
+	"ge|ra|ten", // www.duden.de/rechtschreibung/geraten_gelingen_hingelangen
 	"ge|eig|net",
 	"Geld|po|li|tik",
 	"Groß|unter|nehmen",
@@ -87,6 +92,7 @@ var hyph = []string{
 	"höchs|te",
 	"Immob|ilien|kredite",
 	"In|fla|ti|on",
+	"in|for|miert", // www.duden.de/rechtschreibung/uninformiert
 	"in|ef|fek|tiv",
 	"In|dus|trie|öko|no|mie",
 	"ir|re|le|vant",
@@ -136,11 +142,13 @@ var hyph = []string{
 	"stei|gen",
 	"stim|me", // daring, as in "stimme voll zu"
 	"Stif|tung",
+	"Si|tu|a|ti|on", // www.duden.de/rechtschreibung/Situation
 	"Stan|dard|abweichung ",
 	"Te|le|kom|mu|ni|ka|ti|on",
 	"über|haupt",
 	"Um|welt|öko|no|mie",
 	"un|ent|schieden",
+	"un|in|for|miert", // www.duden.de/rechtschreibung/uninformiert
 	"un|ter",
 	"Un|ter|neh|men",
 	"un|ver|än|dert",
@@ -151,6 +159,7 @@ var hyph = []string{
 	"ver|bes|sern",
 	"ver|bes|sert",
 	"ver|füg|bar",
+	"Ver|trau|en", // https://www.duden.de/rechtschreibung/Vertrauen
 	"Ver|schlech|te|rung",
 	"ver|schlech|tern",
 	"ver|schlech|tert",

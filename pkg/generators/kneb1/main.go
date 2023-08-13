@@ -1437,7 +1437,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 				inp.Suffix = trl.S{
 					"de": `					
-						% in das Unternehmen investieren 
+						% in das Unternehmen investieren. 
 					`,
 					"en": `todo`,
 				}

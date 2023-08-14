@@ -183,9 +183,19 @@ ol.progress-line {
 
   /* border: inherit; */
 
+
 }
 
 ol.progress-line div.progress-line-bar {
-  background-color: var(--clr-pri);
+  background-color: var(--clr-sec-drk1);
+  background-color: var(--clr-sec-lgt1);
   min-height: 0.35rem;
+  /* border-top:    2px solid transparent; */
+  /* border-bottom: 2px solid transparent; */
+  border-right: 1.8rem solid var(--clr-pri-hov);
+  border-right: 1.8rem solid var(--clr-pri);
+
+  /* making sure, the border-right does not overflow its container */
+  box-sizing: border-box !important;
+
 }

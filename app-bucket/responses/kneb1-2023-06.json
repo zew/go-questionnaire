@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2dd35859c45860fd77f3496cbfd7e252ea25bacf3751e3fc158d5bbb84e77786",
+ 	"md_5": "b410b83dce65869abd06923e8e3d86cf80289126abeee8dd109597242b57e857",
  	"lang_codes": [
  		"de"
  	],
@@ -3962,7 +3962,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an kleine Alltagssituationen\n\t\t\t\t\toder an große, wich\u0026shy;tige Situationen gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Alltagssituationen und der Wert 7:\n\t\t\t\t\tgroße, wich\u0026shy;tige Situationen.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an kleine All\u0026shy;tags\u0026shy;si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on\u0026shy;en\n\t\t\t\t\toder an große, wich\u0026shy;tige Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;onen gedacht?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine All\u0026shy;tags\u0026shy;si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on\u0026shy;en und der Wert 7:\n\t\t\t\t\tgroße, wich\u0026shy;tige Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;onen.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 7,
@@ -3971,7 +3971,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ekleine Alltagssituationen\u003c/small\u003e 1",
+ 								"de": "\u003csmall\u003ekleine All\u0026shy;tags\u0026shy;si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on\u0026shy;en\u003c/small\u003e 1",
  								"en": "\u003csmall\u003esmall everyday life\u003c/small\u003e 1"
  							},
  							"col_span_control": 1,
@@ -4235,7 +4235,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003egroße, wich\u0026shy;tige Situationen\u003c/small\u003e 7",
+ 								"de": "\u003csmall\u003egroße, wich\u0026shy;tige Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;onen\u003c/small\u003e 7",
  								"en": "\u003csmall\u003ebig important occasions\u003c/small\u003e     7"
  							},
  							"col_span_control": 1,
@@ -4367,7 +4367,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:\n\t\t\t\t\tgroße Gewinne.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;onen gedacht, in denen es kleine oder große Gewinne gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:\n\t\t\t\t\tgroße Gewinne.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 7,
@@ -4772,7 +4772,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Verluste und der Wert 7: große Verluste.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHaben Sie eher an Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;onen gedacht, in denen es kleine oder große Verluste gibt?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:\n\t\t\t\t\tkleine Verluste und der Wert 7: große Verluste.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003eM6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 7,

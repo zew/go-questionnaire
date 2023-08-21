@@ -316,6 +316,7 @@ var optEchart = {
     title: {
         // text: 'ECharts Getting Started Example'
         text: 'Angespartes Vermögen',
+        text: `Prognostizierte Entwicklung bis ${yr+azV}` ,
         left: '1%'
     },
     tooltip: {},
@@ -413,6 +414,17 @@ var optEchart = {
         max: 40 * 1000, // init
         max: dataObject.maxY(),
 
+        // 
+        name: 'Vermögen',
+        nameLocation: 'middle',
+        nameGap: 62,
+        nameTextStyle: {
+            fontSize: 12,
+            fontSize: 14,
+            fontSize: 16,
+        },
+        
+        
         axisLabel: {
             // compare  axisLabel.formatter
             formatter: function (vl, index) {
@@ -584,6 +596,7 @@ function refresh(chartObj, dataObj) {
     let elFV = document.getElementById('elFV');
     if (elFV) {
         elFV.innerHTML = Math.round(arrayFVs[1])
+        elFV.innerHTML = Math.round(arrayFVs[1]/100)*100
     } else {
         console.error(`did not find elFV`)
     }
@@ -591,6 +604,7 @@ function refresh(chartObj, dataObj) {
     let elFV05 = document.getElementById('elFV05');
     if (elFV05) {
         elFV05.innerHTML = Math.round(arrayFVs[0])
+        elFV05.innerHTML = Math.round(arrayFVs[0]/100)*100
     } else {
         console.error(`did not find elFV95`)
     }
@@ -598,6 +612,7 @@ function refresh(chartObj, dataObj) {
     let elFV95 = document.getElementById('elFV95');
     if (elFV95) {
         elFV95.innerHTML = Math.round(arrayFVs[2])
+        elFV95.innerHTML = Math.round(arrayFVs[2]/100)*100
     } else {
         console.error(`did not find elFV95`)
     }

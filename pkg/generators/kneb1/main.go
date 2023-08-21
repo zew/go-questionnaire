@@ -44,6 +44,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Dear Madam / Sir,",
 			"de": "Sehr geehrte Damen und Herren",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
 		// pge.Short = trl.S{
 		// 	"en": "Greeting",
 		// 	"de": "Begrüßung",
@@ -172,7 +177,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						},
 					)
 				}
-				for year := 1930; year < time.Now().Year()-10; year++ {
+				// for year := 1930; year < time.Now().Year()-10; year++ {
+				for year := 1968; year <= 2005; year++ {
 					inp.DD.Add(
 						fmt.Sprintf("%d", year),
 						trl.S{
@@ -863,7 +869,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
-	// page 3-split
+	// page 3-split-1
 	{
 		page := q.AddPage()
 
@@ -907,7 +913,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr2
+	}
+
+	// page 3-split-2
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
+		page.SuppressInProgressbar = true
+
+		page.WidthMax("42rem")
+		page.WidthMax("48rem")
+
+		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate7,
@@ -1926,6 +1948,59 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	// page chart introduction 1
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "Experiment-Chart-Introduction",
+			"de": "Experiment chart-Introduction",
+		}
+		page.Label = trl.S{
+			"en": "",
+			"de": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+		page.WidthMax("52rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 3
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": `
+					<p>
+					In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
+
+					Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist.
+					</p>
+
+					<p>
+					Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: <i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
+					</p>
+
+					<p>
+					In unserer interaktiven Graphik versuchen wir, die Chancen und Risiken einer Anlage am Kapitalmarkt zu verdeutlichen.
+					</p>
+
+	
+					`,
+					"en": `
+							todo
+						`,
+				}
+			}
+		}
+
+	}
+
+	// page chart introduction 2
 	//   guided tour
 	{
 		page := q.AddPage()
@@ -1967,62 +2042,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.DynamicFuncParamset = "./slide-show/index.html"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
-			}
-		}
-
-	}
-
-	// page chart introduction 2
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{
-			"en": "Experiment-Chart-Introduction",
-			"de": "Experiment chart-Introduction",
-		}
-		page.Label = trl.S{
-			"en": "",
-			"de": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("52rem")
-
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 3
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{
-					"de": `
-						<p>
-						In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
-
-						Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist.
-						</p>
-
-						<p>
-						Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vor: <i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
-						</p>
-
-						<p>
-						Mit der folgenden interaktiven Graphik möchten wir Ihnen die Chancen und Risiken bei einer Anlage am Kapitalmarkt verdeutlichen und erklären.
-						</p>
-
-						<p>
-						Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?
-						</p>
-
-					`,
-					"en": `
-						todo
-					`,
-				}
 			}
 		}
 
@@ -2095,7 +2114,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
-				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1)
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1-1)
 				inp.Label = trl.S{
 					"de": "Zurück",
 					"en": "todo",
@@ -2841,7 +2860,83 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			}
 
-			{
+			ranges := []int{
+				0,
+				500,
+				750,
+				1000,
+				1000,
+				1250,
+				1500,
+				2000,
+				2500,
+				3000,
+				3500,
+				4000,
+				4500,
+				5000,
+				//
+				7500,
+				10000,
+				15000,
+			}
+			lbls := make([]trl.S, 0, len(ranges)+1)
+			opts := make([]string, 0, len(ranges)+1)
+
+			for i := 0; i < len(ranges); i++ {
+
+				rLow := ranges[i]
+				rHigh := -1
+				if i < len(ranges)-1 {
+					rHigh = ranges[i+1]
+				}
+				opt := fmt.Sprintf("upto%d", rHigh)
+				lbl := trl.S{
+					"de": fmt.Sprintf("%d€ bis unter %d€", rLow, rHigh),
+					"en": fmt.Sprintf("%d€ to under  %d€", rLow, rHigh),
+				}
+				if i == 0 {
+					lbl = trl.S{
+						"de": fmt.Sprintf("unter %d€", rHigh),
+						"en": fmt.Sprintf("under %d€", rHigh),
+					}
+				}
+				if rHigh == -1 {
+					opt = "over15000"
+					lbl = trl.S{
+						"de": fmt.Sprintf("%d€ und mehr", rLow),
+						"en": fmt.Sprintf("%d€ and more", rLow),
+					}
+
+				}
+				lbls = append(lbls, lbl)
+				opts = append(opts, opt)
+			}
+			lbls = append(lbls, trl.S{
+				"de": " keine Angabe",
+				"en": " no answer",
+			})
+			opts = append(opts, "noanswer")
+
+			//
+			for idx, lbl := range lbls {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qh2_income"
+				rad.ValueRadio = fmt.Sprintf("%v", idx+1)
+
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = lbl
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
+			}
+
+			if false {
 				inp := gr.AddInput()
 				inp.Type = "dropdown"
 				inp.Name = "qh2_income"
@@ -2864,65 +2959,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						},
 					)
 				}
-				ranges := []int{
-					0,
-					500,
-					750,
-					1000,
-					1000,
-					1250,
-					1500,
-					2000,
-					2500,
-					3000,
-					3500,
-					4000,
-					4500,
-					5000,
-					//
-					7500,
-					10000,
-					15000,
+				for idx, lbl := range lbls {
+					inp.DD.Add(opts[idx], lbl)
 				}
-				for i := 0; i < len(ranges); i++ {
-
-					rLow := ranges[i]
-					rHigh := -1
-					if i < len(ranges)-1 {
-						rHigh = ranges[i+1]
-					}
-					opt := fmt.Sprintf("upto%d", rHigh)
-					chLbl := trl.S{
-						"de": fmt.Sprintf("%d€ bis unter %d€", rLow, rHigh),
-						"en": fmt.Sprintf("%d€ to under  %d€", rLow, rHigh),
-					}
-					if i == 0 {
-						chLbl = trl.S{
-							"de": fmt.Sprintf("unter %d€", rHigh),
-							"en": fmt.Sprintf("under %d€", rHigh),
-						}
-
-					}
-					if rHigh == -1 {
-						opt = "over15000"
-						chLbl = trl.S{
-							"de": fmt.Sprintf("%d€ und mehr", rLow),
-							"en": fmt.Sprintf("%d€ and more", rLow),
-						}
-
-					}
-					inp.DD.Add(opt, chLbl)
-
-				}
-				inp.DD.Add(
-					"noanswer",
-					trl.S{
-						"de": " keine Angabe",
-						"en": " no answer",
-					},
-				)
-
 			}
+
 		}
 	}
 
@@ -2976,7 +3017,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Private Lebensversicherungen
 
 					<small>
-					<br>
 					z.B. klassische und fondsgebundene Kapitallebensversicherungen,
 						<i>nicht</i> reine Risikolebensversicherungen
 						oder Direktversicherungen über den Arbeitgeber

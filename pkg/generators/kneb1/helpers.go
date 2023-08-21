@@ -512,7 +512,7 @@ func erfahrungMitFinanzenSplit2(q *qst.QuestionnaireT, idx0, idx1 int) {
 				<br>
 
 				<small>
-				die noch nicht in Darlehen umgewandelt wurden
+				(die noch nicht in Darlehen umgewandelt wurden)
 				</small>
 			`,
 				"en": `todo`,
@@ -550,7 +550,7 @@ func erfahrungMitFinanzenSplit2(q *qst.QuestionnaireT, idx0, idx1 int) {
 				<br>
 
 				<small>
-				auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen
+				(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
 				</small>
 			`,
 				"en": `todo`,
@@ -1497,8 +1497,8 @@ func labelsPositiveAspects() []trl.S {
 	return []trl.S{
 
 		{
-			"de": "<small>nur an die positiven Seiten</small> 1",
-			"en": "<small>positiv aspects only</small> 1",
+			"de": "<small>nur an die negativen Seiten</small> 1",
+			"en": "<small>negative aspects only</small>       1",
 		},
 
 		// 2-3
@@ -1528,8 +1528,8 @@ func labelsPositiveAspects() []trl.S {
 		},
 
 		{
-			"de": "<small>nur an die negativen Seiten</small> 7",
-			"en": "<small>negative aspects only</small>       7",
+			"de": "<small>nur an die positiven Seiten</small> 7",
+			"en": "<small>positiv aspects only</small>        7",
 		},
 	}
 

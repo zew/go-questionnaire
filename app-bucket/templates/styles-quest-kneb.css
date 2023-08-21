@@ -9,6 +9,11 @@ nav .logo {
     display: none !important; 
 }
 
+/* no back button */
+button[value=prev] {
+    display: none;
+}
+
 
 /* 
     animation of the three conditional questions

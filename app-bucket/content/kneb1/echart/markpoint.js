@@ -136,6 +136,7 @@ function getMarkpointConfig( keyValsCoords ) {
                 rnd = `${rnd}`  // to string
                 rnd = `${rnd.substring(0,rnd.length-3)}.${rnd.substring(rnd.length-3)}`
                 rnd = `${rnd} €`
+                return `{style2|${rnd}}`;
                 return `{style2|${rnd}}\n{style1|${markPoint.name}}`;
             },
 
@@ -144,8 +145,8 @@ function getMarkpointConfig( keyValsCoords ) {
             align: 'left',
             // fontWeight
             // fontFamily
-            verticalAlign: 'middle',
             verticalAlign: 'bottom',
+            verticalAlign: 'middle',
             lineHeight: 13,
 
             // width: 120,

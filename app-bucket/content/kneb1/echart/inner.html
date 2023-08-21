@@ -1,26 +1,4 @@
 
-<div style="xxmax-width: 50rem;">
-
-<p>
-  In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
-
-  Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist.
-</p>
-
-<p>
-  Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vor: <i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
-</p>
-
-<p>
-  Mit der folgenden interaktiven Graphik möchten wir Ihnen die Chancen und Risiken bei einer Anlage am Kapitalmarkt verdeutlichen und erklären.
-</p>
-
-<p>
-  Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?
-</p>
-
-
-</div>
 
 <!--
 <p style="color:red">
@@ -29,12 +7,38 @@
  -->
 
 <style>
+  /* experiment page */
+  .pg30 {
+      margin-top: 0.1rem !important;
+  }
+  /* no navi buttons on experiment page */
+  .pg30-grp03    {
+      display: none !important; 
+  }
+
+  @media screen and (max-width: 800px) {
+      .pg30 {
+          /* box-style */
+          max-width: 100% !important;
+          margin: 0 !important;
+      }    
+  }
+
+
+
+
+  .panel-flex-container{
+    display: flex; 
+    flex-direction: row;    
+  }
+
   .panel{
     background-color: #ddd;
     background-color: var(--clr-sec);;
+    padding: 0;
     margin: 0;
-    margin-top: 0.7rem;
-    margin-bottom: 1.4rem;
+    margin-top:    0.4rem;
+    margin-bottom: 0.5rem;
   }
   .panel1{
     width: 28%;
@@ -43,17 +47,24 @@
   .panel2{
     width: 72%;
   }
+  .panel3{
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
   .panel p {
     margin: 0;
-    padding:    0.5rem;
-    padding-bottom: 0;
+    padding: 0.25rem    0.5rem;
+    /* padding-bottom: 0; */
   }
+
   .panel p.right {
     text-align: right;
     margin-right: 2rem;
     padding-top: 0;
     padding-bottom: 1rem;
   }
+
   .panel p.right a {
     display: inline-block;
     font-size: 140%;
@@ -67,6 +78,18 @@
   }
   .panel p.right a.spinner {
     top: 0.06rem;
+  }
+
+  .panel3 p{
+    width: calc(100% - 4.9rem);
+    display: inline-block;
+    /* padding-right: 0; */
+  }
+  .panel3 p.num{
+    width: 4.5rem;
+    display: inline-block;
+    padding: 0.7rem 0.12rem;
+    /* padding-left: 0; */
   }
 
 
@@ -105,70 +128,88 @@
     color: var(--clr-sec);
   }
 
-
-/* https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
-.tooltip-1 {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  /* border: 1px solid red; */
-}
-
-.tooltip-1[title]:hover::after {
-  position: absolute;
-  display:  inline-block;
-  width:    44rem;
-  bottom:  0.6rem;
-  left:     calc(100% + -2.5rem);
+  #elReset {
+    margin: 0.7rem;
+    margin-top: 1.4rem;
+    padding: 0.2rem 0.8rem;    
+  }
 
 
-  /* white-space: nowrap; */
-  padding: 0.2rem 0.4rem;
-  background-color: var(--clr-sec-drk2);
-  border: 1px solid #111111;
-  z-index: 99999;
+  /* https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
+  .tooltip-1 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
 
-  /* visibility: hidden; */
+  .tooltip-1[title]:hover::after {
+    position: absolute;
+    display:  inline-block;
+    width:    44rem;
+    bottom:  0.6rem;
+    left:     calc(100% + -2.5rem);
 
-  content:  attr(title);
 
-}
+    /* white-space: nowrap; */
+    padding: 0.2rem 0.4rem;
+    background-color: var(--clr-sec-drk2);
+    border: 1px solid #111111;
+    z-index: 99999;
+
+    /* visibility: hidden; */
+
+    content:  attr(title);
+
+  }
+
+
+  .panel2 {
+    min-height: 34rem;
+  }
+
+  @media screen and (max-width: 800px) {
+      .panel-flex-container{
+        display: flex; 
+        flex-direction: column;    
+        padding: 0;
+      }
+      .panel1 {
+        width: 100%;
+      }
+      .knob-container {
+        max-width: unset;
+      }
+      .panel2 {
+        width: 100%;
+        min-height: 24rem;
+      }
+      #elReset {
+        margin-top: 0.6rem;
+      }
+
+
+  }
+
+
 
 </style>
 
-<div style="display: flex; flex-direction: row;">
+<div class="panel-flex-container"  >
   <div class="panel panel1">
-    <p>
-      In den <i>schlechtesten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>unter</i>
-    </p>
-    <p class="right">
-      <strong><span id="elFV05">-</span> €</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </p>
 
-    <p>
-      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
-    </p>
-    <p class="right">
-      <strong><span id="elFV">-</span> €</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </p>
+<!-- 
+  <span class="tooltip-1"
+  title="Die Anleihe, ist ein Wertpapier, für das der Anleger im Regelfall Zinsen erhält. Mit einer Anleihe überlässt der Anleger dem Aussteller der Anleihe einen bestimmten Betrag für eine gewisse Zeit.
+  Kursschwankungen von Anleihen sind in der Regel geringer als beispielsweise bei Aktien. Auch bei Anleihen sind Kursverluste möglich.
+  Quelle : BaFin- https://www.bafin.de/DE/Verbraucher/GeldanlageWertpapiere/Produkte/Schuldverschreibungen/Schuldverschreibung_node.html.
+  Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendite erhält. Allerdings wird das angesparte Vermögen durch die risikofreie Anlage geringer ausfallen, da keine (hohen) Gewinne erzielt werden."
+  >
 
-    <p>
-      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
-    </p>
-    <p class="right">
-      <strong><span id="elFV95">-</span> €</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </p>
+    </span>  
 
-
-
-
-    <span class="tooltip-1"
-title="Die Anleihe, ist ein Wertpapier, für das der Anleger im Regelfall Zinsen erhält. Mit einer Anleihe überlässt der Anleger dem Aussteller der Anleihe einen bestimmten Betrag für eine gewisse Zeit.
-Kursschwankungen von Anleihen sind in der Regel geringer als beispielsweise bei Aktien. Auch bei Anleihen sind Kursverluste möglich.
-Quelle : BaFin- https://www.bafin.de/DE/Verbraucher/GeldanlageWertpapiere/Produkte/Schuldverschreibungen/Schuldverschreibung_node.html.
-Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendite erhält. Allerdings wird das angesparte Vermögen durch die risikofreie Anlage geringer ausfallen, da keine (hohen) Gewinne erzielt werden."
-
-    >
+-->
+<!-- tooltip -->
 
 
 
@@ -176,9 +217,10 @@ Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendit
         Sparbetrag
       </p>
 
-      <p style="margin-right: 0.46rem" class="right" >
+      <p style="padding-left:1.2rem">
 
         <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>
+        &nbsp;
 
         <input
           tabindex="1"
@@ -194,10 +236,11 @@ Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendit
             "
         >€
 
+        &nbsp;
         <a tabindex="-1" href="#" class="spinner" id="elUp">+ &nbsp;&nbsp;&nbsp;</a>
-    </p>
 
-    </span>  <!-- tooltip -->
+      </p>
+
 
 
     <p style="margin-top: 0.8rem;">
@@ -218,9 +261,8 @@ Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendit
 
     </div>
 
-    <br>
 
-    <button tabindex="13" style="margin: 0.7rem;padding: 0.2rem 0.8rem" id="elReset"
+    <button tabindex="13"  id="elReset"
      >Werte zurücksetzen</button>
 
 
@@ -230,7 +272,35 @@ Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendit
 
 
   <div class="panel panel2" id="chart_container"></div>
-</div>
+</div>   <!-- / flex -->
+
+
+
+  <div class="panel panel3">
+    <p>
+      In den <i>schlechtesten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>unter</i>
+    </p>
+    <p class="num">
+      <strong><span id="elFV05">-</span> €</strong>
+    </p>
+
+    <p>
+      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
+    </p>
+    <p class="num">
+      <strong><span id="elFV">-</span> €</strong>
+    </p>
+
+    <p>
+      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
+    </p>
+    <p class="num">
+      <strong><span id="elFV95">-</span> €</strong>
+    </p>
+  </div>
+
+
+
 
 <!--
 <p>

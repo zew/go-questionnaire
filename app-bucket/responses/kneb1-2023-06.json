@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b410b83dce65869abd06923e8e3d86cf80289126abeee8dd109597242b57e857",
+ 	"md_5": "296d9ded65ec131993cea6385a31d3ed3c5bccef78195e509276de8d460810df",
  	"lang_codes": [
  		"de"
  	],
@@ -18155,6 +18155,52 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
+ 						"width_max": "52rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e. Genügend finanzielle Mittel im Alter sind der Grundstein für einen si\u0026shy;cheren und stabilen Ruhestand.\n\n\t\t\t\t\t\tVor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt nied\u0026shy;riger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wich\u0026shy;tig, dass man finanziell gut abgesi\u0026shy;chert ist.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vor: \u003ci\u003eEinen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen\u003c/i\u003e.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit der folgenden interaktiven Graphik möchten wir Ihnen die Chancen und Risiken bei einer Anlage am Kapitalmarkt verdeut\u0026shy;lichen und erklären.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tProbieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
  						"width_max": "58rem"
  					},
  					"grid_item_style": {},
@@ -18214,7 +18260,7 @@
  							"accesskey": "p",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "30",
+ 							"response": "31",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -18242,7 +18288,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "30",
+ 							"response": "31",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -25740,7 +25786,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg37"
+ 								"pageID": "pg38"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -27356,7 +27402,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg38"
+ 								"pageID": "pg39"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -28763,7 +28809,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "43",
+ 							"response": "44",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

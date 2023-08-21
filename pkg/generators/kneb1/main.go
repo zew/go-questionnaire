@@ -1925,7 +1925,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page chart introduction
+	// page chart introduction 1
+	//   guided tour
 	{
 		page := q.AddPage()
 
@@ -1947,6 +1948,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 1
 			gr.BottomVSpacers = 0
 			{
+				// store current page of the guided tour
 				inp := gr.AddInput()
 				inp.Type = "hidden"
 				inp.Name = "section"
@@ -1965,6 +1967,62 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.DynamicFuncParamset = "./slide-show/index.html"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+			}
+		}
+
+	}
+
+	// page chart introduction 2
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "Experiment-Chart-Introduction",
+			"de": "Experiment chart-Introduction",
+		}
+		page.Label = trl.S{
+			"en": "",
+			"de": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+		page.WidthMax("52rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 3
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": `
+						<p>
+						In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
+
+						Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist.
+						</p>
+
+						<p>
+						Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vor: <i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
+						</p>
+
+						<p>
+						Mit der folgenden interaktiven Graphik möchten wir Ihnen die Chancen und Risiken bei einer Anlage am Kapitalmarkt verdeutlichen und erklären.
+						</p>
+
+						<p>
+						Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?
+						</p>
+
+					`,
+					"en": `
+						todo
+					`,
+				}
 			}
 		}
 

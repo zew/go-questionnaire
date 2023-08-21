@@ -7,6 +7,9 @@ function showHideSubQuestions(showHide, classOfSubQuestion) {
     // console.log(`selecting ${classOfSubQuestion} yields ${containers.length}`);
     if (containers.length > 0) {
         // console.log(`containers[${subRadio}] style is ${containers[0].style.display}`);
+
+        containers[0].classList.add("fade-in-image");
+
         if (showHide) {
             containers[0].style.display = ""; // not block
             containers[0].style.marginBottom = "3rem"

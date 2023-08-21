@@ -1,4 +1,5 @@
 let cntrSymbol = 0;
+let cntrLbl    = 0;
 
 
 function getMarkpointConfig( keyValsCoords ) {
@@ -65,9 +66,9 @@ function getMarkpointConfig( keyValsCoords ) {
         symbol: function (val, param) {
             // return '{' + val + '| }\n{value|' + val + '}';
             // return `{${val}|}\n{value|${val}}`;
-            console.log(val)
-            console.log(param)
+            // console.log(param)
             cntrSymbol++;
+            console.log(`sym ${cntrSymbol}`,   val, param, );
             if (cntrSymbol % 3 === 0) {
                 // return vectorImgs.Reindeer;
                 return 'roundRect';
@@ -86,6 +87,7 @@ function getMarkpointConfig( keyValsCoords ) {
             show: false,
             show: true,
 
+            // animation does not help
             animation: true,
             animationDelay: 2000,
 
@@ -101,6 +103,9 @@ function getMarkpointConfig( keyValsCoords ) {
             position: 'right',
 
             distance: 14,
+
+            // cntrLbl is not incremented
+            // offset: [-10, 30*cntrLbl],
             offset: [-10, 0],
 
 
@@ -120,6 +125,8 @@ function getMarkpointConfig( keyValsCoords ) {
             // different than for data points
             //  {a}, {b}, etc. dont work, but we get the markpoint as an object as argumet
             formatter: function (markPoint) {
+                cntrLbl++;
+                // console.log(`lbl ${cntrLbl}`, markPoint.data.coord[0], markPoint.data.coord[1] );
                 // // console.log(`markPoint`, markPoint)
                 // console.log(`markPoint.name`, markPoint.name)
                 // // console.log(`markPoint.data`, markPoint.data)
@@ -151,7 +158,6 @@ function getMarkpointConfig( keyValsCoords ) {
             // text border properties possible
 
             padding: [0, 4, 0, 4], // represents padding of [top, right, bottom, left].
-
 
             rich: {
                 style1: {

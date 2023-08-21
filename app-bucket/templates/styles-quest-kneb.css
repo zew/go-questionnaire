@@ -9,9 +9,18 @@ nav .logo {
     display: none !important; 
 }
 
-/* no navi buttons on experiment page */
-.pg29-grp03    {
-    display: none !important; 
+
+/* 
+    animation of the three conditional questions
+    blog.hubspot.com/website/css-fade-in 
+*/
+.fade-in-image { 
+    animation:       animFadeIn 2s; 
+    /* animation-delay: 0.4s;  */
 }
 
-
+@keyframes animFadeIn {
+      0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  

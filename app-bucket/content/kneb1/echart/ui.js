@@ -142,24 +142,21 @@ let pageLoaded = (inst) => {
 
     let elFV = document.getElementById('elFV');
     if (elFV) {
-        elFV.innerHTML = Math.round(arrayFVs[1])
-        elFV.innerHTML = Math.round(arrayFVs[1]/100)*100
+        elFV.innerHTML = knebelFormat(arrayFVs[1])
     } else {
         console.error(`did not find elFV`)
     }
 
     let elFV05 = document.getElementById('elFV05');
     if (elFV05) {
-        elFV05.innerHTML = Math.round(arrayFVs[0])
-        elFV05.innerHTML = Math.round(arrayFVs[0]/100)*100
+        elFV05.innerHTML = knebelFormat(arrayFVs[0])
     } else {
         console.error(`did not find elFV95`)
     }
 
     let elFV95 = document.getElementById('elFV95');
     if (elFV95) {
-        elFV95.innerHTML = Math.round(arrayFVs[2])
-        elFV95.innerHTML = Math.round(arrayFVs[2]/100)*100
+        elFV95.innerHTML = knebelFormat(arrayFVs[2])
     } else {
         console.error(`did not find elFV95`)
     }

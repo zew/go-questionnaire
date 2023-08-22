@@ -1449,7 +1449,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "qp6_risky_investment"
 				inp.Min = 0
-				inp.Max = 1000 * 1000
+				inp.Max = 100
 				inp.MaxChars = 6
 				inp.Label = trl.S{
 					"de": `					

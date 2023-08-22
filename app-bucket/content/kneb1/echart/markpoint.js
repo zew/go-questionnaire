@@ -64,11 +64,11 @@ function getMarkpointConfig( keyValsCoords ) {
         // first  parameter value  is the value in data,
         // second parameter params is the rest parameters of data item.
         symbol: function (val, param) {
+            // val is undefined
             // return '{' + val + '| }\n{value|' + val + '}';
             // return `{${val}|}\n{value|${val}}`;
-            // console.log(param)
             cntrSymbol++;
-            console.log(`sym ${cntrSymbol}`,   val, param, );
+            console.log(`sym ${cntrSymbol}`, param );
             if (cntrSymbol % 3 === 0) {
                 // return vectorImgs.Reindeer;
                 return 'roundRect';
@@ -132,10 +132,14 @@ function getMarkpointConfig( keyValsCoords ) {
                 // // console.log(`markPoint.data`, markPoint.data)
                 // console.log(`markPoint.data.coord[0]`, markPoint.data.coord[0])
                 // console.log(`markPoint.data.coord[1]`, markPoint.data.coord[1])
-                let rnd = Math.round(markPoint.data.coord[1])
-                rnd = `${rnd}`  // to string
-                rnd = `${rnd.substring(0,rnd.length-3)}.${rnd.substring(rnd.length-3)}`
-                rnd = `${rnd} €`
+                // let rnd = Math.round(markPoint.data.coord[1])
+                let rnd = knebelFormat(markPoint.data.coord[1],false)
+                
+                // rnd = `${rnd}`  // to string
+                // rnd = `${rnd.substring(0,rnd.length-3)}.${rnd.substring(rnd.length-3)}`
+                // rnd = `${rnd} €`
+
+
                 return `{style2|${rnd}}`;
                 return `{style2|${rnd}}\n{style1|${markPoint.name}}`;
             },

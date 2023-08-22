@@ -285,21 +285,21 @@
       In den <i>schlechtesten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>unter</i>
     </p>
     <p class="num">
-      <strong><span id="elFV05">-</span> €</strong>
+      <strong><span id="elFV05">-</span></strong>
     </p>
 
     <p>
       <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
     </p>
     <p class="num">
-      <strong><span id="elFV">-</span> €</strong>
+      <strong><span id="elFV">-</span></strong>
     </p>
 
     <p>
       In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
     </p>
     <p class="num">
-      <strong><span id="elFV95">-</span> €</strong>
+      <strong><span id="elFV95">-</span></strong>
     </p>
   </div>
 
@@ -333,25 +333,38 @@
 
 <script>
 
-    // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
-    // init
-    var sb = 100.0; // sparbetrag - defined in echart-config.mjs
-    var sbInp   = document.getElementById("sparbetrag");
-    var sbInpBG = document.getElementById("sparbetrag_bg");
-    if (sbInpBG && sbInpBG.value !== "") {
-        sb = parseInt(sbInpBG.value);
-    }
-    if (sbInp) {
-        sbInp.value = sb;
-    }
+  function knebelFormat(dbl, nbsp=true){
+      dbl = Math.round(dbl/100)*100
+      dbl = `${dbl}`  // to string
+      dbl = `${dbl.substring(0,dbl.length-3)}.${dbl.substring(dbl.length-3)}`
+      if(nbsp){
+        dbl = `${dbl}&nbsp;€`
+      } else {
+        dbl = `${dbl}€`
+      }
+      return dbl
+  }
 
-    var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
-    var riskyBG  = document.getElementById("share_risky_bg");
-    if (safeBG && safeBG.value != "" ) {
-    } else if (safeBG && safeBG.value === "" ) {
-        safeBG.value = 50
-        riskyBG.value = 100 - safeBG.value
-    }
+
+  // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
+  // init
+  var sb = 100.0; // sparbetrag - defined in echart-config.mjs
+  var sbInp   = document.getElementById("sparbetrag");
+  var sbInpBG = document.getElementById("sparbetrag_bg");
+  if (sbInpBG && sbInpBG.value !== "") {
+      sb = parseInt(sbInpBG.value);
+  }
+  if (sbInp) {
+      sbInp.value = sb;
+  }
+
+  var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
+  var riskyBG  = document.getElementById("share_risky_bg");
+  if (safeBG && safeBG.value != "" ) {
+  } else if (safeBG && safeBG.value === "" ) {
+      safeBG.value = 50
+      riskyBG.value = 100 - safeBG.value
+  }
 
 
 

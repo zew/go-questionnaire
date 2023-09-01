@@ -53,7 +53,7 @@ func special202303(q *qst.QuestionnaireT) error {
 						between the total returns of the following asset classes 
 						in the&nbsp;<b><i>euro&nbsp;area</i></b>.
 					`,
-				}.Outline("4.")
+				}.Outline(fmt.Sprintf("%v.", 4))
 				inp.ColSpanLabel = 1
 			}
 

@@ -20,9 +20,15 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 6
+	include = include || q.Survey.Year == 2023 && q.Survey.Month == 9
 
 	if !include {
 		return nil
+	}
+
+	outline := 1
+	if q.Survey.Year == 2023 && q.Survey.Month == 9 {
+		outline = 6
 	}
 
 	// not 3 as in m2 of q
@@ -203,12 +209,13 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Sonderfrage: Anlageklassen im Eurogebiet und weltweit",
+			// "de": "Sonderfragen zu Anlageklassen im Eurogebiet und weltweit",
+			"de": "Sonderfragen zu Anlageklassen im Eurogebiet",
 			"en": "Additional questions on the attractiveness of different asset classes",
 		}
 		page.Short = trl.S{
-			"de": "Sonderfrage:<br>Anlageklassen",
-			"en": "Special:<br>Asset classes",
+			"de": "Sonderfragen:<br>Anlageklassen",
+			"en": "Special questions:<br>Asset classes",
 		}
 		page.WidthMax("46rem")
 
@@ -232,36 +239,30 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 			gb.MainLabel = trl.S{
 				"de": `
-				<p style=''>
-					<b>1.</b> &nbsp;
-
 					Mit Blick auf die nächsten sechs Monate, 
 					wie beurteilen Sie das Rendite-Risko-Profil 
 					der folgenden Anlageklassen?
 					
 					Orientieren Sie sich an breit gestreuten Indizes 
 					für das <b><i>Eurogebiet</i></b>.
-				</p>
 
-				<p style=''>
-					Das Rendite-Risiko-Profil von … beurteile ich …
-				</p>
+					<p style='position: relative; top: 0.47rem'>
+						Das Rendite-Risiko-Profil von … beurteile ich …
+					</p>
 				`,
 				"en": `
-				<p style=''>
-					<b>1.</b> &nbsp;
 					How do you assess the return-risk profile of the following asset classes 
 					in the <b><i>euro area</i></b> for the next 6&nbsp;months? 
 
 					Please consider well-diversified indices.
 					
 					
-				</p>
-				<p style=''>
-					My assessment of the return-risk profile is …
-				</p>
+					<p style='position: relative; top: 0.47rem'>
+						My assessment of the return-risk profile is …
+					</p>
 				`,
-			}
+			}.Outline(fmt.Sprintf("%v.", outline))
+			outline++
 
 			gr := page.AddGrid(gb)
 			_ = gr
@@ -269,7 +270,9 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 		//
 		// gr2
-		{
+		if q.Survey.Year == 2023 && q.Survey.Month == 9 {
+
+		} else {
 			var columnTemplateLocal = []float32{
 				3.0, 1,
 				0.0, 1,
@@ -288,34 +291,29 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 			gb.MainLabel = trl.S{
 				"de": `
-				<p style=''>
-					<b>2.</b> &nbsp;
 					Mit Blick auf die nächsten sechs Monate, 
 					wie beurteilen Sie das Rendite-Risko-Profil 
 					der folgenden Anlageklassen?
 
 					Orientieren Sie sich an breit gestreuten <b><i>globalen</i></b> Indizes.
-				</p>
 
-				<p style=''>
-					Das Rendite-Risiko-Profil von … beurteile ich …
-				</p>
+					<p style='position: relative; top: 0.47rem'>
+						Das Rendite-Risiko-Profil von … beurteile ich …
+					</p>
 				`,
 				"en": `
-				<p style=''>
-					<b>2.</b> &nbsp;
 					How do you assess the return-risk profile  
 					of the following <b><i>global</i></b> asset classes for the next 6&nbsp;months? 
 
 					Please consider well-diversified indices.
 					
 					
-				</p>
-				<p style=''>
-					My assessment of the return-risk profile is …
-				</p>
+					<p style='position: relative; top: 0.47rem'>
+						My assessment of the return-risk profile is …
+					</p>
 				`,
-			}
+			}.Outline(fmt.Sprintf("%v.", outline))
+			outline++
 
 			gr := page.AddGrid(gb)
 			_ = gr
@@ -335,18 +333,15 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
-						<p style=''>
-							<b>3.</b>  &nbsp;
 							Haben Entwicklungen der folgenden Faktoren 
 							Sie zu einer Revision Ihrer Einschätzungen 
 							zum Rendite-Risiko-Profil der einzelnen Assetklassen
 							im <b><i>Eurogebiet</i></b> 
 							gegenüber %v %v bewogen?
-						</p>
 
-						<p style=''>
-							Und wenn ja, nach oben (+) oder unten (-)
-						</p>
+							<p style='margin-top: 0.46rem'>
+								Und wenn ja, nach oben (+) oder unten (-)
+							</p>
 
 						`,
 						monthMinus3.Tr("de"),
@@ -354,8 +349,6 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					),
 
 					"en": fmt.Sprintf(`
-						<p style=''>
-							<b>3.</b>  &nbsp;
 
 							Did developments in the following areas
 							lead you to change your assessment 
@@ -364,16 +357,16 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 							(compared to %v %v)
 							in the <b><i>euro area</i></b>?
 
-						</p>
 
-						<p style=''>
-							(+) = upward change, (-) = downward change
-						</p>
+							<p style='margin-top: 0.46rem'>
+								(+) = upward change, (-) = downward change
+							</p>
 						`,
 						monthMinus3.Tr("en"),
 						yearMinus1Q.Year(),
 					),
-				}
+				}.Outline(fmt.Sprintf("%v.", outline))
+				// outline++
 				inp.ColSpanLabel = 1
 			}
 
@@ -438,22 +431,24 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				gb.MainLabel = trl.S{
 					"de": fmt.Sprintf(`
 					<p style='position: relative; top: 0.8rem'>
-						<span  style='font-weight: bold' >3.%v.</span> &nbsp;
+						<span  style='font-weight: bold' >%v.%v.</span> &nbsp;
 						%v
 						 &nbsp; - &nbsp;  Eurogebiet 
 					</p>
 					`,
+						outline,
 						idx+1,
 						lbl.Tr("de"),
 					),
 					"en": fmt.Sprintf(`
 					<p style='position: relative; top: 0.8rem'>
-						<span  style='font-weight: bold' >3.%v.</span> &nbsp;
+						<span  style='font-weight: bold' >%v.%v.</span> &nbsp;
 
 						%v
 						 &nbsp; - &nbsp;  euro area 
 					</p>
 					`,
+						outline,
 						idx+1,
 						lbl.Tr("en"),
 					),

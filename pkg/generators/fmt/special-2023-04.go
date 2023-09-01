@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func quest3And4(
+func numberInputWithNoAnswer(
 	q *qst.QuestionnaireT,
 	page *qst.WrappedPageT,
 	inps []string,
@@ -78,8 +78,8 @@ func quest3And4(
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 			inp.ColSpan = 1
 			inp.ColSpanControl = 3
-			inp.Min = -10
-			inp.Max = 20
+			inp.Min = -40
+			inp.Max = 50
 			inp.Step = 0.01
 			inp.MaxChars = 5
 			inp.Style = css.ItemCenteredMCA(inp.Style)
@@ -174,7 +174,7 @@ func special202304(q *qst.QuestionnaireT) error {
 				},
 			}
 
-			quest3And4(
+			numberInputWithNoAnswer(
 				q,
 				qst.WrapPageT(page),
 				inps,
@@ -228,7 +228,7 @@ func special202304(q *qst.QuestionnaireT) error {
 				},
 			}
 
-			quest3And4(
+			numberInputWithNoAnswer(
 				q,
 				qst.WrapPageT(page),
 				inps,

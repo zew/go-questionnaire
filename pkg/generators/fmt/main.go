@@ -786,6 +786,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// log.Printf("q.Survey.MonthOfQuarter() is %v  (from %v - %v)", q.Survey.MonthOfQuarter(), q.Survey.Year, q.Survey.Month)
 
 	var err error
+
+	err = special202309a(&q)
+	if err != nil {
+		return nil, fmt.Errorf("error adding special202309(): %v", err)
+	}
+	err = special202309b(&q)
+	if err != nil {
+		return nil, fmt.Errorf("error adding special202309a(): %v", err)
+	}
+
 	err = eachMonth1inQ(&q)
 	if err != nil {
 		return nil, fmt.Errorf("error adding month 1 per quarter: %v", err)

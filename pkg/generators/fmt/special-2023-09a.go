@@ -142,7 +142,7 @@ func special202309a(q *qst.QuestionnaireT) error {
 							(DAX September 2024 vs. September 2023)		
 							`,
 					"en": `Return of the DAX over the next 12&nbsp;months 
-							(DAX September 2024 vs. September 2023)`,
+							(DAX September 2024 vs. DAX September 2023)`,
 				},
 			}
 

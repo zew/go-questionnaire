@@ -37,61 +37,96 @@ func special202309b(q *qst.QuestionnaireT) error {
 		page.WidthMax("56rem")
 
 		rowLbls3and4 := []trl.S{
+			// <i>positiv</i>
+			// <i>positive</i>
 			{
-				"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich
-						<i>positiv</i>
-						auf das Rendite-Risiko-Profil des DAX in 2023 aus.`,
-				"en": `An easing in the development of inflation, a less restrictive monetary stance by the ECB and diminishing recession risks have a
-						<i>positive</i>
-						impact on the return-risk-profile in 2023.`,
-			},
-			{
-				"de": `Den DAX-Konzernen gelingt es auch weiterhin, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich
-						<i>positiv</i>
-						auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
-				"en": `DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore remain unchanged or even increase, which has a
-						<i>positive</i>
-						impact on the return-risk-profile of the DAX in 2023.`,
-			},
-			{
-				"de": `Die Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023
-						<i>keine Roll</i>e
-								.`,
-				"en": `The development of inflation does
-						<i>not impact</i>
-						the return-risk-profile of the DAX.`,
-			},
-			{
-				"de": `	<i>Positive</i>
-						und
-						<i>negative</i>
-						Effekte der Inflation gleichen sich aus. Die Entwicklung der Inflation ist daher insgesamt
-						<i>neutral</i>
-						für das Rendite-Risiko-Profil des DAX in 2023.`,
+				"de": `
+				Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik
+				der EZB und nachlassende Rezessionsrisiken wirken sich
+				<i>positiv</i>
+				auf das Rendite-Risiko-Profil des DAX aus.
+				`,
 				"en": `
-						<i>Positive</i>
-						and
-						<i>negative</i>
-						effects of inflation cancel each other out. Overall, the development of inflation is
-						<i>neutral</i>
-						for the return-risk-profile of the DAX in 2023.`,
+				An easing in the development of inflation development,
+				a less restrictive monetary stance by the ECB and diminishing recession risks have a
+				<i>positive</i>
+				impact on the return-risk-profile of the DAX.
+				`,
 			},
 			{
-				"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich
-						<i>negativ</i>
-						auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.`,
-				"en": `DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore decrease, which has a
-						<i>negative</i>
-						impact on the return-risk-profile of the DAX in 2023.`,
+				"de": `
+				Den DAX-Konzernen gelingt es auch weiterhin, ihre steigenden Kosten an ihre Kunden weiterzugeben.
+				 Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben
+				 oder sogar steigen, was sich
+				 <i>positiv</i>
+				 auf das Rendite-Risiko-Profil des DAX auswirkt.
+				`,
+				"en": `
+				DAX companies will continue to succeed in passing on their rising costs to their customers.
+				The profit margins of DAX companies will therefore remain unchanged or even increase,
+				which has a
+				<i>positive</i>
+				impact on the return-risk-profile of the DAX.
+				`,
 			},
 			{
-				"de": `Anhaltend hohe Inflationsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich
-						<i>negativ</i>
-						auf das Rendite-Risiko-Profil des DAX in 2023 aus.
-						`,
-				"en": `Persistently high inflation rates, further interest rate hikes by the ECB and increasing recession risks will have a
-						<i>negative</i>
-						impact on the return-risk-profile of the DAX in 2023.`,
+				"de": `
+				Die Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX
+				<i>keine</i>
+				Rolle.
+				`,
+				"en": `
+				The development of inflation does
+				<i>not impact </i>
+				the return-risk-profile of the DAX.
+				`,
+			},
+			{
+				"de": `
+				<i>Positive</i> und <i>negative</i>
+				Effekte der Inflation gleichen sich aus.
+				Die Entwicklung der Inflation ist daher insgesamt
+				<i>neutral</i>
+				für das Rendite-Risiko-Profil des DAX.
+				`,
+				"en": `
+				<i>Positive</i> and <i>negative</i>
+				effects of inflation cancel each other out.
+				Overall, the development of inflation is
+				<i>neutral</i>
+				for the return-risk-profile of the DAX.
+				`,
+			},
+			{
+				"de": `
+				Den DAX-Konzernen gelingt es nicht,
+				ihre steigenden Kosten an ihre Kunden weiterzugeben.
+				Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen,
+				was sich
+				<i>negativ</i>
+				auf das Rendite-Risiko-Profil des DAX auswirkt.
+				`,
+				"en": `
+				DAX companies will not to succeed in passing on their rising costs to their customers.
+				The profit margins of DAX companies will therefore decrease,
+				which has a
+				<i>negative</i>
+				impact on the return-risk-profile of the DAX.
+				`,
+			},
+			{
+				"de": `
+				Anhaltend hohe Inflationsraten,
+				weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich
+				<i>negativ</i>
+				auf das Rendite-Risiko-Profil des DAX aus.
+				`,
+				"en": `
+				Persistently high inflation rates, further interest rate hikes by the ECB
+				and increasing recession risks will have a
+				<i>negative</i>
+				impact on the return-risk-profile of the DAX.
+				`,
 			},
 		}
 
@@ -145,20 +180,20 @@ func special202309b(q *qst.QuestionnaireT) error {
 
 			gb.MainLabel = trl.S{
 				"de": `
-						Wie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwischen der 
+						Wie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwischen der
 						<i>Inflationsentwicklung</i>
-						und dem 
+						und dem
 						<i>Rendite-Risiko-Profil des DAX</i>
-						auf Sicht von 
+						auf Sicht von
 						<i>12&nbsp;Monaten</i>
 						?
 					`,
 				"en": `
-						Do you agree or disagree with the following statements about the relationship between the 
+						Do you agree or disagree with the following statements about the relationship between the
 						<i>developments of inflation </i>
-						and the 
+						and the
 						<i>return-risk-profile of the DAX</i>
-						over the 
+						over the
 						<i>next 12&nbsp;months</i>
 						?
 					`,
@@ -232,20 +267,20 @@ func special202309b(q *qst.QuestionnaireT) error {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
-						Bitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwischen der 
+						Bitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwischen der
 						<i>Inflationsentwicklung </i>
-						und dem 
+						und dem
 						<i>Rendite-Risiko-Profil des DAX </i>
-						auf Sicht von 
+						auf Sicht von
 						<i>12&nbsp;Monaten</i>
 						am besten widerspiegelt:
 					`,
 						"en": `
-						From the following statements, please select the one that, in your opinion, best reflects the relationship between the 
+						From the following statements, please select the one that, in your opinion, best reflects the relationship between the
 						<i>development of inflation </i>
-						and the 
+						and the
 						<i>risk-return profile of the DAX</i>
-						over the next  
+						over the next
 						<i>12&nbsp;months</i>
 						 :
 
@@ -329,10 +364,10 @@ func special202309b(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Bitte beschreiben Sie kurz in ganzen Sätzen, 
-						wieso Sie sich für Ihre Auswahl in der vorangegangen Frage (Frage 4) 
+					"de": `Bitte beschreiben Sie kurz in ganzen Sätzen,
+						wieso Sie sich für Ihre Auswahl in der vorangegangen Frage (Frage 4)
 						entschieden haben`,
-					"en": `Please describe briefly in complete sentences 
+					"en": `Please describe briefly in complete sentences
 						why you chose your selection in the previous question (question 4) `,
 				}.Outline("5.")
 				inp.ColSpanLabel = 1

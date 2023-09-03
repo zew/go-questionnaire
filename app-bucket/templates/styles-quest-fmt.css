@@ -20,7 +20,15 @@ nav a.title span.survey-wave-id {
     font-size: 110%;
 }
 
-
+/* hide the first progress bar */
+ol.progress-line{
+    /* display: none; */
+    /* show a small bevel instead: */
+    height: 0.2rem
+}
+div.progress-line-bar{
+    display: none;
+}
 
 @media screen and (max-width: 800px) {
     nav {
@@ -62,18 +70,6 @@ nav a.title span.survey-wave-id {
     }
 }
 
-/* special 2022_01 */
-.pg06 input[type="text"] {
-    margin-right: 0;
-}
-@media screen and (max-width: 800px) {
-    /* special 2022_01 */
-    .pg06 input[type="text"] {
-        max-width:   3.5rem;
-        margin-left: 0.3rem;
-        margin-right: 0;
-    }
-}
 
 
 /* special 2023-03 */

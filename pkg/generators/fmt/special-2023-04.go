@@ -79,7 +79,9 @@ func numberInputWithNoAnswer(
 			inp.ColSpan = 1
 			inp.ColSpanControl = 3
 			inp.Min = -40
+			inp.Min = -100
 			inp.Max = 50
+			inp.Max = 1000
 			inp.Step = 0.01
 			inp.MaxChars = 5
 			inp.Style = css.ItemCenteredMCA(inp.Style)

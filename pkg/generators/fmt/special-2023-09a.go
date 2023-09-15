@@ -74,7 +74,7 @@ func special202309a(q *qst.QuestionnaireT) error {
 							(HVPI September 2024 vs. HVPI September 2023)
 							`,
 					"en": `Inflation rate in <i>12&nbsp;months</i> 
-							(HCPI September 2024 vs. HCPI September 2023)
+							(HICP September 2024 vs. HICP September 2023)
 							`,
 				}, {
 					"de": `Durchschnittliche jährliche Inflationsrate in Deutschland auf
@@ -82,7 +82,7 @@ func special202309a(q *qst.QuestionnaireT) error {
 							(HVPI September 2026 vs. HVPI September 2023)
 							`,
 					"en": `<i><u>Average</u></i> inflation rate over the next <i>36&nbsp;months</i> 
-							(HCPI September 2026 vs. HCPI September 2023)
+							(HICP September 2026 vs. HICP September 2023)
 							`,
 				},
 			}
@@ -139,7 +139,7 @@ func special202309a(q *qst.QuestionnaireT) error {
 							(GDP Q3 2024 vs. GDP Q3 2023)`,
 				}, {
 					"de": `DAX-Rendite über die nächsten 12&nbsp;Monate
-							(DAX September 2024 vs. September 2023)		
+							(DAX September 2024 vs. DAX September 2023)
 							`,
 					"en": `Return of the DAX over the next 12&nbsp;months 
 							(DAX September 2024 vs. DAX September 2023)`,

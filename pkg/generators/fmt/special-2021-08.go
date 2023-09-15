@@ -115,7 +115,7 @@ func special202108(q *qst.QuestionnaireT) error {
 	</li>
 
 	<li>
-	The Harmonized Consumer Price Index (HCPI) will be augmented by owner-occupied housing. 
+	The Harmonized Consumer Price Index (HICP) will be augmented by owner-occupied housing. 
 	</li>
 
 	<li>
@@ -804,7 +804,7 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					`,
 				"en": `<b>6.</b> 
-						The HCPI will be augmented by <b>owner-owned housing</b>. Which effect do you expect for inflation in the coming years 2021-2023?
+						The HICP will be augmented by <b>owner-owned housing</b>. Which effect do you expect for inflation in the coming years 2021-2023?
 					`,
 			}
 			gr := page.AddGrid(gb)

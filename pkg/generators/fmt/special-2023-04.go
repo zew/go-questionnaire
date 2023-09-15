@@ -163,7 +163,7 @@ func special202304(q *qst.QuestionnaireT) error {
 							(HVPI April 2024 vs. HVPI April 2023)
 							`,
 					"en": `Inflation rate in <i>12&nbsp;months</i> 
-							(HCPI April 2024 vs. HCPI April 2023)
+							(HICP April 2024 vs. HICP April 2023)
 							`,
 				}, {
 					"de": `Durchschnittliche jährliche Inflationsrate in Deutschland auf
@@ -171,7 +171,7 @@ func special202304(q *qst.QuestionnaireT) error {
 							(HVPI April 2026 vs. HVPI April 2023)
 							`,
 					"en": `<i><u>Average</u></i> inflation rate over the next <i>36&nbsp;months</i> 
-							(HCPI April 2026 vs. HCPI April 2023)
+							(HICP April 2026 vs. HICP April 2023)
 							`,
 				},
 			}

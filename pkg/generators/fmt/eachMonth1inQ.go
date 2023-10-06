@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
+	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -24,7 +26,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	page := q.AddPage()
 	// pge.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{
-		"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
+		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum",
 		"en": "Special: Short- and Medium-Term Economic Growth",
 	}
 	page.Short = trl.S{
@@ -299,22 +301,39 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			radioVals6,
 			rowLabelsEconomicAreas,
 		)
+
+		// not 6 as in m3 of q
+		monthsBack := 3
+
+		oneMonthPrev := time.Date(
+			q.Survey.Year, time.Month(q.Survey.Month), 2,
+			0, 0, 0, 0, cfg.Get().Loc,
+		)
+		oneMonthPrev = oneMonthPrev.Local().AddDate(0, -monthsBack, 0)
+		month := int(oneMonthPrev.Month())
+
 		gb.MainLabel = trl.S{
-			"de": `<b>2.</b> 
+			"de": fmt.Sprintf(`<b>2.</b> 
 					Haben Entwicklungen in den folgenden Bereichen Sie 
-					zu einer Revision Ihrer Konjunkturprognosen 
+					zu einer Revision 
+					(ggü. <i>%v %v</i>)
+					Ihrer Konjunkturprognosen 
 					für die deutsche Wirtschaft bewogen 					
 					und wenn ja in welche Richtung? 
 					<br>
 					(Erhöhung (+), Senkung (-))	
-			`,
-			"en": `<b>2.</b> 
-					Which developments have led you to change your assessment 
+			`, trl.MonthByInt(month)["de"], oneMonthPrev.Year(),
+			),
+			"en": fmt.Sprintf(`<b>2.</b> 
+					Which developments have led you to change 
+					(relative to <i>%v %v</i>)
+					your assessment 
 					of the business cycle outlook for the German economy? 
 					<br>
 					If they made you change your assessment, 
 					did they make you revise your assessment up (+) or down (-)?
-				`,
+					`, trl.MonthByInt(month)["en"], oneMonthPrev.Year(),
+			),
 		}
 		gr := page.AddGrid(gb)
 		gr.BottomVSpacers = 1

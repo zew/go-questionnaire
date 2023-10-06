@@ -357,7 +357,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Label = trl.S{
 					"de": fmt.Sprintf("Aktuelles Quartal (%v)", q.Survey.Quarter(0)),
-					"en": fmt.Sprintf("Current quarter  (%v)", q.Survey.Quarter(0)),
+					"en": fmt.Sprintf("current quarter  (%v)", q.Survey.Quarter(0)),
 				}
 				if offsetDestatis != 0 {
 					for key, val := range inp.Label {
@@ -385,7 +385,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Label = trl.S{
 					"de": fmt.Sprintf("Folgendes Quartal (%v)", q.Survey.Quarter(1)),
-					"en": fmt.Sprintf("Next quarter  (%v)", q.Survey.Quarter(1)),
+					"en": fmt.Sprintf("next quarter  (%v)", q.Survey.Quarter(1)),
 				}
 				inp.Type = "number"
 				inp.Name = "y_recession_q1"
@@ -505,7 +505,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>5.</b> &nbsp; Die <i>langfristigen</i> Zinsen (zehnjähriger Staatsanleihen) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"de": "<b>5.</b> &nbsp; Die <i>langfristigen</i> Zinsen (Renditen zehnjähriger Staatsanleihen) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
 				"en": "<b>5.</b> &nbsp; In the medium-term, <i>long-term</i> interest rates (yields on 10-year sovereign bonds) will",
 			}
 			gr := page.AddGrid(gb)

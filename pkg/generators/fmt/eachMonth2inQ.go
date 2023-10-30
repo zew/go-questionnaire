@@ -429,6 +429,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"de": "Krieg in der Ukraine",
 				"en": "War in Ukraine",
 			},
+			{
+				"de": "Israel-Konflikt",
+				"en": "Conflict in Israel",
+			},
 		}
 
 		gb := qst.NewGridBuilderRadios(
@@ -448,6 +452,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				// "rev_corona",
 				"rev_green_trafo",
 				"rev_war_ukraine",
+				"rev_war_israel",
 			},
 			radioVals6,
 			rowLabelsEconomicAreasShort,

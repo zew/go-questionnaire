@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "32d2dac8294f4b159c97d2c3eacea7e7b34003f1a93bc9d6802f109af637b8c3",
+ 	"md_5": "2ef96ddbf2765cd04863dbf54aeba2ba7592bcec09e67804ce6e14169458426e",
  	"lang_codes": [
  		"de",
  		"en"
@@ -29,7 +29,7 @@
  	"shuffling_variations": 12,
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 5,
+ 	"max_groups": 6,
  	"pages": [
  		{
  			"label": {
@@ -4552,8 +4552,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; Punktpro\u0026shy;gno\u0026shy;se der \u003cb\u003ejährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HICP in Pro\u0026shy;zent)\n\t\t\t\t\t\u003c!-- Anstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert --\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; Point forecast of the \u003cb\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in the euro area\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the HICP, in per\u0026shy;cent)\n\t\t\t\t\t\u003c!-- Avg. per\u0026shy;centage change in HICP from Jan to Dec; --\u003e\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPunktpro\u0026shy;gno\u0026shy;se der \u003cb\u003ejährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HICP in Pro\u0026shy;zent)\n\t\t\t\t\t\u003c!-- Anstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert --\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPoint forecast of the \u003cb\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in the euro area\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the HICP, in per\u0026shy;cent)\n\t\t\t\t\t\u003c!-- Avg. per\u0026shy;centage change in HICP from Jan to Dec; --\u003e\n\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -5525,8 +5525,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie zu einer Revision \n\t\t\t\tIhrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum (ggü. August 2023) bewogen \n\t\t\t\tund wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFür die Jahre 2023, 2024 und 2025\u003c/b\u003e\n\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\tWhat are the main factors leading you to change your in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts\n\t\t\t\tfor the euro area (in comparison to your forecasts as of August 2023).\n\t\t\t\t(+) means in\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast,\n\t\t\t\t(-) means de\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFor the years 2023, 2024, and 2025\u003c/b\u003e\n\t\t\t"
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie zu einer Revision \n\t\t\t\tIhrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum (ggü. August 2023) bewogen \n\t\t\t\tund wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFür die Jahre 2023, 2024 und 2025\u003c/b\u003e\n\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWhat are the main factors leading you to change your in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts\n\t\t\t\tfor the euro area (in comparison to your forecasts as of August 2023).\n\t\t\t\t(+) means in\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast,\n\t\t\t\t(-) means de\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFor the years 2023, 2024, and 2025\u003c/b\u003e\n\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6536,14 +6536,252 @@
  					}
  				},
  				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\tWählen Sie die \n\t\t\t\t\u003ci\u003edrei Bereiche\u003c/i\u003e \n\t\t\t\taus, auf die der \n\t\t\t\t\u003ci\u003eIsrael-Konflikt\u003c/i\u003e \n\t\t\t\tIhrer Meinung nach auf Sicht von \n\t\t\t\t\u003cu\u003esechs Monaten\u003c/u\u003e \n\t\t\t\tden stärksten Ein\u0026shy;fluss haben wird \n\t\t\t\t(egal ob po\u0026shy;si\u0026shy;tiv oder ne\u0026shy;ga\u0026shy;tiv):\n\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIn your opinion, what are the \n\t\t\t\t\u003ci\u003ethree factors\u003c/i\u003e \n\t\t\t\tmost strong\u0026shy;ly affected by the \n\t\t\t\t\u003ci\u003econflict in Israel\u003c/i\u003e \n\t\t\t\tover the next \n\t\t\t\t\u003cu\u003esix months\u003c/u\u003e \n\t\t\t\t(either pos\u0026shy;itive or neg\u0026shy;ative):\n\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_bus_cycle",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Konjunktur\u0026shy;entwicklung im Euro\u0026shy;gebiet",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of GDP in the euro area"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_wages",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of wages in the euro area"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_energy_prices",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Entwicklung der Energiepreise",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of energy prices"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_commodity_prices",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Entwicklung der Roh\u0026shy;stoff\u0026shy;preise (ohne Energiepreise)",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of prices for raw materials (except energy) "
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_exch_rates",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Veränderung der Wechsel\u0026shy;kurse (relativ zum Euro)",
+ 								"en": "Changes in exchange rates (relative to the euro)"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_mp_ecb",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
+ 								"en": "Monetary policy of the ECB"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_trade_conflicts",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Handels\u0026shy;konflikte",
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al trade conflicts"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_supply_shortages",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply bottlenecks"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_green_trafo",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Grüne Transformation",
+ 								"en": "Green transformation"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_war_ukraine",
+ 							"type": "checkbox",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Krieg in der Ukraine",
+ 								"en": "War in Ukraine"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel_free_label",
+ 							"type": "text",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "israel_free",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "israel",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inps": "[\"israel_bus_cycle\", \"israel_wages\", \"israel_energy_prices\", \"israel_commodity_prices\", \"israel_exch_rates\", \"israel_mp_ecb\", \"israel_trade_conflicts\", \"israel_supply_shortages\", \"israel_green_trafo\", \"israel_war_ukraine\", \"israel_free\"]"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Bitte maximal drei.",
+ 									"en": "Please choose at most three."
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "5fr 1fr 1fr 0.4fr 0.4fr 0.4fr"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 12,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 4.5%) erwarte ich \n\t\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 4.5%) to be \n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 4.5%) erwarte ich \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 4.5%) to be \n\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 12

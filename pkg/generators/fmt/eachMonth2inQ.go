@@ -83,18 +83,18 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			// inp.ColSpanLabel = 12
 			inp.Label = trl.S{
 				"de": `
-					<b>1a.</b> &nbsp; Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
+					Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
 					<br>
 					(durchschnittliche jährliche Veränderung des HICP in Prozent)
 					<!-- Anstieg des HICP von Jan bis Dez; Erwartungswert -->
 				`,
 				"en": `
-					<b>1a.</b> &nbsp; Point forecast of the <b>annual inflation rate in the euro area</b>
+					Point forecast of the <b>annual inflation rate in the euro area</b>
 					<br>
 					(annual average change of the HICP, in percent)
 					<!-- Avg. percentage change in HICP from Jan to Dec; -->
 				`,
-			}
+			}.Outline("1a.")
 		}
 
 		for idx := range []int{0, 1, 2} {
@@ -161,7 +161,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.Type = "textblock"
 			inp.ColSpan = 9
 			inp.Label = trl.S{
-				"de": `<b>1b.</b> &nbsp; Wir möchten gerne von Ihnen erfahren, 
+				"de": `Wir möchten gerne von Ihnen erfahren, 
 						für wie wahrscheinlich Sie bestimmte Ausprägungen 
 						der durchschnittlichen jährlichen Inflationsrate 
 						in den folgenden Jahren halten.
@@ -175,7 +175,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 						
 						`,
-				"en": `<b>1b.</b> &nbsp; 
+				"en": `
 						How likely are specific future realizations of inflation? 
 						
 						Please give us your assessments for the annual average inflation rate 
@@ -187,7 +187,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 						in every line add up to 100%.
 						</i>
 						`,
-			}
+			}.Outline("1b.")
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0.8rem 0"
@@ -459,7 +459,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		)
 
 		gb.MainLabel = trl.S{
-			"de": fmt.Sprintf(`<b>2.</b> &nbsp; 
+			"de": fmt.Sprintf(` 
 				Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision 
 				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. %v %v) bewogen 
 				und wenn ja, nach oben (+) oder unten (-)?
@@ -470,7 +470,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				monthMinus3.Tr("de"), yearMinus1Q.Year(),
 				q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2,
 			),
-			"en": fmt.Sprintf(`<b>2.</b> &nbsp;
+			"en": fmt.Sprintf(`
 				What are the main factors leading you to change your inflation forecasts
 				for the euro area (in comparison to your forecasts as of %v %v).
 				(+) means increase in inflation forecast,
@@ -482,7 +482,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				monthMinus3.Tr("en"), yearMinus1Q.Year(),
 				q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2,
 			),
-		}
+		}.Outline("2.")
 		gr := page.AddGrid(gb)
 		gr.BottomVSpacers = 1
 
@@ -534,6 +534,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	}
 
+	if q.Survey.Year == 2023 && q.Survey.Month == 11 {
+		special202311(q, qst.WrapPageT(page))
+	}
+
 	// gr3
 	{
 		latestECBRate, err := q.Survey.Param("main_refinance_rate_ecb")
@@ -560,15 +564,21 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 12
 			inp.Label = trl.S{
 				"de": fmt.Sprintf(
-					`<b>3.</b> &nbsp; 
+					`
 					Den <b>Hauptrefinanzierungssatz</b> der EZB (derzeit %v) erwarte ich 
 					`, latestECBRate,
 				),
 				"en": fmt.Sprintf(
-					`<b>3.</b> &nbsp; 
+					`
 					I expect the <b>main refinancing facility rate</b> of the ECB (currently at %v) to be 
 					`, latestECBRate,
 				),
+			}
+
+			if q.Survey.Year == 2023 && q.Survey.Month == 11 {
+				inp.Label.Outline("4.")
+			} else {
+				inp.Label.Outline("3.")
 			}
 		}
 

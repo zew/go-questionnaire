@@ -58,15 +58,15 @@ div.progress-line-bar{
 }
 
 .mobile-brkr {
-    display: none;    
+    display: none;
 }
 /* second month of quarter - inflation  */
 @media screen and (max-width: 800px) {
     .pg06-grp01 {
-        overflow-x: scroll;    
+        overflow-x: scroll;
     }
     .mobile-brkr {
-        display: inline-block;    
+        display: inline-block;
     }
 }
 
@@ -91,3 +91,13 @@ table.table-special-202303 tr:first-child td:first-child {
     border-top-left-radius: 2.4rem;
     /* background-color: green !important; */
 }
+
+
+/* special 2023-12 */
+.pg07 input:disabled,
+dummy
+{
+    background-image: none;
+    background-color: lightgrey;
+}
+

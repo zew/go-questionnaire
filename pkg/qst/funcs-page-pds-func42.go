@@ -52,7 +52,7 @@ func radiosSingleRow(
 			inp.ColSpan = cf.InpColspan
 			inp.ColSpanControl = 1
 			inp.Vertical()
-			inp.VerticalLabel()
+			inp.LabelVerticallyCentered()
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			if cf.LabelBottom {
@@ -75,7 +75,7 @@ func radiosSingleRow(
 			inp.ColSpan = 4
 			inp.ColSpanControl = 1
 			inp.Vertical()
-			inp.VerticalLabel()
+			inp.LabelVerticallyCentered()
 		}
 
 	}

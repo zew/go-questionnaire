@@ -35,10 +35,8 @@ func special202111b(q *qst.QuestionnaireT) error {
 		// gr1
 
 		/*
-			todo
 			the “central 90 percent confidence interval”
 			directly under the Forecast of the ECB’s main refinancing rate
-
 		*/
 		{
 			// 2019	18 Sep. 0.00

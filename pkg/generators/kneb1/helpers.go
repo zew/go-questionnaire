@@ -58,7 +58,7 @@ func meOrTogether(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber str
 			},
 			{
 				"de": "eher Partner(in) / anderes Haushaltsmitglied",
-				"en": "todo",
+				"en": "rather spouse, partner or other household member",
 			},
 		},
 		true,

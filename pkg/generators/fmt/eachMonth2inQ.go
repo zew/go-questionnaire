@@ -728,7 +728,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 					inp.ColSpan = 2
 					inp.ColSpanControl = 1
 					inp.Vertical()
-					inp.VerticalLabel()
+					inp.LabelVerticallyCentered()
 
 					if idx2 == len(lbls)-1 {
 						inp.ColSpan = 4

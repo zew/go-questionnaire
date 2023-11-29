@@ -45,7 +45,7 @@ func checkBoxRow(
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Vertical()
-			inp.VerticalLabel()
+			inp.LabelVerticallyCentered()
 
 			labelBottom := false
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)

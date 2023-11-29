@@ -103,7 +103,7 @@ func radiosLabelsTop(
 				inp.ColSpan = cf.InpColspan
 				inp.ColSpanControl = 1
 				inp.Vertical()
-				inp.VerticalLabel()
+				inp.LabelVerticallyCentered()
 
 				//
 				// label top or bottom

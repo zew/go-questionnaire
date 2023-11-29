@@ -1256,7 +1256,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			childGroups--
 			// log.Printf("page%v - group%v   childGroups %v - of master group", pageIdx, grpIdx, childGroups)
 			if childGroups > 0 {
-				// nothing todo
+				// nothing to do
 			} else if childGroups == 0 {
 				fmt.Fprintf(w, "</div>\n <!-- master group closed gr%v -->\n", grpIdx)
 				if logChildGroups {

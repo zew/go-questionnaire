@@ -189,13 +189,8 @@ func (inp *inputT) LabelPadRight() {
 	inp.StyleLbl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
 }
 
-// VerticalLabel - ?
-func (inp *inputT) VerticalLabel() {
-	inp.LabelVertical()
-}
-
-// LabelVertical - label box and text vertically centered - horizontally bottomed
-func (inp *inputT) LabelVertical() {
+// LabelVerticallyCentered - label box and text horizontally centered - vertically bottomed
+func (inp *inputT) LabelVerticallyCentered() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
 	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "end"

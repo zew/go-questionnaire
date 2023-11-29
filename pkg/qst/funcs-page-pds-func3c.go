@@ -36,7 +36,7 @@ func restrTextRowLabelsTop(
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
 
-			inp.LabelVertical()
+			inp.LabelVerticallyCentered()
 			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
 			inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
 		}

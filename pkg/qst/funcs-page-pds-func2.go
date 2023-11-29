@@ -33,7 +33,7 @@ func dropdownsLabelsTop(
 				ttLbl := ac.TrancheTypes[idx1-1].Lbl
 				inp.Label = ttLbl
 			}
-			inp.LabelVertical()
+			inp.LabelVerticallyCentered()
 
 			inp.StyleLbl = styleHeaderCols1
 		}

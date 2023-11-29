@@ -147,7 +147,7 @@ func checkBoxCascade(
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Vertical()
-			inp.VerticalLabel()
+			inp.LabelVerticallyCentered()
 
 			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleBox.Position = "relative"
@@ -235,7 +235,7 @@ func checkBoxCascade(
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Vertical()
-			inp.VerticalLabel()
+			inp.LabelVerticallyCentered()
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			if false {
@@ -292,7 +292,7 @@ func checkBoxCascade(
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Vertical()
-			inp.VerticalLabel()
+			inp.LabelVerticallyCentered()
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			if false {

@@ -21,6 +21,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 9
+	include = include || q.Survey.Year == 2023 && q.Survey.Month == 12
 
 	if !include {
 		return nil
@@ -270,7 +271,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 		//
 		// gr2
-		if q.Survey.Year == 2023 && q.Survey.Month == 9 {
+		dontShow := false
+		dontShow = dontShow || q.Survey.Year == 2023 && q.Survey.Month == 9
+		dontShow = dontShow || q.Survey.Year == 2023 && q.Survey.Month == 12
+		dontShow = dontShow || q.Survey.Year > 2023
+		if dontShow {
 
 		} else {
 			var columnTemplateLocal = []float32{

@@ -101,3 +101,25 @@ dummy
     background-color: lightgrey;
 }
 
+/* 
+    chrome mobile browser
+    needlessly wraps the 
+    right-aligned labels 
+    into multiple line
+    for question 5
+*/
+@media screen and (max-width: 800px) {
+    .pg07 label[for=co2_brack_1],
+    .pg07 label[for=co2_brack_2],
+    .pg07 label[for=co2_brack_3],
+    .pg07 label[for=co2_brack_4],
+    .pg07 label[for=co2_brack_5],
+    .pg07 label[for=co2_brack_6],
+    .pg07 label[for=co2_brack_7],
+    .xxpg07 label[for=sum],
+    dummy {
+        text-wrap: nowrap;
+    }
+}
+
+

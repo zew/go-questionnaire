@@ -198,7 +198,7 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			dass der durchschnittliche CO2-Preis im Jahr 2023 in dieser Spanne liegen wird:
 			<br>
 			<br>
-			<span style=font-size:90%%>Bitte beachten Sie, dass alle Wahrscheinlichkeiten in der Summe 100%% ergeben müssen.</span>
+			<span style=font-size:90%%>[Bitte beachten Sie, dass alle Wahrscheinlichkeiten in der Summe 100%% ergeben müssen.]</span>
 		`,
 		),
 		"en": fmt.Sprintf(`
@@ -209,7 +209,7 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			For each of the following price ranges, please indicate the probability that the average CO2 price in 2030 will be in that range:
 			<br>
 			<br>
-			<span style=font-size:90%%>Please keep in mind that all probabilities have to sum up to 100%%.</span>
+			<span style=font-size:90%%>[Please keep in mind that all probabilities have to sum up to 100%%.]</span>
 		`),
 	}.Outline("5.")
 
@@ -249,12 +249,13 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 
 			inp.ColSpan = col1 + col2
 			inp.ColSpanLabel = col1
-			inp.ColSpanControl = col2
+			inp.ColSpanControl = 2
 
 			inp.Label = lbls[grIdx][i]
-			inp.Label.AppendStr(" &nbsp; ")
+			// inp.Label.AppendStr(" &nbsp; ")
 
 			inp.LabelRight()
+			inp.LabelPadRight()
 
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 		}
@@ -286,8 +287,13 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			inp.ColSpanControl = col2
 
 			inp.Label = trl.S{"de": "&#931;", "en": "&#931;"}
-			inp.Label.AppendStr(" &nbsp; ")
+			inp.Label = trl.S{
+				"de": `Summe der obigen Wahrscheinlichkeiten ist `,
+				"en": `Sum of the above probabilities `,
+			}
+			// inp.Label.AppendStr(" &nbsp; ")
 			inp.LabelRight()
+			inp.LabelPadRight()
 
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 

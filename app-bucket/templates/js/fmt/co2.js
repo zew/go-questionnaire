@@ -59,7 +59,7 @@ function inputsChanged(evt) {
     }
 
     // change event -
-    if(sum>100){
+    if(false &&  sum>100){
         // alert("no more");
         alert("{{.msg1}}");
         // sum =  0;

@@ -45,18 +45,18 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			inp.Label = trl.S{
 				"de": `
 						Was erwarten Sie, was der durchschnittliche 
-						<i>CO2-Preis</i> 
+						<b>CO2-Preis</b> 
 						pro Tonne im Rahmen des Emissionshandelssystems 
 						der Europäischen Union (EU-EHS) im Jahr 
-						<i>2030</i> 
+						<b>2030</b> 
 						sein wird?
 					`,
 				"en": `
 						What do you expect the average 
-						<i>CO2 price</i> 
+						<b>CO2 price</b> 
 						per ton 
 						within the European Union Emissions Trading Scheme (EU-ETS) to be in 
-						<i>2030</i>?
+						<b>2030</b>?
 					`,
 			}.Outline("3.")
 			inp.Suffix = trl.S{"de": "€", "en": "€"}
@@ -100,7 +100,7 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 		)
 		gb.MainLabel = trl.S{
 			"de": "Wie sicher sind Sie sich bei dieser Preiserwartung?",
-			"en": "How certain are you about this price expectations? ",
+			"en": "How certain are you about this price expectation? ",
 		}.Outline("4.")
 		gr := page.AddGrid(gb)
 		gr.WidthMax("30rem")
@@ -198,7 +198,7 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			dass der durchschnittliche CO2-Preis im Jahr 2023 in dieser Spanne liegen wird:
 			<br>
 			<br>
-			<span style=font-size:90%%>[Bitte beachten Sie, dass alle Wahrscheinlichkeiten in der Summe 100%% ergeben müssen.]</span>
+			<span style=font-size:90%%>Bitte beachten Sie, dass alle Wahrscheinlichkeiten in der Summe 100%% ergeben müssen.</span>
 		`,
 		),
 		"en": fmt.Sprintf(`
@@ -209,7 +209,7 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			For each of the following price ranges, please indicate the probability that the average CO2 price in 2030 will be in that range:
 			<br>
 			<br>
-			<span style=font-size:90%%>[Please keep in mind that all probabilities have to sum up to 100%%.]</span>
+			<span style=font-size:90%%>Please keep in mind that all probabilities have to sum up to 100%%.</span>
 		`),
 	}.Outline("5.")
 
@@ -284,16 +284,20 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 
 			inp.ColSpan = col1 + col2
 			inp.ColSpanLabel = col1
-			inp.ColSpanControl = col2
+			// inp.ColSpanControl = col2
+			inp.ColSpanControl = 2
 
 			inp.Label = trl.S{"de": "&#931;", "en": "&#931;"}
 			inp.Label = trl.S{
-				"de": `Summe der obigen Wahrscheinlichkeiten ist `,
-				"en": `Sum of the above probabilities `,
+				"de": `Summe der obigen Wahrscheinlichkeiten`,
+				"en": `Sum of the above probabilities`,
 			}
 			// inp.Label.AppendStr(" &nbsp; ")
 			inp.LabelRight()
 			inp.LabelPadRight()
+			// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+			// inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "start"
+			// inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
 
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 
@@ -320,9 +324,13 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			"de": "Über hundert Prozent.",
 			"en": "Over hundred percent.",
 		}
+		// s2 := trl.S{
+		// 	"de": "Nicht hundert Prozent.",
+		// 	"en": "Not hundred percent.",
+		// }
 		s2 := trl.S{
-			"de": "Nicht hundert Prozent.",
-			"en": "Not hundred percent.",
+			"de": "Die Wahrscheinlichkeiten summieren sich nicht zu 100%. Bitte korrigieren Sie Ihre Angaben.",
+			"en": "The sum of probabilities is not 100%. Please correct your responses.",
 		}
 		inp.JSBlockTrls = map[string]trl.S{
 			"msg1": s1,

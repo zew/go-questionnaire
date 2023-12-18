@@ -17,7 +17,7 @@ require (
 	github.com/speps/go-hashids v2.0.0+incompatible
 	github.com/zew/util v1.0.5
 	gocloud.dev v0.33.0
-	golang.org/x/crypto v0.12.0
+	golang.org/x/crypto v0.17.0
 	golang.org/x/oauth2 v0.11.0 // indirect
 	google.golang.org/api v0.135.0
 	google.golang.org/genproto v0.0.0-20230807174057-1744710a1577 // indirect

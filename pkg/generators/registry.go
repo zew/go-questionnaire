@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-playground/form"
+	"github.com/go-playground/form/v4"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/generators/biii"

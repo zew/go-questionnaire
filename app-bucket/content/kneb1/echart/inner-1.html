@@ -197,33 +197,13 @@
 
 <p>
   Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?
-
-  <b>Getreide</b>
-
-  <b>Kornfeld</b>
-
 </p>
 
 <div class="panel-flex-container"  >
   <div class="panel panel1">
 
-<!-- 
-  <span class="tooltip-1"
-  title="Die Anleihe, ist ein Wertpapier, für das der Anleger im Regelfall Zinsen erhält. Mit einer Anleihe überlässt der Anleger dem Aussteller der Anleihe einen bestimmten Betrag für eine gewisse Zeit.
-  Kursschwankungen von Anleihen sind in der Regel geringer als beispielsweise bei Aktien. Auch bei Anleihen sind Kursverluste möglich.
-  Quelle : BaFin- https://www.bafin.de/DE/Verbraucher/GeldanlageWertpapiere/Produkte/Schuldverschreibungen/Schuldverschreibung_node.html.
-  Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendite erhält. Allerdings wird das angesparte Vermögen durch die risikofreie Anlage geringer ausfallen, da keine (hohen) Gewinne erzielt werden."
-  >
-
-    </span>  
-
--->
-<!-- tooltip -->
-
-
-
       <p>
-        Sparbetrag
+        Größe der Anbaufläche
       </p>
 
       <p style="padding-left:1.2rem">
@@ -253,7 +233,7 @@
 
 
     <p style="margin-top: 0.8rem;">
-      Ihr Aktienanteil
+      Anteil der zweiten Getreidesorte
     </p>
     <div class="knob-container" >
       <div tabindex="2"  href=#  class="knob" style="min-width: 2.7rem">0&nbsp;% </div>
@@ -288,21 +268,21 @@
   <div class="panel panel3">
 
     <p>
-      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
+      In den <i>besten 5 von 100 Fällen</i> liegt die Ernte <i>über</i>
     </p>
     <p class="num" style="color: #0a0;">
       <strong><span id="elFV95">-</span></strong>
     </p>
 
     <p>
-      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
+      <i>Im Durchschnitt</i>  liegt die Ernte bei
     </p>
     <p class="num" style="color: rgb( 0, 105, 180);">
       <strong><span id="elFV">-</span></strong>
     </p>
 
     <p>
-      In den <i>schlechtesten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>unter</i>
+      In den <i>schlechtesten 5 von 100 Fällen</i> liegt die Ernte <i>unter</i>
     </p>
     <p class="num" style="color: #a00;">
       <strong><span id="elFV05">-</span></strong>
@@ -341,14 +321,23 @@
 
 <script>
 
+  function getChartTitle(yr, azV) {
+    return `Prognostizierte Entwicklung der Ernte über das Jahr`;
+    // return `Prognostizierte Entwicklung bis ${yr+azV}`;
+  }
+
+  function appendUnit(s) {
+    return `${s} T`;
+  }
+
   function knebelFormat(dbl, nbsp=true){
       dbl = Math.round(dbl/100)*100
       dbl = `${dbl}`  // to string
       dbl = `${dbl.substring(0,dbl.length-3)}.${dbl.substring(dbl.length-3)}`
       if(nbsp){
-        dbl = `${dbl}&nbsp;€`
+        dbl = `${dbl}&nbsp;T`
       } else {
-        dbl = `${dbl}€`
+        dbl = `${dbl}T`
       }
       return dbl
   }
@@ -374,10 +363,7 @@
       riskyBG.value = 100 - safeBG.value
   }
 
-
-
-    console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
-
+  console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
 
 
 </script>

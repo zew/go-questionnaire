@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-playground/form"
+	"github.com/go-playground/form/v4"
 	"github.com/pbberlin/dbg"
 	"github.com/pbberlin/struc2frm"
 )

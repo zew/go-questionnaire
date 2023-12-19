@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"path"
 
-	"github.com/go-playground/form"
+	"github.com/go-playground/form/v4"
 	"github.com/pbberlin/dbg"
 	hashids "github.com/speps/go-hashids"
 	"github.com/zew/go-questionnaire/pkg/cfg"

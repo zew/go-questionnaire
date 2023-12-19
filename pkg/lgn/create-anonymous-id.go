@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-playground/form"
+	"github.com/go-playground/form/v4"
 	hashids "github.com/speps/go-hashids"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/ctr"
@@ -76,13 +76,12 @@ var doOnce sync.Once
 // LoginWithoutID creates a hash ID
 // and forwards to direct login /d - LoginByHashID
 //
-// the user ID is created from unix time
-// 		plus some in-memory counter
+// the user ID is created from unix time; plus some in-memory counter
 //
 // it's called permalink in subsequent logic
 //
 // it's related to CreateAnonymousID but the ID comes from an internal timestamp plus atomic counter,
-//   it is not created from coarse personal attributes (such as first letter of father's name)
+// it is not created from coarse personal attributes (such as first letter of father's name)
 func LoginWithoutID(w http.ResponseWriter, r *http.Request) {
 
 	// prevent *repeated* anonymous login
@@ -168,7 +167,7 @@ func CreateAnonymousIDH(w http.ResponseWriter, r *http.Request) {
 }
 
 // CreateAnonymousIDCoreH has *no* outer HTML scaffold - for more, see CreateAnonymousID
-//    seems unused
+// seems unused
 func CreateAnonymousIDCoreH(w http.ResponseWriter, r *http.Request) {
 	createAnonymousID(w, r, false)
 }

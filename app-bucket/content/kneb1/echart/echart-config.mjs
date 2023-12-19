@@ -316,7 +316,7 @@ var optEchart = {
     title: {
         // text: 'ECharts Getting Started Example'
         text: 'Angespartes Vermögen',
-        text: `Prognostizierte Entwicklung bis ${yr+azV}` ,
+        text:  getChartTitle(yr,azV),
         left: '1%'
     },
     tooltip: {},

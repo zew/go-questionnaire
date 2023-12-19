@@ -118,7 +118,7 @@ type inputT struct {
 	// 		=> lookup in CompositeFuncs in funcs-composite.go
 	// 		=> lookup in       dynFuncs in funcs-dynamic.go
 	//       if "dyn-composite" =>   first arg paramSetIdx, second arg seqIdx, for example TimePreferenceSelfComprehensionCheck__0__0
-	// 		 if "dyn-textblock" =>   param in inp.DynamicFuncParamset
+	// 		 if "dyn-textblock" =>   param in inp.DynamicFuncParamset, computed ComputeDynamicContent()
 	DynamicFunc         string `json:"dynamic_func,omitempty"`
 	DynamicFuncParamset string `json:"dynamic_func_paramset,omitempty"` // for "dyn-textblock" - name of parameter set
 
@@ -2038,6 +2038,7 @@ func (q *QuestionnaireT) DynamicPages() error {
 		// dynamic page creation
 		if q.Pages[i1].GeneratorFuncName != "" {
 			err := funcPGs[q.Pages[i1].GeneratorFuncName](q, q.Pages[i1])
+			q.ComputeDynamicContent(i1)
 			dynPagesCreated = true
 			if err != nil {
 				s := fmt.Sprintf("Page %v; GeneratorFuncName %v returned error %v",

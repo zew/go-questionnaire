@@ -34,9 +34,9 @@ function getMarkpointConfig( keyValsCoords ) {
     ]
 
     data1 = [
-        { name: 'schlechteste 5%', coord: [2043, keyValsCoords[0]], nameX: 'fv05', },
-        { name: 'Durchschnitt',    coord: [2043, keyValsCoords[1]], nameX: 'fv',   },
-        { name: 'beste 5%',        coord: [2043, keyValsCoords[2]], nameX: 'fv95', },
+        { name: 'schlechteste 5%', coord: [2043, keyValsCoords[0]], nameX: 'fv05',  'itemStyle': {  color: '#a00'   },  },
+        { name: 'Durchschnitt',    coord: [2043, keyValsCoords[1]], nameX: 'fv',    'itemStyle': {   },  },
+        { name: 'beste 5%',        coord: [2043, keyValsCoords[2]], nameX: 'fv95',  'itemStyle': {  color: '#0a0'  },  },
     ]
 
     let config = {

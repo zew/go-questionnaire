@@ -2047,101 +2047,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page chart
+	// page chart dyn
 	{
 		page := q.AddPage()
-
-		page.Label = trl.S{
-			"en": "Experiment-Chart",
-			"de": "Experiment chart",
-		}
-		page.Label = trl.S{
-			"en": "",
-			"de": "",
-		}
-		page.SuppressInProgressbar = true
-
-		page.WidthMax("42rem")
-		page.WidthMax("52rem")
-		page.WidthMax("58rem")
-
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "share_safe_bg"
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "share_risky_bg"
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "sparbetrag_bg"
-			}
-		}
-
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./echart/inner.html"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
-		}
-
-		// advance to next page
-		{
-			gr := page.AddGroup()
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Cols = 2
-			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"
-			// gr.Width = 80
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "submitBtn"
-				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1-1)
-				inp.Label = trl.S{
-					"de": "Zurück",
-					"en": "todo",
-				}
-				inp.ColSpan = 1
-				inp.ColSpanControl = 1
-				inp.AccessKey = "p"
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "start"
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "submitBtn"
-				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
-				inp.Label = trl.S{
-					"de": "Werte speichern und weiter",
-					"en": "todo",
-				}
-				inp.ColSpan = 1
-				inp.ColSpanControl = 1
-				inp.AccessKey = "n"
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
-			}
-		}
-
+		page.GeneratorFuncName = "kneb202306"
 	}
 
 	// page x+0

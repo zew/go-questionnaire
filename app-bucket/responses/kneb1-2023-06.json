@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "49c66d69d4a55f07a83627578bea9a26994160eefeba38a5e9c4d79007477e16",
+ 	"md_5": "eeb157783796adea3c00dff49545f1d20714bb3d89026453d6d25ce150677e42",
  	"lang_codes": [
  		"de"
  	],
@@ -8506,7 +8506,7 @@
  							"name": "qp6_risky_investment",
  							"type": "number",
  							"max_chars": 6,
- 							"max": 1000000,
+ 							"max": 100,
  							"label": {
  								"de": "\t\t\t\t\t\n\t\t\t\t\t\tIch würde \n\t\t\t\t\t",
  								"en": "todo"
@@ -17862,142 +17862,15 @@
  		},
  		{
  			"label": {
- 				"de": "",
- 				"en": ""
+ 				"de": "Seitentitel_32",
+ 				"en": "PageLabel_32"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "58rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "share_safe_bg",
- 							"type": "hidden"
- 						},
- 						{
- 							"name": "share_risky_bg",
- 							"type": "hidden"
- 						},
- 						{
- 							"name": "sparbetrag_bg",
- 							"type": "hidden"
- 						}
- 					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "dyn-textblock",
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent",
- 							"dynamic_func_paramset": "./echart/inner.html"
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"name": "submitBtn",
- 							"type": "button",
- 							"label": {
- 								"de": "Zurück",
- 								"en": "todo"
- 							},
- 							"accesskey": "p",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"response": "30",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "submitBtn",
- 							"type": "button",
- 							"label": {
- 								"de": "Werte speichern und weiter",
- 								"en": "todo"
- 							},
- 							"accesskey": "n",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"response": "32",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "3fr 1fr"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
+ 			"generator_func_name": "kneb202306"
  		},
  		{
  			"label": {
@@ -27212,7 +27085,7 @@
  							"type": "radio",
  							"label": {
  								"de": "eher Partner(in) / anderes Haushaltsmit\u0026shy;glied",
- 								"en": "todo"
+ 								"en": "rather spouse, partner or other household member"
  							},
  							"col_span": 9,
  							"col_span_label": 1,
@@ -27333,7 +27206,7 @@
  							"type": "radio",
  							"label": {
  								"de": "eher Partner(in) / anderes Haushaltsmit\u0026shy;glied",
- 								"en": "todo"
+ 								"en": "rather spouse, partner or other household member"
  							},
  							"col_span": 9,
  							"col_span_label": 1,
@@ -27454,7 +27327,7 @@
  							"type": "radio",
  							"label": {
  								"de": "eher Partner(in) / anderes Haushaltsmit\u0026shy;glied",
- 								"en": "todo"
+ 								"en": "rather spouse, partner or other household member"
  							},
  							"col_span": 9,
  							"col_span_label": 1,
@@ -27575,7 +27448,7 @@
  							"type": "radio",
  							"label": {
  								"de": "eher Partner(in) / anderes Haushaltsmit\u0026shy;glied",
- 								"en": "todo"
+ 								"en": "rather spouse, partner or other household member"
  							},
  							"col_span": 9,
  							"col_span_label": 1,

@@ -195,7 +195,8 @@ func fmt202312(q *QuestionnaireT, page *pageT) error {
 			<br>
 			<br>
 			Bitte geben Sie für jede der folgenden Preisspannen die Wahrscheinlichkeit an, 
-			dass der durchschnittliche CO2-Preis im Jahr 2023 in dieser Spanne liegen wird:
+			dass der durchschnittliche CO2-Preis 
+			 im Jahr 2030 in dieser Spanne liegen wird:
 			<br>
 			<br>
 			<span style=font-size:90%%>Bitte beachten Sie, dass alle Wahrscheinlichkeiten in der Summe 100%% ergeben müssen.</span>

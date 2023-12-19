@@ -1,0 +1,393 @@
+
+
+<!--
+<p style="color:red">
+  F12  - console:  Change Anlagezeitraum; bspw. az=30  - change Anlagehorizont bspw. azV = 25; - click on "Aktienanteil" for refresh
+</p>
+ -->
+
+<style>
+  /* experiment page */
+  .pg31 {
+      margin-top: 0.1rem !important;
+  }
+  /* no navi buttons on experiment page */
+  .pg31-grp03    {
+      display: none !important; 
+  }
+
+  @media screen and (max-width: 800px) {
+      .pg31 {
+          /* box-style */
+          max-width: 100% !important;
+          margin: 0 !important;
+      }    
+  }
+
+
+
+
+  .panel-flex-container{
+    display: flex; 
+    flex-direction: row;    
+  }
+
+  .panel{
+    background-color: #ddd;
+    background-color: var(--clr-sec);;
+    padding: 0;
+    margin: 0;
+    margin-top:    0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .panel1{
+    width: 28%;
+    margin-right: 0.6rem;
+  }
+  .panel2{
+    width: 72%;
+  }
+  .panel3{
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .panel p {
+    margin: 0;
+    padding: 0.25rem    0.5rem;
+    /* padding-bottom: 0; */
+  }
+
+  .panel p.right {
+    text-align: right;
+    margin-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+
+  .panel p.right a {
+    display: inline-block;
+    font-size: 140%;
+    padding: 0 0.24rem;
+    font-weight: bold;
+
+    position: relative;
+    top: 0px;
+    margin: 0 0.4rem;
+    /* background-color: #888; */
+  }
+  .panel p.right a.spinner {
+    top: 0.06rem;
+  }
+
+  .panel3 p{
+    width: calc(100% - 4.9rem);
+    display: inline-block;
+    /* padding-right: 0; */
+  }
+  .panel3 p.num{
+    width: 4.5rem;
+    display: inline-block;
+    padding: 0.35rem 0.12rem;
+    /* padding-left: 0; */
+  }
+
+
+  .knob-container {
+    padding: 0.2rem 0.8rem;
+    max-width: 12rem;
+    /* border: 1px solid #d2c; */
+  }
+
+  div.knob {
+    cursor: pointer;
+
+    display: inline-block;
+
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    margin: 0.25rem;
+
+    color: var(--clr-pri);
+    /* border: 1px solid var(--clr-pri-hov); */
+    border: 1px solid var(--clr-pri);
+    /* font-weight: bolder; */
+  }
+
+  div.knob-grey {
+    background-color: #ccc;
+    color: #888;
+    border: 1px solid #ccc;
+  }
+
+  /* order: after knob-grey */
+  div.knob-inverse {
+    background-color: var(--clr-pri-hov);
+    background-color: var(--clr-pri);
+    color: #fff;
+    color: var(--clr-sec);
+  }
+
+  #elReset {
+    margin: 0.7rem;
+    margin-top: 1.4rem;
+    padding: 0.2rem 0.8rem;    
+  }
+
+
+  /* https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
+  .tooltip-1 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+
+  .tooltip-1[title]:hover::after {
+    position: absolute;
+    display:  inline-block;
+    width:    44rem;
+    bottom:  0.6rem;
+    left:     calc(100% + -2.5rem);
+
+
+    /* white-space: nowrap; */
+    padding: 0.2rem 0.4rem;
+    background-color: var(--clr-sec-drk2);
+    border: 1px solid #111111;
+    z-index: 99999;
+
+    /* visibility: hidden; */
+
+    content:  attr(title);
+
+  }
+
+
+  .panel2 {
+    min-height: 34rem;
+  }
+
+  @media screen and (max-width: 800px) {
+      .panel-flex-container{
+        display: flex; 
+        flex-direction: column;    
+        padding: 0;
+      }
+      .panel1 {
+        width: 100%;
+      }
+      .knob-container {
+        max-width: unset;
+      }
+      .panel2 {
+        width: 100%;
+        min-height: 24rem;
+      }
+      #elReset {
+        margin-top: 0.6rem;
+      }
+
+
+  }
+
+
+
+</style>
+
+<p>
+  Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?
+</p>
+
+<div class="panel-flex-container"  >
+  <div class="panel panel1">
+
+<!-- 
+  <span class="tooltip-1"
+  title="Die Anleihe, ist ein Wertpapier, für das der Anleger im Regelfall Zinsen erhält. Mit einer Anleihe überlässt der Anleger dem Aussteller der Anleihe einen bestimmten Betrag für eine gewisse Zeit.
+  Kursschwankungen von Anleihen sind in der Regel geringer als beispielsweise bei Aktien. Auch bei Anleihen sind Kursverluste möglich.
+  Quelle : BaFin- https://www.bafin.de/DE/Verbraucher/GeldanlageWertpapiere/Produkte/Schuldverschreibungen/Schuldverschreibung_node.html.
+  Eine Anlage mit weniger Risiko hat den Vorteil, dass man eine konstantere Rendite erhält. Allerdings wird das angesparte Vermögen durch die risikofreie Anlage geringer ausfallen, da keine (hohen) Gewinne erzielt werden."
+  >
+
+    </span>  
+
+-->
+<!-- tooltip -->
+
+
+
+      <p>
+        Sparbetrag
+      </p>
+
+      <p style="padding-left:1.2rem">
+
+        <a tabindex="-1" href="#" class="spinner" id="elDown" >&ndash;  </a>
+        &nbsp;
+
+        <input
+          tabindex="1"
+          type="number" name="sparbetrag" id="sparbetrag"
+          value="110"
+          min="0" max="300" step="10"
+          style="
+            display: inline-block;
+            max-width: 3rem;
+            font-weight: bolder;
+            color: var(--clr-pri);
+            border: 1px solid var(--clr-pri);
+            "
+        >€
+
+        &nbsp;
+        <a tabindex="-1" href="#" class="spinner" id="elUp">+ &nbsp;&nbsp;&nbsp;</a>
+
+      </p>
+
+
+
+    <p style="margin-top: 0.8rem;">
+      Ihr Aktienanteil
+    </p>
+    <div class="knob-container" >
+      <div tabindex="2"  href=#  class="knob" style="min-width: 2.7rem">0&nbsp;% </div>
+      <div tabindex="2"  href=#  class="knob">10&nbsp;% </div>
+      <div tabindex="3"  href=#  class="knob">20&nbsp;% </div>
+      <div tabindex="4"  href=#  class="knob">30&nbsp;% </div>
+      <div tabindex="5"  href=#  class="knob">40&nbsp;% </div>
+      <div tabindex="6"  href=#  class="knob">50&nbsp;% </div>
+      <div tabindex="7"  href=#  class="knob">60&nbsp;% </div>
+      <div tabindex="8"  href=#  class="knob">70&nbsp;% </div>
+      <div tabindex="9"  href=#  class="knob">80&nbsp;% </div>
+      <div tabindex="10" href=#  class="knob knob-grey">90&nbsp;% </div>
+      <div tabindex="11" href=#  class="knob knob-grey">100&nbsp;%</div>
+
+    </div>
+
+
+    <button tabindex="13"  id="elReset"
+     >Werte zurücksetzen</button>
+
+
+
+
+  </div>
+
+
+  <div class="panel panel2" id="chart_container"></div>
+</div>   <!-- / flex -->
+
+
+
+  <div class="panel panel3">
+
+    <p>
+      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
+    </p>
+    <p class="num" style="color: #0a0;">
+      <strong><span id="elFV95">-</span></strong>
+    </p>
+
+    <p>
+      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
+    </p>
+    <p class="num" style="color: rgb( 0, 105, 180);">
+      <strong><span id="elFV">-</span></strong>
+    </p>
+
+    <p>
+      In den <i>schlechtesten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>unter</i>
+    </p>
+    <p class="num" style="color: #a00;">
+      <strong><span id="elFV05">-</span></strong>
+    </p>
+
+
+  </div>
+
+
+
+
+<!--
+<p>
+  <a href="#" onclick="javascript:nextStep();">Next Step</a>
+  &nbsp; &nbsp; &nbsp;
+  <a href="#" onclick="javascript:forever();" >Step forever</a>
+</p>
+ -->
+
+
+
+
+<!-- <input name="chart_output" type="text" value="0" /> -->
+
+<!-- <div id="chart_container" ></div> -->
+
+
+
+
+<!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echarts.min.js"></script>
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/js-stats-subset.js"></script>
+
+
+<script>
+
+  function knebelFormat(dbl, nbsp=true){
+      dbl = Math.round(dbl/100)*100
+      dbl = `${dbl}`  // to string
+      dbl = `${dbl.substring(0,dbl.length-3)}.${dbl.substring(dbl.length-3)}`
+      if(nbsp){
+        dbl = `${dbl}&nbsp;€`
+      } else {
+        dbl = `${dbl}€`
+      }
+      return dbl
+  }
+
+
+  // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
+  // init
+  var sb = 100.0; // sparbetrag - defined in echart-config.mjs
+  var sbInp   = document.getElementById("sparbetrag");
+  var sbInpBG = document.getElementById("sparbetrag_bg");
+  if (sbInpBG && sbInpBG.value !== "") {
+      sb = parseInt(sbInpBG.value);
+  }
+  if (sbInp) {
+      sbInp.value = sb;
+  }
+
+  var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
+  var riskyBG  = document.getElementById("share_risky_bg");
+  if (safeBG && safeBG.value != "" ) {
+  } else if (safeBG && safeBG.value === "" ) {
+      safeBG.value = 50
+      riskyBG.value = 100 - safeBG.value
+  }
+
+
+
+    console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
+
+
+
+</script>
+
+
+<!--
+  loading as a module needs apache conf mime types file
+      application/javascript				mjs
+  for local files, there is a browser extension, which does not work;
+  loading as module also requires https.
+-->
+<!-- <script type="module"          src="chart.mjs"></script> -->
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/markpoint.js?v=001"></script>
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echart-config.mjs?v=001"></script>
+
+
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/ui.js?v=001"></script>
+

@@ -2001,56 +2001,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	// page chart introduction 2
-	//   guided tour
+	// page guided tour dyn
 	{
 		page := q.AddPage()
-
-		page.Label = trl.S{
-			"en": "Experiment-Chart-Introduction",
-			"de": "Experiment chart-Introduction",
-		}
-		page.Label = trl.S{
-			"en": "",
-			"de": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("52rem")
-
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				// store current page of the guided tour
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "section"
-			}
-		}
-
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./slide-show/index.html"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
-		}
-
+		page.GeneratorFuncName = "kneb202306guidedtour"
 	}
 
 	// page chart dyn
 	{
 		page := q.AddPage()
-		page.GeneratorFuncName = "kneb202306"
+		page.GeneratorFuncName = "kneb202306simtool"
 	}
 
 	// page x+0

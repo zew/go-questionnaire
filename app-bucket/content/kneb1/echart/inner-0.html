@@ -325,7 +325,30 @@
     return `Prognostizierte Entwicklung bis ${yr+azV}`;
     // return `Prognostizierte Entwicklung der Ernte über das Jahr`;
   }
-  
+
+  function getXAxisType() {
+    return 'value';
+  }
+  function getXAxisMin(yr,az) {
+    return yr+0;
+  }
+  function getXAxisMax(yr,az) {
+    return yr+az;
+  }
+  function getXAxisFormatter(vl,yr,az) {
+    return vl  + ' ';
+  }
+  function getXInteerval(){
+    return 2;    
+  }
+
+  function getYAxisTitle() {
+    return `Vermögen`;
+  }
+  function getVerticalMarkerTitle() {
+    return `Ihr Anlagehorizont`;
+  }
+
   function appendUnit(s) {
     return `${s} T`;
   }
@@ -364,7 +387,6 @@
   }
 
   console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
-
 
 
 </script>

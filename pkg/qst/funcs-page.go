@@ -58,7 +58,8 @@ var funcPGs = map[string]funcPageGeneratorT{
 	"pdsPage3-acx": pdsPage3ACX,
 	"pdsPage4-acx": pdsPage4ACX,
 
-	"kneb202306": kneb202306,
+	"kneb202306guidedtour": kneb202306guidedtour,
+	"kneb202306simtool":    kneb202306simtool,
 }
 
 func pageFuncExample(q *QuestionnaireT, page *pageT) error {

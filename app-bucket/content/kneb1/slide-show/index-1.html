@@ -8,7 +8,7 @@
 
 
 	<style>
-		
+
 		.reveal-viewport {
 			background: #fdf6e3;
 			/* background-color: var(--r-background-color); */
@@ -20,7 +20,7 @@
 
 	</style>
 
-	<!--  
+	<!--
 		a-pics croppings
 		260x320
 		1240x720
@@ -39,22 +39,13 @@
 					xx-data-autoslide="1200"
 					data-auto-animate
 				>
-					<!-- 
-					<img class="fragment fade-left" 
+					<!--
+					<img class="fragment fade-left"
 						src="/{{AppPrefix}}/doc/kneb1/slide-show/a01.png" alt=""
 					> -->
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a01.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/00.png" alt=""  data-id="box">
 
 
-					 
-				</section>
-
-
-				<section
-					data-autoslide="1200"
-					data-auto-animate
-				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a02.png" alt=""  data-id="box">
 
 				</section>
 
@@ -62,39 +53,7 @@
 					data-autoslide="1200"
 					data-auto-animate
 				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a03.png" alt=""  data-id="box">
-
-				</section>
-
-				<section
-					data-autoslide="1200"
-					data-auto-animate
-				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a04.png" alt=""  data-id="box">
-
-				</section>
-
-				<section
-					data-autoslide="1200"
-					data-auto-animate
-				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a05.png" alt=""  data-id="box">
-
-				</section>
-
-				<section
-					data-autoslide="1200"
-					data-auto-animate
-				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a06.png" alt=""  data-id="box">
-
-				</section>
-
-				<section
-					data-autoslide="4200"
-					data-auto-animate
-				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/a07.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/01.png" alt=""  data-id="box">
 
 				</section>
 
@@ -103,7 +62,7 @@
 					data-autoslide="1200"
 					data-auto-animate
 				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b01.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/02.png" alt=""  data-id="box">
 
 				</section>
 
@@ -111,7 +70,7 @@
 					data-autoslide="1200"
 					data-auto-animate
 				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b02.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/03.png" alt=""  data-id="box">
 
 				</section>
 
@@ -119,7 +78,7 @@
 					data-autoslide="1200"
 					data-auto-animate
 				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b03.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/04.png" alt=""  data-id="box">
 
 				</section>
 
@@ -127,7 +86,7 @@
 					data-autoslide="1200"
 					data-auto-animate
 				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b04.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/05.png" alt=""  data-id="box">
 
 				</section>
 
@@ -135,12 +94,15 @@
 					data-autoslide="1200"
 					data-auto-animate
 				>
-					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/b05.png" alt=""  data-id="box">
+					<img src="/{{AppPrefix}}/doc/kneb1/slide-show/out/umw/06.png" alt=""  data-id="box">
 
 				</section>
 
-				
-<!-- 
+
+
+
+
+<!--
 				<section>
 					<ol>
 						<li class="fragment fade-left" >Raise by 0.5 pct</li>
@@ -183,7 +145,7 @@
 			slideNumber: false,
 			slideNumber: "c/t",
 			hashOneBasedIndex: true,
-			
+
 			// useful for globally _disabling_ auto-animation
 			//    same as slide  data-auto-animate
 			// autoAnimate: true,
@@ -245,22 +207,43 @@
 
 
 		let deck2 = new Reveal( document.querySelector('.deck2'), props );
-		document.querySelector( '.deck2' ).style.width  = '56rem';
-		document.querySelector( '.deck2' ).style.width  = '98%';
+
+		const slides = document.querySelector( '.deck2' );
+
+		if(!slides){
+			console.error(`query '.deck2' must return the HTML element containing the slides`);
+		}
+
+		slides.style.width  = '56rem';
+		slides.style.width  = '98%';
 
 		// min height does not seem to work; percentages dont work
-		// document.querySelector( '.deck2' ).style.height = '44rem';
-		document.querySelector( '.deck2' ).style.height = screen.height - 140  +"px";
-		document.querySelector( '.deck2' ).style.height = window.innerHeight - 240  +"px";
-		// document.querySelector( '.deck2' ).style.height = window.innerHeight - 10  +"rem";
-		
+		// slides.style.height = '44rem';
+		slides.style.height = screen.height - 140  +"px";
+		slides.style.height = window.innerHeight - 240  +"px";
+		slides.style.height = window.innerHeight - 170  +"px";
+		// slides.style.height = window.innerHeight - 10  +"rem";
 
-		// document.getElementById("page-wrapper").style.minHeight = screen.height - 10  +"px";
-
-
-		// document.querySelector( '.deck2' ).style.margin = '0.5rem 3rem';
-		document.querySelector( '.deck2' ).style.margin = '0.5rem auto';
+		slides.style.margin = '0.15rem auto';
 		deck2.initialize({embedded: true });
+		
+		slides.style.position = "relative";
+		slides.style.top = "-1rem";
+		slides.style.marginBottom = "-0.4rem";
+
+		console.log("slides positioned");
+
+		// const par1 = slides.parentElement.parentElement;
+		try {
+			const pg = slides.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+			console.log(`hopefully the page`, pg )
+			pg.style.marginTop = 0;
+		} catch (err) {
+			console.error("could not step up to page");
+			console.error(err);
+		}
+
+
 
 	</script>
 

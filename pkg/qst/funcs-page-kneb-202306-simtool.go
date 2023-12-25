@@ -6,7 +6,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func kneb202306(q *QuestionnaireT, page *pageT) error {
+func kneb202306simtool(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
 

@@ -11,7 +11,9 @@
 // JSON serialization and deserialization.
 //
 // Open() is similar to file.Open
-//    r, err := file.Open("name")
+//
+//	r, err := file.Open("name")
+//
 // but deviates in that is also returns a bucket closer func.
 //
 // OpenAny() is just a wrapper arond Open() searching in various subdirectories.
@@ -32,7 +34,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"cloud.google.com/go/storage"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/fileblob" // local file system
 	_ "gocloud.dev/blob/gcsblob"
@@ -248,28 +249,27 @@ func ReadFile(fileName string) (bts []byte, err error) {
 Open a blob/file fileName in default bucket.
 Returns ReadCloser for the blob/file and bucketCloser() for the underlying bucket
 
-No memory allocation
+# No memory allocation
 
 Example
 
-    fileName := "config.json"
-    r, bucketClose, err := cloudio.Open(fileName)
-    if err != nil {
-        log.Fatalf("Error opening writer to %v: %v", fileName, err)
-    }
-    defer func() {
-        err := r.Close()
-        if err != nil {
-            log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
-        }
-    }()
-    defer func() {
-        err := bucketClose()
-        if err != nil {
-            log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
-        }
-    }()
-
+	fileName := "config.json"
+	r, bucketClose, err := cloudio.Open(fileName)
+	if err != nil {
+	    log.Fatalf("Error opening writer to %v: %v", fileName, err)
+	}
+	defer func() {
+	    err := r.Close()
+	    if err != nil {
+	        log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+	    }
+	}()
+	defer func() {
+	    err := bucketClose()
+	    if err != nil {
+	        log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+	    }
+	}()
 */
 func Open(fileName string) (r io.ReadCloser, bucketClose func() error, err error) {
 
@@ -407,19 +407,6 @@ func Delete(fileName string) error {
 	return nil
 }
 
-//
-//
-// ReadDir preparation
-var beforeList = func(as func(interface{}) bool) error {
-	var q *storage.Query
-	if as(&q) { // access storage.Query via q here.
-		// log.Printf("beforeFunc(): delim - pref - versions: %v %v %#v", q.Delimiter, q.Prefix, q.Versions)
-	} else {
-		log.Printf("beforeFunc(): no response to %T", as)
-	}
-	return nil
-}
-
 var list func(context.Context, *blob.Bucket, string, int, int, *[]*blob.ListObject) //
 
 func init() {
@@ -464,7 +451,8 @@ func init() {
 // prefix is the path to search into;
 // returned keys will nevertheless consist of  path . path.Separator . fileName;
 // under windows we might have to
-//     o.Key = strings.ReplaceAll(o.Key, "\\", "/")
+//
+//	o.Key = strings.ReplaceAll(o.Key, "\\", "/")
 //
 // On windows,   `prefix` directory itself is not returned
 // On appengine, `prefix` directory itself is returned as well

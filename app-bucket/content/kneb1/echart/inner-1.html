@@ -326,9 +326,67 @@
     // return `Prognostizierte Entwicklung bis ${yr+azV}`;
   }
 
+  function getXAxisType() {
+    return 'value';
+    // return 'category';
+  }
+  function getXAxisMin(yr,az) {
+    return yr+0;
+    // return 'Okt';
+  }
+  function getXAxisMax(yr,az) {
+    return yr+az;
+    // return 'Juli';
+  }
+  function getXAxisFormatter(vl,yr,az) {
+    let mapper = [
+       'Okt.' , 
+       'Nov.' , 
+       'Dez.' , 
+       'Jan.' , 
+       'Feb.' , 
+       'März' , 
+       'April', 
+       'Mai'  , 
+       'Juni' , 
+       'Juli' ,
+       ' ' ,
+      //  ' ' ,
+    ];
+    // map az to mapper.length
+    let factor = (mapper.length)/az;
+    let idxFl  = (vl-yr) * factor;  // index as float
+    // let idx = Math.round( idxFl );
+    let idx = Math.floor( idxFl );
+
+    if (typeof mapper[idx] === 'undefined') {
+      return ' ';
+    }
+    // if (Math.abs(idxFl - idx) > 0.7) {
+    //   return ' ';
+    // }
+    return mapper[idx]  + ' ';
+    // return vl  + ' ';
+  }
+  function getXInteerval(){
+    return 2.285;
+    return 2;
+  }
+
+
+
+  function getYAxisTitle() {
+    return `Ernte in Tonnen`;
+  }
+  function getVerticalMarkerTitle() {
+    return `Ernte`;
+  }
+
+
   function appendUnit(s) {
     return `${s} T`;
   }
+
 
   function knebelFormat(dbl, nbsp=true){
       dbl = Math.round(dbl/100)*100

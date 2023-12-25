@@ -59,8 +59,8 @@ let normDist = new jsstats.NormalDistribution(mn, sd);
 
 
 // unused primitive series...
-let dataXAxix = []; // unused
-for (let i = yr; i <= yr+az; i++) { dataXAxix.push(i); }
+let dataXPrimitive = []; // unused
+for (let i = yr; i <= yr+az; i++) { dataXPrimitive.push(i); }
 let dataReturns = []; // unused
 for (let i = 0; i <= az; i++) {     dataReturns.push(250+i*2000); }
 
@@ -251,7 +251,7 @@ getVerticalArea = function(argYryr, argAzV){
     let vertMarkerYr = argYryr + argAzV;
     let vertMarker1 = [
         {
-            name: 'Ihr Anlagehorizont',
+            name: getVerticalMarkerTitle(),
             xAxis: 2029-0.3,
             xAxis: vertMarkerYr - 0.08,
         },
@@ -345,6 +345,7 @@ var optEchart = {
         // type: 'category',
         type: 'time',
         type: 'value',
+        type: getXAxisType(),
 
         // only in numerical axis, i.e., type: 'value'.
         //    show zero position only, if justified by data
@@ -357,7 +358,7 @@ var optEchart = {
         axisLabel: {
             // compare  axisLabel. formatter
             formatter: function (vl, idx) {
-                return vl + ' ';
+                return getXAxisFormatter(vl,yr,az);
             },
             textStyle: {
                 // color: function (vl, idx) {
@@ -365,18 +366,18 @@ var optEchart = {
                 // }
             },
         },
-        // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
-        // data: dataXAxix,
-        // min: dataXAxix[0]-2,
-        // min: 2000,
+        // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        // data: dataXPrimitive,
+        // min:  dataXPrimitive[0]-2,
+        // min:  2000,
         // min: 'dataMin',
         min: function (vl) {
             // this effectively returns dataReturns.min and max
-            console.log(`min ${vl.min} max ${vl.max} `)
-            return vl.min;
+            console.log(`x-axis min ${vl.min} max ${vl.max} `)
+            return vl.min-10;
         },
-        min: yr+0,
-        max: yr+az,
+        min: getXAxisMin(yr,az),
+        max: getXAxisMax(yr,az),
 
         // show label of the min/max tick
         //    seems ineffective, labels are shown anyway
@@ -388,7 +389,7 @@ var optEchart = {
         // number of ticks - mandatory
         interval: 3,
         interval: 2,
-
+        interval: getXInteerval(),
 
         axisTick: {
             show: false,
@@ -415,7 +416,7 @@ var optEchart = {
         max: dataObject.maxY(),
 
         // 
-        name: 'Vermögen',
+        name: getYAxisTitle(),
         nameLocation: 'middle',
         nameGap: 62,
         nameTextStyle: {

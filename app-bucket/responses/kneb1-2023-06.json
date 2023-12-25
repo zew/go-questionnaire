@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "eeb157783796adea3c00dff49545f1d20714bb3d89026453d6d25ce150677e42",
+ 	"md_5": "713511fd5fcdb20db4d9a80a80592a008c04d7aa2812e766aae95e5761e18992",
  	"lang_codes": [
  		"de"
  	],
@@ -17809,56 +17809,15 @@
  		},
  		{
  			"label": {
- 				"de": "",
- 				"en": ""
+ 				"de": "Seitentitel_31",
+ 				"en": "PageLabel_31"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "52rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "section",
- 							"type": "hidden"
- 						}
- 					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "dyn-textblock",
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent",
- 							"dynamic_func_paramset": "./slide-show/index.html"
- 						}
- 					]
- 				}
- 			]
+ 			"generator_func_name": "kneb202306guidedtour"
  		},
  		{
  			"label": {
@@ -17870,7 +17829,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306"
+ 			"generator_func_name": "kneb202306simtool"
  		},
  		{
  			"label": {

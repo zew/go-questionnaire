@@ -4,8 +4,8 @@ go 1.16
 
 require (
 	cloud.google.com/go/storage v1.31.0
-	github.com/alexedwards/scs/redisstore v0.0.0-20230327161757-10d4299e3b24
-	github.com/alexedwards/scs/v2 v2.5.1
+	github.com/alexedwards/scs/redisstore v0.0.0-20231113091146-cef4b05350c8
+	github.com/alexedwards/scs/v2 v2.7.0
 	github.com/go-playground/form/v4 v4.2.1
 	github.com/gomodule/redigo v1.8.9
 	github.com/google/martian v2.1.1-0.20190517191504-25dcb96d9e51+incompatible // indirect

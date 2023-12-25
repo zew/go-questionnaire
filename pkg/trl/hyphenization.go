@@ -66,10 +66,12 @@ var hyph = []string{
 	"ei|ge|ne", // https://www.duden.de/rechtschreibung/eigener
 	"ef|fek|tiv",
 	"Ein|fluss",
+	"ein|zu|ge|hen",
 	"Ent|schei|dungs|pro|zesse",
 	"Ent|wick|lungs|öko|no|mie",
 	"er|stre|bens|wert",
 	"er|hal|ten",
+	"er|heb|lich",
 	"er|höht",
 	"Erwartungs|wert",
 	"Euro|raum",
@@ -90,6 +92,7 @@ var hyph = []string{
 	"Grup|pen|mit|glieder",
 	"Handels|konflikte",
 	"höchs|te",
+	"hö|her",
 	"Immob|ilien|kredite",
 	"In|fla|ti|on",
 	"in|for|miert", // www.duden.de/rechtschreibung/uninformiert
@@ -119,6 +122,7 @@ var hyph = []string{
 	"Öko|no|mie",
 	"Po|li|tik",
 	"po|si|tiv",
+	"po|ten|zi|ell",
 	"Prä|ferenz|konstellation",
 	"Pro|fes|sorIn",
 	"Pro|gno|se",

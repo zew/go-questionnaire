@@ -132,8 +132,8 @@ func vorsorgeplanung8x7(q *qst.QuestionnaireT, idx0, idx1 int) {
 
 	lblsQV1to6 := labelsImportantSituations()
 	lblsQV1to6[0] = trl.S{
-		"de": "<small>stimme überhaupt nicht zu</small> 0",
-		"en": "<small>dont agree at all</small>         0",
+		"de": "<small>stimme überhaupt nicht zu</small> 1",
+		"en": "<small>dont agree at all</small>         1",
 	}
 	lblsQV1to6[6] = trl.S{
 		"de": "<small>stimme voll und ganz zu</small> 7",
@@ -144,39 +144,27 @@ func vorsorgeplanung8x7(q *qst.QuestionnaireT, idx0, idx1 int) {
 	//
 	inputs := []string{
 		"saving",
-		"knowledge",
 		"secure",
-		"oversight",
 		"avoidance",
-		"procrastination",
-		"emphasis",
 		"fear",
 	}
 	lbls := []trl.S{
 		{
 			"de": `
-		Inwiefern stimmen Sie den folgenden Aussagen zu?
+				Inwiefern stimmen Sie den folgenden Aussagen zu?
 
-		<small>
-		Antworten Sie auf der Skala von
-		1: "Stimme überhaupt nicht zu"
-		bis
-		7: "Stimme voll und ganz zu" .
-		</small>
+				<small>
+				Antworten Sie auf der Skala von
+				1: "Stimme überhaupt nicht zu"
+				bis
+				7: "Stimme voll und ganz zu" .
+				</small>
 
-		<br>
-		<br>
+				<br>
+				<br>
 
-		<b>%c)</b>&nbsp; Ich spare genug für die Rente.
+				<b>%c)</b>&nbsp; Ich spare genug für die Rente.
 
-	`,
-			"en": `
-		<b>%c)</b>&nbsp; todo.
-	`,
-		},
-		{
-			"de": `
-				<b>%c)</b>&nbsp; Ich beschäftige mich ausreichend mit dem Thema Rente.
 			`,
 			"en": `
 				<b>%c)</b>&nbsp; todo.
@@ -192,31 +180,7 @@ func vorsorgeplanung8x7(q *qst.QuestionnaireT, idx0, idx1 int) {
 		},
 		{
 			"de": `
-				<b>%c)</b>&nbsp; Ich habe heute einen guten Überblick über meine angesammelten Rentenansprüche.
-			`,
-			"en": `
-				<b>%c)</b>&nbsp; todo.
-			`,
-		},
-		{
-			"de": `
 				<b>%c)</b>&nbsp; Ich habe noch genug Zeit bis zum Ruhestand, um mich um meine Altersvorsorge zu kümmern.
-			`,
-			"en": `
-				<b>%c)</b>&nbsp; todo.
-			`,
-		},
-		{
-			"de": `
-				<b>%c)</b>&nbsp; Ich habe es noch nicht geschafft, mich um meine Altersvorsorge zu kümmern.
-			`,
-			"en": `
-				<b>%c)</b>&nbsp; todo.
-			`,
-		},
-		{
-			"de": `
-				<b>%c)</b>&nbsp; Mir ist es wichtig, dass ich für das Alter ausreichend abgesichert bin.
 			`,
 			"en": `
 				<b>%c)</b>&nbsp; todo.
@@ -243,7 +207,6 @@ func vorsorgeplanung8x7(q *qst.QuestionnaireT, idx0, idx1 int) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("44rem")
 
 		for i := idx0; i <= idx1; i++ {
@@ -1492,16 +1455,25 @@ func labelsRisk() []trl.S {
 
 }
 
-func labelsPositiveAspects() []trl.S {
+func labelsRiskFin() []trl.S {
 
 	return []trl.S{
 
+		// 0
 		{
-			"de": "<small>nur an die negativen Seiten</small> 1",
-			"en": "<small>negative aspects only</small>       1",
+			"de": "<small>nicht bereit, ein Risiko einzugehen</small> 0",
+			"en": "todo",
 		},
 
-		// 2-3
+		// 1-4
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
 		{
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
@@ -1513,11 +1485,11 @@ func labelsPositiveAspects() []trl.S {
 
 		// center
 		{
-			"de": " 4 ",
-			"en": " 4 ",
+			"de": " 5 ",
+			"en": " 5 ",
 		},
 
-		// 5-6
+		// 6-9
 		{
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
@@ -1526,10 +1498,17 @@ func labelsPositiveAspects() []trl.S {
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
 		},
-
 		{
-			"de": "<small>nur an die positiven Seiten</small> 7",
-			"en": "<small>positiv aspects only</small>        7",
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		},
+		{
+			"de": "<small>bereit, ein erhebliches Risiko einzugehen, um potenziell eine höhere Rendite zu erzielen</small> 10",
+			"en": "todo",
 		},
 	}
 

@@ -438,65 +438,67 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			// single column
-			gr.Cols = 3
-			var radioValues = []string{
-				"no",
-				"yes",
-				"highschool",
-			}
-			var labels = []trl.S{
-				{
-					"de": "Nein, keine abgeschlossene Berufsausbildung",
-					"en": "todo",
-				},
-				{
-					"de": "Ja, abgeschlossene Berufsausbildung",
-					"en": "todo",
-				},
-				{
-					"de": "Ja, Hochschulabschluss (Fachhochschule oder Universität)",
-					"en": "todo",
-				},
-			}
+		/*
+			// gr1
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Haben Sie eine abgeschlossene Berufsausbildung?  <br>
-						<small> Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchsten an. </small>
-					`,
-					"en": `
-						todo
+				gr := page.AddGroup()
+				gr.Cols = 6
+				// single column
+				gr.Cols = 3
+				var radioValues = []string{
+					"no",
+					"yes",
+					"highschool",
+				}
+				var labels = []trl.S{
+					{
+						"de": "Nein, keine abgeschlossene Berufsausbildung",
+						"en": "todo",
+					},
+					{
+						"de": "Ja, abgeschlossene Berufsausbildung",
+						"en": "todo",
+					},
+					{
+						"de": "Ja, Hochschulabschluss (Fachhochschule oder Universität)",
+						"en": "todo",
+					},
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Haben Sie eine abgeschlossene Berufsausbildung?  <br>
+							<small> Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchsten an. </small>
+						`,
+						"en": `
+							todo
 
-					`,
-				}.OutlineHid("D5.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
+						`,
+					}.OutlineHid("D5.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+				for idx, label := range labels {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qd5_vocational_training"
+					rad.ValueRadio = radioValues[idx]
+
+					rad.ColSpan = gr.Cols
+					rad.ColSpan = 3
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+					rad.LabelTop()
+					rad.ControlTop()
+				}
 			}
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "qd5_vocational_training"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols
-				rad.ColSpan = 3
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-				rad.LabelTop()
-				rad.ControlTop()
-			}
-		}
+		*/
 	}
 
 	// page 2-split
@@ -552,7 +554,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `Welchen Familienstand haben Sie?`,
 					"en": `What is your marital status?`,
-				}.OutlineHid("D6.")
+				}.OutlineHid("D5.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -560,7 +562,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "qd6_family_status"
+				rad.Name = "qd5_family_status"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols
@@ -575,240 +577,241 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			// single column
-			gr.Cols = 3
-			var radioValues = []string{
-				"above35hours",
-				"between15and35hours",
-				"upto15hours",
-				"occasionally",
-				"none",
-			}
-			var labels = []trl.S{
-				{
-					"de": "Vollzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 35&nbsp;Stunden oder mehr",
-					"en": "todo",
-				},
-				{
-					"de": "Teilzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 15 bis unter 35&nbsp;Stunden",
-					"en": "todo",
-				},
-				{
-					"de": "Geringfügig beschäftigt mit einer wöchentlichen Arbeitszeit unter 15&nbsp;Stunden",
-					"en": "todo",
-				},
-				{
-					"de": "Gelegentlich erwerbstätig",
-					"en": "todo",
-				},
-				{
-					"de": "In keiner Weise erwerbstätig",
-					"en": "todo",
-				},
-			}
+		/*
+			// gr1
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Sind Sie zurzeit in irgendeiner Weise erwerbstätig?
-						<br>
-						<small>
-						Unter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?
-						</small>
-					`,
-					"en": `
-						todo
-					`,
-				}.OutlineHid("D7.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "qd7_employment"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols
-				rad.ColSpan = 3
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-				rad.LabelTop()
-				rad.ControlTop()
-			}
-		}
-
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			// single column
-			gr.Cols = 3
-			gr.BottomVSpacers = 0
-			var radioValues = []string{
-				"housewife",
-				"unemployed",
-				"ineducation",
-				"military",
-				"parental",
-				"other",
-			}
-			var labels = []trl.S{
-				{
-					"de": "Hausfrau / Hausmann",
-					"en": "todo",
-				},
-				{
-					"de": "Arbeitslos",
-					"en": "todo",
-				},
-				{
-					"de": "In Ausbildung, Schule, Lehre, Studium oder Umschulung",
-					"en": "todo",
-				},
-				{
-					"de": "Wehr- oder Ersatzdienst",
-					"en": "todo",
-				},
-				{
-					"de": "Mutterschafts-/ Erziehungsurlaub bzw. Elternzeit",
-					"en": "todo",
-				},
-				{
-					"de": "Sonstiges",
-					"en": "todo",
-				},
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Wenn Sie einmal von den Erwerbstätigkeiten absehen, was von dem Folgenden trifft dann auf Sie zu?
-					`,
-					"en": `
-						todo
-					`,
-				}.OutlineHid("D7a.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "qd7a_employment"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols
-				rad.ColSpan = 3
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-				rad.LabelTop()
-				rad.ControlTop()
-			}
-		}
-
-		// gr3
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			// single column
-			gr.Cols = 3
-			gr.BottomVSpacers = 0
-			var radioValues = []string{
-				"worker",
-				"employee",
-				"civilservant",
-				"selfemployedalone",
-				"selfemployedwithemployees",
-			}
-			var labels = []trl.S{
-				{
-					"de": "Arbeiter",
-					"en": "todo",
-				},
-				{
-					"de": "Angestellter",
-					"en": "todo",
-				},
-				{
-					"de": "Beamter",
-					"en": "todo",
-				},
-				{
-					"de": "Selbständig ohne Mitarbeiter",
-					"en": "todo",
-				},
-				{
-					"de": "Selbständig mit Mitarbeitern",
-					"en": "todo",
-				},
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Sind Sie zurzeit…					`,
-					"en": `
-						todo
-					`,
-				}.OutlineHid("D7a.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "qd7b_employment"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols
-				rad.ColSpan = 3
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-				rad.LabelTop()
-				rad.ControlTop()
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "knebPageD2" // js filename
-
-				s1 := trl.S{
-					"de": "no javascript dialog message needed",
-					"en": "no javascript dialog message needed",
+				gr := page.AddGroup()
+				gr.Cols = 6
+				// single column
+				gr.Cols = 3
+				var radioValues = []string{
+					"above35hours",
+					"between15and35hours",
+					"upto15hours",
+					"occasionally",
+					"none",
 				}
-				inp.JSBlockTrls = map[string]trl.S{
-					"msg": s1,
+				var labels = []trl.S{
+					{
+						"de": "Vollzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 35&nbsp;Stunden oder mehr",
+						"en": "todo",
+					},
+					{
+						"de": "Teilzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 15 bis unter 35&nbsp;Stunden",
+						"en": "todo",
+					},
+					{
+						"de": "Geringfügig beschäftigt mit einer wöchentlichen Arbeitszeit unter 15&nbsp;Stunden",
+						"en": "todo",
+					},
+					{
+						"de": "Gelegentlich erwerbstätig",
+						"en": "todo",
+					},
+					{
+						"de": "In keiner Weise erwerbstätig",
+						"en": "todo",
+					},
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Sind Sie zurzeit in irgendeiner Weise erwerbstätig?
+							<br>
+							<small>
+							Unter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?
+							</small>
+						`,
+						"en": `
+							todo
+						`,
+					}.OutlineHid("D7.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+				for idx, label := range labels {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qd7_employment"
+					rad.ValueRadio = radioValues[idx]
+
+					rad.ColSpan = gr.Cols
+					rad.ColSpan = 3
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+					rad.LabelTop()
+					rad.ControlTop()
+				}
+			}
+
+			// gr2
+			{
+				gr := page.AddGroup()
+				gr.Cols = 6
+				// single column
+				gr.Cols = 3
+				gr.BottomVSpacers = 0
+				var radioValues = []string{
+					"housewife",
+					"unemployed",
+					"ineducation",
+					"military",
+					"parental",
+					"other",
+				}
+				var labels = []trl.S{
+					{
+						"de": "Hausfrau / Hausmann",
+						"en": "todo",
+					},
+					{
+						"de": "Arbeitslos",
+						"en": "todo",
+					},
+					{
+						"de": "In Ausbildung, Schule, Lehre, Studium oder Umschulung",
+						"en": "todo",
+					},
+					{
+						"de": "Wehr- oder Ersatzdienst",
+						"en": "todo",
+					},
+					{
+						"de": "Mutterschafts-/ Erziehungsurlaub bzw. Elternzeit",
+						"en": "todo",
+					},
+					{
+						"de": "Sonstiges",
+						"en": "todo",
+					},
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Wenn Sie einmal von den Erwerbstätigkeiten absehen, was von dem Folgenden trifft dann auf Sie zu?
+						`,
+						"en": `
+							todo
+						`,
+					}.OutlineHid("D7a.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+				for idx, label := range labels {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qd7a_employment"
+					rad.ValueRadio = radioValues[idx]
+
+					rad.ColSpan = gr.Cols
+					rad.ColSpan = 3
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+					rad.LabelTop()
+					rad.ControlTop()
+				}
+			}
+
+			// gr3
+			{
+				gr := page.AddGroup()
+				gr.Cols = 6
+				// single column
+				gr.Cols = 3
+				gr.BottomVSpacers = 0
+				var radioValues = []string{
+					"worker",
+					"employee",
+					"civilservant",
+					"selfemployedalone",
+					"selfemployedwithemployees",
+				}
+				var labels = []trl.S{
+					{
+						"de": "Arbeiter",
+						"en": "todo",
+					},
+					{
+						"de": "Angestellter",
+						"en": "todo",
+					},
+					{
+						"de": "Beamter",
+						"en": "todo",
+					},
+					{
+						"de": "Selbständig ohne Mitarbeiter",
+						"en": "todo",
+					},
+					{
+						"de": "Selbständig mit Mitarbeitern",
+						"en": "todo",
+					},
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Sind Sie zurzeit…					`,
+						"en": `
+							todo
+						`,
+					}.OutlineHid("D7a.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+				for idx, label := range labels {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qd7b_employment"
+					rad.ValueRadio = radioValues[idx]
+
+					rad.ColSpan = gr.Cols
+					rad.ColSpan = 3
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+					rad.LabelTop()
+					rad.ControlTop()
 				}
 
-				inp.JSBlockStrings = map[string]string{}
-				inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
+				{
+					inp := gr.AddInput()
+					inp.ColSpanControl = 1
+					inp.Type = "javascript-block"
+					inp.Name = "knebPageD2" // js filename
+
+					s1 := trl.S{
+						"de": "no javascript dialog message needed",
+						"en": "no javascript dialog message needed",
+					}
+					inp.JSBlockTrls = map[string]trl.S{
+						"msg": s1,
+					}
+
+					inp.JSBlockStrings = map[string]string{}
+					inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
+
+				}
 
 			}
-
-		}
-
+		*/
 	}
 
 	// page 3
@@ -832,7 +835,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Risiko",
 			"en": "Risk",
 		}
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		// gr0
@@ -840,7 +842,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate11,
 				labelsRisk(),
-				[]string{"qm1_risk"},
+				[]string{"qr1_averse_common"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
@@ -852,15 +854,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<small>
 					Antworten Sie bitte anhand der folgenden Skala,
-					wobei der Wert 0 bedeutet: gar nicht risikobereit
-					und der Wert 10: sehr risikobereit.
+					wobei der Wert&nbsp;0 bedeutet: gar nicht risikobereit
+					und der Wert&nbsp;10:&nbsp;sehr risikobereit.
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 					</small>
 				`,
 				"en": `
 					todo
 				`,
-			}.OutlineHid("M1.")
+			}.OutlineHid("R1.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -869,6 +871,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+
 	// page 3-split-1
 	{
 		page := q.AddPage()
@@ -879,8 +882,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		page.SuppressInProgressbar = true
-
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		// gr1
@@ -895,17 +896,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
-						<small>(Mehrfachnennung möglich)</small>
+						<small>Bitte geben Sie ein oder mehrere Stichwörter an.</small>
 					`,
 					"en": `todo`,
-				}.OutlineHid("M2.")
+				}.OutlineHid("R2.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "qm2_risk_free"
+				inp.Name = "qr2_averse_common_free"
 				inp.MaxChars = 200
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 0
@@ -925,35 +926,32 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		page.SuppressInProgressbar = true
-
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsPositiveAspects(),
-				[]string{"qm3_averse"},
-				radioVals7,
+				columnTemplate11,
+				labelsRiskFin(),
+				[]string{"qr3_averse_fin"},
+				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Haben Sie eher an die negativen oder
-					 positiven Seiten des Risikos gedacht?
+					Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen. 
 
 					<small>
-					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
-					nur an die negativen Seiten und der
-					Wert 7: nur an die positiven Seiten.
-					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+						Antworten Sie bitte anhand der folgenden Skala, 
+						wobei der Wert&nbsp;0 bedeutet: nicht bereit, ein Risiko einzugehen 
+						und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen, 
+						um potenziell eine höhere Rendite zu erzielen.
 					</small>
 				`,
 				"en": `
 					todo
 				`,
-			}.OutlineHid("M3.")
+			}.OutlineHid("R3.")
 			gr := page.AddGrid(gb)
 			_ = gr
 			gr.BottomVSpacers = 2
@@ -961,167 +959,118 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
-		// gr3
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsImportantSituations(),
-				[]string{"qm4_occasions"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Haben Sie eher an kleine Alltagssituationen
-					oder an große, wichtige Situationen gedacht?
+		/*
+			//
+			// gr1
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate7,
+					labelsImportantSituations(),
+					[]string{"qm4_occasions"},
+					radioVals7,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				gb.MainLabel = trl.S{
+					"de": `
+						Haben Sie eher an kleine Alltagssituationen
+						oder an große, wichtige Situationen gedacht?
 
-					<small>
-					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
-					kleine Alltagssituationen und der Wert 7:
-					große, wichtige Situationen.
-					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+						<small>
+						Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
+						kleine Alltagssituationen und der Wert 7:
+						große, wichtige Situationen.
+						Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 
-					</small>
-				`,
-				"en": `
-					todo
-				`,
-			}.OutlineHid("M4.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
+						</small>
+					`,
+					"en": `
+						todo
+					`,
+				}.OutlineHid("M4.")
+				gr := page.AddGrid(gb)
+				_ = gr
+				gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			}
 
-		// gr4
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsReturns(),
-				[]string{"qm5_returns"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Haben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?
+			// gr2
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate7,
+					labelsReturns(),
+					[]string{"qm5_returns"},
+					radioVals7,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				gb.MainLabel = trl.S{
+					"de": `
+						Haben Sie eher an Situationen gedacht, in denen es kleine oder große Gewinne gibt?
 
-					<small>
-					Antworten Sie bitte anhand der folgenden Skala,
-					wobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:
-					große Gewinne.
-					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
-					</small>
-				`,
-				"en": `
-							todo
-						`,
-			}.OutlineHid("M5.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
+						<small>
+						Antworten Sie bitte anhand der folgenden Skala,
+						wobei der Wert 1 bedeutet: kleine Gewinne und der Wert 7:
+						große Gewinne.
+						Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+						</small>
+					`,
+					"en": `
+								todo
+							`,
+				}.OutlineHid("M5.")
+				gr := page.AddGrid(gb)
+				_ = gr
+				gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			}
 
-		// gr5
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsLosses(),
-				[]string{"qm6_losses"},
-				radioVals7,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Haben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?
+			// gr3
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate7,
+					labelsLosses(),
+					[]string{"qm6_losses"},
+					radioVals7,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				gb.MainLabel = trl.S{
+					"de": `
+						Haben Sie eher an Situationen gedacht, in denen es kleine oder große Verluste gibt?
 
-					<small>
-					Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
-					kleine Verluste und der Wert 7: große Verluste.
-					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
-					</small>
-				`,
-				"en": `
-							todo
-						`,
-			}.OutlineHid("M6.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
+						<small>
+						Antworten Sie bitte anhand der folgenden Skala, wobei der Wert 1 bedeutet:
+						kleine Verluste und der Wert 7: große Verluste.
+						Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
+						</small>
+					`,
+					"en": `
+								todo
+							`,
+				}.OutlineHid("M6.")
+				gr := page.AddGrid(gb)
+				_ = gr
+				gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			}
+		*/
 
 	}
 
-	// page 4
+	// page 3-split-1
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{
-			"de": "Finanzielles Risiko",
-			"en": "Financial risk",
-		}
 		page.Label = trl.S{
 			"de": "",
 			"en": "",
 		}
 
 		page.SuppressInProgressbar = true
-		// page.Short = trl.S{
-		// 	"de": "Finanzielles<br>Risiko",
-		// 	"en": "Financial<br>risk",
-		// }
+		page.WidthMax("48rem")
 
-		page.WidthMax("42rem")
-
-		// gr0
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate5,
-				labelsFinRisk(),
-				[]string{"qf1_risk"},
-				radioVals5,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen.
-
-					<small>
-					Antworten Sie bitte anhand der folgenden Skala, 
-					wobei der Wert 1 bedeutet: nicht bereit, ein Risiko einzugehen 
-					und der Wert 5: bereit, ein erhebliches Risiko einzugehen, 
-					um potenziell eine höhere Rendite zu erzielen.
-					</small>
-				`,
-				"en": `
-					todo
-				`,
-			}.OutlineHid("F1.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
-
-	}
-
-	// page 4-split
-	{
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-
-		// gr0
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -1132,20 +1081,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `
-						Woran haben Sie gedacht, als Sie die Frage nach dem <i>finanziellen</i> Risiko beantwortet haben?
-						<br>
+					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem <i>finanziellen</i> Risiko beantwortet haben?
 						<small>Bitte geben Sie ein oder mehrere Stichwörter an.</small>
 					`,
 					"en": `todo`,
-				}.OutlineHid("F2.")
+				}.OutlineHid("R4.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "qf2_risk_free"
+				inp.Name = "qr4_averse_fin_free"
 				inp.MaxChars = 200
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 0
@@ -1155,113 +1102,171 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 4-split2
-	{
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-
-		// gr0
+	/*
+		// page 4
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
-			gr.BottomVSpacers = 2
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `Denken Sie bitte einmal an die Risiken und Chance im Zusammenhang mit dem Finanzmarkt.
-						Was kommt Ihnen dabei in den Sinn?
+			page := q.AddPage()
 
-						<br>
-						<br>
-						<b>Chancen</b><br>
-						<small>(Mehrfachnennung möglich)</small>
-					`,
-					"en": `todo`,
-				}.OutlineHid("F3.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
+			page.Label = trl.S{
+				"de": "Finanzielles Risiko",
+				"en": "Financial risk",
 			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qf3_chance1"
-				inp.Validator = "must"
-				inp.MaxChars = 120
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
 			}
+
+			page.SuppressInProgressbar = true
+			// page.Short = trl.S{
+			// 	"de": "Finanzielles<br>Risiko",
+			// 	"en": "Financial<br>risk",
+			// }
+
+			page.WidthMax("42rem")
+
+			// gr0
 			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qf3_chance2"
-				inp.MaxChars = 120
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qf3_chance3"
-				inp.MaxChars = 120
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate5,
+					labelsFinRisk(),
+					[]string{"qf1_risk"},
+					radioVals5,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				gb.MainLabel = trl.S{
 					"de": `
-						<b>Risiken</b><br>
-						<small>(Mehrfachnennung möglich)</small>
+						Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen.
+
+						<small>
+						Antworten Sie bitte anhand der folgenden Skala,
+						wobei der Wert 1 bedeutet: nicht bereit, ein Risiko einzugehen
+						und der Wert 5: bereit, ein erhebliches Risiko einzugehen,
+						um potenziell eine höhere Rendite zu erzielen.
+						</small>
 					`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qf3_risk1"
-				inp.Validator = "must"
-				inp.MaxChars = 120
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qf3_risk2"
-				inp.MaxChars = 120
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qf3_risk3"
-				inp.MaxChars = 120
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
+					"en": `
+						todo
+					`,
+				}.OutlineHid("F1.")
+				gr := page.AddGrid(gb)
+				_ = gr
+				gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 			}
 
 		}
+	*/
 
-	}
+	/*
+		// page 4-split2
+		{
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+
+			// gr0
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+				gr.BottomVSpacers = 2
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `Denken Sie bitte einmal an die Risiken und Chance im Zusammenhang mit dem Finanzmarkt.
+							Was kommt Ihnen dabei in den Sinn?
+
+							<br>
+							<br>
+							<b>Chancen</b><br>
+							<small>(Mehrfachnennung möglich)</small>
+						`,
+						"en": `todo`,
+					}.OutlineHid("F3.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qf3_chance1"
+					inp.Validator = "must"
+					inp.MaxChars = 120
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qf3_chance2"
+					inp.MaxChars = 120
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qf3_chance3"
+					inp.MaxChars = 120
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							<b>Risiken</b><br>
+							<small>(Mehrfachnennung möglich)</small>
+						`,
+						"en": `todo`,
+					}
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qf3_risk1"
+					inp.Validator = "must"
+					inp.MaxChars = 120
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qf3_risk2"
+					inp.MaxChars = 120
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qf3_risk3"
+					inp.MaxChars = 120
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+
+			}
+
+		}
+	*/
 
 	// page 5
 	{
@@ -1405,7 +1410,58 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 5-new
+	// page
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Selbstvertrauen vor Experiment",
+			"en": "Confidence before experiment",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+
+			lbls := labelsSelfKnowledgeXX()
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{"qe1_confidence_before"},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+
+						<small>
+						Antworten Sie bitte anhand der folgenden Skala,
+						wobei der Wert&nbsp;0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
+						und der Wert&nbsp;10: Hohes Vertrauen in die eigenen Fähigkeiten.
+						</small>
+
+
+					`,
+				"en": `
+						todo
+					`,
+			}.OutlineHid("E1.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+	// page p6
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -1413,7 +1469,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("44rem")
 
 		// gr 0
@@ -1436,6 +1491,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						Im Erfolgsfall verdoppelt sich Ihre Investition nach einem Jahr.
 
 						Bei Misserfolg verlieren Sie die Hälfte der investierten Summe.
+
 						Welchen Anteil der 2500&nbsp;Euro würden Sie in dieses Unternehmen investieren?
 					`,
 					"en": `todo`,
@@ -1469,32 +1525,34 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr 1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 3
-			gr.BottomVSpacers = 3
+		/*
+			// gr 1
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Certainty equivalent experiment<br>
-						Siehe Menkhoff und Sakha (2016, 2017) Appendix A.3.<br>
-						todo
-					`,
-					"en": `todo`,
-				}.OutlineHid("P7.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
+				gr := page.AddGroup()
+				gr.Cols = 3
+				gr.BottomVSpacers = 3
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Certainty equivalent experiment<br>
+							Siehe Menkhoff und Sakha (2016, 2017) Appendix A.3.<br>
+							todo
+						`,
+						"en": `todo`,
+					}.OutlineHid("P7.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+				}
 
-		}
+			}
+		*/
 	}
 
-	vorsorgeplanung8x7(&q, 0, 2)
-	vorsorgeplanung8x7(&q, 3, 5)
-	vorsorgeplanung8x7(&q, 6, 7)
+	vorsorgeplanung8x7(&q, 0, 1)
+	vorsorgeplanung8x7(&q, 2, 3)
+	// vorsorgeplanung8x7(&q, 6, 7)
 
 	// page 7-0
 	{
@@ -1511,7 +1569,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Financial<br>literacy",
 			"en": "Financial<br>literacy",
 		}
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		// gr0
@@ -1557,20 +1614,22 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 7-1
-	{
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
+	/*
+		// page 7-1
+		{
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			howSicher(*qst.WrapPageT(page), "qfl1a_free", "FL1a.")
+
 		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		howSicher(*qst.WrapPageT(page), "qfl1a_free", "FL1a.")
-
-	}
+	*/
 
 	// page 7-2
 	{
@@ -1580,7 +1639,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		{
@@ -1625,20 +1683,22 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 7-3
-	{
+	/*
+		// page 7-3
+		{
 
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			howSicher(*qst.WrapPageT(page), "qfl2a_free", "FL2a.")
 		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		howSicher(*qst.WrapPageT(page), "qfl2a_free", "FL2a.")
-	}
+	*/
 
 	// page 7-4
 	{
@@ -1679,266 +1739,230 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 7-5
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		howSicher(*qst.WrapPageT(page), "qfl3a_free", "FL3a.")
-
-	}
-
-	// page 7-6
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			gr.BottomVSpacers = 3
-			{
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": "Was ist die Hauptfunktion des Aktienmarktes?",
-						"en": "todo",
-					}.OutlineHid("FL4.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
-				}
-
-				for idx, label := range labelsStockMarketPurpose() {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qfl4_stockmarketpurpose"
-					rad.ValueRadio = fmt.Sprintf("%d", idx)
-
-					rad.ColSpan = gr.Cols / 2
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
-
-					rad.Label = label
-					rad.ControlFirst()
-				}
-			}
-		}
-
-	}
-
-	// page 7-7
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		howSicher(*qst.WrapPageT(page), "qfl4a_free", "FL4a.")
-
-	}
-
-	// page 7-8
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			gr.BottomVSpacers = 3
-			{
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": "Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?",
-						"en": "todo",
-					}.OutlineHid("FL5.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
-				}
-
-				for idx, label := range labelsAssetClassVola() {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qfl5_assetclassvola"
-					rad.ValueRadio = fmt.Sprintf("%d", idx)
-
-					rad.ColSpan = gr.Cols / 2
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
-
-					rad.Label = label
-					rad.ControlFirst()
-				}
-			}
-		}
-
-	}
-
-	// page 7-9
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		howSicher(*qst.WrapPageT(page), "qfl5a_free", "FL5a.")
-	}
-
-	// page 7-10
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 6
-			gr.BottomVSpacers = 3
-			{
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
-						Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
-						sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
-
-						Gleichzeitig besteht eine 10%-ige Chance,
-						dass er die Klimaanlage in seinem Haus ersetzen muss,
-						was 4.000 Euro kosten würde.
-
-						Welches ist das größere finanzielle Risiko für Malik?
-
-						`,
-						"en": "todo",
-					}.OutlineHid("FL6.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
-				}
-
-				for idx, label := range labelsExpectedValueRisk() {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qfl6_expectedvalue"
-					rad.ValueRadio = fmt.Sprintf("%d", idx)
-
-					rad.ColSpan = gr.Cols / 2
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
-
-					rad.Label = label
-					rad.ControlFirst()
-				}
-			}
-		}
-	}
-
-	// page 7-11
-	{
-
-		page := q.AddPage()
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		howSicher(*qst.WrapPageT(page), "qfl6a_free", "FL6a.")
-
-	}
-
 	/*
-		// page 8
+		// page 7-5
 		{
-			page := q.AddPage()
 
-			page.Label = trl.S{
-				"de": "Selbstvertrauen vor Experiment",
-				"en": "Confidence before experiment",
-			}
+			page := q.AddPage()
 			page.Label = trl.S{
 				"de": "",
 				"en": "",
 			}
-
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
 			page.WidthMax("48rem")
 
-			// gr0
-			{
+			howSicher(*qst.WrapPageT(page), "qfl3a_free", "FL3a.")
 
-				lbls := labelsSelfKnowledgeXX()
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate11,
-					lbls,
-					[]string{"qe1_confidence_before"},
-					radioVals11,
-					[]trl.S{{"de": ``, "en": ``}},
-				)
-				gb.MainLabel = trl.S{
-					"de": `
-						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
-						<br>
-						Antworten Sie bitte anhand der folgenden Skala,
-						wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
-						und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
+		}
+	*/
 
-					`,
-					"en": `
-						todo
-					`,
-				}.OutlineHid("E1.")
-				gr := page.AddGrid(gb)
-				_ = gr
-				gr.BottomVSpacers = 2
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+	/*
+		// page 7-6
+		{
+
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
 			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 6
+				gr.BottomVSpacers = 3
+				{
+					{
+						inp := gr.AddInput()
+						inp.Type = "textblock"
+						inp.Label = trl.S{
+							"de": "Was ist die Hauptfunktion des Aktienmarktes?",
+							"en": "todo",
+						}.OutlineHid("FL4.")
+						inp.ColSpan = gr.Cols
+						inp.ColSpanLabel = 1
+						inp.ColSpanControl = 0
+					}
+
+					for idx, label := range labelsStockMarketPurpose() {
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = "qfl4_stockmarketpurpose"
+						rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+						rad.ColSpan = gr.Cols / 2
+						rad.ColSpanLabel = 1
+						rad.ColSpanControl = 6
+
+						rad.Label = label
+						rad.ControlFirst()
+					}
+				}
+			}
+
+		}
+	*/
+
+	/*
+		// page 7-7
+		{
+
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			howSicher(*qst.WrapPageT(page), "qfl4a_free", "FL4a.")
+
+		}
+	*/
+
+	/*
+		// page 7-8
+		{
+
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 6
+				gr.BottomVSpacers = 3
+				{
+					{
+						inp := gr.AddInput()
+						inp.Type = "textblock"
+						inp.Label = trl.S{
+							"de": "Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?",
+							"en": "todo",
+						}.OutlineHid("FL5.")
+						inp.ColSpan = gr.Cols
+						inp.ColSpanLabel = 1
+						inp.ColSpanControl = 0
+					}
+
+					for idx, label := range labelsAssetClassVola() {
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = "qfl5_assetclassvola"
+						rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+						rad.ColSpan = gr.Cols / 2
+						rad.ColSpanLabel = 1
+						rad.ColSpanControl = 6
+
+						rad.Label = label
+						rad.ControlFirst()
+					}
+				}
+			}
+
+		}
+	*/
+
+	/*
+		// page 7-9
+		{
+
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			howSicher(*qst.WrapPageT(page), "qfl5a_free", "FL5a.")
+		}
+	*/
+
+	/*
+		// page 7-10
+		{
+
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 6
+				gr.BottomVSpacers = 3
+				{
+
+					{
+						inp := gr.AddInput()
+						inp.Type = "textblock"
+						inp.Label = trl.S{
+							"de": `
+							Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
+							sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
+
+							Gleichzeitig besteht eine 10%-ige Chance,
+							dass er die Klimaanlage in seinem Haus ersetzen muss,
+							was 4.000 Euro kosten würde.
+
+							Welches ist das größere finanzielle Risiko für Malik?
+
+							`,
+							"en": "todo",
+						}.OutlineHid("FL6.")
+						inp.ColSpan = gr.Cols
+						inp.ColSpanLabel = 1
+						inp.ColSpanControl = 0
+					}
+
+					for idx, label := range labelsExpectedValueRisk() {
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = "qfl6_expectedvalue"
+						rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+						rad.ColSpan = gr.Cols / 2
+						rad.ColSpanLabel = 1
+						rad.ColSpanControl = 6
+
+						rad.Label = label
+						rad.ControlFirst()
+					}
+				}
+			}
+		}
+	*/
+
+	/*
+		// page 7-11
+		{
+
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+			page.WidthMax("48rem")
+
+			howSicher(*qst.WrapPageT(page), "qfl6a_free", "FL6a.")
 
 		}
 	*/

@@ -18,6 +18,7 @@ type dynFuncT func(*QuestionnaireT, *inputT, string) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
 	"ResponseStatistics":             ResponseStatistics,
+	"DeadlineAndPublication":         DeadlineAndPublication,
 	"PersonalLink":                   PersonalLink,
 	"PermaLink":                      PermaLink,
 	"HasEuroQuestion":                ResponseTextHasEuro,
@@ -25,6 +26,7 @@ var dynFuncs = map[string]dynFuncT{
 	"PatLogos":                       PatLogos,
 	"RenderStaticContent":            RenderStaticContent,
 	"ErrorProxy":                     ErrorProxy,
+	"KnebFurther":                    KnebFurther,
 }
 
 func isOther(inpName string) bool {
@@ -119,22 +121,26 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 // ResponseStatistics returns the percentage of
 // answers responded to.
 func ResponseStatistics(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
-
 	responses, inputs, pct := q.Statistics()
+	ret := fmt.Sprintf(cfg.Get().Mp["percentage_answered"].Tr(q.LangCode), responses, inputs, pct)
+	// log.Print("ResponseStatistics: " + ret)
+	return ret, nil
+}
+
+// DeadlineAndPublication
+func DeadlineAndPublication(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	ct := q.Survey.Deadline
 	// ct = ct.Truncate(time.Hour)
 	cts := ct.Format("02.01.2006 15:04")
 	nextDay := q.Survey.Deadline.Add(24 * time.Hour)
 	nextDayS := nextDay.Format("02.01.2006")
 
-	s1 := fmt.Sprintf(cfg.Get().Mp["percentage_answered"].Tr(q.LangCode), responses, inputs, pct)
-	s2 := fmt.Sprintf(cfg.Get().Mp["survey_ending"].Tr(q.LangCode), cts, nextDayS)
-	ret := s1 + s2
-	// log.Print("ResponseStatistics: " + ret)
+	ret := fmt.Sprintf(cfg.Get().Mp["survey_ending"].Tr(q.LangCode), cts, nextDayS)
+	// log.Print("DeadlineAndPublication: " + ret)
 	return ret, nil
 }
 
-// PersonalLink returns the entry link
+// PersonalLink is only a reminder, does not contain the personal link
 func PersonalLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	closed := !q.ClosingTime.IsZero()
 	ret := ""
@@ -290,4 +296,15 @@ func RenderStaticContent(q *QuestionnaireT, inp *inputT, paramSet string) (strin
 // ErrorProxy - shows errors for inputs named like paramSet
 func ErrorProxy(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	return "", nil
+}
+
+// knebFurther yields distinct labels
+func KnebFurther(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+
+	if q.UserIDInt()%2 == 0 {
+		return `Wie motiviert sind Sie, sich        mit dem Thema „Sparen und investieren“ zu befassen?`, nil
+	} else {
+		return `Wie motiviert sind Sie, sich weiter mit dem Thema „Sparen und investieren“ zu befassen?`, nil
+	}
+
 }

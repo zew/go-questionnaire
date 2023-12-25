@@ -22,10 +22,11 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"pds_ac2": pdsAssetClass2,
 	"pds_ac3": pdsAssetClass3,
 
-	"kneb_t1a": knebTreatment1NeurtraVsFinance_A,
-	"kneb_t1b": knebTreatment1NeurtraVsFinance_B,
-	"kneb_t2a": knebTreatment2AdviceNoOrYes_A,
-	"kneb_t2b": knebTreatment2AdviceNoOrYes_B,
+	"kneb_t1a":              knebTreatment1NeurtraVsFinance_A,
+	"kneb_t1b":              knebTreatment1NeurtraVsFinance_B,
+	"kneb_t2a":              knebTreatment2AdviceNoOrYes_A,
+	"kneb_t2b":              knebTreatment2AdviceNoOrYes_B,
+	"kneb_b6_who_competent": knebB6WhoIsCompetent,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -149,4 +150,13 @@ func knebTreatment2AdviceNoOrYes_A(q *QuestionnaireT, pageIdx int) bool {
 }
 func knebTreatment2AdviceNoOrYes_B(q *QuestionnaireT, pageIdx int) bool {
 	return !knebTreatment2AdviceNoOrYes_A(q, pageIdx)
+}
+
+func knebB6WhoIsCompetent(q *QuestionnaireT, pageIdx int) bool {
+	inp := q.ByName("qb5_delegate")
+	// inp := q.Pages[2].Groups[0].Inputs[2]
+	if inp.Response == "7" || inp.Response == "8" || inp.Response == "9" || inp.Response == "10" || inp.Response == "11" {
+		return true
+	}
+	return false
 }

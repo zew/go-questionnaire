@@ -1324,7 +1324,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		//
@@ -1423,6 +1422,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 
+		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
 
 		// gr0
@@ -1758,55 +1758,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	*/
 
 	/*
-		// page 7-6
-		{
-
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
-			page.WidthMax("48rem")
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				gr.BottomVSpacers = 3
-				{
-					{
-						inp := gr.AddInput()
-						inp.Type = "textblock"
-						inp.Label = trl.S{
-							"de": "Was ist die Hauptfunktion des Aktienmarktes?",
-							"en": "todo",
-						}.OutlineHid("FL4.")
-						inp.ColSpan = gr.Cols
-						inp.ColSpanLabel = 1
-						inp.ColSpanControl = 0
-					}
-
-					for idx, label := range labelsStockMarketPurpose() {
-						rad := gr.AddInput()
-						rad.Type = "radio"
-						rad.Name = "qfl4_stockmarketpurpose"
-						rad.ValueRadio = fmt.Sprintf("%d", idx)
-
-						rad.ColSpan = gr.Cols / 2
-						rad.ColSpanLabel = 1
-						rad.ColSpanControl = 6
-
-						rad.Label = label
-						rad.ControlFirst()
-					}
-				}
-			}
-
-		}
-	*/
-
-	/*
 		// page 7-7
 		{
 
@@ -1825,53 +1776,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	*/
 
 	/*
-		// page 7-8
-		{
-
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
-			page.WidthMax("48rem")
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				gr.BottomVSpacers = 3
-				{
-					{
-						inp := gr.AddInput()
-						inp.Type = "textblock"
-						inp.Label = trl.S{
-							"de": "Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?",
-							"en": "todo",
-						}.OutlineHid("FL5.")
-						inp.ColSpan = gr.Cols
-						inp.ColSpanLabel = 1
-						inp.ColSpanControl = 0
-					}
-
-					for idx, label := range labelsAssetClassVola() {
-						rad := gr.AddInput()
-						rad.Type = "radio"
-						rad.Name = "qfl5_assetclassvola"
-						rad.ValueRadio = fmt.Sprintf("%d", idx)
-
-						rad.ColSpan = gr.Cols / 2
-						rad.ColSpanLabel = 1
-						rad.ColSpanControl = 6
-
-						rad.Label = label
-						rad.ControlFirst()
-					}
-				}
-			}
-
-		}
-	*/
+	 */
 
 	/*
 		// page 7-9
@@ -1887,65 +1792,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page.WidthMax("48rem")
 
 			howSicher(*qst.WrapPageT(page), "qfl5a_free", "FL5a.")
-		}
-	*/
-
-	/*
-		// page 7-10
-		{
-
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
-			page.WidthMax("48rem")
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				gr.BottomVSpacers = 3
-				{
-
-					{
-						inp := gr.AddInput()
-						inp.Type = "textblock"
-						inp.Label = trl.S{
-							"de": `
-							Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
-							sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
-
-							Gleichzeitig besteht eine 10%-ige Chance,
-							dass er die Klimaanlage in seinem Haus ersetzen muss,
-							was 4.000 Euro kosten würde.
-
-							Welches ist das größere finanzielle Risiko für Malik?
-
-							`,
-							"en": "todo",
-						}.OutlineHid("FL6.")
-						inp.ColSpan = gr.Cols
-						inp.ColSpanLabel = 1
-						inp.ColSpanControl = 0
-					}
-
-					for idx, label := range labelsExpectedValueRisk() {
-						rad := gr.AddInput()
-						rad.Type = "radio"
-						rad.Name = "qfl6_expectedvalue"
-						rad.ValueRadio = fmt.Sprintf("%d", idx)
-
-						rad.ColSpan = gr.Cols / 2
-						rad.ColSpanLabel = 1
-						rad.ColSpanControl = 6
-
-						rad.Label = label
-						rad.ControlFirst()
-					}
-				}
-			}
 		}
 	*/
 
@@ -2128,7 +1974,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"de": "Feedbackfragen zum Tool",
+			"de": "Feedbackfragen zum Tool - 2",
 			"en": "todo",
 		}
 		page.Label = trl.S{
@@ -2137,7 +1983,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page.SuppressInProgressbar = true
 
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		{
@@ -2158,21 +2003,31 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 
 			inputs := []string{
-				"qe2_comprehensive",
-				"qe3_helplful",
-				"qe4_complex",
+				"qf1_satisfied",
+				"qf2_sentiment",
+				"qf3_negative",
+				"qf4_rational",
+				"qf5_overconfident",
 			}
 			lblsQ := []trl.S{
 				{
-					"de": `Die Darstellung des Portfolios ist verständlich.`,
+					"de": `Ich bin mit meiner Entscheidung zufrieden.`,
 					"en": `todo`,
 				},
 				{
-					"de": `Die Darstellung des Portfolios ist hilfreich.`,
+					"de": `Ich habe ein gutes Gefühl bei meiner Wahl.`,
 					"en": `todo`,
 				},
 				{
-					"de": `Die Darstellung des Portfolios ist kompliziert.`,
+					"de": `Ich empfinde negative Emotionen wegen der getroffenen Wahl.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Ob es nun die beste Wahl ist oder nicht, ich fühle mich gut mit meiner Entscheidung.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Ich bin sicher, dass meine Wahl die beste war, die ich hätte treffen können.`,
 					"en": `todo`,
 				},
 			}
@@ -2188,6 +2043,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": "<small>trifft voll und ganz zu</small>       <div>10</div>",
 					"en": "<small>todo</small> <div>10</div>",
 				}
+
 				gb := qst.NewGridBuilderRadios(
 					columnTemplate11,
 					lbls,
@@ -2196,7 +2052,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					[]trl.S{{"de": ``, "en": ``}},
 				)
 				// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
-				gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("E%v.", i+2)) // .Outline("E2., E3., E4.")
+				gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+1)) // .Outline("F1., F2., ...  F5.")
 				gr := page.AddGrid(gb)
 				_ = gr
 				// gr.BottomVSpacers = 2
@@ -2206,39 +2062,105 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
-		//
-		//
-		{
+	}
 
-			lbls := labelsSelfKnowledge()
-			lbls[0] = trl.S{
-				"de": "<small>ganz und gar uninformiert</small>     <div>0</div>",
-				"en": "<small>todo</small>     <div>0</div>",
-			}
-			lbls[10] = trl.S{
-				"de": "<small>ganz und gar informiert</small>       <div>10</div>",
-				"en": "<small>todo</small> <div>10</div>",
-			}
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lbls,
-				[]string{"qe5_feelinginformed"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Wie informiert fühlen Sie sich über das gezeigte Szenario?
+	// page x+0
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Feedbackfragen zum Tool - 2",
+			"en": "todo",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+
+		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						In wieweit stimmen Sie folgenden Aussagen zu:
 					`,
-				"en": `
-					todo
-				`,
-			}.OutlineHid("E5.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			// gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			inputs := []string{
+				"qf6_comprehensive",
+				"qf7_helplful",
+				"qf8_complex",
+				"qf9_feelinginformed",
+			}
+			lblsQ := []trl.S{
+				{
+					"de": `Die graphische Darstellung ist verständlich.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Die graphische Darstellung ist hilfreich.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Die graphische Darstellung ist kompliziert.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Wie informiert fühlen Sie sich über das gezeigte Szenario?`,
+					"en": `todo`,
+				},
+			}
+
+			for i := 0; i < len(inputs); i++ {
+
+				lbls := labelsSelfKnowledge()
+				lbls[0] = trl.S{
+					"de": "<small>trifft ganz und gar nicht zu</small>     <div>0</div>",
+					"en": "<small>todo</small>     <div>0</div>",
+				}
+				lbls[10] = trl.S{
+					"de": "<small>trifft voll und ganz zu</small>       <div>10</div>",
+					"en": "<small>todo</small> <div>10</div>",
+				}
+				// distinct for last
+				if i == len(inputs)-1 {
+					lbls[0] = trl.S{
+						"de": "<small>ganz und gar uninformiert</small>     <div>0</div>",
+						"en": "<small>todo</small>     <div>0</div>",
+					}
+					lbls[10] = trl.S{
+						"de": "<small>ganz und gar informiert</small>       <div>10</div>",
+						"en": "<small>todo</small> <div>10</div>",
+					}
+				}
+
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate11,
+					lbls,
+					[]string{inputs[i]},
+					radioVals11,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
+				gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+6)) // .Outline("F6., F7., ...  F9.")
+				gr := page.AddGrid(gb)
+				_ = gr
+				// gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			}
+
 		}
 
 		{
@@ -2251,43 +2173,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Haben Sie weitere Anmerkungen zu der Darstellung im Tool?`,
+					"de": `Haben Sie weitere Anmerkungen zu der Darstellung <br> oder dem Tool im Allgemeinen?`,
 					"en": `todo`,
-				}.OutlineHid("E6.")
+				}.OutlineHid("F10.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "qe6_tool_free"
-				inp.MaxChars = 200
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-		}
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
-			gr.BottomVSpacers = 3
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `Möchten Sie uns sonst noch etwas mitteilen?`,
-					"en": `todo`,
-				}.OutlineHid("E7.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qe7_tool_other"
+				inp.Name = "qf10_tool_free"
 				inp.MaxChars = 200
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 0
@@ -2355,36 +2250,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// {
-		// 	gr := page.AddGroup()
-		// 	gr.Cols = 1
-		// 	gr.Style = css.NewStylesResponsive(gr.Style)
-		// 	gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
-		// 	gr.BottomVSpacers = 3
-		// 	{
-		// 		inp := gr.AddInput()
-		// 		inp.Type = "textblock"
-		// 		inp.Label = trl.S{
-		// 			"de": `
-		// 				Welche Ihrer Erkenntnisse/ Ergebnisse aus dem Tool könnten für andere Nutzerinnen und Nutzer besonders interessant sein?
-		// 				 Was ist besonders hilfreich?
-		// 			`,
-		// 			"en": `todo`,
-		// 		}.OutlineHid("T2.")
-		// 		inp.ColSpan = gr.Cols
-		// 		inp.ColSpanLabel = 1
-		// 	}
-		// 	{
-		// 		inp := gr.AddInput()
-		// 		inp.Type = "textarea"
-		// 		inp.Name = "qt2_which"
-		// 		inp.MaxChars = 200
-		// 		inp.ColSpan = gr.Cols
-		// 		inp.ColSpanLabel = 0
-		// 		inp.ColSpanControl = 1
-		// 	}
-		// }
-
 	}
 
 	// page x+2
@@ -2403,7 +2268,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Confidence<br>after",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		// gr0
@@ -2413,7 +2277,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate11,
 				lbls,
-				[]string{"qe8_confidence_after"},
+				[]string{"qe2_confidence_after"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
@@ -2429,7 +2293,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `
 						todo
 					`,
-			}.OutlineHid("E8.")
+			}.OutlineHid("E2.")
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 3
 			gr.Style = css.NewStylesResponsive(gr.Style)
@@ -2438,11 +2302,216 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Motivation nach Treatment",
+			"en": "Motivation after treatment",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "KnebFurther"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+		}
+
+		inputs := []string{
+			"q20_motivation",
+		}
+
+		for i := 0; i < len(inputs); i++ {
+
+			lbls := labelsSelfKnowledge()
+			lbls[0] = trl.S{
+				"de": "<small>gar nicht motiviert</small>     <div>0</div>",
+				"en": "<small>todo</small>     <div>0</div>",
+			}
+			lbls[10] = trl.S{
+				"de": "<small>sehr stark motiviert</small>       <div>10</div>",
+				"en": "<small>todo</small> <div>10</div>",
+			}
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{inputs[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+6)) // .Outline("F6., F7., ...  F9.")
+			gr := page.AddGrid(gb)
+			_ = gr
+			// gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+		}
+
+	}
+
+	// page FL4
+	{
+
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			gr.BottomVSpacers = 3
+			{
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": "Was ist die Hauptfunktion des Aktienmarktes?",
+						"en": "todo",
+					}.OutlineHid("FL4.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+
+				for idx, label := range labelsStockMarketPurpose() {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qfl4_stockmarketpurpose"
+					rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+					rad.ColSpan = gr.Cols / 2
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+				}
+			}
+		}
+
+	}
+
+	// page FL5
+	{
+
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			gr.BottomVSpacers = 3
+			{
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": "Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchsten Ertragsschwankungen?",
+						"en": "todo",
+					}.OutlineHid("FL5.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+
+				for idx, label := range labelsAssetClassVola() {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qfl5_assetclassvola"
+					rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+					rad.ColSpan = gr.Cols / 2
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+				}
+			}
+		}
+
+	}
+
+	// page FL6
+	{
+
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			gr.BottomVSpacers = 3
+			{
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
+							sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
+
+							Gleichzeitig besteht eine 10%-ige Chance,
+							dass er die Klimaanlage in seinem Haus ersetzen muss,
+							was 4.000 Euro kosten würde.
+
+							Welches ist das größere finanzielle Risiko für Malik?
+
+							`,
+						"en": "todo",
+					}.OutlineHid("FL6.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+
+				for idx, label := range labelsExpectedValueRisk() {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qfl6_expectedvalue"
+					rad.ValueRadio = fmt.Sprintf("%d", idx)
+
+					rad.ColSpan = gr.Cols / 2
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+				}
+			}
+		}
+	}
+
 	// page x+3
 	erfahrungMitFinanzenSplit1(&q, 0, 0)
 	erfahrungMitFinanzenSplit2(&q, 0, 0)
 
-	// page x+4
+	// page B1, B2, B3
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -2492,53 +2561,49 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr1
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate5,
-				[]trl.S{
-					{
-						"de": "einmal im Monat",
-						"en": "todo",
-					},
-					{
-						"de": "einmal im Quartal",
-						"en": "todo",
-					},
-					{
-						"de": "einmal im Jahr",
-						"en": "todo",
-					},
-					{
-						"de": "seltener als einmal im Jahr",
-						"en": "todo",
-					},
-					{
-						"de": "ich habe keine/n Finanzberater/ Finanzberaterin",
-						"en": "todo",
-					},
-				},
-				[]string{"qb2_frequency"},
-				radioVals5,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Wie oft sprechen Sie mit Ihrem Finanzberater oder Ihrer Finanzberaterin?
-				`,
-				"en": `
-					todo
-				`,
-			}.OutlineHid("B2.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			gr := page.AddGroup()
+			gr.Cols = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Wie oft sprechen Sie mit Ihrem Finanzberater oder Ihrer Finanzberaterin?
+					`,
+					"en": `
+						todo
+					`,
+				}.OutlineHid("B2.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			for idx, lbl := range labelsFrequency2() {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qb2_frequency"
+				rad.ValueRadio = fmt.Sprintf("%v", idx+1)
+
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = lbl
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
+			}
+
 		}
 
+		//
+		//
 		// gr2
 		{
 			gb := qst.NewGridBuilderRadios(
-				columnTemplate5,
+				columnTemplate4,
 				labelsFrequency(),
 				[]string{"qb3_frequency"},
 				radioVals5,
@@ -2587,7 +2652,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// page x+5
+	// page B4, B5
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -2622,18 +2687,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "<small>very much</small> <div>10</div>",
 		}
 		inputs := []string{
-			"qb5_fearofloss",
-			"qb6_delegate",
+			// "qb5_fearofloss",
+			"qb5_delegate",
 		}
 		lbls := []trl.S{
-			{
-				"de": `
-					Haben Sie Angst, bei finanziellen Entscheidungen Verluste zu machen?
-				`,
-				"en": `
-					todo
-				`,
-			},
+			// {
+			// 	"de": `
+			// 		Haben Sie Angst, bei finanziellen Entscheidungen Verluste zu machen?
+			// 	`,
+			// 	"en": `
+			// 		todo
+			// 	`,
+			// },
 			{
 				"de": `
 					Würden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?
@@ -2665,59 +2730,53 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
+		// B6 is now on separate, conditional page
+
+	}
+
+	//
+	// page B6
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		page.NavigationCondition = "kneb_b6_who_competent"
+
 		//
-		// gr last
+		//
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
 				labelsWhoIsCompetent(),
-				[]string{"qb7_whocompetent"},
+				[]string{"qb6_whocompetent"},
 				radioVals4,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
 			gb.MainLabel = trl.S{
 				"de": `
 					Wer könnte finanzielle Entscheidungen am besten für Sie treffen?
+					<br>
+					<br>
 				`,
 				"en": `
 					todo
 				`,
-			}.OutlineHid("B7.")
+			}.OutlineHid("B6.")
 			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 1
+			gr.WidthMax("36rem")
+			gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
-		{
-			gr := page.AddGroup()
-			gr.BottomVSpacers = 0
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "knebPageCounseling2" // js filename
-
-				s1 := trl.S{
-					"de": "no javascript dialog message needed",
-					"en": "no javascript dialog message needed",
-				}
-				inp.JSBlockTrls = map[string]trl.S{
-					"msg": s1,
-				}
-
-				inp.JSBlockStrings = map[string]string{}
-				inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
-
-			}
-
-		}
-
 	}
 
-	// page x+6
+	// page H1
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -2812,7 +2871,128 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		)
 	}
 
-	// page x+7
+	// page H2
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			// single column
+			gr.Cols = 3
+			var inputs = []string{
+				"qh2_savingsaccount",
+				"qh2_bausparen",
+				"qh2_bonds",
+				"qh2_stocks_etf",
+				"qh2_other",
+				"qh2_gold",
+			}
+			var labels = []trl.S{
+				{
+					"de": `
+					Sparanlagen
+					<br>
+					<small>
+						z.B. Sparbücher, Festgeldkonten,
+						Tagesgeldkonten oder
+						Sparverträge
+					</small>
+					`,
+					"en": `todo`,
+				},
+				{
+					"de": `
+					Bausparverträge
+					<br>
+					<small>
+						(die noch nicht in Darlehen
+						umgewandelt wurden)
+					</small>
+
+					`,
+					"en": `todo`,
+				},
+				{
+					"de": `
+					Festverzinsliche Wertpapiere
+					<small>
+						z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
+					</small>`,
+					"en": `todo`,
+				},
+				{
+					"de": `
+					Aktien oder Aktienfonds und Immobilienfonds
+					<small>
+						(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
+					</small>
+					`,
+					"en": `todo`,
+				},
+				{
+					"de": `
+					Sonstige Wertpapiere
+					<small>
+						z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
+					</small>
+					`,
+					"en": `todo`,
+				},
+				{
+					"de": `Gold`,
+					"en": `todo`,
+				},
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Wir stellen Ihnen nun eine Frage zum <i>Finanzvermögen</i>: <br>
+						Haben Sie (d.h. Ihr Haushalt) im Jahr   
+							<span style='color:#e22; font-size 110%; '>2023</span> 
+						eine der folgenden Vermögensarten besessen?
+					
+
+						<small>
+						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, 
+						beantworten Sie die Fragen bitte für sich selbst.
+						</small>
+				
+					`,
+					"en": `todo`,
+				}.OutlineHid("H2.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			for idx, label := range labels {
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = inputs[idx]
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 6
+
+				inp.Label = label
+				inp.ControlFirst()
+				inp.LabelTop()
+				inp.ControlTop()
+			}
+		}
+
+	}
+
+	// page H3
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -2841,7 +3021,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `
 						todo
 					`,
-				}.OutlineHid("H2.")
+				}.OutlineHid("H3.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -2880,13 +3060,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 				opt := fmt.Sprintf("upto%d", rHigh)
 				lbl := trl.S{
-					"de": fmt.Sprintf("%d€ bis unter %d€", rLow, rHigh),
-					"en": fmt.Sprintf("%d€ to under  %d€", rLow, rHigh),
+					"de": fmt.Sprintf("%d€ bis unter %d€ monatlich", rLow, rHigh),
+					"en": fmt.Sprintf("%d€ to under  %d€ per month", rLow, rHigh),
 				}
 				if i == 0 {
 					lbl = trl.S{
-						"de": fmt.Sprintf("unter %d€", rHigh),
-						"en": fmt.Sprintf("under %d€", rHigh),
+						"de": fmt.Sprintf("unter %d€ monatlich", rHigh),
+						"en": fmt.Sprintf("under %d€ per month", rHigh),
 					}
 				}
 				if rHigh == -1 {
@@ -2910,7 +3090,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, lbl := range lbls {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "qh2_income"
+				rad.Name = "qh3_income"
 				rad.ValueRadio = fmt.Sprintf("%v", idx+1)
 
 				rad.ColSpan = gr.Cols
@@ -2927,7 +3107,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			if false {
 				inp := gr.AddInput()
 				inp.Type = "dropdown"
-				inp.Name = "qh2_income"
+				inp.Name = "qh3_income"
 				inp.MaxChars = 20
 				inp.MaxChars = 10
 				inp.ColSpan = gr.Cols
@@ -2955,7 +3135,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// page x+8
+	// page H4
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -2977,7 +3157,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": fmt.Sprintf(`
 						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
 
-						Haben Sie (d.h. Ihr Haushalt) im <i>Dezember %d </i>
+						Haben Sie (d.h. Ihr Haushalt) im  Jahr <span style='color:#e22; font-size 110%%; '>2023</span> 
 						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
 
 						<small>
@@ -2985,12 +3165,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						beantworten Sie die Fragen bitte für sich selbst.
 						</small>
 
+						<!-- %v -->
+
 					`,
 						// december previous year - for 2023: 2022
 						time.Now().Year()-1,
 					),
 					"en": `todo`,
-				}.OutlineHid("H3.")
+				}.OutlineHid("H4.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
@@ -3013,7 +3195,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 				"en": `todo`,
 			},
-			"qh3a_lifeinsurance",
+			"qh4a_lifeinsurance",
 			"a)",
 			true,
 		)
@@ -3024,6 +3206,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			trl.S{
 				"de": `
 					Betriebliche Lebensversicherungen
+					<br>
 					<small>
 					(z. B. Direktversicherungen)
 					</small>
@@ -3031,7 +3214,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 				"en": `todo`,
 			},
-			"qh3b_directinsurance",
+			"qh4b_directinsurance",
 			"b)",
 			true,
 		)
@@ -3049,7 +3232,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 				"en": `todo`,
 			},
-			"qh3c_otherpensions",
+			"qh4c_otherpensions",
 			"c)",
 			true,
 		)
@@ -3067,7 +3250,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				`,
 				"en": `todo`,
 			},
-			"qh3d_otherpensions",
+			"qh4d_otherpensions",
 			"d)",
 			true,
 		)
@@ -3079,12 +3262,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 					Private Rentenversicherungen
 					<small>
-					(z.B. private Rentenversicherungsverträge, die nicht staatlich gefördert werden bzw. abgeschlossen wurden, bevor es solche Fördermöglichkeiten gab)
+					(z.B. private Rentenversicherungsverträge, die <u><i>nicht</i></u> staatlich gefördert werden bzw. abgeschlossen wurden, 
+						bevor es solche Fördermöglichkeiten gab)
 					</small>
 				`,
 				"en": `todo`,
 			},
-			"qh3e_privatepensions",
+			"qh4e_privatepensions",
 			"e)",
 			true,
 		)
@@ -3101,9 +3285,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
 
-		//
-		//
-		// comment
+		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -3118,11 +3300,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<strong>
 						Danke, dass Sie an unserer Umfrage teilgenommen haben!
 						</strong>
-						<br>
-						<br>
-
-						Gibt es noch irgendetwas, was Sie uns zu diesem Fragebogen 
-						oder Thema mitteilen möchten?
 					`,
 					"en": `
 						todo
@@ -3130,16 +3307,112 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 				inp.ColSpanLabel = 1
 			}
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			// single column
+			gr.Cols = 3
+			var radioValues = []string{
+				"weber",
+				"zewexpertise",
+				"verbraucherzentral",
+				"nothanks",
+			}
+
+			/*
+				https://www.arero.de/fileadmin/user_upload/07_downloads/genial_einfach_investieren_ebook.pdf
+				https://ftp.zew.de/pub/zew-docs/ZEWKurzexpertisen/ZEW_Kurzexpertise2303.pdf
+				https://www.verbraucherzentrale.de/alles-zur-geldanlage-das-muessen-sie-dazu-wissen-18777
+
+			*/
+			var labels = []trl.S{
+				{
+					"de": `Das E-Book „Einfach Genial investieren“ von Prof. Martin Weber `,
+					"en": `todo`,
+				},
+				{
+					"de": `Die ZEW-Kurzexpertise  „Wie haben sich Coronakrise und Preissteigerungen auf die Altersvorsorge ausgewirkt?“`,
+					"en": `todo`,
+				},
+				{
+					"de": `Link zur Verbraucherzentrale  mit einer Übersicht zum Thema „Alles zur Geldanlage: Das müssen Sie dazu wissen“`,
+					"en": `todo`,
+				},
+				{
+					"de": `Nein, danke`,
+					"en": `todo`,
+				},
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Als Dankeschön bieten wir Ihnen die Möglichkeit, 
+						eine dieser drei Quellen  kostenlos herunterzuladen.
+					
+					`,
+					"en": `todo`,
+				}.OutlineHid("Z1.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qz1_download"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
+			}
+		}
+
+		//
+		//
+		// comment
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Gibt es noch irgendetwas, was Sie uns zu diesem Fragebogen 
+						oder Thema mitteilen möchten?
+					`,
+					"en": `
+						todo
+					`,
+				}.OutlineHid("Z2.")
+				inp.ColSpanLabel = 1
+			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "comment"
+				inp.Name = "qz2_comment"
 				inp.MaxChars = 300
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
 			}
 		}
 
+		//
+		//
 		// advance to last page "data saved"
 		{
 			gr := page.AddGroup()
@@ -3198,12 +3471,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				inp.DynamicFunc = "ResponseStatistics"
 			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.ColSpanControl = 1
-				inp.DynamicFunc = "PersonalLink"
-			}
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "dyn-textblock"
+			// 	inp.ColSpanControl = 1
+			// 	inp.DynamicFunc = "PersonalLink"
+			// }
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"

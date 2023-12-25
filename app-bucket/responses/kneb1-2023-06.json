@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "713511fd5fcdb20db4d9a80a80592a008c04d7aa2812e766aae95e5761e18992",
+ 	"md_5": "2d9e955c77bb5dcd1ff90b7816dec1eaecaaea24195d7f94db43cde1b40aaa9e",
  	"lang_codes": [
  		"de"
  	],
@@ -17133,643 +17133,7 @@
  				"de": "Experiment",
  				"en": "Epxperiment"
  			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "48rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 11,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t",
- 								"en": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
- 							},
- 							"col_span": 11,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "\u003csmall\u003ekein Ver\u0026shy;trau\u0026shy;en\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
- 								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " 5 ",
- 								"en": " 5 "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "\u003csmall\u003ehohes Ver\u0026shy;trau\u0026shy;en\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e",
- 								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"label": {
- 								"de": "",
- 								"en": ""
- 							},
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "7"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "8"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "9"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "10"
- 						},
- 						{
- 							"name": "qe1_confidence_before",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "11"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
- 								"row_gap": "0.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"suppress_in_progressbar": true,
+ 			"navigation_condition": "kneb_t1a",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -17797,7 +17161,58 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e. Genügend finanzielle Mittel im Alter sind der Grundstein für einen si\u0026shy;cheren und stabilen Ruhestand.\n\n\t\t\t\t\tVor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt nied\u0026shy;riger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wich\u0026shy;tig, dass man finanziell gut abgesi\u0026shy;chert ist.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: \u003ci\u003eEinen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Chancen und Risiken einer Anlage am Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eAnbauentscheidungen \n\t\t\t\t\t\tanhand eines Beispiels aus der Landwirt\u0026shy;schaft\u003c/i\u003e.\n\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von landwirt\u0026shy;schaft\u0026shy;lichen Betrieben. \n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. \n\t\t\t\t\t\tEin Landwirt bestellt Getreidefelder und muss entscheiden, welche \u003ci\u003eGetreidesorten\u003c/i\u003e er anbauen möchte. \t\t\t\t\t\t\n\t\t\t\t\t\tEr kann sich zwi\u0026shy;schen \u003ci\u003ezwei Sorten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tGetreidesorte 1: Diese Sorte wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tGetreidesorte 2: Diese Sorte wächst schneller und kann im Durchschnitt höhere Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\u003c/p\u003e\t\t\t\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Abwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit der beiden Getreidesorten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um Anbauentscheidungen anhand eines Beispiels aus der Landwirt\u0026shy;schaft.\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von landwirt\u0026shy;schaft\u0026shy;lichen Betrieben. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. Ein Landwirt bestellt Getreidefelder und muss entscheiden, welche Getreidesorten er anbauen möchte. Er kann sich zwi\u0026shy;schen zwei Sorten entscheiden.\n\t\t\t\t\t\tGetreidesorte 1: Diese Sorte wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\tGetreidesorte 2: Diese Sorte wächst schneller und kann im Durchschnitt höhere Erträge erzielen. Gleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Getreidesorten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Experiment",
+ 				"en": "Epxperiment"
+ 			},
+ 			"navigation_condition": "kneb_t1b",
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "52rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e. \n\t\t\t\t\tGenügend finanzielle Mittel im Alter sind der Grundstein für einen si\u0026shy;cheren und stabilen Ruhestand.\n\n\t\t\t\t\tVor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt nied\u0026shy;riger ist \n\t\t\t\t\tals das Arbeitseinkommen während der Erwerbstätigkeit, \n\t\t\t\t\tist es wich\u0026shy;tig, dass man finanziell gut abgesi\u0026shy;chert ist.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. \n\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: \n\t\t\t\t\t\u003ci\u003eEinen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, \n\t\t\t\t\tdie \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage am Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -20387,6 +19802,7 @@
  				"de": "Treatment:\u003cbr\u003eGiving advice",
  				"en": "todo"
  			},
+ 			"navigation_condition": "kneb_t2a",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -20414,52 +19830,14 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eT1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tBitte denken Sie über Ihre Erfahrungen nach, die Sie mit dem Tool gesammelt haben. Was können Sie zukünftigen Nutzerinnen und Nutzern empfehlen? Welche Ratschläge können Sie weitergeben, um anderen zu helfen?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eT1.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003cb\u003eA1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWir, die Wissenschaftler hinter dieser Umfrage, \n\t\t\t\t\t\tmöchten gerne wissen, \n\t\t\t\t\t\twie Sie den Umgang mit dem Tool be\u0026shy;wer\u0026shy;ten? \n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Vorschläge haben Sie, \n\t\t\t\t\t\twie das Tool für zukünftige Nutzerinnen und Nutzer ver\u0026shy;bes\u0026shy;sert werden kann?\n\n\t\t\t\t\t\tWorauf sollten zukünftige Nutzerinnen und Nutzer besonders achten?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eA1.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						},
  						{
  							"name": "qt1_advice",
- 							"type": "textarea",
- 							"max_chars": 200,
- 							"col_span": 1,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"row_gap": "0.12rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003eT2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWelche Ihrer Erkenntnisse/ Ergebnisse aus dem Tool könnten für andere Nutzerinnen und Nutzer besonders interessant sein? Was ist besonders hilfreich? \t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eT2.\u003c/b\u003e \u0026nbsp; todo"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "qt2_which",
  							"type": "textarea",
  							"max_chars": 200,
  							"col_span": 1,

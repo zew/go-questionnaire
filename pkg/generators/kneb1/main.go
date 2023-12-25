@@ -1893,63 +1893,62 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 8
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{
-			"de": "Selbstvertrauen vor Experiment",
-			"en": "Confidence before experiment",
-		}
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-
-		// for next three pages
-		page.Short = trl.S{
-			"de": "Experiment",
-			"en": "Epxperiment",
-		}
-		page.WidthMax("42rem")
-		page.WidthMax("48rem")
-
-		// gr0
+	/*
+		// page 8
 		{
+			page := q.AddPage()
 
-			lbls := labelsSelfKnowledgeXX()
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				lbls,
-				[]string{"qe1_confidence_before"},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
-					<br>
-					Antworten Sie bitte anhand der folgenden Skala,
-					wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
-					und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
+			page.Label = trl.S{
+				"de": "Selbstvertrauen vor Experiment",
+				"en": "Confidence before experiment",
+			}
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
 
-				`,
-				"en": `
-					todo
-				`,
-			}.OutlineHid("E1.")
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			page.WidthMax("48rem")
+
+			// gr0
+			{
+
+				lbls := labelsSelfKnowledgeXX()
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate11,
+					lbls,
+					[]string{"qe1_confidence_before"},
+					radioVals11,
+					[]trl.S{{"de": ``, "en": ``}},
+				)
+				gb.MainLabel = trl.S{
+					"de": `
+						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+						<br>
+						Antworten Sie bitte anhand der folgenden Skala,
+						wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
+						und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
+
+					`,
+					"en": `
+						todo
+					`,
+				}.OutlineHid("E1.")
+				gr := page.AddGrid(gb)
+				_ = gr
+				gr.BottomVSpacers = 2
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+			}
+
 		}
+	*/
 
-	}
-
-	// page chart introduction 1
+	//
+	//
+	// page chart introduction 1 neutral
 	{
 		page := q.AddPage()
+		page.NavigationCondition = "kneb_t1a"
 
 		page.Label = trl.S{
 			"en": "Experiment-Chart-Introduction",
@@ -1959,8 +1958,89 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 			"de": "",
 		}
-		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
+
+		// for next x pages
+		page.Short = trl.S{
+			"de": "Experiment",
+			"en": "Epxperiment",
+		}
+
+		page.WidthMax("52rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 3
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": `
+
+					<p>
+						In diesem Teil unserer Umfrage geht es um <i>Anbauentscheidungen 
+						anhand eines Beispiels aus der Landwirtschaft</i>.
+
+						Es gibt viele verschiedene Arten von landwirtschaftlichen Betrieben. 
+						Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. 
+						Ein Landwirt bestellt Getreidefelder und muss entscheiden, welche <i>Getreidesorten</i> er anbauen möchte. 						
+						Er kann sich zwischen <i>zwei Sorten</i> entscheiden.
+					</p>
+
+					<p>
+						Getreidesorte 1: Diese Sorte wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
+						Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
+						<br>
+						Getreidesorte 2: Diese Sorte wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
+						Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
+					</p>			
+
+					<p>
+						In unserer interaktiven Graphik versuchen wir, die Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit der beiden Getreidesorten zu verdeutlichen.
+						In diesem Teil unserer Umfrage geht es um Anbauentscheidungen anhand eines Beispiels aus der Landwirtschaft.
+						Es gibt viele verschiedene Arten von landwirtschaftlichen Betrieben. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. Ein Landwirt bestellt Getreidefelder und muss entscheiden, welche Getreidesorten er anbauen möchte. Er kann sich zwischen zwei Sorten entscheiden.
+						Getreidesorte 1: Diese Sorte wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
+						Getreidesorte 2: Diese Sorte wächst schneller und kann im Durchschnitt höhere Erträge erzielen. Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
+					</p>
+					
+					<p>
+						In unserer interaktiven Graphik versuchen wir, 
+						die <i>Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit</i> 
+						der beiden Getreidesorten zu verdeutlichen.
+					</p>
+
+					`,
+					"en": `
+							todo
+						`,
+				}
+			}
+		}
+
+	}
+
+	// page chart introduction 1 finance
+	{
+		page := q.AddPage()
+		page.NavigationCondition = "kneb_t1b"
+
+		page.Label = trl.S{
+			"en": "Experiment-Chart-Introduction",
+			"de": "Experiment chart-Introduction",
+		}
+		page.Label = trl.S{
+			"en": "",
+			"de": "",
+		}
+		// for next x pages
+		page.Short = trl.S{
+			"de": "Experiment",
+			"en": "Epxperiment",
+		}
+
 		page.WidthMax("52rem")
 
 		// gr0
@@ -1976,17 +2056,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `
 					<p>
-					In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
+					In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. 
+					Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
 
-					Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist als das Arbeitseinkommen während der Erwerbstätigkeit, ist es wichtig, dass man finanziell gut abgesichert ist.
+					Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist 
+					als das Arbeitseinkommen während der Erwerbstätigkeit, 
+					ist es wichtig, dass man finanziell gut abgesichert ist.
 					</p>
 
 					<p>
-					Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. Im Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: <i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
+					Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. 
+					Im Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: 
+					<i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
 					</p>
 
 					<p>
-					In unserer interaktiven Graphik versuchen wir, die Chancen und Risiken einer Anlage am Kapitalmarkt zu verdeutlichen.
+					In unserer interaktiven Graphik versuchen wir, 
+					die <i>Chancen und Risiken</i> einer Anlage am Kapitalmarkt zu verdeutlichen.
 					</p>
 
 	
@@ -2191,6 +2277,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
+		page.NavigationCondition = "kneb_t2b"
+
 		page.Label = trl.S{
 			"de": "Treatment: Giving advice",
 			"en": "todo",
@@ -2205,7 +2293,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Treatment:<br>Giving advice",
 			"en": "todo",
 		}
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		{
@@ -2219,10 +2306,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Bitte denken Sie über Ihre Erfahrungen nach, die Sie mit dem Tool gesammelt haben. Was können Sie zukünftigen Nutzerinnen und Nutzern empfehlen? Welche Ratschläge können Sie weitergeben, um anderen zu helfen?
+						Wir, die Wissenschaftler hinter dieser Umfrage, 
+						möchten gerne wissen, 
+						wie Sie den Umgang mit dem Tool bewerten? 
+						
+						Welche Vorschläge haben Sie, 
+						wie das Tool für zukünftige Nutzerinnen und Nutzer verbessert werden kann?
+
+						Worauf sollten zukünftige Nutzerinnen und Nutzer besonders achten?
 					`,
 					"en": `todo`,
-				}.OutlineHid("T1.")
+				}.OutlineHid("A1.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -2237,34 +2331,35 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
-			gr.BottomVSpacers = 3
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Welche Ihrer Erkenntnisse/ Ergebnisse aus dem Tool könnten für andere Nutzerinnen und Nutzer besonders interessant sein? Was ist besonders hilfreich? 					
-					`,
-					"en": `todo`,
-				}.OutlineHid("T2.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qt2_which"
-				inp.MaxChars = 200
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-		}
+		// {
+		// 	gr := page.AddGroup()
+		// 	gr.Cols = 1
+		// 	gr.Style = css.NewStylesResponsive(gr.Style)
+		// 	gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+		// 	gr.BottomVSpacers = 3
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "textblock"
+		// 		inp.Label = trl.S{
+		// 			"de": `
+		// 				Welche Ihrer Erkenntnisse/ Ergebnisse aus dem Tool könnten für andere Nutzerinnen und Nutzer besonders interessant sein?
+		// 				 Was ist besonders hilfreich?
+		// 			`,
+		// 			"en": `todo`,
+		// 		}.OutlineHid("T2.")
+		// 		inp.ColSpan = gr.Cols
+		// 		inp.ColSpanLabel = 1
+		// 	}
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "textarea"
+		// 		inp.Name = "qt2_which"
+		// 		inp.MaxChars = 200
+		// 		inp.ColSpan = gr.Cols
+		// 		inp.ColSpanLabel = 0
+		// 		inp.ColSpanControl = 1
+		// 	}
+		// }
 
 	}
 

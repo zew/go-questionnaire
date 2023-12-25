@@ -203,7 +203,7 @@
   <div class="panel panel1">
 
       <p>
-        Größe der Anbaufläche
+        Sparbetrag
       </p>
 
       <p style="padding-left:1.2rem">
@@ -233,7 +233,7 @@
 
 
     <p style="margin-top: 0.8rem;">
-      Anteil der zweiten Getreidesorte
+      Ihr Aktienanteil
     </p>
     <div class="knob-container" >
       <div tabindex="2"  href=#  class="knob" style="min-width: 2.7rem">0&nbsp;% </div>
@@ -268,21 +268,21 @@
   <div class="panel panel3">
 
     <p>
-      In den <i>besten 5 von 100 Fällen</i> liegt die Ernte <i>über</i>
+      In den <i>besten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>über</i>
     </p>
     <p class="num" style="color: #0a0;">
       <strong><span id="elFV95">-</span></strong>
     </p>
 
     <p>
-      <i>Im Durchschnitt</i>  liegt die Ernte bei
+      <i>Im Durchschnitt</i>  liegt das angesammelte Vermögen nach 20&nbsp;Jahren bei
     </p>
     <p class="num" style="color: rgb( 0, 105, 180);">
       <strong><span id="elFV">-</span></strong>
     </p>
 
     <p>
-      In den <i>schlechtesten 5 von 100 Fällen</i> liegt die Ernte <i>unter</i>
+      In den <i>schlechtesten 5 von 100 Fällen</i> liegt das angesammelte Vermögen nach 20&nbsp;Jahren <i>unter</i>
     </p>
     <p class="num" style="color: #a00;">
       <strong><span id="elFV05">-</span></strong>
@@ -322,80 +322,45 @@
 <script>
 
   function getChartTitle(yr, azV) {
-    return `Prognostizierte Entwicklung der Ernte über das Jahr`;
-    // return `Prognostizierte Entwicklung bis ${yr+azV}`;
+    return `Prognostizierte Entwicklung bis ${yr+azV}`;
+    // return `Prognostizierte Entwicklung der Ernte über das Jahr`;
   }
 
   function getXAxisType() {
     return 'value';
-    // return 'category';
   }
   function getXAxisMin(yr,az) {
     return yr+0;
-    // return 'Okt';
   }
   function getXAxisMax(yr,az) {
     return yr+az;
-    // return 'Juli';
   }
   function getXAxisFormatter(vl,yr,az) {
-    let mapper = [
-       'Okt.' , 
-       'Nov.' , 
-       'Dez.' , 
-       'Jan.' , 
-       'Feb.' , 
-       'März' , 
-       'April', 
-       'Mai'  , 
-       'Juni' , 
-       'Juli' ,
-       ' ' ,
-      //  ' ' ,
-    ];
-    // map az to mapper.length
-    let factor = (mapper.length)/az;
-    let idxFl  = (vl-yr) * factor;  // index as float
-    // let idx = Math.round( idxFl );
-    let idx = Math.floor( idxFl );
-
-    if (typeof mapper[idx] === 'undefined') {
-      return ' ';
-    }
-    // if (Math.abs(idxFl - idx) > 0.7) {
-    //   return ' ';
-    // }
-    return mapper[idx]  + ' ';
-    // return vl  + ' ';
+    return vl  + ' ';
   }
   function getXInteerval(){
-    return 2.285;
-    return 2;
+    return 2;    
   }
-
-
 
   function getYAxisTitle() {
-    return `Ernte in Tonnen`;
+    return `Vermögen`;
   }
   function getVerticalMarkerTitle() {
-    return `Ernte`;
+    return `Ihr Anlagehorizont`;
   }
-
 
   function appendUnit(s) {
     return `${s} T`;
   }
-
 
   function knebelFormat(dbl, nbsp=true){
       dbl = Math.round(dbl/100)*100
       dbl = `${dbl}`  // to string
       dbl = `${dbl.substring(0,dbl.length-3)}.${dbl.substring(dbl.length-3)}`
       if(nbsp){
-        dbl = `${dbl}&nbsp;T`
+        dbl = `${dbl}&nbsp;€`
       } else {
-        dbl = `${dbl}T`
+        dbl = `${dbl}€`
       }
       return dbl
   }

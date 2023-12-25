@@ -21,6 +21,11 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"pds_ac1": pdsAssetClass1,
 	"pds_ac2": pdsAssetClass2,
 	"pds_ac3": pdsAssetClass3,
+
+	"kneb_t1a": knebTreatment1NeurtraVsFinance_A,
+	"kneb_t1b": knebTreatment1NeurtraVsFinance_B,
+	"kneb_t2a": knebTreatment2AdviceNoOrYes_A,
+	"kneb_t2b": knebTreatment2AdviceNoOrYes_B,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -118,4 +123,30 @@ func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 		return false
 	}
 	return false
+}
+
+//
+//
+func knebTreatment1NeurtraVsFinance_A(q *QuestionnaireT, pageIdx int) bool {
+	if q.UserIDInt()%2 == 0 {
+		return true
+	}
+	return false
+}
+func knebTreatment1NeurtraVsFinance_B(q *QuestionnaireT, pageIdx int) bool {
+	return !knebTreatment1NeurtraVsFinance_A(q, pageIdx)
+}
+
+// 1000,1001  => 500 =>  0 => false
+// 1002,1003, => 501 =>  1 => true
+func knebTreatment2AdviceNoOrYes_A(q *QuestionnaireT, pageIdx int) bool {
+	id := q.UserIDInt()
+	id = id / 2
+	if id%2 == 0 {
+		return false
+	}
+	return true
+}
+func knebTreatment2AdviceNoOrYes_B(q *QuestionnaireT, pageIdx int) bool {
+	return !knebTreatment2AdviceNoOrYes_A(q, pageIdx)
 }

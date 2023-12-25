@@ -48,4 +48,6 @@ def crop(subDir):
 
 
 crop( "fin" )
-crop( "umw" )
+
+# the word 'neutral' get hyphenated
+crop( "ntrl" )

@@ -105,6 +105,7 @@ func bucketGoogle() (*blob.Bucket, error) {
 	return bucket, nil
 }
 
+// *blob.Bucket implements io/fs.FS and io/fs.SubFS
 func bucket() (*blob.Bucket, error) {
 	if appsID != "" {
 		return bucketGoogle()
@@ -420,12 +421,7 @@ func init() {
 		list(ctx, buck, "", 0,0, ret)
 	*/
 	list = func(ctx context.Context, buck *blob.Bucket, prefix string, indent, maxIndent int, results *[]*blob.ListObject) {
-		iter := buck.List(
-			&blob.ListOptions{
-				Delimiter:  "/",
-				Prefix:     prefix,
-				BeforeList: beforeList,
-			})
+		iter := buck.List(getBlobOpts(prefix))
 		for {
 			obj, err := iter.Next(ctx)
 			if err == io.EOF {
@@ -483,7 +479,19 @@ func ReadDir(prefix string) (*[]*blob.ListObject, error) {
 		}
 	}()
 
-	list(ctx, buck, prefix, 0, 0, ret)
+	//
+	// 2023 - trying to simplify...
+	if false {
+		itr := buck.List(getBlobOpts(prefix))
+		_ = itr
+		*ret, _, err = buck.ListPage(ctx, blob.FirstPageToken, 1024*1024, getBlobOpts(prefix))
+	}
+
+	// 2019
+	if true {
+		list(ctx, buck, prefix, 0, 0, ret)
+	}
+
 	return ret, nil
 
 }

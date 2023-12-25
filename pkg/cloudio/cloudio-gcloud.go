@@ -4,7 +4,19 @@ import (
 	"log"
 
 	"cloud.google.com/go/storage"
+	"gocloud.dev/blob"
 )
+
+func getBlobOpts(pfx string) *blob.ListOptions {
+	return &blob.ListOptions{
+		Delimiter:  "/",
+		Prefix:     pfx,
+		BeforeList: beforeList,
+	}
+}
+
+// 2023-12: I tried to disable this code, to remove the huge pagacke cloud.google.com/go/storage
+//    but it remains as indirect dependeny
 
 // ReadDir preparation
 var beforeList = func(as func(interface{}) bool) error {

@@ -3409,6 +3409,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "ResponseStatistics"
+				inp.ColSpan = 1
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+
 		}
 
 		//
@@ -3465,26 +3475,36 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-textblock"
+					inp.DynamicFunc = "ResponseStatistics"
+					inp.ColSpan = 1
+					inp.ColSpanControl = 0
+					inp.ColSpanLabel = 1
+				}
+			*/
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
-				inp.ColSpanControl = 1
-				inp.DynamicFunc = "ResponseStatistics"
-			}
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "dyn-textblock"
-			// 	inp.ColSpanControl = 1
-			// 	inp.DynamicFunc = "PersonalLink"
-			// }
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "site-imprint.md"
+				inp.DynamicFunc = "LinkBack"
 				inp.ColSpan = 1
+				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1
 			}
+
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-textblock"
+					inp.DynamicFunc = "RenderStaticContent"
+					inp.DynamicFuncParamset = "./site-imprint.md"
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 1
+				}
+			*/
 		}
 
 	}

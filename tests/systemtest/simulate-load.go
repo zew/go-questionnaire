@@ -275,7 +275,7 @@ func clientPageToServer(
 
 	// dynamic pages - changes on previous input
 	kv := clQ.DynamicPageValues()
-	err := clQ.DynamicPages()
+	err := clQ.DynamicPages(-1)
 	if err != nil {
 		t.Fatalf("dyn page creation on client q: %v", err)
 	}
@@ -401,7 +401,7 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 		}
 	*/
 	// dynamic pages based on login user ID
-	err = clQ.DynamicPages()
+	err = clQ.DynamicPages(-1)
 	if err != nil {
 		t.Fatalf("dyn page creation on client q: %v", err)
 	}

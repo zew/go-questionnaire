@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e36b9f471ca922cf3c078aa6d4eb24c27b2736735e0314250048c568de8a1ff6",
+ 	"md_5": "c80823d92595e8a8fdb5e39950469298e3651f6c46429d01124866538a837330",
  	"lang_codes": [
  		"de"
  	],
@@ -23349,7 +23349,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ee)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPrivate Rentenversi\u0026shy;cherungen\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die nicht staatlich gefördert werden bzw. abgeschlossen wurden, bevor es solche Fördermöglichkeiten gab)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003ee)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPrivate Rentenversi\u0026shy;cherungen\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die \u003cu\u003e\u003ci\u003enicht\u003c/i\u003e\u003c/u\u003e staatlich gefördert werden bzw. abgeschlossen wurden, \n\t\t\t\t\t\tbevor es solche Fördermöglichkeiten gab)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003ee)\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 9,
@@ -23721,6 +23721,12 @@
  							"type": "textarea",
  							"max_chars": 300,
  							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "ResponseStatistics"
  						}
  					],
  					"style": {
@@ -23841,15 +23847,15 @@
  					"inputs": [
  						{
  							"type": "dyn-textblock",
- 							"col_span_control": 1,
+ 							"col_span": 1,
+ 							"col_span_label": 1,
  							"dynamic_func": "ResponseStatistics"
  						},
  						{
  							"type": "dyn-textblock",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent",
- 							"dynamic_func_paramset": "site-imprint.md"
+ 							"dynamic_func": "LinkBack"
  						}
  					]
  				}

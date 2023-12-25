@@ -73,7 +73,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
 
 		// dynamic pages based on login user ID
-		err = qBase.DynamicPages()
+		err = qBase.DynamicPages(-1)
 		if err != nil {
 			err = fmt.Errorf("dyn page creation on base q: %w", err)
 			return q, err
@@ -89,7 +89,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 			return q, err
 		}
 
-		err = qBase.DynamicPages()
+		err = qBase.DynamicPages(-1)
 		if err != nil {
 			err = fmt.Errorf("dyn page creation on joined q: %w", err)
 			return q, err

@@ -330,12 +330,20 @@ var coreTranslations = Map{
 		"pl": "Ankieta zakończy się w %v.\nPublikacja będzie %v. <br>\n",
 	},
 	"review_by_personal_link": {
-		"de": "Sie können Ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n<a href='/?submitBtn=prev'>Zurück</a><br>\n",
-		"en": "You may review or change your data using your personal link. <br>\n<a href='/?submitBtn=prev'>Back</a><br>\n",
-		"es": "Usted puede revisar o cambiar sus datos usando su enlace personal.<br>\n<a href='/?submitBtn=prev'>Atrás</a><br>\n",
-		"fr": "Vous pouvez consulter ou modifier vos données à l'aide de votre lien personnel.<br>\n<a href='/?submitBtn=prev'>Précédent</a><br>\n",
-		"it": "Può rivedere o modificare i suoi dati usando il Suo link personale. <br>\n<a href='/?submitBtn=prev'>Indietro</a><br>\n",
-		"pl": "Dane można przejrzeć lub zmienić przy użyciu osobistego łącza.<br>\n<a href='/?submitBtn=prev'>Wstecz</a><br>\n",
+		"de": "Sie können Ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n",
+		"en": "You may review or change your data using your personal link. <br>\n",
+		"es": "Usted puede revisar o cambiar sus datos usando su enlace personal.<br>\n",
+		"fr": "Vous pouvez consulter ou modifier vos données à l'aide de votre lien personnel.<br>\n",
+		"it": "Può rivedere o modificare i suoi dati usando il Suo link personale. <br>\n",
+		"pl": "Dane można przejrzeć lub zmienić przy użyciu osobistego łącza.<br>\n",
+	},
+	"link_to_previous_page": {
+		"de": "<a href='/?submitBtn=prev'>Zurück</a><br>\n",
+		"en": "<a href='/?submitBtn=prev'>Back</a><br>\n",
+		"es": "<a href='/?submitBtn=prev'>Atrás</a><br>\n",
+		"fr": "<a href='/?submitBtn=prev'>Précédent</a><br>\n",
+		"it": "<a href='/?submitBtn=prev'>Indietro</a><br>\n",
+		"pl": "<a href='/?submitBtn=prev'>Wstecz</a><br>\n",
 	},
 	"review_by_permalink": {
 		"de": `

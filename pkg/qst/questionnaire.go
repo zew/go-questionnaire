@@ -1012,7 +1012,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	page := q.Pages[pageIdx]
 
 	kv := q.DynamicPageValues()
-	err := q.DynamicPages()
+	err := q.DynamicPages(pageIdx)
 	if err != nil {
 		err = fmt.Errorf("dyn page creation in PageHTML() q: %w", err)
 		return err.Error(), err
@@ -2031,10 +2031,11 @@ func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) {
 //
 // We have to do a similar thing in PageHTML()
 // because conditional values in other forms may have changed
-func (q *QuestionnaireT) DynamicPages() error {
+func (q *QuestionnaireT) DynamicPages(onlyThisIndex int) error {
 
 	dynPagesCreated := false
-	for i1 := 0; i1 < len(q.Pages); i1++ {
+
+	singlePage := func(i1 int) error {
 		// dynamic page creation
 		if q.Pages[i1].GeneratorFuncName != "" {
 			err := funcPGs[q.Pages[i1].GeneratorFuncName](q, q.Pages[i1])
@@ -2051,7 +2052,23 @@ func (q *QuestionnaireT) DynamicPages() error {
 			}
 			// log.Printf("dyn page#%02v - generator %q created %v groups", i1, q.Pages[i1].GeneratorFuncName, len(q.Pages[i1].Groups))
 		}
+		return nil
 	}
+
+	if onlyThisIndex > -1 {
+		err := singlePage(onlyThisIndex)
+		if err != nil {
+			return err
+		}
+	} else {
+		for i1 := 0; i1 < len(q.Pages); i1++ {
+			err := singlePage(i1)
+			if err != nil {
+				return err
+			}
+		}
+	}
+
 	if dynPagesCreated {
 		// again
 		q.Hyphenize()

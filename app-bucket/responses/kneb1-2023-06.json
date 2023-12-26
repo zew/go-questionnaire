@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "67afb813dfcc98ddf59ec2d52cb827d787bc7b6852ac077db8ae0ceb9552474c",
+ 	"md_5": "e5276c56e32af66320c18e74adc6c7fb814baa8599ac464056a4f6382d4fa2ff",
  	"lang_codes": [
  		"de"
  	],
@@ -9229,6 +9229,475 @@
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "kneb_t1a",
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tLandwirtin Blau möchte für die Ernte im nächsten Jahr eine Anbaufläche \n\t\t\t\t\t\tvon 50\u0026nbsp;Hektar nutzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil der zweiten Getreidesorte von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihre prognostizierte Ernte in den besten 5 von 100\u0026nbsp;Fällen?\t\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qc24_return",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"max": 80000,
+ 							"suffix": {
+ 								"de": "Tonnen",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4,
+ 							"validator": "kneb_qc24"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eC25.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tLandwirt Lila kann für die nächste Ernte 80\u0026nbsp;Hektar bestellen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er im nächsten Jahr ca. 27.400\u0026nbsp;Tonnen Ernte einfahren möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Getreidesorte\u0026nbsp;2 sollte seine Anbaufläche mindestens haben?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eC25.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "0% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "0pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "10% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "10pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "20% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "20pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "30% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "30pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "40% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "40pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "50% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "50pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "60% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "60pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "70% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "70pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_share",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "80% Sorte\u0026nbsp;2",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "kneb_qc25",
+ 							"value_radio": "80pct",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eC26.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tLandwirtin Gelb möchte im nächsten Jahr eine Ernte von ca. 16.100\u0026nbsp;Tonnen einfahren. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 70% in Getreidesorte\u0026nbsp;2 auszusähen.\n\n\t\t\t\t\t\tWie groß muss ihre Anbaufläche sein, \n\t\t\t\t\t\tdamit ihr dies im Durchschnitt gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eC26.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qc26_area",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Hektar",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4,
+ 							"validator": "kneb_qc26"
+ 						},
+ 						{
+ 							"name": "knebVisiblePrev",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navigation_condition": "kneb_t1b",
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\tQuiz für Finanz-Frame - @kneb: Bitte erst das Quiz für neu\u0026shy;tral durchtesten.\n\t\t\t\t\t\tDie Zahlen in den Aufgaben sollten bitte identisch sein,\n\t\t\t\t\t\tund sich nur von in der Einheit un\u0026shy;terscheiden: \n\t\t\t\t\t\tHektar/Tonnen vs. Euro/Euro\n\t\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMüssen das wirklich andere Zahlen als beim Weizen sein?\u003cbr\u003e\n\t\t\t\t\t\tRe\u0026shy;du\u0026shy;ziert das nicht sogar die Vergleichbarkeit der Frames?\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100 Fällen?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qc24_ff_return",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"max": 80000,
+ 							"suffix": {
+ 								"de": "€",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_24",
+ 				"en": "PageLabel_24"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306simtool1"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -12291,18 +12760,6 @@
  					}
  				}
  			]
- 		},
- 		{
- 			"label": {
- 				"de": "Seitentitel_23",
- 				"en": "PageLabel_23"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306simtool1"
  		},
  		{
  			"label": {
@@ -20138,7 +20595,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg32"
+ 								"pageID": "pg34"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -23785,7 +24242,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "40",
+ 							"response": "42",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

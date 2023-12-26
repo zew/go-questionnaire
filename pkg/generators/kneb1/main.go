@@ -1956,7 +1956,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page chart introduction 2
 	// page guided tour dyn
 	{
 		page := q.AddPage()
@@ -1967,6 +1966,309 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.GeneratorFuncName = "kneb202306simtool0"
+	}
+
+	//
+	// page 7.3. Quiz zum Verständnis des Tools/ Funktionsweise
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Quiz",
+			"en": "todo",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.NavigationCondition = "kneb_t1a"
+
+		page.WidthMax("48rem")
+
+		// gr 0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Landwirtin Blau möchte für die Ernte im nächsten Jahr eine Anbaufläche 
+						von 50&nbsp;Hektar nutzen. 
+						
+						Sie wählt einen Anteil der zweiten Getreidesorte von 60%.
+
+						Wie hoch ist ihre prognostizierte Ernte in den besten 5 von 100&nbsp;Fällen?	
+					`,
+					"en": `todo`,
+				}.OutlineHid("C24.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "qc24_return"
+				inp.Validator = "kneb_qc24"
+				inp.Min = 0
+				// 20.900 Tonnen
+				inp.Max = 80 * 1000
+				inp.MaxChars = 6
+				inp.Suffix = trl.S{
+					"de": `Tonnen`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 4
+			}
+
+		}
+
+		// gr 1
+		{
+
+			gr := page.AddGroup()
+			gr.Cols = 6
+			var radioValues = []string{
+				"0pct",
+				"10pct",
+				"20pct",
+				"30pct",
+				"40pct",
+				"50pct",
+				"60pct",
+				"70pct",
+				"80pct",
+			}
+			var labels = []trl.S{
+				{
+					"de": "0% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "10% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "20% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "30% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "40% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "50% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "60% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "70% Sorte&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "80% Sorte&nbsp;2",
+					"en": "todo",
+				},
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Landwirt Lila kann für die nächste Ernte 80&nbsp;Hektar bestellen. 
+						
+						Wenn er im nächsten Jahr ca. 27.400&nbsp;Tonnen Ernte einfahren möchte (im Durchschnitt), 
+						welchen Anteil an Getreidesorte&nbsp;2 sollte seine Anbaufläche mindestens haben?
+						<br>
+						<br>
+					`,
+					"en": `todo`,
+				}.OutlineHid("C25.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qc24_share"
+				rad.Validator = "kneb_qc25"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = gr.Cols / 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+				rad.ControlFirst()
+			}
+
+		}
+
+		// gr 2
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3
+			gr.BottomVSpacers = 3
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Landwirtin Gelb möchte im nächsten Jahr eine Ernte von ca. 16.100&nbsp;Tonnen einfahren. 
+						
+						Sie ist bereit einen Anteil von 70% in Getreidesorte&nbsp;2 auszusähen.
+
+						Wie groß muss ihre Anbaufläche sein, 
+						damit ihr dies im Durchschnitt gelingen kann?
+					
+					`,
+					"en": `todo`,
+				}.OutlineHid("C26.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "qc26_area"
+				inp.Validator = "kneb_qc26"
+				inp.Min = 0
+				// 40 Hektar
+				inp.Max = 200
+				inp.MaxChars = 6
+				inp.Suffix = trl.S{
+					"de": `Hektar`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 4
+			}
+
+			//
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebVisiblePrev" // js filename
+			}
+
+		}
+
+	}
+
+	//
+	// page 7.3. Quiz zum Verständnis des Tools/ Funktionsweise
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Quiz",
+			"en": "todo",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.NavigationCondition = "kneb_t1b"
+
+		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Quiz für Finanz-Frame - @kneb: Bitte erst das Quiz für neutral durchtesten.
+						Die Zahlen in den Aufgaben sollten bitte identisch sein,
+						und sich nur von in der Einheit unterscheiden: 
+						Hektar/Tonnen vs. Euro/Euro
+					`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		// gr 0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Müssen das wirklich andere Zahlen als beim Weizen sein?<br>
+						Reduziert das nicht sogar die Vergleichbarkeit der Frames?<br><br>
+
+						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
+						einen monatlichen Sparbetrag von 250&nbsp;Euro anlegen. 
+						
+						Sie wählt einen Aktienanteil von 60%.
+
+						Wie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100 Fällen?
+					`,
+					"en": `todo`,
+				}.OutlineHid("C24.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "qc24_ff_return"
+				// inp.Validator = "kneb_ff_qc24"
+				inp.Min = 0
+				// 20.900 Tonnen
+				// 104.700 Euro
+				inp.Max = 80 * 1000
+				inp.MaxChars = 6
+				inp.Suffix = trl.S{
+					"de": `€`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 4
+			}
+
+		}
+
+	}
+
+	// page chart 1
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306simtool1"
 	}
 
 	// page x+0
@@ -2062,12 +2364,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
-	}
-
-	// page chart 1
-	{
-		page := q.AddPage()
-		page.GeneratorFuncName = "kneb202306simtool1"
 	}
 
 	// page x+0

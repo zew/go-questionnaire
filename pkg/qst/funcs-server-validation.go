@@ -491,6 +491,37 @@ func init() {
 		return fmt.Errorf(s)
 	}
 
+	validators["kneb_qc24"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response != "" && inp.Response != "20900" {
+			return errors.New(`Ungefähr 20.000 Tonnen`)
+		}
+		if inp.Response != "" && inp.Response != "20900" {
+			return errors.New(`Wert sollte im Bereich von 20.000 Tonnen liegen. 
+			Gehen Sie eine Seite zurück und probieren Sie es aus.`)
+		}
+		return nil
+	}
+	validators["kneb_qc25"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response != "" && inp.Response != "40pct" {
+			return errors.New(`Zwischen 0% und 80%`)
+		}
+		if inp.Response != "" && inp.Response != "40pct" {
+			return errors.New(`Wert sollte zwischen 10% und 80% liegen. 
+			Gehen Sie eine Seite zurück und probieren Sie es aus.`)
+		}
+		return nil
+	}
+	validators["kneb_qc26"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response != "" && inp.Response != "40" {
+			return errors.New(`Zwischen&nbsp;20&nbsp;und&nbsp;140&nbsp;Hektar`)
+		}
+		if inp.Response != "" && inp.Response != "40" {
+			return errors.New(`Wert sollte zwischen 20 und 140&nbsp;Hektar liegen. 
+			Gehen Sie eine Seite zurück und probieren Sie es aus.`)
+		}
+		return nil
+	}
+
 }
 
 // ConsolidateRadioErrors removes repeating error messages from radio inputs
@@ -643,7 +674,8 @@ func (ef ErrorForward) Error() string {
 }
 
 // MarkDownPath returns the path to redirect to;
-//   it should be renamed - since it might also contain absolute URLs
+//
+//	it should be renamed - since it might also contain absolute URLs
 func (ef ErrorForward) MarkDownPath() string {
 	return ef.markDownPath
 }

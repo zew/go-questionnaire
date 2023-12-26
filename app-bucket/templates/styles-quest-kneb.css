@@ -29,3 +29,14 @@ button[value=prev] {
     100% { opacity: 1; }
 }
   
+
+
+.popup-invalid-content-grid-item {
+    bottom:  0.09rem;
+    bottom: -1.09rem;
+  }
+  
+  
+  .pg21-grp01      .popup-invalid-content-grid-item {
+    bottom:  0.49rem;
+  }

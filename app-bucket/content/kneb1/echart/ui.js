@@ -214,6 +214,6 @@ window.addEventListener('load', pageLoaded, false);
 
 
 
-// console.log(`common.js loaded`)
+// console.log(`ui.js for echart loaded`)
 
 

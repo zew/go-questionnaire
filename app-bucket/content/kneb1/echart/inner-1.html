@@ -353,6 +353,7 @@
     return `${s} T`;
   }
 
+
   function knebelFormat(dbl, nbsp=true){
       dbl = Math.round(dbl/100)*100
       dbl = `${dbl}`  // to string
@@ -365,12 +366,29 @@
       return dbl
   }
 
+  // the three fields for permanent storage of parameters in the database
+  //   come in two distinct instances, separated by "_0" and "_1"
+  const getBackgroundField = core => {
+    const nameInstance0 = `${core}_0`;
+    const el0 = document.getElementById(nameInstance0);
+    if (el0) {
+      return el0
+    }
+    const nameInstance1 = `${core}_1`;
+    const el1 = document.getElementById(nameInstance1);
+    if (el1) {
+      return el1
+    }
+
+    throw `${core}_0 nor ${core}_1 do exist` ; 
+  };
 
   // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
   // init
   var sb = 100.0; // sparbetrag - defined in echart-config.mjs
   var sbInp   = document.getElementById("sparbetrag");
-  var sbInpBG = document.getElementById("sparbetrag_bg");
+  // var sbInpBG = document.getElementById("sparbetrag_bg");
+  var sbInpBG = getBackgroundField("sparbetrag_bg");
   if (sbInpBG && sbInpBG.value !== "") {
       sb = parseInt(sbInpBG.value);
   }
@@ -378,8 +396,10 @@
       sbInp.value = sb;
   }
 
-  var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
-  var riskyBG  = document.getElementById("share_risky_bg");
+  // var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
+  var safeBG   = getBackgroundField("share_safe_bg"); // defined in echart-config.mjs
+  // var riskyBG  = document.getElementById("share_risky_bg");
+  var riskyBG  = getBackgroundField("share_risky_bg");
   if (safeBG && safeBG.value != "" ) {
   } else if (safeBG && safeBG.value === "" ) {
       safeBG.value = 50

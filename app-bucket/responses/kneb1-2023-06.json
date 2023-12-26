@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c80823d92595e8a8fdb5e39950469298e3651f6c46429d01124866538a837330",
+ 	"md_5": "67afb813dfcc98ddf59ec2d52cb827d787bc7b6852ac077db8ae0ceb9552474c",
  	"lang_codes": [
  		"de"
  	],
@@ -9218,7 +9218,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306simtool"
+ 			"generator_func_name": "kneb202306simtool0"
  		},
  		{
  			"label": {
@@ -12291,6 +12291,18 @@
  					}
  				}
  			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_23",
+ 				"en": "PageLabel_23"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306simtool1"
  		},
  		{
  			"label": {
@@ -15549,7 +15561,7 @@
  							"type": "dyn-textblock",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "KnebFurther"
+ 							"dynamic_func": "knebSlightlyDistinctLabel"
  						}
  					]
  				},
@@ -20126,7 +20138,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg31"
+ 								"pageID": "pg32"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -23486,6 +23498,12 @@
  								"en": "\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "ResponseStatistics"
  						}
  					],
  					"style": {
@@ -23512,7 +23530,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eZ1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAls Dankeschön bieten wir Ihnen die Möglichkeit, \n\t\t\t\t\t\teine dieser drei Quellen  kostenlos herun\u0026shy;terzuladen.\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003eZ1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAls Dankeschön bieten wir Ihnen die Möglichkeit, \n\t\t\t\t\t\teine dieser drei Quellen  kostenlos herun\u0026shy;terzuladen.\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(Download Link auf der nächsten Seite)\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003cb\u003eZ1.\u003c/b\u003e \u0026nbsp; todo"
  							},
  							"col_span": 3,
@@ -23721,12 +23739,6 @@
  							"type": "textarea",
  							"max_chars": 300,
  							"col_span_control": 1
- 						},
- 						{
- 							"type": "dyn-textblock",
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "ResponseStatistics"
  						}
  					],
  					"style": {
@@ -23773,7 +23785,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "39",
+ 							"response": "40",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23849,7 +23861,7 @@
  							"type": "dyn-textblock",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "ResponseStatistics"
+ 							"dynamic_func": "knebsDownloadURL"
  						},
  						{
  							"type": "dyn-textblock",

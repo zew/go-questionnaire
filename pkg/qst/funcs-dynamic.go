@@ -27,7 +27,8 @@ var dynFuncs = map[string]dynFuncT{
 	"PatLogos":                       PatLogos,
 	"RenderStaticContent":            RenderStaticContent,
 	"ErrorProxy":                     ErrorProxy,
-	"KnebFurther":                    KnebFurther,
+	"knebSlightlyDistinctLabel":      knebSlightlyDistinctLabel,
+	"knebsDownloadURL":               knebDownloadURL,
 }
 
 func isOther(inpName string) bool {
@@ -55,6 +56,10 @@ var skipInputNames = map[string]map[string]bool{
 
 		// 2021-11
 		"fmr_comment": true,
+
+		// 2023-12 - kneb
+		"qz1_download": true,
+		"qz2_comment":  true,
 	},
 }
 
@@ -86,8 +91,8 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 					continue
 				}
 
-				// checkboxes on submit are set to
-				// "<input type='hidden' value='0'...
+				// checkboxes are set to '0' on submit
+				//    <input type='hidden' value='0'...
 
 				// textareas are considered mandatory
 				// unless configured in skipInputNames[]
@@ -305,13 +310,36 @@ func ErrorProxy(q *QuestionnaireT, inp *inputT, paramSet string) (string, error)
 	return "", nil
 }
 
-// knebFurther yields distinct labels
-func KnebFurther(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+// knebSlightlyDistinctLabel yields distinct labels depending on treatment
+func knebSlightlyDistinctLabel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	if q.UserIDInt()%2 == 0 {
 		return `Wie motiviert sind Sie, sich        mit dem Thema „Sparen und investieren“ zu befassen?`, nil
 	} else {
 		return `Wie motiviert sind Sie, sich weiter mit dem Thema „Sparen und investieren“ zu befassen?`, nil
 	}
+
+}
+
+// Shows different URL, depending on previous answer
+func knebDownloadURL(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+
+	urls := map[string]string{
+		"weber":              "https://www.arero.de/fileadmin/user_upload/07_downloads/genial_einfach_investieren_ebook.pdf",
+		"zewexpertise":       "https://ftp.zew.de/pub/zew-docs/ZEWKurzexpertisen/ZEW_Kurzexpertise2303.pdf",
+		"verbraucherzentral": "https://www.verbraucherzentrale.de/alles-zur-geldanlage-das-muessen-sie-dazu-wissen-18777",
+	}
+
+	inpSrc := q.ByName("qz1_download")
+	if inpSrc == nil {
+		return ``, nil
+		// return `Ihr Download wurde nicht gefunden.`, nil
+	}
+	if inpSrc.Response == "" || inpSrc.Response == "0" || inpSrc.Response == "nothanks" {
+		return ``, nil
+		// return `no thank you - or no selection at all.`, nil
+	}
+
+	return fmt.Sprintf(`<a target='blank' href=%v>Ihr Dankeschön-Download<a>`, urls[inpSrc.Response]), nil
 
 }

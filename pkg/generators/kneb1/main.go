@@ -1963,10 +1963,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.GeneratorFuncName = "kneb202306guidedtour"
 	}
 
-	// page chart dyn
+	// page chart 0
 	{
 		page := q.AddPage()
-		page.GeneratorFuncName = "kneb202306simtool"
+		page.GeneratorFuncName = "kneb202306simtool0"
 	}
 
 	// page x+0
@@ -2062,6 +2062,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
+	}
+
+	// page chart 1
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306simtool1"
 	}
 
 	// page x+0
@@ -2319,7 +2325,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "KnebFurther"
+				inp.DynamicFunc = "knebSlightlyDistinctLabel"
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -3307,6 +3313,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 				inp.ColSpanLabel = 1
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "ResponseStatistics"
+				inp.ColSpan = 1
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+
 		}
 
 		// gr1
@@ -3321,12 +3337,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"nothanks",
 			}
 
-			/*
-				https://www.arero.de/fileadmin/user_upload/07_downloads/genial_einfach_investieren_ebook.pdf
-				https://ftp.zew.de/pub/zew-docs/ZEWKurzexpertisen/ZEW_Kurzexpertise2303.pdf
-				https://www.verbraucherzentrale.de/alles-zur-geldanlage-das-muessen-sie-dazu-wissen-18777
-
-			*/
+			// knebDownloadURL
 			var labels = []trl.S{
 				{
 					"de": `Das E-Book „Einfach Genial investieren“ von Prof. Martin Weber `,
@@ -3352,7 +3363,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": `
 						Als Dankeschön bieten wir Ihnen die Möglichkeit, 
 						eine dieser drei Quellen  kostenlos herunterzuladen.
-					
+
+						<small>
+						(Download Link auf der nächsten Seite)
+						</small>
 					`,
 					"en": `todo`,
 				}.OutlineHid("Z1.")
@@ -3408,15 +3422,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 300
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "ResponseStatistics"
-				inp.ColSpan = 1
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
 			}
 
 		}
@@ -3485,6 +3490,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.ColSpanLabel = 1
 				}
 			*/
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "knebsDownloadURL"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
 
 			{
 				inp := gr.AddInput()

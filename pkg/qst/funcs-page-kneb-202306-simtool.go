@@ -6,7 +6,17 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func kneb202306simtool(q *QuestionnaireT, page *pageT) error {
+func kneb202306simtool0(q *QuestionnaireT, page *pageT) error {
+	return kneb202306simtool(q, page, 0)
+}
+func kneb202306simtool1(q *QuestionnaireT, page *pageT) error {
+	return kneb202306simtool(q, page, 1)
+}
+
+// param iter is either 0 or 1
+// because we want two distinct instances of this page
+// with two distinct sets of stored params
+func kneb202306simtool(q *QuestionnaireT, page *pageT, iter int) error {
 
 	page.Groups = nil // dynamically recreate the groups
 
@@ -30,17 +40,17 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
-			inp.Name = "share_safe_bg"
+			inp.Name = fmt.Sprintf("share_safe_bg_%v", iter)
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
-			inp.Name = "share_risky_bg"
+			inp.Name = fmt.Sprintf("share_risky_bg_%v", iter)
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
-			inp.Name = "sparbetrag_bg"
+			inp.Name = fmt.Sprintf("sparbetrag_bg_%v", iter)
 		}
 	}
 

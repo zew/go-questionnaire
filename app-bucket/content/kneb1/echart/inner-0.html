@@ -195,8 +195,7 @@
 
 </style>
 
-<p id="headline">
-  Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?
+<p id="tool-headline">
 </p>
 
 <div class="panel-flex-container"  >
@@ -384,7 +383,7 @@
 
 
   function appendUnit(s) {
-    return `${s} T`;
+    return `${s} €`;
   }
 
 
@@ -400,17 +399,24 @@
       return dbl
   }
 
+  const toolHeadline = document.getElementById("tool-headline");
+  if (!toolHeadline) {
+     console.error(` tag  'tool-headline' not found`);
+  }
+
   // the three fields for permanent storage of parameters in the database
   //   come in two distinct instances, separated by "_0" and "_1"
   const getBackgroundField = core => {
     const nameInstance0 = `${core}_0`;
     const el0 = document.getElementById(nameInstance0);
     if (el0) {
+      toolHeadline.innerHTML = `Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?`;
       return el0
     }
     const nameInstance1 = `${core}_1`;
     const el1 = document.getElementById(nameInstance1);
     if (el1) {
+      toolHeadline.innerHTML = `Welche Werte würden Sie für dem Landwirt wählen?`;
       return el1
     }
 

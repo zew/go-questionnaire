@@ -161,7 +161,7 @@ func (s S) Outline(pref string) S {
 
 // OutlineHid prepends pref as comment - invisible
 func (s S) OutlineHid(pref string) S {
-	return s.Outline(pref)
+	// return s.Outline(pref)
 	ret := s
 	for key, val := range s {
 		ret[key] = fmt.Sprintf("<!-- %v -->%v", pref, val)

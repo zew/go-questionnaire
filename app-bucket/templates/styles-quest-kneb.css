@@ -9,6 +9,11 @@ nav .logo {
     display: none !important; 
 }
 
+ol.progress {
+    display: none;
+}
+
+
 /* no back button */
 button[value=prev] {
     display: none;
@@ -41,6 +46,8 @@ button[value=prev] {
     bottom:  0.49rem;
   }
   
-  .pg22-grp01      .popup-invalid-content-grid-item {
+  .pg22-grp02-inp01 .popup-invalid-content-grid-item,
+  .pg22-grp01-inp01 .popup-invalid-content-grid-item,
+  .pg22-grp01       .popup-invalid-content-grid-item {
     bottom:  0.49rem;
   }

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f9460bc7131b5e5e29a7a4df58363e349d613e9009e3e8a7711b891417e8bbab",
+ 	"md_5": "e9ffd4a2faade37f4a04377cb7861d2685529a76a28f60d304ad8725873953ff",
  	"lang_codes": [
  		"de"
  	],
@@ -113,8 +113,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eD1.\u003c/b\u003e \u0026nbsp; Sind Sie…",
- 								"en": "\u003cb\u003eD1.\u003c/b\u003e \u0026nbsp; What is your gender?"
+ 								"de": "\u003c!-- D1. --\u003eSind Sie…",
+ 								"en": "\u003c!-- D1. --\u003eWhat is your gender?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -217,8 +217,8 @@
  							"type": "dropdown",
  							"max_chars": 10,
  							"label": {
- 								"de": "\u003cb\u003eD2.\u003c/b\u003e \u0026nbsp; In welchem Jahr sind Sie geboren?",
- 								"en": "\u003cb\u003eD2.\u003c/b\u003e \u0026nbsp; Your year of birth?"
+ 								"de": "\u003c!-- D2. --\u003eIn welchem Jahr sind Sie geboren?",
+ 								"en": "\u003c!-- D2. --\u003eYour year of birth?"
  							},
  							"col_span": 6,
  							"col_span_label": 3,
@@ -554,8 +554,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eD3.\u003c/b\u003e \u0026nbsp; In welchem Bundesland wohnen Sie?",
- 								"en": "\u003cb\u003eD3.\u003c/b\u003e \u0026nbsp; Which German state you live in?"
+ 								"de": "\u003c!-- D3. --\u003eIn welchem Bundesland wohnen Sie?",
+ 								"en": "\u003c!-- D3. --\u003eWhich German state you live in?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -1065,8 +1065,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eD4.\u003c/b\u003e \u0026nbsp; Welchen höchs\u0026shy;ten allgemeinbildenden Schulabschluss haben Sie?",
- 								"en": "\u003cb\u003eD4.\u003c/b\u003e \u0026nbsp; Which is your highest degree?"
+ 								"de": "\u003c!-- D4. --\u003eWelchen höchs\u0026shy;ten allgemeinbildenden Schulabschluss haben Sie?",
+ 								"en": "\u003c!-- D4. --\u003eWhich is your highest degree?"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -1296,8 +1296,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eD5.\u003c/b\u003e \u0026nbsp; Welchen Familienstand haben Sie?",
- 								"en": "\u003cb\u003eD5.\u003c/b\u003e \u0026nbsp; What is your marital status?"
+ 								"de": "\u003c!-- D5. --\u003eWelchen Familienstand haben Sie?",
+ 								"en": "\u003c!-- D5. --\u003eWhat is your marital status?"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -1576,8 +1576,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eR1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003eR1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- R1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -2213,8 +2213,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eR2.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eR2.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- R2. --\u003eWoran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- R2. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -2283,8 +2283,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eR3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003eR3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -2920,8 +2920,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eR4.\u003c/b\u003e \u0026nbsp; Woran haben Sie gedacht, als Sie die Frage nach dem \u003ci\u003efinanziellen\u003c/i\u003e Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eR4.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- R4. --\u003eWoran haben Sie gedacht, als Sie die Frage nach dem \u003ci\u003efinanziellen\u003c/i\u003e Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- R4. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -2993,8 +2993,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eP1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t",
- 								"en": "\u003cb\u003eP1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- P1. --\u003e\n\t\t\t\t\tWie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t",
+ 								"en": "\u003c!-- P1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -6082,8 +6082,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eE1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
+ 								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -6719,8 +6719,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eP6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\n\t\t\t\t\t\tStellen Sie sich vor, Sie haben 2500\u0026nbsp;Euro in der Lotterie gewonnen\n\t\t\t\t\t\tund können dieses Geld in ein Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren.\n\n\t\t\t\t\t\tDie Chance, dass das Un\u0026shy;ter\u0026shy;neh\u0026shy;men erfolgreich ist, liegt bei 50 Pro\u0026shy;zent.\n\n\t\t\t\t\t\tIm Erfolgsfall verdoppelt sich Ihre Investition nach einem Jahr.\n\n\t\t\t\t\t\tBei Misserfolg verlieren Sie die Hälfte der investierten Summe.\n\n\t\t\t\t\t\tWelchen Anteil der 2500\u0026nbsp;Euro würden Sie in dieses Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eP6.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- P6. --\u003e\n\t\t\t\t\t\n\t\t\t\t\t\tStellen Sie sich vor, Sie haben 2500\u0026nbsp;Euro in der Lotterie gewonnen\n\t\t\t\t\t\tund können dieses Geld in ein Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren.\n\n\t\t\t\t\t\tDie Chance, dass das Un\u0026shy;ter\u0026shy;neh\u0026shy;men erfolgreich ist, liegt bei 50 Pro\u0026shy;zent.\n\n\t\t\t\t\t\tIm Erfolgsfall verdoppelt sich Ihre Investition nach einem Jahr.\n\n\t\t\t\t\t\tBei Misserfolg verlieren Sie die Hälfte der investierten Summe.\n\n\t\t\t\t\t\tWelchen Anteil der 2500\u0026nbsp;Euro würden Sie in dieses Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- P6. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -6783,8 +6783,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tInwiefern stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003csmall\u003e\n\t\t\t\tAnt\u0026shy;worten Sie auf der Skala von\n\t\t\t\t1: \"Stim\u0026shy;me über\u0026shy;haupt nicht zu\"\n\t\t\t\tbis\n\t\t\t\t7: \"Stim\u0026shy;me voll und ganz zu\" .\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Ich spare genug für die Rente.\n\n\t\t\t",
- 								"en": "\u003cb\u003eV.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
+ 								"de": "\u003c!-- V. --\u003e\n\t\t\t\tInwiefern stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003csmall\u003e\n\t\t\t\tAnt\u0026shy;worten Sie auf der Skala von\n\t\t\t\t1: \"Stim\u0026shy;me über\u0026shy;haupt nicht zu\"\n\t\t\t\tbis\n\t\t\t\t7: \"Stim\u0026shy;me voll und ganz zu\" .\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; Ich spare genug für die Rente.\n\n\t\t\t",
+ 								"en": "\u003c!-- V. --\u003e\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e\u0026nbsp; todo.\n\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -8470,8 +8470,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto.\n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst,\n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto.\n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\n\t\t\t\t",
- 								"en": "\u003cb\u003eFL1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- FL1. --\u003e\n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto.\n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst,\n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto.\n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\n\t\t\t\t",
+ 								"en": "\u003c!-- FL1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -8707,8 +8707,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAngenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr\n\t\t\t\t\tund die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate beträgt 2% pro Jahr.\n\t\t\t\t\tWas glauben Sie:\n\t\t\t\t\tWerden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel,\n\t\t\t\t\tmehr oder weniger als heute kaufen können?\n\t\t\t\t",
- 								"en": "\u003cb\u003eFL2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- FL2. --\u003e\n\t\t\t\t\tAngenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr\n\t\t\t\t\tund die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate beträgt 2% pro Jahr.\n\t\t\t\t\tWas glauben Sie:\n\t\t\t\t\tWerden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel,\n\t\t\t\t\tmehr oder weniger als heute kaufen können?\n\t\t\t\t",
+ 								"en": "\u003c!-- FL2. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -8944,8 +8944,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tStim\u0026shy;men Sie der folgenden Aussage zu:\n\t\t\t\t\t„Die Anlage in Aktien eines einzelnen Un\u0026shy;ter\u0026shy;neh\u0026shy;mens ist weniger riskant\n\t\t\t\t\tals die Anlage in einem Fonds mit Aktien ähnlicher Un\u0026shy;ter\u0026shy;neh\u0026shy;men“?\n\t\t\t\t",
- 								"en": "\u003cb\u003eFL3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- FL3. --\u003e\n\t\t\t\t\tStim\u0026shy;men Sie der folgenden Aussage zu:\n\t\t\t\t\t„Die Anlage in Aktien eines einzelnen Un\u0026shy;ter\u0026shy;neh\u0026shy;mens ist weniger riskant\n\t\t\t\t\tals die Anlage in einem Fonds mit Aktien ähnlicher Un\u0026shy;ter\u0026shy;neh\u0026shy;men“?\n\t\t\t\t",
+ 								"en": "\u003c!-- FL3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 2,
  							"col_span_label": 1
@@ -9258,8 +9258,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tLandwirtin Blau möchte für die Ernte im nächsten Jahr eine Anbaufläche \n\t\t\t\t\t\tvon 50\u0026nbsp;Hektar nutzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil der zweiten Getreidesorte von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihre prognostizierte Ernte in den besten 5 von 100\u0026nbsp;Fällen?\t\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tLandwirtin Blau möchte für die Ernte im nächsten Jahr eine Anbaufläche \n\t\t\t\t\t\tvon 50\u0026nbsp;Hektar nutzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil der zweiten Getreidesorte von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihre prognostizierte Ernte in den besten 5 von 100\u0026nbsp;Fällen?\t\n\t\t\t\t\t",
+ 								"en": "\u003c!-- C24. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9287,8 +9287,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eC25.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tLandwirt Lila kann für die nächste Ernte 80\u0026nbsp;Hektar bestellen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er im nächsten Jahr ca. 27.400\u0026nbsp;Tonnen Ernte einfahren möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Getreidesorte\u0026nbsp;2 sollte seine Anbaufläche mindestens haben?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eC25.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- C25. --\u003e\n\t\t\t\t\t\tLandwirt Lila kann für die nächste Ernte 80\u0026nbsp;Hektar bestellen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er im nächsten Jahr ca. 27.400\u0026nbsp;Tonnen Ernte einfahren möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Getreidesorte\u0026nbsp;2 sollte seine Anbaufläche mindestens haben?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- C25. --\u003etodo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -9572,8 +9572,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eC26.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tLandwirtin Gelb möchte im nächsten Jahr eine Ernte von ca. 16.100\u0026nbsp;Tonnen einfahren. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 70% in Getreidesorte\u0026nbsp;2 auszusähen.\n\n\t\t\t\t\t\tWie groß muss ihre Anbaufläche sein, \n\t\t\t\t\t\tdamit ihr dies im Durchschnitt gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eC26.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tLandwirtin Gelb möchte im nächsten Jahr eine Ernte von ca. 16.100\u0026nbsp;Tonnen einfahren. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 70% in Getreidesorte\u0026nbsp;2 auszusähen.\n\n\t\t\t\t\t\tWie groß muss ihre Anbaufläche sein, \n\t\t\t\t\t\tdamit ihr dies im Durchschnitt gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\u003c!-- C26. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9659,8 +9659,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMüssen das wirklich andere Zahlen als beim Weizen sein?\u003cbr\u003e\n\t\t\t\t\t\tRe\u0026shy;du\u0026shy;ziert das nicht sogar die Vergleichbarkeit der Frames?\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100 Fällen?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eC24.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tMüssen das wirklich andere Zahlen als beim Weizen sein?\u003cbr\u003e\n\t\t\t\t\t\tRe\u0026shy;du\u0026shy;ziert das nicht sogar die Vergleichbarkeit der Frames?\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100 Fällen?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- C24. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9688,8 +9688,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eC25.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tHerr Lila kann im Monat 100 Euro zur Seite legen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Aktienanteil sollte sein Portfolio mindestens haben?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eC25.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- C25. --\u003e\n\t\t\t\t\t\tHerr Lila kann im Monat 100 Euro zur Seite legen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Aktienanteil sollte sein Portfolio mindestens haben?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- C25. --\u003etodo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -9973,8 +9973,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eC26.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 110.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie hoch muss ihre monatliche Sparrate sein, damit ihr dies im Durchschnitt gelingen kann?\n\t\t\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eC26.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 110.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie hoch muss ihre monatliche Sparrate sein, damit ihr dies im Durchschnitt gelingen kann?\n\t\t\n\t\t\t\t\t",
+ 								"en": "\u003c!-- C26. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -10070,8 +10070,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; Ich bin mit meiner Entscheidung zufrieden.",
- 								"en": "\u003cb\u003eF1.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F1. --\u003eIch bin mit meiner Entscheidung zufrieden.",
+ 								"en": "\u003c!-- F1. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -10675,8 +10675,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; Ich habe ein gutes Gefühl bei meiner Wahl.",
- 								"en": "\u003cb\u003eF2.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F2. --\u003eIch habe ein gutes Gefühl bei meiner Wahl.",
+ 								"en": "\u003c!-- F2. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -11280,8 +11280,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF3.\u003c/b\u003e \u0026nbsp; Ich empfinde neg\u0026shy;ative Emotionen wegen der getroffenen Wahl.",
- 								"en": "\u003cb\u003eF3.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F3. --\u003eIch empfinde neg\u0026shy;ative Emotionen wegen der getroffenen Wahl.",
+ 								"en": "\u003c!-- F3. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -11885,8 +11885,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF4.\u003c/b\u003e \u0026nbsp; Ob es nun die beste Wahl ist oder nicht, ich fühle mich gut mit meiner Entscheidung.",
- 								"en": "\u003cb\u003eF4.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F4. --\u003eOb es nun die beste Wahl ist oder nicht, ich fühle mich gut mit meiner Entscheidung.",
+ 								"en": "\u003c!-- F4. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -12490,8 +12490,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF5.\u003c/b\u003e \u0026nbsp; Ich bin si\u0026shy;cher, dass meine Wahl die beste war, die ich hätte treffen können.",
- 								"en": "\u003cb\u003eF5.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F5. --\u003eIch bin si\u0026shy;cher, dass meine Wahl die beste war, die ich hätte treffen können.",
+ 								"en": "\u003c!-- F5. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -13142,8 +13142,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF6.\u003c/b\u003e \u0026nbsp; Die graphische Darstellung ist verständlich.",
- 								"en": "\u003cb\u003eF6.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F6. --\u003eDie graphische Darstellung ist verständlich.",
+ 								"en": "\u003c!-- F6. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -13747,8 +13747,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF7.\u003c/b\u003e \u0026nbsp; Die graphische Darstellung ist hilfreich.",
- 								"en": "\u003cb\u003eF7.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F7. --\u003eDie graphische Darstellung ist hilfreich.",
+ 								"en": "\u003c!-- F7. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -14352,8 +14352,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF8.\u003c/b\u003e \u0026nbsp; Die graphische Darstellung ist kompliziert.",
- 								"en": "\u003cb\u003eF8.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F8. --\u003eDie graphische Darstellung ist kompliziert.",
+ 								"en": "\u003c!-- F8. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -14957,8 +14957,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF9.\u003c/b\u003e \u0026nbsp; Wie in\u0026shy;for\u0026shy;miert fühlen Sie sich über das gezeigte Szenario?",
- 								"en": "\u003cb\u003eF9.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F9. --\u003eWie in\u0026shy;for\u0026shy;miert fühlen Sie sich über das gezeigte Szenario?",
+ 								"en": "\u003c!-- F9. --\u003etodo"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -15562,8 +15562,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eF10.\u003c/b\u003e \u0026nbsp; Haben Sie weitere Anmerkungen zu der Darstellung \u003cbr\u003e oder dem Tool im Allgemeinen?",
- 								"en": "\u003cb\u003eF10.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- F10. --\u003eHaben Sie weitere Anmerkungen zu der Darstellung \u003cbr\u003e oder dem Tool im Allgemeinen?",
+ 								"en": "\u003c!-- F10. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -15636,8 +15636,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eA1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWir, die Wissenschaftler hinter dieser Umfrage, \n\t\t\t\t\t\tmöchten gerne wissen, \n\t\t\t\t\t\twie Sie den Umgang mit dem Tool be\u0026shy;wer\u0026shy;ten? \n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Vorschläge haben Sie, \n\t\t\t\t\t\twie das Tool für zukünftige Nutzerinnen und Nutzer ver\u0026shy;bes\u0026shy;sert werden kann?\n\n\t\t\t\t\t\tWorauf sollten zukünftige Nutzerinnen und Nutzer besonders achten?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eA1.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- A1. --\u003e\n\t\t\t\t\t\tWir, die Wissenschaftler hinter dieser Umfrage, \n\t\t\t\t\t\tmöchten gerne wissen, \n\t\t\t\t\t\twie Sie den Umgang mit dem Tool be\u0026shy;wer\u0026shy;ten? \n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Vorschläge haben Sie, \n\t\t\t\t\t\twie das Tool für zukünftige Nutzerinnen und Nutzer ver\u0026shy;bes\u0026shy;sert werden kann?\n\n\t\t\t\t\t\tWorauf sollten zukünftige Nutzerinnen und Nutzer besonders achten?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- A1. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -15710,8 +15710,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eE2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eE2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\n\t\t\t\t\t",
+ 								"en": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -16986,8 +16986,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL4.\u003c/b\u003e \u0026nbsp; Was ist die Hauptfunktion des Aktien\u0026shy;marktes?",
- 								"en": "\u003cb\u003eFL4.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- FL4. --\u003eWas ist die Hauptfunktion des Aktien\u0026shy;marktes?",
+ 								"en": "\u003c!-- FL4. --\u003etodo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -17207,8 +17207,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL5.\u003c/b\u003e \u0026nbsp; Welche der folgenden Anlageformen zeigt im Laufe der Zeit die höchs\u0026shy;ten Ertragsschwankungen?",
- 								"en": "\u003cb\u003eFL5.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- FL5. --\u003eWelche der folgenden Anlageformen zeigt im Laufe der Zeit die höchs\u0026shy;ten Ertragsschwankungen?",
+ 								"en": "\u003c!-- FL5. --\u003etodo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -17428,8 +17428,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFL6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10%-ige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t",
- 								"en": "\u003cb\u003eFL6.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10%-ige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t",
+ 								"en": "\u003c!-- FL6. --\u003etodo"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -17594,8 +17594,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eX1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: trifft ganz und gar nicht zu \n\t\t\t\t\tund der Wert\u0026nbsp;10: trifft voll und ganz zu.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003eX1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: trifft ganz und gar nicht zu \n\t\t\t\t\tund der Wert\u0026nbsp;10: trifft voll und ganz zu.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- X1. --\u003e\n\t\t\t\ttodo\n\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -18199,8 +18199,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eX2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIch habe Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen.\n\t\t\t",
- 								"en": "\u003cb\u003eX2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X2. --\u003e\n\t\t\t\tIch habe Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen.\n\t\t\t",
+ 								"en": "\u003c!-- X2. --\u003e\n\t\t\t\ttodo\n\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -18804,8 +18804,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eX3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tOhne meinen Berater würde ich nie am Aktien\u0026shy;markt teilnehmen.\n\t\t\t",
- 								"en": "\u003cb\u003eX3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X3. --\u003e\n\t\t\t\tOhne meinen Berater würde ich nie am Aktien\u0026shy;markt teilnehmen.\n\t\t\t",
+ 								"en": "\u003c!-- X3. --\u003e\n\t\t\t\ttodo\n\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -19409,8 +19409,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eX4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIch mache mir Sorgen über den Erfolg meiner finanziellen Entscheidungen.\n\t\t\t",
- 								"en": "\u003cb\u003eX4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X4. --\u003e\n\t\t\t\tIch mache mir Sorgen über den Erfolg meiner finanziellen Entscheidungen.\n\t\t\t",
+ 								"en": "\u003c!-- X4. --\u003e\n\t\t\t\ttodo\n\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -20178,8 +20178,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eB1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWann haben Sie sich das letzte Mal zum Thema Altersvorsorge beraten lassen?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eB1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- B1. --\u003e\n\t\t\t\t\t\tWann haben Sie sich das letzte Mal zum Thema Altersvorsorge beraten lassen?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- B1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -20423,8 +20423,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eB2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie oft sprechen Sie mit Ihrem Finanzberater oder Ihrer Finanzberaterin?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eB2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- B2. --\u003e\n\t\t\t\t\t\tWie oft sprechen Sie mit Ihrem Finanzberater oder Ihrer Finanzberaterin?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- B2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -20668,8 +20668,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eB3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie oft sprechen Sie mit Ihrer Familie oder Ihren Freunden über Finanzen?\n\t\t\t\t",
- 								"en": "\u003cb\u003eB3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- B3. --\u003e\n\t\t\t\t\tWie oft sprechen Sie mit Ihrer Familie oder Ihren Freunden über Finanzen?\n\t\t\t\t",
+ 								"en": "\u003c!-- B3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -21074,8 +21074,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eB5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWürden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?\n\t\t\t\t",
- 								"en": "\u003cb\u003eB5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- B5. --\u003e\n\t\t\t\t\tWürden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?\n\t\t\t\t",
+ 								"en": "\u003c!-- B5. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -21712,8 +21712,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eB6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWer könnte finanzielle Entscheidungen am besten für Sie treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003eB6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- B6. --\u003e\n\t\t\t\t\tWer könnte finanzielle Entscheidungen am besten für Sie treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- B6. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -22005,8 +22005,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eH1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWer ist in Ihrem Haushalt hauptsächlich für Folgendes zuständig?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eH1.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- H1. --\u003e\n\t\t\t\t\t\tWer ist in Ihrem Haushalt hauptsächlich für Folgendes zuständig?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- H1. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -22536,8 +22536,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eH2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\t\u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eH2.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\t\u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\u003c!-- H2. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -22853,8 +22853,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eH3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie hoch \u003ci style='font-size:110%'\u003eschätzen\u003c/i\u003e Sie,\n\t\t\t\t\t\tist das \u003ci style='font-size:110%'\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare \n\t\t\t\t\t\t\u003ci style='font-size:110%'\u003eNettoeinkommen Ihres Haushalts\u003c/i\u003e,\n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug\n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eH3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\tWie hoch \u003ci style='font-size:110%'\u003eschätzen\u003c/i\u003e Sie,\n\t\t\t\t\t\tist das \u003ci style='font-size:110%'\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare \n\t\t\t\t\t\t\u003ci style='font-size:110%'\u003eNettoeinkommen Ihres Haushalts\u003c/i\u003e,\n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug\n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 2,
  							"col_span_label": 1
@@ -23728,8 +23728,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eH4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im  Jahr \u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2022 --\u003e\n\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eH4.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im  Jahr \u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2022 --\u003e\n\n\t\t\t\t\t",
+ 								"en": "\u003c!-- H4. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -24316,8 +24316,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eZ1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAls Dankeschön bieten wir Ihnen die Möglichkeit, \n\t\t\t\t\t\teine dieser drei Quellen  kostenlos herun\u0026shy;terzuladen.\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(Download Link auf der nächsten Seite)\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eZ1.\u003c/b\u003e \u0026nbsp; todo"
+ 								"de": "\u003c!-- Z1. --\u003e\n\t\t\t\t\t\tAls Dankeschön bieten wir Ihnen die Möglichkeit, \n\t\t\t\t\t\teine dieser drei Quellen  kostenlos herun\u0026shy;terzuladen.\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(Download Link auf der nächsten Seite)\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- Z1. --\u003etodo"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -24515,8 +24515,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eZ2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tGibt es noch irgendetwas, was Sie uns zu diesem Fragebogen \n\t\t\t\t\t\toder Thema mitteilen möchten?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003eZ2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- Z2. --\u003e\n\t\t\t\t\t\tGibt es noch irgendetwas, was Sie uns zu diesem Fragebogen \n\t\t\t\t\t\toder Thema mitteilen möchten?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- Z2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						},

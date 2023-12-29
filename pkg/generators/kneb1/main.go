@@ -1533,29 +1533,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		/*
-			// gr 1
-			{
-				gr := page.AddGroup()
-				gr.Cols = 3
-				gr.BottomVSpacers = 3
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
-							Certainty equivalent experiment<br>
-							Siehe Menkhoff und Sakha (2016, 2017) Appendix A.3.<br>
-							todo
-						`,
-						"en": `todo`,
-					}.OutlineHid("P7.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-				}
-
-			}
-		*/
 	}
 
 	vorsorgeplanung8x7(&q, 0, 1)
@@ -1748,24 +1725,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	/*
-		// page 7-5
-		{
-
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
-			page.WidthMax("48rem")
-
-			howSicher(*qst.WrapPageT(page), "qfl3a_free", "FL3a.")
-
-		}
-	*/
-
-	/*
 		// page 7-7
 		{
 
@@ -1775,7 +1734,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "",
 			}
 			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
 			page.WidthMax("48rem")
 
 			howSicher(*qst.WrapPageT(page), "qfl4a_free", "FL4a.")
@@ -1783,45 +1741,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	*/
 
-	/*
-	 */
-
-	/*
-		// page 7-9
-		{
-
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
-			page.WidthMax("48rem")
-
-			howSicher(*qst.WrapPageT(page), "qfl5a_free", "FL5a.")
-		}
-	*/
-
-	/*
-		// page 7-11
-		{
-
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("42rem")
-			page.WidthMax("48rem")
-
-			howSicher(*qst.WrapPageT(page), "qfl6a_free", "FL6a.")
-
-		}
-	*/
-
 	//
+	// experiment sequence
 	//
 	// page chart introduction 1 neutral
 	{
@@ -2654,7 +2575,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.NavigationCondition = "kneb_t2b"
+		page.NavigationCondition = "kneb_t2a"
 
 		page.Label = trl.S{
 			"de": "Treatment: Giving advice",
@@ -3866,14 +3787,25 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					`,
 				}.OutlineHid("Z2.")
 				inp.ColSpanLabel = 1
+				inp.ColSpan = gr.Cols
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
 				inp.Name = "qz2_comment"
 				inp.MaxChars = 300
+				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "PermaLink"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
 			}
 
 		}

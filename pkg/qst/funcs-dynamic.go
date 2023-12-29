@@ -152,7 +152,8 @@ func LinkBack(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	return ret, nil
 }
 
-// PersonalLink is only a reminder, does not contain the personal link
+// PersonalLink is only a reminder, does not contain the personal link;
+// see PermaLink
 func PersonalLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	closed := !q.ClosingTime.IsZero()
 	ret := ""
@@ -166,7 +167,8 @@ func PersonalLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, erro
 	return ret, nil
 }
 
-// PermaLink returns the perma link
+// PermaLink returns the perma link;
+// only possible if the initial login was accomplished via direct login.
 func PermaLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	closed := !q.ClosingTime.IsZero()
 	ret := ""

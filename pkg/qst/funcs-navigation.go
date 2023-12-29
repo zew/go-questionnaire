@@ -22,7 +22,7 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"pds_ac2": pdsAssetClass2,
 	"pds_ac3": pdsAssetClass3,
 
-	"kneb_t1a":              knebTreatment1NeurtraVsFinance_A,
+	"kneb_t1a":              knebTreatment1NeutraVsFinance_A,
 	"kneb_t1b":              knebTreatment1NeurtraVsFinance_B,
 	"kneb_t2a":              knebTreatment2AdviceNoOrYes_A,
 	"kneb_t2b":              knebTreatment2AdviceNoOrYes_B,
@@ -128,14 +128,14 @@ func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 
 //
 //
-func knebTreatment1NeurtraVsFinance_A(q *QuestionnaireT, pageIdx int) bool {
+func knebTreatment1NeutraVsFinance_A(q *QuestionnaireT, pageIdx int) bool {
 	if q.Version()%2 == 0 {
 		return true
 	}
 	return false
 }
 func knebTreatment1NeurtraVsFinance_B(q *QuestionnaireT, pageIdx int) bool {
-	return !knebTreatment1NeurtraVsFinance_A(q, pageIdx)
+	return !knebTreatment1NeutraVsFinance_A(q, pageIdx)
 }
 
 // 1000,1001  => 500 =>  0 => false

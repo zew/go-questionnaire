@@ -244,7 +244,8 @@ If you have created your survey `myquest` you need to restart the application.
 
 * `v=123`- show q.Version - setting the version at login. Later requests have no effect.  
    `LoginWithoutID()` and `LoginByHash()` pass the value of this param on  
-   and store it into `LogintT.Attrs["version"]`
+   and store it into `LogintT.Attrs["version"]`;  
+   example `kneb1/main.go`
 
 * `show-version=true` - show q.Version
 

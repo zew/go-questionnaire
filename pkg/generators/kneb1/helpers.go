@@ -88,7 +88,7 @@ func twoAnswers(
 	{
 		inp := gr.AddInput()
 		inp.Type = "textblock"
-		inp.Label = lbl.Outline(outlineNumber)
+		inp.Label = lbl.OutlineHid(outlineNumber)
 		inp.ColSpan = gr.Cols
 		inp.ColSpanLabel = 1
 		inp.ColSpanControl = 0

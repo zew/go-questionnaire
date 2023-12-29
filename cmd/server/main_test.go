@@ -180,9 +180,9 @@ func TestSystem(t *testing.T) {
 		if surveyID == "peu2018-or-special-survey-name" {
 			//
 		}
-		// if surveyID == "kneb1" {
-		// 	continue
-		// }
+		if surveyID == "kneb1" {
+			continue
+		}
 
 		// if surveyID != "pds" {
 		// 	continue

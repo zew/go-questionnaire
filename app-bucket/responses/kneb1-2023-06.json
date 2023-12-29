@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9d87dc6bf0ae81acd4f38eb2bc1f53f9f0b1110c8b16cb5b39a1317c0970ed90",
+ 	"md_5": "5aba60f01dbdc2685cd4c692b7803b1f5567870995e332028b288f4623f093b5",
  	"lang_codes": [
  		"de"
  	],
@@ -24312,7 +24312,7 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"columns": 3,
  					"inputs": [
  						{

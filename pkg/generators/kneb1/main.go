@@ -1744,7 +1744,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	//
 	// experiment sequence
 	//
-	// page chart introduction 1 neutral
+	// page experiment introduction 1 neutral
 	{
 		page := q.AddPage()
 		page.NavigationCondition = "kneb_t1a"
@@ -1821,7 +1821,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page chart introduction 1 finance
+	// page experiment introduction 1 finance
 	{
 		page := q.AddPage()
 		page.NavigationCondition = "kneb_t1b"
@@ -1885,20 +1885,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page guided tour dyn
+	// page experiment guided tour dyn
 	{
 		page := q.AddPage()
 		page.GeneratorFuncName = "kneb202306guidedtour"
 	}
 
-	// page chart 0
+	// page experiment chart 0
 	{
 		page := q.AddPage()
 		page.GeneratorFuncName = "kneb202306simtool0"
 	}
 
 	//
-	// page 7.3. Quiz zum Verständnis des Tools/ Funktionsweise
+	// page quiz zum Verständnis des experiment
 	//  neutral frame - nf
 	{
 		page := q.AddPage()
@@ -2109,7 +2109,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// page 7.3. Quiz zum Verständnis des Tools/ Funktionsweise
+	// page quiz zum Verständnis des experiment
 	//  financial frame - ff
 	{
 		page := q.AddPage()
@@ -2348,7 +2348,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.GeneratorFuncName = "kneb202306simtool1"
 	}
 
-	// page x+0
+	//
+	// page experiment +1
 	{
 		page := q.AddPage()
 
@@ -2443,7 +2444,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page x+0
+	// page experiment +2
 	{
 		page := q.AddPage()
 
@@ -2571,7 +2572,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page x+1
+	// page experiment +3 - conditional
 	{
 		page := q.AddPage()
 
@@ -2631,7 +2632,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page x+2
+	// page experiment +4
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -2886,7 +2887,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// page x+3
+	// page experiment +5
 	erfahrungMitFinanzenSplit1(&q, 0, 0)
 	erfahrungMitFinanzenSplit2(&q, 0, 0)
 
@@ -3654,7 +3655,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page x+9
+	// page finish 1
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -3701,6 +3702,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr1
 		{
 			gr := page.AddGroup()
+			gr.BottomVSpacers = 2
 			// single column
 			gr.Cols = 3
 			var radioValues = []string{
@@ -3799,6 +3801,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 			}
 
+			//
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
@@ -3849,7 +3852,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// Report of results
+	// page finish 2
+	// report of results
 	{
 		page := q.AddPage()
 		page.NoNavigation = true

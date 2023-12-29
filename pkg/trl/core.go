@@ -347,26 +347,30 @@ var coreTranslations = Map{
 	},
 	"review_by_permalink": {
 		"de": `
-		<ul  style='margin-top: -1.2rem'>
-			<li>
+		<ul class="review-by-permalink>
+			<li class="review-by-permalink>
 			<!-- Bis zum Umfrage-Ende-->
-			Sie können den Fragebogen
+			Sie können den Fragebogen bis Ende der Umfrage
 			über folgenden Link erneut aufrufen: 
 			<a href='%v'>%v</a>.   
+			<!--
 			<br>
 			(Vielleicht wollen Sie sich diesen Link kopieren. Sie müssten sonst wieder von vorne beginnen.)
 			</li>
+			-->
 		</ul>			
 		`,
 		"en": `
-		<ul  style='margin-top: -1.2rem'>
-			<li>
+		<ul class="review-by-permalink>
+			<li class="review-by-permalink>
 			Until the end of the survey,
 			you can change your entries
 			using following link: 
 			<a href='%v'>%v</a>.   
+			<!--
 			<br>
 			(Maybe you want to copy this link)
+			-->
 			</li>
 		</ul>
 		`,

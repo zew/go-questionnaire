@@ -18,6 +18,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-stack/stack"
 	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
@@ -1893,6 +1894,10 @@ func (q *QuestionnaireT) Version() int {
 		} else if q.AssignVersion == "round-robin" {
 			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
 		} else if q.AssignVersion == "version-from-login-url" {
+			if false {
+				// debug - should be executed at questionnaire load time - and only once
+				log.Printf("  Version() init - stack %v", stack.Trace())
+			}
 			if val, ok := q.Attrs["version"]; ok {
 				log.Printf("version derived from url param 'v' via q.Attrs['version'] - %v", q.Attrs["version"])
 				q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax

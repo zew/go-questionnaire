@@ -242,6 +242,10 @@ If you have created your survey `myquest` you need to restart the application.
 
 * `page`=[0-9] - jump to page x
 
+* `v=123`- show q.Version - setting the version at login. Later requests have no effect.  
+   `LoginWithoutID()` and `LoginByHash()` pass the value of this param on  
+   and store it into `LogintT.Attrs["version"]`
+
 * `show-version=true` - show q.Version
 
 * `full-dynamic-content=true` - compute dynamic content for all pages   

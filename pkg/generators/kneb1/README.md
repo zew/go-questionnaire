@@ -1,19 +1,6 @@
-# Caroline Knebel Experiment - offen
-
-* Integration mit Panel-Anbieter - anonymes Login? Login über vorbereitete IDs?  
-  Wie verläuft die Rückmeldung für Erfolg/Misserfolg an denn Panelanbieter
-
-* Treatment is not yet coded;  
-  Wie werden die Treatment Gruppen festgelegt?  
-  Via Panelanbieter?  
-  Nach Sequenz (gerade ID => Gruppe 1, ungerade => 2)?
-
 * Radio-Werte sind immer 1...5 oder 1...10 -   
   `Weiß nicht` ist dann bspw. 9 und `keine Antwort` ist 10  
   Sonst Fehlergefahr
-
-* "Guided tour" vor Experiment - ist jetzt mit relativ unschönen Bildern aus Powerpoint.  
-  Aktualisierung, wenn das Experiment-Layout final ist.
 
 * Set `ah=30` and `ahV=25` in the debugging console, to change the chart
 
@@ -35,28 +22,8 @@
   Andererseits sollen sie nicht nach oben ausbrechen.  
   `Anlagehorizont` nicht in die Mitte, sondern mehr nach rechts? Bei 80%? 
 
-* Experiment does not yet work on Apple Browsers (Iphone, Mac)
 
-* Mobile phone:  
-	Layout des Experiments für Smartphones würde nicht-triviiale Umordnung erforden.  
-	a.) aufwändig
-	b.) Verfälschungen zwischen Smartphone-Teilnehmern und PC-Teilnehmern durch Anordnung
-	=> Idee: Keine Anpassung des Layouts für Smartphones  
-	=> Der Panelprovider sollte erzwingen, dass die Teilnehmer über einen Desktop-Computer (PC,Apple) antworten  
-
-## Test URLs
-
-pbu
-* <https://survey2.zew.de?u=9990&sid=kneb1&wid=2023-06&p=1&h=DNWNoIHHR8RIUiOq9quWU1V1TgHt2tLtv1xaP8nVjyk>
-* <https://survey2.zew.de?u=9991&sid=kneb1&wid=2023-06&p=1&h=MY1DwxojlLBrci7k8XubmI9aW4IPrTFj6AOiAsO5xMs>
-
-Knebel
-* <https://survey2.zew.de?u=9992&sid=kneb1&wid=2023-06&p=1&h=S1LMUHYI8fpY2fHsaUsjiCHdSyckr7vsDnzcUnZyc0c>
-* <https://survey2.zew.de?u=9993&sid=kneb1&wid=2023-06&p=1&h=06OApCzf6-CuvXgyXTDRfDZfJNOZ7TnSmpVSyctmtbM>
-
-
-
-## MSCI world returns and sigma
+# MSCI world returns and sigma
 
 <https://investingintheweb.com/blog/msci-world-index-historical-data/>
 

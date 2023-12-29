@@ -23,7 +23,7 @@ func kneb202306guidedtour(q *QuestionnaireT, page *pageT) error {
 	page.WidthMax("52rem")
 
 	// gr0
-	grIdx := q.UserIDInt() % 2
+	grIdx := q.Version() % 2
 	{
 		{
 			gr := page.AddGroup()

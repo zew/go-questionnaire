@@ -138,6 +138,11 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 							l.Attrs[pk] = pv
 						}
 
+						version := r.FormValue("v")
+						if version != "" {
+							l.Attrs["version"] = version
+						}
+
 						if sess.EffectiveStr("override_closure") == "true" {
 							sess.PutString("override_closure", "true")
 						}
@@ -185,6 +190,8 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	//
 	// set attributes from configured profiles
+	// &sid=fmt&p=1 => config.json -> fmt1
+	// &sid=fmt&p=2 => config.json -> fmt2
 	for key := range r.Form {
 		// same key - multiple values
 		// attrs=country:Sweden&attrs=height:176

@@ -55,7 +55,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, iter int) error {
 	}
 
 	// gr1
-	grIdx := q.UserIDInt() % 2
+	grIdx := q.Version() % 2
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1

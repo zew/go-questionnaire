@@ -36,7 +36,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 
 	q, ok, err := qst.FromSession(w, r)
 	if err != nil {
-		err = fmt.Errorf("Reading questionnaire from session caused error %w", err)
+		err = fmt.Errorf("reading questionnaire from session caused error %w", err)
 		return q, err
 	}
 	if ok {
@@ -69,8 +69,23 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 
 		// no file containing previous answers
 		// => adopt qBase
-		qBase.UserID = l.User
+
 		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
+
+		// adapting the base
+		qBase.UserID = l.User
+
+		// we need q.Attrs already below for the dynamic pages
+		//
+		// login attributes are copied to questionaire attributes
+		if qBase.Attrs == nil {
+			// q.Attrs might already contain previous values
+			qBase.Attrs = map[string]string{}
+		}
+		for k, v := range l.Attrs {
+			qBase.Attrs[k] = v
+		}
+		qBase.Version() // set version initially and forever
 
 		// dynamic pages based on login user ID
 		err = qBase.DynamicPages(-1)
@@ -319,14 +334,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Add login attributes to questionaire attributes
-	//    q.Attrs might already contain other values
-	if q.Attrs == nil {
-		q.Attrs = map[string]string{}
-	}
-	for k, v := range l.Attrs {
-		q.Attrs[k] = v
-	}
+	// 2023-12: copy of login.Attrs to q.Attrs was moved to loadQuestionnaire()
 
 	prevPage := q.PrevPage() // remember before
 

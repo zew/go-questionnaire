@@ -40,6 +40,7 @@ var exempted = map[string]interface{}{
 	"submit":    nil,
 	"mobile":    nil,
 	"lang_code": nil,
+	"v":         nil, // the version - if we want to set it via direct link, compare q.Version() and 'version-from-login-url'
 	// the hash itself
 	"h": nil,
 	// "attrs": nil, // user attributes at login time - must be hashed to prevent tampering
@@ -50,8 +51,10 @@ var exempted = map[string]interface{}{
 	// we dont use wrap.paramPersister, because its too broad
 }
 
-// userAttrs contains URL params going into LoginT.Attrs
-// upon login.
+// userAttrs contains URL params which we want to be saved into user attributes.
+// The are saved during login into
+// - qst.QuestionaireT.Attrs
+// - lgn.LoginT.Attrs
 // They serve as a property bag session.
 // Key is the short form - from the URL. Val is the long form to be saved as login attrs
 // LoginT methods Query(), LoginURL() and partly QuestPath() tie into this logic.
@@ -59,6 +62,7 @@ var userAttrs = map[string]string{
 	"sid": "survey_id",
 	"wid": "wave_id",
 	"p":   "profile", // user profile, replaces attrs
+	"v":   "version", // version set via URL
 	// "a":   "attrs",   // general purpose - can occur several times - key:value - or a profile id
 }
 
@@ -89,7 +93,7 @@ type LoginT struct {
 	Group    string            `json:"-"`     // Derived from email domain - or LDAP org
 	Provider string            `json:"-"`     // twitter, facebook, ... or hash, anonymous/direct, JSON, LDAP
 	Roles    map[string]string `json:"roles"` // i.e. admin: true, can only be set via JSON config; therefore safe
-	Attrs    map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, can be overridden by URL params, therefore unsafe.
+	Attrs    map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, a few keys can set via URL params, these are unsafe.
 
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
 	IsInitPassword bool   `json:"is_init_password"`   // Indicates authentication against PassInitial

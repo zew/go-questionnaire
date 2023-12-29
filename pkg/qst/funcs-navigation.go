@@ -129,7 +129,7 @@ func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 //
 //
 func knebTreatment1NeurtraVsFinance_A(q *QuestionnaireT, pageIdx int) bool {
-	if q.UserIDInt()%2 == 0 {
+	if q.Version()%2 == 0 {
 		return true
 	}
 	return false
@@ -141,7 +141,7 @@ func knebTreatment1NeurtraVsFinance_B(q *QuestionnaireT, pageIdx int) bool {
 // 1000,1001  => 500 =>  0 => false
 // 1002,1003, => 501 =>  1 => true
 func knebTreatment2AdviceNoOrYes_A(q *QuestionnaireT, pageIdx int) bool {
-	id := q.UserIDInt()
+	id := q.Version()
 	id = id / 2
 	if id%2 == 0 {
 		return false

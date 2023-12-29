@@ -575,8 +575,8 @@ type QuestionnaireT struct {
 	// tpl.SiteCore() yields a common *style* identifier
 	// for completely different questionnaires
 	VersionMax       int    `json:"version_max,omitempty"`    // total number of versions - usually permutations
-	AssignVersion    string `json:"assign_version,omitempty"` // default is UserID modulo - other value is "round-robin"
-	VersionEffective int    `json:"version_effective"`        // result of q.Version()
+	AssignVersion    string `json:"assign_version,omitempty"` // default is UserID modulo VerionMax - other value is "round-robin" based on in memory atomic counter
+	VersionEffective int    `json:"version_effective"`        // zero based, result of q.Version() - intended for read access - written on first call of q.Version() - can be reset with to -2
 
 	MaxGroups int `json:"max_groups,omitempty"` //  Max number of groups - a helper value - computed during questionnaire creation - previously used for shuffing of groups.
 
@@ -1847,7 +1847,8 @@ func (q *QuestionnaireT) KeysValues(cleanse bool, getRangeInfo bool) (keys, vals
 	return
 }
 
-// UserIDInt retrieves the userID as int
+// UserIDInt retrieves the userID as int.
+// For dynamic questionaires - use q.Version().
 func (q *QuestionnaireT) UserIDInt() int {
 
 	if q.UserID == "systemtest" {
@@ -1871,9 +1872,14 @@ func (q *QuestionnaireT) UserIDInt() int {
 
 var ctrLogin = ctr.New()
 
-// Version retrieves the questionnaire's version;
+// Version sets and returns the questionnaire's version;
 // default - version depends on user ID
-// 'round-robin' - version depends on login order
+// 'round-robin'            - version depends on login order
+// 'version-from-login-url' - version depends parameter v=[xx] during login
+//
+// Version() is idempotent - once it is set to greater zero, this value remains
+// Version() called first when a new QuestionaireT is loaded from a JSON base file.
+// Version() can be recomputed if q.VersionEffective has been set to -1 before
 func (q *QuestionnaireT) Version() int {
 
 	if q == nil {
@@ -1886,6 +1892,19 @@ func (q *QuestionnaireT) Version() int {
 			// log.Printf("Assign version based on central counter: %v", q.VersionEffective)
 		} else if q.AssignVersion == "round-robin" {
 			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
+		} else if q.AssignVersion == "version-from-login-url" {
+			if val, ok := q.Attrs["version"]; ok {
+				log.Printf("version derived from url param 'v' via q.Attrs['version'] - %v", q.Attrs["version"])
+				q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
+				valInt, _ := strconv.Atoi(val)
+				if valInt < q.VersionMax {
+					q.VersionEffective = valInt
+				}
+			} else {
+				log.Printf(`ERROR: scheme 'version-from-login-url' requires an URL parameter 'v' with a version number`)
+				// fallback:
+				q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
+			}
 		} else {
 			q.VersionEffective = q.UserIDInt() % q.VersionMax
 			if q.UserIDInt() == -3216 {

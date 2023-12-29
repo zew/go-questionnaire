@@ -313,7 +313,7 @@ func ErrorProxy(q *QuestionnaireT, inp *inputT, paramSet string) (string, error)
 // knebSlightlyDistinctLabel yields distinct labels depending on treatment
 func knebSlightlyDistinctLabel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
-	if q.UserIDInt()%2 == 0 {
+	if q.Version()%2 == 0 {
 		return `Wie motiviert sind Sie, sich        mit dem Thema „Sparen und investieren“ zu befassen?`, nil
 	} else {
 		return `Wie motiviert sind Sie, sich weiter mit dem Thema „Sparen und investieren“ zu befassen?`, nil

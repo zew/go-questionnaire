@@ -30,7 +30,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		"en": "Umfrage zum Thema Finanzentscheidungen",
 		"de": "Umfrage zum Thema Finanzentscheidungen",
 	}
-	// q.Variations = 1
+
+	// version stuff
+	q.VersionMax = 4
+	q.AssignVersion = "version-from-login-url"
+	q.VersionEffective = -2 // prevent 0 - 0 would be a valid version
+	if false {
+		// version is determined dynamically upon loading base fresh from file in loadQuestionnaire()
+		_ = q.Version()
+	}
 
 	// page 0
 	{

@@ -18,13 +18,15 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e9ffd4a2faade37f4a04377cb7861d2685529a76a28f60d304ad8725873953ff",
+ 	"md_5": "5de4df3a7fa18c435a437ba78b28fd5cbd291fb861b263beef6450b0864eb0d9",
  	"lang_codes": [
  		"de"
  	],
  	"lang_code": "de",
  	"allow_skip_forward": false,
- 	"version_effective": 0,
+ 	"version_max": 4,
+ 	"assign_version": "version-from-login-url",
+ 	"version_effective": -2,
  	"max_groups": 6,
  	"pages": [
  		{

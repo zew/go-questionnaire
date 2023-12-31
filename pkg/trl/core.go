@@ -352,7 +352,7 @@ var coreTranslations = Map{
 			<!-- Bis zum Umfrage-Ende-->
 			Sie können den Fragebogen bis Ende der Umfrage
 			über folgenden Link erneut aufrufen: 
-			<a href='%v'>%v</a>.   
+			<a href='%v'>%v</a>
 			<!--
 			<br>
 			(Vielleicht wollen Sie sich diesen Link kopieren. Sie müssten sonst wieder von vorne beginnen.)
@@ -366,7 +366,7 @@ var coreTranslations = Map{
 			Until the end of the survey,
 			you can change your entries
 			using following link: 
-			<a href='%v'>%v</a>.   
+			<a href='%v'>%v</a>
 			<!--
 			<br>
 			(Maybe you want to copy this link)

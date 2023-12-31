@@ -209,14 +209,10 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 
 			var failureEmail, failureCSV bool
 
-			to := []string{"peter.buchmann@zew.de"}
-			if cfg.Get().IsProduction {
-				to = []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
-			}
 			mimeHTML := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
 			body := &bytes.Buffer{}
 			// headers
-			fmt.Fprintf(body, "To: %v \r\n", strings.Join(to, ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
+			fmt.Fprintf(body, "To: %v \r\n", strings.Join(adminEmail(), ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
 			fmt.Fprintf(body, mimeHTML)
 			fmt.Fprintf(body, frm.Headline())
 			// ending of headers
@@ -224,15 +220,11 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
 			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
-			emailHorst := "hermes.zew-private.de:25" // from intern
-			if cfg.Get().IsProduction {
-				emailHorst = "hermes.zew.de:25" // from DMZ - does not work
-			}
 			err = smtp.SendMail(
-				emailHorst,
+				emailHost(),
 				nil,                               // smtp.Auth interface
 				"Registration-FMT@survey2.zew.de", // from
-				to,                                // twice - once here - and then again inside the body
+				adminEmail(),                      // twice - once here - and then again inside the body
 				body.Bytes(),
 			)
 			if err != nil {

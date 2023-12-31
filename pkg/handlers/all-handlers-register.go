@@ -254,6 +254,12 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Keys:    []string{"registration-fmt-download"},
 		},
 		{
+			Urls:    []string{"/unsubscribe"},
+			Title:   "Unsubscibe from Emails lists",
+			Handler: UnsubscribeH,
+			Keys:    []string{"unsubscribe"},
+		},
+		{
 			Urls:    []string{"/doc/site-imprint.md"},
 			Handler: tpl.ServeDoc,
 			Title:   "imprint", // keep lowercase for translation

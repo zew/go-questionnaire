@@ -255,9 +255,15 @@ func RegisterHandlers(mux *http.ServeMux) {
 		},
 		{
 			Urls:    []string{"/unsubscribe"},
-			Title:   "Unsubscibe from Emails lists",
+			Title:   "Unsubscribe from Emails lists",
 			Handler: UnsubscribeH,
 			Keys:    []string{"unsubscribe"},
+		},
+		{
+			Urls:    []string{"/unsubscribe-download"},
+			Title:   "Download CSV file of unsubscriptions",
+			Handler: DownloadUnsubscribe,
+			Keys:    []string{"unsubscribe-download"},
 		},
 		{
 			Urls:    []string{"/doc/site-imprint.md"},

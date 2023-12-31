@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"net/smtp"
 	"os"
@@ -18,6 +19,8 @@ import (
 )
 
 var mtxUnsubscribe = sync.Mutex{}
+
+const fileCSV = "unsubscribe.csv"
 
 func emailHost() string {
 	emailHorst := "hermes.zew-private.de:25" // developer machine - must be inside ZEW or ZEW VPN
@@ -72,6 +75,63 @@ func (us unsubscribeT) CSVRow() string {
 	return b.String()
 }
 
+func saveCSVRow(fe unsubscribeT) (string, error) {
+
+	mtxUnsubscribe.Lock()
+	defer mtxUnsubscribe.Unlock()
+
+	fd, size := mustDir(fileCSV)
+	f, err := os.OpenFile(filepath.Join(fd, fileCSV), os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		return fmt.Sprintf("Could not open  %v. Email %v.", fileCSV, adminEmail()), err
+	}
+	defer f.Close()
+	if size < 10 {
+		if _, err = f.WriteString(fe.CSVHeader()); err != nil {
+			return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV header). Informieren Sie %v.", fileCSV, adminEmail()), err
+		}
+	}
+	if _, err = f.WriteString(fe.CSVRow()); err != nil {
+		return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV row). Informieren Sie %v.", fileCSV, adminEmail()), err
+	}
+
+	return "Ihre Daten wurden gespeichert", nil
+
+}
+
+func sendAdminEmail(fe unsubscribeT) (string, error) {
+
+	mimeHTML := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
+	b := &bytes.Buffer{}
+
+	// headers start
+	fmt.Fprintf(b, "To: %v \r\n", strings.Join(adminEmail(), ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
+	fmt.Fprint(b, mimeHTML)
+	fmt.Fprintf(b, "Subject: Unsubscribe request for %v-%v\r\n", fe.Project, fe.Task)
+	fmt.Fprint(b, "\r\n")
+	// headers stop
+
+	// body
+	fmt.Fprint(b, "<pre>\r\n")
+	fmt.Fprint(b, fe.String())
+	fmt.Fprint(b, "</pre>\r\n")
+	fmt.Fprintf(b, "<p>Email sent %v</p>", time.Now().Format(time.RFC850))
+
+	err := smtp.SendMail(
+		emailHost(),
+		nil,                          // smtp.Auth interface
+		"unsubscribe@survey2.zew.de", // from
+		adminEmail(),                 // twice - once here - and then again inside the body
+		b.Bytes(),
+	)
+	if err != nil {
+		return "Error sending email", err
+	}
+
+	return "Email to admin sent", nil
+
+}
+
 // UnsubscribeH creates a generic CSV file containing requests to be removed from go-massmail tasks
 func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 
@@ -114,7 +174,9 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
 	}
 
-	fe.Date = time.Now().Format(time.DateTime)
+	// time.DateTime was introduced after go version 1.17 => codecov fails
+	// fe.Date = time.Now().Format(time.DateTime)
+	fe.Date = time.Now().Format("2006-01-02 15:04:05")
 
 	if fe.Project == "" {
 		msg := "Project cannot be empty; 'fmt' or 'pds'"
@@ -159,61 +221,49 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func saveCSVRow(fe unsubscribeT) (string, error) {
+// DownloadUnsubscribe responds CSV file;
+// test using
+// CURLOPT_SSL_VERIFYPEER  => --insecure
+// curl -i --insecure https://localhost:8083/survey/unsubscribe-download -o tmp-unsubscribe-local.csv
+// curl -i            https://survey2.zew.de/unsubscribe-download        -o tmp-unsubscribe-remote.csv
+func DownloadUnsubscribe(w http.ResponseWriter, r *http.Request) {
+
+	// morsels only => lame security
+	cond1 := strings.Contains(r.RemoteAddr, "127.0.0.1")
+	cond2 := strings.Contains(r.RemoteAddr, "[::1]")
+	cond3 := strings.Contains(r.RemoteAddr, "193.196.")
+	// cond3 := strings.Contains(r.RemoteAddr, "193.196.11")
+	if cond1 || cond2 || cond3 {
+		// proceed below
+	} else {
+		s := fmt.Sprintf("Only local or subnet access to %v. Email %v.", fileCSV, adminEmail())
+		log.Print(s)
+		http.Error(w, s, 400)
+		return
+	}
+
+	//
+	w.Header().Set("Content-Type", "text/csv; charset=utf-8")
+	w.Header().Add("Content-Disposition", fmt.Sprintf(`attachment; filename="%v"`, fileCSV))
+	fd, size := mustDir(fileCSV)
+	w.Header().Add("Content-Length", fmt.Sprint(size))
+
+	log.Printf("   %v - %v Bytes from --%v-- start", filepath.Join(fd, fileCSV), size, r.RemoteAddr)
 
 	mtxUnsubscribe.Lock()
 	defer mtxUnsubscribe.Unlock()
-
-	fn := "unsubscribe.csv"
-
-	fd, size := mustDir(fn)
-	f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
+	bts, err := os.ReadFile(filepath.Join(fd, fileCSV))
 	if err != nil {
-		return fmt.Sprintf("Datei %v konnte nicht geöffnet werden. Informieren Sie %v.", fn, adminEmail()), err
+		s := fmt.Sprintf("Could not open  %v. Email %v.", fileCSV, adminEmail())
+		log.Print(s)
+		http.Error(w, s, 400)
+		return
 	}
-	defer f.Close()
-	if size < 10 {
-		if _, err = f.WriteString(fe.CSVHeader()); err != nil {
-			return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV header). Informieren Sie %v.", fn, adminEmail()), err
-		}
-	}
-	if _, err = f.WriteString(fe.CSVRow()); err != nil {
-		return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV row). Informieren Sie %v.", fn, adminEmail()), err
-	}
+	// this fails; server closes network connection, before bts is written to w
+	//    fmt.Fprint(w, bts)
+	// we need use 	io.Copy(out, in)
+	http.ServeContent(w, r, fileCSV, time.Now(), bytes.NewReader(bts))
 
-	return "Ihre Daten wurden gespeichert", nil
-
-}
-
-func sendAdminEmail(fe unsubscribeT) (string, error) {
-
-	mimeHTML := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
-	b := &bytes.Buffer{}
-
-	// headers start
-	fmt.Fprintf(b, "To: %v \r\n", strings.Join(adminEmail(), ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
-	fmt.Fprint(b, mimeHTML)
-	fmt.Fprintf(b, "Subject: Unsubscribe request for %v-%v\r\n", fe.Project, fe.Task)
-	fmt.Fprint(b, "\r\n")
-	// headers stop
-
-	// body
-	fmt.Fprint(b, "<pre>\r\n")
-	fmt.Fprint(b, fe.String())
-	fmt.Fprint(b, "</pre>\r\n")
-	fmt.Fprintf(b, "<p>Email sent %v</p>", time.Now().Format(time.RFC850))
-
-	err := smtp.SendMail(
-		emailHost(),
-		nil,                          // smtp.Auth interface
-		"unsubscribe@survey2.zew.de", // from
-		adminEmail(),                 // twice - once here - and then again inside the body
-		b.Bytes(),
-	)
-	if err != nil {
-		return "Error sending email", err
-	}
-
-	return "Email to admin sent", nil
+	log.Printf("   %v - %v Bytes from --%v-- end", filepath.Join(fd, fileCSV), size, r.RemoteAddr)
 
 }

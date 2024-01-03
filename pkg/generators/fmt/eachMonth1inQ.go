@@ -269,8 +269,12 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"en": "War in Ukraine",
 		},
 		{
-			"de": "Spannungen im Bankensytem",
+			"de": "Spannungen im Bankensystem",
 			"en": "Tensions in the banking sector",
+		},
+		{
+			"de": "Die Schuldenbremse",
+			"en": "The debt brake",
 		},
 	}
 
@@ -296,6 +300,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_inflation",
 				"rev_ukraine",
 				"rev_banking_strain",
+				"rev_debt_brake",
 				// "rev_free",
 			},
 			radioVals6,

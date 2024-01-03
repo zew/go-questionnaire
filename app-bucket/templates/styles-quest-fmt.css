@@ -60,15 +60,7 @@ div.progress-line-bar{
 .mobile-brkr {
     display: none;
 }
-/* second month of quarter - inflation  */
-@media screen and (max-width: 800px) {
-    .pg06-grp01 {
-        overflow-x: scroll;
-    }
-    .mobile-brkr {
-        display: inline-block;
-    }
-}
+
 
 
 
@@ -101,25 +93,43 @@ dummy
     background-color: lightgrey;
 }
 
+/* special 2024-01 */
+.pg07-grp01-inp00-lbl {
+    position: relative;
+    top: 0.9rem;
+}
+
+
 /* 
-    chrome mobile browser
-    needlessly wraps the 
-    right-aligned labels 
-    into multiple line
-    for question 5
+    =========================================
+    mobile changes at the end - also specials 
+    =========================================
 */
+
+
+/* second month of quarter - inflation  */
 @media screen and (max-width: 800px) {
-    .pg07 label[for=co2_brack_1],
-    .pg07 label[for=co2_brack_2],
-    .pg07 label[for=co2_brack_3],
-    .pg07 label[for=co2_brack_4],
-    .pg07 label[for=co2_brack_5],
-    .pg07 label[for=co2_brack_6],
-    .pg07 label[for=co2_brack_7],
-    .xxpg07 label[for=sum],
-    dummy {
-        text-wrap: nowrap;
+    .pg06-grp01 {
+        overflow-x: scroll;
     }
+    .mobile-brkr {
+        display: inline-block;
+    }
+}
+
+
+/* first month of quarter - inflation  */
+@media screen and (max-width: 800px) {
+
+    /* Month 1 of quarter */
+    #rev_free_label {
+        max-width: 6rem;
+    }
+    /* 2024-01 */
+    #sq4_other_free {
+        max-width: 4rem;
+    }
+
 }
 
 

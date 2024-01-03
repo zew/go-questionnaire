@@ -141,6 +141,7 @@ var hyph = []string{
 	"Roh|stoff|preise",
 	"schlech|teste",
 	"schlech|ter", // ugly but necessary
+	"Schul|den|brem|se",
 	"si|cher",
 	"sin|ken",
 	"stei|gen",

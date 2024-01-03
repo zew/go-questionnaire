@@ -23,9 +23,10 @@ function getMarkpointConfig( keyValsCoords ) {
         // },
 
         // example
-        { name: 'schlechteste 5%', coord: [2043, 33465.583685182035], nameX: 'fv05',  },
-        { name: 'Durchschnitt',    coord: [2043, 36126.58482791517] , nameX: 'fv',    },
-        { name: 'beste 5%',        coord: [2043, 39044.23734467819] , nameX: 'fv95',  },
+        
+        { name: 'schlechteste 5%', coord: [yr+azV, 33465.583685182035], nameX: 'fv05',  },
+        { name: 'Durchschnitt',    coord: [yr+azV, 36126.58482791517] , nameX: 'fv',    },
+        { name: 'beste 5%',        coord: [yr+azV, 39044.23734467819] , nameX: 'fv95',  },
         // { type: 'median', name: 'median' },
         // { x: 70, y: 140 },
         // { type: 'min', name: 'min days' },
@@ -34,9 +35,9 @@ function getMarkpointConfig( keyValsCoords ) {
     ]
 
     data1 = [
-        { name: 'schlechteste 5%', coord: [2043, keyValsCoords[0]], nameX: 'fv05',  'itemStyle': {  color: '#a00'   },  },
-        { name: 'Durchschnitt',    coord: [2043, keyValsCoords[1]], nameX: 'fv',    'itemStyle': {   },  },
-        { name: 'beste 5%',        coord: [2043, keyValsCoords[2]], nameX: 'fv95',  'itemStyle': {  color: '#0a0'  },  },
+        { name: 'schlechteste 5%', coord: [yr+azV, keyValsCoords[0]], nameX: 'fv05',  'itemStyle': {  color: '#a00'   },  },
+        { name: 'Durchschnitt',    coord: [yr+azV, keyValsCoords[1]], nameX: 'fv',    'itemStyle': {   },  },
+        { name: 'beste 5%',        coord: [yr+azV, keyValsCoords[2]], nameX: 'fv95',  'itemStyle': {  color: '#0a0'  },  },
     ]
 
     let config = {

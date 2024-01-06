@@ -29,6 +29,7 @@ var dynFuncs = map[string]dynFuncT{
 	"ErrorProxy":                     ErrorProxy,
 	"knebSlightlyDistinctLabel":      knebSlightlyDistinctLabel,
 	"knebsDownloadURL":               knebDownloadURL,
+	"knebLinkBackToPanel":            knebLinkBackToPanel,
 }
 
 func isOther(inpName string) bool {
@@ -351,5 +352,24 @@ func knebDownloadURL(q *QuestionnaireT, inp *inputT, paramSet string) (string, e
 	}
 
 	return fmt.Sprintf(`<a target='blank' href=%v>Ihr Dankeschön-Download<a>`, urls[inpSrc.Response]), nil
+
+}
+
+// URL to panel provider for payment
+func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+
+	ret := ""
+
+	if val, ok := q.Attrs["i_survey"]; ok {
+		url := fmt.Sprintf(`https://www.gimpulse.com/?m=6006&return=complete&i_survey=%v`, val)
+		ret += fmt.Sprintf(`<a href='%v' target='_blank' >Link back to GIM Panel for payment</a>  <br>`, url)
+	}
+
+	if val, ok := q.Attrs["respBack"]; ok {
+		url := fmt.Sprintf(`https://www.opensurvey.com/survey/1579439651/1704195870?respBack=%v&statusBack=1`, val)
+		ret += fmt.Sprintf(`<a href='%v' target='_blank' >Link back to Open Panel for payment</a>  <br>`, url)
+	}
+
+	return fmt.Sprintf("<p>%v</p>", ret), nil
 
 }

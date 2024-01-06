@@ -140,10 +140,15 @@ func LoginWithoutID(w http.ResponseWriter, r *http.Request) {
 	// forward to LoginByHashID
 	url := cfg.Pref(fmt.Sprintf("/d/%v--%v", cfg.Get().AnonymousSurveyID, hashID))
 
-	// preserving exactly one parameter: 'v=xx'
-	version := r.FormValue("v")
-	if version != "" {
-		url += fmt.Sprintf("?v=%v", version)
+	qMAmp := "?" // question mark or ampersand
+	for _, param := range preservedIntoAttrs {
+		val := r.FormValue(param)
+		if val != "" {
+			//                    ?v=2
+			//                    &v=2
+			url += fmt.Sprintf("%v%v=%v", qMAmp, param, val)
+			qMAmp = "&"
+		}
 	}
 
 	if true {

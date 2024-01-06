@@ -22,11 +22,12 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"pds_ac2": pdsAssetClass2,
 	"pds_ac3": pdsAssetClass3,
 
-	"kneb_t1a":              knebTreatment1NeutraVsFinance_A,
-	"kneb_t1b":              knebTreatment1NeurtraVsFinance_B,
-	"kneb_t2a":              knebTreatment2AdviceNoOrYes_A,
-	"kneb_t2b":              knebTreatment2AdviceNoOrYes_B,
-	"kneb_b6_who_competent": knebB6WhoIsCompetent,
+	"kneb_t1a":               knebTreatment1NeutraVsFinance_A,
+	"kneb_t1b":               knebTreatment1NeurtraVsFinance_B,
+	"kneb_t2a":               knebTreatment2AdviceNoOrYes_A,
+	"kneb_t2b":               knebTreatment2AdviceNoOrYes_B,
+	"kneb_b6_who_competent":  knebB6WhoIsCompetent,
+	"kneb_h1_who_responsibe": knebH1WhoIsResponsible,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -157,6 +158,13 @@ func knebB6WhoIsCompetent(q *QuestionnaireT, pageIdx int) bool {
 	// inp := q.Pages[2].Groups[0].Inputs[2]
 	// if inp.Response == "7" || inp.Response == "8" || inp.Response == "9" || inp.Response == "10" || inp.Response == "11" {
 	if inp.Response == "yes" {
+		return true
+	}
+	return false
+}
+func knebH1WhoIsResponsible(q *QuestionnaireT, pageIdx int) bool {
+	inp := q.ByName("qd5_family_status")
+	if inp.Response == "unmarried_livingtogether" || inp.Response == "married_livingtogether" || inp.Response == "divorcedwidowed_livingtogether" {
 		return true
 	}
 	return false

@@ -12,11 +12,8 @@ import (
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
-	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/sessx"
 )
-
-var ltCounter = ctr.New()
 
 // LoginByHash first checks for direct login;
 // extra short and preconfigured in config.json;
@@ -110,38 +107,19 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						if permaLink != "" {
 							l.Attrs["permalink"] = permaLink
 						}
-						// todo - attrs from profiles? see below
-
-						/*
-							if dlr.SurveyID == "lt2020" {
-
-								userID2, _ := strconv.Atoi(l.User)
-								userID2Version := userID2 % 4
-								log.Printf("lt2020 userID  %7v => version %2v  (%v)", userID2, userID2Version, userID2Version+1)
-
-								roundRobin := int(ltCounter.Increment() % 4)
-								log.Printf("  round robin %7v =>         %2v", ltCounter.GetLast(), roundRobin)
-
-								variant := userID2Version*4 + roundRobin
-								if userID2 >= 20*1000 {
-									variant += 16
-								}
-
-								l.Attrs["survey_variant"] = fmt.Sprintf("%02v", variant)
-								log.Printf("logged in for  %-7v - variant %2v   (4*%v + %v)", l.Attrs["survey_id"], variant, userID2Version, roundRobin)
-							}
-
-						*/
 
 						l.Attrs["wave_id"] = dlr.WaveID
 						for pk, pv := range dlr.Profile {
 							l.Attrs[pk] = pv
 						}
 
-						version := r.FormValue("v")
-						if version != "" {
-							l.Attrs["version"] = version
+						for _, param := range preservedIntoAttrs {
+							val := r.FormValue(param)
+							if val != "" {
+								l.Attrs[param] = val
+							}
 						}
+						// todo - attrs from profiles? see below
 
 						if sess.EffectiveStr("override_closure") == "true" {
 							sess.PutString("override_closure", "true")

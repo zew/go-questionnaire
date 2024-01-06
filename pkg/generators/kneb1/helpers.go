@@ -277,8 +277,10 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 	lbls := []trl.S{
 		{
 			"de": `
-				Ich traue mir zu am Aktienmarkt teilzunehmen.
+					Ich traue mir zu am Aktienmarkt teilzunehmen.
+
 					<small>
+					<br>
 					Antworten Sie bitte anhand der folgenden Skala, 
 					wobei der Wert&nbsp;0 bedeutet: trifft ganz und gar nicht zu 
 					und der Wert&nbsp;10: trifft voll und ganz zu.

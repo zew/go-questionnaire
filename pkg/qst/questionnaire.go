@@ -567,6 +567,7 @@ type QuestionnaireT struct {
 	// PreventSkipForward - skipping back always possible,
 	// skipping forward is preventable
 	PreventSkipForward bool `json:"allow_skip_forward"`
+
 	// PostponeNavigationButtons - how many seconds delay, before the navigation appears
 	PostponeNavigationButtons int `json:"postpone_navigation_buttons,omitempty"`
 
@@ -1898,8 +1899,8 @@ func (q *QuestionnaireT) Version() int {
 				// debug - should be executed at questionnaire load time - and only once
 				log.Printf("  Version() init - stack %v", stack.Trace())
 			}
-			if val, ok := q.Attrs["version"]; ok {
-				log.Printf("version derived from url param 'v' via q.Attrs['version'] - %v", q.Attrs["version"])
+			if val, ok := q.Attrs["v"]; ok {
+				log.Printf("version derived from url param 'v' via q.Attrs['v'] - %v", q.Attrs["v"])
 				q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
 				valInt, _ := strconv.Atoi(val)
 				if valInt < q.VersionMax {

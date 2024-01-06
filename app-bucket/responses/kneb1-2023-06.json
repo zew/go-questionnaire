@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8f553ac2e99dd2e7b4454d4a12fd138c6a9e8d50919d847350cc95151f96a3b7",
+ 	"md_5": "665204f1062c4f0f25b601cf7bfd6d85d18486c7f4ffe5ef4a5fe74f78fbc77f",
  	"lang_codes": [
  		"de"
  	],
@@ -1532,7 +1532,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- R1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -2239,7 +2239,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -6038,7 +6038,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
+ 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
  								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
@@ -7707,7 +7707,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eAnbauentscheidungen \n\t\t\t\t\t\tanhand eines Beispiels aus der Forstwirt\u0026shy;schaft\u003c/i\u003e.\n\n\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von forstwirt\u0026shy;schaft\u0026shy;lichen Betrieben. \n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. \n\t\t\t\t\t\tEin Forstwirt bestellt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e er anpflanzen möchte. \t\t\t\t\t\t\n\t\t\t\t\t\tEr kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\u003c/p\u003e\t\t\t\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Abwägung zwi\u0026shy;schen \n\t\t\t\t\t\tden beiden Eigenschaften Ertrag und Widerstandsfähigkeit \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Getreidesorten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eAnbauentscheidungen \n\t\t\t\t\t\tanhand eines Beispiels aus der Forstwirt\u0026shy;schaft\u003c/i\u003e.\n\n\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von forstwirt\u0026shy;schaft\u0026shy;lichen Betrieben. \n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. \n\t\t\t\t\t\tEin Forstwirt bestellt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e er anpflanzen möchte. \t\t\t\t\t\t\n\t\t\t\t\t\tEr kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Abwägung zwi\u0026shy;schen \n\t\t\t\t\t\tden beiden Eigenschaften Ertrag und Widerstandsfähigkeit \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Getreidesorten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -11267,7 +11267,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
@@ -13151,7 +13151,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: trifft ganz und gar nicht zu \n\t\t\t\t\tund der Wert\u0026nbsp;10: trifft voll und ganz zu.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: trifft ganz und gar nicht zu \n\t\t\t\t\tund der Wert\u0026nbsp;10: trifft voll und ganz zu.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- X1. --\u003e\n\t\t\t\ttodo\n\t\t\t"
  							},
  							"col_span": 11,
@@ -16425,6 +16425,7 @@
  				"de": "Haushalts-\u003cbr\u003eeinkommen\u003cbr\u003eVermögen",
  				"en": "Household income,\u003cbr\u003eassets"
  			},
+ 			"navigation_condition": "kneb_h1_who_responsibe",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -18968,12 +18969,6 @@
  							"max_chars": 300,
  							"col_span": 1,
  							"col_span_control": 1
- 						},
- 						{
- 							"type": "dyn-textblock",
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "PermaLink"
  						}
  					],
  					"style": {
@@ -19103,6 +19098,18 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"dynamic_func": "LinkBack"
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "PermaLink"
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "knebLinkBackToPanel"
  						}
  					]
  				}

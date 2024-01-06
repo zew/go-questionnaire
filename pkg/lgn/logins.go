@@ -25,11 +25,13 @@ import (
 	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
+	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/sessx"
 )
 
 var errFoundButWrongPassword = fmt.Errorf("User found but wrong password")
 var errLoginNotFound = fmt.Errorf("Login not found")
+var ltCounter = ctr.New()
 
 // Exempted URL params are not hashed for login check.
 // They can be freely added to the login-by-hash URL to modify app state.
@@ -49,6 +51,18 @@ var exempted = map[string]interface{}{
 	"override_closure":       nil, // saved to session only in LoginByHash(), used in home() and systemtest
 	"redirected_console_log": nil, //
 	// we dont use wrap.paramPersister, because its too broad
+}
+
+// these parameters are
+// preserved into the loginT.Attrs and questionnairT.Attrs;
+// they are also forwarded from LoginWithoutID()
+// they can be used inside questionnairT.Version()
+//
+// : 'v=xx', i_survey=32chars, respBack=32chars
+var preservedIntoAttrs = []string{
+	"v",
+	"i_survey",
+	"respBack",
 }
 
 // userAttrs contains URL params which we want to be saved into user attributes.

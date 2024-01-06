@@ -35,13 +35,19 @@ button[value=prev] {
 }
   
 
-
+/* error bubble popup default */
 .popup-invalid-content-grid-item {
     bottom:  0.09rem;
-    bottom: -1.09rem;
+    min-width: unset;
 }
-  
-  
+
+
+@media screen and (max-width: 800px) {
+    .popup-invalid-content-grid-item {
+        min-width: unset;
+    }
+}
+
 /* treatment neutral is pg25 */
 .pg25-grp00-inp01 .popup-invalid-content-grid-item {
     bottom:  -1.49rem;

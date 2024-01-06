@@ -1826,13 +1826,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						Er kann sich zwischen <i>zwei Arten</i> entscheiden.
 					</p>
 
-					<p>
+					<ul>
+						<li>
 						Baumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
 						Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
-						<br>
+						</li>
+						<li>
 						Baumart 2: Diese Art wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
 						Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
-					</p>			
+						</li>			
+					</ul>
 
 					<p>
 						In unserer interaktiven Graphik versuchen wir, die Abwägung zwischen 
@@ -1966,6 +1969,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	//  neutral frame - nf
 	{
 		page := q.AddPage()
+		page.NavigationCondition = "kneb_t1a"
 
 		page.Label = trl.S{
 			"de": "Quiz",
@@ -1976,8 +1980,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.NavigationCondition = "kneb_t1a"
-
 		page.WidthMax("48rem")
 
 		// gr 0
@@ -2179,6 +2181,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	//  financial frame - ff
 	{
 		page := q.AddPage()
+		page.NavigationCondition = "kneb_t1b"
 
 		page.Label = trl.S{
 			"de": "Quiz",
@@ -2189,8 +2192,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.NavigationCondition = "kneb_t1b"
-
 		page.WidthMax("48rem")
 
 		// {
@@ -2641,7 +2642,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page experiment +3 - conditional
 	{
 		page := q.AddPage()
-
 		page.NavigationCondition = "kneb_t2a"
 
 		page.Label = trl.S{
@@ -3161,14 +3161,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page B6
 	{
 		page := q.AddPage()
+		page.NavigationCondition = "kneb_b6_who_competent"
+
 		page.Label = trl.S{
 			"de": "",
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
-
-		page.NavigationCondition = "kneb_b6_who_competent"
 
 		//
 		//
@@ -3202,6 +3202,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page H1
 	{
 		page := q.AddPage()
+		page.NavigationCondition = "kneb_h1_who_responsibe"
+
 		page.Label = trl.S{
 			"de": "Haushaltseinkommen und Vermögen",
 			"en": "Household income and assets",
@@ -3861,16 +3863,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 			}
 
-			//
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "PermaLink"
-				inp.ColSpan = gr.Cols
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
-			}
-
 		}
 
 		//
@@ -3952,6 +3944,26 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "LinkBack"
 				inp.ColSpan = 1
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+
+			//
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "PermaLink"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+
+			//
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "knebLinkBackToPanel"
+				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1
 			}

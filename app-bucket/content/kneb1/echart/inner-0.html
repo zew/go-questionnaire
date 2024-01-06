@@ -202,7 +202,7 @@
   <div class="panel panel1">
 
       <p>
-        Größe der Anbaufläche
+        Anzahl der Bäume
       </p>
 
       <p style="padding-left:1.2rem">
@@ -222,7 +222,7 @@
             color: var(--clr-pri);
             border: 1px solid var(--clr-pri);
             "
-        > Hektar
+        > 
 
         &nbsp;
         <a tabindex="-1" href="#" class="spinner" id="elUp">+ &nbsp;&nbsp;&nbsp;</a>
@@ -232,7 +232,7 @@
 
 
     <p style="margin-top: 0.8rem;">
-      Anteil der zweiten Getreidesorte
+      Anteil der zweiten Baumart
     </p>
     <div class="knob-container" >
       <div tabindex="2"  href=#  class="knob" style="min-width: 2.7rem">0&nbsp;% </div>
@@ -267,21 +267,21 @@
   <div class="panel panel3">
 
     <p>
-      In den <i>besten 5 von 100 Fällen</i> liegt die Ernte <i>über</i>
+      In den <i>besten 5 von 100 Fällen</i> liegt der Ertrag nach 20 Jahren <i>über</i>
     </p>
     <p class="num" style="color: #0a0;">
       <strong><span id="elFV95">-</span></strong>
     </p>
 
     <p>
-      <i>Im Durchschnitt</i>  liegt die Ernte bei
+      <i>Im Durchschnitt</i>  liegt der Ertrag bei
     </p>
     <p class="num" style="color: rgb( 0, 105, 180);">
       <strong><span id="elFV">-</span></strong>
     </p>
 
     <p>
-      In den <i>schlechtesten 5 von 100 Fällen</i> liegt die Ernte <i>unter</i>
+      In den <i>schlechtesten 5 von 100 Fällen</i> liegt der Ertrag nach 20 Jahren <i>unter</i>
     </p>
     <p class="num" style="color: #a00;">
       <strong><span id="elFV05">-</span></strong>
@@ -321,8 +321,8 @@
 <script>
 
   function getChartTitle(yr, azV) {
-    return `Prognostizierte Entwicklung der Ernte über das Jahr`;
-    // return `Prognostizierte Entwicklung bis ${yr+azV}`;
+    return `Prognostizierte Entwicklung bis ${yr+azV}`;
+    // return `Prognostizierte Entwicklung der Ernte über das Jahr`;
   }
 
   function getXAxisType() {
@@ -337,7 +337,12 @@
     return yr+az;
     // return 'Juli';
   }
+
   function getXAxisFormatter(vl,yr,az) {
+    return vl  + ' ';
+  }
+
+  function XXgetXAxisFormatter(vl,yr,az) {
     let mapper = [
        'Okt.' , 
        'Nov.' , 
@@ -368,17 +373,18 @@
     // return vl  + ' ';
   }
   function getXInteerval(){
-    return 2.285;
-    // return 2;
+    // return 2.285;
+    return 2;
   }
 
 
 
   function getYAxisTitle() {
-    return `Ernte in Tonnen`;
+    return `Ertrag in Euro`;
   }
   function getVerticalMarkerTitle() {
-    return `Ernte`;
+    // return `Ernte`;
+    return `Bäume werden\n gefällt`;
   }
 
 
@@ -392,9 +398,9 @@
       dbl = `${dbl}`  // to string
       dbl = `${dbl.substring(0,dbl.length-3)}.${dbl.substring(dbl.length-3)}`
       if(nbsp){
-        dbl = `${dbl}&nbsp;T`
+        dbl = `${dbl}&nbsp;€`
       } else {
-        dbl = `${dbl}T`
+        dbl = `${dbl}€`
       }
       return dbl
   }
@@ -410,13 +416,17 @@
     const nameInstance0 = `${core}_0`;
     const el0 = document.getElementById(nameInstance0);
     if (el0) {
-      toolHeadline.innerHTML = `Probieren Sie gerne das Tool selbst aus. Welche Werte würden Sie für sich selbst wählen?`;
+      toolHeadline.innerHTML = `
+        Probieren Sie gerne das Tool selbst aus. 
+      `;
       return el0
     }
     const nameInstance1 = `${core}_1`;
     const el1 = document.getElementById(nameInstance1);
     if (el1) {
-      toolHeadline.innerHTML = `Welche Werte würden Sie für dem Landwirt wählen?`;
+      toolHeadline.innerHTML = `
+        Welche Werte würden Sie in der interaktiven Graphik für den Forstwirt wählen?
+      `;
       return el1
     }
 

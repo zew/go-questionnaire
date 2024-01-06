@@ -155,7 +155,8 @@ func knebTreatment2AdviceNoOrYes_B(q *QuestionnaireT, pageIdx int) bool {
 func knebB6WhoIsCompetent(q *QuestionnaireT, pageIdx int) bool {
 	inp := q.ByName("qb5_delegate")
 	// inp := q.Pages[2].Groups[0].Inputs[2]
-	if inp.Response == "7" || inp.Response == "8" || inp.Response == "9" || inp.Response == "10" || inp.Response == "11" {
+	// if inp.Response == "7" || inp.Response == "8" || inp.Response == "9" || inp.Response == "10" || inp.Response == "11" {
+	if inp.Response == "yes" {
 		return true
 	}
 	return false

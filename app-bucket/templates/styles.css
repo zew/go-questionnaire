@@ -786,7 +786,9 @@ input:not([type=submit]):focus:valid {
 input:not([type=submit]):invalid,
 input:not([type=submit]):focus:invalid
 {
-    background-color: var(--clr-bg-invalid);
+    /* background-color: var(--clr-bg-invalid); */
+    /* 2024-01: red background scares users from trying to enter negative values */
+    background-color: rgba(246,246,168, 0.45);
 }
 
 input:disabled, select:disabled {

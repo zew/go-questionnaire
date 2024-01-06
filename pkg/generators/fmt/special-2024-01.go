@@ -40,7 +40,7 @@ func special202401(q *qst.QuestionnaireT) error {
 				"de": `
 				Seit 2009 hat Deutschland die so genannte <i>„Schuldenbremse“</i> im Grundgesetz. 
 				Sie erlaubt dem Bund eine maximale jährliche Neuverschuldung 
-				im Umfang von 3,5&nbsp;Prozent des BIP. 
+				im Umfang von 0,35&nbsp;Prozent des BIP. 
 				
 				Die Länder müssen seit 2020 stets einen ausgeglichenen Haushalt vorlegen. 
 				Allerdings bleiben Defizite im Falle einer Rezession oder außergewöhnlicher Ereignisse erlaubt. 
@@ -53,7 +53,7 @@ func special202401(q *qst.QuestionnaireT) error {
 				"en": `  
 				Since 2009, Germany has added the so-called <i>„Schuldenbremse“</i> (debt brake) 
 				to its constitution. 
-				It allows the government to accumulate additional annual debt of at most 3.5&nbsp;percent of GDP. 
+				It allows the government to accumulate additional annual debt of at most 0.35&nbsp;percent of GDP. 
 				Since 2020, the federal states are required to always maintain a balanced budget. 
 				However, deficits are allowed in case of a recession or other extraordinary events. 
 				A reformed version of the debt brake is currently being discussed. 

@@ -2,6 +2,7 @@ package kneb1
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
@@ -396,8 +397,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			var radioValues = []string{
 				"hauptschule",
 				"realschule",
-				"fachhochschule",
-				"abitur",
+				// "fachhochschule",
+				// "abitur",
+				"abitur_fh",
 			}
 			var labels = []trl.S{
 				{
@@ -408,12 +410,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": "Mittlere Reife/ Realschulabschluss/ Polytechnische Oberschule, 10. Klasse",
 					"en": "Secondary school",
 				},
+				// {
+				// 	"de": "Fachhochschulreife",
+				// 	"en": "College",
+				// },
 				{
-					"de": "Fachhochschulreife",
-					"en": "College",
-				},
-				{
-					"de": "Allgemeine oder fachgebundene Hochschulreife/ Abitur",
+					"de": "Allgemeine oder fachgebundene Hochschulreife/ Abitur oder Fachhochschulreife",
 					"en": "High school",
 				},
 			}
@@ -856,9 +858,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
+					<span style='font-size:120%'>
 					Wie schätzen Sie sich persönlich ein:
 					Sind Sie im Allgemeinen ein risikobereiter Mensch
 					oder versuchen Sie, Risiken zu vermeiden?
+					</span>
 
 					<small>
 					Antworten Sie bitte anhand der folgenden Skala,
@@ -947,7 +951,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
+					<span style='font-size:120%'>
 					Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen. 
+					</span>
 
 					<small>
 						Antworten Sie bitte anhand der folgenden Skala, 
@@ -1404,7 +1410,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
-			gb.MainLabel = lbls[i].Outline(fmt.Sprintf("P%d.", i+2)) // P2., P3., P4., P5.
+			gb.MainLabel = lbls[i].OutlineHid(fmt.Sprintf("P%d.", i+2)) // P2., P3., P4., P5.
 			// if i == 0 {
 			// 	gb.MainLabel.OutlineHid("P2.")
 			// }
@@ -1446,7 +1452,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
+						<span style='font-size:120%'>
 						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+						</span>
+
 
 						<small>
 						Antworten Sie bitte anhand der folgenden Skala,
@@ -1491,7 +1500,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `
 					
-						Stellen Sie sich vor, Sie haben 2500&nbsp;Euro in der Lotterie gewonnen
+						Stellen Sie sich vor, Sie haben 6000&nbsp;Euro in der Lotterie gewonnen
 						und können dieses Geld in ein Unternehmen investieren.
 
 						Die Chance, dass das Unternehmen erfolgreich ist, liegt bei 50 Prozent.
@@ -1500,7 +1509,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 						Bei Misserfolg verlieren Sie die Hälfte der investierten Summe.
 
-						Welchen Anteil der 2500&nbsp;Euro würden Sie in dieses Unternehmen investieren?
+						Welchen Anteil der 6000&nbsp;Euro würden Sie in dieses Unternehmen investieren?
 					`,
 					"en": `todo`,
 				}.OutlineHid("P6.")
@@ -1535,8 +1544,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	vorsorgeplanung8x7(&q, 0, 1)
-	vorsorgeplanung8x7(&q, 2, 3)
+	if false {
+		vorsorgeplanung8x7(&q, 0, 1)
+		vorsorgeplanung8x7(&q, 2, 3)
+	}
 	// vorsorgeplanung8x7(&q, 6, 7)
 
 	// page 7-0
@@ -1559,7 +1570,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
-				columnTemplate3,
+				columnTemplate5,
 				[]trl.S{
 
 					{
@@ -1574,13 +1585,30 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						"de": "<small>niedriger als 102&nbsp;€</small>  ",
 						"en": "<small>lower than    102&nbsp;€</small>     ",
 					},
+					{
+						"de": "<small>weiß nicht</small>  ",
+						"en": "<small>dont know</small>     ",
+					},
+					{
+						"de": "<small>keine Angabe</small>  ",
+						"en": "<small>no answer</small>     ",
+					},
 				},
 				[]string{"qfl1_interest"},
-				radioVals3,
+				radioVals5,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
 			gb.MainLabel = trl.S{
 				"de": `
+					<span style='font-size:110%'>
+					Im Folgenden haben wir ein Quiz zu finanziellem Wissen. 
+					Bitte antworten Sie spontan. 
+					</span>
+
+					<br>
+					<br>
+
+
 					Angenommen, Sie haben 100&nbsp;€ Guthaben auf Ihrem Sparkonto.
 					Dieses Guthaben wird mit 2% pro Jahr verzinst,
 					und Sie lassen es 5&nbsp;Jahre auf diesem Konto.
@@ -1628,7 +1656,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		{
 			gb := qst.NewGridBuilderRadios(
-				columnTemplate3,
+				columnTemplate5,
 				[]trl.S{
 					{
 						"de": "<small>mehr</small>    ",
@@ -1642,9 +1670,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						"de": "<small>weniger als heute</small>  ",
 						"en": "<small>less than today</small>    ",
 					},
+					{
+						"de": "<small>weiß nicht</small>  ",
+						"en": "<small>dont know</small>     ",
+					},
+					{
+						"de": "<small>keine Angabe</small>  ",
+						"en": "<small>no answer</small>     ",
+					},
 				},
 				[]string{"qfl2_inflation"},
-				radioVals3,
+				radioVals5,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
 			gb.MainLabel = trl.S{
@@ -1694,15 +1730,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		{
 			gb := qst.NewGridBuilderRadios(
-				columnTemplate2,
+				columnTemplate4,
 				labelsStimmeZuOderNicht(),
 				[]string{"qfl3_portfoliorisk"},
-				radioVals2,
+				radioVals4,
 				[]trl.S{{"de": ``, "en": ``}},
 			)
 			gb.MainLabel = trl.S{
@@ -1781,28 +1816,28 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<p>
 						In diesem Teil unserer Umfrage geht es um <i>Anbauentscheidungen 
-						anhand eines Beispiels aus der Landwirtschaft</i>.
+						anhand eines Beispiels aus der Forstwirtschaft</i>.
 
-						Es gibt viele verschiedene Arten von landwirtschaftlichen Betrieben. 
+
+						Es gibt viele verschiedene Arten von forstwirtschaftlichen Betrieben. 
 						Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. 
-						Ein Landwirt bestellt Getreidefelder und muss entscheiden, welche <i>Getreidesorten</i> er anbauen möchte. 						
-						Er kann sich zwischen <i>zwei Sorten</i> entscheiden.
+						Ein Forstwirt bestellt einen Waldabschnitt und muss entscheiden, 
+						welche <i>Baumarten</i> er anpflanzen möchte. 						
+						Er kann sich zwischen <i>zwei Arten</i> entscheiden.
 					</p>
 
 					<p>
-						Getreidesorte 1: Diese Sorte wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
+						Baumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
 						Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
 						<br>
-						Getreidesorte 2: Diese Sorte wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
+						Baumart 2: Diese Art wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
 						Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
 					</p>			
 
 					<p>
-						In unserer interaktiven Graphik versuchen wir, die Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit der beiden Getreidesorten zu verdeutlichen.
-						In diesem Teil unserer Umfrage geht es um Anbauentscheidungen anhand eines Beispiels aus der Landwirtschaft.
-						Es gibt viele verschiedene Arten von landwirtschaftlichen Betrieben. Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. Ein Landwirt bestellt Getreidefelder und muss entscheiden, welche Getreidesorten er anbauen möchte. Er kann sich zwischen zwei Sorten entscheiden.
-						Getreidesorte 1: Diese Sorte wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
-						Getreidesorte 2: Diese Sorte wächst schneller und kann im Durchschnitt höhere Erträge erzielen. Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
+						In unserer interaktiven Graphik versuchen wir, die Abwägung zwischen 
+						den beiden Eigenschaften Ertrag und Widerstandsfähigkeit 
+						der beiden Baumarten zu verdeutlichen.
 					</p>
 					
 					<p>
@@ -1886,9 +1921,38 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	// page experiment guided tour dyn
+	// {
+	// 	page := q.AddPage()
+	// 	page.GeneratorFuncName = "kneb202306guidedtour"
+	// }
+
 	{
 		page := q.AddPage()
-		page.GeneratorFuncName = "kneb202306guidedtour"
+		page.GeneratorFuncName = "kneb202306guidedtourN0"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN1"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN2"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN3"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN4"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN5"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN6"
 	}
 
 	// page experiment chart 0
@@ -1927,12 +1991,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Landwirtin Blau möchte für die Ernte im nächsten Jahr eine Anbaufläche 
-						von 50&nbsp;Hektar nutzen. 
+						Forstwirtin Birke möchte über einen Zeitraum von 20&nbsp;Jahren jedes Jahr 100&nbsp;Bäume pflanzen. 
 						
-						Sie wählt einen Anteil der zweiten Getreidesorte von 60%.
-
-						Wie hoch ist ihre prognostizierte Ernte in den besten 5 von 100&nbsp;Fällen?	
+						Sie wählt einen Anteil von 60% an Baumart&nbsp;2 aus. 
+						
+						Wie hoch ist ihr prognostizierter Ertrag  in den besten 5 von 100&nbsp;Fällen?	
 					`,
 					"en": `todo`,
 				}.OutlineHid("C24.")
@@ -1947,10 +2010,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Validator = "must;kneb_qc24_nf"
 				inp.Min = 0
 				// 20.900 Tonnen
-				inp.Max = 80 * 1000
+				inp.Max = 280 * 1000
 				inp.MaxChars = 6
 				inp.Suffix = trl.S{
-					"de": `Tonnen`,
+					"de": `€`,
 					"en": `todo`,
 				}
 				inp.ColSpan = gr.Cols
@@ -1978,39 +2041,39 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var labels = []trl.S{
 				{
-					"de": "0% Sorte&nbsp;2",
+					"de": "0% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "10% Sorte&nbsp;2",
+					"de": "10% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "20% Sorte&nbsp;2",
+					"de": "20% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "30% Sorte&nbsp;2",
+					"de": "30% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "40% Sorte&nbsp;2",
+					"de": "40% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "50% Sorte&nbsp;2",
+					"de": "50% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "60% Sorte&nbsp;2",
+					"de": "60% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "70% Sorte&nbsp;2",
+					"de": "70% Anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "80% Sorte&nbsp;2",
+					"de": "80% Anteil&nbsp;2",
 					"en": "todo",
 				},
 			}
@@ -2020,10 +2083,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Landwirt Lila kann für die nächste Ernte 80&nbsp;Hektar bestellen. 
+
+						Forstwirt Tanne kann jedes Jahr 300&nbsp;Bäume pflanzen. 
 						
-						Wenn er im nächsten Jahr ca. 27.400&nbsp;Tonnen Ernte einfahren möchte (im Durchschnitt), 
-						welchen Anteil an Getreidesorte&nbsp;2 sollte seine Anbaufläche mindestens haben?
+						Wenn er nach 20 Jahren ca. 100.000&nbsp;Euro angespart haben möchte (im Durchschnitt), 
+						welchen Anteil an Baumart&nbsp;2 sollte sein Waldstück mindestens haben?
+
+
 						<br>
 						<br>
 					`,
@@ -2062,12 +2128,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Landwirtin Gelb möchte im nächsten Jahr eine Ernte von ca. 16.100&nbsp;Tonnen einfahren. 
+						Forstwirt Eiche möchte in 20&nbsp;Jahren ein Vermögen von 100.000&nbsp;Euro aufbauen. 
 						
-						Sie ist bereit einen Anteil von 70% in Getreidesorte&nbsp;2 auszusähen.
+						
+						Sie ist bereit einen Anteil von 50% an Baumart&nbsp;2 in ihrem Wald zu akzeptieren.
 
-						Wie groß muss ihre Anbaufläche sein, 
-						damit ihr dies im Durchschnitt gelingen kann?
+						Wie viele Bäume muss sie jährlich anpflanzen, damit ihr dies <i>im Durchschnitt</i> gelingen kann?
 					
 					`,
 					"en": `todo`,
@@ -2083,12 +2149,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Validator = "must;kneb_qc26_nf"
 				inp.Min = 0
 				// 40 Hektar
-				inp.Max = 200
+				inp.Max = 600
 				inp.Step = 10
 				inp.Placeholder = trl.S{"de": "#", "en": "#"}
 				inp.MaxChars = 6
 				inp.Suffix = trl.S{
-					"de": `Hektar`,
+					"de": `Hektar Bäume`,
 					"en": `todo`,
 				}
 				inp.ColSpan = gr.Cols
@@ -2127,26 +2193,26 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page.WidthMax("48rem")
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Quiz für Finanz-Frame - @kneb: Bitte erst das Quiz für neutral durchtesten.
-						Die Zahlen in den Aufgaben sollten bitte identisch sein,
-						und sich nur von in der Einheit unterscheiden: 
-						Hektar/Tonnen vs. Euro/Euro
-					`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-		}
+		// {
+		// 	gr := page.AddGroup()
+		// 	gr.Cols = 1
+		// 	gr.BottomVSpacers = 1
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "textblock"
+		// 		inp.Label = trl.S{
+		// 			"de": `
+		// 				Quiz für Finanz-Frame - @kneb: Bitte erst das Quiz für neutral durchtesten.
+		// 				Die Zahlen in den Aufgaben sollten bitte identisch sein,
+		// 				und sich nur von in der Einheit unterscheiden:
+		// 				Hektar/Tonnen vs. Euro/Euro
+		// 			`,
+		// 			"en": `todo`,
+		// 		}
+		// 		inp.ColSpan = gr.Cols
+		// 		inp.ColSpanLabel = 1
+		// 	}
+		// }
 
 		// gr 0
 		{
@@ -2159,15 +2225,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Müssen das wirklich andere Zahlen als beim Weizen sein?<br>
-						Reduziert das nicht sogar die Vergleichbarkeit der Frames?<br><br>
-
 						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
 						einen monatlichen Sparbetrag von 250&nbsp;Euro anlegen. 
 						
 						Sie wählt einen Aktienanteil von 60%.
 
-						Wie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100 Fällen?
+						Wie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100&nbsp;Fällen?
 					`,
 					"en": `todo`,
 				}.OutlineHid("C24.")
@@ -2262,6 +2325,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 						<br>
 						<br>
+						<br>
 					`,
 					"en": `todo`,
 				}.OutlineHid("C25.")
@@ -2298,10 +2362,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Frau Gelb möchte in 20 Jahren ein Vermögen von 110.000 Euro aufbauen. 
+						Frau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. 
 						Sie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.
 
-						Wie hoch muss ihre monatliche Sparrate sein, damit ihr dies im Durchschnitt gelingen kann?
+						Wie hoch muss ihre monatliche Sparrate sein, damit ihr dies <i>im Durchschnitt</i> gelingen kann?
 		
 					`,
 					"en": `todo`,
@@ -2350,99 +2414,101 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	//
 	// page experiment +1
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{
-			"de": "Feedbackfragen zum Tool - 2",
-			"en": "todo",
-		}
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-		page.SuppressInProgressbar = true
-
-		page.WidthMax("48rem")
-
+	/*
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			page := q.AddPage()
+
+			page.Label = trl.S{
+				"de": "Feedbackfragen zum Tool - 2",
+				"en": "todo",
+			}
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+
+			page.WidthMax("48rem")
+
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						In wieweit stimmen Sie folgenden Aussagen zu:
-					`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			inputs := []string{
-				"qf1_satisfied",
-				"qf2_sentiment",
-				"qf3_negative",
-				"qf4_rational",
-				"qf5_overconfident",
-			}
-			lblsQ := []trl.S{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
 				{
-					"de": `Ich bin mit meiner Entscheidung zufrieden.`,
-					"en": `todo`,
-				},
-				{
-					"de": `Ich habe ein gutes Gefühl bei meiner Wahl.`,
-					"en": `todo`,
-				},
-				{
-					"de": `Ich empfinde negative Emotionen wegen der getroffenen Wahl.`,
-					"en": `todo`,
-				},
-				{
-					"de": `Ob es nun die beste Wahl ist oder nicht, ich fühle mich gut mit meiner Entscheidung.`,
-					"en": `todo`,
-				},
-				{
-					"de": `Ich bin sicher, dass meine Wahl die beste war, die ich hätte treffen können.`,
-					"en": `todo`,
-				},
-			}
-
-			for i := 0; i < len(inputs); i++ {
-
-				lbls := labelsSelfKnowledge()
-				lbls[0] = trl.S{
-					"de": "<small>trifft ganz und gar nicht zu</small>     <div>0</div>",
-					"en": "<small>todo</small>     <div>0</div>",
-				}
-				lbls[10] = trl.S{
-					"de": "<small>trifft voll und ganz zu</small>       <div>10</div>",
-					"en": "<small>todo</small> <div>10</div>",
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							In wieweit stimmen Sie folgenden Aussagen zu:
+						`,
+						"en": `todo`,
+					}
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
 				}
 
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate11,
-					lbls,
-					[]string{inputs[i]},
-					radioVals11,
-					[]trl.S{{"de": ``, "en": ``}},
-				)
-				// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
-				gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+1)) // .Outline("F1., F2., ...  F5.")
-				gr := page.AddGrid(gb)
-				_ = gr
-				// gr.BottomVSpacers = 2
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+				inputs := []string{
+					"qf1_satisfied",
+					"qf2_sentiment",
+					"qf3_negative",
+					"qf4_rational",
+					"qf5_overconfident",
+				}
+				lblsQ := []trl.S{
+					{
+						"de": `Ich bin mit meiner Entscheidung zufrieden.`,
+						"en": `todo`,
+					},
+					{
+						"de": `Ich habe ein gutes Gefühl bei meiner Wahl.`,
+						"en": `todo`,
+					},
+					{
+						"de": `Ich empfinde negative Emotionen wegen der getroffenen Wahl.`,
+						"en": `todo`,
+					},
+					{
+						"de": `Ob es nun die beste Wahl ist oder nicht, ich fühle mich gut mit meiner Entscheidung.`,
+						"en": `todo`,
+					},
+					{
+						"de": `Ich bin sicher, dass meine Wahl die beste war, die ich hätte treffen können.`,
+						"en": `todo`,
+					},
+				}
+
+				for i := 0; i < len(inputs); i++ {
+
+					lbls := labelsSelfKnowledge()
+					lbls[0] = trl.S{
+						"de": "<small>trifft ganz und gar nicht zu</small>     <div>0</div>",
+						"en": "<small>todo</small>     <div>0</div>",
+					}
+					lbls[10] = trl.S{
+						"de": "<small>trifft voll und ganz zu</small>       <div>10</div>",
+						"en": "<small>todo</small> <div>10</div>",
+					}
+
+					gb := qst.NewGridBuilderRadios(
+						columnTemplate11,
+						lbls,
+						[]string{inputs[i]},
+						radioVals11,
+						[]trl.S{{"de": ``, "en": ``}},
+					)
+					// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
+					gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+1)) // .Outline("F1., F2., ...  F5.")
+					gr := page.AddGrid(gb)
+					_ = gr
+					// gr.BottomVSpacers = 2
+					gr.Style = css.NewStylesResponsive(gr.Style)
+					gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+				}
+
 			}
 
 		}
-
-	}
+	*/
 
 	// page experiment +2
 	{
@@ -2485,19 +2551,19 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			lblsQ := []trl.S{
 				{
-					"de": `Die graphische Darstellung ist verständlich.`,
+					"de": `Die graphische Darstellung in der interaktiven Graphik ist verständlich.`,
 					"en": `todo`,
 				},
 				{
-					"de": `Die graphische Darstellung ist hilfreich.`,
+					"de": `Die graphische Darstellung in der interaktiven Graphik ist hilfreich.`,
 					"en": `todo`,
 				},
 				{
-					"de": `Die graphische Darstellung ist kompliziert.`,
+					"de": `Die graphische Darstellung in der interaktiven Graphik ist kompliziert.`,
 					"en": `todo`,
 				},
 				{
-					"de": `Wie informiert fühlen Sie sich über das gezeigte Szenario?`,
+					"de": `Wie informiert fühlen Sie sich über das gezeigte Szenario in der interaktiven Graphik?`,
 					"en": `todo`,
 				},
 			}
@@ -2553,7 +2619,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Haben Sie weitere Anmerkungen zu der Darstellung <br> oder dem Tool im Allgemeinen?`,
+					"de": `Haben Sie weitere Anmerkungen zu der Darstellung in der interaktiven Graphik?`,
 					"en": `todo`,
 				}.OutlineHid("F10.")
 				inp.ColSpan = gr.Cols
@@ -2582,10 +2648,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Treatment: Giving advice",
 			"en": "todo",
 		}
-		// page.Label = trl.S{
-		// 	"de": "",
-		// 	"en": "",
-		// }
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
 
 		// page.SuppressInProgressbar = true
 		page.Short = trl.S{
@@ -2639,10 +2705,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Selbstvertrauen nach dem Tool",
 			"en": "Confidence afterwards",
 		}
-		// page.Label = trl.S{
-		// 	"de": "",
-		// 	"en": "",
-		// }
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
 		page.Short = trl.S{
 			"de": "Selbstvertrauen<br>nachher",
 			"en": "Confidence<br>after",
@@ -2663,12 +2729,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
+						<span style='font-size:120%'>
 						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
-						<br>
+						</span>
+
+
+						<small>
 						Antworten Sie bitte anhand der folgenden Skala,
 						wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
 						und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
-
+						</small>
 					`,
 				"en": `
 						todo
@@ -2687,6 +2757,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{
 			"de": "Motivation nach Treatment",
 			"en": "Motivation after treatment",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
@@ -2759,8 +2833,19 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp := gr.AddInput()
 					inp.Type = "textblock"
 					inp.Label = trl.S{
-						"de": "Was ist die Hauptfunktion des Aktienmarktes?",
-						"en": "todo",
+						"de": `
+							<span style='font-size:110%'>
+							Im Folgenden haben wir weitere Quizfragen. 
+							Bitte antworten Sie spontan. 
+							</span>
+	
+							<br>
+							<br>	
+						
+
+							Was ist die Hauptfunktion des Aktienmarktes?
+						`,
+						"en": `todo`,
 					}.OutlineHid("FL4.")
 					inp.ColSpan = gr.Cols
 					inp.ColSpanLabel = 1
@@ -3055,60 +3140,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			false,
 		)
 
-		//
-		//
-		lblsQX1 := labelsSelfKnowledge()
-		lblsQX1[0] = trl.S{
-			"de": "<small>überhaupt nicht</small>     <div>0</div>",
-			"en": "<small>not at all     </small>     <div>0</div>",
-		}
-		lblsQX1[10] = trl.S{
-			"de": "<small>sehr viel</small> <div>10</div>",
-			"en": "<small>very much</small> <div>10</div>",
-		}
-		inputs := []string{
-			// "qb5_fearofloss",
-			"qb5_delegate",
-		}
-		lbls := []trl.S{
-			// {
-			// 	"de": `
-			// 		Haben Sie Angst, bei finanziellen Entscheidungen Verluste zu machen?
-			// 	`,
-			// 	"en": `
-			// 		todo
-			// 	`,
-			// },
-			{
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
 				"de": `
 					Würden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?
 				`,
-				"en": `
-					todo
-				`,
+				"en": `todo`,
 			},
-		}
-
-		for i := 0; i < len(inputs); i++ {
-
-			hdrs := lblsQX1
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate11,
-				hdrs,
-				[]string{inputs[i]},
-				radioVals11,
-				[]trl.S{{"de": ``, "en": ``}},
-			)
-			gb.MainLabel = lbls[i]
-			if i == 0 || true {
-				gb.MainLabel.OutlineHid(fmt.Sprintf("B%v.", i+5))
-			}
-			gr := page.AddGrid(gb)
-			_ = gr
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-		}
+			"qb5_delegate",
+			"B5.",
+			false,
+		)
 
 		// B6 is now on separate, conditional page
 
@@ -3342,7 +3385,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					
 
 						<small>
-						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt, 
+						Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, 
 						beantworten Sie die Fragen bitte für sich selbst.
 						</small>
 				
@@ -3434,26 +3477,40 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for i := 0; i < len(ranges); i++ {
 
 				rLow := ranges[i]
-				rHigh := -1
+				rHig := -1
 				if i < len(ranges)-1 {
-					rHigh = ranges[i+1]
+					rHig = ranges[i+1]
 				}
-				opt := fmt.Sprintf("upto%d", rHigh)
+
+				rsLow := fmt.Sprintf("%10.0f", float64(rLow))
+				rsHig := fmt.Sprintf("%10.0f", float64(rHig))
+				if strings.HasSuffix(rsLow, "000") {
+					ln := len(rsLow)
+					rsLow = rsLow[0:ln-3] + ".000"
+				}
+				if strings.HasSuffix(rsHig, "000") {
+					ln := len(rsHig)
+					rsHig = rsHig[0:ln-3] + ".000"
+				}
+				// rsLow = strings.ReplaceAll(rsLow, ",", ".")
+				// rsHig = strings.ReplaceAll(rsHig, ",", ".")
+
+				opt := fmt.Sprintf("upto%d", rHig)
 				lbl := trl.S{
-					"de": fmt.Sprintf("%d€ bis unter %d€ monatlich", rLow, rHigh),
-					"en": fmt.Sprintf("%d€ to under  %d€ per month", rLow, rHigh),
+					"de": fmt.Sprintf("%s€ bis unter %s€ monatlich", rsLow, rsHig),
+					"en": fmt.Sprintf("%s€ to under  %s€ per month", rsLow, rsHig),
 				}
 				if i == 0 {
 					lbl = trl.S{
-						"de": fmt.Sprintf("unter %d€ monatlich", rHigh),
-						"en": fmt.Sprintf("under %d€ per month", rHigh),
+						"de": fmt.Sprintf("unter %s€ monatlich", rsHig),
+						"en": fmt.Sprintf("under %s€ per month", rsHig),
 					}
 				}
-				if rHigh == -1 {
+				if rHig == -1 {
 					opt = "over15000"
 					lbl = trl.S{
-						"de": fmt.Sprintf("%d€ und mehr", rLow),
-						"en": fmt.Sprintf("%d€ and more", rLow),
+						"de": fmt.Sprintf("%s€ und mehr", rsLow),
+						"en": fmt.Sprintf("%s€ and more", rsLow),
 					}
 
 				}
@@ -3535,13 +3592,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
+					    <b>
 						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
-
+						
 						Haben Sie (d.h. Ihr Haushalt) im  Jahr <span style='color:#e22; font-size 110%%; '>2023</span> 
 						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
+					    </b>
 
 						<small>
-						Falls Sie nicht wissen, ob ihr Partner diese Vermögensarten besitzt,
+						Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,
 						beantworten Sie die Fragen bitte für sich selbst.
 						</small>
 
@@ -3564,8 +3623,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Private Lebensversicherungen
-
+					<b>Private Lebensversicherungen</b>
 					<small>
 					z.B. klassische und fondsgebundene Kapitallebensversicherungen,
 						<i>nicht</i> reine Risikolebensversicherungen
@@ -3585,7 +3643,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Betriebliche Lebensversicherungen
+					<b>Betriebliche Lebensversicherungen</b>
 					<br>
 					<small>
 					(z. B. Direktversicherungen)
@@ -3604,7 +3662,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Sonstige betriebliche Altersvorsorge
+					<b>Sonstige betriebliche Altersvorsorge</b>
 					<small>
 					(z. B. Betriebsrenten aus Pensions- oder Unterstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)
 					</small>
@@ -3622,7 +3680,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Staatlich geförderte private Altersvorsorge („Riester- Rente“)
+					<b>Staatlich geförderte private Altersvorsorge („Riester- Rente“)</b>
 					<small>
 					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)
 					</small>
@@ -3640,7 +3698,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					Private Rentenversicherungen
+					<b>Private Rentenversicherungen</b>
 					<small>
 					(z.B. private Rentenversicherungsverträge, die <u><i>nicht</i></u> staatlich gefördert werden bzw. abgeschlossen wurden, 
 						bevor es solche Fördermöglichkeiten gab)
@@ -3688,14 +3746,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "ResponseStatistics"
-				inp.ColSpan = 1
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
-			}
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-textblock"
+					inp.DynamicFunc = "ResponseStatistics"
+					inp.ColSpan = 1
+					inp.ColSpanControl = 0
+					inp.ColSpanLabel = 1
+				}
+			*/
 
 		}
 

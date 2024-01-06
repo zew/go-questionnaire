@@ -21,7 +21,7 @@ func yesNo(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber string, in
 		},
 		[]trl.S{
 			{
-				"de": "ja",
+				"de": "&nbsp;&nbsp;ja",
 				"en": "yes",
 			},
 			{
@@ -65,6 +65,24 @@ func meOrTogether(page qst.WrappedPageT, lbl trl.S, inputName, outlineNumber str
 
 }
 
+// a func to show one image of a slideShow
+// treatment=[ntrl|fin]
+// sligePg=[1-7]
+func slideShow(q qst.QuestionnaireT, treatment string, slidePg int) {
+
+	page := q.AddPage()
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.Short = trl.S{
+		"de": "Erfahrungen<br>Finanzen,<br>Beratung",
+		"en": "Experience<br>finance,<br>advice",
+	}
+	page.WidthMax("48rem")
+
+}
+
 func twoAnswers(
 	page qst.WrappedPageT,
 	lbl trl.S,
@@ -78,6 +96,7 @@ func twoAnswers(
 
 	gr := page.AddGroup()
 	gr.Cols = 8 + 1
+	gr.Cols = 6 + 1
 	gr.WidthMax("40rem")
 	gr.BottomVSpacers = 2
 
@@ -253,7 +272,7 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 		"qx1_confidence",
 		"qx2_decisionfear",
 		"qx3_worry",
-		"qx4_instinct",
+		// "qx4_instinct",
 	}
 	lbls := []trl.S{
 		{
@@ -285,14 +304,14 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 				todo
 			`,
 		},
-		{
-			"de": `
-				Ich mache mir Sorgen über den Erfolg meiner finanziellen Entscheidungen.
-			`,
-			"en": `
-				todo
-			`,
-		},
+		// {
+		// 	"de": `
+		// 		Ich mache mir Sorgen über den Erfolg meiner finanziellen Entscheidungen.
+		// 	`,
+		// 	"en": `
+		// 		todo
+		// 	`,
+		// },
 	}
 
 	// page-a
@@ -336,6 +355,7 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 
 }
 
+// Erfahrungen mit Finanzen  und Beratung
 // X5. onto one page
 // X6. onto one page
 func erfahrungMitFinanzenSplit2(q *qst.QuestionnaireT, idx0, idx1 int) {
@@ -1755,14 +1775,14 @@ func labelsStimmeZuOderNicht() []trl.S {
 			"de": "<small>stimme nicht zu</small>  ",
 			"en": "<small>dont agree</small>       ",
 		},
-		// {
-		// 	"de": "<small>weiß nicht</small>        ",
-		// 	"en": "<small>dont know </small>        ",
-		// },
-		// {
-		// 	"de": "<small>keine Angabe</small>      ",
-		// 	"en": "<small>no answer   </small>      ",
-		// },
+		{
+			"de": "<small>weiß nicht</small>        ",
+			"en": "<small>dont know </small>        ",
+		},
+		{
+			"de": "<small>keine Angabe</small>      ",
+			"en": "<small>no answer   </small>      ",
+		},
 	}
 
 }

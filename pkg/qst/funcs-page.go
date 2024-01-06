@@ -58,9 +58,16 @@ var funcPGs = map[string]funcPageGeneratorT{
 	"pdsPage3-acx": pdsPage3ACX,
 	"pdsPage4-acx": pdsPage4ACX,
 
-	"kneb202306guidedtour": kneb202306guidedtour,
-	"kneb202306simtool0":   kneb202306simtool0,
-	"kneb202306simtool1":   kneb202306simtool1,
+	"kneb202306guidedtourN0": kneb202306guidedtourN0,
+	"kneb202306guidedtourN1": kneb202306guidedtourN1,
+	"kneb202306guidedtourN2": kneb202306guidedtourN2,
+	"kneb202306guidedtourN3": kneb202306guidedtourN3,
+	"kneb202306guidedtourN4": kneb202306guidedtourN4,
+	"kneb202306guidedtourN5": kneb202306guidedtourN5,
+	"kneb202306guidedtourN6": kneb202306guidedtourN6,
+
+	"kneb202306simtool0": kneb202306simtool0, // first instance - exercise
+	"kneb202306simtool1": kneb202306simtool1, // second instance - input values
 }
 
 func pageFuncExample(q *QuestionnaireT, page *pageT) error {

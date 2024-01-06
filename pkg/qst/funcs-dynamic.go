@@ -316,9 +316,17 @@ func ErrorProxy(q *QuestionnaireT, inp *inputT, paramSet string) (string, error)
 func knebSlightlyDistinctLabel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	if q.Version()%2 == 0 {
-		return `Wie motiviert sind Sie, sich        mit dem Thema „Sparen und investieren“ zu befassen?`, nil
+		return `
+			<span style='font-size:120%'>
+			Wie motiviert sind Sie, sich        mit dem Thema „Sparen und Investieren“ zu befassen?
+			</span>
+		`, nil
 	} else {
-		return `Wie motiviert sind Sie, sich weiter mit dem Thema „Sparen und investieren“ zu befassen?`, nil
+		return `
+			<span style='font-size:120%'>
+			Wie motiviert sind Sie, sich weiter mit dem Thema „Sparen und Investieren“ zu befassen?
+			</span>
+		`, nil
 	}
 
 }

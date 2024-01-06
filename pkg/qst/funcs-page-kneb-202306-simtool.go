@@ -80,6 +80,13 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, iter int) error {
 				"de": "Werte speichern und weiter",
 				"en": "todo",
 			}
+			if iter == 0 {
+				s1 = trl.S{
+					"de": "Weiter",
+					"en": "todo",
+				}
+			}
+
 			inp.JSBlockTrls = map[string]trl.S{
 				"msg": s1,
 			}

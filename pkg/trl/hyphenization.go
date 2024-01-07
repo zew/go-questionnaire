@@ -375,10 +375,12 @@ func init() {
 // to prevent erratic results for example from
 //
 // desa|cuer|do
-//
-//	acuer|do
 func HyphenizeText(s string) string {
-	// s1 := s
+
+	// we have to prevent hyphenization inside URL paths
+	if strings.Contains(s, "/") {
+		return s
+	}
 
 	for _, k := range byLen {
 		v := hyphm[k]

@@ -48,26 +48,26 @@ button[value=prev] {
 }
 
 /* treatment neutral is pg25 */
-.pg25-grp00-inp01 .popup-invalid-content-grid-item {
+.pg27-grp00-inp01 .popup-invalid-content-grid-item {
     bottom:  -1.49rem;
 }
-.pg25-grp01-inp01 .popup-invalid-content-grid-item {
+.pg27-grp01-inp01 .popup-invalid-content-grid-item {
     bottom:  0.49rem;
 }
-.pg25-grp02      .popup-invalid-content-grid-item {
+.pg27-grp02      .popup-invalid-content-grid-item {
     bottom:  -1.68rem;
 }
 
 
 
 
-.pg26-grp00-inp01 .popup-invalid-content-grid-item {
+.pg28-grp00-inp01 .popup-invalid-content-grid-item {
     bottom:  -1.48rem;
 }
-.pg26-grp01-inp01 .popup-invalid-content-grid-item {
+.pg28-grp01-inp01 .popup-invalid-content-grid-item {
     bottom:  0.9rem;
 }
-.pg26-grp02-inp01 .popup-invalid-content-grid-item {
+.pg28-grp02-inp01 .popup-invalid-content-grid-item {
     bottom:  -1.39rem;
 }
 

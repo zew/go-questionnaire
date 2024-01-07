@@ -373,13 +373,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 2
+	// page 2a
 	{
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"de": "Alter, Herkunft, Erfahrungen 2",
-			"en": "Age, origin, experience 2",
+			"de": "Alter, Herkunft, Erfahrungen 2 - Bildung",
+			"en": "Age, origin, experience 2 - education",
 		}
 		page.Label = trl.S{
 			"de": "",
@@ -447,71 +447,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.ControlTop()
 			}
 		}
-
-		/*
-			// gr1
-			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				// single column
-				gr.Cols = 3
-				var radioValues = []string{
-					"no",
-					"yes",
-					"highschool",
-				}
-				var labels = []trl.S{
-					{
-						"de": "Nein, keine abgeschlossene Berufsausbildung",
-						"en": "todo",
-					},
-					{
-						"de": "Ja, abgeschlossene Berufsausbildung",
-						"en": "todo",
-					},
-					{
-						"de": "Ja, Hochschulabschluss (Fachhochschule oder Universität)",
-						"en": "todo",
-					},
-				}
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
-							Haben Sie eine abgeschlossene Berufsausbildung?  <br>
-							<small> Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchsten an. </small>
-						`,
-						"en": `
-							todo
-
-						`,
-					}.OutlineHid("D5.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
-				}
-				for idx, label := range labels {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qd5_vocational_training"
-					rad.ValueRadio = radioValues[idx]
-
-					rad.ColSpan = gr.Cols
-					rad.ColSpan = 3
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
-
-					rad.Label = label
-					rad.ControlFirst()
-					rad.LabelTop()
-					rad.ControlTop()
-				}
-			}
-		*/
 	}
 
-	// page 2-split
+	// page 2b - household type and size
 	{
 		page := q.AddPage()
 
@@ -520,7 +458,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
 		page.WidthMax("48rem")
 
 		// gr0
@@ -587,242 +524,436 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		/*
-			// gr1
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3
 			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				// single column
-				gr.Cols = 3
-				var radioValues = []string{
-					"above35hours",
-					"between15and35hours",
-					"upto15hours",
-					"occasionally",
-					"none",
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+					Wie viele Personen leben insgesamt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?
+					<br>
+					<small>
+					Sollten Sie in einer (Studenten-) WG wohnen, 
+					so sollte die Anzahl aller Haushaltsmitglieder auf 1 gesetzt werden
+					</small>
+					`,
+					"en": `
+						todo
+					`,
+				}.OutlineHid("D6.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "qp6_householdsize"
+				inp.Min = 0
+				inp.Max = 100
+				inp.MaxChars = 6
+				inp.Label = trl.S{
+					"de": `
+						Zahl der Haushaltsmitglieder einschließlich Ihnen selbst, 
+						(Ehe-) Partner/in, Kindern und sonstigen Personen
+					
+					`,
+					"en": `todo`,
 				}
-				var labels = []trl.S{
-					{
-						"de": "Vollzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 35&nbsp;Stunden oder mehr",
-						"en": "todo",
-					},
-					{
-						"de": "Teilzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 15 bis unter 35&nbsp;Stunden",
-						"en": "todo",
-					},
-					{
-						"de": "Geringfügig beschäftigt mit einer wöchentlichen Arbeitszeit unter 15&nbsp;Stunden",
-						"en": "todo",
-					},
-					{
-						"de": "Gelegentlich erwerbstätig",
-						"en": "todo",
-					},
-					{
-						"de": "In keiner Weise erwerbstätig",
-						"en": "todo",
-					},
+				inp.Suffix = trl.S{
+					"de": `Personen`,
+					"en": `people`,
 				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 1
+			}
+		}
+
+	}
+
+	// page 2c - occupational status
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			// single column
+			gr.Cols = 3
+			var radioValues = []string{
+				"above35hours",
+				"between15and35hours",
+				"upto15hours",
+				"occasionally",
+				"none",
+			}
+			var labels = []trl.S{
 				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
+					"de": "Vollzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 35&nbsp;Stunden oder mehr",
+					"en": "todo",
+				},
+				{
+					"de": "Teilzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 15 bis unter 35&nbsp;Stunden",
+					"en": "todo",
+				},
+				{
+					"de": "Geringfügig beschäftigt mit einer wöchentlichen Arbeitszeit unter 15&nbsp;Stunden",
+					"en": "todo",
+				},
+				{
+					"de": "Gelegentlich erwerbstätig",
+					"en": "todo",
+				},
+				{
+					"de": "In keiner Weise erwerbstätig",
+					"en": "todo",
+				},
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
 							Sind Sie zurzeit in irgendeiner Weise erwerbstätig?
 							<br>
 							<small>
 							Unter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?
 							</small>
 						`,
-						"en": `
+					"en": `
 							todo
 						`,
-					}.OutlineHid("D7.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
-				}
-				for idx, label := range labels {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qd7_employment"
-					rad.ValueRadio = radioValues[idx]
+				}.OutlineHid("D7.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qd7_employment"
+				rad.ValueRadio = radioValues[idx]
 
-					rad.ColSpan = gr.Cols
-					rad.ColSpan = 3
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
 
-					rad.Label = label
-					rad.ControlFirst()
-					rad.LabelTop()
-					rad.ControlTop()
-				}
+				rad.Label = label
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
+			}
+		}
+	}
+
+	/*
+
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "knebPageD2" // js filename
+
+			s1 := trl.S{
+				"de": "no javascript dialog message needed",
+				"en": "no javascript dialog message needed",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
 			}
 
-			// gr2
-			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				// single column
-				gr.Cols = 3
-				gr.BottomVSpacers = 0
-				var radioValues = []string{
-					"housewife",
-					"unemployed",
-					"ineducation",
-					"military",
-					"parental",
-					"other",
-				}
-				var labels = []trl.S{
-					{
-						"de": "Hausfrau / Hausmann",
-						"en": "todo",
-					},
-					{
-						"de": "Arbeitslos",
-						"en": "todo",
-					},
-					{
-						"de": "In Ausbildung, Schule, Lehre, Studium oder Umschulung",
-						"en": "todo",
-					},
-					{
-						"de": "Wehr- oder Ersatzdienst",
-						"en": "todo",
-					},
-					{
-						"de": "Mutterschafts-/ Erziehungsurlaub bzw. Elternzeit",
-						"en": "todo",
-					},
-					{
-						"de": "Sonstiges",
-						"en": "todo",
-					},
-				}
+			inp.JSBlockStrings = map[string]string{}
+			inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
+
+		}
+
+	*/
+
+	// page 2c-condtional-b - occupational status if not employed
+	{
+		page := q.AddPage()
+		page.NavigationCondition = "kneb_d7_unemployed"
+
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			// single column
+			gr.Cols = 3
+			gr.BottomVSpacers = 0
+			var radioValues = []string{
+				"housewife",
+				"unemployed",
+				"ineducation",
+				"military",
+				"parental",
+				"other",
+			}
+			var labels = []trl.S{
 				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
-							Wenn Sie einmal von den Erwerbstätigkeiten absehen, was von dem Folgenden trifft dann auf Sie zu?
+					"de": "Hausfrau / Hausmann",
+					"en": "todo",
+				},
+				{
+					"de": "Arbeitslos",
+					"en": "todo",
+				},
+				{
+					"de": "In Ausbildung, Schule, Lehre, Studium oder Umschulung",
+					"en": "todo",
+				},
+				{
+					"de": "Wehr- oder Ersatzdienst",
+					"en": "todo",
+				},
+				{
+					"de": "Mutterschafts-/ Erziehungsurlaub bzw. Elternzeit",
+					"en": "todo",
+				},
+				{
+					"de": "Sonstiges",
+					"en": "todo",
+				},
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+							Wenn Sie einmal von den Erwerbstätigkeiten absehen, 
+							was von dem Folgenden trifft dann auf Sie zu?
 						`,
-						"en": `
+					"en": `
 							todo
 						`,
-					}.OutlineHid("D7a.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
-				}
-				for idx, label := range labels {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qd7a_employment"
-					rad.ValueRadio = radioValues[idx]
-
-					rad.ColSpan = gr.Cols
-					rad.ColSpan = 3
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
-
-					rad.Label = label
-					rad.ControlFirst()
-					rad.LabelTop()
-					rad.ControlTop()
-				}
+				}.OutlineHid("D7a.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
 			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qd7a_notemployed"
+				rad.ValueRadio = radioValues[idx]
 
-			// gr3
-			{
-				gr := page.AddGroup()
-				gr.Cols = 6
-				// single column
-				gr.Cols = 3
-				gr.BottomVSpacers = 0
-				var radioValues = []string{
-					"worker",
-					"employee",
-					"civilservant",
-					"selfemployedalone",
-					"selfemployedwithemployees",
-				}
-				var labels = []trl.S{
-					{
-						"de": "Arbeiter",
-						"en": "todo",
-					},
-					{
-						"de": "Angestellter",
-						"en": "todo",
-					},
-					{
-						"de": "Beamter",
-						"en": "todo",
-					},
-					{
-						"de": "Selbständig ohne Mitarbeiter",
-						"en": "todo",
-					},
-					{
-						"de": "Selbständig mit Mitarbeitern",
-						"en": "todo",
-					},
-				}
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
+			}
+		}
+
+	}
+
+	// page 2c-condtional-b - occupational status if employed
+	{
+		page := q.AddPage()
+		page.NavigationCondition = "kneb_d7_employed"
+
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			// single column
+			gr.Cols = 3
+			gr.BottomVSpacers = 0
+			var radioValues = []string{
+				"worker",
+				"employee",
+				"civilservant",
+				"selfemployedalone",
+				"selfemployedwithemployees",
+			}
+			var labels = []trl.S{
 				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
+					"de": "Arbeiter",
+					"en": "todo",
+				},
+				{
+					"de": "Angestellter",
+					"en": "todo",
+				},
+				{
+					"de": "Beamter",
+					"en": "todo",
+				},
+				{
+					"de": "Selbständig ohne Mitarbeiter",
+					"en": "todo",
+				},
+				{
+					"de": "Selbständig mit Mitarbeitern",
+					"en": "todo",
+				},
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
 							Sind Sie zurzeit…					`,
-						"en": `
+					"en": `
 							todo
 						`,
-					}.OutlineHid("D7a.")
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 0
+				}.OutlineHid("D7a.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "qd7b_employment"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+				rad.ControlFirst()
+				rad.LabelTop()
+				rad.ControlTop()
+			}
+
+		}
+
+		/*
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebPageD2" // js filename
+
+				s1 := trl.S{
+					"de": "no javascript dialog message needed",
+					"en": "no javascript dialog message needed",
 				}
-				for idx, label := range labels {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "qd7b_employment"
-					rad.ValueRadio = radioValues[idx]
-
-					rad.ColSpan = gr.Cols
-					rad.ColSpan = 3
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
-
-					rad.Label = label
-					rad.ControlFirst()
-					rad.LabelTop()
-					rad.ControlTop()
+				inp.JSBlockTrls = map[string]trl.S{
+					"msg": s1,
 				}
 
-				{
-					inp := gr.AddInput()
-					inp.ColSpanControl = 1
-					inp.Type = "javascript-block"
-					inp.Name = "knebPageD2" // js filename
-
-					s1 := trl.S{
-						"de": "no javascript dialog message needed",
-						"en": "no javascript dialog message needed",
-					}
-					inp.JSBlockTrls = map[string]trl.S{
-						"msg": s1,
-					}
-
-					inp.JSBlockStrings = map[string]string{}
-					inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
-
-				}
+				inp.JSBlockStrings = map[string]string{}
+				inp.JSBlockStrings["pageID"] = fmt.Sprintf("pg%02v", len(q.Pages)-1)
 
 			}
+
 		*/
 	}
+
+	/*
+		// page 2e - vocational
+		{
+			page := q.AddPage()
+
+			page.Label = trl.S{
+				"de": "Alter, Herkunft, Erfahrungen 3 - Berufsausbildung",
+				"en": "Age, origin, experience 3 - vocational training",
+			}
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+
+			page.SuppressInProgressbar = true
+			page.WidthMax("42rem")
+
+			// gr0
+			{
+				gr := page.AddGroup()
+				gr.Cols = 3
+				var radioValues = []string{
+					"no",
+					"yes",
+					"highschool",
+				}
+				var labels = []trl.S{
+					{
+						"de": "Nein, keine abgeschlossene Berufsausbildung",
+						"en": "todo",
+					},
+					{
+						"de": "Ja, abgeschlossene Berufsausbildung",
+						"en": "todo",
+					},
+					{
+						"de": "Ja, Hochschulabschluss (Fachhochschule oder Universität)",
+						"en": "todo",
+					},
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+							Haben Sie eine abgeschlossene Berufsausbildung?  <br>
+							<small> Falls es mehrere Abschlüsse sind, geben Sie bitte nur den höchsten an. </small>
+						`,
+						"en": `
+							todo
+						`,
+					}.OutlineHid("D8.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+				}
+
+				//
+				for idx, label := range labels {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "qd8_vocational_training"
+					rad.ValueRadio = radioValues[idx]
+
+					rad.ColSpan = gr.Cols
+					rad.ColSpan = 3
+					rad.ColSpanLabel = 1
+					rad.ColSpanControl = 6
+
+					rad.Label = label
+					rad.ControlFirst()
+					rad.LabelTop()
+					rad.ControlTop()
+				}
+			}
+
+		}
+	*/
 
 	// page 3
 	{
@@ -1072,49 +1203,51 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 3-split-1
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{
-			"de": "",
-			"en": "",
-		}
-
-		page.SuppressInProgressbar = true
-		page.WidthMax("48rem")
-
-		// gr1
+	/*
+		// page 3-split-1
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
-			gr.BottomVSpacers = 2
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem <i>finanziellen</i> Risiko beantwortet haben?
-						<small>Bitte geben Sie ein oder mehrere Stichwörter an.</small>
-					`,
-					"en": `todo`,
-				}.OutlineHid("R4.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "qr4_averse_fin_free"
-				inp.MaxChars = 200
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-		}
+			page := q.AddPage()
 
-	}
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+
+			page.SuppressInProgressbar = true
+			page.WidthMax("48rem")
+
+			// gr1
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.12rem"
+				gr.BottomVSpacers = 2
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `Woran haben Sie gedacht, als Sie die Frage nach dem <i>finanziellen</i> Risiko beantwortet haben?
+							<small>Bitte geben Sie ein oder mehrere Stichwörter an.</small>
+						`,
+						"en": `todo`,
+					}.OutlineHid("R4.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "qr4_averse_fin_free"
+					inp.MaxChars = 200
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 0
+					inp.ColSpanControl = 1
+				}
+			}
+
+		}
+	*/
 
 	/*
 		// page 4
@@ -1843,11 +1976,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						der beiden Baumarten zu verdeutlichen.
 					</p>
 					
-					<p>
-						In unserer interaktiven Graphik versuchen wir, 
-						die <i>Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit</i> 
-						der beiden Getreidesorten zu verdeutlichen.
-					</p>
 
 					`,
 					"en": `
@@ -2671,17 +2799,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Wir, die Wissenschaftler hinter dieser Umfrage, 
-						möchten gerne wissen, 
-						wie Sie den Umgang mit dem Tool bewerten? 
-						
-						Welche Vorschläge haben Sie, 
-						wie das Tool für zukünftige Nutzerinnen und Nutzer verbessert werden kann?
-
-						Worauf sollten zukünftige Nutzerinnen und Nutzer besonders achten?
+					Im Folgenden geht es um Tipps in Bezug auf die Altersvorsorge.
+					<br>
+					<br>
+					Welche <i>drei</i> Tipps würden Sie einem Freund oder einer Freundin geben, 
+					wenn um das Sparen für die Altersvorsorge geht?
 					`,
 					"en": `todo`,
-				}.OutlineHid("A1.")
+				}.OutlineHid("T1.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
@@ -3306,114 +3431,134 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
 
-		// gr0
 		{
 			gr := page.AddGroup()
-			// single column
-			gr.Cols = 3
-			var inputs = []string{
-				"qh2_savingsaccount",
-				"qh2_bausparen",
-				"qh2_bonds",
-				"qh2_stocks_etf",
-				"qh2_other",
-				"qh2_gold",
-			}
-			var labels = []trl.S{
-				{
-					"de": `
-					Sparanlagen
-					<br>
-					<small>
-						z.B. Sparbücher, Festgeldkonten,
-						Tagesgeldkonten oder
-						Sparverträge
-					</small>
-					`,
-					"en": `todo`,
-				},
-				{
-					"de": `
-					Bausparverträge
-					<br>
-					<small>
-						(die noch nicht in Darlehen
-						umgewandelt wurden)
-					</small>
-
-					`,
-					"en": `todo`,
-				},
-				{
-					"de": `
-					Festverzinsliche Wertpapiere
-					<small>
-						z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
-					</small>`,
-					"en": `todo`,
-				},
-				{
-					"de": `
-					Aktien oder Aktienfonds und Immobilienfonds
-					<small>
-						(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
-					</small>
-					`,
-					"en": `todo`,
-				},
-				{
-					"de": `
-					Sonstige Wertpapiere
-					<small>
-						z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
-					</small>
-					`,
-					"en": `todo`,
-				},
-				{
-					"de": `Gold`,
-					"en": `todo`,
-				},
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Wir stellen Ihnen nun eine Frage zum <i>Finanzvermögen</i>: <br>
-						Haben Sie (d.h. Ihr Haushalt) im Jahr   
-							<span style='color:#e22; font-size 110%; '>2023</span> 
-						eine der folgenden Vermögensarten besessen?
-					
-
-						<small>
-						Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, 
-						beantworten Sie die Fragen bitte für sich selbst.
-						</small>
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"de": `
+					Wir stellen Ihnen nun eine Frage zum <i>Finanzvermögen</i>: <br>
+					Haben Sie (d.h. Ihr Haushalt) im Jahr   
+						<span style='color:#e22; font-size 110%; '>2023</span> 
+					eine der folgenden Vermögensarten besessen?
 				
-					`,
-					"en": `todo`,
-				}.OutlineHid("H2.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-			for idx, label := range labels {
-				inp := gr.AddInput()
-				inp.Type = "checkbox"
-				inp.Name = inputs[idx]
 
-				inp.ColSpan = gr.Cols
-				inp.ColSpan = 3
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 6
-
-				inp.Label = label
-				inp.ControlFirst()
-				inp.LabelTop()
-				inp.ControlTop()
-			}
+					<small>
+					Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, 
+					beantworten Sie die Fragen bitte für sich selbst.
+					</small>
+			
+				`,
+				"en": `todo`,
+			}.OutlineHid("H2.")
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 0
 		}
+
+		// gr0
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Sparanlagen
+				<br>
+				<small>
+					z.B. Sparbücher, Festgeldkonten,
+					Tagesgeldkonten oder
+					Sparverträge
+				</small>
+				`,
+				"en": `todo`,
+			},
+			"qh2_savingsaccount",
+			"a)",
+			true,
+		)
+
+		// gr1
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Bausparverträge
+				<br>
+				<small>
+					(die noch nicht in Darlehen
+					umgewandelt wurden)
+				</small>
+
+				`,
+				"en": `todo`,
+			},
+			"qh2_bausparen",
+			"b)",
+			true,
+		)
+
+		// gr2
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Festverzinsliche Wertpapiere
+				<small>
+					z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
+				</small>`,
+				"en": `todo`,
+			},
+			"qh2_bonds",
+			"c)",
+			true,
+		)
+
+		// gr3
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Aktien oder Aktienfonds und Immobilienfonds
+				<small>
+					(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
+				</small>
+				`,
+				"en": `todo`,
+			},
+			"qh2_stocks_etf",
+			"d)",
+			true,
+		)
+
+		// gr4
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `
+				Sonstige Wertpapiere
+				<small>
+					z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
+				</small>
+				`,
+				"en": `todo`,
+			},
+			"qh2_other",
+			"e)",
+			true,
+		)
+
+		// gr5
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `Gold`,
+				"en": `todo`,
+			},
+			"qh2_gold",
+			"f)",
+			true,
+		)
 
 	}
 
@@ -3943,7 +4088,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "LinkBack"
-				inp.ColSpan = 1
+				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1
 			}

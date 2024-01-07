@@ -362,12 +362,24 @@ func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (strin
 
 	if val, ok := q.Attrs["i_survey"]; ok {
 		url := fmt.Sprintf(`https://www.gimpulse.com/?m=6006&return=complete&i_survey=%v`, val)
-		ret += fmt.Sprintf(`<a href='%v' target='_blank' >Link back to GIM Panel for payment</a>  <br>`, url)
+		ret += fmt.Sprintf(`
+				<a href='%v' target='_blank' >Link back to GIM Panel for payment</a>  <br>
+				%v <br>
+			`,
+			url,
+			url,
+		)
 	}
 
 	if val, ok := q.Attrs["respBack"]; ok {
 		url := fmt.Sprintf(`https://www.opensurvey.com/survey/1579439651/1704195870?respBack=%v&statusBack=1`, val)
-		ret += fmt.Sprintf(`<a href='%v' target='_blank' >Link back to Open Panel for payment</a>  <br>`, url)
+		ret += fmt.Sprintf(`
+				<a href='%v' target='_blank' >Link back to Open Panel for payment</a>  <br>
+				%v <br>
+			`,
+			url,
+			url,
+		)
 	}
 
 	return fmt.Sprintf("<p>%v</p>", ret), nil

@@ -9,6 +9,7 @@
 go-questionnaire
 go-questionnaire-previous
 go-questionnaire-next
+go-questionnaire-new
 *.fdb
 out.csv
 online-responses.csv

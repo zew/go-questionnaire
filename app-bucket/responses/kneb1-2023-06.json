@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "665204f1062c4f0f25b601cf7bfd6d85d18486c7f4ffe5ef4a5fe74f78fbc77f",
+ 	"md_5": "4dfc5220600c2f1ea6f5a1fdc5a17a328309a49f23cc99224e477ff4d8d01abd",
  	"lang_codes": [
  		"de"
  	],
@@ -27,7 +27,7 @@
  	"version_max": 4,
  	"assign_version": "version-from-login-url",
  	"version_effective": -2,
- 	"max_groups": 6,
+ 	"max_groups": 7,
  	"pages": [
  		{
  			"label": {
@@ -1489,6 +1489,915 @@
  							}
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- D6. --\u003e\n\t\t\t\t\tWie viele Personen leben insge\u0026shy;samt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tSollten Sie in einer (Studenten-) WG wohnen, \n\t\t\t\t\tso sollte die Anzahl aller Haushaltsmit\u0026shy;glieder auf 1 gesetzt werden\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- D6. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qp6_householdsize",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\tZahl der Haushaltsmit\u0026shy;glieder einschließlich Ihnen selbst, \n\t\t\t\t\t\t(Ehe-) Partner/in, Kindern und sonstigen Personen\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"suffix": {
+ 								"de": "Personen",
+ 								"en": "people"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- D7. --\u003e\n\t\t\t\t\t\t\tSind Sie zurzeit in irgendeiner Weise erwerbstätig?\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tUn\u0026shy;ter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?\n\t\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\t",
+ 								"en": "\u003c!-- D7. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Vollzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 35\u0026nbsp;Stunden oder mehr",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "above35hours",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Teilzeiterwerbstätig mit einer wöchentlichen Arbeitszeit von 15 bis un\u0026shy;ter 35\u0026nbsp;Stunden",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "between15and35hours",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geringfügig beschäftigt mit einer wöchentlichen Arbeitszeit un\u0026shy;ter 15\u0026nbsp;Stunden",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "upto15hours",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Gelegentlich erwerbstätig",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "occasionally",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In kei\u0026shy;ner Weise erwerbstätig",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "none",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navigation_condition": "kneb_d7_unemployed",
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\tWenn Sie einmal von den Erwerbstätigkeiten absehen, \n\t\t\t\t\t\t\twas von dem Folgenden trifft dann auf Sie zu?\n\t\t\t\t\t\t",
+ 								"en": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd7a_notemployed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hausfrau / Hausmann",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "housewife",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_notemployed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Arbeitslos",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "unemployed",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_notemployed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In Ausbil\u0026shy;dung, Schule, Lehre, Studium oder Umschulung",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "ineducation",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_notemployed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wehr- oder Ersatzdienst",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "military",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_notemployed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mutterschafts-/ Erziehungsurlaub bzw. Elternzeit",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "parental",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7a_notemployed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sonstiges",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "other",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navigation_condition": "kneb_d7_employed",
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\tSind Sie zurzeit…\t\t\t\t\t",
+ 								"en": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Arbeiter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "worker",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Angestellter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "employee",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Beamter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "civilservant",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Selbständig ohne Mitarbeiter",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "selfemployedalone",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd7b_employment",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Selbständig mit Mitarbeitern",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "selfemployedwithemployees",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			]
  		},
@@ -2826,76 +3735,6 @@
  							"box_style": {
  								"display": "grid"
  							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "48rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- R4. --\u003eWoran haben Sie gedacht, als Sie die Frage nach dem \u003ci\u003efinanziellen\u003c/i\u003e Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- R4. --\u003etodo"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "qr4_averse_fin_free",
- 							"type": "textarea",
- 							"max_chars": 200,
- 							"col_span": 1,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"row_gap": "0.12rem"
- 							},
- 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
@@ -7707,7 +8546,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eAnbauentscheidungen \n\t\t\t\t\t\tanhand eines Beispiels aus der Forstwirt\u0026shy;schaft\u003c/i\u003e.\n\n\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von forstwirt\u0026shy;schaft\u0026shy;lichen Betrieben. \n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. \n\t\t\t\t\t\tEin Forstwirt bestellt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e er anpflanzen möchte. \t\t\t\t\t\t\n\t\t\t\t\t\tEr kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Abwägung zwi\u0026shy;schen \n\t\t\t\t\t\tden beiden Eigenschaften Ertrag und Widerstandsfähigkeit \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Getreidesorten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eAnbauentscheidungen \n\t\t\t\t\t\tanhand eines Beispiels aus der Forstwirt\u0026shy;schaft\u003c/i\u003e.\n\n\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von forstwirt\u0026shy;schaft\u0026shy;lichen Betrieben. \n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. \n\t\t\t\t\t\tEin Forstwirt bestellt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e er anpflanzen möchte. \t\t\t\t\t\t\n\t\t\t\t\t\tEr kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Abwägung zwi\u0026shy;schen \n\t\t\t\t\t\tden beiden Eigenschaften Ertrag und Widerstandsfähigkeit \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -7770,30 +8609,6 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_18",
- 				"en": "PageLabel_18"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN0"
- 		},
- 		{
- 			"label": {
- 				"de": "Seitentitel_19",
- 				"en": "PageLabel_19"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN1"
- 		},
- 		{
- 			"label": {
  				"de": "Seitentitel_20",
  				"en": "PageLabel_20"
  			},
@@ -7802,7 +8617,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN2"
+ 			"generator_func_name": "kneb202306guidedtourN0"
  		},
  		{
  			"label": {
@@ -7814,7 +8629,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN3"
+ 			"generator_func_name": "kneb202306guidedtourN1"
  		},
  		{
  			"label": {
@@ -7826,7 +8641,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN4"
+ 			"generator_func_name": "kneb202306guidedtourN2"
  		},
  		{
  			"label": {
@@ -7838,7 +8653,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN5"
+ 			"generator_func_name": "kneb202306guidedtourN3"
  		},
  		{
  			"label": {
@@ -7850,12 +8665,36 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN6"
+ 			"generator_func_name": "kneb202306guidedtourN4"
  		},
  		{
  			"label": {
  				"de": "Seitentitel_25",
  				"en": "PageLabel_25"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306guidedtourN5"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_26",
+ 				"en": "PageLabel_26"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306guidedtourN6"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_27",
+ 				"en": "PageLabel_27"
  			},
  			"description": {
  				"de": "",
@@ -8637,8 +9476,8 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_28",
- 				"en": "PageLabel_28"
+ 				"de": "Seitentitel_30",
+ 				"en": "PageLabel_30"
  			},
  			"description": {
  				"de": "",
@@ -11193,8 +12032,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- A1. --\u003e\n\t\t\t\t\t\tWir, die Wissenschaftler hinter dieser Umfrage, \n\t\t\t\t\t\tmöchten gerne wissen, \n\t\t\t\t\t\twie Sie den Umgang mit dem Tool be\u0026shy;wer\u0026shy;ten? \n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Vorschläge haben Sie, \n\t\t\t\t\t\twie das Tool für zukünftige Nutzerinnen und Nutzer ver\u0026shy;bes\u0026shy;sert werden kann?\n\n\t\t\t\t\t\tWorauf sollten zukünftige Nutzerinnen und Nutzer besonders achten?\n\t\t\t\t\t",
- 								"en": "\u003c!-- A1. --\u003etodo"
+ 								"de": "\u003c!-- T1. --\u003e\n\t\t\t\t\tIm Folgenden geht es um Tipps in Bezug auf die Altersvorsorge.\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche \u003ci\u003edrei\u003c/i\u003e Tipps würden Sie einem Freund oder einer Freundin geben, \n\t\t\t\t\twenn um das Sparen für die Altersvorsorge geht?\n\t\t\t\t\t",
+ 								"en": "\u003c!-- T1. --\u003etodo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -15876,7 +16715,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg37"
+ 								"pageID": "pg39"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -16978,35 +17817,58 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\t\u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\n\t\t\t\t\t",
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\n\t\t\t\t",
  								"en": "\u003c!-- H2. --\u003etodo"
  							},
- 							"col_span": 3,
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\tSparanlagen\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- a) --\u003etodo"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
  							"col_span_label": 1
  						},
  						{
  							"name": "qh2_savingsaccount",
- 							"type": "checkbox",
+ 							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\tSparanlagen\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tz.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\t\tSparverträge\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "todo"
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
  							},
- 							"col_span": 3,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "start",
  										"order": 2
  									},
  									"text_style": {}
@@ -17017,13 +17879,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh2_savingsaccount",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
  							},
- 							"style_control": {
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- b) --\u003e\n\t\t\t\tBausparverträge\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(die noch nicht in Darlehen\n\t\t\t\t\tumgewandelt wurden)\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"en": "\u003c!-- b) --\u003etodo"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_bausparen",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
  									},
  									"text_style": {}
  								},
@@ -17037,21 +17984,21 @@
  						},
  						{
  							"name": "qh2_bausparen",
- 							"type": "checkbox",
+ 							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\tBausparverträge\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(die noch nicht in Darlehen\n\t\t\t\t\t\tumgewandelt wurden)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t",
- 								"en": "todo"
+ 								"de": "nein",
+ 								"en": "no"
  							},
- 							"col_span": 3,
+ 							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"value_radio": "no",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "start",
  										"order": 2
  									},
  									"text_style": {}
@@ -17062,13 +18009,69 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
  							},
- 							"style_control": {
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\tFestverzinsliche Wertpapiere\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds\n\t\t\t\t\u003c/small\u003e",
+ 								"en": "\u003c!-- c) --\u003etodo"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_bonds",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
  									"text_style": {}
  								},
@@ -17082,21 +18085,21 @@
  						},
  						{
  							"name": "qh2_bonds",
- 							"type": "checkbox",
+ 							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\tFestverzinsliche Wertpapiere\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tz. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds\n\t\t\t\t\t\u003c/small\u003e",
- 								"en": "todo"
+ 								"de": "nein",
+ 								"en": "no"
  							},
- 							"col_span": 3,
+ 							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"value_radio": "no",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "start",
  										"order": 2
  									},
  									"text_style": {}
@@ -17107,13 +18110,69 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
  							},
- 							"style_control": {
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\tAktien oder Aktienfonds und Immobilienfonds\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- d) --\u003etodo"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_stocks_etf",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
  									"text_style": {}
  								},
@@ -17127,21 +18186,21 @@
  						},
  						{
  							"name": "qh2_stocks_etf",
- 							"type": "checkbox",
+ 							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\tAktien oder Aktienfonds und Immobilienfonds\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "todo"
+ 								"de": "nein",
+ 								"en": "no"
  							},
- 							"col_span": 3,
+ 							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"value_radio": "no",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "start",
  										"order": 2
  									},
  									"text_style": {}
@@ -17152,13 +18211,69 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
  							},
- 							"style_control": {
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- e) --\u003e\n\t\t\t\tSonstige Wertpapiere\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003c!-- e) --\u003etodo"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_other",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
  									"text_style": {}
  								},
@@ -17172,21 +18287,21 @@
  						},
  						{
  							"name": "qh2_other",
- 							"type": "checkbox",
+ 							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\tSonstige Wertpapiere\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tz.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "todo"
+ 								"de": "nein",
+ 								"en": "no"
  							},
- 							"col_span": 3,
+ 							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"value_radio": "no",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "start",
  										"order": 2
  									},
  									"text_style": {}
@@ -17197,13 +18312,69 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
  							},
- 							"style_control": {
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- f) --\u003eGold",
+ 								"en": "\u003c!-- f) --\u003etodo"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_gold",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
  									"text_style": {}
  								},
@@ -17217,38 +18388,22 @@
  						},
  						{
  							"name": "qh2_gold",
- 							"type": "checkbox",
+ 							"type": "radio",
  							"label": {
- 								"de": "Gold",
- 								"en": "todo"
+ 								"de": "nein",
+ 								"en": "no"
  							},
- 							"col_span": 3,
+ 							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"value_radio": "no",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "start",
  										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
  									},
  									"text_style": {}
  								},
@@ -17260,7 +18415,26 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},
@@ -19015,7 +20189,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "45",
+ 							"response": "47",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

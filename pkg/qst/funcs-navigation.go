@@ -26,6 +26,8 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"kneb_t1b":               knebTreatment1NeurtraVsFinance_B,
 	"kneb_t2a":               knebTreatment2AdviceNoOrYes_A,
 	"kneb_t2b":               knebTreatment2AdviceNoOrYes_B,
+	"kneb_d7_unemployed":     knebD7unemployed,
+	"kneb_d7_employed":       knebD7employed,
 	"kneb_b6_who_competent":  knebB6WhoIsCompetent,
 	"kneb_h1_who_responsibe": knebH1WhoIsResponsible,
 }
@@ -153,10 +155,25 @@ func knebTreatment2AdviceNoOrYes_B(q *QuestionnaireT, pageIdx int) bool {
 	return !knebTreatment2AdviceNoOrYes_A(q, pageIdx)
 }
 
+func knebD7employed(q *QuestionnaireT, pageIdx int) bool {
+	inp := q.ByName("qd7_employment")
+	employed := inp.Response == "above35hours" || inp.Response == "between15and35hours"
+	if employed {
+		return true
+	}
+	return false
+}
+func knebD7unemployed(q *QuestionnaireT, pageIdx int) bool {
+	inp := q.ByName("qd7_employment")
+	employed := inp.Response == "above35hours" || inp.Response == "between15and35hours"
+	if !employed && inp.Response != "" {
+		return true
+	}
+	return false
+}
+
 func knebB6WhoIsCompetent(q *QuestionnaireT, pageIdx int) bool {
 	inp := q.ByName("qb5_delegate")
-	// inp := q.Pages[2].Groups[0].Inputs[2]
-	// if inp.Response == "7" || inp.Response == "8" || inp.Response == "9" || inp.Response == "10" || inp.Response == "11" {
 	if inp.Response == "yes" {
 		return true
 	}

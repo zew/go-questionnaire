@@ -38,7 +38,6 @@ button[value=prev] {
 /* error bubble popup default */
 .popup-invalid-content-grid-item {
     bottom:  0.09rem;
-    min-width: unset;
 }
 
 

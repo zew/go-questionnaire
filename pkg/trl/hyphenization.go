@@ -378,7 +378,7 @@ func init() {
 func HyphenizeText(s string) string {
 
 	// we have to prevent hyphenization inside URL paths
-	if strings.Contains(s, "/") {
+	if false && strings.Contains(s, "/") {
 		return s
 	}
 

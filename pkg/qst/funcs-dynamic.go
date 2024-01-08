@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"log"
+	"net/http"
 	"strings"
 	"time"
 
@@ -355,33 +356,74 @@ func knebDownloadURL(q *QuestionnaireT, inp *inputT, paramSet string) (string, e
 
 }
 
+func doRequest(url string) (int, error) {
+
+	client := &http.Client{
+		// CheckRedirect: redirectPolicyFunc,
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			log.Printf("  redirect #%v  %v", len(via), req.URL.String())
+			// return http.ErrUseLastResponse
+			return nil
+		},
+	}
+
+	resp, err := client.Get(url)
+	if err != nil {
+		return resp.StatusCode, err
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		return resp.StatusCode, fmt.Errorf("panel server returned %v - %v", resp.Status, resp.StatusCode)
+	}
+
+	return http.StatusOK, nil
+}
+
+func helper(url, panelName string) string {
+
+	status, err := doRequest(url)
+	if err != nil {
+		log.Printf("%v panel returned %v - %v for %v", panelName, status, err, url)
+		return fmt.Sprintf(`
+			<a href='%v' target='_blank' >Bitte betätigen Sie den Link zum Panel %v für Ihre Auszahlung</a>  <br>
+			<small>%v</small><br>
+			<br>
+			<small>Automatic submission - %v</small><br>
+			`,
+			url,
+			panelName,
+			url,
+			err,
+		)
+	}
+
+	return fmt.Sprintf(`
+		Der Panel %v wurde über die erfolgreiche Teilnahme informiert und hat die Information bestätigt.<br>
+		<small>%v</small><br>
+		`,
+		panelName,
+		url,
+	)
+
+}
+
 // URL to panel provider for payment
 func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
-	ret := ""
-
 	if val, ok := q.Attrs["i_survey"]; ok {
 		url := fmt.Sprintf(`https://www.gimpulse.com/?m=6006&return=complete&i_survey=%v`, val)
-		ret += fmt.Sprintf(`
-				<a href='%v' target='_blank' >Link back to GIM Panel for payment</a>  <br>
-				%v <br>
-			`,
-			url,
-			url,
-		)
+		return helper(url, "GIMpulse"), nil
 	}
 
 	if val, ok := q.Attrs["respBack"]; ok {
 		url := fmt.Sprintf(`https://www.opensurvey.com/survey/1579439651/1704195870?respBack=%v&statusBack=1`, val)
-		ret += fmt.Sprintf(`
-				<a href='%v' target='_blank' >Link back to Open Panel for payment</a>  <br>
-				%v <br>
-			`,
-			url,
-			url,
-		)
+		return helper(url, "Talk Online"), nil
 	}
 
-	return fmt.Sprintf("<p>%v</p>", ret), nil
+	return `Keine Panel Benutzer-ID vorhanden. Falls Sie von GIMpulse oder Talk Online / Open Panel gekommen sind, 
+		kontaktieren Sie <a href="mailto:Caroline.Knebel@zew.de">Frau Knebel</a>.
+		Notieren und übermitteln Sie an Frau Knebel ihre Teilnahme ID. <br>
+		Sie finden diese rechts oben im Menüpunkt "Benutzer - Abmelden" in den nachfolgenden runden Klammmern. <br>
+	`, nil
 
 }

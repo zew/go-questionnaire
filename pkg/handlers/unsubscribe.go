@@ -14,7 +14,6 @@ import (
 	"time"
 
 	"github.com/go-playground/form/v4"
-	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 )
 
@@ -43,6 +42,8 @@ type unsubscribeT struct {
 	Task    string `json:"task"`
 	Email   string `json:"email"`
 	Date    string `json:"date"`
+	URL1    string `json:"url1"` // the original URL raw query
+	URL2    string `json:"url2"` // the original URL query string
 
 	Response template.HTML `json:"response"`
 }
@@ -54,6 +55,7 @@ func (us unsubscribeT) String() string {
 	fmt.Fprintf(b, "Email:    %v\n", us.Email)
 	fmt.Fprintf(b, "Date:     %v\n", us.Date)
 	fmt.Fprintf(b, "Response: %v\n", us.Response)
+	fmt.Fprintf(b, "URLs:    %v - %v\n", us.URL1, us.URL2)
 	return b.String()
 }
 func (us unsubscribeT) CSVHeader() string {
@@ -191,9 +193,12 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 		fe.Response += template.HTML(msg + "<br>")
 	}
 
-	dbg.Dump(fe)
+	// dbg.Dump(fe)
 
+	// no errors
 	if fe.Response == "" {
+		fe.URL1 = r.RequestURI
+		fe.URL2 = r.URL.RawQuery
 		msg1, err := saveCSVRow(fe)
 		if err != nil {
 			fe.Response += template.HTML(err.Error() + "<br>")

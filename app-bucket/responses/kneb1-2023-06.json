@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4dfc5220600c2f1ea6f5a1fdc5a17a328309a49f23cc99224e477ff4d8d01abd",
+ 	"md_5": "5ad014c75789c603c12eece2911ff62c2097b39b81042953cc69f9c5b2a860f9",
  	"lang_codes": [
  		"de"
  	],
@@ -237,6 +237,150 @@
  										"Val": {
  											"de": " Bitte ein Jahr wählen ",
  											"en": " Please choose a year "
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1950",
+ 										"Val": {
+ 											"de": "1950",
+ 											"en": "1950"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1951",
+ 										"Val": {
+ 											"de": "1951",
+ 											"en": "1951"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1952",
+ 										"Val": {
+ 											"de": "1952",
+ 											"en": "1952"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1953",
+ 										"Val": {
+ 											"de": "1953",
+ 											"en": "1953"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1954",
+ 										"Val": {
+ 											"de": "1954",
+ 											"en": "1954"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1955",
+ 										"Val": {
+ 											"de": "1955",
+ 											"en": "1955"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1956",
+ 										"Val": {
+ 											"de": "1956",
+ 											"en": "1956"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1957",
+ 										"Val": {
+ 											"de": "1957",
+ 											"en": "1957"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1958",
+ 										"Val": {
+ 											"de": "1958",
+ 											"en": "1958"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1959",
+ 										"Val": {
+ 											"de": "1959",
+ 											"en": "1959"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1960",
+ 										"Val": {
+ 											"de": "1960",
+ 											"en": "1960"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1961",
+ 										"Val": {
+ 											"de": "1961",
+ 											"en": "1961"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1962",
+ 										"Val": {
+ 											"de": "1962",
+ 											"en": "1962"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1963",
+ 										"Val": {
+ 											"de": "1963",
+ 											"en": "1963"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1964",
+ 										"Val": {
+ 											"de": "1964",
+ 											"en": "1964"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1965",
+ 										"Val": {
+ 											"de": "1965",
+ 											"en": "1965"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1966",
+ 										"Val": {
+ 											"de": "1966",
+ 											"en": "1966"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "1967",
+ 										"Val": {
+ 											"de": "1967",
+ 											"en": "1967"
  										},
  										"Selected": false
  									},
@@ -543,9 +687,82 @@
  											"en": "2005"
  										},
  										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2006",
+ 										"Val": {
+ 											"de": "2006",
+ 											"en": "2006"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2007",
+ 										"Val": {
+ 											"de": "2007",
+ 											"en": "2007"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2008",
+ 										"Val": {
+ 											"de": "2008",
+ 											"en": "2008"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2009",
+ 										"Val": {
+ 											"de": "2009",
+ 											"en": "2009"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2010",
+ 										"Val": {
+ 											"de": "2010",
+ 											"en": "2010"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2011",
+ 										"Val": {
+ 											"de": "2011",
+ 											"en": "2011"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2012",
+ 										"Val": {
+ 											"de": "2012",
+ 											"en": "2012"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2013",
+ 										"Val": {
+ 											"de": "2013",
+ 											"en": "2013"
+ 										},
+ 										"Selected": false
+ 									},
+ 									{
+ 										"Key": "2014",
+ 										"Val": {
+ 											"de": "2014",
+ 											"en": "2014"
+ 										},
+ 										"Selected": false
  									}
  								]
- 							}
+ 							},
+ 							"validator": "must; kneb-age-bracket"
  						}
  					]
  				},
@@ -2441,7 +2658,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- R1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -3148,7 +3365,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -6877,7 +7094,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
+ 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
  								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
@@ -7581,7 +7798,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL1. --\u003e\n\t\t\t\t\t\u003cspan style='font-size:110%'\u003e\n\t\t\t\t\tIm Folgenden haben wir ein Quiz zu finanziellem Wissen. \n\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto.\n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst,\n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto.\n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\n\t\t\t\t",
+ 								"de": "\u003c!-- FL1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tIm Folgenden haben wir ein Quiz zu finanziellem Wissen. \n\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto.\n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst,\n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto.\n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\n\t\t\t\t",
  								"en": "\u003c!-- FL1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -12041,7 +12258,7 @@
  						{
  							"name": "qt1_advice",
  							"type": "textarea",
- 							"max_chars": 200,
+ 							"max_chars": 400,
  							"col_span": 1,
  							"col_span_control": 1
  						}
@@ -13382,7 +13599,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL4. --\u003e\n\t\t\t\t\t\t\t\u003cspan style='font-size:110%'\u003e\n\t\t\t\t\t\t\tIm Folgenden haben wir weitere Quizfragen. \n\t\t\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\t\t\u003c/span\u003e\n\t\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\t\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\tWas ist die Hauptfunktion des Aktien\u0026shy;marktes?\n\t\t\t\t\t\t",
+ 								"de": "\u003c!-- FL4. --\u003e\n\t\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\t\tIm Folgenden haben wir weitere Quizfragen. \n\t\t\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\t\t\u003c/span\u003e\n\t\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\t\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\tWas ist die Hauptfunktion des Aktien\u0026shy;marktes?\n\t\t\t\t\t\t",
  								"en": "\u003c!-- FL4. --\u003etodo"
  							},
  							"col_span": 6,
@@ -17817,12 +18034,13 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\n\t\t\t\t",
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 115%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- H2. --\u003etodo"
  							},
  							"col_span": 1,
@@ -17837,7 +18055,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\tSparanlagen\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSparanlagen\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- a) --\u003etodo"
  							},
  							"col_span": 7,
@@ -17938,7 +18156,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- b) --\u003e\n\t\t\t\tBausparverträge\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(die noch nicht in Darlehen\n\t\t\t\t\tumgewandelt wurden)\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eBausparverträge\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(die noch nicht in Darlehen\n\t\t\t\t\tumgewandelt wurden)\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- b) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18039,7 +18257,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- c) --\u003e\n\t\t\t\tFestverzinsliche Wertpapiere\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds\n\t\t\t\t\u003c/small\u003e",
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eFestverzinsliche Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds\n\t\t\t\t\u003c/small\u003e",
  								"en": "\u003c!-- c) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18140,7 +18358,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\tAktien oder Aktienfonds und Immobilienfonds\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eAktien oder Aktienfonds und Immobilienfonds\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- d) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18241,7 +18459,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- e) --\u003e\n\t\t\t\tSonstige Wertpapiere\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSonstige Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- e) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18342,7 +18560,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- f) --\u003eGold",
+ 								"de": "\u003c!-- f) --\u003e\u003cspan style=\"font-size:115%\"\u003eGold\u003c/span\u003e",
  								"en": "\u003c!-- f) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18475,7 +18693,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\tWie hoch \u003ci style='font-size:110%'\u003eschätzen\u003c/i\u003e Sie,\n\t\t\t\t\t\tist das \u003ci style='font-size:110%'\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare \n\t\t\t\t\t\t\u003ci style='font-size:110%'\u003eNettoeinkommen Ihres Haushalts\u003c/i\u003e,\n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug\n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht?\n\t\t\t\t\t",
+ 								"de": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\tWie hoch \u003ci style=\"font-size:110%\"\u003eschätzen\u003c/i\u003e Sie,\n\t\t\t\t\t\tist das \u003ci style=\"font-size:110%\"\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare \n\t\t\t\t\t\t\u003ci style=\"font-size:110%\"\u003eNettoeinkommen Ihres Haushalts\u003c/i\u003e,\n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug\n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht?\n\t\t\t\t\t",
  								"en": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 2,
@@ -19350,7 +19568,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t    \u003cb\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im  Jahr \u003cspan style='color:#e22; font-size 110%; '\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/b\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
+ 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im  Jahr \u003cspan style=\"font-size 115%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
  								"en": "\u003c!-- H4. --\u003etodo"
  							},
  							"col_span": 1,
@@ -19365,7 +19583,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cb\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/b\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- a) --\u003etodo"
  							},
  							"col_span": 7,
@@ -19466,7 +19684,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\t\u003cb\u003eBetriebliche Lebensversi\u0026shy;cherungen\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Direktversi\u0026shy;cherungen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eBetriebliche Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Direktversi\u0026shy;cherungen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- b) --\u003etodo"
  							},
  							"col_span": 7,
@@ -19567,7 +19785,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\t\u003cb\u003eSonstige betriebliche Altersvorsorge\u003c/b\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Betriebsrenten aus Pensions- oder Un\u0026shy;terstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eSonstige betriebliche Altersvorsorge\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Betriebsrenten aus Pensions- oder Un\u0026shy;terstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- c) --\u003etodo"
  							},
  							"col_span": 7,
@@ -19668,7 +19886,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cb\u003eStaatlich geförderte private Altersvorsorge („Riester- Rente“)\u003c/b\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge („Riester- Rente“)\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- d) --\u003etodo"
  							},
  							"col_span": 7,
@@ -19769,7 +19987,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\t\u003cb\u003ePrivate Rentenversi\u0026shy;cherungen\u003c/b\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die \u003cu\u003e\u003ci\u003enicht\u003c/i\u003e\u003c/u\u003e staatlich gefördert werden bzw. abgeschlossen wurden, \n\t\t\t\t\t\tbevor es solche Fördermöglichkeiten gab)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Rentenversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die \u003cu\u003e\u003ci\u003enicht\u003c/i\u003e\u003c/u\u003e staatlich gefördert werden bzw. abgeschlossen wurden, \n\t\t\t\t\t\tbevor es solche Fördermöglichkeiten gab)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- e) --\u003etodo"
  							},
  							"col_span": 7,
@@ -20283,7 +20501,8 @@
  							"type": "dyn-textblock",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "knebLinkBackToPanel"
+ 							"dynamic_func": "knebLinkBackToPanel",
+ 							"dynamic_func_paramset": "success"
  						}
  					]
  				}

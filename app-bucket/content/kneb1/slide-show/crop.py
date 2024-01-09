@@ -20,7 +20,7 @@ def makeWhiteTransparent(filePath):
     img.save(filePath, "PNG")    
 
 
-def crop(subDir):
+def crop(subDir, forMobile):
     outDir = os.path.join(outPath,subDir)
     # os.mkdir( outDir )
     os.makedirs(outDir, exist_ok=True)
@@ -32,12 +32,23 @@ def crop(subDir):
         print("  file is %s" % fullPath)
         if os.path.isfile(fullPath):
             im = Image.open(fullPath)
-            # 1920x1080
-            # 1280x720
-            cx = 128 + 48
-            xD =  24 +  0    # crop more left than right
-            cy = 14
-            imCrop = im.crop((cx + xD, cy, 1280 - (cx - xD), 720-cy))
+
+            if not forMobile:
+                # 1920x1080
+                # 1280x720
+                cx = 128 + 48    # width reduction
+                xD =  24 +  0    # crop more left than right
+                cy = 14          # height reduction
+                imCrop = im.crop((cx + xD, cy, 1280 - (cx - xD), 720-cy))
+            elif forMobile:
+                # 1280x1707
+                cx = 128 + 48    # width reduction
+                cx = 128 + 80    
+                xD =  42 +  0    # crop more left than right
+                cy =  32          # height reduction
+                imCrop = im.crop((cx + xD, cy, 1280 - (cx - xD), 1707-cy))
+
+
             # save
             noExt, oldExt = os.path.splitext(fullPath)
             baseName = os.path.basename(noExt)
@@ -47,7 +58,9 @@ def crop(subDir):
             makeWhiteTransparent( os.path.join( outDir, newFn ) )
 
 
-crop( "fin" )
+# crop( "fin" , False)
+crop( "fin-mobile", True )
 
 # the word 'neutral' get hyphenated
-crop( "ntrl" )
+# crop( "ntrl" , False)
+crop( "ntrl-mobile", True )

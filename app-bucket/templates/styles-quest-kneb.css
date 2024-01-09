@@ -82,3 +82,18 @@ button[value=prev] {
 }
 
 
+/* guided tour show image for mobile or desktop */
+.img-guided-tour-desktop {
+    display: block;
+}
+.img-guided-tour-mobile {
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    .img-guided-tour-desktop {
+        display: none;
+    }
+    .img-guided-tour-mobile {
+        display: block;
+    }
+}

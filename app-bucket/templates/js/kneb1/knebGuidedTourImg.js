@@ -2,6 +2,31 @@ const appPrefix = "{{.appPrefix}}";
 const treatIdx  = "{{.treatIdx}}";
 const pageIdx   = "{{.pageIdx}}";
 
+function createImgEl(treatment, mobile){
+
+    const img = document.createElement("img");
+    let imgURL = `./${appPrefix}/doc/kneb1/slide-show/out/${treatment}/0${pageIdx}.png` ;
+    if (mobile) {
+        imgURL = `./${appPrefix}/doc/kneb1/slide-show/out/${treatment}-mobile/0${pageIdx}.png` ;
+    }
+    console.log(`img url ${imgURL}`)
+
+    img.setAttribute("src", imgURL)
+    img.setAttribute("alt", "")
+
+    if (!mobile) {
+        img.classList.add("img-guided-tour-desktop")      
+    } else {
+        img.classList.add("img-guided-tour-mobile")      
+    }
+
+    // img.style.display = "inline-block"
+    img.style.margin = "0 auto";
+    img.style.maxHeight = "calc(100vh - 8rem)";
+
+    return img;
+}
+
 
 window.onload = function() {
     try {
@@ -14,19 +39,14 @@ window.onload = function() {
         }
         console.log(`treatIdx ${treatIdx}  - treatment ${treatment}  - pageIdx ${pageIdx}`);
         
-        const img = document.createElement("img");
-        const imgURL = `./${appPrefix}/doc/kneb1/slide-show/out/${treatment}/0${pageIdx}.png` ;
-        console.log(`img url ${imgURL}`)
+        const img1 = createImgEl(treatment, false);
+        const img2 = createImgEl(treatment, true );
 
-        img.setAttribute("src", imgURL)
-        img.setAttribute("alt", "")
-        // img.style.display = "inline-block"
-        img.style.margin = "0 auto";
-        img.style.maxHeight = "calc(100vh - 8rem)";
 
         // const anchor = document.getElementById("anchor");
         const anchor = document.getElementsByClassName("grid-container")[0];
-        anchor.appendChild(img);
+        anchor.appendChild(img1);
+        anchor.appendChild(img2);
 
 
         try {

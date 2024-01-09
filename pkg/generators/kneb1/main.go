@@ -187,7 +187,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					)
 				}
 				// for year := 1930; year < time.Now().Year()-10; year++ {
-				for year := 1968; year <= 2005; year++ {
+				yrStart := 1968
+				yrStop := 2005
+
+				yrStart = 1950
+				yrStop = time.Now().Year() - 10
+
+				for year := yrStart; year <= yrStop; year++ {
 					inp.DD.Add(
 						fmt.Sprintf("%d", year),
 						trl.S{
@@ -196,6 +202,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						},
 					)
 				}
+
+				inp.Validator = "must; kneb-age-bracket"
 
 			}
 		}
@@ -319,57 +327,58 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		if false {
-			// gr3
-			{
-				gr := page.AddGroup()
-				gr.Cols = 4
-				gr.BottomVSpacers = 1
-
+		/*
+			if false {
+				// gr3
 				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "q04_age"
+					gr := page.AddGroup()
+					gr.Cols = 4
+					gr.BottomVSpacers = 1
 
-					inp.Label = trl.S{
-						"de": "Wie alt sind Sie?",
-						"en": "How old are you?",
-					}
-					inp.MaxChars = 4
-					inp.Step = 1
-					inp.Min = 15
-					inp.Max = 100
-					inp.Validator = "inRange100"
+					{
+						inp := gr.AddInput()
+						inp.Type = "number"
+						inp.Name = "q04_age"
 
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 3
-					inp.ColSpanControl = 2
-					inp.Suffix = trl.S{
-						"de": "&nbsp; Jahre",
-						"en": "&nbsp; years",
+						inp.Label = trl.S{
+							"de": "Wie alt sind Sie?",
+							"en": "How old are you?",
+						}
+						inp.MaxChars = 4
+						inp.Step = 1
+						inp.Min = 15
+						inp.Max = 100
+						inp.Validator = "inRange100"
+
+						inp.ColSpan = gr.Cols
+						inp.ColSpanLabel = 3
+						inp.ColSpanControl = 2
+						inp.Suffix = trl.S{
+							"de": "&nbsp; Jahre",
+							"en": "&nbsp; years",
+						}
 					}
+
+					{
+						inp := gr.AddInput()
+						inp.Type = "text"
+						inp.Name = "q05_country_birth"
+
+						inp.Label = trl.S{
+							"de": "In welchem Land sind Sie geboren?",
+							"en": "What is your country of birth?",
+						}
+
+						inp.ColSpan = gr.Cols
+						inp.ColSpanLabel = 3
+						inp.ColSpanControl = 2
+						inp.MaxChars = 20
+						// inp.Validator = "must"
+					}
+
 				}
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = "q05_country_birth"
-
-					inp.Label = trl.S{
-						"de": "In welchem Land sind Sie geboren?",
-						"en": "What is your country of birth?",
-					}
-
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 3
-					inp.ColSpanControl = 2
-					inp.MaxChars = 20
-					// inp.Validator = "must"
-				}
-
 			}
-
-		}
+		*/
 
 	}
 
@@ -989,7 +998,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					<span style='font-size:120%'>
+					<span style="font-size:120%">
 					Wie schätzen Sie sich persönlich ein:
 					Sind Sie im Allgemeinen ein risikobereiter Mensch
 					oder versuchen Sie, Risiken zu vermeiden?
@@ -1082,7 +1091,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					<span style='font-size:120%'>
+					<span style="font-size:120%">
 					Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen. 
 					</span>
 
@@ -1585,7 +1594,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-						<span style='font-size:120%'>
+						<span style="font-size:120%">
 						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
 						</span>
 
@@ -1733,7 +1742,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					<span style='font-size:110%'>
+					<span style="font-size:110%">
 					Im Folgenden haben wir ein Quiz zu finanziellem Wissen. 
 					Bitte antworten Sie spontan. 
 					</span>
@@ -2814,7 +2823,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textarea"
 				inp.Name = "qt1_advice"
-				inp.MaxChars = 200
+				inp.MaxChars = 400
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
@@ -2959,7 +2968,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
-							<span style='font-size:110%'>
+							<span style="font-size:110%">
 							Im Folgenden haben wir weitere Quizfragen. 
 							Bitte antworten Sie spontan. 
 							</span>
@@ -3434,22 +3443,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 1
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
 				"de": `
+					<span style="font-size:110%">
 					Wir stellen Ihnen nun eine Frage zum <i>Finanzvermögen</i>: <br>
 					Haben Sie (d.h. Ihr Haushalt) im Jahr   
-						<span style='color:#e22; font-size 110%; '>2023</span> 
+						<span style="font-size 115%; color:#e22;" >2023</span> 
 					eine der folgenden Vermögensarten besessen?
+					</span>
 				
 
 					<small>
 					Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, 
 					beantworten Sie die Fragen bitte für sich selbst.
 					</small>
-			
 				`,
 				"en": `todo`,
 			}.OutlineHid("H2.")
@@ -3463,7 +3473,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-				Sparanlagen
+				<span style="font-size: 115%">Sparanlagen</span>
 				<br>
 				<small>
 					z.B. Sparbücher, Festgeldkonten,
@@ -3483,7 +3493,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-				Bausparverträge
+				<span style="font-size: 115%">Bausparverträge</span>
 				<br>
 				<small>
 					(die noch nicht in Darlehen
@@ -3503,7 +3513,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-				Festverzinsliche Wertpapiere
+				<span style="font-size: 115%">Festverzinsliche Wertpapiere</span>
 				<small>
 					z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
 				</small>`,
@@ -3519,7 +3529,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-				Aktien oder Aktienfonds und Immobilienfonds
+				<span style="font-size: 115%">Aktien oder Aktienfonds und Immobilienfonds</span>
 				<small>
 					(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)
 				</small>
@@ -3536,7 +3546,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-				Sonstige Wertpapiere
+				<span style="font-size: 115%">Sonstige Wertpapiere</span>
 				<small>
 					z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
 				</small>
@@ -3552,7 +3562,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		yesNo(
 			*qst.WrapPageT(page),
 			trl.S{
-				"de": `Gold`,
+				"de": `<span style="font-size:115%">Gold</span>`,
 				"en": `todo`,
 			},
 			"qh2_gold",
@@ -3581,9 +3591,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Wie hoch <i style='font-size:110%'>schätzen</i> Sie,
-						ist das <i style='font-size:110%'>monatlich</i> verfügbare 
-						<i style='font-size:110%'>Nettoeinkommen Ihres Haushalts</i>,
+						Wie hoch <i style="font-size:110%">schätzen</i> Sie,
+						ist das <i style="font-size:110%">monatlich</i> verfügbare 
+						<i style="font-size:110%">Nettoeinkommen Ihres Haushalts</i>,
 						also dasjenige Geld, das dem gesamten Haushalt nach Abzug
 						von Steuern und Sozialversicherungsbeiträgen zur Deckung der Ausgaben
 						 zur Verfügung steht?
@@ -3739,12 +3749,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
-					    <b>
+						<span style="font-size:110%%">
 						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
 						
-						Haben Sie (d.h. Ihr Haushalt) im  Jahr <span style='color:#e22; font-size 110%%; '>2023</span> 
+						Haben Sie (d.h. Ihr Haushalt) im  Jahr <span style="font-size 115%%; color:#e22;">2023</span> 
 						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
-					    </b>
+					    </span>
 
 						<small>
 						Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,
@@ -3770,7 +3780,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					<b>Private Lebensversicherungen</b>
+					<span style="font-size:115%">Private Lebensversicherungen</span>
 					<small>
 					z.B. klassische und fondsgebundene Kapitallebensversicherungen,
 						<i>nicht</i> reine Risikolebensversicherungen
@@ -3790,7 +3800,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					<b>Betriebliche Lebensversicherungen</b>
+					<span style="font-size:115%">Betriebliche Lebensversicherungen</span>
 					<br>
 					<small>
 					(z. B. Direktversicherungen)
@@ -3809,7 +3819,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					<b>Sonstige betriebliche Altersvorsorge</b>
+					<span style="font-size:115%">Sonstige betriebliche Altersvorsorge</span>
 					<small>
 					(z. B. Betriebsrenten aus Pensions- oder Unterstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)
 					</small>
@@ -3827,7 +3837,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					<b>Staatlich geförderte private Altersvorsorge („Riester- Rente“)</b>
+					<span style="font-size:115%">Staatlich geförderte private Altersvorsorge („Riester- Rente“)</span>
 					<small>
 					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)
 					</small>
@@ -3845,7 +3855,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					<b>Private Rentenversicherungen</b>
+					<span style="font-size:115%">Private Rentenversicherungen</span>
 					<small>
 					(z.B. private Rentenversicherungsverträge, die <u><i>nicht</i></u> staatlich gefördert werden bzw. abgeschlossen wurden, 
 						bevor es solche Fördermöglichkeiten gab)
@@ -4035,6 +4045,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
+				// inp.Name = "finished"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
 				inp.Label = cfg.Get().Mp["end"]
 				inp.Label = cfg.Get().Mp["finish_questionnaire"]
@@ -4108,6 +4119,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "knebLinkBackToPanel"
+				inp.DynamicFuncParamset = "success"
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1
@@ -4126,6 +4138,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+
+	// q.AddFinishButtonNextToLast()
 
 	(&q).Hyphenize()
 	(&q).ComputeMaxGroups()

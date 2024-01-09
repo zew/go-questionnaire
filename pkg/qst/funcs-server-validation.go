@@ -5,6 +5,7 @@ import (
 	"log"
 	"strconv"
 	"strings"
+	"time"
 
 	"errors"
 
@@ -345,8 +346,22 @@ func init() {
 	validators["citizenshipyes"] = func(q *QuestionnaireT, inp *inputT) error {
 		if inp.Response != "" && inp.Response != "citizenshipyes" {
 			err1 := ErrorForward{markDownPath: "must-german-citizen.md"}
-			err := fmt.Errorf("Dt. Staatsbürger erforderl - %w", err1)
+			err := fmt.Errorf("dt. Staatsbürger erforderl - %w", err1)
 			return err
+		}
+		return nil
+	}
+
+	validators["kneb-age-bracket"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response != "" {
+			yrBirth, _ := strconv.Atoi(inp.Response)
+			tooYng := time.Now().Year()-yrBirth < 18
+			tooOld := time.Now().Year()-yrBirth > 55
+			if tooYng || tooOld {
+				err1 := ErrorForward{markDownPath: "must-between-18-and-55.md"}
+				err := fmt.Errorf("zwischen 18 und 55 Jahren - %w", err1)
+				return err
+			}
 		}
 		return nil
 	}

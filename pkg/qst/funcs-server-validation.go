@@ -355,8 +355,9 @@ func init() {
 	validators["kneb-age-bracket"] = func(q *QuestionnaireT, inp *inputT) error {
 		if inp.Response != "" {
 			yrBirth, _ := strconv.Atoi(inp.Response)
-			tooYng := time.Now().Year()-yrBirth < 18
-			tooOld := time.Now().Year()-yrBirth > 55
+			tolerance := 1
+			tooYng := time.Now().Year()-yrBirth < 18-tolerance
+			tooOld := time.Now().Year()-yrBirth > 55+tolerance
 			if tooYng || tooOld {
 				err1 := ErrorForward{markDownPath: "must-between-18-and-55.md"}
 				err := fmt.Errorf("zwischen 18 und 55 Jahren - %w", err1)

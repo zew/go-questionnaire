@@ -187,6 +187,10 @@ func PermaLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) 
 		}
 	}
 	// log.Printf("PermaLink: %v", ret)
+
+	if paramSet == "hidden" {
+		return fmt.Sprintf("<!-- %v -->", ret), nil
+	}
 	return ret, nil
 }
 
@@ -379,30 +383,30 @@ func doRequest(url string) (int, error) {
 	return http.StatusOK, nil
 }
 
-func helper(url, panelName string) string {
+func helper(q *QuestionnaireT, url, panelName, link string) string {
 
 	status, err := doRequest(url)
 	if err != nil {
 		log.Printf("%v panel returned %v - %v for %v", panelName, status, err, url)
 		return fmt.Sprintf(`
 			<a href='%v' target='_blank' >Bitte betätigen Sie den Link zum Panel %v für Ihre Auszahlung</a>  <br>
-			<small>%v</small><br>
-			<br>
-			<small>Automatic submission - %v</small><br>
+			Oder kontaktieren Sie %v<br>
+			<small>Panel Rückmeldung war - %v</small><br>
 			`,
-			url,
-			panelName,
-			url,
+			url, panelName,
+			q.UserIDInt(),
 			err,
 		)
 	}
 
 	return fmt.Sprintf(`
 		Der Panel %v wurde über die erfolgreiche Teilnahme informiert und hat die Information bestätigt.<br>
-		<small>%v</small><br>
+		<!-- <small>%v</small><br> -->
+		<small>User ID %v</small><br>
 		`,
 		panelName,
 		url,
+		q.UserIDInt(),
 	)
 
 }
@@ -410,20 +414,26 @@ func helper(url, panelName string) string {
 // URL to panel provider for payment
 func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
+	link := fmt.Sprintf(
+		`<a href="mailto:Caroline.Knebel@zew.de?subject=Umfrage Finanzentscheidungen - UID %v&body=Backlink zum Panel nicht möglich.">Frau Knebel</a>`,
+		q.UserIDInt(),
+	)
+
 	if val, ok := q.Attrs["i_survey"]; ok {
 		url := fmt.Sprintf(`https://www.gimpulse.com/?m=6006&return=complete&i_survey=%v`, val)
-		return helper(url, "GIMpulse"), nil
+		return helper(q, url, "GIMpulse", link), nil
 	}
 
 	if val, ok := q.Attrs["respBack"]; ok {
 		url := fmt.Sprintf(`https://www.opensurvey.com/survey/1579439651/1704195870?respBack=%v&statusBack=1`, val)
-		return helper(url, "Talk Online"), nil
+		return helper(q, url, "Talk Online", link), nil
 	}
 
-	return `Keine Panel Benutzer-ID vorhanden. Falls Sie von GIMpulse oder Talk Online / Open Panel gekommen sind, 
-		kontaktieren Sie <a href="mailto:Caroline.Knebel@zew.de">Frau Knebel</a>.
-		Notieren und übermitteln Sie an Frau Knebel ihre Teilnahme ID. <br>
-		Sie finden diese rechts oben im Menüpunkt "Benutzer - Abmelden" in den nachfolgenden runden Klammmern. <br>
-	`, nil
+	return fmt.Sprintf(`
+		Keine Panel Benutzer-ID vorhanden. 
+		Falls Sie von GIMpulse oder Talk Online / Open Panel gekommen sind, 
+		kontaktieren Sie bitte %v.<br>
+		`, link),
+		nil
 
 }

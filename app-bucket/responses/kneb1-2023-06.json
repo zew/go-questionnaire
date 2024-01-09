@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "5ad014c75789c603c12eece2911ff62c2097b39b81042953cc69f9c5b2a860f9",
+ 	"md_5": "035d4534e98f04709b46bee9c849b925b5fcd63d9e39d721cad51423e127d3ca",
  	"lang_codes": [
  		"de"
  	],
@@ -18040,7 +18040,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 115%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- H2. --\u003etodo"
  							},
  							"col_span": 1,
@@ -19568,7 +19568,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im  Jahr \u003cspan style=\"font-size 115%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
+ 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
  								"en": "\u003c!-- H4. --\u003etodo"
  							},
  							"col_span": 1,
@@ -20495,7 +20495,8 @@
  							"type": "dyn-textblock",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "PermaLink"
+ 							"dynamic_func": "PermaLink",
+ 							"dynamic_func_paramset": "hidden"
  						},
  						{
  							"type": "dyn-textblock",

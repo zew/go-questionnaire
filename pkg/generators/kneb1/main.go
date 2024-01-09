@@ -3451,7 +3451,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<span style="font-size:110%">
 					Wir stellen Ihnen nun eine Frage zum <i>Finanzvermögen</i>: <br>
 					Haben Sie (d.h. Ihr Haushalt) im Jahr   
-						<span style="font-size 115%; color:#e22;" >2023</span> 
+						<span style="font-size 120%; color:#e22;" >2023</span> 
 					eine der folgenden Vermögensarten besessen?
 					</span>
 				
@@ -3752,7 +3752,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<span style="font-size:110%%">
 						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
 						
-						Haben Sie (d.h. Ihr Haushalt) im  Jahr <span style="font-size 115%%; color:#e22;">2023</span> 
+						Haben Sie (d.h. Ihr Haushalt) im Jahr <span style="font-size 120%%; color:#e22;">2023</span> 
 						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
 					    </span>
 
@@ -4070,7 +4070,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Your entries have been saved.",
 		}
 
-		page.WidthMax("calc(100% - 1.2rem)")
+		// page.WidthMax("calc(100% - 1.2rem)")
 		page.WidthMax("40rem")
 
 		{
@@ -4095,20 +4095,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "LinkBack"
-				inp.ColSpan = gr.Cols
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
-			}
-
 			//
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "PermaLink"
+				inp.DynamicFuncParamset = "hidden"
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1
@@ -4120,6 +4112,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "knebLinkBackToPanel"
 				inp.DynamicFuncParamset = "success"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "LinkBack"
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1

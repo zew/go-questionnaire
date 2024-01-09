@@ -9,8 +9,8 @@ Sie haben soeben jedoch angekreuzt, älter oder jünger zu sein.
 Sie scheiden daher für die weitere Teilnahme an unserer Umfrage aus. 
 
 <a 
-    href='https://webs.norstatsurveys.com/z/Screened' 
-    style='font-size:140%; font-weight: bold;'
+    href='https://www.gimpulse.com/?m=6006&return=screenedout&i_survey=%v' 
+    style='font-size:120%; font-weight: bold;'
 >Bitte melden Sie sich beim Panel zurück</a>
 
 

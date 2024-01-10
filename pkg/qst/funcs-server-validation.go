@@ -5,7 +5,6 @@ import (
 	"log"
 	"strconv"
 	"strings"
-	"time"
 
 	"errors"
 
@@ -353,17 +352,7 @@ func init() {
 	}
 
 	validators["kneb-age-bracket"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response != "" {
-			yrBirth, _ := strconv.Atoi(inp.Response)
-			tolerance := 1
-			tooYng := time.Now().Year()-yrBirth < 18-tolerance
-			tooOld := time.Now().Year()-yrBirth > 55+tolerance
-			if tooYng || tooOld {
-				err1 := ErrorForward{markDownPath: "must-between-18-and-55.md"}
-				err := fmt.Errorf("zwischen 18 und 55 Jahren - %w", err1)
-				return err
-			}
-		}
+		// moved to knebTooOld() conditional navigation
 		return nil
 	}
 
@@ -509,14 +498,16 @@ func init() {
 
 	//
 	validators["kneb_qc24_nf"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response != "" && inp.Response != "41900" {
+		// if inp.Response != "" && inp.Response != "41900" {
+		if inp.Response != "" && inp.Response != "55700" {
 			return errors.New(`Bitte überprüfen`)
 			// return errors.New(`Ungefähr 40.000 Euro`)
 		}
 		return nil
 	}
 	validators["kneb_qc24_ff"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response != "" && inp.Response != "104700" {
+		// if inp.Response != "" && inp.Response != "104700" {
+		if inp.Response != "" && inp.Response != "139400" {
 			return errors.New(`Bitte überprüfen`)
 			// return errors.New(`Ungefähr 105.000 €`)
 		}

@@ -203,6 +203,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					)
 				}
 
+				inp.Validator = "must"
 				inp.Validator = "must; kneb-age-bracket"
 
 			}
@@ -379,6 +380,50 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 			}
 		*/
+
+	}
+
+	// page screenout age
+	{
+		page := q.AddPage()
+		// "Altersgrenzen nicht erfüllt"
+		//   => headline inside markdown file
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
+		page.SuppressInProgressbar = true
+
+		//  would invalidate NavigationCondition
+		// page.NoNavigation = true
+		page.NavigationCondition = "kneb_too_old"
+
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./must-between-18-and-55.md"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "knebLinkBackToPanel"
+				inp.DynamicFuncParamset = "screenout"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+				inp.ColSpanLabel = 1
+			}
+		}
 
 	}
 

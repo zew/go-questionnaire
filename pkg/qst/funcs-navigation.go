@@ -1,6 +1,10 @@
 package qst
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"time"
+)
 
 type naviFuncT func(*QuestionnaireT, int) bool
 
@@ -28,6 +32,7 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"kneb_t2b":               knebTreatment2AdviceNoOrYes_B,
 	"kneb_d7_unemployed":     knebD7unemployed,
 	"kneb_d7_employed":       knebD7employed,
+	"kneb_too_old":           knebTooOld,
 	"kneb_b6_who_competent":  knebB6WhoIsCompetent,
 	"kneb_h1_who_responsibe": knebH1WhoIsResponsible,
 }
@@ -77,8 +82,8 @@ func pdsAssetClass3(q *QuestionnaireT, pageIdx int) bool {
 }
 
 // pdsAssetClass governs
-//   * visibility for page type 12    - based on specific page11 values
-//   * visibility for all pages       - based on page1 values
+//   - visibility for page type 12    - based on specific page11 values
+//   - visibility for all pages       - based on page1 values
 func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 
 	// special rule for page12
@@ -129,8 +134,6 @@ func pdsAssetClass(q *QuestionnaireT, pageIdx int, acIdx int) bool {
 	return false
 }
 
-//
-//
 func knebTreatment1NeutraVsFinance_A(q *QuestionnaireT, pageIdx int) bool {
 	if q.Version()%2 == 0 {
 		return true
@@ -153,6 +156,21 @@ func knebTreatment2AdviceNoOrYes_A(q *QuestionnaireT, pageIdx int) bool {
 }
 func knebTreatment2AdviceNoOrYes_B(q *QuestionnaireT, pageIdx int) bool {
 	return !knebTreatment2AdviceNoOrYes_A(q, pageIdx)
+}
+
+func knebTooOld(q *QuestionnaireT, pageIdx int) bool {
+
+	inp := q.ByName("qd2_birthyear")
+	if inp.Response != "" {
+		yrBirth, _ := strconv.Atoi(inp.Response)
+		tolerance := 1
+		tooYng := time.Now().Year()-yrBirth < 18-tolerance
+		tooOld := time.Now().Year()-yrBirth > 55+tolerance
+		if tooYng || tooOld {
+			return true
+		}
+	}
+	return false
 }
 
 func knebD7employed(q *QuestionnaireT, pageIdx int) bool {

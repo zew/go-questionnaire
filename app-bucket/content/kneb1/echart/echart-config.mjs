@@ -4,16 +4,20 @@
 
 // Carolin Knebel computations and parameters - start
 
+//  „… annualised standard deviation of 14.62%...“ from MCI world prospectus
+//     => annualised standard deviation is for         returns only - interpretation by the letter
+//     => annualised standard deviation is for _total_ returns      - reasonable interpretation
+const stdDevReturnsOnly = false;
+
 // already defined and initialized
 // var sb = 100.0; // sparbetrag
 // var safeBG  = document.getElementById("share_safe_bg");
-
 let yr = new Date().getFullYear()
 let az  = 20; // "Anlagehorizont"
 let azV = 10; // "Vertical line"
 
-az  = 25; 
-azV = 20; 
+az  = 25;
+azV = 20;
 
 
 // az = 50; // "Anlagehorizont"
@@ -31,19 +35,44 @@ let sd = 1.0; // standard deviation
 // normal distribution of stock asset
 // MSCI world for € investments since 1998 (25yrs)
 mn = 0.059
+// "… annualised standard deviation of 14.62%...""
 sd = 0.1462
 
 // 90 confidence interval - multiple of sd
 let ci90 = 1.645 * sd
+console.log(` 5...95% conf interval  [${1-ci90}, ${1+ci90}] - with mn=1`) // 14% * 1.65 =  ~25%
 
-let p05 = mn * (1-ci90)
-let p95 = mn * (1+ci90)
+let p05 = mn * (1-ci90)  //  75% of 6%
+let p95 = mn * (1+ci90)  // 125% of 6%
+
 
 // console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
 
-let p05p1 = 1 + p05  // worst case plus one
-let mnp1  = 1 + mn   // mean plus one
-let p95p1 = 1 + p95  // worst case plus one
+
+let p05p1 = 1 + p05  // worst case plus one    = 104.5%
+let mnp1  = 1 + mn   // mean plus one          = 106.0%
+let p95p1 = 1 + p95  // worst case plus one    = 107.3%
+
+
+if (stdDevReturnsOnly) {
+
+} else {
+    p05p1 = (1+mn) * (1-ci90)  //  106% *  75% =  80%
+   // mnp1 remains                               106%
+    p95p1 = (1+mn) * (1+ci90)  //  106% * 125% = 135% 
+
+    // https://math.stackexchange.com/questions/2935743/
+    // expection of the product of two random variables
+    //   E[XY]=E[X]⋅E[Y]
+    // variance  of the product of two random variables
+    //   Var[X]⋅Var[Y]+Var[Y](E[X])2+Var[X](E[Y])2 
+    // if Var[X]=Var[Y]=vr and E[X]=E[Y]=mn
+    //    vr*vr +   (vr*mn)^2 + (vr*mn)^2 
+    //    vr^2  + 2*(vr*mn)^2 
+ 
+    p05p1 = 1.06 - 0.065
+    p95p1 = 1.06 + 0.065 - 0.01  // -0.1 to prevent vertical breakout
+}
 
 p05p1 = Math.round(10000 * p05p1) / 10000;
 p95p1 = Math.round(10000 * p95p1) / 10000;
@@ -161,24 +190,27 @@ var dataObjectCreate = (function () {
             ds = []
             let c0=0, c1=0, c2=0
 
-            let ss;
+            let ss; // safe share [0...1]
             try {
                 ss = parseFloat(safeBG.value) / 100.0  // safe share [0...1]
             } catch (err) {
                 console.error(`cannot parse safeBG.value ${safeBG.value} - ${err}`)
             }
-
             let rs = 1 - ss ;  // risky share [0...1]
             console.log(`safe - risky - ${ss} - ${rs}`)
 
+
             let sby = 12* sb; // sparbetrag per year
             for (let i = 0; i <= az; i++) {
+
                 // return on existing balance
-                c0 = p05p1 * c0 * rs + mnbd1 * c0 * ss
-                c1 = mnp1  * c1 * rs + mnbd1 * c1 * ss
-                c2 = p95p1 * c2 * rs + mnbd1 * c2 * ss
-                // additional annuity
+                c0 = p05p1 * c0 * rs   +   mnbd1 * c0 * ss
+                c1 = mnp1  * c1 * rs   +   mnbd1 * c1 * ss
+                c2 = p95p1 * c2 * rs   +   mnbd1 * c2 * ss
+
+                // additional yearly contribution
                 c0 += sby; c1 += sby; c2 +=sby;
+
                 let row = [yr+i, c0, c1, c2, `item${i}` ]
                 // console.log(i, i+yr, mnp1**i);
                 // console.log(row);
@@ -195,7 +227,12 @@ var dataObjectCreate = (function () {
 
             // steps of 40.000
             // maxY = (Math.round(maxY/40000) +1)*40000
-            maxY = (Math.round(maxY/40000) +0.2)*40000
+
+            if (stdDevReturnsOnly) {
+                maxY = (Math.round(maxY/40000) +0.2)*40000
+            } else {
+                maxY = (Math.round(maxY/40000) +0.75)*40000
+            }
 
             // console.log(ds);
             console.log(`pComputeData - ds recomputed - length ${ds.length} - maxY = ${Math.round(maxY)}`);
@@ -415,17 +452,16 @@ var optEchart = {
         max: 40 * 1000, // init
         max: dataObject.maxY(),
 
-        // 
+        //
         name: getYAxisTitle(),
         nameLocation: 'middle',
         nameGap: 62,
         nameTextStyle: {
             fontSize: 12,
             fontSize: 14,
-            fontSize: 16,
         },
-        
-        
+
+
         axisLabel: {
             // compare  axisLabel.formatter
             formatter: function (vl, index) {

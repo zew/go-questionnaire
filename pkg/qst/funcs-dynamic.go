@@ -356,7 +356,7 @@ func knebDownloadURL(q *QuestionnaireT, inp *inputT, paramSet string) (string, e
 		// return `no thank you - or no selection at all.`, nil
 	}
 
-	return fmt.Sprintf(`<a target='blank' href=%v>Ihr Dankeschön-Download<a>`, urls[inpSrc.Response]), nil
+	return fmt.Sprintf(`<a target='blank' href=%v>Ihr Dankeschön-Download</a>`, urls[inpSrc.Response]), nil
 
 }
 
@@ -383,26 +383,30 @@ func doRequest(url string) (int, error) {
 	return http.StatusOK, nil
 }
 
-func helper(q *QuestionnaireT, url, panelName, link string) string {
+func helper(q *QuestionnaireT, url, panelName, mailLink string) string {
 
 	status, err := doRequest(url)
 	if err != nil {
-		log.Printf("%v panel returned %v - %v for %v", panelName, status, err, url)
+		log.Printf("panel %v request - ERROR code %v - %v \n\tfor %v", panelName, status, err, url)
 		return fmt.Sprintf(`
-			<a href='%v' target='_blank' >Bitte betätigen Sie den Link zum Panel %v für Ihre Auszahlung</a>  <br>
-			Oder kontaktieren Sie %v<br>
+			Bitte betätigen Sie den <a href='%v' target='_blank' >Link zum Panel -%v-</a>.  <br>
+			Oder kontaktieren Sie %v.<br>
 			<small>Panel Rückmeldung war - %v</small><br>
 			`,
 			url, panelName,
-			q.UserIDInt(),
+			mailLink,
+			// q.UserIDInt(),
 			err,
 		)
 	}
 
+	//  und hat die Information bestätigt
+	log.Printf("panel %v request - success  code %v \n\tfor %v", panelName, status, url)
 	return fmt.Sprintf(`
-		Der Panel %v wurde über die erfolgreiche Teilnahme informiert und hat die Information bestätigt.<br>
+		Der Panel -%v- wurde über Ihre Teilnahme informiert.<br>
 		<!-- <small>%v</small><br> -->
 		<small>User ID %v</small><br>
+		<br>
 		`,
 		panelName,
 		url,
@@ -414,26 +418,43 @@ func helper(q *QuestionnaireT, url, panelName, link string) string {
 // URL to panel provider for payment
 func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
-	link := fmt.Sprintf(
-		`<a href="mailto:Caroline.Knebel@zew.de?subject=Umfrage Finanzentscheidungen - UID %v&body=Backlink zum Panel nicht möglich.">Frau Knebel</a>`,
+	gimStatus := "complete"
+	oppStatus := "1"
+
+	if paramSet == "screenout" {
+		gimStatus = "screenout"
+		oppStatus = "2"
+	}
+
+	mailLink := fmt.Sprintf(
+		`<a href="mailto:Caroline.Knebel@zew.de?subject=Umfrage Finanzentscheidungen - UID %v&body=Backlink zum Panel nicht möglich." 
+		   >Frau Knebel</a>`,
 		q.UserIDInt(),
 	)
 
-	if val, ok := q.Attrs["i_survey"]; ok {
-		url := fmt.Sprintf(`https://www.gimpulse.com/?m=6006&return=complete&i_survey=%v`, val)
-		return helper(q, url, "GIMpulse", link), nil
+	if panelUID, ok := q.Attrs["i_survey"]; ok {
+		url := fmt.Sprintf(
+			`https://www.gimpulse.com/?m=6006&return=%v&i_survey=%v`,
+			gimStatus,
+			panelUID,
+		)
+		return helper(q, url, "GIMpulse", mailLink), nil
 	}
 
-	if val, ok := q.Attrs["respBack"]; ok {
-		url := fmt.Sprintf(`https://www.opensurvey.com/survey/1579439651/1704195870?respBack=%v&statusBack=1`, val)
-		return helper(q, url, "Talk Online", link), nil
+	if panUID, ok := q.Attrs["respBack"]; ok {
+		url := fmt.Sprintf(
+			`https://www.opensurvey.com/survey/1579439651/1704195870?respBack=%v&statusBack=%v`,
+			panUID,
+			oppStatus,
+		)
+		return helper(q, url, "Talk Online", mailLink), nil
 	}
 
 	return fmt.Sprintf(`
 		Keine Panel Benutzer-ID vorhanden. 
 		Falls Sie von GIMpulse oder Talk Online / Open Panel gekommen sind, 
 		kontaktieren Sie bitte %v.<br>
-		`, link),
+		`, mailLink),
 		nil
 
 }

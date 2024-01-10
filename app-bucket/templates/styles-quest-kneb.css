@@ -18,69 +18,36 @@ ol.progress {
 button[value=prev] {
     display: none;
 }
+/* screenout out for age has no next */
+.pg02 button[value=next] {
+    display: none;
+}
+
 
 
 /* 
-    animation of the three conditional questions
-    blog.hubspot.com/website/css-fade-in 
+animation for conditional questions appearing on the same page
+blog.hubspot.com/website/css-fade-in 
+used in in 
 */
+@keyframes animFadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 .fade-in-image { 
     animation:       animFadeIn 2s; 
     /* animation-delay: 0.4s;  */
 }
 
-@keyframes animFadeIn {
-      0% { opacity: 0; }
-    100% { opacity: 1; }
-}
   
 
-/* error bubble popup default */
-.popup-invalid-content-grid-item {
-    bottom:  0.09rem;
-}
 
-
-@media screen and (max-width: 800px) {
-    .popup-invalid-content-grid-item {
-        min-width: unset;
-    }
-}
-
-/* treatment neutral is pg25 */
-.pg27-grp00-inp01 .popup-invalid-content-grid-item {
-    bottom:  -1.49rem;
-}
-.pg27-grp01-inp01 .popup-invalid-content-grid-item {
-    bottom:  0.49rem;
-}
-.pg27-grp02      .popup-invalid-content-grid-item {
-    bottom:  -1.68rem;
-}
-
-
-
-
-.pg28-grp00-inp01 .popup-invalid-content-grid-item {
-    bottom:  -1.48rem;
-}
-.pg28-grp01-inp01 .popup-invalid-content-grid-item {
-    bottom:  0.9rem;
-}
-.pg28-grp02-inp01 .popup-invalid-content-grid-item {
-    bottom:  -1.39rem;
-}
-
-
-
-
-/* button next of guided tour - used in knebGuidedTourImg.js */
+/* guided tour - button next deferred  - used in knebGuidedTourImg.js */
 @keyframes guidedTourNextButtonFadeIn {
     0% { opacity: 0; }
    80% { opacity: 0; }
   100% { opacity: 1; }
 }
-
 
 /* guided tour show image for mobile or desktop */
 .img-guided-tour-desktop {
@@ -97,3 +64,44 @@ button[value=prev] {
         display: block;
     }
 }
+
+
+
+/* error bubble popup default */
+.popup-invalid-content-grid-item {
+    bottom:  0.09rem;
+}
+/* small screens => long error messages obscure the input field  */
+@media screen and (max-width: 800px) {
+    .popup-invalid-content-grid-item {
+        min-width: unset;
+    }
+}
+
+/* treatment neutral is pgxx */
+.pg28-grp00-inp01 .popup-invalid-content-grid-item {
+    bottom:  -1.49rem;
+}
+.pg28-grp01-inp01 .popup-invalid-content-grid-item {
+    bottom:  0.49rem;
+}
+.pg28-grp02      .popup-invalid-content-grid-item {
+    bottom:  -1.68rem;
+}
+
+
+
+
+.pg29-grp00-inp01 .popup-invalid-content-grid-item {
+    bottom:  -1.48rem;
+}
+.pg29-grp01-inp01 .popup-invalid-content-grid-item {
+    bottom:  0.9rem;
+}
+.pg29-grp02-inp01 .popup-invalid-content-grid-item {
+    bottom:  -1.39rem;
+}
+
+
+
+

@@ -92,7 +92,14 @@ let pageLoaded = (inst) => {
 
     let knobClick = (evt) => {
         try {
+
             let src = evt.srcElement;
+
+            if (src.classList.contains("knob-grey")) {
+                // alert("zu riskant");
+                // return;
+            }
+
             let inner = src.innerHTML;
             inner = inner.replace("&nbsp;%","");
             let val = parseInt(inner)

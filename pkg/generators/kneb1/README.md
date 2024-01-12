@@ -55,3 +55,66 @@ gross return
  % taxation, inflation, costs (management fees)
 net return or real return or Total Net Return 
 
+
+## MCI world standard deviation - 2024-01
+
+https://de.wikipedia.org/wiki/MSCI_World#Berechnung
+
+https://de.wikipedia.org/wiki/Aktienindex#Performanceindex
+
+https://en.wikipedia.org/wiki/Stock_market_index
+https://de.wikipedia.org/wiki/Total-Return-Index
+https://en.wikipedia.org/wiki/Standard_deviation
+
+MSCI world total return index  sigma 
+MSCI world total return index  Variance
+MSCI world total return index  Standard deviation
+
+
+<https://investingintheweb.com/blog/msci-world-index-historical-data/>
+
+MSCI World Total Net Return - Standard deviation (yearly)
+
+ annualised standard deviation of 14.99%
+ 
+ 
+## Annualised standard deviation of an retaining stock fund
+
+* <https://financetrain.com/calculate-annualized-standard-deviation>
+* <https://quant.stackexchange.com/questions/42445/total-returns-from-adjusted-close-prices>
+
+The annualized standard deviation of daily returns is calculated as follows:
+
+Annualized Standard Deviation = Standard Deviation of Daily Returns * Square Root (250)
+
+## Standard deviation of 20 draws - variance of the _product_
+
+* https://math.stackexchange.com/questions/2935743/
+
+* expection of the product of two random variables  
+  E[XY]=E[X]⋅E[Y]
+
+* variance  of the product of two random variables  
+  Var[X]⋅Var[Y]+Var[Y](E[X])2+Var[X](E[Y])2 
+
+* if Var[X]=Var[Y]=vr and E[X]=E[Y]=mn  
+    vr*vr +   (vr*mn)^2 + (vr*mn)^2 
+    vr^2  + 2*(vr*mn)^2 
+    vr^2  + 2*vr^2 *mn^2
+    vr^2(1 + 2*mn^2) 
+
+    vr^3(1 + 2*mn^2 + 4*mn^4) 
+
+## Standard deviation of 20 draws - simple formula
+
+* <https://quant.stackexchange.com/questions/48914/calculating-annualized-standard-deviation-from-monthly-returns-and-the-differe>
+
+* <https://financetrain.com/calculate-annualized-standard-deviation>
+
+_Annualised_ standard deviation of 14.62%  equals  0.1462
+
+=> 20 draws => 0,1462 * sqrt(20)
+=> 20 draws => 0,1462 * 4,472136
+=> 20 draws => 0,6538
+
+

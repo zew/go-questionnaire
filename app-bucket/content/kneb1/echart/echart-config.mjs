@@ -4,10 +4,6 @@
 
 // Carolin Knebel computations and parameters - start
 
-//  „… annualised standard deviation of 14.62%...“ from MCI world prospectus
-//     => annualised standard deviation is for         returns only - interpretation by the letter
-//     => annualised standard deviation is for _total_ returns      - reasonable interpretation
-const stdDevReturnsOnly = false;
 
 // already defined and initialized
 // var sb = 100.0; // sparbetrag
@@ -29,50 +25,64 @@ let mnbd1 = 1 + 0.01
 
 
 // standardized normal distribution
-let mn = 0.0; // mean
+let mn = 0.0; // mean return
 let sd = 1.0; // standard deviation
 
 // normal distribution of stock asset
 // MSCI world for € investments since 1998 (25yrs)
 mn = 0.059
+
 // "… annualised standard deviation of 14.62%...""
-sd = 0.1462
-
-// 90 confidence interval - multiple of sd
-let ci90 = 1.645 * sd
-console.log(` 5...95% conf interval  [${1-ci90}, ${1+ci90}] - with mn=1`) // 14% * 1.65 =  ~25%
-
-let p05 = mn * (1-ci90)  //  75% of 6%
-let p95 = mn * (1+ci90)  // 125% of 6%
+sd = 0.1462 // yearly annualized standard deviation of total returns MSCI world
+// sd = 0.18650 // standard deviation after   five years - found numerically with sim-04.py 
+// sd = 0.430   // standard deviation after twenty years - found numerically with sim-04.py
 
 
-// console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
+// 
+// https://en.wikipedia.org/w/index.php?title=Normal_distribution&section=11#Quantile_function
+// quantile best or worst
+let quantile = 1.645 // 90 confidence interval - multiple of sd, best and worst five percent
+// quantile = 1.2815 // 80 confidence interval - multiple of sd, best and worst  ten percent
+
+let ci90 = quantile * sd  // ~ 0.25
 
 
-let p05p1 = 1 + p05  // worst case plus one    = 104.5%
-let mnp1  = 1 + mn   // mean plus one          = 106.0%
-let p95p1 = 1 + p95  // worst case plus one    = 107.3%
+
+//  „… annualised standard deviation of 14.62%...“ from MCI world prospectus
+//     0 => annualised standard deviation is for         returns only - interpretation by the letter
+//     1 => annualised standard deviation is for _total_ returns      - reasonable interpretation
+//     1 => annualised standard deviation over 20 years
+//              σ    = σ-yr   * sqrt(20)
+//                   = 0,1462 * sqrt(20)
+//                   = 0,1462 * 4,472136
+//                   = 0,6538
+//     2 => _variable_ annualised standard deviation - stochastically computed 
+//              σ-yx = 0.43049
+const stdDevReturnsOnly = 2;  // 0 - 
+let mnp1  = 1 + mn     // mean plus one          = 106.0%
+let p05p1 = 1 + 0.0;   // computed below - based on assumption
+let p95p1 = 1 + 0.0;   // computed below - based on assumption
 
 
-if (stdDevReturnsOnly) {
+if (stdDevReturnsOnly === 0) {
 
-} else {
-    p05p1 = (1+mn) * (1-ci90)  //  106% *  75% =  80%
-   // mnp1 remains                               106%
-    p95p1 = (1+mn) * (1+ci90)  //  106% * 125% = 135% 
+    let p05 = mn * (1-ci90)  //  75% of 6%
+    let p95 = mn * (1+ci90)  // 125% of 6%    
+    // console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
+    p05p1 = 1 + p05  // worst case plus one    = 104.5%
+    p95p1 = 1 + p95  // worst case plus one    = 107.3%
+    
+} else if (stdDevReturnsOnly === 2) {
 
-    // https://math.stackexchange.com/questions/2935743/
-    // expection of the product of two random variables
-    //   E[XY]=E[X]⋅E[Y]
-    // variance  of the product of two random variables
-    //   Var[X]⋅Var[Y]+Var[Y](E[X])2+Var[X](E[Y])2 
-    // if Var[X]=Var[Y]=vr and E[X]=E[Y]=mn
-    //    vr*vr +   (vr*mn)^2 + (vr*mn)^2 
-    //    vr^2  + 2*(vr*mn)^2 
- 
-    p05p1 = 1.06 - 0.065
-    p95p1 = 1.06 + 0.065 - 0.01  // -0.1 to prevent vertical breakout
+    sd = 0.430            // from sim-04.py
+    ci90 = quantile * sd  // 0,728406
+
+    // =>  pct05+1, mn+1, pct95+1   [0.458, 1.059, 1.66]     
+    p05p1 = mnp1 * (1-ci90)  
+    p95p1 = mnp1 * (1+ci90)   
+
 }
+console.log(`mn=${mnp1} conf ivl 5...95% [${1-ci90}, ${1+ci90}] `) // 14% * 1.65 =  ~25%
 
 p05p1 = Math.round(10000 * p05p1) / 10000;
 p95p1 = Math.round(10000 * p95p1) / 10000;
@@ -208,6 +218,18 @@ var dataObjectCreate = (function () {
                 c1 = mnp1  * c1 * rs   +   mnbd1 * c1 * ss
                 c2 = p95p1 * c2 * rs   +   mnbd1 * c2 * ss
 
+                // change 2024-01 - we cannot use the std in p05p1 and p95p1
+                //   "geometrically" in every period => it's effect is powered by 20
+                // instead we have to use it _once_ - by applying it to the mean:
+                c0 = p05p1 * c1 * rs   +   mnbd1 * c1 * ss
+                c2 = p95p1 * c1 * rs   +   mnbd1 * c1 * ss
+
+                if(rs === 0){
+                    c0 = c1
+                    c2 = c1
+                }
+
+
                 // additional yearly contribution
                 c0 += sby; c1 += sby; c2 +=sby;
 
@@ -219,19 +241,12 @@ var dataObjectCreate = (function () {
 
             maxY = ds[az][2]
 
-            // steps of 10.000
-            // maxY = (Math.round(maxY/10000) +1)*10000
 
-            // steps of 20.000
-            // maxY = (Math.round(maxY/20000) +1)*20000
-
-            // steps of 40.000
-            // maxY = (Math.round(maxY/40000) +1)*40000
-
-            if (stdDevReturnsOnly) {
-                maxY = (Math.round(maxY/40000) +0.2)*40000
+            // make vertical height for the best 95%
+            if (stdDevReturnsOnly === 0) {
+                maxY = (Math.round(maxY/40000) +0.20)*40000
             } else {
-                maxY = (Math.round(maxY/40000) +0.75)*40000
+                maxY = (Math.round(maxY/40000) +0.60)*40000
             }
 
             // console.log(ds);

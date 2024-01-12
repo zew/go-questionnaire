@@ -69,7 +69,7 @@ function getMarkpointConfig( keyValsCoords ) {
             // return '{' + val + '| }\n{value|' + val + '}';
             // return `{${val}|}\n{value|${val}}`;
             cntrSymbol++;
-            console.log(`sym ${cntrSymbol}`, param );
+            // console.log(`sym ${cntrSymbol}`, param );
             if (cntrSymbol % 3 === 0) {
                 // return vectorImgs.Reindeer;
                 return 'roundRect';

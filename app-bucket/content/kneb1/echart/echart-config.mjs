@@ -75,7 +75,7 @@ if (stdDevReturnsOnly === 0) {
 } else if (stdDevReturnsOnly === 2) {
 
     sd = 0.430            // from sim-04.py
-    ci90 = quantile * sd  // 0,728406
+    ci90 = quantile * sd  // 0,707 = 1,645*0,43
 
     // =>  pct05+1, mn+1, pct95+1   [0.458, 1.059, 1.66]     
     p05p1 = mnp1 * (1-ci90)  
@@ -87,6 +87,7 @@ console.log(`mn=${mnp1} conf ivl 5...95% [${1-ci90}, ${1+ci90}] `) // 14% * 1.65
 p05p1 = Math.round(10000 * p05p1) / 10000;
 p95p1 = Math.round(10000 * p95p1) / 10000;
 
+// [0.3099, 1.059, 1.8081]
 console.log(`pct05+1, mn+1, pct95+1   [${p05p1}, ${mnp1}, ${p95p1}]`)
 
 
@@ -149,9 +150,7 @@ var dataObjectCreate = (function () {
     // private method
     // get the future value
     var pFVs = () => {
-
         // pComputeData()  // => FV is always defined...
-
         if (ds === undefined || ds.length == 0) {
             return 0
         }
@@ -214,15 +213,15 @@ var dataObjectCreate = (function () {
             for (let i = 0; i <= az; i++) {
 
                 // return on existing balance
-                c0 = p05p1 * c0 * rs   +   mnbd1 * c0 * ss
-                c1 = mnp1  * c1 * rs   +   mnbd1 * c1 * ss
-                c2 = p95p1 * c2 * rs   +   mnbd1 * c2 * ss
+                let c1a = mnp1  * c1 * rs   +   mnbd1 * c1 * ss
 
                 // change 2024-01 - we cannot use the std in p05p1 and p95p1
                 //   "geometrically" in every period => it's effect is powered by 20
                 // instead we have to use it _once_ - by applying it to the mean:
                 c0 = p05p1 * c1 * rs   +   mnbd1 * c1 * ss
                 c2 = p95p1 * c1 * rs   +   mnbd1 * c1 * ss
+
+                c1 = c1a;
 
                 if(rs === 0){
                     c0 = c1

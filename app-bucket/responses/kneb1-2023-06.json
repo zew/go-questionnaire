@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d750a5f59875ef5eea6730d2eb22b4dfcb12031366b5be0c0eef7482cd46c568",
+ 	"md_5": "7acfd92f3189fc72ebfc5fda3c1f0ad35534b3f72893adecd9f28929afe3d93b",
  	"lang_codes": [
  		"de"
  	],
@@ -1337,7 +1337,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D4. --\u003eWelchen höchs\u0026shy;ten allgemeinbildenden Schulabschluss haben Sie?",
+ 								"de": "\u003c!-- D4. --\u003eWas ist ihr höchs\u0026shy;ter Schulabschluss?",
  								"en": "\u003c!-- D4. --\u003eWhich is your highest degree?"
  							},
  							"col_span": 3,
@@ -1347,13 +1347,13 @@
  							"name": "qd4_abschluss",
  							"type": "radio",
  							"label": {
- 								"de": "Hauptschul-/ Volksschulabschluss",
- 								"en": "Primary school"
+ 								"de": "Kei\u0026shy;nen allgemeinen Schulabschluss",
+ 								"en": "todo"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "hauptschule",
+ 							"value_radio": "none",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1393,13 +1393,13 @@
  							"name": "qd4_abschluss",
  							"type": "radio",
  							"label": {
- 								"de": "Mitt\u0026shy;le\u0026shy;re Reife/ Realschulabschluss/ Polytechnische Oberschule, 10. Klasse",
- 								"en": "Secondary school"
+ 								"de": "Noch in schulischer Ausbil\u0026shy;dung",
+ 								"en": "todo"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "realschule",
+ 							"value_radio": "inprogress",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1439,13 +1439,197 @@
  							"name": "qd4_abschluss",
  							"type": "radio",
  							"label": {
- 								"de": "Allgemeine oder fachgebundene Hochschulreife/ Abitur oder Fachhochschulreife",
- 								"en": "High school"
+ 								"de": "Hauptschule/ Volksschule \u003ci\u003eohne\u003c/i\u003e abgeschlossene Lehre",
+ 								"en": "todo"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "abitur_fh",
+ 							"value_radio": "haupt_noapp",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hauptschule/ Volksschule \u003ci\u003emit\u003c/i\u003e abgeschlossener Lehre",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "haupt_withapp",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mittel-, Real-, Hö\u0026shy;here-, Fach-, Handelsschule ohne Abitur",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "real",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Abitur / Hochschulreife",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "abitur",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qd4_abschluss",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Abgeschlossenes Studium (Hochschule oder Universität)",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "uni",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1767,7 +1951,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D6. --\u003e\n\t\t\t\t\tWie viele Personen leben insge\u0026shy;samt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tSollten Sie in einer (Studenten-) WG wohnen, \n\t\t\t\t\tso sollte die Anzahl aller Haushaltsmit\u0026shy;glieder auf 1 gesetzt werden\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003c!-- D6. --\u003e\n\t\t\t\t\tWie viele Personen leben insge\u0026shy;samt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tSollten Sie in einer (Studierenden-)WG wohnen, \n\t\t\t\t\tso sollte die Anzahl aller Haushaltsmit\u0026shy;glieder auf 1 gesetzt werden\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003c!-- D6. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 3,
@@ -2441,7 +2625,7 @@
  							"name": "qd7b_employment",
  							"type": "radio",
  							"label": {
- 								"de": "Arbeiter",
+ 								"de": "Arbeiter/in",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -2533,7 +2717,7 @@
  							"name": "qd7b_employment",
  							"type": "radio",
  							"label": {
- 								"de": "Beamter",
+ 								"de": "Beamtin/Beamter",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -2579,7 +2763,7 @@
  							"name": "qd7b_employment",
  							"type": "radio",
  							"label": {
- 								"de": "Selbständig ohne Mitarbeiter",
+ 								"de": "Selbständig ohne Mitarbeiter/innen",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -2625,7 +2809,7 @@
  							"name": "qd7b_employment",
  							"type": "radio",
  							"label": {
- 								"de": "Selbständig mit Mitarbeitern",
+ 								"de": "Selbständig mit Mitarbeiter/innen",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -3348,7 +3532,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R2. --\u003eWoran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003c!-- R2. --\u003eAn welchen Lebensbereich oder an welche Entscheidungssi\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on \n\t\t\t\t\t\thaben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003c!-- R2. --\u003etodo"
  							},
  							"col_span": 1,
@@ -3418,7 +3602,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, \n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -3867,7 +4051,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ebereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen, um po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen\u003c/small\u003e 10",
+ 								"de": "\u003csmall\u003ebereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen\u003c/small\u003e 10",
  								"en": "todo"
  							},
  							"col_span_control": 1,
@@ -5905,7 +6089,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P4. --\u003e\n\t\t\t\tIm Allgemeinen kann man den Menschen ver\u0026shy;trau\u0026shy;en.\n\n\t\t\t\t",
+ 								"de": "\u003c!-- P4. --\u003e\n\t\t\t\tIm Großen und Ganzen vertraue ich anderen Menschen.\n\n\t\t\t\t",
  								"en": "\u003c!-- P4. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -6510,7 +6694,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P5. --\u003e\n\t\t\t\tIm Allgemeinen kann man Banken und Finanzinstitutionen in Deutsch\u0026shy;land ver\u0026shy;trau\u0026shy;en.\n\n\t\t\t\t",
+ 								"de": "\u003c!-- P5. --\u003e\n\t\t\t\tIm Allgemeinen vertraue ich Banken und Finanzinstitutionen in Deutsch\u0026shy;land.\n\n\t\t\t\t",
  								"en": "\u003c!-- P5. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -7147,7 +7331,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert\u0026nbsp;10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
+ 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
  								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
@@ -8816,7 +9000,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eAnbauentscheidungen \n\t\t\t\t\t\tanhand eines Beispiels aus der Forstwirt\u0026shy;schaft\u003c/i\u003e.\n\n\n\t\t\t\t\t\tEs gibt viele verschiedene Arten von forstwirt\u0026shy;schaft\u0026shy;lichen Betrieben. \n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. \n\t\t\t\t\t\tEin Forstwirt bestellt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e er anpflanzen möchte. \t\t\t\t\t\t\n\t\t\t\t\t\tEr kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, die Abwägung zwi\u0026shy;schen \n\t\t\t\t\t\tden beiden Eigenschaften Ertrag und Widerstandsfähigkeit \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\n\t\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten, wie ein Waldstück bepflanzt werden kann.  \n\t\t\t\t\t\tWir stellen Ihnen eine dieser Möglichkeiten anhand eines Beispiels vereinfacht vor. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche Baumarten sie anpflanzen möchte. \n\t\t\t\t\t\tSie kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\tDas bedeutet, dass die Erträge weniger stark schwanken.\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\tDas bedeutet, dass die Erträge stärker schwanken können.\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik auf der folgenden Seite versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\tWir nehmen an, dass der Preis \n\t\t\t\t\t\tfür eine Einheit Holz für beide Baumarten gleich ist.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -8867,7 +9051,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e. \n\t\t\t\t\tGenügend finanzielle Mittel im Alter sind der Grundstein für einen si\u0026shy;cheren und stabilen Ruhestand.\n\n\t\t\t\t\tVor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt nied\u0026shy;riger ist \n\t\t\t\t\tals das Arbeitseinkommen während der Erwerbstätigkeit, \n\t\t\t\t\tist es wich\u0026shy;tig, dass man finanziell gut abgesi\u0026shy;chert ist.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. \n\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: \n\t\t\t\t\t\u003ci\u003eEinen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn unserer interaktiven Graphik versuchen wir, \n\t\t\t\t\tdie \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage am Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\n\t\t\t\t\t",
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e. \n\t\t\t\t\tGenügend finanzielle Mittel im Alter sind der Grundstein für einen si\u0026shy;cheren und stabilen Ruhestand.\n\n\t\t\t\t\tVor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt nied\u0026shy;riger ist \n\t\t\t\t\tals das Arbeitseinkommen während der Erwerbstätigkeit, \n\t\t\t\t\tist es wich\u0026shy;tig, dass man finanziell gut abgesi\u0026shy;chert ist.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. \n\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: \n\t\t\t\t\t\u003ci\u003eEinen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn unserer interaktiven Graphik\n\t\t\t\t\tauf der folgenden Seite \n\t\t\t\t\tversuchen wir, \n\t\t\t\t\tdie \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage am Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -9011,7 +9195,16 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tForstwirtin Birke möchte über einen Zeitraum von 20\u0026nbsp;Jahren jedes Jahr 100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den besten 5 von 100\u0026nbsp;Fällen?\t\n\t\t\t\t\t",
+ 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- Quiz-Intro --\u003etodo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren jedes Jahr 100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den  \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\t\n\t\t\t\t\t",
  								"en": "\u003c!-- C24. --\u003etodo"
  							},
  							"col_span": 3,
@@ -9040,7 +9233,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C25. --\u003e\n\n\t\t\t\t\t\tForstwirt Tanne kann jedes Jahr 300\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren ca. 100.000\u0026nbsp;Euro angespart haben möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Baumart\u0026nbsp;2 sollte sein Waldstück mindestens haben?\n\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
+ 								"de": "\u003c!-- C25. --\u003e\n\n\t\t\t\t\t\tHerr Lila kann jedes Jahr 300\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren einen Ertrag von ca. 100.000\u0026nbsp;Euro erzielen möchte \n\t\t\t\t\t\t(im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Baumart\u0026nbsp;2 sollte sein Waldstück mindestens haben?\n\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
  								"en": "\u003c!-- C25. --\u003etodo"
  							},
  							"col_span": 6,
@@ -9325,7 +9518,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tForstwirt Eiche möchte in 20\u0026nbsp;Jahren ein Vermögen von 100.000\u0026nbsp;Euro aufbauen. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 50% an Baumart\u0026nbsp;2 in ihrem Wald zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Bäume muss sie jährlich anpflanzen, damit ihr dies \u003ci\u003eim Durchschnitt\u003c/i\u003e gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20\u0026nbsp;Jahren einen Ertrag von 100.000\u0026nbsp;Euro aufbauen. \n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 50% an Baumart\u0026nbsp;2 in ihrem Wald zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Bäume muss sie jährlich anpflanzen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t",
  								"en": "\u003c!-- C26. --\u003etodo"
  							},
  							"col_span": 3,
@@ -9336,13 +9529,13 @@
  							"type": "number",
  							"max_chars": 6,
  							"step": 10,
- 							"max": 600,
+ 							"max": 700,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
  							},
  							"suffix": {
- 								"de": "Hektar Bäume",
+ 								"de": "Bäume",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -9397,7 +9590,16 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100\u0026nbsp;Fällen?\n\t\t\t\t\t",
+ 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
+ 								"en": "\u003c!-- Quiz-Intro --\u003etodo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\n\t\t\t\t\t",
  								"en": "\u003c!-- C24. --\u003etodo"
  							},
  							"col_span": 3,
@@ -9436,7 +9638,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "0% Sorte\u0026nbsp;2",
+ 								"de": "0% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9466,7 +9668,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "10% Sorte\u0026nbsp;2",
+ 								"de": "10% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9496,7 +9698,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "20% Sorte\u0026nbsp;2",
+ 								"de": "20% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9526,7 +9728,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "30% Sorte\u0026nbsp;2",
+ 								"de": "30% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9556,7 +9758,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "40% Sorte\u0026nbsp;2",
+ 								"de": "40% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9586,7 +9788,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "50% Sorte\u0026nbsp;2",
+ 								"de": "50% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9616,7 +9818,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "60% Sorte\u0026nbsp;2",
+ 								"de": "60% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9646,7 +9848,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "70% Sorte\u0026nbsp;2",
+ 								"de": "70% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9676,7 +9878,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "80% Sorte\u0026nbsp;2",
+ 								"de": "80% Aktienanteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9711,7 +9913,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie hoch muss ihre monatliche Sparrate sein, damit ihr dies \u003ci\u003eim Durchschnitt\u003c/i\u003e gelingen kann?\n\t\t\n\t\t\t\t\t",
+ 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Euro sie  monatlich sparen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\n\t\t\t\t\t",
  								"en": "\u003c!-- C26. --\u003etodo"
  							},
  							"col_span": 3,
@@ -12376,7 +12578,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert 0 bedeutet: Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\n\t\t\t\t\t\tund der Wert 10: Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
+ 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
  								"en": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 11,
@@ -14094,7 +14296,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10%-ige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t",
+ 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t",
  								"en": "\u003c!-- FL6. --\u003etodo"
  							},
  							"col_span": 6,
@@ -14254,13 +14456,28 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\tIn wieweit stim\u0026shy;men Sie folgenden Aussagen zu?: \n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"trifft ganz und gar nicht zu\"\n\t\t\t\t\t\tbedeutet \n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"trifft voll und ganz zu\".\n\t\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 2,
  					"columns": 11,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: trifft ganz und gar nicht zu \n\t\t\t\t\tund der Wert\u0026nbsp;10: trifft voll und ganz zu.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t",
  								"en": "\u003c!-- X1. --\u003e\n\t\t\t\ttodo\n\t\t\t"
  							},
  							"col_span": 11,
@@ -18093,7 +18310,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- H2. --\u003etodo"
  							},
  							"col_span": 1,
@@ -18108,7 +18325,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSparanlagen\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSparanlagen\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- a) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18310,7 +18527,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eFestverzinsliche Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds\n\t\t\t\t\u003c/small\u003e",
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eFestverzinsliche Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds)\n\t\t\t\t\u003c/small\u003e",
  								"en": "\u003c!-- c) --\u003etodo"
  							},
  							"col_span": 7,
@@ -18512,7 +18729,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSonstige Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSonstige Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
  								"en": "\u003c!-- e) --\u003etodo"
  							},
  							"col_span": 7,
@@ -19621,7 +19838,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
+ 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
  								"en": "\u003c!-- H4. --\u003etodo"
  							},
  							"col_span": 1,
@@ -19636,7 +19853,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tz.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(z.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- a) --\u003etodo"
  							},
  							"col_span": 7,
@@ -19939,7 +20156,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge („Riester- Rente“)\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge (\"Riester-Rente\")\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003c!-- d) --\u003etodo"
  							},
  							"col_span": 7,
@@ -20259,7 +20476,7 @@
  							"name": "qz1_download",
  							"type": "radio",
  							"label": {
- 								"de": "Die ZEW-Kurzexpertise  „Wie haben sich Coronakrise und Preissteigerungen auf die Altersvorsorge ausgewirkt?“",
+ 								"de": "Die ZEW-Kurzexpertise \"Wie haben sich Coronakrise und Preissteigerungen auf die Altersvorsorge ausgewirkt?\"",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -20551,12 +20768,6 @@
  							"col_span_label": 1,
  							"dynamic_func": "knebLinkBackToPanel",
  							"dynamic_func_paramset": "success"
- 						},
- 						{
- 							"type": "dyn-textblock",
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "LinkBack"
  						}
  					]
  				}

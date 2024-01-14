@@ -499,7 +499,7 @@ func init() {
 	//
 	validators["kneb_qc24_nf"] = func(q *QuestionnaireT, inp *inputT) error {
 		// if inp.Response != "" && inp.Response != "41900" {
-		if inp.Response != "" && inp.Response != "55700" {
+		if inp.Response != "" && inp.Response != "54100" {
 			return errors.New(`Bitte überprüfen`)
 			// return errors.New(`Ungefähr 40.000 Euro`)
 		}
@@ -507,7 +507,7 @@ func init() {
 	}
 	validators["kneb_qc24_ff"] = func(q *QuestionnaireT, inp *inputT) error {
 		// if inp.Response != "" && inp.Response != "104700" {
-		if inp.Response != "" && inp.Response != "139400" {
+		if inp.Response != "" && inp.Response != "135200" {
 			return errors.New(`Bitte überprüfen`)
 			// return errors.New(`Ungefähr 105.000 €`)
 		}
@@ -530,14 +530,14 @@ func init() {
 	}
 	//
 	validators["kneb_qc26_nf"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response != "" && inp.Response != "280" {
+		if inp.Response != "" && inp.Response != "430" {
 			return errors.New(`Bitte überprüfen`)
 			// return errors.New(`Zwischen&nbsp;20&nbsp;und&nbsp;140&nbsp;Hektar`)
 		}
 		return nil
 	}
 	validators["kneb_qc26_ff"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response != "" && inp.Response != "280" {
+		if inp.Response != "" && inp.Response != "430" {
 			return errors.New(`Bitte überprüfen`)
 			// return errors.New(`Zwischen&nbsp;200&nbsp;und&nbsp;400&nbsp;Euro`)
 		}

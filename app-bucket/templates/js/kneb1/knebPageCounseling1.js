@@ -26,6 +26,9 @@ function showHideSubQuestions(showHide, classOfSubQuestion) {
 
 function showB2(event) {
 
+    // disabled
+    return
+
     let rad1 = document.forms.frmMain.qb1_pensionadvice1;
     let rad2 = document.forms.frmMain.qb1_pensionadvice2;
     let rad3 = document.forms.frmMain.qb1_pensionadvice3;

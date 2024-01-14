@@ -278,13 +278,6 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 		{
 			"de": `
 					Ich traue mir zu am Aktienmarkt teilzunehmen.
-
-					<small>
-					<br>
-					Antworten Sie bitte anhand der folgenden Skala, 
-					wobei der Wert&nbsp;0 bedeutet: trifft ganz und gar nicht zu 
-					und der Wert&nbsp;10: trifft voll und ganz zu.
-					</small>
 				`,
 			"en": `
 				todo
@@ -332,6 +325,30 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 			"en": "Experience<br>finance,<br>advice",
 		}
 		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.BottomVSpacers = 1
+			gr.Cols = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						In wieweit stimmen Sie folgenden Aussagen zu?: 
+						Antworten Sie bitte anhand der folgenden Skala, 
+						wobei der Wert&nbsp;0 "trifft ganz und gar nicht zu"
+						bedeutet 
+						und der Wert&nbsp;10 "trifft voll und ganz zu".
+						
+					`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+		}
 
 		for i := 0; i < len(inputs); i++ {
 
@@ -1490,8 +1507,12 @@ func labelsRiskFin() []trl.S {
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
 		},
+		// {
+		// 	"de": "<small>bereit, ein erhebliches Risiko einzugehen, um potenziell eine höhere Rendite zu erzielen</small> 10",
+		// 	"en": "todo",
+		// },
 		{
-			"de": "<small>bereit, ein erhebliches Risiko einzugehen, um potenziell eine höhere Rendite zu erzielen</small> 10",
+			"de": "<small>bereit, ein erhebliches Risiko einzugehen</small> 10",
 			"en": "todo",
 		},
 	}

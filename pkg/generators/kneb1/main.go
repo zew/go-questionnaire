@@ -449,35 +449,53 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// single column
 			gr.Cols = 3
 			var radioValues = []string{
-				"hauptschule",
-				"realschule",
-				// "fachhochschule",
-				// "abitur",
-				"abitur_fh",
+				"none",
+				"inprogress",
+
+				"haupt_noapp",
+				"haupt_withapp",
+				"real",
+
+				"abitur",
+				"uni",
 			}
 			var labels = []trl.S{
 				{
-					"de": "Hauptschul-/ Volksschulabschluss",
-					"en": "Primary school",
+					"de": "Keinen allgemeinen Schulabschluss",
+					"en": "todo",
 				},
 				{
-					"de": "Mittlere Reife/ Realschulabschluss/ Polytechnische Oberschule, 10. Klasse",
-					"en": "Secondary school",
+					"de": "Noch in schulischer Ausbildung",
+					"en": "todo",
 				},
-				// {
-				// 	"de": "Fachhochschulreife",
-				// 	"en": "College",
-				// },
+
 				{
-					"de": "Allgemeine oder fachgebundene Hochschulreife/ Abitur oder Fachhochschulreife",
-					"en": "High school",
+					"de": "Hauptschule/ Volksschule <i>ohne</i> abgeschlossene Lehre",
+					"en": "todo",
+				},
+				{
+					"de": "Hauptschule/ Volksschule <i>mit</i> abgeschlossener Lehre",
+					"en": "todo",
+				},
+				{
+					"de": "Mittel-, Real-, Höhere-, Fach-, Handelsschule ohne Abitur",
+					"en": "todo",
+				},
+
+				{
+					"de": "Abitur / Hochschulreife",
+					"en": "todo",
+				},
+				{
+					"de": "Abgeschlossenes Studium (Hochschule oder Universität)",
+					"en": "todo",
 				},
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": "Welchen höchsten allgemeinbildenden Schulabschluss haben Sie?",
+					"de": "Was ist ihr höchster Schulabschluss?",
 					"en": "Which is your highest degree?",
 				}.OutlineHid("D4.")
 				inp.ColSpan = gr.Cols
@@ -590,7 +608,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Wie viele Personen leben insgesamt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?
 					<br>
 					<small>
-					Sollten Sie in einer (Studenten-) WG wohnen, 
+					Sollten Sie in einer (Studierenden-)WG wohnen, 
 					so sollte die Anzahl aller Haushaltsmitglieder auf 1 gesetzt werden
 					</small>
 					`,
@@ -853,7 +871,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var labels = []trl.S{
 				{
-					"de": "Arbeiter",
+					"de": "Arbeiter/in",
 					"en": "todo",
 				},
 				{
@@ -861,15 +879,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": "todo",
 				},
 				{
-					"de": "Beamter",
+					"de": "Beamtin/Beamter",
 					"en": "todo",
 				},
 				{
-					"de": "Selbständig ohne Mitarbeiter",
+					"de": "Selbständig ohne Mitarbeiter/innen",
 					"en": "todo",
 				},
 				{
-					"de": "Selbständig mit Mitarbeitern",
+					"de": "Selbständig mit Mitarbeiter/innen",
 					"en": "todo",
 				},
 			}
@@ -1092,7 +1110,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Woran haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
+					"de": `An welchen Lebensbereich oder an welche Entscheidungssituation 
+						haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
 						<small>Bitte geben Sie ein oder mehrere Stichwörter an.</small>
 					`,
 					"en": `todo`,
@@ -1143,8 +1162,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<small>
 						Antworten Sie bitte anhand der folgenden Skala, 
 						wobei der Wert&nbsp;0 bedeutet: nicht bereit, ein Risiko einzugehen 
-						und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen, 
-						um potenziell eine höhere Rendite zu erzielen.
+						und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen.
 					</small>
 				`,
 				"en": `
@@ -1571,7 +1589,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": `
-				Im Allgemeinen kann man den Menschen vertrauen.
+				Im Großen und Ganzen vertraue ich anderen Menschen.
 
 				`,
 				"en": `
@@ -1580,7 +1598,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": `
-				Im Allgemeinen kann man Banken und Finanzinstitutionen in Deutschland vertrauen.
+				Im Allgemeinen vertraue ich Banken und Finanzinstitutionen in Deutschland.
 
 				`,
 				"en": `
@@ -1640,14 +1658,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 						<span style="font-size:120%">
-						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, 
+						gute finanzielle Entscheidungen zu treffen?
 						</span>
 
 
 						<small>
 						Antworten Sie bitte anhand der folgenden Skala,
-						wobei der Wert&nbsp;0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
-						und der Wert&nbsp;10: Hohes Vertrauen in die eigenen Fähigkeiten.
+						wobei der Wert&nbsp;0 "Kein Vertrauen in die eigenen Fähigkeiten" 
+						bedeutet
+						und der Wert&nbsp;10 "Hohes Vertrauen in die eigenen Fähigkeiten".
 						</small>
 
 
@@ -2002,32 +2022,37 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": `
 
 					<p>
-						In diesem Teil unserer Umfrage geht es um <i>Anbauentscheidungen 
-						anhand eines Beispiels aus der Forstwirtschaft</i>.
+						In diesem Teil unserer Umfrage geht es um 
+						<i>Anbauentscheidungen in der Waldwirtschaft</i>.
 
-
-						Es gibt viele verschiedene Arten von forstwirtschaftlichen Betrieben. 
-						Im Folgenden stellen wir Ihnen eine dieser Möglichkeit vereinfacht vor. 
-						Ein Forstwirt bestellt einen Waldabschnitt und muss entscheiden, 
-						welche <i>Baumarten</i> er anpflanzen möchte. 						
-						Er kann sich zwischen <i>zwei Arten</i> entscheiden.
+						Es gibt viele verschiedene Möglichkeiten, wie ein Waldstück bepflanzt werden kann.  
+						Wir stellen Ihnen eine dieser Möglichkeiten anhand eines Beispiels vereinfacht vor. 
+						
+						
+						Eine Person besitzt einen Waldabschnitt und muss entscheiden, 
+						welche Baumarten sie anpflanzen möchte. 
+						Sie kann sich zwischen <i>zwei Arten</i> entscheiden.
 					</p>
 
 					<ul>
 						<li>
 						Baumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
 						Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
+						Das bedeutet, dass die Erträge weniger stark schwanken.
 						</li>
 						<li>
 						Baumart 2: Diese Art wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
 						Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
+						Das bedeutet, dass die Erträge stärker schwanken können.
 						</li>			
 					</ul>
 
 					<p>
-						In unserer interaktiven Graphik versuchen wir, die Abwägung zwischen 
-						den beiden Eigenschaften Ertrag und Widerstandsfähigkeit 
-						der beiden Baumarten zu verdeutlichen.
+						In unserer interaktiven Graphik auf der folgenden Seite versuchen wir, 
+						die <i>Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit</i> 
+						der beiden Baumarten zu verdeutlichen. 
+						Wir nehmen an, dass der Preis 
+						für eine Einheit Holz für beide Baumarten gleich ist.
 					</p>
 					
 
@@ -2090,7 +2115,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					</p>
 
 					<p>
-					In unserer interaktiven Graphik versuchen wir, 
+					In unserer interaktiven Graphik
+					auf der folgenden Seite 
+					versuchen wir, 
 					die <i>Chancen und Risiken</i> einer Anlage am Kapitalmarkt zu verdeutlichen.
 					</p>
 
@@ -2175,11 +2202,30 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Forstwirtin Birke möchte über einen Zeitraum von 20&nbsp;Jahren jedes Jahr 100&nbsp;Bäume pflanzen. 
+						Im Folgenden stellen wir Ihnen drei Fragen, 
+						welche Sie mit Hilfe der interaktiven Graphik beantworten können. 
+						
+						Bitte benutzen Sie den "Zurück" Button, 
+						wenn Sie zur Graphik zurückkehren möchten. 
+						<br>
+						<br>
+					`,
+					"en": `todo`,
+				}.OutlineHid("Quiz-Intro")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren jedes Jahr 100&nbsp;Bäume pflanzen. 
 						
 						Sie wählt einen Anteil von 60% an Baumart&nbsp;2 aus. 
 						
-						Wie hoch ist ihr prognostizierter Ertrag  in den besten 5 von 100&nbsp;Fällen?	
+						Wie hoch ist ihr prognostizierter Ertrag  in den  <i><u>besten 5 von 100&nbsp;Fällen</u></i>?	
 					`,
 					"en": `todo`,
 				}.OutlineHid("C24.")
@@ -2268,9 +2314,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `
 
-						Forstwirt Tanne kann jedes Jahr 300&nbsp;Bäume pflanzen. 
+						Herr Lila kann jedes Jahr 300&nbsp;Bäume pflanzen. 
 						
-						Wenn er nach 20 Jahren ca. 100.000&nbsp;Euro angespart haben möchte (im Durchschnitt), 
+						Wenn er nach 20 Jahren einen Ertrag von ca. 100.000&nbsp;Euro erzielen möchte 
+						(im Durchschnitt), 
 						welchen Anteil an Baumart&nbsp;2 sollte sein Waldstück mindestens haben?
 
 
@@ -2312,12 +2359,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Forstwirt Eiche möchte in 20&nbsp;Jahren ein Vermögen von 100.000&nbsp;Euro aufbauen. 
-						
-						
+						Frau Gelb möchte in 20&nbsp;Jahren einen Ertrag von 100.000&nbsp;Euro aufbauen. 
+												
 						Sie ist bereit einen Anteil von 50% an Baumart&nbsp;2 in ihrem Wald zu akzeptieren.
 
-						Wie viele Bäume muss sie jährlich anpflanzen, damit ihr dies <i>im Durchschnitt</i> gelingen kann?
+						Wie viele Bäume muss sie jährlich anpflanzen, 
+						damit ihr dies <i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> gelingen kann?
 					
 					`,
 					"en": `todo`,
@@ -2333,12 +2380,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Validator = "must;kneb_qc26_nf"
 				inp.Min = 0
 				// 40 Hektar
-				inp.Max = 600
+				inp.Max = 700
 				inp.Step = 10
 				inp.Placeholder = trl.S{"de": "#", "en": "#"}
 				inp.MaxChars = 6
 				inp.Suffix = trl.S{
-					"de": `Hektar Bäume`,
+					"de": `Bäume`,
 					"en": `todo`,
 				}
 				inp.ColSpan = gr.Cols
@@ -2408,12 +2455,31 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
+						Im Folgenden stellen wir Ihnen drei Fragen, 
+						welche Sie mit Hilfe der interaktiven Graphik beantworten können. 
+						
+						Bitte benutzen Sie den "Zurück" Button, 
+						wenn Sie zur Graphik zurückkehren möchten. 
+						<br>
+						<br>
+					`,
+					"en": `todo`,
+				}.OutlineHid("Quiz-Intro")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
 						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
 						einen monatlichen Sparbetrag von 250&nbsp;Euro anlegen. 
 						
 						Sie wählt einen Aktienanteil von 60%.
 
-						Wie hoch ist ihr prognostiziertes Vermögen in den besten 5 von 100&nbsp;Fällen?
+						Wie hoch ist ihr prognostiziertes Vermögen in den <i><u>besten 5 von 100&nbsp;Fällen</u></i>?
 					`,
 					"en": `todo`,
 				}.OutlineHid("C24.")
@@ -2459,39 +2525,39 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var labels = []trl.S{
 				{
-					"de": "0% Sorte&nbsp;2",
+					"de": "0% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "10% Sorte&nbsp;2",
+					"de": "10% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "20% Sorte&nbsp;2",
+					"de": "20% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "30% Sorte&nbsp;2",
+					"de": "30% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "40% Sorte&nbsp;2",
+					"de": "40% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "50% Sorte&nbsp;2",
+					"de": "50% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "60% Sorte&nbsp;2",
+					"de": "60% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "70% Sorte&nbsp;2",
+					"de": "70% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "80% Sorte&nbsp;2",
+					"de": "80% Aktienanteil&nbsp;2",
 					"en": "todo",
 				},
 			}
@@ -2548,7 +2614,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						Frau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. 
 						Sie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.
 
-						Wie hoch muss ihre monatliche Sparrate sein, damit ihr dies <i>im Durchschnitt</i> gelingen kann?
+						Wie viele Euro sie  monatlich sparen, 
+						damit ihr dies <i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> gelingen kann?
 		
 					`,
 					"en": `todo`,
@@ -2909,14 +2976,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 						<span style='font-size:120%'>
-						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, gute finanzielle Entscheidungen zu treffen?
+						Wie viel Vertrauen haben Sie in Ihre Fähigkeit, 
+						gute finanzielle Entscheidungen zu treffen?
 						</span>
 
 
 						<small>
 						Antworten Sie bitte anhand der folgenden Skala,
-						wobei der Wert 0 bedeutet: Kein Vertrauen in die eigenen Fähigkeiten
-						und der Wert 10: Hohes Vertrauen in die eigenen Fähigkeiten.
+						wobei der Wert&nbsp;0 "Kein Vertrauen in die eigenen Fähigkeiten" 
+						bedeutet
+						und der Wert&nbsp;10 "Hohes Vertrauen in die eigenen Fähigkeiten".
 						</small>
 					`,
 				"en": `
@@ -3120,7 +3189,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 							Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
 							sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
 
-							Gleichzeitig besteht eine 10%-ige Chance,
+							Gleichzeitig besteht eine 10prozentige Chance,
 							dass er die Klimaanlage in seinem Haus ersetzen muss,
 							was 4.000 Euro kosten würde.
 
@@ -3503,7 +3572,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<small>
 					Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, 
-					beantworten Sie die Fragen bitte für sich selbst.
+					beantworten Sie die Fragen bitte <i>nur</i> für sich selbst.
 					</small>
 				`,
 				"en": `todo`,
@@ -3521,9 +3590,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				<span style="font-size: 115%">Sparanlagen</span>
 				<br>
 				<small>
-					z.B. Sparbücher, Festgeldkonten,
+					(z.B. Sparbücher, Festgeldkonten,
 					Tagesgeldkonten oder
-					Sparverträge
+					Sparverträge)
 				</small>
 				`,
 				"en": `todo`,
@@ -3560,7 +3629,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 				<span style="font-size: 115%">Festverzinsliche Wertpapiere</span>
 				<small>
-					z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds
+					(z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds)
 				</small>`,
 				"en": `todo`,
 			},
@@ -3593,7 +3662,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 				<span style="font-size: 115%">Sonstige Wertpapiere</span>
 				<small>
-					z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen
+					(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen)
 				</small>
 				`,
 				"en": `todo`,
@@ -3803,7 +3872,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 						<small>
 						Falls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,
-						beantworten Sie die Fragen bitte für sich selbst.
+						beantworten Sie die Fragen bitte <i>nur</i> für sich selbst.
 						</small>
 
 						<!-- %v -->
@@ -3827,9 +3896,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 					<span style="font-size:115%">Private Lebensversicherungen</span>
 					<small>
-					z.B. klassische und fondsgebundene Kapitallebensversicherungen,
+						(z.B. klassische und fondsgebundene Kapitallebensversicherungen,
 						<i>nicht</i> reine Risikolebensversicherungen
-						oder Direktversicherungen über den Arbeitgeber
+						oder Direktversicherungen über den Arbeitgeber)
 					</small>
 
 				`,
@@ -3882,7 +3951,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			*qst.WrapPageT(page),
 			trl.S{
 				"de": `
-					<span style="font-size:115%">Staatlich geförderte private Altersvorsorge („Riester- Rente“)</span>
+					<span style="font-size:115%">Staatlich geförderte private Altersvorsorge ("Riester-Rente")</span>
 					<small>
 					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)
 					</small>
@@ -3981,7 +4050,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `todo`,
 				},
 				{
-					"de": `Die ZEW-Kurzexpertise  „Wie haben sich Coronakrise und Preissteigerungen auf die Altersvorsorge ausgewirkt?“`,
+					"de": `Die ZEW-Kurzexpertise "Wie haben sich Coronakrise und Preissteigerungen auf die Altersvorsorge ausgewirkt?"`,
 					"en": `todo`,
 				},
 				{
@@ -4162,14 +4231,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "LinkBack"
-				inp.ColSpan = gr.Cols
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
-			}
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-textblock"
+					inp.DynamicFunc = "LinkBack"
+					inp.ColSpan = gr.Cols
+					inp.ColSpanControl = 0
+					inp.ColSpanLabel = 1
+				}
+			*/
 
 			/*
 				{

@@ -227,3 +227,48 @@ window.addEventListener("load", function (event) {
 
 
 });
+
+/*
+    https://medium.com/@stheodorejohn/navigating-history-with-the-web-history-api-managing-browser-history-in-javascript-24aeb9c5cbb1
+    // Update the history with the filter state
+      history.pushState({ filter: filter }, "Filtered Results", "/filtered");
+*/
+
+// https://stackoverflow.com/questions/43043113/
+const forceReloadOnBrowserBack = (evt) => {
+
+    // https://web.dev/articles/http-cache?hl=de
+    //    does not apply: Cache-Control: no-cache="Set-Cookie"
+    // https://web.dev/articles/bfcache?hl=de
+    if (evt.persisted) {
+        console.log('page restored from bfcache.');
+    } else {
+        console.log('page loaded normally.');
+    }
+    
+    // get array of PerformanceEntry  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry
+    let perfEntries = performance.getEntriesByType("navigation");
+    if ( perfEntries.length > 0 ) {
+        // console.log(`perfEntries[0].entryType -${perfEntries[0].entryType}-`); // always 'navigation'
+        console.log(`perfEntries[0].type -${perfEntries[0].type}-`); // "navigate", "reload", "back_forward" or "prerender"
+        // console.log(perfEntries[0]);
+        // https://web.dev/bfcache/
+    }
+
+
+    // let historyTraversal = evt.persisted || deprec;
+
+    // if ( historyTraversal ) {
+    //     console.log(`history traversal detected`);
+    //     window.location.reload();
+    // }
+}
+window.addEventListener( "pageshow", forceReloadOnBrowserBack);
+
+const beforeUn = (evt) => {
+    // console.log('beforeUn', evt)
+    // evt.preventDefault();
+};
+
+window.addEventListener( "beforeunload", beforeUn);
+  

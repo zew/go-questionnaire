@@ -79,8 +79,8 @@ used in in
 }
 
 /* treatment neutral is pgxx */
-.pg28-grp00-inp01 .popup-invalid-content-grid-item {
-    bottom:  -1.49rem;
+.pg28-grp00       .popup-invalid-content-grid-item {
+    bottom:   -1.63rem;
 }
 .pg28-grp01-inp01 .popup-invalid-content-grid-item {
     bottom:  0.49rem;
@@ -92,8 +92,8 @@ used in in
 
 
 
-.pg29-grp00-inp01 .popup-invalid-content-grid-item {
-    bottom:  -1.48rem;
+.pg29-grp00       .popup-invalid-content-grid-item {
+    bottom:   -1.63rem;
 }
 .pg29-grp01-inp01 .popup-invalid-content-grid-item {
     bottom:  0.9rem;

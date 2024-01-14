@@ -43,9 +43,9 @@ def crop(subDir, forMobile):
             elif forMobile:
                 # 1280x1707
                 cx = 128 + 48    # width reduction
-                cx = 128 + 80    
-                xD =  42 +  0    # crop more left than right
-                cy =  32          # height reduction
+                cx = 128 + 76    
+                xD =  18 +  0    # crop more left than right
+                cy =  32         # height reduction
                 imCrop = im.crop((cx + xD, cy, 1280 - (cx - xD), 1707-cy))
 
 
@@ -61,6 +61,6 @@ def crop(subDir, forMobile):
 # crop( "fin" , False)
 crop( "fin-mobile", True )
 
-# the word 'neutral' get hyphenated
+# the word 'neutral' gets hyphenated
 # crop( "ntrl" , False)
 crop( "ntrl-mobile", True )

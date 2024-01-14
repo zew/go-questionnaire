@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7acfd92f3189fc72ebfc5fda3c1f0ad35534b3f72893adecd9f28929afe3d93b",
+ 	"md_5": "82cc6fc79012dbdc5fec663cab9e7b7944281e86b5692ba087b8f56d61783ed3",
  	"lang_codes": [
  		"de"
  	],
@@ -9547,6 +9547,11 @@
  							"name": "knebVisiblePrev",
  							"type": "javascript-block",
  							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "knebQuiz",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -9638,7 +9643,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "0% Aktienanteil\u0026nbsp;2",
+ 								"de": "0% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9668,7 +9673,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "10% Aktienanteil\u0026nbsp;2",
+ 								"de": "10% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9698,7 +9703,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "20% Aktienanteil\u0026nbsp;2",
+ 								"de": "20% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9728,7 +9733,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "30% Aktienanteil\u0026nbsp;2",
+ 								"de": "30% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9758,7 +9763,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "40% Aktienanteil\u0026nbsp;2",
+ 								"de": "40% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9788,7 +9793,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "50% Aktienanteil\u0026nbsp;2",
+ 								"de": "50% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9818,7 +9823,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "60% Aktienanteil\u0026nbsp;2",
+ 								"de": "60% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9848,7 +9853,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "70% Aktienanteil\u0026nbsp;2",
+ 								"de": "70% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9878,7 +9883,7 @@
  							"name": "qc25_share_ff",
  							"type": "radio",
  							"label": {
- 								"de": "80% Aktienanteil\u0026nbsp;2",
+ 								"de": "80% Aktien\u0026shy;anteil\u0026nbsp;2",
  								"en": "todo"
  							},
  							"col_span": 2,
@@ -9939,6 +9944,11 @@
  						},
  						{
  							"name": "knebVisiblePrev",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "knebQuiz",
  							"type": "javascript-block",
  							"col_span_control": 1
  						}

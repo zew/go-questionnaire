@@ -2401,6 +2401,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Name = "knebVisiblePrev" // js filename
 			}
 
+			//
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebQuiz" // js filename
+			}
+
 		}
 
 	}
@@ -2525,39 +2533,39 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var labels = []trl.S{
 				{
-					"de": "0% Aktienanteil&nbsp;2",
+					"de": "0% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "10% Aktienanteil&nbsp;2",
+					"de": "10% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "20% Aktienanteil&nbsp;2",
+					"de": "20% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "30% Aktienanteil&nbsp;2",
+					"de": "30% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "40% Aktienanteil&nbsp;2",
+					"de": "40% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "50% Aktienanteil&nbsp;2",
+					"de": "50% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "60% Aktienanteil&nbsp;2",
+					"de": "60% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "70% Aktienanteil&nbsp;2",
+					"de": "70% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 				{
-					"de": "80% Aktienanteil&nbsp;2",
+					"de": "80% Aktien&shy;anteil&nbsp;2",
 					"en": "todo",
 				},
 			}
@@ -2650,6 +2658,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				inp.Type = "javascript-block"
 				inp.Name = "knebVisiblePrev" // js filename
+			}
+
+			//
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebQuiz" // js filename
 			}
 
 		}

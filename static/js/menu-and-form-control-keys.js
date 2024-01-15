@@ -146,19 +146,25 @@ var closeLevel3 = function () {
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
 
-    document.addEventListener("keydown", keyControls, false);
-    console.log("global key listener registered");
+    try {
+        document.addEventListener("keydown", keyControls, false);
+        // console.log("global key listener registered");
 
+        var html = document.body.parentNode;
+        html.addEventListener("touchstart", outsideMenu, false);
+        html.addEventListener('click', outsideMenu, false);
 
-    var html = document.body.parentNode;
-    html.addEventListener("touchstart", outsideMenu, false);
-    html.addEventListener('click', outsideMenu, false);
+        var nodesLvl2 = document.getElementsByClassName("nde-2nd-lvl");
+        for (var i = 0; i < nodesLvl2.length; i++) {
+            nodesLvl2[i].addEventListener('click', closeLevel3, false);
+        }
+        // console.log("outsideMenu and closeLevel3 registered");
 
-    var nodesLvl2 = document.getElementsByClassName("nde-2nd-lvl");
-    for (var i = 0; i < nodesLvl2.length; i++) {
-        nodesLvl2[i].addEventListener('click', closeLevel3, false);
+    } catch (err) {
+        console.error(`error in registering 'keycontrol' 'outsideMenu' or 'closeLevel3' `);
+        console.error(err);
     }
-    console.log("outsideMenu and closeLevel3 registered");
+
 
 
     var invalidInputs = false; // invalid by HTML5
@@ -202,8 +208,8 @@ window.addEventListener("load", function (event) {
             }
 
             if (el.type === "range") {
-                // if the first input is a range; 
-                // then we dont want to focus - because otherwise hitting PageDown 
+                // if the first input is a range;
+                // then we dont want to focus - because otherwise hitting PageDown
                 // would not scroll down the page, but change the range-slider thumb
                 break;
             }
@@ -228,47 +234,133 @@ window.addEventListener("load", function (event) {
 
 });
 
+
+const urlPathSuffix = "/replstate";
 /*
-    https://medium.com/@stheodorejohn/navigating-history-with-the-web-history-api-managing-browser-history-in-javascript-24aeb9c5cbb1
-    // Update the history with the filter state
-      history.pushState({ filter: filter }, "Filtered Results", "/filtered");
+    following integer constants seem obsolete:
+        window.PerformanceNavigation.TYPE_NAVIGATE
+        window.PerformanceNavigation.TYPE_RELOAD
+        window.PerformanceNavigation.TYPE_BACK_FORWARD
+
 */
+const manageBrowserHistory = (evt) => {
 
-// https://stackoverflow.com/questions/43043113/
-const forceReloadOnBrowserBack = (evt) => {
-
-    // https://web.dev/articles/http-cache?hl=de
-    //    does not apply: Cache-Control: no-cache="Set-Cookie"
+    // back-forward cache   versus   http cache
+    // https://web.dev/articles/http-cache?hl=de - does not apply: Cache-Control: no-cache="Set-Cookie"
     // https://web.dev/articles/bfcache?hl=de
     if (evt.persisted) {
-        console.log('page restored from bfcache.');
+        console.log('restored from bfcache.');
     } else {
-        console.log('page loaded normally.');
+        // default; not worth reporting
+        // console.log('loaded without bfcache.');
     }
-    
+
     // get array of PerformanceEntry  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry
     let perfEntries = performance.getEntriesByType("navigation");
     if ( perfEntries.length > 0 ) {
-        // console.log(`perfEntries[0].entryType -${perfEntries[0].entryType}-`); // always 'navigation'
-        console.log(`perfEntries[0].type -${perfEntries[0].type}-`); // "navigate", "reload", "back_forward" or "prerender"
+
+        if (perfEntries[0].type !== "navigate") {
+            // "navigate", "reload", "back_forward" or "prerender"
+            console.log(`perfEntries[0].type -${perfEntries[0].type}-`); 
+        }
+        if (perfEntries[0].initiatorType !== "navigation") {
+            console.log(`perfEntries[0].initiatorType -${perfEntries[0].initiatorType}-`);
+        }
+
+        if (perfEntries[0].name !== window.location.href ) {
+            let a = window.location.href;
+            let b = perfEntries[0].name;
+            a = a.trim();
+            b = b.trim();
+
+            if (  a.endsWith(urlPathSuffix) ) {
+                a = a.substring(0, a.length - urlPathSuffix.length );
+                // console.log(`urlPathSuffix cut`);
+            }
+            if ( a === b ) {
+                console.log(`case0 -${a}-`);
+            } else if (  a.startsWith(b) ) {
+                // const pos = a.indexOf(b);
+                const dff = a.substring(b.length);
+                console.log(`case1 -${b}- vs -...${dff}-`);
+            } else if (  b.startsWith(a) ) {
+                const dff = b.substring(a.length);
+                console.log(`case2 -${a}- vs -...${dff}-`);
+            } else {
+                console.log(`case3 -${a}- vs -${b}-`);
+            }
+        }
+        if (perfEntries[0].redirectCount !== 0 ) {
+            console.log(`perfEntries[0].redirectCount -${perfEntries[0].redirectCount}-`);
+        }
         // console.log(perfEntries[0]);
-        // https://web.dev/bfcache/
     }
 
+    /*
+        window.history only reports its size and not much else
+        you use its methods   back(), forward(), go(), pushState(), replaceState()
+     */
+    if (window.history && window.history.state !== null) {
+        console.log(`hist size ${window.history.length} - state ${window.history.state}`   );
+        console.log(`state`,window.history.state);
+    }
 
-    // let historyTraversal = evt.persisted || deprec;
+    // replace *current* history state.
+    // first argument 'state' is saved as 'history.state' for later read operations on the history
+    // title - unused, does not what it says
+    // location - changes relative URL of current own page, not URL of any other pages. 
+    //      current own page URL is changed, but no reload occurs
+    //      .back() and .forward() show changed URL
+    //      .back() and .forward() trigger popstate, but no load() nor unload()
+    //    use for changing query string - not full URL
+    window.history.replaceState(
+        {
+            state1: 'stateval1',
+            state2: 'stateval2',
+        },
+          document.getElementsByTagName("title"),
+          urlPathSuffix,
+    );
 
-    // if ( historyTraversal ) {
-    //     console.log(`history traversal detected`);
-    //     window.location.reload();
-    // }
+
+
+
 }
-window.addEventListener( "pageshow", forceReloadOnBrowserBack);
+window.addEventListener( "pageshow", manageBrowserHistory);
 
-const beforeUn = (evt) => {
+
+
+
+
+// shows a standard message before leaving page; not customizable; useless
+// stackoverflow.com/questions/38879742/
+const beforeUnload = (evt) => {
     // console.log('beforeUn', evt)
     // evt.preventDefault();
 };
+window.addEventListener( "beforeunload", beforeUnload);
 
-window.addEventListener( "beforeunload", beforeUn);
-  
+
+
+
+
+/*
+    https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
+    "Note that just calling history.pushState() or history.replaceState() won't trigger a popstate event. 
+    The popstate event will be triggered by doing a browser action 
+    such as a click on the back or forward button 
+    or calling history.back() or -forward() in JavaScript.
+
+    => onpopstate is not always triggered
+*/
+const funcHistoryStateChange = evt => {
+    if (typeof evt.state == "object" && evt.state.state1 === "stateval1") {
+        console.log(`reloading onpopstate ...`);
+        // window.location.reload();
+    } else {
+        // console.log(`onpopstate`, "other");
+    }
+    console.log(`onpopstate`, evt);
+}
+window.onpopstate = funcHistoryStateChange
+

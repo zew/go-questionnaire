@@ -34,6 +34,7 @@ const cleansePaste = evt => {
     evt.srcElement.value = dataPasted;
 
     // stop data actually being pasted
+    // at the *end* of method  =>  if above fails, propagation will *continue*
     evt.stopPropagation();
     evt.preventDefault();
 }

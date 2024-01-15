@@ -51,7 +51,7 @@ window.onload = function() {
 
         try {
             const pg = anchor.parentElement;
-            console.log(`hopefully the page:`, pg )
+            // console.log(`hopefully the page:`, pg )
             pg.style.marginTop = 0;
             // pg.style.maxWidth = 'unset';
         } catch (err) {

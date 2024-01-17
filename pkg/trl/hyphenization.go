@@ -66,6 +66,7 @@ var hyph = []string{
 	"ei|ge|ne", // https://www.duden.de/rechtschreibung/eigener
 	"ef|fek|tiv",
 	"Ein|fluss",
+	"emp|feh|len",
 	"ein|zu|ge|hen",
 	"Ent|schei|dungs|pro|zesse",
 	"Ent|wick|lungs|öko|no|mie",

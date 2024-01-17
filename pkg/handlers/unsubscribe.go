@@ -193,6 +193,12 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 		fe.Response += template.HTML(msg + "<br>")
 	}
 
+	// the emails are somehow garbled, if sent from outside ZEW
+	emailByURL := r.FormValue("email")
+	if fe.Email != emailByURL {
+		fe.Response += template.HTML("emailByURL: " + emailByURL + "<br>")
+	}
+
 	// dbg.Dump(fe)
 
 	// no errors

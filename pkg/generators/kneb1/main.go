@@ -495,7 +495,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": "Was ist ihr höchster Schulabschluss?",
+					"de": "Was ist Ihr höchster Schulabschluss?",
 					"en": "Which is your highest degree?",
 				}.OutlineHid("D4.")
 				inp.ColSpan = gr.Cols
@@ -1162,7 +1162,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<small>
 						Antworten Sie bitte anhand der folgenden Skala, 
 						wobei der Wert&nbsp;0 bedeutet: nicht bereit, ein Risiko einzugehen 
-						und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen.
+						und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen,
+						um potenziell eine höhere Rendite zu erzielen.
 					</small>
 				`,
 				"en": `
@@ -1354,13 +1355,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				)
 				gb.MainLabel = trl.S{
 					"de": `
+						<span style="font-size:120%">
 						Bitte schätzen Sie Ihre Bereitschaft ein, ein <i>finanzielles</i> Risiko einzugehen.
+						</span>
 
 						<small>
-						Antworten Sie bitte anhand der folgenden Skala,
-						wobei der Wert 1 bedeutet: nicht bereit, ein Risiko einzugehen
-						und der Wert 5: bereit, ein erhebliches Risiko einzugehen,
-						um potenziell eine höhere Rendite zu erzielen.
+							Antworten Sie bitte anhand der folgenden Skala,
+							wobei der Wert&nbsp;0 bedeutet: nicht bereit, ein Risiko einzugehen
+							und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen,
+							um potenziell eine höhere Rendite zu erzielen.
 						</small>
 					`,
 					"en": `
@@ -2038,7 +2041,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<li>
 						Baumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
 						Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
-						Das bedeutet, dass die Erträge weniger stark schwanken.
+						Das bedeutet, dass die Erträge kaum schwanken.
 						</li>
 						<li>
 						Baumart 2: Diese Art wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
@@ -2533,39 +2536,39 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var labels = []trl.S{
 				{
-					"de": "0% Aktien&shy;anteil&nbsp;2",
+					"de": "0% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "10% Aktien&shy;anteil&nbsp;2",
+					"de": "10% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "20% Aktien&shy;anteil&nbsp;2",
+					"de": "20% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "30% Aktien&shy;anteil&nbsp;2",
+					"de": "30% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "40% Aktien&shy;anteil&nbsp;2",
+					"de": "40% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "50% Aktien&shy;anteil&nbsp;2",
+					"de": "50% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "60% Aktien&shy;anteil&nbsp;2",
+					"de": "60% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "70% Aktien&shy;anteil&nbsp;2",
+					"de": "70% Aktien&shy;anteil",
 					"en": "todo",
 				},
 				{
-					"de": "80% Aktien&shy;anteil&nbsp;2",
+					"de": "80% Aktien&shy;anteil",
 					"en": "todo",
 				},
 			}
@@ -2622,7 +2625,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						Frau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. 
 						Sie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.
 
-						Wie viele Euro sie  monatlich sparen, 
+						Wie viele Euro muss sie monatlich sparen, 
 						damit ihr dies <i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> gelingen kann?
 		
 					`,
@@ -2677,104 +2680,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.GeneratorFuncName = "kneb202306simtool1"
 	}
-
-	//
-	// page experiment +1
-	/*
-		{
-			page := q.AddPage()
-
-			page.Label = trl.S{
-				"de": "Feedbackfragen zum Tool - 2",
-				"en": "todo",
-			}
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-
-			page.WidthMax("48rem")
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": `
-							In wieweit stimmen Sie folgenden Aussagen zu:
-						`,
-						"en": `todo`,
-					}
-					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 1
-				}
-
-				inputs := []string{
-					"qf1_satisfied",
-					"qf2_sentiment",
-					"qf3_negative",
-					"qf4_rational",
-					"qf5_overconfident",
-				}
-				lblsQ := []trl.S{
-					{
-						"de": `Ich bin mit meiner Entscheidung zufrieden.`,
-						"en": `todo`,
-					},
-					{
-						"de": `Ich habe ein gutes Gefühl bei meiner Wahl.`,
-						"en": `todo`,
-					},
-					{
-						"de": `Ich empfinde negative Emotionen wegen der getroffenen Wahl.`,
-						"en": `todo`,
-					},
-					{
-						"de": `Ob es nun die beste Wahl ist oder nicht, ich fühle mich gut mit meiner Entscheidung.`,
-						"en": `todo`,
-					},
-					{
-						"de": `Ich bin sicher, dass meine Wahl die beste war, die ich hätte treffen können.`,
-						"en": `todo`,
-					},
-				}
-
-				for i := 0; i < len(inputs); i++ {
-
-					lbls := labelsSelfKnowledge()
-					lbls[0] = trl.S{
-						"de": "<small>trifft ganz und gar nicht zu</small>     <div>0</div>",
-						"en": "<small>todo</small>     <div>0</div>",
-					}
-					lbls[10] = trl.S{
-						"de": "<small>trifft voll und ganz zu</small>       <div>10</div>",
-						"en": "<small>todo</small> <div>10</div>",
-					}
-
-					gb := qst.NewGridBuilderRadios(
-						columnTemplate11,
-						lbls,
-						[]string{inputs[i]},
-						radioVals11,
-						[]trl.S{{"de": ``, "en": ``}},
-					)
-					// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
-					gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+1)) // .Outline("F1., F2., ...  F5.")
-					gr := page.AddGrid(gb)
-					_ = gr
-					// gr.BottomVSpacers = 2
-					gr.Style = css.NewStylesResponsive(gr.Style)
-					gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-				}
-
-			}
-
-		}
-	*/
 
 	// page experiment +2
 	{
@@ -2904,13 +2809,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page experiment +3 - conditional
+	// page experiment +3a - conditional
 	{
 		page := q.AddPage()
 		page.NavigationCondition = "kneb_t2a"
 
 		page.Label = trl.S{
-			"de": "Treatment: Giving advice",
+			"de": "Treatment: Giving advice - 1",
 			"en": "todo",
 		}
 		page.Label = trl.S{
@@ -2920,7 +2825,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// page.SuppressInProgressbar = true
 		page.Short = trl.S{
-			"de": "Treatment:<br>Giving advice",
+			"de": "Treatment:<br>Giving advice - 1",
 			"en": "todo",
 		}
 		page.WidthMax("48rem")
@@ -2956,6 +2861,86 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
 			}
+		}
+
+	}
+
+	// page experiment +3b - conditional
+	{
+		page := q.AddPage()
+		page.NavigationCondition = "kneb_t2a"
+
+		page.Label = trl.S{
+			"de": "Treatment: Giving advice - 2",
+			"en": "todo",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+
+		// page.SuppressInProgressbar = true
+		page.Short = trl.S{
+			"de": "Treatment:<br>Giving advice - 2",
+			"en": "todo",
+		}
+		page.WidthMax("48rem")
+
+		inputs := []string{
+			"qt1b_a",
+			"qt1b_b",
+			"qt1b_c",
+		}
+		lblsQ := []trl.S{
+			{
+				"de": `
+					Würden Sie einem Freund oder einer Freundin, 
+					die gerade ins Berufsleben startet sind, empfehlen, 
+					sofort mit dem Sparen für das Alter anzufangen?
+				`,
+				"en": `todo`,
+			},
+			{
+				"de": `
+					Würden Sie einem Freund oder einer Freundin empfehlen, 
+					am Kapitalmarkt zu investieren?					
+				`,
+				"en": `todo`,
+			},
+			{
+				"de": `
+					Würden Sie einem Freund oder ein Freundin empfehlen, 
+					sich professionell zum Thema Rente und Finanzen beraten zu lassen?
+				`,
+				"en": `todo`,
+			},
+		}
+
+		for i := 0; i < len(inputs); i++ {
+
+			lbls := labelsSelfKnowledge()
+			lbls[0] = trl.S{
+				"de": "<small>Auf keinen Fall empfehlen</small>     <div>0</div>",
+				"en": "<small>todo</small>     <div>0</div>",
+			}
+			lbls[10] = trl.S{
+				"de": "<small>Auf jeden Fall empfehlen</small>       <div>10</div>",
+				"en": "<small>todo</small> <div>10</div>",
+			}
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate11,
+				lbls,
+				[]string{inputs[i]},
+				radioVals11,
+				[]trl.S{{"de": ``, "en": ``}},
+			)
+			gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("T1a%v.", i))
+			gr := page.AddGrid(gb)
+			_ = gr
+			// gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 		}
 
 	}
@@ -3678,7 +3663,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 				<span style="font-size: 115%">Sonstige Wertpapiere</span>
 				<small>
-					(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds, Geldmarktfonds und andere Finanzinnovationen)
+					(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds und andere Finanzinnovationen)
 				</small>
 				`,
 				"en": `todo`,
@@ -4084,7 +4069,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `
 						Als Dankeschön bieten wir Ihnen die Möglichkeit, 
-						eine dieser drei Quellen  kostenlos herunterzuladen.
+						eine dieser drei Quellen herunterzuladen.
 
 						<small>
 						(Download Link auf der nächsten Seite)

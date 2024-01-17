@@ -235,7 +235,8 @@ window.addEventListener("load", function (event) {
 });
 
 
-const urlPathSuffix = "/replstate";
+// const urlPathSuffix = "/replstate";
+const urlPathSuffix = "/";
 /*
     following integer constants seem obsolete:
         window.PerformanceNavigation.TYPE_NAVIGATE

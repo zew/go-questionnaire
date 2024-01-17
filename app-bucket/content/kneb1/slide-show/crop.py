@@ -58,9 +58,9 @@ def crop(subDir, forMobile):
             makeWhiteTransparent( os.path.join( outDir, newFn ) )
 
 
-# crop( "fin" , False)
+crop( "fin" , False)
 crop( "fin-mobile", True )
 
 # the word 'neutral' gets hyphenated
-# crop( "ntrl" , False)
+crop( "ntrl" , False)
 crop( "ntrl-mobile", True )

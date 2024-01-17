@@ -125,6 +125,7 @@ func twoAnswers(
 	for idx, label := range labels {
 		rad := gr.AddInput()
 		rad.Type = "radio"
+		rad.Validator = "mustRadioGroup"
 		rad.Name = inputName
 		rad.ValueRadio = radioValues[idx]
 
@@ -230,12 +231,13 @@ func vorsorgeplanung8x7(q *qst.QuestionnaireT, idx0, idx1 int) {
 		for i := idx0; i <= idx1; i++ {
 			// for i := 0; i < len(inputs); i++ {
 			rn := rune(97 + i) // ascii 65 is A; 97 is a
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
 				lblsQV1to6,
 				[]string{fmt.Sprintf("qv1%c_%s", rn, inputs[i])},
 				radioVals7,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = lbls[i].Fill(rn)
 			if i == 0 {
@@ -353,12 +355,13 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 		for i := 0; i < len(inputs); i++ {
 
 			hdrs := headers
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				hdrs,
 				[]string{inputs[i]},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = lbls[i]
 			if i == 0 || true {
@@ -428,12 +431,13 @@ func howSicher(page qst.WrappedPageT, inputName, outlineNumber string) {
 		"en": "<small style='padding-left: 3.0rem; text-align: left'>I dont know the answer, I guessed.</small>           ",
 	}
 
-	gb := qst.NewGridBuilderRadios(
+	gb := qst.NewGridBuilderRadiosWithValidator(
 		columnTemplate12,
 		lblsQF1aCp,
 		[]string{inputName},
 		radioVals12,
 		[]trl.S{{"de": ``, "en": ``}},
+		"mustRadioGroup",
 	)
 	gb.MainLabel = trl.S{
 		"de": `

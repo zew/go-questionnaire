@@ -166,6 +166,9 @@ func (s S) OutlineHid(pref string) S {
 	for key, val := range s {
 		ret[key] = fmt.Sprintf("<!-- %v -->%v", pref, val)
 	}
+	for key, val := range s {
+		ret[key] = fmt.Sprintf("%v%v", val, `<div class='error-spacer'></div>`)
+	}
 	return ret
 }
 

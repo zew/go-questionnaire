@@ -123,6 +123,10 @@
  			"val": "8vh"
  		},
  		{
+ 			"key": "err-spacer-height",
+ 			"val": "0.02rem"
+ 		},
+ 		{
  			"key": "nav-rest-height",
  			"val": "calc(100vh - var(--nav-height))",
  			"desc": "we can calc() the remainder"

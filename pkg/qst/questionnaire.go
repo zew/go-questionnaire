@@ -1140,9 +1140,23 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	fmt.Fprint(w, width)
 
 	if q.HasErrors {
-		fmt.Fprintf(w,
+		fmt.Fprintf(
+			w,
 			`<p class="error" id="page-error" >%v</p>`,
 			cfg.Get().Mp["correct_errors"].Tr(q.LangCode),
+		)
+		// setting a CSS variable to increase vertical room for error messages below;
+		// the element <div class='error-spacer'></div> with class .error-spacer
+		// take its height from the CSS variable
+		fmt.Fprint(
+			w,
+			`
+			<style>
+				:root {
+					--err-spacer-height:                1.221rem;
+				}
+			</style>
+			`,
 		)
 	}
 

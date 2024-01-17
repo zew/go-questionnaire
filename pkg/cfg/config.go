@@ -342,6 +342,7 @@ func Example() *ConfigT {
 			//      use @media screen and (max-width: 800px) {     :root {--nav-height: 4.01vh; }    }
 			//    in order to adapt the mobile height in each different questionnaire
 			{Key: "nav-height", Val: "8vh"},
+			{Key: "err-spacer-height", Val: "0.02rem"},
 			{Key: "nav-rest-height", Val: "calc(100vh - var(--nav-height))", Desc: "we can calc() the remainder"},
 			{Key: "nav-bar-position", Val: "relative", Desc: "fixed or relative"},
 			{Key: "content-top", Val: "0", Desc: "fixed navbar => content-top = var(--nav-height); otherwise 0"},

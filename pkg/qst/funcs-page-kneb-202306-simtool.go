@@ -32,6 +32,8 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, iter int) error {
 
 	page.WidthMax("58rem")
 
+	grIdx := q.Version() % 2
+
 	// gr0
 	{
 		gr := page.AddGroup()
@@ -40,22 +42,24 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, iter int) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
+			inp.Validator = fmt.Sprintf("kneb_simtool_q1_%v", grIdx)
 			inp.Name = fmt.Sprintf("share_safe_bg_%v", iter)
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
+			inp.Validator = fmt.Sprintf("kneb_simtool_q1_%v", grIdx)
 			inp.Name = fmt.Sprintf("share_risky_bg_%v", iter)
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
+			inp.Validator = fmt.Sprintf("kneb_simtool_q2_%v", grIdx)
 			inp.Name = fmt.Sprintf("sparbetrag_bg_%v", iter)
 		}
 	}
 
 	// gr1
-	grIdx := q.Version() % 2
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1

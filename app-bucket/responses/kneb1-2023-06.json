@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "be3b282a3542799846083aacebbed6b5c01af8cc64bd5597458511a3352e9191",
+ 	"md_5": "62e1a82adc4db2b0e5ac2a22b2c36d2f3490d2b75f9f1c80834111d242d81e05",
  	"lang_codes": [
  		"de"
  	],
@@ -115,8 +115,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D1. --\u003eSind Sie…",
- 								"en": "\u003c!-- D1. --\u003eWhat is your gender?"
+ 								"de": "\u003c!-- D1. --\u003eSind Sie… \u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D1. --\u003eWhat is your gender?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -131,6 +131,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "male",
  							"style_label": {
  								"desktop": {
@@ -160,6 +161,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "female",
  							"style_label": {
  								"desktop": {
@@ -189,6 +191,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "diverse",
  							"style_label": {
  								"desktop": {
@@ -219,8 +222,8 @@
  							"type": "dropdown",
  							"max_chars": 10,
  							"label": {
- 								"de": "\u003c!-- D2. --\u003eIn welchem Jahr sind Sie geboren?",
- 								"en": "\u003c!-- D2. --\u003eYour year of birth?"
+ 								"de": "\u003c!-- D2. --\u003eIn welchem Jahr sind Sie geboren?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D2. --\u003eYour year of birth?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 3,
@@ -773,8 +776,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D3. --\u003eIn welchem Bundesland wohnen Sie?",
- 								"en": "\u003c!-- D3. --\u003eWhich German state you live in?"
+ 								"de": "\u003c!-- D3. --\u003eIn welchem Bundesland wohnen Sie? \u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D3. --\u003eWhich German state you live in?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -789,6 +792,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "baden_wuerttemberg",
  							"style_label": {
  								"desktop": {
@@ -818,6 +822,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "bayern",
  							"style_label": {
  								"desktop": {
@@ -847,6 +852,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "berlin",
  							"style_label": {
  								"desktop": {
@@ -876,6 +882,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "brandenburg",
  							"style_label": {
  								"desktop": {
@@ -905,6 +912,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "bremen",
  							"style_label": {
  								"desktop": {
@@ -934,6 +942,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hamburg",
  							"style_label": {
  								"desktop": {
@@ -963,6 +972,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hessen",
  							"style_label": {
  								"desktop": {
@@ -992,6 +1002,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "mecklenburg_vorpommern",
  							"style_label": {
  								"desktop": {
@@ -1021,6 +1032,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "niedersachsen",
  							"style_label": {
  								"desktop": {
@@ -1050,6 +1062,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "nordrhein_westfalen",
  							"style_label": {
  								"desktop": {
@@ -1079,6 +1092,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "rheinland_pfalz",
  							"style_label": {
  								"desktop": {
@@ -1108,6 +1122,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "saarland",
  							"style_label": {
  								"desktop": {
@@ -1137,6 +1152,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "sachsen",
  							"style_label": {
  								"desktop": {
@@ -1166,6 +1182,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "sachsen_anhalt",
  							"style_label": {
  								"desktop": {
@@ -1195,6 +1212,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "schleswig_holstein",
  							"style_label": {
  								"desktop": {
@@ -1224,6 +1242,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "thueringen",
  							"style_label": {
  								"desktop": {
@@ -1337,8 +1356,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D4. --\u003eWas ist Ihr höchs\u0026shy;ter Schulabschluss?",
- 								"en": "\u003c!-- D4. --\u003eWhich is your highest degree?"
+ 								"de": "\u003c!-- D4. --\u003eWas ist Ihr höchs\u0026shy;ter Schulabschluss?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D4. --\u003eWhich is your highest degree?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -1353,6 +1372,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "none",
  							"style_label": {
  								"desktop": {
@@ -1399,6 +1419,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "inprogress",
  							"style_label": {
  								"desktop": {
@@ -1445,6 +1466,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "haupt_noapp",
  							"style_label": {
  								"desktop": {
@@ -1491,6 +1513,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "haupt_withapp",
  							"style_label": {
  								"desktop": {
@@ -1537,6 +1560,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "real",
  							"style_label": {
  								"desktop": {
@@ -1583,6 +1607,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "abitur",
  							"style_label": {
  								"desktop": {
@@ -1629,6 +1654,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "uni",
  							"style_label": {
  								"desktop": {
@@ -1706,8 +1732,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D5. --\u003eWelchen Familienstand haben Sie?",
- 								"en": "\u003c!-- D5. --\u003eWhat is your marital status?"
+ 								"de": "\u003c!-- D5. --\u003eWelchen Familienstand haben Sie?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D5. --\u003eWhat is your marital status?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -1722,6 +1748,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "single_livingalone",
  							"style_label": {
  								"desktop": {
@@ -1768,6 +1795,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "unmarried_livingtogether",
  							"style_label": {
  								"desktop": {
@@ -1814,6 +1842,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "married_livingtogether",
  							"style_label": {
  								"desktop": {
@@ -1860,6 +1889,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "divorcedwidowed_livingalone",
  							"style_label": {
  								"desktop": {
@@ -1906,6 +1936,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "divorcedwidowed_livingtogether",
  							"style_label": {
  								"desktop": {
@@ -1951,8 +1982,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D6. --\u003e\n\t\t\t\t\tWie viele Personen leben insge\u0026shy;samt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tSollten Sie in einer (Studierenden-)WG wohnen, \n\t\t\t\t\tso sollte die Anzahl aller Haushaltsmit\u0026shy;glieder auf 1 gesetzt werden\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- D6. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- D6. --\u003e\n\t\t\t\t\tWie viele Personen leben insge\u0026shy;samt, d.h. mit Ihnen eingerechnet, in Ihrem Haushalt?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tSollten Sie in einer (Studierenden-)WG wohnen, \n\t\t\t\t\tso sollte die Anzahl aller Haushaltsmit\u0026shy;glieder auf 1 gesetzt werden\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D6. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -1972,7 +2003,8 @@
  							},
  							"col_span": 3,
  							"col_span_label": 2,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "must"
  						}
  					]
  				}
@@ -2015,8 +2047,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D7. --\u003e\n\t\t\t\t\t\t\tSind Sie zurzeit in irgendeiner Weise erwerbstätig?\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tUn\u0026shy;ter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?\n\t\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\t",
- 								"en": "\u003c!-- D7. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 								"de": "\u003c!-- D7. --\u003e\n\t\t\t\t\t\t\tSind Sie zurzeit in irgendeiner Weise erwerbstätig?\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tUn\u0026shy;ter Erwerbstätigkeit wird jede bezahlte bzw. mit einem Einkommen verbundene Tätigkeit verstanden, egal welchen zeitlichen Umfang sie hat. Was auf dieser Liste trifft am besten zu?\n\t\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D7. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -2031,6 +2063,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "above35hours",
  							"style_label": {
  								"desktop": {
@@ -2077,6 +2110,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "between15and35hours",
  							"style_label": {
  								"desktop": {
@@ -2123,6 +2157,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto15hours",
  							"style_label": {
  								"desktop": {
@@ -2169,6 +2204,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "occasionally",
  							"style_label": {
  								"desktop": {
@@ -2215,6 +2251,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "none",
  							"style_label": {
  								"desktop": {
@@ -2292,8 +2329,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\tWenn Sie einmal von den Erwerbstätigkeiten absehen, \n\t\t\t\t\t\t\twas von dem Folgenden trifft dann auf Sie zu?\n\t\t\t\t\t\t",
- 								"en": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 								"de": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\tWenn Sie einmal von den Erwerbstätigkeiten absehen, \n\t\t\t\t\t\t\twas von dem Folgenden trifft dann auf Sie zu?\n\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -2308,6 +2345,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "housewife",
  							"style_label": {
  								"desktop": {
@@ -2354,6 +2392,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "unemployed",
  							"style_label": {
  								"desktop": {
@@ -2400,6 +2439,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "ineducation",
  							"style_label": {
  								"desktop": {
@@ -2446,6 +2486,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "military",
  							"style_label": {
  								"desktop": {
@@ -2492,6 +2533,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "parental",
  							"style_label": {
  								"desktop": {
@@ -2538,6 +2580,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "other",
  							"style_label": {
  								"desktop": {
@@ -2615,8 +2658,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\tSind Sie zurzeit…\t\t\t\t\t",
- 								"en": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 								"de": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\tSind Sie zurzeit…\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- D7a. --\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -2631,6 +2674,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "worker",
  							"style_label": {
  								"desktop": {
@@ -2677,6 +2721,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "employee",
  							"style_label": {
  								"desktop": {
@@ -2723,6 +2768,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "civilservant",
  							"style_label": {
  								"desktop": {
@@ -2769,6 +2815,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "selfemployedalone",
  							"style_label": {
  								"desktop": {
@@ -2815,6 +2862,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "selfemployedwithemployees",
  							"style_label": {
  								"desktop": {
@@ -2895,8 +2943,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- R1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- R1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -3393,6 +3441,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -3415,60 +3464,70 @@
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qr1_averse_common",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -3532,8 +3591,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R2. --\u003eAn welchen Lebensbereich oder an welche Entscheidungssi\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on \n\t\t\t\t\t\thaben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- R2. --\u003etodo"
+ 								"de": "\u003c!-- R2. --\u003eAn welchen Lebensbereich oder an welche Entscheidungssi\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on \n\t\t\t\t\t\thaben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- R2. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -3543,7 +3602,8 @@
  							"type": "textarea",
  							"max_chars": 200,
  							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "must"
  						}
  					],
  					"style": {
@@ -3602,8 +3662,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen,\n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen,\n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -4100,6 +4160,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -4122,60 +4183,70 @@
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qr3_averse_fin",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -4242,8 +4313,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P1. --\u003e\n\t\t\t\t\tWie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t",
- 								"en": "\u003c!-- P1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- P1. --\u003e\n\t\t\t\t\tWie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- P1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -4740,6 +4811,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -4762,60 +4834,70 @@
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qp1_risk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -4879,8 +4961,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P2. --\u003e\n\t\t\t\tWie sehr stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tPersönliche Finanzen finde ich langweilig.\n\n\t\t\t\t",
- 								"en": "\u003c!-- P2. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- P2. --\u003e\n\t\t\t\tWie sehr stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tPersönliche Finanzen finde ich langweilig.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- P2. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -5377,6 +5459,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -5399,60 +5482,70 @@
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qp2a_boring",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -5484,8 +5577,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P3. --\u003e\n\t\t\t\tIch habe große Angst vor finanziellen Verlusten.\n\n\t\t\t\t",
- 								"en": "\u003c!-- P3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- P3. --\u003e\n\t\t\t\tIch habe große Angst vor finanziellen Verlusten.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- P3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -5982,6 +6075,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -6004,60 +6098,70 @@
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qp2b_fear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -6089,8 +6193,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P4. --\u003e\n\t\t\t\tIm Großen und Ganzen vertraue ich anderen Menschen.\n\n\t\t\t\t",
- 								"en": "\u003c!-- P4. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- P4. --\u003e\n\t\t\t\tIm Großen und Ganzen vertraue ich anderen Menschen.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- P4. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -6587,6 +6691,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -6609,60 +6714,70 @@
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qp2c_trust_people",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -6694,8 +6809,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P5. --\u003e\n\t\t\t\tIm Allgemeinen vertraue ich Banken und Finanzinstitutionen in Deutsch\u0026shy;land.\n\n\t\t\t\t",
- 								"en": "\u003c!-- P5. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- P5. --\u003e\n\t\t\t\tIm Allgemeinen vertraue ich Banken und Finanzinstitutionen in Deutsch\u0026shy;land.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- P5. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -7192,6 +7307,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -7214,60 +7330,70 @@
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qp2d_trust_institutions",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -7331,8 +7457,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t",
- 								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -7829,6 +7955,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -7851,60 +7978,70 @@
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qe1_confidence_before",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -7968,8 +8105,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P6. --\u003e\n\t\t\t\t\t\n\t\t\t\t\t\tStellen Sie sich vor, Sie haben 6000\u0026nbsp;Euro in der Lotterie gewonnen\n\t\t\t\t\t\tund können dieses Geld in ein Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren.\n\n\t\t\t\t\t\tDie Chance, dass das Un\u0026shy;ter\u0026shy;neh\u0026shy;men erfolgreich ist, liegt bei 50 Pro\u0026shy;zent.\n\n\t\t\t\t\t\tIm Erfolgsfall verdoppelt sich Ihre Investition nach einem Jahr.\n\n\t\t\t\t\t\tBei Misserfolg verlieren Sie die Hälfte der investierten Summe.\n\n\t\t\t\t\t\tWelchen Anteil der 6000\u0026nbsp;Euro würden Sie in dieses Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren?\n\t\t\t\t\t",
- 								"en": "\u003c!-- P6. --\u003etodo"
+ 								"de": "\u003c!-- P6. --\u003e\n\t\t\t\t\t\n\t\t\t\t\t\tStellen Sie sich vor, Sie haben 6000\u0026nbsp;Euro in der Lotterie gewonnen\n\t\t\t\t\t\tund können dieses Geld in ein Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren.\n\n\t\t\t\t\t\tDie Chance, dass das Un\u0026shy;ter\u0026shy;neh\u0026shy;men erfolgreich ist, liegt bei 50 Pro\u0026shy;zent.\n\n\t\t\t\t\t\tIm Erfolgsfall verdoppelt sich Ihre Investition nach einem Jahr.\n\n\t\t\t\t\t\tBei Misserfolg verlieren Sie die Hälfte der investierten Summe.\n\n\t\t\t\t\t\tWelchen Anteil der 6000\u0026nbsp;Euro würden Sie in dieses Un\u0026shy;ter\u0026shy;neh\u0026shy;men investieren?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- P6. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -7989,7 +8126,8 @@
  							},
  							"col_span": 3,
  							"col_span_label": 2,
- 							"col_span_control": 4
+ 							"col_span_control": 4,
+ 							"validator": "must"
  						}
  					]
  				}
@@ -8035,8 +8173,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tIm Folgenden haben wir ein Quiz zu finanziellem Wissen. \n\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto.\n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst,\n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto.\n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\n\t\t\t\t",
- 								"en": "\u003c!-- FL1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- FL1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tIm Folgenden haben wir ein Quiz zu finanziellem Wissen. \n\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\tAngenommen, Sie haben 100\u0026nbsp;€ Guthaben auf Ihrem Sparkonto.\n\t\t\t\t\tDieses Guthaben wird mit 2% pro Jahr verzinst,\n\t\t\t\t\tund Sie lassen es 5\u0026nbsp;Jahre auf diesem Konto.\n\t\t\t\t\tWas meinen Sie: Wie hoch wird ihr Guthaben nach 5\u0026nbsp;Jahren sein?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- FL1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -8269,6 +8407,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -8291,24 +8430,28 @@
  							"name": "qfl1_interest",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qfl1_interest",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qfl1_interest",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qfl1_interest",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						}
  					],
@@ -8372,8 +8515,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL2. --\u003e\n\t\t\t\t\tAngenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr\n\t\t\t\t\tund die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate beträgt 2% pro Jahr.\n\t\t\t\t\tWas glauben Sie:\n\t\t\t\t\tWerden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel,\n\t\t\t\t\tmehr oder weniger als heute kaufen können?\n\t\t\t\t",
- 								"en": "\u003c!-- FL2. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- FL2. --\u003e\n\t\t\t\t\tAngenommen, die Verzinsung Ihres Sparkontos beträgt 1% pro Jahr\n\t\t\t\t\tund die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate beträgt 2% pro Jahr.\n\t\t\t\t\tWas glauben Sie:\n\t\t\t\t\tWerden Sie nach einem Jahr mit dem Guthaben des Sparkontos genauso viel,\n\t\t\t\t\tmehr oder weniger als heute kaufen können?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- FL2. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -8606,6 +8749,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -8628,24 +8772,28 @@
  							"name": "qfl2_inflation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qfl2_inflation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qfl2_inflation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qfl2_inflation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						}
  					],
@@ -8709,8 +8857,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL3. --\u003e\n\t\t\t\t\tStim\u0026shy;men Sie der folgenden Aussage zu:\n\t\t\t\t\t„Die Anlage in Aktien eines einzelnen Un\u0026shy;ter\u0026shy;neh\u0026shy;mens ist weniger riskant\n\t\t\t\t\tals die Anlage in einem Fonds mit Aktien ähnlicher Un\u0026shy;ter\u0026shy;neh\u0026shy;men“?\n\t\t\t\t",
- 								"en": "\u003c!-- FL3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- FL3. --\u003e\n\t\t\t\t\tStim\u0026shy;men Sie der folgenden Aussage zu:\n\t\t\t\t\t„Die Anlage in Aktien eines einzelnen Un\u0026shy;ter\u0026shy;neh\u0026shy;mens ist weniger riskant\n\t\t\t\t\tals die Anlage in einem Fonds mit Aktien ähnlicher Un\u0026shy;ter\u0026shy;neh\u0026shy;men“?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- FL3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -8899,6 +9047,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -8921,18 +9070,21 @@
  							"name": "qfl3_portfoliorisk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qfl3_portfoliorisk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qfl3_portfoliorisk",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						}
  					],
@@ -9195,8 +9347,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- Quiz-Intro --\u003etodo"
+ 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- Quiz-Intro --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9204,8 +9356,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren jedes Jahr 100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den  \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\t\n\t\t\t\t\t",
- 								"en": "\u003c!-- C24. --\u003etodo"
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren jedes Jahr 100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den  \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- C24. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9233,8 +9385,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C25. --\u003e\n\n\t\t\t\t\t\tHerr Lila kann jedes Jahr 300\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren einen Ertrag von ca. 100.000\u0026nbsp;Euro erzielen möchte \n\t\t\t\t\t\t(im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Baumart\u0026nbsp;2 sollte sein Waldstück mindestens haben?\n\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- C25. --\u003etodo"
+ 								"de": "\u003c!-- C25. --\u003e\n\n\t\t\t\t\t\tHerr Lila kann jedes Jahr 300\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren einen Ertrag von ca. 100.000\u0026nbsp;Euro erzielen möchte \n\t\t\t\t\t\t(im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Baumart\u0026nbsp;2 sollte sein Waldstück mindestens haben?\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- C25. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -9518,8 +9670,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20\u0026nbsp;Jahren einen Ertrag von 100.000\u0026nbsp;Euro aufbauen. \n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 50% an Baumart\u0026nbsp;2 in ihrem Wald zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Bäume muss sie jährlich anpflanzen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\u003c!-- C26. --\u003etodo"
+ 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20\u0026nbsp;Jahren einen Ertrag von 100.000\u0026nbsp;Euro aufbauen. \n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 50% an Baumart\u0026nbsp;2 in ihrem Wald zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Bäume muss sie jährlich anpflanzen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- C26. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9595,8 +9747,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- Quiz-Intro --\u003etodo"
+ 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- Quiz-Intro --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9604,8 +9756,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\n\t\t\t\t\t",
- 								"en": "\u003c!-- C24. --\u003etodo"
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- C24. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -9633,8 +9785,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C25. --\u003e\n\t\t\t\t\t\tHerr Lila kann im Monat 100 Euro zur Seite legen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Aktienanteil sollte sein Portfolio mindestens haben?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- C25. --\u003etodo"
+ 								"de": "\u003c!-- C25. --\u003e\n\t\t\t\t\t\tHerr Lila kann im Monat 100 Euro zur Seite legen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Aktienanteil sollte sein Portfolio mindestens haben?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- C25. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -9918,8 +10070,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Euro muss sie monatlich sparen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\n\t\t\t\t\t",
- 								"en": "\u003c!-- C26. --\u003etodo"
+ 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Euro muss sie monatlich sparen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- C26. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -10020,8 +10172,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- F6. --\u003eDie graphische Darstellung in der interaktiven Graphik ist verständlich.",
- 								"en": "\u003c!-- F6. --\u003etodo"
+ 								"de": "\u003c!-- F6. --\u003eDie graphische Darstellung in der interaktiven Graphik ist verständlich.\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- F6. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -10518,6 +10670,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -10540,60 +10693,70 @@
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qf6_comprehensive",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -10625,8 +10788,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- F7. --\u003eDie graphische Darstellung in der interaktiven Graphik ist hilfreich.",
- 								"en": "\u003c!-- F7. --\u003etodo"
+ 								"de": "\u003c!-- F7. --\u003eDie graphische Darstellung in der interaktiven Graphik ist hilfreich.\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- F7. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -11123,6 +11286,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -11145,60 +11309,70 @@
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qf7_helplful",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -11230,8 +11404,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- F8. --\u003eDie graphische Darstellung in der interaktiven Graphik ist kompliziert.",
- 								"en": "\u003c!-- F8. --\u003etodo"
+ 								"de": "\u003c!-- F8. --\u003eDie graphische Darstellung in der interaktiven Graphik ist kompliziert.\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- F8. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -11728,6 +11902,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -11750,60 +11925,70 @@
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qf8_complex",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -11835,8 +12020,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- F9. --\u003eWie in\u0026shy;for\u0026shy;miert fühlen Sie sich über das gezeigte Szenario in der interaktiven Graphik?",
- 								"en": "\u003c!-- F9. --\u003etodo"
+ 								"de": "\u003c!-- F9. --\u003eWie in\u0026shy;for\u0026shy;miert fühlen Sie sich über das gezeigte Szenario in der interaktiven Graphik?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- F9. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -12333,6 +12518,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -12355,60 +12541,70 @@
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qf9_feelinginformed",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -12440,8 +12636,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- F10. --\u003eHaben Sie weitere Anmerkungen zu der Darstellung in der interaktiven Graphik?",
- 								"en": "\u003c!-- F10. --\u003etodo"
+ 								"de": "\u003c!-- F10. --\u003eHaben Sie weitere Anmerkungen zu der Darstellung in der interaktiven Graphik?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- F10. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12514,8 +12710,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1. --\u003e\n\t\t\t\t\tIm Folgenden geht es um Tipps in Bezug auf die Altersvorsorge.\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche \u003ci\u003edrei\u003c/i\u003e Tipps würden Sie einem Freund oder einer Freundin geben, \n\t\t\t\t\twenn um das Sparen für die Altersvorsorge geht?\n\t\t\t\t\t",
- 								"en": "\u003c!-- T1. --\u003etodo"
+ 								"de": "\u003c!-- T1. --\u003e\n\t\t\t\t\tIm Folgenden geht es um Tipps in Bezug auf die Altersvorsorge.\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche \u003ci\u003edrei\u003c/i\u003e Tipps würden Sie einem Freund oder einer Freundin geben, \n\t\t\t\t\twenn um das Sparen für die Altersvorsorge geht?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- T1. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12525,7 +12721,8 @@
  							"type": "textarea",
  							"max_chars": 400,
  							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "must"
  						}
  					],
  					"style": {
@@ -12588,8 +12785,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1a0. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin, \n\t\t\t\t\tdie gerade ins Berufsleben startet sind, emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tsofort mit dem Sparen für das Alter anzufangen?\n\t\t\t\t",
- 								"en": "\u003c!-- T1a0. --\u003etodo"
+ 								"de": "\u003c!-- T1a0. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin, \n\t\t\t\t\tdie gerade ins Berufsleben startet sind, emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tsofort mit dem Sparen für das Alter anzufangen?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- T1a0. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -13086,6 +13283,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -13108,60 +13306,70 @@
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qt1b_a",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -13193,8 +13401,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1a1. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tam Kapitalmarkt zu investieren?\t\t\t\t\t\n\t\t\t\t",
- 								"en": "\u003c!-- T1a1. --\u003etodo"
+ 								"de": "\u003c!-- T1a1. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tam Kapitalmarkt zu investieren?\t\t\t\t\t\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- T1a1. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -13691,6 +13899,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -13713,60 +13922,70 @@
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qt1b_b",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -13798,8 +14017,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1a2. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder ein Freundin emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tsich professionell zum Thema Rente und Finanzen beraten zu lassen?\n\t\t\t\t",
- 								"en": "\u003c!-- T1a2. --\u003etodo"
+ 								"de": "\u003c!-- T1a2. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder ein Freundin emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tsich professionell zum Thema Rente und Finanzen beraten zu lassen?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- T1a2. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -14296,6 +14515,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -14318,60 +14538,70 @@
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qt1b_c",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -14439,8 +14669,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -14937,6 +15167,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -14959,60 +15190,70 @@
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qe2_confidence_after",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -15576,6 +15817,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -15598,60 +15840,70 @@
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "q20_motivation",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -15715,8 +15967,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL4. --\u003e\n\t\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\t\tIm Folgenden haben wir weitere Quizfragen. \n\t\t\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\t\t\u003c/span\u003e\n\t\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\t\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\tWas ist die Hauptfunktion des Aktien\u0026shy;marktes?\n\t\t\t\t\t\t",
- 								"en": "\u003c!-- FL4. --\u003etodo"
+ 								"de": "\u003c!-- FL4. --\u003e\n\t\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\t\tIm Folgenden haben wir weitere Quizfragen. \n\t\t\t\t\t\t\tBitte ant\u0026shy;worten Sie spontan. \n\t\t\t\t\t\t\t\u003c/span\u003e\n\t\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\t\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\tWas ist die Hauptfunktion des Aktien\u0026shy;marktes?\n\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- FL4. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -15731,6 +15983,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "0",
  							"style_label": {
  								"desktop": {
@@ -15760,6 +16013,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -15789,6 +16043,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -15818,6 +16073,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -15847,6 +16103,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4",
  							"style_label": {
  								"desktop": {
@@ -15876,6 +16133,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5",
  							"style_label": {
  								"desktop": {
@@ -15936,8 +16194,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL5. --\u003eWelche der folgenden Anlageformen zeigt im Laufe der Zeit die höchs\u0026shy;ten Ertragsschwankungen?",
- 								"en": "\u003c!-- FL5. --\u003etodo"
+ 								"de": "\u003c!-- FL5. --\u003eWelche der folgenden Anlageformen zeigt im Laufe der Zeit die höchs\u0026shy;ten Ertragsschwankungen?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- FL5. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -15952,6 +16210,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "0",
  							"style_label": {
  								"desktop": {
@@ -15981,6 +16240,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -16010,6 +16270,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -16039,6 +16300,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -16068,6 +16330,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4",
  							"style_label": {
  								"desktop": {
@@ -16097,6 +16360,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5",
  							"style_label": {
  								"desktop": {
@@ -16157,8 +16421,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t",
- 								"en": "\u003c!-- FL6. --\u003etodo"
+ 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- FL6. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -16173,6 +16437,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "0",
  							"style_label": {
  								"desktop": {
@@ -16202,6 +16467,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -16231,6 +16497,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -16260,6 +16527,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -16338,8 +16606,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t",
- 								"en": "\u003c!-- X1. --\u003e\n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- X1. --\u003e\n\t\t\t\ttodo\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -16836,6 +17104,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -16858,60 +17127,70 @@
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qx1_confidence",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -16943,8 +17222,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X2. --\u003e\n\t\t\t\tIch habe Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen.\n\t\t\t",
- 								"en": "\u003c!-- X2. --\u003e\n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X2. --\u003e\n\t\t\t\tIch habe Angst davor, Geld zu investieren oder finanzielle Entscheidungen zu treffen.\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- X2. --\u003e\n\t\t\t\ttodo\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -17441,6 +17720,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -17463,60 +17743,70 @@
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qx2_decisionfear",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -17548,8 +17838,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X3. --\u003e\n\t\t\t\tOhne meinen Berater würde ich nie am Aktien\u0026shy;markt teilnehmen.\n\t\t\t",
- 								"en": "\u003c!-- X3. --\u003e\n\t\t\t\ttodo\n\t\t\t"
+ 								"de": "\u003c!-- X3. --\u003e\n\t\t\t\tOhne meinen Berater würde ich nie am Aktien\u0026shy;markt teilnehmen.\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- X3. --\u003e\n\t\t\t\ttodo\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -18046,6 +18336,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -18068,60 +18359,70 @@
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "qx3_worry",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],
@@ -18185,8 +18486,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X5. --\u003e\n\t\t\t\tHaben Sie während Ihrer Schul- oder Berufsausbil\u0026shy;dung an Vorlesungen,\n\t\t\t\tKursen oder Fortbil\u0026shy;dungen zum Thema Finanzen oder dem Umgang mit Geld teilgenommen?\n\t\t\t",
- 								"en": "\u003c!-- X5. --\u003etodo"
+ 								"de": "\u003c!-- X5. --\u003e\n\t\t\t\tHaben Sie während Ihrer Schul- oder Berufsausbil\u0026shy;dung an Vorlesungen,\n\t\t\t\tKursen oder Fortbil\u0026shy;dungen zum Thema Finanzen oder dem Umgang mit Geld teilgenommen?\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- X5. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -18210,6 +18511,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -18239,6 +18541,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -18317,8 +18620,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B1. --\u003e\n\t\t\t\t\t\tWann haben Sie sich das letzte Mal zum Thema Altersvorsorge beraten lassen?\n\t\t\t\t\t",
- 								"en": "\u003c!-- B1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- B1. --\u003e\n\t\t\t\t\t\tWann haben Sie sich das letzte Mal zum Thema Altersvorsorge beraten lassen?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- B1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -18333,6 +18636,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -18379,6 +18683,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -18425,6 +18730,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -18471,6 +18777,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4",
  							"style_label": {
  								"desktop": {
@@ -18517,6 +18824,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5",
  							"style_label": {
  								"desktop": {
@@ -18562,8 +18870,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B2. --\u003e\n\t\t\t\t\t\tWie oft sprechen Sie mit Ihrem Finanzberater oder Ihrer Finanzberaterin?\n\t\t\t\t\t",
- 								"en": "\u003c!-- B2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- B2. --\u003e\n\t\t\t\t\t\tWie oft sprechen Sie mit Ihrem Finanzberater oder Ihrer Finanzberaterin?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- B2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -18578,6 +18886,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -18624,6 +18933,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -18670,6 +18980,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -18716,6 +19027,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4",
  							"style_label": {
  								"desktop": {
@@ -18762,6 +19074,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5",
  							"style_label": {
  								"desktop": {
@@ -18807,8 +19120,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B3. --\u003e\n\t\t\t\t\tWie oft sprechen Sie mit Ihrer Familie oder Ihren Freunden über Finanzen?\n\t\t\t\t",
- 								"en": "\u003c!-- B3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- B3. --\u003e\n\t\t\t\t\tWie oft sprechen Sie mit Ihrer Familie oder Ihren Freunden über Finanzen?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- B3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -18997,6 +19310,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -19019,18 +19333,21 @@
  							"name": "qb3_frequency",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qb3_frequency",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qb3_frequency",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						}
  					],
@@ -19113,8 +19430,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B4. --\u003e\n\t\t\t\t\tHaben Sie selbst schon einmal einer anderen Person finanzielle Ratschläge gegeben?\n\t\t\t\t",
- 								"en": "\u003c!-- B4. --\u003etodo"
+ 								"de": "\u003c!-- B4. --\u003e\n\t\t\t\t\tHaben Sie selbst schon einmal einer anderen Person finanzielle Ratschläge gegeben?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- B4. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -19138,6 +19455,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -19167,6 +19485,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -19213,8 +19532,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B5. --\u003e\n\t\t\t\t\tWürden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?\n\t\t\t\t",
- 								"en": "\u003c!-- B5. --\u003etodo"
+ 								"de": "\u003c!-- B5. --\u003e\n\t\t\t\t\tWürden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- B5. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -19238,6 +19557,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -19267,6 +19587,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -19346,8 +19667,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B6. --\u003e\n\t\t\t\t\tWer könnte finanzielle Entscheidungen am besten für Sie treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- B6. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003c!-- B6. --\u003e\n\t\t\t\t\tWer könnte finanzielle Entscheidungen am besten für Sie treffen?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- B6. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -19536,6 +19857,7 @@
  								"en": ""
  							},
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -19558,18 +19880,21 @@
  							"name": "qb6_whocompetent",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "qb6_whocompetent",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "qb6_whocompetent",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						}
  					],
@@ -19640,8 +19965,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H1. --\u003e\n\t\t\t\t\t\tWer ist in Ihrem Haushalt hauptsächlich für Folgendes zuständig?\n\t\t\t\t\t",
- 								"en": "\u003c!-- H1. --\u003etodo"
+ 								"de": "\u003c!-- H1. --\u003e\n\t\t\t\t\t\tWer ist in Ihrem Haushalt hauptsächlich für Folgendes zuständig?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- H1. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -19655,8 +19980,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\talltägliche Einkäufe (z.B. Lebensmitteleinkäufe)\n\t\t\t\t",
- 								"en": "\u003c!-- a) --\u003etodo"
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\talltägliche Einkäufe (z.B. Lebensmitteleinkäufe)\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- a) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -19671,6 +19996,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -19700,6 +20026,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -19729,6 +20056,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -19776,8 +20104,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\tgrö\u0026shy;ßere Anschaffungen (z.B. Möbel, Auto)\n\t\t\t\t",
- 								"en": "\u003c!-- b) --\u003etodo"
+ 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\tgrö\u0026shy;ßere Anschaffungen (z.B. Möbel, Auto)\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- b) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -19792,6 +20120,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -19821,6 +20150,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -19850,6 +20180,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -19897,8 +20228,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\tEssensplanung und -zubereitung\n\t\t\t\t",
- 								"en": "\u003c!-- c) --\u003etodo"
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\tEssensplanung und -zubereitung\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- c) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -19913,6 +20244,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -19942,6 +20274,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -19971,6 +20304,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -20018,8 +20352,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\tEntscheidungen über Spar- und Finanzanlagen\n\t\t\t\t",
- 								"en": "\u003c!-- d) --\u003etodo"
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\tEntscheidungen über Spar- und Finanzanlagen\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- d) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20034,6 +20368,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -20063,6 +20398,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -20092,6 +20428,7 @@
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -20171,8 +20508,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- H2. --\u003etodo"
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- H2. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -20186,8 +20523,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSparanlagen\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- a) --\u003etodo"
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSparanlagen\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Sparbücher, Festgeldkonten,\n\t\t\t\t\tTagesgeldkonten oder\n\t\t\t\t\tSparverträge)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- a) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20211,6 +20548,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -20240,6 +20578,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -20287,8 +20626,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eBausparverträge\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(die noch nicht in Darlehen\n\t\t\t\t\tumgewandelt wurden)\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
- 								"en": "\u003c!-- b) --\u003etodo"
+ 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eBausparverträge\u003c/span\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(die noch nicht in Darlehen\n\t\t\t\t\tumgewandelt wurden)\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- b) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20312,6 +20651,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -20341,6 +20681,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -20388,8 +20729,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eFestverzinsliche Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds)\n\t\t\t\t\u003c/small\u003e",
- 								"en": "\u003c!-- c) --\u003etodo"
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eFestverzinsliche Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Spar- oder Pfandbriefe, Bundesschatzbriefe, Industrieanleihen oder Anteile an Rentenfonds)\n\t\t\t\t\u003c/small\u003e\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- c) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20413,6 +20754,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -20442,6 +20784,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -20489,8 +20832,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eAktien oder Aktienfonds und Immobilienfonds\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- d) --\u003etodo"
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eAktien oder Aktienfonds und Immobilienfonds\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(auch Aktienanleihen, börsennotierte Fonds, ETFs, Mischfonds oder ähnliche Anlagen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- d) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20514,6 +20857,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -20543,6 +20887,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -20590,8 +20935,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSonstige Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds und andere Finanzinnovationen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- e) --\u003etodo"
+ 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\u003cspan style=\"font-size: 115%\"\u003eSonstige Wertpapiere\u003c/span\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. Discountzertifikate, Hedgefonds, Filmfonds, Windenergiefonds und andere Finanzinnovationen)\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- e) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20615,6 +20960,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -20644,6 +20990,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -20691,8 +21038,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- f) --\u003e\u003cspan style=\"font-size:115%\"\u003eGold\u003c/span\u003e",
- 								"en": "\u003c!-- f) --\u003etodo"
+ 								"de": "\u003c!-- f) --\u003e\u003cspan style=\"font-size:115%\"\u003eGold\u003c/span\u003e\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- f) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -20716,6 +21063,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -20745,6 +21093,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -20824,8 +21173,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\tWie hoch \u003ci style=\"font-size:110%\"\u003eschätzen\u003c/i\u003e Sie,\n\t\t\t\t\t\tist das \u003ci style=\"font-size:110%\"\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare \n\t\t\t\t\t\t\u003ci style=\"font-size:110%\"\u003eNettoeinkommen Ihres Haushalts\u003c/i\u003e,\n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug\n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht?\n\t\t\t\t\t",
- 								"en": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\tWie hoch \u003ci style=\"font-size:110%\"\u003eschätzen\u003c/i\u003e Sie,\n\t\t\t\t\t\tist das \u003ci style=\"font-size:110%\"\u003emonatlich\u003c/i\u003e ver\u0026shy;füg\u0026shy;bare \n\t\t\t\t\t\t\u003ci style=\"font-size:110%\"\u003eNettoeinkommen Ihres Haushalts\u003c/i\u003e,\n\t\t\t\t\t\talso dasjenige Geld, das dem ge\u0026shy;samten Haushalt nach Abzug\n\t\t\t\t\t\tvon Steuern und Sozialversi\u0026shy;cherungsbeiträgen zur Deckung der Ausgaben\n\t\t\t\t\t\t zur Verfügung steht?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- H3. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 2,
  							"col_span_label": 1
@@ -20840,6 +21189,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1",
  							"style_label": {
  								"desktop": {
@@ -20886,6 +21236,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2",
  							"style_label": {
  								"desktop": {
@@ -20932,6 +21283,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3",
  							"style_label": {
  								"desktop": {
@@ -20978,6 +21330,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4",
  							"style_label": {
  								"desktop": {
@@ -21024,6 +21377,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5",
  							"style_label": {
  								"desktop": {
@@ -21070,6 +21424,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6",
  							"style_label": {
  								"desktop": {
@@ -21116,6 +21471,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7",
  							"style_label": {
  								"desktop": {
@@ -21162,6 +21518,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8",
  							"style_label": {
  								"desktop": {
@@ -21208,6 +21565,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9",
  							"style_label": {
  								"desktop": {
@@ -21254,6 +21612,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10",
  							"style_label": {
  								"desktop": {
@@ -21300,6 +21659,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11",
  							"style_label": {
  								"desktop": {
@@ -21346,6 +21706,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "12",
  							"style_label": {
  								"desktop": {
@@ -21392,6 +21753,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "13",
  							"style_label": {
  								"desktop": {
@@ -21438,6 +21800,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "14",
  							"style_label": {
  								"desktop": {
@@ -21484,6 +21847,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "15",
  							"style_label": {
  								"desktop": {
@@ -21530,6 +21894,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "16",
  							"style_label": {
  								"desktop": {
@@ -21576,6 +21941,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "17",
  							"style_label": {
  								"desktop": {
@@ -21622,6 +21988,7 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "18",
  							"style_label": {
  								"desktop": {
@@ -21699,8 +22066,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t",
- 								"en": "\u003c!-- H4. --\u003etodo"
+ 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- H4. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -21714,8 +22081,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(z.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
- 								"en": "\u003c!-- a) --\u003etodo"
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(z.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- a) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -21739,6 +22106,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -21768,6 +22136,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -21815,8 +22184,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eBetriebliche Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Direktversi\u0026shy;cherungen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
- 								"en": "\u003c!-- b) --\u003etodo"
+ 								"de": "\u003c!-- b) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eBetriebliche Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Direktversi\u0026shy;cherungen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- b) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -21840,6 +22209,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -21869,6 +22239,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -21916,8 +22287,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eSonstige betriebliche Altersvorsorge\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Betriebsrenten aus Pensions- oder Un\u0026shy;terstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
- 								"en": "\u003c!-- c) --\u003etodo"
+ 								"de": "\u003c!-- c) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eSonstige betriebliche Altersvorsorge\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z. B. Betriebsrenten aus Pensions- oder Un\u0026shy;terstützungskassen und betriebliche Direktzusagen sowie Zusatzversorgung im öffentlichen Dienst; auch aus früheren Beschäftigungsverhältnissen)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- c) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -21941,6 +22312,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -21970,6 +22342,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -22017,8 +22390,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge (\"Riester-Rente\")\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
- 								"en": "\u003c!-- d) --\u003etodo"
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge (\"Riester-Rente\")\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- d) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -22042,6 +22415,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -22071,6 +22445,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -22118,8 +22493,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Rentenversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die \u003cu\u003e\u003ci\u003enicht\u003c/i\u003e\u003c/u\u003e staatlich gefördert werden bzw. abgeschlossen wurden, \n\t\t\t\t\t\tbevor es solche Fördermöglichkeiten gab)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
- 								"en": "\u003c!-- e) --\u003etodo"
+ 								"de": "\u003c!-- e) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Rentenversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(z.B. private Rentenversi\u0026shy;cherungsverträge, die \u003cu\u003e\u003ci\u003enicht\u003c/i\u003e\u003c/u\u003e staatlich gefördert werden bzw. abgeschlossen wurden, \n\t\t\t\t\t\tbevor es solche Fördermöglichkeiten gab)\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- e) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -22143,6 +22518,7 @@
  							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
@@ -22172,6 +22548,7 @@
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "no",
  							"style_label": {
  								"desktop": {
@@ -22281,8 +22658,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- Z1. --\u003e\n\t\t\t\t\t\tAls Dankeschön bieten wir Ihnen die Möglichkeit, \n\t\t\t\t\t\teine dieser drei Quellen herun\u0026shy;terzuladen.\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(Download Link auf der nächsten Seite)\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t",
- 								"en": "\u003c!-- Z1. --\u003etodo"
+ 								"de": "\u003c!-- Z1. --\u003e\n\t\t\t\t\t\tAls Dankeschön bieten wir Ihnen die Möglichkeit, \n\t\t\t\t\t\teine dieser drei Quellen herun\u0026shy;terzuladen.\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(Download Link auf der nächsten Seite)\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- Z1. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -22480,8 +22857,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- Z2. --\u003e\n\t\t\t\t\t\tGibt es noch irgendetwas, was Sie uns zu diesem Fragebogen \n\t\t\t\t\t\toder Thema mitteilen möchten?\n\t\t\t\t\t",
- 								"en": "\u003c!-- Z2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003c!-- Z2. --\u003e\n\t\t\t\t\t\tGibt es noch irgendetwas, was Sie uns zu diesem Fragebogen \n\t\t\t\t\t\toder Thema mitteilen möchten?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- Z2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1

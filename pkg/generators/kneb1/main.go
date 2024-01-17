@@ -131,7 +131,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": "Sind Sie…",
+					"de": "Sind Sie… ",
 					"en": "What is your gender?",
 				}.OutlineHid("D1.")
 				inp.ColSpan = gr.Cols
@@ -141,6 +141,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
 				rad.Name = "qd1_gender"
 				rad.ValueRadio = radioValues[idx]
 
@@ -161,6 +162,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "dropdown"
+				inp.Validator = "must"
+				inp.Validator = "must; kneb-age-bracket"
 				inp.Name = "qd2_birthyear"
 				inp.MaxChars = 20
 				inp.MaxChars = 10
@@ -202,9 +205,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						},
 					)
 				}
-
-				inp.Validator = "must"
-				inp.Validator = "must; kneb-age-bracket"
 
 			}
 		}
@@ -304,7 +304,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp := gr.AddInput()
 					inp.Type = "textblock"
 					inp.Label = trl.S{
-						"de": "In welchem Bundesland wohnen Sie?",
+						"de": "In welchem Bundesland wohnen Sie? ",
 						"en": "Which German state you live in?",
 					}.OutlineHid("D3.")
 					inp.ColSpan = gr.Cols
@@ -315,6 +315,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				for idx, label := range labels {
 					rad := gr.AddInput()
 					rad.Type = "radio"
+					rad.Validator = "mustRadioGroup"
+
 					rad.Name = "qd3_german_state"
 					rad.ValueRadio = radioValues[idx]
 
@@ -506,6 +508,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "qd4_abschluss"
+				rad.Validator = "mustRadioGroup"
+
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols
@@ -581,6 +585,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
+
 				rad.Name = "qd5_family_status"
 				rad.ValueRadio = radioValues[idx]
 
@@ -623,6 +629,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
+				inp.Validator = "must"
+
 				inp.Name = "qp6_householdsize"
 				inp.Min = 0
 				inp.Max = 100
@@ -715,6 +723,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
+
 				rad.Name = "qd7_employment"
 				rad.ValueRadio = radioValues[idx]
 
@@ -827,6 +837,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "qd7a_notemployed"
+				rad.Validator = "mustRadioGroup"
+
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols
@@ -909,6 +921,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "qd7b_employment"
+				rad.Validator = "mustRadioGroup"
+
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols
@@ -1052,12 +1066,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr0
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				labelsRisk(),
 				[]string{"qr1_averse_common"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -1122,6 +1137,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
+				inp.Validator = "must"
+
 				inp.Name = "qr2_averse_common_free"
 				inp.MaxChars = 200
 				inp.ColSpan = gr.Cols
@@ -1146,12 +1163,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr0
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				labelsRiskFin(),
 				[]string{"qr3_averse_fin"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -1513,12 +1531,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr0
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				labelsSelfKnowledge(),
 				[]string{"qp1_risk"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -1611,12 +1630,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for i := 0; i < len(inputs); i++ {
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				lblsQP2,
 				[]string{inputs[i]},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = lbls[i].OutlineHid(fmt.Sprintf("P%d.", i+2)) // P2., P3., P4., P5.
 			// if i == 0 {
@@ -1651,12 +1671,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 
 			lbls := labelsSelfKnowledgeXX()
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				lbls,
 				[]string{"qe1_confidence_before"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -1730,6 +1751,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
+				inp.Validator = "must"
+
 				inp.Name = "qp6_risky_investment"
 				inp.Min = 0
 				inp.Max = 100
@@ -1779,7 +1802,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr0
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate5,
 				[]trl.S{
 
@@ -1807,6 +1830,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				[]string{"qfl1_interest"},
 				radioVals5,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -1865,7 +1889,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("48rem")
 
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate5,
 				[]trl.S{
 					{
@@ -1892,6 +1916,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				[]string{"qfl2_inflation"},
 				radioVals5,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -1943,12 +1968,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("48rem")
 
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate4,
 				labelsStimmeZuOderNicht(),
 				[]string{"qfl3_portfoliorisk"},
 				radioVals4,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -2239,6 +2265,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
+				inp.Validator = "must"
+
 				inp.Name = "qc24_nf_return"
 				inp.Validator = "must;kneb_qc24_nf"
 				inp.Min = 0
@@ -2323,9 +2351,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						(im Durchschnitt), 
 						welchen Anteil an Baumart&nbsp;2 sollte sein Waldstück mindestens haben?
 
-
-						<br>
-						<br>
 					`,
 					"en": `todo`,
 				}.OutlineHid("C25.")
@@ -2337,8 +2362,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "qc25_share_nf"
 				rad.Validator = "must;kneb_qc25_nf"
+
+				rad.Name = "qc25_share_nf"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols / 3
@@ -2380,6 +2406,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "qc26_area_nf"
+				inp.Validator = "must"
+
 				inp.Validator = "must;kneb_qc26_nf"
 				inp.Min = 0
 				// 40 Hektar
@@ -2501,8 +2529,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "qc24_ff_return"
 				inp.Validator = "must;kneb_qc24_ff"
+
+				inp.Name = "qc24_ff_return"
 				inp.Min = 0
 				// 104.700 Euro
 				inp.Max = 100 * 1000 * 1000
@@ -2582,10 +2611,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						
 						Wenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), 
 						welchen Aktienanteil sollte sein Portfolio mindestens haben?
-
-						<br>
-						<br>
-						<br>
 					`,
 					"en": `todo`,
 				}.OutlineHid("C25.")
@@ -2597,8 +2622,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "qc25_share_ff"
 				rad.Validator = "must;kneb_qc25_ff"
+
+				rad.Name = "qc25_share_ff"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols / 3
@@ -2638,8 +2664,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "qc26_area_ff"
 				inp.Validator = "must;kneb_qc26_ff"
+				inp.Name = "qc26_area_ff"
 				inp.Min = 0
 				// 310€
 				inp.Max = 200 * 1000
@@ -2762,12 +2788,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					}
 				}
 
-				gb := qst.NewGridBuilderRadios(
+				gb := qst.NewGridBuilderRadiosWithValidator(
 					columnTemplate11,
 					lbls,
 					[]string{inputs[i]},
 					radioVals11,
 					[]trl.S{{"de": ``, "en": ``}},
+					"mustRadioGroup",
 				)
 				// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("%c)", rune(97+i)))
 				gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+6)) // .Outline("F6., F7., ...  F9.")
@@ -2855,6 +2882,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
+				inp.Validator = "must"
+
 				inp.Name = "qt1_advice"
 				inp.MaxChars = 400
 				inp.ColSpan = gr.Cols
@@ -2928,12 +2957,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<small>todo</small> <div>10</div>",
 			}
 
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				lbls,
 				[]string{inputs[i]},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("T1a%v.", i))
 			gr := page.AddGrid(gb)
@@ -2967,12 +2997,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 
 			lbls := labelsSelfKnowledgeXX()
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				lbls,
 				[]string{"qe2_confidence_after"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -3045,12 +3076,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<small>todo</small> <div>10</div>",
 			}
 
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
 				lbls,
 				[]string{inputs[i]},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			// gb.MainLabel = lblsQ[i].OutlineHid(fmt.Sprintf("F%v.", i+6)) // .Outline("F6., F7., ...  F9.")
 			gr := page.AddGrid(gb)
@@ -3104,6 +3136,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				for idx, label := range labelsStockMarketPurpose() {
 					rad := gr.AddInput()
 					rad.Type = "radio"
+					rad.Validator = "mustRadioGroup"
+
 					rad.Name = "qfl4_stockmarketpurpose"
 					rad.ValueRadio = fmt.Sprintf("%d", idx)
 
@@ -3150,6 +3184,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				for idx, label := range labelsAssetClassVola() {
 					rad := gr.AddInput()
 					rad.Type = "radio"
+					rad.Validator = "mustRadioGroup"
+
 					rad.Name = "qfl5_assetclassvola"
 					rad.ValueRadio = fmt.Sprintf("%d", idx)
 
@@ -3207,6 +3243,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				for idx, label := range labelsExpectedValueRisk() {
 					rad := gr.AddInput()
 					rad.Type = "radio"
+					rad.Validator = "mustRadioGroup"
+
 					rad.Name = "qfl6_expectedvalue"
 					rad.ValueRadio = fmt.Sprintf("%d", idx)
 
@@ -3257,6 +3295,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, lbl := range labelsPensionAdvice() {
 				rad := gr.AddInput()
 				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
+
 				rad.Name = "qb1_pensionadvice"
 				rad.ValueRadio = fmt.Sprintf("%v", idx+1)
 
@@ -3296,6 +3336,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, lbl := range labelsFrequency2() {
 				rad := gr.AddInput()
 				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
+
 				rad.Name = "qb2_frequency"
 				rad.ValueRadio = fmt.Sprintf("%v", idx+1)
 
@@ -3316,12 +3358,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		//
 		// gr2
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate4,
 				labelsFrequency(),
 				[]string{"qb3_frequency"},
 				radioVals5,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -3422,12 +3465,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		//
 		//
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate4,
 				labelsWhoIsCompetent(),
 				[]string{"qb6_whocompetent"},
 				radioVals4,
 				[]trl.S{{"de": ``, "en": ``}},
+				"mustRadioGroup",
 			)
 			gb.MainLabel = trl.S{
 				"de": `
@@ -3799,6 +3843,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, lbl := range lbls {
 				rad := gr.AddInput()
 				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
+
 				rad.Name = "qh3_income"
 				rad.ValueRadio = fmt.Sprintf("%v", idx+1)
 
@@ -3816,6 +3862,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			if false {
 				inp := gr.AddInput()
 				inp.Type = "dropdown"
+				inp.Validator = "must"
+
 				inp.Name = "qh3_income"
 				inp.MaxChars = 20
 				inp.MaxChars = 10

@@ -65,6 +65,21 @@ used in in
     }
 }
 
+/* 
+    if q.HasErrors {
+        fmt.Fprintf(w,
+            `<p class="error" id="page-error" >%v</p>`,
+            cfg.Get().Mp["correct_errors"].Tr(q.LangCode),
+        )
+    }
+    <div class='error-spacer'></div>
+*/
+.error-spacer {
+    display: block;
+    /* height: 0.72rem; */
+    height: 0;
+    height: var(--err-spacer-height);
+}
 
 
 /* error bubble popup default */
@@ -96,7 +111,7 @@ used in in
     bottom:   -1.63rem;
 }
 .pg29-grp01-inp01 .popup-invalid-content-grid-item {
-    bottom:  0.9rem;
+    bottom:  0.24rem;
 }
 .pg29-grp02-inp01 .popup-invalid-content-grid-item {
     bottom:  -1.39rem;

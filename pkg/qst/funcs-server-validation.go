@@ -544,6 +544,31 @@ func init() {
 		return nil
 	}
 
+	validators["kneb_simtool_q1_0"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response == "" {
+			return errors.New(`Anzahl Bäume einmal ändern.`)
+		}
+		return nil
+	}
+	validators["kneb_simtool_q2_0"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response == "" {
+			return errors.New(`Anteil zweite Baumart einmal ändern.`)
+		}
+		return nil
+	}
+	validators["kneb_simtool_q1_1"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response == "" {
+			return errors.New(`Sparbetrag einmal ändern.`)
+		}
+		return nil
+	}
+	validators["kneb_simtool_q2_1"] = func(q *QuestionnaireT, inp *inputT) error {
+		if inp.Response == "" {
+			return errors.New(`Aktienanteil einmal ändern`)
+		}
+		return nil
+	}
+
 }
 
 // ConsolidateRadioErrors removes repeating error messages from radio inputs

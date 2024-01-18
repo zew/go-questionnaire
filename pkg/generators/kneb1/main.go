@@ -887,7 +887,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": "todo",
 				},
 				{
-					"de": "Angestellter",
+					"de": "Angestellte/r",
 					"en": "todo",
 				},
 				{
@@ -3226,7 +3226,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 							Es besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten
 							sechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.
 
-							Gleichzeitig besteht eine 10prozentige Chance,
+							Gleichzeitig besteht eine 10-prozentige Chance,
 							dass er die Klimaanlage in seinem Haus ersetzen muss,
 							was 4.000 Euro kosten würde.
 

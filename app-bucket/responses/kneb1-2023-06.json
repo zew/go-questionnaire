@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "62e1a82adc4db2b0e5ac2a22b2c36d2f3490d2b75f9f1c80834111d242d81e05",
+ 	"md_5": "a74359939307cd300af2def6fc883314b789acd78b8f1529a85f6fa3b8d942de",
  	"lang_codes": [
  		"de"
  	],
@@ -2715,7 +2715,7 @@
  							"name": "qd7b_employment",
  							"type": "radio",
  							"label": {
- 								"de": "Angestellter",
+ 								"de": "Angestellte/r",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -16421,7 +16421,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10-pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- FL6. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
@@ -16591,7 +16591,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\tIn wieweit stim\u0026shy;men Sie folgenden Aussagen zu?: \n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"trifft ganz und gar nicht zu\"\n\t\t\t\t\t\tbedeutet \n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"trifft voll und ganz zu\".\n\t\t\t\t\t\t\n\t\t\t\t\t",
+ 								"de": "\n\t\t\t\t\t\tIn wieweit stim\u0026shy;men Sie folgenden Aussagen zu? \n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"trifft ganz und gar nicht zu\"\n\t\t\t\t\t\tbedeutet \n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"trifft voll und ganz zu\".\n\t\t\t\t\t\t\n\t\t\t\t\t",
  								"en": "todo"
  							},
  							"col_span": 1,

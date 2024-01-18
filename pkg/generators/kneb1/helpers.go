@@ -338,7 +338,7 @@ func erfahrungMitFinanzenSplit1(q *qst.QuestionnaireT, idx0, idx1 int) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						In wieweit stimmen Sie folgenden Aussagen zu?: 
+						In wieweit stimmen Sie folgenden Aussagen zu? 
 						Antworten Sie bitte anhand der folgenden Skala, 
 						wobei der Wert&nbsp;0 "trifft ganz und gar nicht zu"
 						bedeutet 

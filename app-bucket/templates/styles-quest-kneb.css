@@ -13,6 +13,11 @@ ol.progress {
     display: none;
 }
 
+/* no navigation */
+ul.mnu-2nd-lvl    li.nde-2nd-lvl:nth-child(1),
+dummy {
+    display: none;
+}
 
 /* no back button */
 button[value=prev] {

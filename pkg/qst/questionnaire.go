@@ -444,6 +444,8 @@ type pageT struct {
 	CounterProgress string `json:"counter_progress,omitempty"` // number shown in progress bar bullet; "-" overrides the natural counter - navigationSequenceNum
 	Short           trl.S  `json:"short,omitempty"`            // sort version of section/label/description - in progress bar and navigation menu
 
+	RedirectFunc string `json:"redirect_func,omitempty"` // redirectFuncs - serverside forward/redirect
+
 	// Navi control stuff
 	//
 	// SuppressProgressbar
@@ -1427,6 +1429,20 @@ func (q *QuestionnaireT) NextNaviNum() string {
 	return fmt.Sprintf("%v", q.Pages[pg].navigationSequenceNum)
 }
 
+// comfort method for generator funcs;
+// however not feasible
+// because the "+1" is not reliable.
+// At "generation time" we need to watch out constantly,
+// how many more pages will get appended still
+func (q *QuestionnaireT) xx_FromLast(stepsFromEnd int) string {
+	idx := len(q.Pages) - 1 + 1 - stepsFromEnd // +1 since next page is appended below
+	if idx > -1 {
+		s := fmt.Sprintf("%v", idx)
+		return s
+	}
+	return "0"
+}
+
 // Compare compares page completion times and input responses.
 // Compare stops with the first difference and returns an error.
 func (q *QuestionnaireT) Compare(v *QuestionnaireT, lenient bool) (bool, error) {
@@ -1925,6 +1941,13 @@ func (q *QuestionnaireT) Version() int {
 				// fallback:
 				q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
 			}
+			if _, ok := q.Attrs["respBack"]; ok {
+				q.Pages[0].Groups[0].Inputs[1].Response = "openpanel"
+			}
+			if _, ok := q.Attrs["i_survey"]; ok {
+				q.Pages[0].Groups[0].Inputs[1].Response = "gim"
+			}
+
 		} else {
 			q.VersionEffective = q.UserIDInt() % q.VersionMax
 			if q.UserIDInt() == -3216 {

@@ -42,8 +42,8 @@ type unsubscribeT struct {
 	Task    string `json:"task"`
 	Email   string `json:"email"`
 	Date    string `json:"date"`
-	URL1    string `json:"url1"` // the original URL raw query
-	URL2    string `json:"url2"` // the original URL query string
+	Path    string `json:"path"`  // the original URL path
+	Query   string `json:"query"` // the original URL raw query string
 
 	Response template.HTML `json:"response"`
 }
@@ -55,7 +55,8 @@ func (us unsubscribeT) String() string {
 	fmt.Fprintf(b, "Email:    %v\n", us.Email)
 	fmt.Fprintf(b, "Date:     %v\n", us.Date)
 	fmt.Fprintf(b, "Response: %v\n", us.Response)
-	fmt.Fprintf(b, "URLs:    %v - %v\n", us.URL1, us.URL2)
+	fmt.Fprintf(b, "Path:     %v\n", us.Path)
+	fmt.Fprintf(b, "Query:    %v\n", us.Query)
 	return b.String()
 }
 func (us unsubscribeT) CSVHeader() string {
@@ -64,6 +65,8 @@ func (us unsubscribeT) CSVHeader() string {
 	fmt.Fprintf(b, "%v;", "task")
 	fmt.Fprintf(b, "%v;", "email")
 	fmt.Fprintf(b, "%v;", "date")
+	fmt.Fprintf(b, "%v;", "path")
+	fmt.Fprintf(b, "%v;", "query")
 	fmt.Fprint(b, "\n")
 	return b.String()
 }
@@ -73,6 +76,8 @@ func (us unsubscribeT) CSVRow() string {
 	fmt.Fprintf(b, "%v;", us.Task)
 	fmt.Fprintf(b, "%v;", us.Email)
 	fmt.Fprintf(b, "%v;", us.Date)
+	fmt.Fprintf(b, "%v;", us.Path)
+	fmt.Fprintf(b, "%v;", us.Query)
 	fmt.Fprint(b, "\n")
 	return b.String()
 }
@@ -167,8 +172,10 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 </html>
 `
 
+	//
+	// data from URL parameters
+	//   email clients somehow garble those parameters
 	fe := unsubscribeT{} // form entry
-
 	dec := form.NewDecoder()
 	dec.SetTagName("json") // recognizes and ignores ,omitempty
 	err := dec.Decode(&fe, r.Form)
@@ -176,6 +183,27 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
 	}
 
+	//
+	// data from URL path
+	pths := strings.Split(r.URL.Path, "/") // path.SplitList(r.URL.Path) does not exist
+	// pths[0...x] is "/.../.../unsubscribe/proj/tsk/someemail"
+	// from the end...
+	ln := len(pths) - 1
+	// third last path element: project
+	if pths[ln-2] != "" {
+		fe.Project = pths[ln-2]
+	}
+	// second last path element: task
+	if pths[ln-1] != "" {
+		fe.Task = pths[ln-1]
+	}
+	// last path element: email
+	if pths[ln-0] != "" {
+		fe.Email = pths[ln-0]
+		fe.Email = strings.ReplaceAll(fe.Email, "pct40", "@")
+	}
+
+	//
 	// time.DateTime was introduced after go version 1.17 => codecov fails
 	// fe.Date = time.Now().Format(time.DateTime)
 	fe.Date = time.Now().Format("2006-01-02 15:04:05")
@@ -193,18 +221,13 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 		fe.Response += template.HTML(msg + "<br>")
 	}
 
-	// the emails are somehow garbled, if sent from outside ZEW
-	emailByURL := r.FormValue("email")
-	if fe.Email != emailByURL {
-		fe.Response += template.HTML("emailByURL: " + emailByURL + "<br>")
-	}
-
 	// dbg.Dump(fe)
 
 	// no errors
 	if fe.Response == "" {
-		fe.URL1 = r.RequestURI
-		fe.URL2 = r.URL.RawQuery
+		// fe.Path = r.RequestURI
+		fe.Path = r.URL.Path
+		fe.Query = r.URL.RawQuery
 		msg1, err := saveCSVRow(fe)
 		if err != nil {
 			fe.Response += template.HTML(err.Error() + "<br>")

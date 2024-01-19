@@ -216,6 +216,14 @@ func (q *QuestionnaireT) Validate() error {
 			}
 		}
 
+		// forward redirect function exists?
+		redirectKey := q.Pages[i1].RedirectFunc
+		if redirectKey != "" {
+			if _, ok := redirectFuncs[redirectKey]; !ok {
+				return fmt.Errorf("forward/redirect func '%v' is not in %v ", redirectKey, redirectFuncs)
+			}
+		}
+
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 
 			// a number of columns per group must be set

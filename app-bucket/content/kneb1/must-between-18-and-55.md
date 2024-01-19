@@ -11,6 +11,9 @@ Sie haben soeben jedoch angekreuzt, mehr als ein Jahr älter oder jünger zu sei
 Bitte aktualisieren Sie ihr Lebensalter im Panel.  
 Dadurch vermeiden Sie ähnliche Fehler in Zukunft.
 
+<br>
+<br>
+
 <!--
 <a 
     href='https://www.gimpulse.com/?m=6006&return=screenedout&i_survey=%v' 

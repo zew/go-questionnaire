@@ -423,9 +423,16 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// based on most recent input values
 	q.FindNewPage(sess)
 
+	err = q.Pages[q.CurrPage].RedirectFuncExec(q, w, r)
+	if err != nil {
+		log.Printf("page %v - RedirectFuncExec error %v ", q.CurrPage, err)
+	}
+
 	if sess.EffectiveStr("skip_validation") == "" && r.Method == "POST" {
+
 		var forward *qst.ErrorForward
 		err, forward = q.ValidateResponseData(prevPage, q.LangCode)
+
 		if err != nil {
 			submit := sess.EffectiveStr("submitBtn")
 			if submit != "prev" { // effectively allow going back - but not going forth
@@ -453,6 +460,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			}
 			return
 		}
+
 	}
 
 	if r.RemoteAddr != "" {

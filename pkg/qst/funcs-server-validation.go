@@ -596,6 +596,9 @@ func (page *pageT) ConsolidateRadioErrors(grpOrder []int) {
 
 // ValidateResponseData applies all input validation rules on the responses.
 // Restricted by page, since validation errors are handled page-wise.
+// Errors are collected for groups of inputs and stored into those group's errorProxy.
+// The last error is returned.
+// If any validation demands a HTTP forwarding, then the second return value contains the URL
 func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (last error, forward *ErrorForward) {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
@@ -718,6 +721,10 @@ type ErrorForward struct {
 // Error implements the errors.Error interface
 func (ef ErrorForward) Error() string {
 	return ""
+	// better would be:
+	// return "validation-http-forwarding"
+	// but maybe we rely on the empty error string somewhere.
+	// ErrorForward is replaced by RedirectFuncExec() anyway
 }
 
 // MarkDownPath returns the path to redirect to;

@@ -235,20 +235,66 @@ window.addEventListener("load", function (event) {
 });
 
 
-// const urlPathSuffix = "/replstate";
-const urlPathSuffix = "/";
-/*
-    following integer constants seem obsolete:
-        window.PerformanceNavigation.TYPE_NAVIGATE
-        window.PerformanceNavigation.TYPE_RELOAD
-        window.PerformanceNavigation.TYPE_BACK_FORWARD
+/**
+ * We try to control the browser back buttons.
+ * 
+ * We cannot disable them.
+ * 
+ * We cannot distinguish them from regular page load wie browser address bar or clicking a link
+ * 
+ * We want to prevent the "Confirm form submit" message, when going back to previous post page.
+ * 
+ * The previous/next browser buttons show the page from the 
+ *    back-forward cache   (https://web.dev/articles/bfcache)
+ * 
+ * This back-forward cache is *separate* 
+ * from teh http cache (https://web.dev/articles/http-cache)
+ * 
+ * We disable the http cache by responding the header
+ *     Cache-Control: no-cache="Set-Cookie"
+ * 
+ * We cannot disable the back-forward cache.
+ * It is a version of the HTML-page completely disconnected from the server
+ * We dont get any notice on the server, if a back-forward page is shown.
+ * 
+ * Suppose we are on page 7.
+ * Suppose we press 'previous', 'previous', 'previous' to a cached view of page 4.
+ * Support now, we click on the "Next page" button on page 4.
+ * Then the server will respond with page 8,
+ * because he does not know about the 'previous'
+ * 
+ * window event "beforeunload" is useless for our purpose.
+ * 
+ * window event "popstate"     is useless because its selective:
+ * Quote from  the docs:
+ *      Note that just calling history.pushState() or history.replaceState() 
+ *      won't trigger a popstate event. 
+ *      The popstate event will be triggered by doing a browser action 
+ *      such as a click on the back or forward button 
+ *      or calling history.back() or -forward() in JavaScript.
+ * 
+ * We can *only* prevent the "Confirm post submit" message on 'previous'.
+ * We do this by caling  window.history.replaceState(...) for every window event "pageshow".
+ * See below.
+ * We dont change the browser URL.
+ *   urlPathSuffix remains "/".
+ * This leaves the URL unchanged, but still prevents the "form resubmit" question.
+ * 'previous' now simply goes back in the back-forward cache
+ * or sometimes even remains on the same page;
+ * effectively neutering 'previous'.
+ * The behaviour may depend upon whether is identical to golang "URLPathPrefix".
+ * Development config is URLPathPrefix = "/survey".
+ * Production  config is URLPathPrefix = "/".
+ * 
+ */
 
-*/
+
+
+// const urlPathSuffix = "/replaced-state";
+const urlPathSuffix = "/";
+
 const manageBrowserHistory = (evt) => {
 
-    // back-forward cache   versus   http cache
-    // https://web.dev/articles/http-cache?hl=de - does not apply: Cache-Control: no-cache="Set-Cookie"
-    // https://web.dev/articles/bfcache?hl=de
     if (evt.persisted) {
         console.log('restored from bfcache.');
     } else {
@@ -307,13 +353,13 @@ const manageBrowserHistory = (evt) => {
     }
 
     // replace *current* history state.
-    // first argument 'state' is saved as 'history.state' for later read operations on the history
-    // title - unused, does not what it says
-    // location - changes relative URL of current own page, not URL of any other pages. 
-    //      current own page URL is changed, but no reload occurs
-    //      .back() and .forward() show changed URL
-    //      .back() and .forward() trigger popstate, but no load() nor unload()
-    //    use for changing query string - not full URL
+    //   first argument 'state' is saved as 'history.state' for later read operations on the history
+    //   title - does not what it says, its simply unused
+    //   location - changes relative URL of current own page, not URL of any other pages. 
+    //        current own page URL is changed, but no reload occurs
+    //        .back() and .forward() show changed URL
+    //        .back() and .forward() trigger popstate, but no load() nor unload()
+    //      use for changing query string - not full URL
     window.history.replaceState(
         {
             state1: 'stateval1',
@@ -324,8 +370,6 @@ const manageBrowserHistory = (evt) => {
     );
 
 
-
-
 }
 window.addEventListener( "pageshow", manageBrowserHistory);
 
@@ -333,35 +377,6 @@ window.addEventListener( "pageshow", manageBrowserHistory);
 
 
 
-// shows a standard message before leaving page; not customizable; useless
-// stackoverflow.com/questions/38879742/
-const beforeUnload = (evt) => {
-    // console.log('beforeUn', evt)
-    // evt.preventDefault();
-};
-window.addEventListener( "beforeunload", beforeUnload);
 
 
-
-
-
-/*
-    https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
-    "Note that just calling history.pushState() or history.replaceState() won't trigger a popstate event. 
-    The popstate event will be triggered by doing a browser action 
-    such as a click on the back or forward button 
-    or calling history.back() or -forward() in JavaScript.
-
-    => onpopstate is not always triggered
-*/
-const funcHistoryStateChange = evt => {
-    if (typeof evt.state == "object" && evt.state.state1 === "stateval1") {
-        console.log(`reloading onpopstate ...`);
-        // window.location.reload();
-    } else {
-        // console.log(`onpopstate`, "other");
-    }
-    console.log(`onpopstate`, evt);
-}
-window.onpopstate = funcHistoryStateChange
 

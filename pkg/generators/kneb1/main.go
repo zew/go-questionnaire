@@ -78,6 +78,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
+
+			// keep in this position: page-0, gr-0 input-2
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "panel_type"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+			}
+
 		}
 
 	}
@@ -416,17 +426,47 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 0
 				inp.ColSpanLabel = 1
 			}
+
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-textblock"
+					inp.DynamicFunc = "knebLinkBackToPanel"
+					inp.DynamicFuncParamset = "screenout"
+					inp.ColSpan = gr.Cols
+					inp.ColSpanControl = 0
+					inp.ColSpanLabel = 1
+				}
+			*/
+
 			{
 				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "knebLinkBackToPanel"
-				inp.DynamicFuncParamset = "screenout"
-				inp.ColSpan = gr.Cols
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
+				inp.Label = trl.S{
+					"de": ` &nbsp;  &nbsp;  &nbsp; Zurück zu Ihrem Panel  &nbsp;  &nbsp;  &nbsp; `,
+					"en": `todo`,
+				}
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				inp.AccessKey = "n"
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "start"
 			}
+
 		}
 
+	}
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Forward to Panel - screenout",
+			"en": "Forward to Panel - screenout",
+		}
+		page.RedirectFunc = "pageForwardKnebScreenout"
+		page.NavigationCondition = "kneb_too_old"
 	}
 
 	// page 2a
@@ -4040,6 +4080,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Abschluss",
 			"en": "todo",
 		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
 
@@ -4186,40 +4230,42 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		//
 		//
 		// advance to last page "data saved"
-		{
-			gr := page.AddGroup()
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Cols = 2
-			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"
-			// gr.Width = 80
+		// {
+		// 	gr := page.AddGroup()
+		// 	gr.Style = css.NewStylesResponsive(gr.Style)
+		// 	gr.Cols = 2
+		// 	gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"
+		// 	// gr.Width = 80
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "", "en": ""}
-				// inp.Label = trl.S{
-				// 	"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
-				// 	"en": "By clicking, you will receive a summary of your answers.",
-				// }
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "submitBtn"
-				// inp.Name = "finished"
-				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
-				inp.Label = cfg.Get().Mp["end"]
-				inp.Label = cfg.Get().Mp["finish_questionnaire"]
-				inp.ColSpan = 1
-				inp.ColSpanControl = 1
-				inp.AccessKey = "n"
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
-				// inp.StyleCtl.Desktop.StyleBox.WidthMin = "8rem" // does not help with button
-			}
-		}
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "textblock"
+		// 		inp.Label = trl.S{"de": "", "en": ""}
+		// 		// inp.Label = trl.S{
+		// 		// 	"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
+		// 		// 	"en": "By clicking, you will receive a summary of your answers.",
+		// 		// }
+		// 		inp.ColSpan = 1
+		// 		inp.ColSpanLabel = 1
+		// 	}
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "button"
+		// 		inp.Name = "submitBtn"
+		// 		// inp.Name = "finished"
+		// 		inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
+
+		// 		// two more pages
+		// 		inp.Label = cfg.Get().Mp["end"]
+		// 		inp.Label = cfg.Get().Mp["finish_questionnaire"]
+		// 		inp.ColSpan = 1
+		// 		inp.ColSpanControl = 1
+		// 		inp.AccessKey = "n"
+		// 		inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+		// 		inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+		// 		// inp.StyleCtl.Desktop.StyleBox.WidthMin = "8rem" // does not help with button
+		// 	}
+		// }
 
 	}
 
@@ -4227,7 +4273,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// report of results
 	{
 		page := q.AddPage()
-		page.NoNavigation = true
+		// page.NoNavigation = true
 		page.Label = trl.S{
 			"de": "Ihre Eingaben sind gespeichert.",
 			"en": "Your entries have been saved.",
@@ -4270,15 +4316,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 
 			//
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "knebLinkBackToPanel"
-				inp.DynamicFuncParamset = "success"
-				inp.ColSpan = gr.Cols
-				inp.ColSpanControl = 0
-				inp.ColSpanLabel = 1
-			}
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-textblock"
+					inp.DynamicFunc = "knebLinkBackToPanel"
+					inp.DynamicFuncParamset = "success"
+					inp.ColSpan = gr.Cols
+					inp.ColSpanControl = 0
+					inp.ColSpanLabel = 1
+				}
+			*/
 
 			/*
 				{
@@ -4301,8 +4349,37 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp.ColSpanLabel = 1
 				}
 			*/
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
+				inp.Label = trl.S{
+					"de": ` &nbsp;  &nbsp;  &nbsp; Zurück zu Ihrem Panel  &nbsp;  &nbsp;  &nbsp; `,
+					"en": `todo`,
+				}
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				inp.AccessKey = "n"
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "center"
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "start"
+			}
+
 		}
 
+	}
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Forward to Panel - complete",
+			"en": "Forward to Panel - complete",
+		}
+		page.RedirectFunc = "pageForwardKnebComplete"
+		page.NoNavigation = true
 	}
 
 	// q.AddFinishButtonNextToLast()

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a74359939307cd300af2def6fc883314b789acd78b8f1529a85f6fa3b8d942de",
+ 	"md_5": "d7eba584d9ba49743e7bcf2a2ab164217fc49dfe8e1dc95ab8d36013d91a12d2",
  	"lang_codes": [
  		"de"
  	],
@@ -70,6 +70,11 @@
  							"col_span_label": 1,
  							"dynamic_func": "RenderStaticContent",
  							"dynamic_func_paramset": "./welcome-page.html"
+ 						},
+ 						{
+ 							"name": "panel_type",
+ 							"type": "hidden",
+ 							"col_span": 1
  						}
  					]
  				}
@@ -1309,15 +1314,49 @@
  							"dynamic_func_paramset": "./must-between-18-and-55.md"
  						},
  						{
- 							"type": "dyn-textblock",
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": " \u0026nbsp;  \u0026nbsp;  \u0026nbsp; Zurück zu Ihrem Panel  \u0026nbsp;  \u0026nbsp;  \u0026nbsp; ",
+ 								"en": "todo"
+ 							},
+ 							"accesskey": "n",
  							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "knebLinkBackToPanel",
- 							"dynamic_func_paramset": "screenout"
+ 							"col_span_control": 1,
+ 							"response": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
  			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Forward to Panel - screenout",
+ 				"en": "Forward to Panel - screenout"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"redirect_func": "pageForwardKnebScreenout",
+ 			"navigation_condition": "kneb_too_old",
+ 			"finished": "0001-01-01T00:00:00Z"
  		},
  		{
  			"label": {
@@ -9215,18 +9254,6 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_21",
- 				"en": "PageLabel_21"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN0"
- 		},
- 		{
- 			"label": {
  				"de": "Seitentitel_22",
  				"en": "PageLabel_22"
  			},
@@ -9235,7 +9262,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN1"
+ 			"generator_func_name": "kneb202306guidedtourN0"
  		},
  		{
  			"label": {
@@ -9247,7 +9274,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN2"
+ 			"generator_func_name": "kneb202306guidedtourN1"
  		},
  		{
  			"label": {
@@ -9259,7 +9286,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN3"
+ 			"generator_func_name": "kneb202306guidedtourN2"
  		},
  		{
  			"label": {
@@ -9271,7 +9298,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN4"
+ 			"generator_func_name": "kneb202306guidedtourN3"
  		},
  		{
  			"label": {
@@ -9283,7 +9310,7 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN5"
+ 			"generator_func_name": "kneb202306guidedtourN4"
  		},
  		{
  			"label": {
@@ -9295,12 +9322,24 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306guidedtourN6"
+ 			"generator_func_name": "kneb202306guidedtourN5"
  		},
  		{
  			"label": {
  				"de": "Seitentitel_28",
  				"en": "PageLabel_28"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306guidedtourN6"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_29",
+ 				"en": "PageLabel_29"
  			},
  			"description": {
  				"de": "",
@@ -10110,8 +10149,8 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_31",
- 				"en": "PageLabel_31"
+ 				"de": "Seitentitel_32",
+ 				"en": "PageLabel_32"
  			},
  			"description": {
  				"de": "",
@@ -19380,7 +19419,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg41"
+ 								"pageID": "pg42"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -22593,8 +22632,8 @@
  		},
  		{
  			"label": {
- 				"de": "Abschluss",
- 				"en": "todo"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -22887,69 +22926,6 @@
  							"text_style": {}
  						}
  					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "",
- 								"en": ""
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "submitBtn",
- 							"type": "button",
- 							"label": {
- 								"de": "Fragebogen abschließen",
- 								"en": "Finish this survey",
- 								"es": "Terminé esta encuesta",
- 								"fr": "Terminer ce sondage",
- 								"it": "Finire questo sondaggio",
- 								"pl": "Zakończyłem tę ankietę"
- 							},
- 							"accesskey": "n",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"response": "49",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "3fr 1fr"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
  				}
  			]
  		},
@@ -22962,7 +22938,6 @@
  				"de": "",
  				"en": ""
  			},
- 			"no_navigation": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -23001,15 +22976,49 @@
  							"dynamic_func_paramset": "hidden"
  						},
  						{
- 							"type": "dyn-textblock",
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": " \u0026nbsp;  \u0026nbsp;  \u0026nbsp; Zurück zu Ihrem Panel  \u0026nbsp;  \u0026nbsp;  \u0026nbsp; ",
+ 								"en": "todo"
+ 							},
+ 							"accesskey": "n",
  							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "knebLinkBackToPanel",
- 							"dynamic_func_paramset": "success"
+ 							"col_span_control": 1,
+ 							"response": "51",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
  			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Forward to Panel - complete",
+ 				"en": "Forward to Panel - complete"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"redirect_func": "pageForwardKnebComplete",
+ 			"no_navigation": true,
+ 			"finished": "0001-01-01T00:00:00Z"
  		}
  	]
  }

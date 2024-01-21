@@ -1913,7 +1913,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page.WidthMax("42rem")
 			page.WidthMax("48rem")
 
-			howSicher(*qst.WrapPageT(page), "qfl1a_free", "FL1a.")
+			howSicherPlusGuessed(*qst.WrapPageT(page), "qfl1a_free", "FL1a.")
 
 		}
 	*/
@@ -1992,7 +1992,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page.WidthMax("42rem")
 			page.WidthMax("48rem")
 
-			howSicher(*qst.WrapPageT(page), "qfl2a_free", "FL2a.")
+			howSicherPlusGuessed(*qst.WrapPageT(page), "qfl2a_free", "FL2a.")
 		}
 	*/
 
@@ -2047,7 +2047,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page.SuppressInProgressbar = true
 			page.WidthMax("48rem")
 
-			howSicher(*qst.WrapPageT(page), "qfl4a_free", "FL4a.")
+			howSicherPlusGuessed(*qst.WrapPageT(page), "qfl4a_free", "FL4a.")
 
 		}
 	*/
@@ -2121,6 +2121,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 							Gleichzeitig ist sie anfälliger für Schädlinge. 
 							Das bedeutet, dass die Erträge stärker schwanken.
 							<br>
+							<br>
 						</li>			
 					</ul>
 
@@ -2131,12 +2132,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						der beiden Baumarten zu verdeutlichen. 
 						Wir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.					
 					</p>
-					
-
 					`,
 					"en": `
-							todo
-						`,
+						todo
+					`,
 				}
 			}
 		}
@@ -2219,6 +2218,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 							Gleichzeitig können die Renditen 
 							und damit das angesparte Vermögen schwanken.
 							<br>
+							<br>
 						</li>
 					</ul>
 
@@ -2227,11 +2227,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						die Abwägung zwischen <i>Chancen und Risiken</i> einer Anlage 
 						am Kapitalmarkt zu verdeutlichen.
 					</p>
-	
 					`,
 					"en": `
-							todo
-						`,
+					todo
+				`,
 				}
 			}
 		}
@@ -2279,511 +2278,96 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.GeneratorFuncName = "kneb202306simtool0"
 	}
 
-	//
-	// page quiz zum Verständnis des experiment
-	//  neutral frame - nf
 	{
 		page := q.AddPage()
-		page.NavigationCondition = "kneb_t1a"
-
-		page.Label = trl.S{
-			"de": "Quiz",
-			"en": "todo",
-		}
+		page.GeneratorFuncName = "kneb202306simtool1"
+	}
+	{
+		page := q.AddPage()
 		page.Label = trl.S{
 			"de": "",
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
-
-		// gr 0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 3
-			gr.BottomVSpacers = 2
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Im Folgenden stellen wir Ihnen drei Fragen, 
-						welche Sie mit Hilfe der interaktiven Graphik beantworten können. 
-						
-						Bitte benutzen Sie den "Zurück" Button, 
-						wenn Sie zur Graphik zurückkehren möchten. 
-						<br>
-						<br>
-					`,
-					"en": `todo`,
-				}.OutlineHid("Quiz-Intro")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Frau Blau möchte über die Projektlaufzeit jedes Jahr 
-						100&nbsp;Bäume pflanzen. 
-						
-						Sie wählt einen Anteil von 60% an Baumart&nbsp;2 aus. 
-						
-						Wie hoch ist ihr prognostizierter Ertrag  in den  
-						<i><u>besten 5 von 100&nbsp;Fällen</u></i>?	
-					`,
-					"en": `todo`,
-				}.OutlineHid("C24.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Validator = "must"
-
-				inp.Name = "qc24_nf_return"
-				inp.Validator = "must;kneb_qc24_nf"
-				inp.Min = 0
-				// 20.900 Tonnen
-				inp.Max = 280 * 1000
-				inp.MaxChars = 6
-				inp.Suffix = trl.S{
-					"de": `€`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
-			}
-
-		}
-
-		// gr 1
-		{
-
-			gr := page.AddGroup()
-			gr.Cols = 6
-			var radioValues = []string{
-				"0pct",
-				"10pct",
-				"20pct",
-				"30pct",
-				"40pct",
-				"50pct",
-				"60pct",
-				"70pct",
-				"80pct",
-			}
-			var labels = []trl.S{
-				{
-					"de": "0% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "10% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "20% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "30% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "40% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "50% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "60% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "70% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "80% Anteil&nbsp;2",
-					"en": "todo",
-				},
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-
-						Herr Lila kann jedes Jahr 300&nbsp;Bäume pflanzen. 
-						
-						Wenn er nach 20 Jahren einen Ertrag von ca. 100.000&nbsp;Euro erzielen möchte 
-						(im Durchschnitt), 
-						welchen Anteil an Baumart&nbsp;2 sollte sein Waldstück mindestens haben?
-
-					`,
-					"en": `todo`,
-				}.OutlineHid("C25.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Validator = "must;kneb_qc25_nf"
-
-				rad.Name = "qc25_share_nf"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols / 3
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-			}
-
-		}
-
-		// gr 2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 3
-			gr.BottomVSpacers = 3
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Frau Gelb möchte in 20&nbsp;Jahren einen Ertrag von 100.000&nbsp;Euro aufbauen. 
-												
-						Sie ist bereit einen Anteil von 50% an Baumart&nbsp;2 in ihrem Wald zu akzeptieren.
-
-						Wie viele Bäume muss sie jährlich anpflanzen, 
-						damit ihr dies <i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> gelingen kann?
-					
-					`,
-					"en": `todo`,
-				}.OutlineHid("C26.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "qc26_area_nf"
-				inp.Validator = "must"
-
-				inp.Validator = "must;kneb_qc26_nf"
-				inp.Min = 0
-				// 40 Hektar
-				inp.Max = 700
-				inp.Step = 10
-				inp.Placeholder = trl.S{"de": "#", "en": "#"}
-				inp.MaxChars = 6
-				inp.Suffix = trl.S{
-					"de": `Bäume`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
-			}
-
-			//
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "knebVisiblePrev" // js filename
-			}
-
-			//
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "knebQuiz" // js filename
-			}
-
-		}
-
+		howSicher1to10(*qst.WrapPageT(page), "qc24_how_sicher", "qc24hs.")
 	}
 
-	//
-	// page quiz zum Verständnis des experiment
-	//  financial frame - ff
 	{
 		page := q.AddPage()
-		page.NavigationCondition = "kneb_t1b"
-
-		page.Label = trl.S{
-			"de": "Quiz",
-			"en": "todo",
-		}
+		page.GeneratorFuncName = "kneb202306simtool2"
+	}
+	{
+		page := q.AddPage()
 		page.Label = trl.S{
 			"de": "",
 			"en": "",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
-
-		// {
-		// 	gr := page.AddGroup()
-		// 	gr.Cols = 1
-		// 	gr.BottomVSpacers = 1
-		// 	{
-		// 		inp := gr.AddInput()
-		// 		inp.Type = "textblock"
-		// 		inp.Label = trl.S{
-		// 			"de": `
-		// 				Quiz für Finanz-Frame - @kneb: Bitte erst das Quiz für neutral durchtesten.
-		// 				Die Zahlen in den Aufgaben sollten bitte identisch sein,
-		// 				und sich nur von in der Einheit unterscheiden:
-		// 				Hektar/Tonnen vs. Euro/Euro
-		// 			`,
-		// 			"en": `todo`,
-		// 		}
-		// 		inp.ColSpan = gr.Cols
-		// 		inp.ColSpanLabel = 1
-		// 	}
-		// }
-
-		// gr 0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 3
-			gr.BottomVSpacers = 2
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Im Folgenden stellen wir Ihnen drei Fragen, 
-						welche Sie mit Hilfe der interaktiven Graphik beantworten können. 
-						
-						Bitte benutzen Sie den "Zurück" Button, 
-						wenn Sie zur Graphik zurückkehren möchten. 
-						<br>
-						<br>
-					`,
-					"en": `todo`,
-				}.OutlineHid("Quiz-Intro")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
-						einen monatlichen Sparbetrag von 250&nbsp;Euro anlegen. 
-						
-						Sie wählt einen Aktienanteil von 60%.
-
-						Wie hoch ist ihr prognostiziertes Vermögen in den <i><u>besten 5 von 100&nbsp;Fällen</u></i>?
-					`,
-					"en": `todo`,
-				}.OutlineHid("C24.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Validator = "must;kneb_qc24_ff"
-
-				inp.Name = "qc24_ff_return"
-				inp.Min = 0
-				// 104.700 Euro
-				inp.Max = 100 * 1000 * 1000
-				inp.MaxChars = 6
-				inp.Suffix = trl.S{
-					"de": `€`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
-			}
-
-		}
-
-		// gr 1
-		{
-
-			gr := page.AddGroup()
-			gr.Cols = 6
-			var radioValues = []string{
-				"0pct",
-				"10pct",
-				"20pct",
-				"30pct",
-				"40pct",
-				"50pct",
-				"60pct",
-				"70pct",
-				"80pct",
-			}
-			var labels = []trl.S{
-				{
-					"de": "0% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "10% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "20% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "30% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "40% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "50% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "60% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "70% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "80% Aktien&shy;anteil",
-					"en": "todo",
-				},
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Herr Lila kann im Monat 100 Euro zur Seite legen. 
-						
-						Wenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), 
-						welchen Aktienanteil sollte sein Portfolio mindestens haben?
-					`,
-					"en": `todo`,
-				}.OutlineHid("C25.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Validator = "must;kneb_qc25_ff"
-
-				rad.Name = "qc25_share_ff"
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols / 3
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-			}
-
-		}
-
-		// gr 2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 3
-			gr.BottomVSpacers = 3
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Frau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. 
-						Sie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.
-
-						Wie viele Euro muss sie monatlich sparen, 
-						damit ihr dies <i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> gelingen kann?
-		
-					`,
-					"en": `todo`,
-				}.OutlineHid("C26.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Validator = "must;kneb_qc26_ff"
-				inp.Name = "qc26_area_ff"
-				inp.Min = 0
-				// 310€
-				inp.Max = 200 * 1000
-				// inp.Step = 10
-				inp.Placeholder = trl.S{"de": "#", "en": "#"}
-				inp.MaxChars = 6
-				inp.Suffix = trl.S{
-					"de": `€`,
-					"en": `todo`,
-				}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
-			}
-
-			//
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "knebVisiblePrev" // js filename
-			}
-
-			//
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "knebQuiz" // js filename
-			}
-
-		}
-
+		howSicher1to10(*qst.WrapPageT(page), "qc25_how_sicher", "qc25hs.")
 	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306simtool3"
+	}
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("48rem")
+		howSicher1to10(*qst.WrapPageT(page), "qc26_how_sicher", "qc26hs.")
+	}
+
+	/*
+			//
+			// page quiz zum Verständnis des experiment
+			//  neutral frame - nf
+			{
+				page := q.AddPage()
+				page.NavigationCondition = "kneb_t1a"
+
+				page.Label = trl.S{
+					"de": "Quiz",
+					"en": "todo",
+				}
+				page.Label = trl.S{
+					"de": "",
+					"en": "",
+				}
+				page.SuppressInProgressbar = true
+				page.WidthMax("48rem")
+			}
+
+		//
+		// page quiz zum Verständnis des experiment
+		//  financial frame - ff
+		{
+			page := q.AddPage()
+			page.NavigationCondition = "kneb_t1b"
+
+			page.Label = trl.S{
+				"de": "Quiz",
+				"en": "todo",
+			}
+			page.Label = trl.S{
+				"de": "",
+				"en": "",
+			}
+			page.SuppressInProgressbar = true
+			page.WidthMax("48rem")
+
+
+		}
+	*/
 
 	// page chart 1
 	{
 		page := q.AddPage()
-		page.GeneratorFuncName = "kneb202306simtool1"
+		page.GeneratorFuncName = "kneb202306simtool4"
 	}
 
 	// page experiment +2

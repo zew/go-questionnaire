@@ -571,7 +571,7 @@ func init() {
 	}
 
 	// all inputs must
-	validators["kneb_simtool_inst_1"] = func(q *QuestionnaireT, inp *inputT) error {
+	validators["kneb_simtool_inst_4"] = func(q *QuestionnaireT, inp *inputT) error {
 
 		fields := []string{
 			"share_safe_bg_",

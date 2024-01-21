@@ -411,7 +411,7 @@ func erfahrungMitFinanzenSplit2(q *qst.QuestionnaireT, idx0, idx1 int) {
 }
 
 // a func to create questions 1a, 2a, 3a, 4a
-func howSicher(page qst.WrappedPageT, inputName, outlineNumber string) {
+func howSicherPlusGuessed(page qst.WrappedPageT, inputName, outlineNumber string) {
 
 	lblsQF1a := labelsSelfKnowledge()
 	lblsQF1a[0] = trl.S{
@@ -441,11 +441,60 @@ func howSicher(page qst.WrappedPageT, inputName, outlineNumber string) {
 	)
 	gb.MainLabel = trl.S{
 		"de": `
-						Wie sicher sind Sie sich bei Ihrer Antwort?
+			Wie sicher sind Sie sich bei Ihrer Antwort?
+
+			<small>
+				Bewerten Sie bitte anhand der Skala von 0 bis 10.   
+				&nbsp;
+				0 bedeutet „nicht sicher“ und bedeutet 10 „sehr sicher“
+			</small>
 					`,
 		"en": `
-						todo
+			todo
+		`,
+	}.OutlineHid(outlineNumber)
+	gr := page.AddGrid(gb)
+	_ = gr
+	gr.BottomVSpacers = 4
+	gr.Style = css.NewStylesResponsive(gr.Style)
+	gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
+
+}
+
+// a func to create questions 1a, 2a, 3a, 4a
+func howSicher1to10(page qst.WrappedPageT, inputName, outlineNumber string) {
+
+	lblsQF1a := labelsSelfKnowledge()
+	lblsQF1a[0] = trl.S{
+		"de": "<small>nicht sicher</small>     <div>0</div>",
+		"en": "<small>not sure</small>         <div>0</div>",
+	}
+	lblsQF1a[10] = trl.S{
+		"de": "<small>sehr sicher</small>      <div>10</div>",
+		"en": "<small>very sure</small>        <div>10</div>",
+	}
+
+	gb := qst.NewGridBuilderRadiosWithValidator(
+		columnTemplate11,
+		lblsQF1a,
+		[]string{inputName},
+		radioVals11,
+		[]trl.S{{"de": ``, "en": ``}},
+		"mustRadioGroup",
+	)
+	gb.MainLabel = trl.S{
+		"de": `
+			Wie sicher sind Sie sich bei Ihrer Antwort?
+
+			<small>
+				Bewerten Sie bitte anhand der Skala von 0 bis 10. 
+				&nbsp;
+				0 bedeutet „nicht sicher“ und bedeutet 10 „sehr sicher“
+			</small>
 					`,
+		"en": `
+			todo
+		`,
 	}.OutlineHid(outlineNumber)
 	gr := page.AddGrid(gb)
 	_ = gr

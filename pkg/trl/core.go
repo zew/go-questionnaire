@@ -213,8 +213,8 @@ var coreTranslations = Map{
 		"pl": "w %ver krokach",
 	},
 	"correct_errors": {
-		"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
-		"en": "Please correct the errors displayed below.",
+		"de": "Bitte korrigieren / ergänzen.",
+		"en": "Please correct or amend.",
 		"es": "Por favor corrija los errores que aparecen a continuación",
 		"fr": "Veuillez corriger les erreurs affichées ci-dessous",
 		"it": "Per piacere correga gli errori sottostanti.",

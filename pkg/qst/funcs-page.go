@@ -67,7 +67,10 @@ var funcPGs = map[string]funcPageGeneratorT{
 	"kneb202306guidedtourN6": kneb202306guidedtourN6,
 
 	"kneb202306simtool0": kneb202306simtool0, // first instance - exercise
-	"kneb202306simtool1": kneb202306simtool1, // second instance - input values
+	"kneb202306simtool1": kneb202306simtool1, //
+	"kneb202306simtool2": kneb202306simtool2, //
+	"kneb202306simtool3": kneb202306simtool3, //
+	"kneb202306simtool4": kneb202306simtool4, // second instance - input values
 }
 
 func pageFuncExample(q *QuestionnaireT, page *pageT) error {

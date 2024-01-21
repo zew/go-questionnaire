@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "366abd5c0960be389de73590978ebece09ae1d6f67784d332e54f8a36109e2e7",
+ 	"md_5": "5ac17b45fcd76a6734149a2f0b7f65ddfc3323436b1688a01da0994ae6d67900",
  	"lang_codes": [
  		"de"
  	],
@@ -9191,8 +9191,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um  \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten, ein Waldstück zu bepflanzen. \t\t\t\t\t\t\n\t\t\t\t\t\tEin Beispiel: \n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e sie pflanzen möchte. Sie kann sich \n\t\t\t\t\t\t\u003ci\u003ezwi\u0026shy;schen zwei Arten\u003c/i\u003e\n\t\t\t\t\t\tentscheiden. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\u003cb\u003eBaumart 1:\u003c/b\u003e Diese Art wächst langsamer \n\t\t\t\t\t\t\tund erzielt im Durchschnitt geringere Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie widerstandsfähiger gegen Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge kaum schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003cb\u003eBaumart 2:\u003c/b\u003e Diese Art wächst schneller \n\t\t\t\t\t\t\tund erzielt im Durchschnitt hö\u0026shy;here Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie anfälliger für Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge stärker schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \n\t\t\t\t\t\t\u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\tWir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um  \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten, ein Waldstück zu bepflanzen. \t\t\t\t\t\t\n\t\t\t\t\t\tEin Beispiel: \n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e sie pflanzen möchte. Sie kann sich \n\t\t\t\t\t\t\u003ci\u003ezwi\u0026shy;schen zwei Arten\u003c/i\u003e\n\t\t\t\t\t\tentscheiden. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\u003cb\u003eBaumart 1:\u003c/b\u003e Diese Art wächst langsamer \n\t\t\t\t\t\t\tund erzielt im Durchschnitt geringere Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie widerstandsfähiger gegen Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge kaum schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003cb\u003eBaumart 2:\u003c/b\u003e Diese Art wächst schneller \n\t\t\t\t\t\t\tund erzielt im Durchschnitt hö\u0026shy;here Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie anfälliger für Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge stärker schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \n\t\t\t\t\t\t\u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\tWir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -9242,8 +9242,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag über einen langen Zeithorizont zu sparen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine \u003ci\u003erisikolose\u003c/i\u003e Anlage und erzielt \n\t\t\t\t\t\t\t\u003ci\u003ekonstante Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \n\t\t\t\t\t\t\t\u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, \n\t\t\t\t\t\t\tda kei\u0026shy;ne (hohen) Gewinne erzielt werden.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \n\t\t\t\t\t\t\t \u003ci\u003ehö\u0026shy;heres Risiko\u003c/i\u003e \n\t\t\t\t\t\t\t und erzielen \n\t\t\t\t\t\t\t \u003ci\u003eim Durchschnitt\u003c/i\u003e \n\t\t\t\t\t\t\tüber einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tGleichzeitig können die Renditen \n\t\t\t\t\t\t\tund damit das angesparte Vermögen schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag über einen langen Zeithorizont zu sparen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine \u003ci\u003erisikolose\u003c/i\u003e Anlage und erzielt \n\t\t\t\t\t\t\t\u003ci\u003ekonstante Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \n\t\t\t\t\t\t\t\u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, \n\t\t\t\t\t\t\tda kei\u0026shy;ne (hohen) Gewinne erzielt werden.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \n\t\t\t\t\t\t\t \u003ci\u003ehö\u0026shy;heres Risiko\u003c/i\u003e \n\t\t\t\t\t\t\t und erzielen \n\t\t\t\t\t\t\t \u003ci\u003eim Durchschnitt\u003c/i\u003e \n\t\t\t\t\t\t\tüber einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tGleichzeitig können die Renditen \n\t\t\t\t\t\t\tund damit das angesparte Vermögen schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -9350,403 +9350,15 @@
  		},
  		{
  			"label": {
- 				"de": "",
- 				"en": ""
+ 				"de": "Seitentitel_30",
+ 				"en": "PageLabel_30"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"navigation_condition": "kneb_t1a",
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "48rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 3,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- Quiz-Intro --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über die Projektlaufzeit jedes Jahr \n\t\t\t\t\t\t100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den  \n\t\t\t\t\t\t\u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- C24. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "qc24_nf_return",
- 							"type": "number",
- 							"max_chars": 6,
- 							"max": 280000,
- 							"suffix": {
- 								"de": "€",
- 								"en": "todo"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 2,
- 							"col_span_control": 4,
- 							"validator": "must;kneb_qc24_nf"
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- C25. --\u003e\n\n\t\t\t\t\t\tHerr Lila kann jedes Jahr 300\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren einen Ertrag von ca. 100.000\u0026nbsp;Euro erzielen möchte \n\t\t\t\t\t\t(im Durchschnitt), \n\t\t\t\t\t\twelchen Anteil an Baumart\u0026nbsp;2 sollte sein Waldstück mindestens haben?\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- C25. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "0% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "0pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "10% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "10pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "20% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "20pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "30% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "30pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "40% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "40pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "50% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "50pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "60% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "60pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "70% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "70pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_nf",
- 							"type": "radio",
- 							"label": {
- 								"de": "80% Anteil\u0026nbsp;2",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_nf",
- 							"value_radio": "80pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 3,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20\u0026nbsp;Jahren einen Ertrag von 100.000\u0026nbsp;Euro aufbauen. \n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tSie ist bereit einen Anteil von 50% an Baumart\u0026nbsp;2 in ihrem Wald zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Bäume muss sie jährlich anpflanzen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\t\t\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- C26. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "qc26_area_nf",
- 							"type": "number",
- 							"max_chars": 6,
- 							"step": 10,
- 							"max": 700,
- 							"placeholder": {
- 								"de": "#",
- 								"en": "#"
- 							},
- 							"suffix": {
- 								"de": "Bäume",
- 								"en": "todo"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 2,
- 							"col_span_control": 4,
- 							"validator": "must;kneb_qc26_nf"
- 						},
- 						{
- 							"name": "knebVisiblePrev",
- 							"type": "javascript-block",
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "knebQuiz",
- 							"type": "javascript-block",
- 							"col_span_control": 1
- 						}
- 					]
- 				}
- 			]
+ 			"generator_func_name": "kneb202306simtool1"
  		},
  		{
  			"label": {
@@ -9757,7 +9369,6 @@
  				"de": "",
  				"en": ""
  			},
- 			"navigation_condition": "kneb_t1b",
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -9780,370 +9391,620 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 2,
- 					"columns": 3,
+ 					"bottom_vspacers": 4,
+ 					"columns": 11,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- Quiz-Intro --\u003e\n\t\t\t\t\t\tIm Folgenden stellen wir Ihnen drei Fragen, \n\t\t\t\t\t\twelche Sie mit Hilfe der interaktiven Graphik be\u0026shy;ant\u0026shy;wor\u0026shy;ten können. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBitte benutzen Sie den \"Zurück\" Button, \n\t\t\t\t\t\twenn Sie zur Graphik zurückkehren möchten. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- Quiz-Intro --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
+ 								"de": "\u003c!-- qc24hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- qc24hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
- 							"col_span": 3,
+ 							"col_span": 11,
  							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren \n\t\t\t\t\t\teinen monatlichen Sparbetrag von 250\u0026nbsp;Euro anlegen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Aktienanteil von 60%.\n\n\t\t\t\t\t\tWie hoch ist ihr prognostiziertes Vermögen in den \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- C24. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
+ 								"de": "\u003csmall\u003enicht si\u0026shy;cher\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"en": "\u003csmall\u003enot sure\u003c/small\u003e         \u003cdiv\u003e0\u003c/div\u003e"
  							},
- 							"col_span": 3,
- 							"col_span_label": 1
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "qc24_ff_return",
- 							"type": "number",
- 							"max_chars": 6,
- 							"max": 100000000,
- 							"suffix": {
- 								"de": "€",
- 								"en": "todo"
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
  							},
- 							"col_span": 3,
- 							"col_span_label": 2,
- 							"col_span_control": 4,
- 							"validator": "must;kneb_qc24_ff"
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003esehr si\u0026shy;cher\u003c/small\u003e      \u003cdiv\u003e10\u003c/div\u003e",
+ 								"en": "\u003csmall\u003every sure\u003c/small\u003e        \u003cdiv\u003e10\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qc24_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "11"
  						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- C25. --\u003e\n\t\t\t\t\t\tHerr Lila kann im Monat 100 Euro zur Seite legen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (im Durchschnitt), \n\t\t\t\t\t\twelchen Aktienanteil sollte sein Portfolio mindestens haben?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- C25. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
  							},
- 							"col_span": 6,
- 							"col_span_label": 1
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "0% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "0pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "10% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "10pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "20% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "20pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "30% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "30pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "40% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "40pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "50% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "50pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "60% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "60pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "70% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "70pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qc25_share_ff",
- 							"type": "radio",
- 							"label": {
- 								"de": "80% Aktien\u0026shy;anteil",
- 								"en": "todo"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "must;kneb_qc25_ff",
- 							"value_radio": "80pct",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 3,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003c!-- C26. --\u003e\n\t\t\t\t\t\tFrau Gelb möchte in 20 Jahren ein Vermögen von 100.000 Euro aufbauen. \n\t\t\t\t\t\tSie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.\n\n\t\t\t\t\t\tWie viele Euro muss sie monatlich sparen, \n\t\t\t\t\t\tdamit ihr dies \u003ci\u003e\u003cu\u003ein den schlech\u0026shy;testen 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e gelingen kann?\n\t\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
- 								"en": "\u003c!-- C26. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "qc26_area_ff",
- 							"type": "number",
- 							"max_chars": 6,
- 							"max": 200000,
- 							"placeholder": {
- 								"de": "#",
- 								"en": "#"
- 							},
- 							"suffix": {
- 								"de": "€",
- 								"en": "todo"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 2,
- 							"col_span_control": 4,
- 							"validator": "must;kneb_qc26_ff"
- 						},
- 						{
- 							"name": "knebVisiblePrev",
- 							"type": "javascript-block",
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "knebQuiz",
- 							"type": "javascript-block",
- 							"col_span_control": 1
- 						}
- 					]
+ 					}
  				}
  			]
  		},
@@ -10157,7 +10018,1327 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306simtool1"
+ 			"generator_func_name": "kneb202306simtool2"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- qc25hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- qc25hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003enicht si\u0026shy;cher\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"en": "\u003csmall\u003enot sure\u003c/small\u003e         \u003cdiv\u003e0\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003esehr si\u0026shy;cher\u003c/small\u003e      \u003cdiv\u003e10\u003c/div\u003e",
+ 								"en": "\u003csmall\u003every sure\u003c/small\u003e        \u003cdiv\u003e10\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qc25_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_34",
+ 				"en": "PageLabel_34"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306simtool3"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- qc26hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- qc26hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003enicht si\u0026shy;cher\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"en": "\u003csmall\u003enot sure\u003c/small\u003e         \u003cdiv\u003e0\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " 5 ",
+ 								"en": " 5 "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "\u003csmall\u003esehr si\u0026shy;cher\u003c/small\u003e      \u003cdiv\u003e10\u003c/div\u003e",
+ 								"en": "\u003csmall\u003every sure\u003c/small\u003e        \u003cdiv\u003e10\u003c/div\u003e"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "8"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "9"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "10"
+ 						},
+ 						{
+ 							"name": "qc26_how_sicher",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "11"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr    1fr ",
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_36",
+ 				"en": "PageLabel_36"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306simtool4"
  		},
  		{
  			"label": {
@@ -19449,7 +20630,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg42"
+ 								"pageID": "pg46"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -23015,7 +24196,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "51",
+ 							"response": "55",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

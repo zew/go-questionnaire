@@ -67,6 +67,7 @@ window.addEventListener("load", function (event) {
     } catch (err) {
         console.error("attaching event handlers to cleanse dots", err)
     }
+    console.log("paste and dot-replacer installed ")
 
 
 

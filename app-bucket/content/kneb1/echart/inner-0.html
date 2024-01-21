@@ -434,35 +434,36 @@
 
     const nameInstance = `${core}_${inst.value}`;
     const el = document.getElementById(nameInstance);
-    if (!inst) {
-       throw `hidden input ${core}_${inst.value} required`;
+    if (!el) {
+      throw `hidden input ${core}_${inst.value} required`;
     }
     return el
 
 
   };
 
+
   // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
   // init
   var sb = 100.0; // sparbetrag - defined in echart-config.mjs
   var sbInp   = document.getElementById("sparbetrag");
-  // var sbInpBG = document.getElementById("sparbetrag_bg");
   var sbInpBG = getBackgroundField("sparbetrag_bg");
+  
   if (sbInpBG && sbInpBG.value !== "") {
-      sb = parseInt(sbInpBG.value);
+    sb = parseInt(sbInpBG.value);  // restore from before
   }
   if (sbInp) {
-      sbInp.value = sb;
+    sbInp.value = sb;
   }
-
-  // var safeBG   = document.getElementById("share_safe_bg"); // defined in echart-config.mjs
+  
   var safeBG   = getBackgroundField("share_safe_bg"); // defined in echart-config.mjs
-  // var riskyBG  = document.getElementById("share_risky_bg");
   var riskyBG  = getBackgroundField("share_risky_bg");
   if (safeBG && safeBG.value != "" ) {
+    // nothing to copy/restore - we use safeBG.value directly in our computations  
   } else if (safeBG && safeBG.value === "" ) {
-      safeBG.value = 50
-      riskyBG.value = 100 - safeBG.value
+    // init
+    safeBG.value = 50
+    riskyBG.value = 100 - safeBG.value
   }
 
   console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)

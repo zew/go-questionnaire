@@ -548,9 +548,11 @@ func init() {
 	validators["kneb_simtool_inst_0"] = func(q *QuestionnaireT, inp *inputT) error {
 
 		fields := []string{
-			"share_safe_bg_",
-			"share_risky_bg_",
 			"sparbetrag_bg_",
+
+			// clean or dirty is indistinguishable
+			// "share_safe_bg_",
+			// "share_risky_bg_",
 		}
 		suffix := "0"
 
@@ -574,9 +576,10 @@ func init() {
 	validators["kneb_simtool_inst_4"] = func(q *QuestionnaireT, inp *inputT) error {
 
 		fields := []string{
+			"sparbetrag_bg_",
+			// clean or dirty is indistinguishable
 			"share_safe_bg_",
 			"share_risky_bg_",
-			"sparbetrag_bg_",
 		}
 		suffix := inp.Name[len(inp.Name)-1:]
 

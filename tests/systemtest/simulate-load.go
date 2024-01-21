@@ -274,7 +274,7 @@ func clientPageToServer(
 	ctr.Reset()
 
 	// dynamic pages - changes on previous input
-	kv := clQ.DynamicPageValues()
+	kv := clQ.DynamicPageValues(-1)
 	err := clQ.DynamicPages(-1)
 	if err != nil {
 		t.Fatalf("dyn page creation on client q: %v", err)

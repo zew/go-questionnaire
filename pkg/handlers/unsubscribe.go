@@ -40,6 +40,7 @@ func adminEmail() []string {
 type unsubscribeT struct {
 	Project string `json:"project"`
 	Task    string `json:"task"`
+	All     bool   `json:"all"` // all tasks
 	Email   string `json:"email"`
 	Date    string `json:"date"`
 	Path    string `json:"path"`  // the original URL path
@@ -48,21 +49,11 @@ type unsubscribeT struct {
 	Response template.HTML `json:"response"`
 }
 
-func (us unsubscribeT) String() string {
-	b := &bytes.Buffer{}
-	fmt.Fprintf(b, "Project:  %v\n", us.Project)
-	fmt.Fprintf(b, "Task:     %v\n", us.Task)
-	fmt.Fprintf(b, "Email:    %v\n", us.Email)
-	fmt.Fprintf(b, "Date:     %v\n", us.Date)
-	fmt.Fprintf(b, "Response: %v\n", us.Response)
-	fmt.Fprintf(b, "Path:     %v\n", us.Path)
-	fmt.Fprintf(b, "Query:    %v\n", us.Query)
-	return b.String()
-}
 func (us unsubscribeT) CSVHeader() string {
 	b := &bytes.Buffer{}
 	fmt.Fprintf(b, "%v;", "project")
 	fmt.Fprintf(b, "%v;", "task")
+	// fmt.Fprintf(b, "%v;", "all")
 	fmt.Fprintf(b, "%v;", "email")
 	fmt.Fprintf(b, "%v;", "date")
 	fmt.Fprintf(b, "%v;", "path")
@@ -74,11 +65,22 @@ func (us unsubscribeT) CSVRow() string {
 	b := &bytes.Buffer{}
 	fmt.Fprintf(b, "%v;", us.Project)
 	fmt.Fprintf(b, "%v;", us.Task)
+	// fmt.Fprintf(b, "%v;", us.All)
 	fmt.Fprintf(b, "%v;", us.Email)
 	fmt.Fprintf(b, "%v;", us.Date)
 	fmt.Fprintf(b, "%v;", us.Path)
 	fmt.Fprintf(b, "%v;", us.Query)
 	fmt.Fprint(b, "\n")
+	return b.String()
+}
+func (us unsubscribeT) String() string {
+	// prevent repetition...
+	b := &bytes.Buffer{}
+	hds := strings.Split(strings.TrimSpace(us.CSVHeader()), ";")
+	els := strings.Split(strings.TrimSpace(us.CSVRow()), ";")
+	for i := 0; i < len(els); i++ {
+		fmt.Fprintf(b, "%-20v: %v\n", hds[i], els[i])
+	}
 	return b.String()
 }
 
@@ -163,6 +165,10 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 	Project     <input type="text"   name="project"   value="{{.Project}}"> <br>
 	Task        <input type="text"   name="task"      value="{{.Task}}">    <br>
 	Email       <input type="text"   name="email"     value="{{.Email}}">   <br>
+
+	<br>
+	All tasks    <input type="checkbox"  name="all"   value="true"  >      <br>
+
 	            <button id="submit" accesskey="s" autofocus>  <u>S</u>ubmit  </button>  <br>
 
 	{{if gt (len .Response   ) 0 }} <p style="font-size:120%">{{.Response   }}</p>{{end}}
@@ -185,22 +191,29 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// data from URL path
-	pths := strings.Split(r.URL.Path, "/") // path.SplitList(r.URL.Path) does not exist
+	dirs := strings.Split(r.URL.Path, "/") // path.SplitList(r.URL.Path) does not exist
 	// pths[0...x] is "/.../.../unsubscribe/proj/tsk/someemail"
 	// from the end...
-	ln := len(pths) - 1
-	// third last path element: project
-	if pths[ln-2] != "" {
-		fe.Project = pths[ln-2]
+	if len(dirs) > 3 {
+		ln := len(dirs) - 1
+		// third last path element: project
+		if dirs[ln-2] != "" {
+			fe.Project = dirs[ln-2]
+		}
+		// second last path element: task
+		if dirs[ln-1] != "" {
+			fe.Task = dirs[ln-1]
+		}
+		// last path element: email
+		if dirs[ln-0] != "" {
+			fe.Email = dirs[ln-0]
+			fe.Email = strings.ReplaceAll(fe.Email, "pct40", "@")
+		}
 	}
-	// second last path element: task
-	if pths[ln-1] != "" {
-		fe.Task = pths[ln-1]
-	}
-	// last path element: email
-	if pths[ln-0] != "" {
-		fe.Email = pths[ln-0]
-		fe.Email = strings.ReplaceAll(fe.Email, "pct40", "@")
+
+	// all supersedes task
+	if fe.All {
+		fe.Task = "all"
 	}
 
 	//

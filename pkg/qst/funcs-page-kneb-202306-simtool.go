@@ -45,7 +45,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 
 	page.WidthMax("58rem")
 
-	valFunc := fmt.Sprintf("kneb_simtool_inst_%v", 0)
+	valFunc := fmt.Sprintf("kneb_simtool_inst_%v", instance)
 	if instance != 0 && instance != 4 {
 		valFunc = ""
 	}

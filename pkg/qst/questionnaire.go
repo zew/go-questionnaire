@@ -810,6 +810,7 @@ func (q *QuestionnaireT) FindNewPage(sess *sessx.SessT) {
 }
 
 // CurrentPageHTML is a comfort shortcut to PageHTML
+// called in html template
 func (q *QuestionnaireT) CurrentPageHTML() (string, error) {
 	return q.PageHTML(q.CurrPage)
 }
@@ -1015,13 +1016,25 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	page := q.Pages[pageIdx]
 
-	kv := q.DynamicPageValues()
-	err := q.DynamicPages(pageIdx)
-	if err != nil {
-		err = fmt.Errorf("dyn page creation in PageHTML() q: %w", err)
-		return err.Error(), err
+	// dyn page
+	//     can we move this to the end of MainH in home.go
+	//
+	if page.GeneratorFuncName != "" {
+
+		kv := q.DynamicPageValues(pageIdx)
+		// kv := q.DynamicPageValues(-1)
+
+		err := q.DynamicPages(pageIdx)
+		if err != nil {
+			err = fmt.Errorf("dyn page creation in PageHTML() q: %w", err)
+			return err.Error(), err
+		}
+		hasContent := q.DynamicPagesApplyValues(kv)
+		if hasContent {
+			// we want to apply error checking only if previous data exists
+			_, _ = q.ValidateResponseData(pageIdx, q.LangCode)
+		}
 	}
-	q.DynamicPagesApplyValues(kv)
 
 	found := false
 	for _, lc := range q.LangCodes {
@@ -2030,7 +2043,7 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 	return tDerived, nil
 }
 
-func (q *QuestionnaireT) DynamicPageValues() map[string]string {
+func (q *QuestionnaireT) DynamicPageValues(onlyThisIndex int) map[string]string {
 
 	ret := map[string]string{}
 
@@ -2038,12 +2051,22 @@ func (q *QuestionnaireT) DynamicPageValues() map[string]string {
 		if q.Pages[i1].GeneratorFuncName == "" {
 			continue
 		}
+
+		if onlyThisIndex > -1 {
+			if onlyThisIndex != i1 {
+				continue
+			}
+		}
+
 		// log.Printf("\t\tpage %vi1 is dynamic...", i1)
 		page := q.Pages[i1]
 		cleanse := false
 		for i2 := 0; i2 < len(page.Groups); i2++ {
 			for i3 := 0; i3 < len(page.Groups[i2].Inputs); i3++ {
 				if page.Groups[i2].Inputs[i3].IsLayout() {
+					continue
+				}
+				if page.Groups[i2].Inputs[i3].Type == "javascript-block" {
 					continue
 				}
 				// keys = append(keys, page.Groups[i2].Inputs[i3].Name)
@@ -2063,7 +2086,7 @@ func (q *QuestionnaireT) DynamicPageValues() map[string]string {
 
 	return ret
 }
-func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) {
+func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) (hasContent bool) {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].GeneratorFuncName == "" {
 			continue
@@ -2075,10 +2098,17 @@ func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) {
 					continue
 				}
 				key := page.Groups[i2].Inputs[i3].Name
-				page.Groups[i2].Inputs[i3].Response = kv[key]
+				if v, ok := kv[key]; ok {
+					log.Printf("   applying previous key-val %-16v - %10v", key, v)
+					page.Groups[i2].Inputs[i3].Response = v
+					if strings.TrimSpace(v) != "" {
+						hasContent = true //
+					}
+				}
 			}
 		}
 	}
+	return hasContent
 }
 
 // DynamicPages dynamically re-creates groups and inputs

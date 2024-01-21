@@ -109,7 +109,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 			err = fmt.Errorf("dyn page creation on joined q: %w", err)
 			return q, err
 		}
-		kv := qSplit.DynamicPageValues() // notice we fetch the values from qSplit
+		kv := qSplit.DynamicPageValues(-1) // notice we fetch the values from qSplit
 		qBase.DynamicPagesApplyValues(kv)
 		log.Printf("\tdyn page values applied: #%v", len(kv))
 

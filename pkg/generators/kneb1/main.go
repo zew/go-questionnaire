@@ -2091,37 +2091,45 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": `
 
 					<p>
-						In diesem Teil unserer Umfrage geht es um 
+						Im Folgenden geht es um  
 						<i>Anbauentscheidungen in der Waldwirtschaft</i>.
+						<br>
+						<br>
 
-						Es gibt viele verschiedene Möglichkeiten, wie ein Waldstück bepflanzt werden kann.  
-						Wir stellen Ihnen eine dieser Möglichkeiten anhand eines Beispiels vereinfacht vor. 
-						
-						
+						Es gibt verschiedene Möglichkeiten, ein Waldstück zu bepflanzen. 						
+						Ein Beispiel: 
 						Eine Person besitzt einen Waldabschnitt und muss entscheiden, 
-						welche Baumarten sie anpflanzen möchte. 
-						Sie kann sich zwischen <i>zwei Arten</i> entscheiden.
+						welche <i>Baumarten</i> sie pflanzen möchte. Sie kann sich 
+						<i>zwischen zwei Arten</i>
+						entscheiden. 
+						
+						
 					</p>
 
 					<ul>
 						<li>
-						Baumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. 
-						Gleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.
-						Das bedeutet, dass die Erträge kaum schwanken.
+						<b>Baumart 1:</b> Diese Art wächst langsamer 
+							und erzielt im Durchschnitt geringere Erträge. 
+							Gleichzeitig ist sie widerstandsfähiger gegen Schädlinge. 
+							Das bedeutet, dass die Erträge kaum schwanken.
+							<br>
+							<br>
 						</li>
 						<li>
-						Baumart 2: Diese Art wächst schneller und kann im Durchschnitt höhere Erträge erzielen. 
-						Gleichzeitig ist sie jedoch anfälliger für Schädlinge.
-						Das bedeutet, dass die Erträge stärker schwanken können.
+							<b>Baumart 2:</b> Diese Art wächst schneller 
+							und erzielt im Durchschnitt höhere Erträge. 
+							Gleichzeitig ist sie anfälliger für Schädlinge. 
+							Das bedeutet, dass die Erträge stärker schwanken.
+							<br>
 						</li>			
 					</ul>
 
 					<p>
-						In unserer interaktiven Graphik auf der folgenden Seite versuchen wir, 
-						die <i>Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit</i> 
+						In einer interaktiven Graphik versuchen wir, 
+						die 
+						<i>Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit</i> 
 						der beiden Baumarten zu verdeutlichen. 
-						Wir nehmen an, dass der Preis 
-						für eine Einheit Holz für beide Baumarten gleich ist.
+						Wir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.					
 					</p>
 					
 
@@ -2168,28 +2176,57 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": `
-					<p>
-					In diesem Teil unserer Umfrage geht es um <i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>. 
-					Genügend finanzielle Mittel im Alter sind der Grundstein für einen sicheren und stabilen Ruhestand.
-
-					Vor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt niedriger ist 
-					als das Arbeitseinkommen während der Erwerbstätigkeit, 
-					ist es wichtig, dass man finanziell gut abgesichert ist.
-					</p>
 
 					<p>
-					Es gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. 
-					Im Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: 
-					<i>Einen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen</i>.
+						Im Folgenden geht es um
+						<i>Investitionsentscheidungen im Rahmen der Altersvorsorge</i>.
 					</p>
-
+						
 					<p>
-					In unserer interaktiven Graphik
-					auf der folgenden Seite 
-					versuchen wir, 
-					die <i>Chancen und Risiken</i> einer Anlage am Kapitalmarkt zu verdeutlichen.
+						Es gibt verschiedene Möglichkeiten für das Alter vorzusorgen.
+						Eine Möglichkeit ist
+						<i>einen monatlichen Geldbetrag über einen langen Zeithorizont zu sparen</i>.
 					</p>
 
+					<p>In diesem Beispiel kann eine Person zwischen zwei Anlageformen wählen.</p>
+
+					<ul>							
+						<li>
+							<i>Möglichkeit 1:</i> Sparen mit <b>Sparbuch</b>.
+							<br>
+							Ein Sparbuch ist eine <i>risikolose</i> Anlage und erzielt 
+							<i>konstante Renditen</i>. 
+							Das 
+							<i>angesparte Vermögen schwankt nicht</i>, 
+							ist im Durchschnitt jedoch <i>geringer</i>, 
+							da keine (hohen) Gewinne erzielt werden.
+							<br>
+							<br>
+						</li>
+						
+						<li>
+							<i>Möglichkeit 2</i>: Sparen mit <b>Aktien</b>. 
+							<br>
+							Aktien sind Wertpapiere, mit denen Aktionäre Anteile an Unternehmen erwerben.
+							<br>
+							Aktien haben ein 
+							 <i>höheres Risiko</i> 
+							 und erzielen 
+							 <i>im Durchschnitt</i> 
+							über einen längeren Zeitraum 
+							<i>höhere Renditen</i>. 
+							
+							Gleichzeitig können die Renditen 
+							und damit das angesparte Vermögen schwanken.
+							<br>
+						</li>
+					</ul>
+
+					<p>					
+						In einer interaktiven Graphik versuchen wir, 
+						die Abwägung zwischen <i>Chancen und Risiken</i> einer Anlage 
+						am Kapitalmarkt zu verdeutlichen.
+					</p>
 	
 					`,
 					"en": `
@@ -2290,11 +2327,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren jedes Jahr 100&nbsp;Bäume pflanzen. 
+						Frau Blau möchte über die Projektlaufzeit jedes Jahr 
+						100&nbsp;Bäume pflanzen. 
 						
 						Sie wählt einen Anteil von 60% an Baumart&nbsp;2 aus. 
 						
-						Wie hoch ist ihr prognostizierter Ertrag  in den  <i><u>besten 5 von 100&nbsp;Fällen</u></i>?	
+						Wie hoch ist ihr prognostizierter Ertrag  in den  
+						<i><u>besten 5 von 100&nbsp;Fällen</u></i>?	
 					`,
 					"en": `todo`,
 				}.OutlineHid("C24.")

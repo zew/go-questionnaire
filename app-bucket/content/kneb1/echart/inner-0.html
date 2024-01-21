@@ -414,27 +414,31 @@
   // the three fields for permanent storage of parameters in the database
   //   come in two distinct instances, separated by "_0" and "_1"
   const getBackgroundField = core => {
-    const nameInstance0 = `${core}_0`;
-    const el0 = document.getElementById(nameInstance0);
-    if (el0) {
+
+    const inst = document.getElementById("simtool_instance");
+    if (!inst) {
+       throw `hidden input 'simtool_instance' required`;
+    }
+
+    if (inst.value === "0") {
       toolHeadline.innerHTML = `
         Probieren Sie die interaktive Graphik selbst aus. 
-        
       `;
-      return el0
-    }
-    const nameInstance1 = `${core}_1`;
-    const el1 = document.getElementById(nameInstance1);
-    if (el1) {
-      // Welche Werte würden Sie in der interaktiven Graphik für den Forstwirt wählen?
+    } else if (inst.value === "1") {
       toolHeadline.innerHTML = `
         Welche Anzahl an Bäumen und welchen Anteil von Baumart 2 
         würden Sie der Person aus unserem Beispiel empfehlen?
       `;
-      return el1
     }
 
-    throw `${core}_0 nor ${core}_1 do exist` ; 
+    const nameInstance = `${core}_${inst.value}`;
+    const el = document.getElementById(nameInstance);
+    if (!inst) {
+       throw `hidden input ${core}_${inst.value} required`;
+    }
+    return el
+
+
   };
 
   // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs

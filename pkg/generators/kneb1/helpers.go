@@ -1745,7 +1745,12 @@ func labelsExpectedValueRisk() []trl.S {
 		},
 		// 2023-12: doch wieder
 		{
-			"de": "ich weiß nicht",
+			"de": "weiß nicht",
+			"en": "todo",
+		},
+		// 2024-01-21: neu: keine Angabe
+		{
+			"de": "keine Angabe",
 			"en": "todo",
 		},
 	}

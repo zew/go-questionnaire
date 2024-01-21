@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d7eba584d9ba49743e7bcf2a2ab164217fc49dfe8e1dc95ab8d36013d91a12d2",
+ 	"md_5": "366abd5c0960be389de73590978ebece09ae1d6f67784d332e54f8a36109e2e7",
  	"lang_codes": [
  		"de"
  	],
@@ -9191,7 +9191,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\n\t\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten, wie ein Waldstück bepflanzt werden kann.  \n\t\t\t\t\t\tWir stellen Ihnen eine dieser Möglichkeiten anhand eines Beispiels vereinfacht vor. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche Baumarten sie anpflanzen möchte. \n\t\t\t\t\t\tSie kann sich zwi\u0026shy;schen \u003ci\u003ezwei Arten\u003c/i\u003e entscheiden.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 1: Diese Art wächst langsamer und erzielt somit im Durchschnitt weniger Erträge. \n\t\t\t\t\t\tGleichzeitig ist sie sehr widerstandsfähig gegen Schädlinge.\n\t\t\t\t\t\tDas bedeutet, dass die Erträge kaum schwanken.\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tBaumart 2: Diese Art wächst schneller und kann im Durchschnitt hö\u0026shy;here Erträge erzielen. \n\t\t\t\t\t\tGleichzeitig ist sie jedoch anfälliger für Schädlinge.\n\t\t\t\t\t\tDas bedeutet, dass die Erträge stärker schwanken können.\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn unserer interaktiven Graphik auf der folgenden Seite versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\tWir nehmen an, dass der Preis \n\t\t\t\t\t\tfür eine Einheit Holz für beide Baumarten gleich ist.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um  \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten, ein Waldstück zu bepflanzen. \t\t\t\t\t\t\n\t\t\t\t\t\tEin Beispiel: \n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e sie pflanzen möchte. Sie kann sich \n\t\t\t\t\t\t\u003ci\u003ezwi\u0026shy;schen zwei Arten\u003c/i\u003e\n\t\t\t\t\t\tentscheiden. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\u003cb\u003eBaumart 1:\u003c/b\u003e Diese Art wächst langsamer \n\t\t\t\t\t\t\tund erzielt im Durchschnitt geringere Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie widerstandsfähiger gegen Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge kaum schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003cb\u003eBaumart 2:\u003c/b\u003e Diese Art wächst schneller \n\t\t\t\t\t\t\tund erzielt im Durchschnitt hö\u0026shy;here Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie anfälliger für Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge stärker schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \n\t\t\t\t\t\t\u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\tWir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -9242,7 +9242,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil unserer Umfrage geht es um \u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e. \n\t\t\t\t\tGenügend finanzielle Mittel im Alter sind der Grundstein für einen si\u0026shy;cheren und stabilen Ruhestand.\n\n\t\t\t\t\tVor allem im Ruhestand, wenn das regelmäßige Renteneinkommen im Durchschnitt nied\u0026shy;riger ist \n\t\t\t\t\tals das Arbeitseinkommen während der Erwerbstätigkeit, \n\t\t\t\t\tist es wich\u0026shy;tig, dass man finanziell gut abgesi\u0026shy;chert ist.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tEs gibt viele verschiedene Möglichkeiten für das Alter vorzusorgen. \n\t\t\t\t\tIm Folgenden stellen wir Ihnen eine dieser Möglichkeiten vor: \n\t\t\t\t\t\u003ci\u003eEinen monatlichen Sparbetrag über einen längeren Zeithorizont am Kapitalmarkt anzulegen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn unserer interaktiven Graphik\n\t\t\t\t\tauf der folgenden Seite \n\t\t\t\t\tversuchen wir, \n\t\t\t\t\tdie \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage am Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag über einen langen Zeithorizont zu sparen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine \u003ci\u003erisikolose\u003c/i\u003e Anlage und erzielt \n\t\t\t\t\t\t\t\u003ci\u003ekonstante Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \n\t\t\t\t\t\t\t\u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, \n\t\t\t\t\t\t\tda kei\u0026shy;ne (hohen) Gewinne erzielt werden.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \n\t\t\t\t\t\t\t \u003ci\u003ehö\u0026shy;heres Risiko\u003c/i\u003e \n\t\t\t\t\t\t\t und erzielen \n\t\t\t\t\t\t\t \u003ci\u003eim Durchschnitt\u003c/i\u003e \n\t\t\t\t\t\t\tüber einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tGleichzeitig können die Renditen \n\t\t\t\t\t\t\tund damit das angesparte Vermögen schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -9395,7 +9395,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über einen Zeitraum von 20\u0026nbsp;Jahren jedes Jahr 100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den  \u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- C24. --\u003e\n\t\t\t\t\t\tFrau Blau möchte über die Projektlaufzeit jedes Jahr \n\t\t\t\t\t\t100\u0026nbsp;Bäume pflanzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tSie wählt einen Anteil von 60% an Baumart\u0026nbsp;2 aus. \n\t\t\t\t\t\t\n\t\t\t\t\t\tWie hoch ist ihr prognostizierter Ertrag  in den  \n\t\t\t\t\t\t\u003ci\u003e\u003cu\u003ebesten 5 von 100\u0026nbsp;Fällen\u003c/u\u003e\u003c/i\u003e?\t\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- C24. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 3,
@@ -16560,7 +16560,7 @@
  							"name": "qfl6_expectedvalue",
  							"type": "radio",
  							"label": {
- 								"de": "ich weiß nicht",
+ 								"de": "weiß nicht",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -16568,6 +16568,36 @@
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
  							"value_radio": "3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qfl6_expectedvalue",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "4",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},

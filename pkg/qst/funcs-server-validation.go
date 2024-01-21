@@ -544,27 +544,53 @@ func init() {
 		return nil
 	}
 
-	validators["kneb_simtool_q1_0"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response == "" {
-			return errors.New(`Anzahl Bäume einmal ändern.`)
+	// first instance - at least one input must
+	validators["kneb_simtool_inst_0"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		fields := []string{
+			"share_safe_bg_",
+			"share_risky_bg_",
+			"sparbetrag_bg_",
+		}
+		suffix := "0"
+
+		atLeastOne := false
+		for _, fld := range fields {
+			fld = fld + suffix
+			nb := q.ByName(fld)
+			// summand, _ := strconv.Atoi(nb.Response)
+			if nb.Response != "" {
+				atLeastOne = true
+			}
+		}
+
+		if !atLeastOne {
+			return errors.New(`Bitte Anteil oder Anzahl ändern.`)
 		}
 		return nil
 	}
-	validators["kneb_simtool_q2_0"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response == "" {
-			return errors.New(`Anteil zweite Baumart einmal ändern.`)
+
+	// all inputs must
+	validators["kneb_simtool_inst_1"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		fields := []string{
+			"share_safe_bg_",
+			"share_risky_bg_",
+			"sparbetrag_bg_",
 		}
-		return nil
-	}
-	validators["kneb_simtool_q1_1"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response == "" {
-			return errors.New(`Sparbetrag einmal ändern.`)
+		suffix := inp.Name[len(inp.Name)-1:]
+
+		anyEmpty := false
+		for _, fld := range fields {
+			fld = fld + suffix
+			nb := q.ByName(fld)
+			if nb.Response == "" {
+				anyEmpty = true
+			}
 		}
-		return nil
-	}
-	validators["kneb_simtool_q2_1"] = func(q *QuestionnaireT, inp *inputT) error {
-		if inp.Response == "" {
-			return errors.New(`Aktienanteil einmal ändern`)
+
+		if anyEmpty {
+			return errors.New(`Bitte Anteil oder Anzahl ändern.`)
 		}
 		return nil
 	}

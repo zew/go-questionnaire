@@ -180,15 +180,14 @@ func TestSystem(t *testing.T) {
 		if surveyID == "peu2018-or-special-survey-name" {
 			//
 		}
+		if qTpl.Survey.Year < 2023 {
+			// continue
+		}
 		if surveyID == "kneb1" {
 			continue
 		}
 
-		// if surveyID != "pds" {
-		// 	continue
-		// }
-
-		// if q.Survey.String() != "fmt-2021-08" {
+		// if surveyID == "pds" {
 		// 	continue
 		// }
 

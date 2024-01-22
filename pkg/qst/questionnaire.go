@@ -2066,9 +2066,10 @@ func (q *QuestionnaireT) DynamicPageValues(onlyThisIndex int) map[string]string 
 				if page.Groups[i2].Inputs[i3].IsLayout() {
 					continue
 				}
-				if page.Groups[i2].Inputs[i3].Type == "javascript-block" {
-					continue
-				}
+				// this caused the tests to fail
+				// if page.Groups[i2].Inputs[i3].Type == "javascript-block" {
+				// 	continue
+				// }
 				// keys = append(keys, page.Groups[i2].Inputs[i3].Name)
 				val := page.Groups[i2].Inputs[i3].Response
 				if cleanse {

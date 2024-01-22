@@ -492,7 +492,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 3
 			var radioValues = []string{
 				"none",
-				"inprogress",
+				// "inprogress",
 
 				"haupt_noapp",
 				"haupt_withapp",
@@ -506,10 +506,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": "Keinen allgemeinen Schulabschluss",
 					"en": "todo",
 				},
-				{
-					"de": "Noch in schulischer Ausbildung",
-					"en": "todo",
-				},
+				// {
+				// 	"de": "Noch in schulischer Ausbildung",
+				// 	"en": "todo",
+				// },
 
 				{
 					"de": "Hauptschule/ Volksschule <i>ohne</i> abgeschlossene Lehre",
@@ -1124,8 +1124,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<small>
 					Antworten Sie bitte anhand der folgenden Skala,
-					wobei der Wert&nbsp;0 bedeutet: gar nicht risikobereit
-					und der Wert&nbsp;10:&nbsp;sehr risikobereit.
+					wobei der Wert&nbsp;0 bedeutet "gar nicht risikobereit"
+					und der Wert&nbsp;10 "sehr risikobereit".
 					Mit den Werten dazwischen können Sie Ihre Einschätzung abstufen.
 					</small>
 				`,
@@ -1165,8 +1165,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `An welchen Lebensbereich oder an welche Entscheidungssituation 
-						haben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beantwortet haben?
+					"de": `
+					An welchen Lebensbereich oder an welche Entscheidungen haben Sie gedacht, 
+					als Sie diese Frage beantwortet haben?
 						<small>Bitte geben Sie ein oder mehrere Stichwörter an.</small>
 					`,
 					"en": `todo`,
@@ -1205,7 +1206,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate11,
-				labelsRiskFin(),
+				// labelsRiskFin(),
+				labelsRisk(),
 				[]string{"qr3_averse_fin"},
 				radioVals11,
 				[]trl.S{{"de": ``, "en": ``}},
@@ -1218,10 +1220,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					</span>
 
 					<small>
-						Antworten Sie bitte anhand der folgenden Skala, 
-						wobei der Wert&nbsp;0 bedeutet: nicht bereit, ein Risiko einzugehen 
-						und der Wert&nbsp;10: bereit, ein erhebliches Risiko einzugehen,
-						um potenziell eine höhere Rendite zu erzielen.
+							Antworten Sie bitte anhand der folgenden Skala, 
+							wobei der Wert&nbsp;0 bedeutet "gar nicht risikobereit" 
+							und der Wert&nbsp;10 "sehr risikobereit", 
+							um potenziell eine höhere Rendite zu erzielen.
 					</small>
 				`,
 				"en": `
@@ -1581,7 +1583,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": `
-					Wie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?
+					Wie beurteilen Sie Ihr eigenes Wissen hinsichtlich finanzieller Angelegenheiten?
 				`,
 				"en": `
 					todo
@@ -1633,7 +1635,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				<br>
 				<br>
 
-				Persönliche Finanzen finde ich langweilig.
+				Ich finde es langweilig, mich mit meinen Finanzen auseinanderzusetzen.
 
 				`,
 				"en": `
@@ -1651,7 +1653,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": `
-				Im Großen und Ganzen vertraue ich anderen Menschen.
+				Im Allgemeinen vertraue ich anderen Menschen.
 
 				`,
 				"en": `
@@ -1728,10 +1730,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 
 						<small>
-						Antworten Sie bitte anhand der folgenden Skala,
-						wobei der Wert&nbsp;0 "Kein Vertrauen in die eigenen Fähigkeiten" 
-						bedeutet
-						und der Wert&nbsp;10 "Hohes Vertrauen in die eigenen Fähigkeiten".
+						Antworten Sie bitte anhand der folgenden Skala, 
+						wobei der Wert&nbsp;0 "kein Vertrauen in die eigene Fähigkeit" bedeutet 
+						und der Wert&nbsp;10 "hohes Vertrauen in die eigene Fähigkeit".
+
+
 						</small>
 
 
@@ -2019,8 +2022,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					Stimmen Sie der folgenden Aussage zu:
-					„Die Anlage in Aktien eines einzelnen Unternehmens ist weniger riskant
-					als die Anlage in einem Fonds mit Aktien ähnlicher Unternehmen“?
+					"Die Anlage in Aktien eines einzelnen Unternehmens ist weniger riskant
+					als die Anlage in einem Fonds mit Aktien ähnlicher Unternehmen"?
 				`,
 				"en": `
 					todo
@@ -2108,18 +2111,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<ul>
 						<li>
-						<b>Baumart 1:</b> Diese Art wächst langsamer 
-							und erzielt im Durchschnitt geringere Erträge. 
-							Gleichzeitig ist sie widerstandsfähiger gegen Schädlinge. 
-							Das bedeutet, dass die Erträge kaum schwanken.
+						<b>Baumart 1:</b> Diese Art wächst <i>langsamer</i> 
+							und erzielt im Durchschnitt <i>geringere Erträge</i>. 
+							Gleichzeitig ist sie <i>widerstandsfähiger</i> gegen Schädlinge. 
+							Das bedeutet, dass die Erträge <i>kaum schwanken</i>.
 							<br>
 							<br>
 						</li>
 						<li>
-							<b>Baumart 2:</b> Diese Art wächst schneller 
+							<b>Baumart 2:</b> Diese Art wächst <i>schneller</i> 
 							und erzielt im Durchschnitt höhere Erträge. 
-							Gleichzeitig ist sie anfälliger für Schädlinge. 
-							Das bedeutet, dass die Erträge stärker schwanken.
+							Gleichzeitig ist sie <i>anfälliger</i> für Schädlinge. 
+							Das bedeutet, dass die Erträge <i>stärker schwanken</i>.
 							<br>
 							<br>
 						</li>			
@@ -2127,10 +2130,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<p>
 						In einer interaktiven Graphik versuchen wir, 
-						die 
-						<i>Abwägung zwischen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit</i> 
-						der beiden Baumarten zu verdeutlichen. 
-						Wir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.					
+						die <i>Abwägung zwischen Ertrag und Widerstandsfähigkeit</i> 
+						beider Baumarten zu verdeutlichen. 
+					
+						Der Preis für beide Baumarten ist in unserem Beispiel gleich.
+					
 					</p>
 					`,
 					"en": `
@@ -2184,7 +2188,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<p>
 						Es gibt verschiedene Möglichkeiten für das Alter vorzusorgen.
 						Eine Möglichkeit ist
-						<i>einen monatlichen Geldbetrag über einen langen Zeithorizont zu sparen</i>.
+						<i>einen monatlichen Geldbetrag</i> über einen <i>langen Zeithorizont</i> zu sparen.
 					</p>
 
 					<p>In diesem Beispiel kann eine Person zwischen zwei Anlageformen wählen.</p>
@@ -2193,12 +2197,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<li>
 							<i>Möglichkeit 1:</i> Sparen mit <b>Sparbuch</b>.
 							<br>
-							Ein Sparbuch ist eine <i>risikolose</i> Anlage und erzielt 
-							<i>konstante Renditen</i>. 
-							Das 
-							<i>angesparte Vermögen schwankt nicht</i>, 
-							ist im Durchschnitt jedoch <i>geringer</i>, 
-							da keine (hohen) Gewinne erzielt werden.
+							Ein Sparbuch ist eine Anlage mit <i>geringem Risiko</i> 
+							und erzielt <i>konstante Erträge</i>. 
+							Das <i>angesparte Vermögen schwankt nicht</i>, 
+							ist im Durchschnitt jedoch <i>geringer</i>, da die Erträge gering sind.
 							<br>
 							<br>
 						</li>
@@ -2208,15 +2210,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 							<br>
 							Aktien sind Wertpapiere, mit denen Aktionäre Anteile an Unternehmen erwerben.
 							<br>
-							Aktien haben ein 
-							 <i>höheres Risiko</i> 
-							 und erzielen 
-							 <i>im Durchschnitt</i> 
-							über einen längeren Zeitraum 
-							<i>höhere Renditen</i>. 
-							
-							Gleichzeitig können die Renditen 
-							und damit das angesparte Vermögen schwanken.
+							Aktien haben ein <i>höheres Risiko</i> und erzielen 
+							<i>im Durchschnitt</i> über einen längeren Zeitraum 
+							<i>höhere Erträge</i>. 
+							Gleichzeitig können die Renditen und
+							 der Gesamtwert des angesparten Vermögens <i>schwanken</i>.
+
 							<br>
 							<br>
 						</li>
@@ -2270,6 +2269,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.GeneratorFuncName = "kneb202306guidedtourN6"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "kneb202306guidedtourN7"
 	}
 
 	// page experiment chart 0
@@ -2382,7 +2385,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `todo`,
 				},
 				{
-					"de": `Wie informiert fühlen Sie sich über das gezeigte Szenario in der interaktiven Graphik?`,
+					"de": `Ich fühle mich durch die gezeigten Fälle in der interaktiven Graphik gut informiert.`,
 					"en": `todo`,
 				},
 			}
@@ -2399,16 +2402,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": "<small>todo</small> <div>10</div>",
 				}
 				// distinct for last
-				if i == len(inputs)-1 {
-					lbls[0] = trl.S{
-						"de": "<small>ganz und gar uninformiert</small>     <div>0</div>",
-						"en": "<small>todo</small>     <div>0</div>",
-					}
-					lbls[10] = trl.S{
-						"de": "<small>ganz und gar informiert</small>       <div>10</div>",
-						"en": "<small>todo</small> <div>10</div>",
-					}
-				}
+				// if i == len(inputs)-1 {
+				// 	lbls[0] = trl.S{
+				// 		"de": "<small>ganz und gar uninformiert</small>     <div>0</div>",
+				// 		"en": "<small>todo</small>     <div>0</div>",
+				// 	}
+				// 	lbls[10] = trl.S{
+				// 		"de": "<small>ganz und gar informiert</small>       <div>10</div>",
+				// 		"en": "<small>todo</small> <div>10</div>",
+				// 	}
+				// }
 
 				gb := qst.NewGridBuilderRadiosWithValidator(
 					columnTemplate11,
@@ -2490,11 +2493,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-					Im Folgenden geht es um Tipps in Bezug auf die Altersvorsorge.
-					<br>
-					<br>
-					Welche <i>drei</i> Tipps würden Sie einem Freund oder einer Freundin geben, 
-					wenn um das Sparen für die Altersvorsorge geht?
+					Welche Tipps würden Sie einem Freund oder einer Freundin geben, 
+					wenn es um das Sparen für die Altersvorsorge geht? 
+					Bitte beschreiben Sie Ihre Hinweise in einigen kurzen Sätzen oder Stichpunkten.
+
 					`,
 					"en": `todo`,
 				}.OutlineHid("T1.")
@@ -2545,23 +2547,24 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		lblsQ := []trl.S{
 			{
 				"de": `
-					Würden Sie einem Freund oder einer Freundin, 
-					die gerade ins Berufsleben startet sind, empfehlen, 
-					sofort mit dem Sparen für das Alter anzufangen?
+					Würden  Sie einem Freund oder einer Freundin empfehlen, am Kapitalmarkt zu investieren?
 				`,
 				"en": `todo`,
 			},
 			{
 				"de": `
-					Würden Sie einem Freund oder einer Freundin empfehlen, 
-					am Kapitalmarkt zu investieren?					
+					Bitte denken Sie an einen Freund oder eine Freundin, die gerade ins Berufsleben startet.
+					<br>
+					Würden Sie ihm oder ihr empfehlen, sofort mit dem Sparen für das Alter anzufangen?
+				
 				`,
 				"en": `todo`,
 			},
 			{
 				"de": `
-					Würden Sie einem Freund oder ein Freundin empfehlen, 
-					sich professionell zum Thema Rente und Finanzen beraten zu lassen?
+					Bitte denken Sie an einen Freund oder eine Freundin, die noch keine Erfahrung beim Thema Rente und Finanzen haben.
+					<br>	
+					Würden Sie einem Freund oder einer Freundin empfehlen, sich professionell zum Thema Rente und Finanzen beraten zu lassen?		
 				`,
 				"en": `todo`,
 			},
@@ -2637,9 +2640,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 						<small>
 						Antworten Sie bitte anhand der folgenden Skala,
-						wobei der Wert&nbsp;0 "Kein Vertrauen in die eigenen Fähigkeiten" 
-						bedeutet
-						und der Wert&nbsp;10 "Hohes Vertrauen in die eigenen Fähigkeiten".
+						wobei der Wert&nbsp;0 "Kein Vertrauen in die eigene Fähigkeit" bedeutet
+						und der Wert&nbsp;10 "Hohes Vertrauen in die eigene Fähigkeit".
 						</small>
 					`,
 				"en": `
@@ -3054,18 +3056,84 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			false,
 		)
 
-		yesNo(
-			*qst.WrapPageT(page),
-			trl.S{
+		// B5. was yesNo()
+		// but got a third option 2024-01
+		{
+
+			lbl := trl.S{
 				"de": `
-					Würden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?
-				`,
+						Würden Sie es vorziehen, 
+						wenn eine andere Person finanzielle Entscheidungen für Sie trifft?
+					`,
 				"en": `todo`,
-			},
-			"qb5_delegate",
-			"B5.",
-			false,
-		)
+			}
+
+			radioValues := []string{
+				"yes",
+				"no",
+				"notapplicable",
+			}
+
+			labels := []trl.S{
+				{
+					"de": "&nbsp;&nbsp;ja",
+					"en": "yes",
+				},
+				{
+					"de": "nein",
+					"en": "no",
+				},
+				{
+					"de": "trifft nicht zu, ich treffe keine finanziellen Entscheidungen",
+					"en": "no",
+				},
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 8 + 1
+			gr.Cols = 6 + 1
+			gr.WidthMax("40rem")
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = lbl.OutlineHid("B5.")
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+
+			{
+				// vertical spacer
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "", "en": ""}
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Validator = "mustRadioGroup"
+				rad.Name = "qb5_delegate"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = gr.Cols
+				rad.ColSpan = 2
+				// if idx > 0 {
+				// 	rad.ColSpan = gr.Cols - 2 - 1
+				// }
+
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+				rad.ControlFirst()
+			}
+
+		}
 
 		// B6 is now on separate, conditional page
 
@@ -3231,7 +3299,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 					<span style="font-size:110%">
 					Wir stellen Ihnen nun eine Frage zum <i>Finanzvermögen</i>: <br>
-					Haben Sie (d.h. Ihr Haushalt) im Jahr   
+					Haben Sie (d.h. Ihr Haushalt) im Dezember   
 						<span style="font-size 120%; color:#e22;" >2023</span> 
 					eine der folgenden Vermögensarten besessen?
 					</span>
@@ -3347,6 +3415,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `todo`,
 			},
 			"qh2_gold",
+			"f)",
+			true,
+		)
+
+		// gr6
+		yesNo(
+			*qst.WrapPageT(page),
+			trl.S{
+				"de": `<span style="font-size:115%">Kryptowährungen</span>`,
+				"en": `todo`,
+			},
+			"qh2_crypto",
 			"f)",
 			true,
 		)
@@ -3537,7 +3617,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<span style="font-size:110%%">
 						Nun sind wir an Ihrem Altersvorsorgevermögen interessiert:<br>
 						
-						Haben Sie (d.h. Ihr Haushalt) im Jahr <span style="font-size 120%%; color:#e22;">2023</span> 
+						Haben Sie (d.h. Ihr Haushalt) im Dezember <span style="font-size 120%%; color:#e22;">2023</span> 
 						einen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?
 					    </span>
 
@@ -3624,7 +3704,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `
 					<span style="font-size:115%">Staatlich geförderte private Altersvorsorge ("Riester-Rente")</span>
 					<small>
-					(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)
+					(staatlich geförderte und zertifizierte Sparanlagen, auch "Rürup-" bzw. Basisrenten)
 					</small>
 
 				`,
@@ -3721,7 +3801,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// knebDownloadURL
 			var labels = []trl.S{
 				{
-					"de": `Das E-Book „Einfach Genial investieren“ von Prof. Martin Weber `,
+					"de": `Das E-Book "Einfach Genial investieren" von Prof. Martin Weber `,
 					"en": `todo`,
 				},
 				{
@@ -3729,7 +3809,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `todo`,
 				},
 				{
-					"de": `Link zur Verbraucherzentrale  mit einer Übersicht zum Thema „Alles zur Geldanlage: Das müssen Sie dazu wissen“`,
+					"de": `Link zur Verbraucherzentrale  mit einer Übersicht zum Thema "Alles zur Geldanlage: Das müssen Sie dazu wissen"`,
 					"en": `todo`,
 				},
 				{

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "78af50bfeec6c70bfba23f8078cb9beafc3fb2b3f84e2f3475da54dab4d76646",
+ 	"md_5": "f80b40dbe4d468e5de19067bac64baa0704bbde56fe981c1ab0b1b4dd4a25c3d",
  	"lang_codes": [
  		"de"
  	],
@@ -27,7 +27,7 @@
  	"version_max": 4,
  	"assign_version": "version-from-login-url",
  	"version_effective": -2,
- 	"max_groups": 7,
+ 	"max_groups": 8,
  	"pages": [
  		{
  			"label": {
@@ -1413,53 +1413,6 @@
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
  							"value_radio": "none",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qd4_abschluss",
- 							"type": "radio",
- 							"label": {
- 								"de": "Noch in schulischer Ausbil\u0026shy;dung",
- 								"en": "todo"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "inprogress",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2982,7 +2935,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\n\t\t\t\t\tund der Wert\u0026nbsp;10:\u0026nbsp;sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit.\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- R1. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein:\n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch\n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet \"gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\"\n\t\t\t\t\tund der Wert\u0026nbsp;10 \"sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\".\n\t\t\t\t\tMit den Werten dazwi\u0026shy;schen können Sie Ihre Einschätzung abstufen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- R1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -3630,7 +3583,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R2. --\u003eAn welchen Lebensbereich oder an welche Entscheidungssi\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on \n\t\t\t\t\t\thaben Sie gedacht, als Sie die Frage nach dem allgemeinen Risiko beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- R2. --\u003e\n\t\t\t\t\tAn welchen Lebensbereich oder an welche Entscheidungen haben Sie gedacht, \n\t\t\t\t\tals Sie diese Frage beant\u0026shy;wortet haben?\n\t\t\t\t\t\t\u003csmall\u003eBitte geben Sie ein oder mehrere Stichwörter an.\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- R2. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
@@ -3701,7 +3654,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet: nicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen \n\t\t\t\t\t\tund der Wert\u0026nbsp;10: bereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen,\n\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet \"gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\" \n\t\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\", \n\t\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -3710,8 +3663,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003enicht bereit, ein Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen\u003c/small\u003e 0",
- 								"en": "todo"
+ 								"de": "\u003csmall\u003egar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\u003c/small\u003e 0",
+ 								"en": "\u003csmall\u003eno risk at all\u003c/small\u003e         0"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4150,8 +4103,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003ebereit, ein er\u0026shy;heb\u0026shy;liches Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen\u003c/small\u003e 10",
- 								"en": "todo"
+ 								"de": "\u003csmall\u003esehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\u003c/small\u003e   10",
+ 								"en": "\u003csmall\u003every fond of risk\u003c/small\u003e   10"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4352,7 +4305,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P1. --\u003e\n\t\t\t\t\tWie beurteilen Sie Ihr persönliches Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- P1. --\u003e\n\t\t\t\t\tWie beurteilen Sie Ihr ei\u0026shy;ge\u0026shy;nes Wissen hinsichtlich finanzieller Angelegenheiten?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- P1. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -5000,7 +4953,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P2. --\u003e\n\t\t\t\tWie sehr stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tPersönliche Finanzen finde ich langweilig.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- P2. --\u003e\n\t\t\t\tWie sehr stim\u0026shy;men Sie den folgenden Aussagen zu?\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tIch finde es langweilig, mich mit meinen Finanzen auseinanderzusetzen.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- P2. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -6232,7 +6185,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- P4. --\u003e\n\t\t\t\tIm Großen und Ganzen vertraue ich anderen Menschen.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- P4. --\u003e\n\t\t\t\tIm Allgemeinen vertraue ich anderen Menschen.\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- P4. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -7496,7 +7449,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;ne Fähigkeit\" bedeutet \n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;ne Fähigkeit\".\n\n\n\t\t\t\t\t\t\u003c/small\u003e\n\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- E1. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -8896,7 +8849,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL3. --\u003e\n\t\t\t\t\tStim\u0026shy;men Sie der folgenden Aussage zu:\n\t\t\t\t\t„Die Anlage in Aktien eines einzelnen Un\u0026shy;ter\u0026shy;neh\u0026shy;mens ist weniger riskant\n\t\t\t\t\tals die Anlage in einem Fonds mit Aktien ähnlicher Un\u0026shy;ter\u0026shy;neh\u0026shy;men“?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- FL3. --\u003e\n\t\t\t\t\tStim\u0026shy;men Sie der folgenden Aussage zu:\n\t\t\t\t\t\"Die Anlage in Aktien eines einzelnen Un\u0026shy;ter\u0026shy;neh\u0026shy;mens ist weniger riskant\n\t\t\t\t\tals die Anlage in einem Fonds mit Aktien ähnlicher Un\u0026shy;ter\u0026shy;neh\u0026shy;men\"?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- FL3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 4,
@@ -9191,7 +9144,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um  \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten, ein Waldstück zu bepflanzen. \t\t\t\t\t\t\n\t\t\t\t\t\tEin Beispiel: \n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e sie pflanzen möchte. Sie kann sich \n\t\t\t\t\t\t\u003ci\u003ezwi\u0026shy;schen zwei Arten\u003c/i\u003e\n\t\t\t\t\t\tentscheiden. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\u003cb\u003eBaumart 1:\u003c/b\u003e Diese Art wächst langsamer \n\t\t\t\t\t\t\tund erzielt im Durchschnitt geringere Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie widerstandsfähiger gegen Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge kaum schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003cb\u003eBaumart 2:\u003c/b\u003e Diese Art wächst schneller \n\t\t\t\t\t\t\tund erzielt im Durchschnitt hö\u0026shy;here Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie anfälliger für Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge stärker schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \n\t\t\t\t\t\t\u003ci\u003eAbwägung zwi\u0026shy;schen den beiden Eigenschaften Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tder beiden Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\tWir nehmen an, dass der Preis für eine Einheit Holz für beide Baumarten gleich ist.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um  \n\t\t\t\t\t\t\u003ci\u003eAnbauentscheidungen in der Waldwirt\u0026shy;schaft\u003c/i\u003e.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten, ein Waldstück zu bepflanzen. \t\t\t\t\t\t\n\t\t\t\t\t\tEin Beispiel: \n\t\t\t\t\t\tEine Person besitzt einen Waldabschnitt und muss entscheiden, \n\t\t\t\t\t\twelche \u003ci\u003eBaumarten\u003c/i\u003e sie pflanzen möchte. Sie kann sich \n\t\t\t\t\t\t\u003ci\u003ezwi\u0026shy;schen zwei Arten\u003c/i\u003e\n\t\t\t\t\t\tentscheiden. \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\u003cb\u003eBaumart 1:\u003c/b\u003e Diese Art wächst \u003ci\u003elangsamer\u003c/i\u003e \n\t\t\t\t\t\t\tund erzielt im Durchschnitt \u003ci\u003egeringere Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tGleichzeitig ist sie \u003ci\u003ewiderstandsfähiger\u003c/i\u003e gegen Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge \u003ci\u003ekaum schwanken\u003c/i\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003cb\u003eBaumart 2:\u003c/b\u003e Diese Art wächst \u003ci\u003eschneller\u003c/i\u003e \n\t\t\t\t\t\t\tund erzielt im Durchschnitt hö\u0026shy;here Erträge. \n\t\t\t\t\t\t\tGleichzeitig ist sie \u003ci\u003eanfälliger\u003c/i\u003e für Schädlinge. \n\t\t\t\t\t\t\tDas bedeutet, dass die Erträge \u003ci\u003estärker schwanken\u003c/i\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\t\t\t\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie \u003ci\u003eAbwägung zwi\u0026shy;schen Ertrag und Widerstandsfähigkeit\u003c/i\u003e \n\t\t\t\t\t\tbeider Baumarten zu verdeut\u0026shy;lichen. \n\t\t\t\t\t\n\t\t\t\t\t\tDer Preis für beide Baumarten ist in unserem Beispiel gleich.\n\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -9242,7 +9195,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag über einen langen Zeithorizont zu sparen\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine \u003ci\u003erisikolose\u003c/i\u003e Anlage und erzielt \n\t\t\t\t\t\t\t\u003ci\u003ekonstante Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \n\t\t\t\t\t\t\t\u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, \n\t\t\t\t\t\t\tda kei\u0026shy;ne (hohen) Gewinne erzielt werden.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \n\t\t\t\t\t\t\t \u003ci\u003ehö\u0026shy;heres Risiko\u003c/i\u003e \n\t\t\t\t\t\t\t und erzielen \n\t\t\t\t\t\t\t \u003ci\u003eim Durchschnitt\u003c/i\u003e \n\t\t\t\t\t\t\tüber einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Renditen\u003c/i\u003e. \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tGleichzeitig können die Renditen \n\t\t\t\t\t\t\tund damit das angesparte Vermögen schwanken.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag\u003c/i\u003e über einen \u003ci\u003elangen Zeithorizont\u003c/i\u003e zu sparen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine Anlage mit \u003ci\u003egeringem Risiko\u003c/i\u003e \n\t\t\t\t\t\t\tund erzielt \u003ci\u003ekonstante Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, da die Erträge gering sind.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \u003ci\u003ehö\u0026shy;heres Risiko\u003c/i\u003e und erzielen \n\t\t\t\t\t\t\t\u003ci\u003eim Durchschnitt\u003c/i\u003e über einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tGleichzeitig können die Renditen und\n\t\t\t\t\t\t\t der Ge\u0026shy;samtwert des angesparten Vermögens \u003ci\u003eschwanken\u003c/i\u003e.\n\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -9346,12 +9299,24 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "kneb202306simtool0"
+ 			"generator_func_name": "kneb202306guidedtourN7"
  		},
  		{
  			"label": {
  				"de": "Seitentitel_30",
  				"en": "PageLabel_30"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "kneb202306simtool0"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_31",
+ 				"en": "PageLabel_31"
  			},
  			"description": {
  				"de": "",
@@ -9397,7 +9362,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- qc24hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- qc24hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass die Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- qc24hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -10010,8 +9975,8 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_32",
- 				"en": "PageLabel_32"
+ 				"de": "Seitentitel_33",
+ 				"en": "PageLabel_33"
  			},
  			"description": {
  				"de": "",
@@ -10057,7 +10022,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- qc25hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- qc25hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass die Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- qc25hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -10670,8 +10635,8 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_34",
- 				"en": "PageLabel_34"
+ 				"de": "Seitentitel_35",
+ 				"en": "PageLabel_35"
  			},
  			"description": {
  				"de": "",
@@ -10717,7 +10682,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- qc26hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich bei Ihrer Ant\u0026shy;wort?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- qc26hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass die Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- qc26hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -11330,8 +11295,8 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_36",
- 				"en": "PageLabel_36"
+ 				"de": "Seitentitel_37",
+ 				"en": "PageLabel_37"
  			},
  			"description": {
  				"de": "",
@@ -13241,7 +13206,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- F9. --\u003eWie in\u0026shy;for\u0026shy;miert fühlen Sie sich über das gezeigte Szenario in der interaktiven Graphik?\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- F9. --\u003eIch fühle mich durch die gezeigten Fälle in der interaktiven Graphik gut in\u0026shy;for\u0026shy;miert.\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- F9. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -13250,7 +13215,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003eganz und gar un\u0026shy;in\u0026shy;for\u0026shy;miert\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
+ 								"de": "\u003csmall\u003etrifft ganz und gar nicht zu\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e     \u003cdiv\u003e0\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -13690,7 +13655,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "\u003csmall\u003eganz und gar in\u0026shy;for\u0026shy;miert\u003c/small\u003e       \u003cdiv\u003e10\u003c/div\u003e",
+ 								"de": "\u003csmall\u003etrifft voll und ganz zu\u003c/small\u003e       \u003cdiv\u003e10\u003c/div\u003e",
  								"en": "\u003csmall\u003etodo\u003c/small\u003e \u003cdiv\u003e10\u003c/div\u003e"
  							},
  							"col_span_control": 1,
@@ -13931,7 +13896,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1. --\u003e\n\t\t\t\t\tIm Folgenden geht es um Tipps in Bezug auf die Altersvorsorge.\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche \u003ci\u003edrei\u003c/i\u003e Tipps würden Sie einem Freund oder einer Freundin geben, \n\t\t\t\t\twenn um das Sparen für die Altersvorsorge geht?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- T1. --\u003e\n\t\t\t\t\tWelche Tipps würden Sie einem Freund oder einer Freundin geben, \n\t\t\t\t\twenn es um das Sparen für die Altersvorsorge geht? \n\t\t\t\t\tBitte beschreiben Sie Ihre Hinweise in einigen kurzen Sätzen oder Stichpunkten.\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- T1. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
@@ -14006,7 +13971,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1a0. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin, \n\t\t\t\t\tdie gerade ins Berufsleben startet sind, emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tsofort mit dem Sparen für das Alter anzufangen?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- T1a0. --\u003e\n\t\t\t\t\tWürden  Sie einem Freund oder einer Freundin emp\u0026shy;feh\u0026shy;len, am Kapitalmarkt zu investieren?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- T1a0. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -14622,7 +14587,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1a1. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tam Kapitalmarkt zu investieren?\t\t\t\t\t\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- T1a1. --\u003e\n\t\t\t\t\tBitte denken Sie an einen Freund oder eine Freundin, die gerade ins Berufsleben startet.\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWürden Sie ihm oder ihr emp\u0026shy;feh\u0026shy;len, sofort mit dem Sparen für das Alter anzufangen?\n\t\t\t\t\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- T1a1. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -15238,7 +15203,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- T1a2. --\u003e\n\t\t\t\t\tWürden Sie einem Freund oder ein Freundin emp\u0026shy;feh\u0026shy;len, \n\t\t\t\t\tsich professionell zum Thema Rente und Finanzen beraten zu lassen?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- T1a2. --\u003e\n\t\t\t\t\tBitte denken Sie an einen Freund oder eine Freundin, die noch kei\u0026shy;ne Erfahrung beim Thema Rente und Finanzen haben.\n\t\t\t\t\t\u003cbr\u003e\t\n\t\t\t\t\tWürden Sie einem Freund oder einer Freundin emp\u0026shy;feh\u0026shy;len, sich professionell zum Thema Rente und Finanzen beraten zu lassen?\t\t\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- T1a2. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -15890,7 +15855,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\" \n\t\t\t\t\t\tbedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;nen Fähigkeiten\".\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\t\u003cspan style='font-size:120%'\u003e\n\t\t\t\t\t\tWie viel Ver\u0026shy;trau\u0026shy;en haben Sie in Ihre Fähigkeit, \n\t\t\t\t\t\tgute finanzielle Entscheidungen zu treffen?\n\t\t\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala,\n\t\t\t\t\t\twobei der Wert\u0026nbsp;0 \"Kein Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;ne Fähigkeit\" bedeutet\n\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"Hohes Ver\u0026shy;trau\u0026shy;en in die ei\u0026shy;ge\u0026shy;ne Fähigkeit\".\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- E2. --\u003e\n\t\t\t\t\t\ttodo\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -17857,7 +17822,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- X1. --\u003e\n\t\t\t\t\tIch traue mir zu, am Aktien\u0026shy;markt teilzunehmen.\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- X1. --\u003e\n\t\t\t\ttodo\n\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -20631,7 +20596,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"pageID": "pg46"
+ 								"pageID": "pg47"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -20783,7 +20748,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- B5. --\u003e\n\t\t\t\t\tWürden Sie es vorziehen, wenn eine andere Person finanzielle Entscheidungen für Sie trifft?\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- B5. --\u003e\n\t\t\t\t\t\tWürden Sie es vorziehen, \n\t\t\t\t\t\twenn eine andere Person finanzielle Entscheidungen für Sie trifft?\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- B5. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
@@ -20835,11 +20800,41 @@
  								"de": "nein",
  								"en": "no"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
  							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qb5_delegate",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "trifft nicht zu, ich treffe kei\u0026shy;ne finanziellen Entscheidungen",
+ 								"en": "no"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "notapplicable",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -21759,7 +21754,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- H2. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\tWir stellen Ihnen nun eine Frage zum \u003ci\u003eFinanzvermögen\u003c/i\u003e: \u003cbr\u003e\n\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Dezember   \n\t\t\t\t\t\t\u003cspan style=\"font-size 120%; color:#e22;\" \u003e2023\u003c/span\u003e \n\t\t\t\t\teine der folgenden Vermögensarten besessen?\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt, \n\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- H2. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
@@ -22336,6 +22331,109 @@
  						},
  						{
  							"name": "qh2_gold",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein",
+ 								"en": "no"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "40rem",
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003c!-- f) --\u003e\u003cspan style=\"font-size:115%\"\u003eKryptowährungen\u003c/span\u003e\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"en": "\u003c!-- f) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "qh2_crypto",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;ja",
+ 								"en": "yes"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qh2_crypto",
  							"type": "radio",
  							"label": {
  								"de": "nein",
@@ -23317,7 +23415,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Jahr \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- H4. --\u003e\n\t\t\t\t\t\t\u003cspan style=\"font-size:110%\"\u003e\n\t\t\t\t\t\tNun sind wir an Ihrem Altersvorsorgevermögen interessiert:\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tHaben Sie (d.h. Ihr Haushalt) im Dezember \u003cspan style=\"font-size 120%; color:#e22;\"\u003e2023\u003c/span\u003e \n\t\t\t\t\t\teinen der folgenden privaten oder betrieblichen Altersvorsorgeverträge besessen?\n\t\t\t\t\t    \u003c/span\u003e\n\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tFalls Sie nicht wissen, ob Ihr Partner diese Vermögensarten besitzt,\n\t\t\t\t\t\tbe\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie die Fragen bitte \u003ci\u003enur\u003c/i\u003e für sich selbst.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\t\t\u003c!-- 2023 --\u003e\n\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- H4. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 1,
@@ -23641,7 +23739,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge (\"Riester-Rente\")\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch „Rürup-“ bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- d) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003eStaatlich geförderte private Altersvorsorge (\"Riester-Rente\")\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t(staatlich geförderte und zertifizierte Sparanlagen, auch \"Rürup-\" bzw. Basisrenten)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- d) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,
@@ -23919,7 +24017,7 @@
  							"name": "qz1_download",
  							"type": "radio",
  							"label": {
- 								"de": "Das E-Book „Einfach Genial investieren“ von Prof. Martin Weber ",
+ 								"de": "Das E-Book \"Einfach Genial investieren\" von Prof. Martin Weber ",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -24011,7 +24109,7 @@
  							"name": "qz1_download",
  							"type": "radio",
  							"label": {
- 								"de": "Link zur Verbraucherzentrale  mit einer Übersicht zum Thema „Alles zur Geldanlage: Das müssen Sie dazu wissen“",
+ 								"de": "Link zur Verbraucherzentrale  mit einer Übersicht zum Thema \"Alles zur Geldanlage: Das müssen Sie dazu wissen\"",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -24197,7 +24295,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "55",
+ 							"response": "56",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

@@ -80,6 +80,10 @@ func kneb202306guidedtourN6(q *QuestionnaireT, page *pageT) error {
 	return kneb202306guidedtourSepSingle(q, page, 6)
 }
 
+func kneb202306guidedtourN7(q *QuestionnaireT, page *pageT) error {
+	return kneb202306guidedtourSepSingle(q, page, 7)
+}
+
 func kneb202306guidedtourSepSingle(q *QuestionnaireT, page *pageT, pageIdx int) error {
 
 	page.Groups = nil // dynamically recreate the groups

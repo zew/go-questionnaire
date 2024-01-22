@@ -68,6 +68,12 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
+
+					Im Folgenden stellen wir Ihnen Fragen, 
+					die Sie mit Hilfe der interaktiven Graphik beantworten können.
+					<br>
+					<br>
+
 					Frau Blau möchte über die Projektlaufzeit jedes Jahr 
 					100&nbsp;Bäume pflanzen. 
 					
@@ -118,6 +124,13 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
+
+						Im Folgenden stellen wir Ihnen Fragen, 
+						die Sie mit Hilfe der interaktiven Graphik beantworten können.
+						<br>
+						<br>
+	
+
 						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
 						einen monatlichen Sparbetrag von 100&nbsp;Euro anlegen. 
 						

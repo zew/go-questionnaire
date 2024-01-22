@@ -65,6 +65,7 @@ var funcPGs = map[string]funcPageGeneratorT{
 	"kneb202306guidedtourN4": kneb202306guidedtourN4,
 	"kneb202306guidedtourN5": kneb202306guidedtourN5,
 	"kneb202306guidedtourN6": kneb202306guidedtourN6,
+	"kneb202306guidedtourN7": kneb202306guidedtourN7,
 
 	"kneb202306simtool0": kneb202306simtool0, // first instance - exercise
 	"kneb202306simtool1": kneb202306simtool1, //

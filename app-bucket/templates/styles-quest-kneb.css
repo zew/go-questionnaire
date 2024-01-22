@@ -114,5 +114,16 @@ used in in
 .pg28-grp02      .popup-invalid-content-grid-item {
     bottom:  -1.68rem;
 }
+*/
 
 
+
+
+@media screen and (max-width: 800px) {
+    /* assigned via javascript for echart pages */
+    .echart-mobile {
+        /* box-style */
+        max-width: 100% !important;
+        margin: 0 !important;
+    }    
+}

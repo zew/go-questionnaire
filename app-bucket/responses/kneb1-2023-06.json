@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "5ac17b45fcd76a6734149a2f0b7f65ddfc3323436b1688a01da0994ae6d67900",
+ 	"md_5": "78af50bfeec6c70bfba23f8078cb9beafc3fb2b3f84e2f3475da54dab4d76646",
  	"lang_codes": [
  		"de"
  	],
@@ -11337,6 +11337,7 @@
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "kneb_t1b",
  			"finished": "0001-01-01T00:00:00Z",
  			"generator_func_name": "kneb202306simtool4"
  		},

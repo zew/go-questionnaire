@@ -45,6 +45,9 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 
 	page.WidthMax("58rem")
 
+	//
+	// kneb_simtool_inst_0
+	// kneb_simtool_inst_4
 	valFunc := fmt.Sprintf("kneb_simtool_inst_%v", instance)
 	if instance != 0 && instance != 4 {
 		valFunc = ""
@@ -163,7 +166,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 		if grIdx == 0 {
 			gr := page.AddGroup()
 			gr.BottomVSpacers = btmSpacers
-			gr.Cols = 6
+			gr.Cols = 4
 			var radioValues = []string{
 				"0pct",
 				"10pct",
@@ -174,6 +177,8 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				"60pct",
 				"70pct",
 				"80pct",
+				"90pct",
+				"100pct",
 			}
 			var labels = []trl.S{
 				{
@@ -212,6 +217,14 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					"de": "80% Anteil&nbsp;2",
 					"en": "todo",
 				},
+				{
+					"de": "90% Anteil&nbsp;2",
+					"en": "todo",
+				},
+				{
+					"de": "100% Anteil&nbsp;2",
+					"en": "todo",
+				},
 			}
 
 			{
@@ -247,6 +260,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols / 3
+				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
@@ -258,7 +272,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 
 			gr := page.AddGroup()
 			gr.BottomVSpacers = btmSpacers
-			gr.Cols = 6
+			gr.Cols = 4
 			var radioValues = []string{
 				"0pct",
 				"10pct",
@@ -269,6 +283,8 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				"60pct",
 				"70pct",
 				"80pct",
+				"90pct",
+				"100pct",
 			}
 			var labels = []trl.S{
 				{
@@ -307,6 +323,14 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					"de": "80% Aktien&shy;anteil",
 					"en": "todo",
 				},
+				{
+					"de": "90% Aktien&shy;anteil",
+					"en": "todo",
+				},
+				{
+					"de": "100% Aktien&shy;anteil",
+					"en": "todo",
+				},
 			}
 
 			{
@@ -336,6 +360,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols / 3
+				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 

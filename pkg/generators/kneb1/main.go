@@ -2322,51 +2322,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		howSicher1to10(*qst.WrapPageT(page), "qc26_how_sicher", "qc26hs.")
 	}
 
-	/*
-			//
-			// page quiz zum Verständnis des experiment
-			//  neutral frame - nf
-			{
-				page := q.AddPage()
-				page.NavigationCondition = "kneb_t1a"
-
-				page.Label = trl.S{
-					"de": "Quiz",
-					"en": "todo",
-				}
-				page.Label = trl.S{
-					"de": "",
-					"en": "",
-				}
-				page.SuppressInProgressbar = true
-				page.WidthMax("48rem")
-			}
-
-		//
-		// page quiz zum Verständnis des experiment
-		//  financial frame - ff
-		{
-			page := q.AddPage()
-			page.NavigationCondition = "kneb_t1b"
-
-			page.Label = trl.S{
-				"de": "Quiz",
-				"en": "todo",
-			}
-			page.Label = trl.S{
-				"de": "",
-				"en": "",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("48rem")
-
-
-		}
-	*/
-
 	// page chart 1
 	{
 		page := q.AddPage()
+		page.NavigationCondition = "kneb_t1b"
 		page.GeneratorFuncName = "kneb202306simtool4"
 	}
 

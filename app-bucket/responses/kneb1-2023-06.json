@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f80b40dbe4d468e5de19067bac64baa0704bbde56fe981c1ab0b1b4dd4a25c3d",
+ 	"md_5": "62bef85ebcc72985fa4fb1f72726446469fa6f0cb9b5826a36bbd26ee3928c8f",
  	"lang_codes": [
  		"de"
  	],
@@ -73,6 +73,11 @@
  						},
  						{
  							"name": "panel_type",
+ 							"type": "hidden",
+ 							"col_span": 1
+ 						},
+ 						{
+ 							"name": "panel_id",
  							"type": "hidden",
  							"col_span": 1
  						}
@@ -1317,7 +1322,7 @@
  							"name": "submitBtn",
  							"type": "button",
  							"label": {
- 								"de": " \u0026nbsp;  \u0026nbsp;  \u0026nbsp; Zurück zu Ihrem Panel  \u0026nbsp;  \u0026nbsp;  \u0026nbsp; ",
+ 								"de": " \u0026nbsp;  \u0026nbsp;  \u0026nbsp; Weiter  \u0026nbsp;  \u0026nbsp;  \u0026nbsp; ",
  								"en": "todo"
  							},
  							"accesskey": "n",
@@ -9362,7 +9367,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- qc24hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass die Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- qc24hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass Ihre Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- qc24hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -10022,7 +10027,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- qc25hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass die Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- qc25hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass Ihre Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- qc25hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -10682,7 +10687,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- qc26hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass die Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- qc26hs. --\u003e\n\t\t\tWie si\u0026shy;cher sind Sie sich, dass Ihre Ant\u0026shy;wort richtig ist?\n\n\t\t\t\u003csmall\u003e\n\t\t\t\tBe\u0026shy;wer\u0026shy;ten Sie bitte anhand der Skala von 0 bis 10. \n\t\t\t\t\u0026nbsp;\n\t\t\t\t0 bedeutet „nicht si\u0026shy;cher“ und bedeutet 10 „sehr si\u0026shy;cher“\n\t\t\t\u003c/small\u003e\n\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- qc26hs. --\u003e\n\t\t\ttodo\n\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -17170,7 +17175,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "0",
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17200,7 +17205,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "1",
+ 							"value_radio": "2",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17230,7 +17235,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "2",
+ 							"value_radio": "3",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17260,7 +17265,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "3",
+ 							"value_radio": "4",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17290,7 +17295,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "4",
+ 							"value_radio": "5",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17320,7 +17325,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "5",
+ 							"value_radio": "6",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17397,7 +17402,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "0",
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17427,7 +17432,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "1",
+ 							"value_radio": "2",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17457,7 +17462,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "2",
+ 							"value_radio": "3",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17487,7 +17492,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "3",
+ 							"value_radio": "4",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17517,7 +17522,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "4",
+ 							"value_radio": "5",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17547,7 +17552,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "5",
+ 							"value_radio": "6",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17624,7 +17629,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "0",
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17654,7 +17659,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "1",
+ 							"value_radio": "2",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17684,7 +17689,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "2",
+ 							"value_radio": "3",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17714,7 +17719,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "3",
+ 							"value_radio": "4",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17744,7 +17749,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "4",
+ 							"value_radio": "5",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -24289,7 +24294,7 @@
  							"name": "submitBtn",
  							"type": "button",
  							"label": {
- 								"de": " \u0026nbsp;  \u0026nbsp;  \u0026nbsp; Zurück zu Ihrem Panel  \u0026nbsp;  \u0026nbsp;  \u0026nbsp; ",
+ 								"de": " \u0026nbsp;  \u0026nbsp;  \u0026nbsp; Weiter  \u0026nbsp;  \u0026nbsp;  \u0026nbsp; ",
  								"en": "todo"
  							},
  							"accesskey": "n",

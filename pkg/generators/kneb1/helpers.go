@@ -441,7 +441,7 @@ func howSicherPlusGuessed(page qst.WrappedPageT, inputName, outlineNumber string
 	)
 	gb.MainLabel = trl.S{
 		"de": `
-			Wie sicher sind Sie sich, dass die Antwort richtig ist?
+			Wie sicher sind Sie sich, dass Ihre Antwort richtig ist?
 
 			<small>
 				Bewerten Sie bitte anhand der Skala von 0 bis 10.   
@@ -484,7 +484,7 @@ func howSicher1to10(page qst.WrappedPageT, inputName, outlineNumber string) {
 	)
 	gb.MainLabel = trl.S{
 		"de": `
-			Wie sicher sind Sie sich, dass die Antwort richtig ist?
+			Wie sicher sind Sie sich, dass Ihre Antwort richtig ist?
 
 			<small>
 				Bewerten Sie bitte anhand der Skala von 0 bis 10. 

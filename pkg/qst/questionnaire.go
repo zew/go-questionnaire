@@ -1954,11 +1954,27 @@ func (q *QuestionnaireT) Version() int {
 				// fallback:
 				q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
 			}
-			if _, ok := q.Attrs["respBack"]; ok {
-				q.Pages[0].Groups[0].Inputs[1].Response = "openpanel"
+			if panelID, ok := q.Attrs["respBack"]; ok {
+				// q.Pages[0].Groups[0].Inputs[1].Response = "openpanel"
+				inp1 := q.ByName("panel_type")
+				if inp1 != nil {
+					inp1.Response = "openpanel"
+				}
+				inp2 := q.ByName("panel_id")
+				if inp2 != nil {
+					inp2.Response = panelID
+				}
 			}
-			if _, ok := q.Attrs["i_survey"]; ok {
-				q.Pages[0].Groups[0].Inputs[1].Response = "gim"
+			if panelID, ok := q.Attrs["i_survey"]; ok {
+				// q.Pages[0].Groups[0].Inputs[1].Response = "gim"
+				inp1 := q.ByName("panel_type")
+				if inp1 != nil {
+					inp1.Response = "gim"
+				}
+				inp2 := q.ByName("panel_id")
+				if inp2 != nil {
+					inp2.Response = panelID
+				}
 			}
 
 		} else {

@@ -87,6 +87,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 0
 			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "panel_id"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanControl = 0
+			}
 
 		}
 
@@ -445,7 +452,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Name = "submitBtn"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
 				inp.Label = trl.S{
-					"de": ` &nbsp;  &nbsp;  &nbsp; Zurück zu Ihrem Panel  &nbsp;  &nbsp;  &nbsp; `,
+					// "de": ` &nbsp;  &nbsp;  &nbsp; Zurück zu Ihrem Panel  &nbsp;  &nbsp;  &nbsp; `,
+					"de": ` &nbsp;  &nbsp;  &nbsp; Weiter  &nbsp;  &nbsp;  &nbsp; `,
 					"en": `todo`,
 				}
 				inp.ColSpan = 1
@@ -2763,7 +2771,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					rad.Validator = "mustRadioGroup"
 
 					rad.Name = "qfl4_stockmarketpurpose"
-					rad.ValueRadio = fmt.Sprintf("%d", idx)
+					rad.ValueRadio = fmt.Sprintf("%d", idx+1)
 
 					rad.ColSpan = gr.Cols / 2
 					rad.ColSpanLabel = 1
@@ -2811,7 +2819,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					rad.Validator = "mustRadioGroup"
 
 					rad.Name = "qfl5_assetclassvola"
-					rad.ValueRadio = fmt.Sprintf("%d", idx)
+					rad.ValueRadio = fmt.Sprintf("%d", idx+1)
 
 					rad.ColSpan = gr.Cols / 2
 					rad.ColSpanLabel = 1
@@ -2870,7 +2878,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					rad.Validator = "mustRadioGroup"
 
 					rad.Name = "qfl6_expectedvalue"
-					rad.ValueRadio = fmt.Sprintf("%d", idx)
+					rad.ValueRadio = fmt.Sprintf("%d", idx+1)
 
 					rad.ColSpan = gr.Cols / 2
 					rad.ColSpanLabel = 1
@@ -4018,7 +4026,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Name = "submitBtn"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since next page is appended below
 				inp.Label = trl.S{
-					"de": ` &nbsp;  &nbsp;  &nbsp; Zurück zu Ihrem Panel  &nbsp;  &nbsp;  &nbsp; `,
+					// "de": ` &nbsp;  &nbsp;  &nbsp; Zurück zu Ihrem Panel  &nbsp;  &nbsp;  &nbsp; `,
+					"de": ` &nbsp;  &nbsp;  &nbsp; Weiter  &nbsp;  &nbsp;  &nbsp; `,
 					"en": `todo`,
 				}
 				inp.ColSpan = 1

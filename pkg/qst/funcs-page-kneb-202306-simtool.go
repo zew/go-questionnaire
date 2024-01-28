@@ -556,6 +556,12 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 			inp.Validator = valFunc
 			inp.Name = fmt.Sprintf("share_risky_bg_%v", instance)
 		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "hidden"
+			inp.Validator = valFunc
+			inp.Name = fmt.Sprintf("sim_history_%v", instance)
+		}
 	}
 
 	// gr2 - echart file embedding

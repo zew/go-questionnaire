@@ -45,6 +45,10 @@ let pageLoaded = (inst) => {
         refresh(myChart, dataObject);
 
         console.log(`sbChange ${sb}`)
+        
+        simHist.push( {"sb_ch": sb});
+        simHistBG.value = JSON.stringify(simHist);
+        // console.log(`simHistBG.value ${simHistBG.value}`)
     }
 
     sbInp.onchange = sbChange
@@ -69,6 +73,10 @@ let pageLoaded = (inst) => {
             sbInpBG.value = inp.value;
             refresh(myChart, dataObject);
 
+            simHist.push( {"sb_ud": sb});
+            simHistBG.value = JSON.stringify(simHist);
+            // console.log(`simHistBG.value ${simHistBG.value}`)
+     
         }
         // sbChange(evt)
     }
@@ -112,6 +120,11 @@ let pageLoaded = (inst) => {
 
             refresh(myChart, dataObject);
             console.log(`knobClick new val ${riskyBG.value}`)
+
+            simHist.push( {"risky": riskyBG.value});
+            simHistBG.value = JSON.stringify(simHist);
+            // console.log(`simHistBG.value ${simHistBG.value}`)
+    
 
         } catch (err) {
             console.error(`knob click error`, err)

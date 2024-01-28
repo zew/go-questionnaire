@@ -403,7 +403,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	// page screenout age
-	{
+	// disabled for Frau Selz
+	if false {
 		page := q.AddPage()
 		// "Altersgrenzen nicht erfüllt"
 		//   => headline inside markdown file
@@ -467,6 +468,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+
 	{
 		page := q.AddPage()
 		page.Label = trl.S{

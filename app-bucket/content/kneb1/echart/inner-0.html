@@ -449,7 +449,16 @@
     riskyBG.value = 100 - safeBG.value
   }
 
-  console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
+  var simHist = null;
+  var simHistBG = getBackgroundField("sim_history");
+  if (simHistBG && simHistBG.value !== "") {
+    simHist = JSON.parse(simHistBG.value);  // restore from before
+  } else {
+    simHist = [];
+    simHist.push({"init": 0});
+  }
+
+  console.log(`init sb ${sb}, safeBG ${safeBG.value}, riskyBG ${riskyBG.value}, simHist ${JSON.stringify(simHist)}`)
 
 
 </script>

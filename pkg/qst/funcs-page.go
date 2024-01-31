@@ -29,6 +29,7 @@ var funcPGs = map[string]funcPageGeneratorT{
 
 	"fmt202212": fmt202212,
 	"fmt202312": fmt202312,
+	"fmt202402": fmt202402,
 
 	"pdsPage11-ac1": pdsPage11AC1,
 	"pdsPage11-ac2": pdsPage11AC2,

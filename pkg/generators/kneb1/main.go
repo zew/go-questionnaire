@@ -3484,7 +3484,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				500,
 				750,
 				1000,
-				1000,
+				// 1000,
 				1250,
 				1500,
 				2000,

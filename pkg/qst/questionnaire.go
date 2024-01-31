@@ -2116,7 +2116,7 @@ func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) (hasConte
 				}
 				key := page.Groups[i2].Inputs[i3].Name
 				if v, ok := kv[key]; ok {
-					log.Printf("   applying previous key-val %-16v - %10v", key, v)
+					// log.Printf("   applying previous key-val %-16v - %10v", key, v)
 					page.Groups[i2].Inputs[i3].Response = v
 					if strings.TrimSpace(v) != "" {
 						hasContent = true //

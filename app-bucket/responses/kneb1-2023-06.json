@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a533ecb1a9ebc4475715638458006b2085c4711d7c9492ae5940819a18913048",
+ 	"md_5": "c6027830be34f0fca9c92623097f3e0ad46271188459f4ec901e83a7cb66f2fa",
  	"lang_codes": [
  		"de"
  	],
@@ -22604,53 +22604,6 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      1.000€ bis un\u0026shy;ter       1.000€ monatlich",
- 								"en": "      1.000€ to under        1.000€ per month"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "4",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qh3_income",
- 							"type": "radio",
- 							"label": {
  								"de": "      1.000€ bis un\u0026shy;ter       1250€ monatlich",
  								"en": "      1.000€ to under        1250€ per month"
  							},
@@ -22658,7 +22611,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "5",
+ 							"value_radio": "4",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22705,7 +22658,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "6",
+ 							"value_radio": "5",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22752,7 +22705,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "7",
+ 							"value_radio": "6",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22799,7 +22752,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "8",
+ 							"value_radio": "7",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22846,7 +22799,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "9",
+ 							"value_radio": "8",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22893,7 +22846,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "10",
+ 							"value_radio": "9",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22940,7 +22893,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "11",
+ 							"value_radio": "10",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -22987,7 +22940,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "12",
+ 							"value_radio": "11",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23034,7 +22987,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "13",
+ 							"value_radio": "12",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23081,7 +23034,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "14",
+ 							"value_radio": "13",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23128,7 +23081,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "15",
+ 							"value_radio": "14",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23175,7 +23128,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "16",
+ 							"value_radio": "15",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23222,7 +23175,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "17",
+ 							"value_radio": "16",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -23269,7 +23222,7 @@
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"validator": "mustRadioGroup",
- 							"value_radio": "18",
+ 							"value_radio": "17",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},

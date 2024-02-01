@@ -19,6 +19,7 @@ var hyph = []string{
 	"All|tags|si|tu|a|ti|on",
 	"All|tags|si|tu|a|ti|on|en",
 	"Aktien|markt",
+	"Bildungs|abschluss",
 	"unter|bewertet", // 	"be|wer|tet",
 	"über|bewertet",
 	"Über|wa|chung",
@@ -27,11 +28,12 @@ var hyph = []string{
 	"Entschädigungs|fall ",
 	"Hoch|schul|abschluss",
 	"Konjunktur|entwicklung",
-	"Bildungs|abschluss",
+	"Kredit|geber",
+	"Kredit|nehmer",
 	"Prozent|punkt",
-	"Un|ter|gren|ze",
 	"Ober|gren|ze",
 	"Kon|fi|denz|in|ter|vall",
+	"Un|ter|gren|ze",
 
 	// full german
 	"de|mo|gra|fisch",
@@ -186,6 +188,7 @@ var hyph = []string{
 	"Wirt|schafts|for|schung",
 	"Wirt|schafts|for|schung",
 	"zwi|schen",
+	"zu|tref|fen",
 
 	// https://www.merriam-webster.com/dictionary/estimate
 	// english

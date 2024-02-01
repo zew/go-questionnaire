@@ -302,9 +302,9 @@ func special202402(q *qst.QuestionnaireT) error {
 
 	}
 
-	// gr2
-	gr := page.AddGroup()
 	{
+		// gr2
+		gr := page.AddGroup()
 		lbl := trl.S{
 			"de": `
 				Was denken Sie, auf welcher Basis erfolgt die Einbeziehung von Klima- und Umweltrisiken bei der Bepreisung in der Kreditvergabe? 
@@ -363,8 +363,6 @@ func special202402(q *qst.QuestionnaireT) error {
 
 		gr.Cols = col1 + col2
 		gr.BottomVSpacers = 3
-		// gr.Style = css.NewStylesResponsive(gr.Style)
-		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = "5fr 1fr 1fr 0.4fr 0.4fr 0.4fr"
 
 		{
 			inp := gr.AddInput()
@@ -385,6 +383,105 @@ func special202402(q *qst.QuestionnaireT) error {
 				inp.ColSpanControl = 1
 
 				inp.Label = lbls[i]
+			}
+
+		}
+	}
+
+	// gr3
+	{
+		gr := page.AddGroup()
+
+		col1 := float32(4)
+		col2 := float32(3)
+		col3 := float32(2)
+
+		gr.Cols = col1 + col2 + col3
+		gr.BottomVSpacers = 3
+
+		lbl := trl.S{
+			"de": `
+				Wie hoch schätzen Sie die Komponente für Klima- und Umweltrisiken in den Zinsmargen bei Krediten im Durschnitt ein (in Basispunkten)?
+			`,
+			"en": `
+				How high do you estimate the component for climate and environmental risks in the interest margins for loans on average (in basis points)?  
+			`,
+		}.Outline("8.")
+
+		lbls := []trl.S{
+			{
+				"de": `Aktuell`,
+				"en": `Current`,
+			},
+			{
+				"de": `In 5 Jahren`,
+				"en": `In 5 years`,
+			},
+		}
+
+		inps := []string{
+			"sq8_now",
+			"sq8_5yrs",
+		}
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = lbl
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+		}
+
+		for i, inpName := range inps {
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Step = 0.01
+				inp.Min = -50
+				inp.Max = 50
+				inp.MaxChars = 6
+
+				inp.Name = inpName
+				inp.Suffix = trl.S{
+					"de": `Basispunkte`,
+					"en": `basis points`,
+				}
+
+				inp.ColSpan = col1
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+
+				inp.Label = lbls[i]
+			}
+
+			//
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = inpName + "_noansw"
+				inp.Label = trl.S{
+					"de": `Keine Angabe`,
+					"en": `no answer`,
+				}
+
+				inp.ColSpan = col2
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+				// inp.ControlFirst()
+				inp.LabelRight()
+
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `&nbsp;`,
+					"en": `&nbsp;`,
+				}
+				inp.ColSpan = col3
+				inp.ColSpanLabel = 1
+
 			}
 
 		}

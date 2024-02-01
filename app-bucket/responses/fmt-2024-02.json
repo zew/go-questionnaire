@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8a9c57b8b185cf3672c15a9ecaa2d0c957ed2189a8db51fe142fdbee777f7d9d",
+ 	"md_5": "ee64924da8c44a6e7f933ab724b33e152586836265e1a83a1b342053524c9e5a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -29,7 +29,7 @@
  	"shuffling_variations": 12,
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 6,
+ 	"max_groups": 7,
  	"pages": [
  		{
  			"label": {
@@ -5824,7 +5824,9 @@
  							"text_style": {}
  						},
  						"mobile": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"column_gap": "0.6rem"
+ 							},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
@@ -5909,6 +5911,99 @@
  							"col_span": 4,
  							"col_span_label": 5,
  							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWie hoch schätzen Sie die Kom\u0026shy;po\u0026shy;nen\u0026shy;te für Klima- und Umweltrisiken in den Zinsmargen bei Krediten im Durschnitt ein (in Basispunkten)?\n\t\t\t",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHow high do you es\u0026shy;ti\u0026shy;mate the component for climate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks in the interest margins for loans on av\u0026shy;er\u0026shy;age (in basis points)?  \n\t\t\t"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "sq8_now",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"step": 0.01,
+ 							"min": -50,
+ 							"max": 50,
+ 							"label": {
+ 								"de": "Aktuell",
+ 								"en": "Current"
+ 							},
+ 							"suffix": {
+ 								"de": "Basispunkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq8_now_noansw",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "sq8_5yrs",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"step": 0.01,
+ 							"min": -50,
+ 							"max": 50,
+ 							"label": {
+ 								"de": "In 5 Jahren",
+ 								"en": "In 5 years"
+ 							},
+ 							"suffix": {
+ 								"de": "Basispunkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq8_5yrs_noansw",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1
  						}
  					]
  				}

@@ -553,6 +553,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "0000",
 			"en": "0000",
 		}
+		// 2024-02
+		ph = trl.S{
+			"de": "00000",
+			"en": "00000",
+		}
 
 		// gr0
 		{

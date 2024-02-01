@@ -190,7 +190,7 @@ func special202402(q *qst.QuestionnaireT) error {
 
 		gb.MainLabel = trl.S{
 			"de": fmt.Sprint(` 
-				Wie stark beeinflussen, Ihrer Meinung, folgende Faktoren aktuell, 
+				Wie stark beeinflussen Ihrer Meinung nach folgende Faktoren aktuell, 
 				ob Klima- und Umweltrisiken bei der Kreditvergabe durch Banken berücksichtigt werden? 
 				<small>
 				Gar nicht (0), gering (+), mäßig (++), stark (+++)
@@ -358,10 +358,11 @@ func special202402(q *qst.QuestionnaireT) error {
 			"sq7_other",
 		}
 
-		col1 := float32(4)
-		col2 := float32(1)
+		col1 := float32(3)
+		col2 := float32(2)
+		col3 := float32(2)
 
-		gr.Cols = col1 + col2
+		gr.Cols = col1 + col2 + col3
 		gr.BottomVSpacers = 3
 
 		{
@@ -373,16 +374,33 @@ func special202402(q *qst.QuestionnaireT) error {
 		}
 
 		for i, inpName := range inps {
+
+			// col1, col2
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
 				inp.Name = inpName
 
-				inp.ColSpan = col1
-				inp.ColSpanLabel = 5
-				inp.ColSpanControl = 1
-
+				inp.ColSpan = col1 + col2
+				inp.ColSpanLabel = col1
+				inp.ColSpanControl = col2
 				inp.Label = lbls[i]
+			}
+
+			// col3
+			if i == len(inps)-1 {
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = inpName + "_free"
+				inp.MaxChars = 20
+				inp.ColSpan = col3
+				inp.ColSpanControl = 1
+			} else {
+				// dummy
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = col3
+				inp.ColSpanLabel = 1
 			}
 
 		}
@@ -394,7 +412,7 @@ func special202402(q *qst.QuestionnaireT) error {
 
 		col1 := float32(4)
 		col2 := float32(3)
-		col3 := float32(2)
+		col3 := float32(0)
 
 		gr.Cols = col1 + col2 + col3
 		gr.BottomVSpacers = 3
@@ -460,7 +478,7 @@ func special202402(q *qst.QuestionnaireT) error {
 				inp.Type = "checkbox"
 				inp.Name = inpName + "_noansw"
 				inp.Label = trl.S{
-					"de": `Keine Angabe`,
+					"de": `Keine<br>Angabe`,
 					"en": `no answer`,
 				}
 
@@ -472,17 +490,17 @@ func special202402(q *qst.QuestionnaireT) error {
 
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `&nbsp;`,
-					"en": `&nbsp;`,
-				}
-				inp.ColSpan = col3
-				inp.ColSpanLabel = 1
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "textblock"
+			// 	inp.Label = trl.S{
+			// 		"de": `&nbsp;`,
+			// 		"en": `&nbsp;`,
+			// 	}
+			// 	inp.ColSpan = col3
+			// 	inp.ColSpanLabel = 1
 
-			}
+			// }
 
 		}
 	}

@@ -32,6 +32,8 @@ var hyph = []string{
 	"Kredit|nehmer",
 	"Risiko|komponente",
 	"Prozent|punkt",
+	"Transformations|projekt",
+
 	"Ober|gren|ze",
 	"Kon|fi|denz|in|ter|vall",
 	"Un|ter|gren|ze",
@@ -130,6 +132,7 @@ var hyph = []string{
 	"po|ten|zi|ell",
 	"Prä|ferenz|konstellation",
 	"Pro|fes|sorIn",
+	"Pro|jekt",
 	"Pro|gno|se",
 	"Pro|zent",
 	"re|du|zie|ren",
@@ -156,6 +159,7 @@ var hyph = []string{
 	"Si|tu|a|ti|on", // www.duden.de/rechtschreibung/Situation
 	"Stan|dard|abweichung ",
 	"Te|le|kom|mu|ni|ka|ti|on",
+	"Trans|for|ma|ti|on",
 	"über|haupt",
 	"Um|welt|öko|no|mie",
 	"un|ent|schieden",

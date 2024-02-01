@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ee64924da8c44a6e7f933ab724b33e152586836265e1a83a1b342053524c9e5a",
+ 	"md_5": "d64eb23b7bfd494fd4472250f69e67d0612030b0783c18083fa0773578828cb9",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2951,8 +2951,8 @@
  							"min": 2000,
  							"max": 50000,
  							"placeholder": {
- 								"de": "0000",
- 								"en": "0000"
+ 								"de": "00000",
+ 								"en": "00000"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\t\t   Den DAX erwarte ich in 6\u0026nbsp;Monaten\u0026nbsp;bei \n\t\t\t\t\t",
@@ -2982,8 +2982,8 @@
  							"min": 2000,
  							"max": 50000,
  							"placeholder": {
- 								"de": "0000",
- 								"en": "0000"
+ 								"de": "00000",
+ 								"en": "00000"
  							},
  							"label": {
  								"de": " \u0026nbsp; ",
@@ -3028,8 +3028,8 @@
  							"min": 2000,
  							"max": 50000,
  							"placeholder": {
- 								"de": "0000",
- 								"en": "0000"
+ 								"de": "00000",
+ 								"en": "00000"
  							},
  							"suffix": {
  								"de": "Punkten",
@@ -4853,7 +4853,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\tWie stark beein\u0026shy;flussen, Ihrer Meinung, folgende Faktoren aktuell, \n\t\t\t\tob Klima- und Umweltrisiken bei der Kreditvergabe durch Banken berücksichtigt werden? \n\t\t\t\t\u003csmall\u003e\n\t\t\t\tGar nicht (0), gering (+), mäßig (++), stark (+++)\n\t\t\t\t\u003c/small\u003e\n\t\t\t",
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\tWie stark beein\u0026shy;flussen Ihrer Meinung nach folgende Faktoren aktuell, \n\t\t\t\tob Klima- und Umweltrisiken bei der Kreditvergabe durch Banken berücksichtigt werden? \n\t\t\t\t\u003csmall\u003e\n\t\t\t\tGar nicht (0), gering (+), mäßig (++), stark (+++)\n\t\t\t\t\u003c/small\u003e\n\t\t\t",
  								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tIn your opinion, to what extent do the following factors currently in\u0026shy;flu\u0026shy;ence \n\t\t\t\twhether climate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks are considered by banks when granting loans? \n\t\t\t\t\u003csmall\u003e\n\t\t\t\tNot at all (0), slight\u0026shy;ly (+), moderately (++), strong\u0026shy;ly (+++)\n\t\t\t\t\u003c/small\u003e\n\t\t\t"
  							},
  							"col_span": 6,
@@ -5835,7 +5835,7 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 5,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -5843,7 +5843,7 @@
  								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWas denken Sie, auf welcher Basis erfolgt die Einbeziehung von Klima- und Umweltrisiken bei der Bepreisung in der Kreditvergabe? \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t(mehrere Ant\u0026shy;worten möglich)\n\t\t\t\t\u003c/small\u003e\n\t\t\t",
  								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp;   \n\t\t\t\tOn what basis do you think climate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks are included in the pricing of loans? \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t(multiple an\u0026shy;swers possible) \n\t\t\t\t\u003c/small\u003e\n\t\t\t"
  							},
- 							"col_span": 5,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -5853,9 +5853,14 @@
  								"de": "CO2-Emissionen",
  								"en": "CO2 emissions"
  							},
- 							"col_span": 4,
- 							"col_span_label": 5,
- 							"col_span_control": 1
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 2,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "sq7_esg",
@@ -5864,9 +5869,14 @@
  								"de": "ESG-Ratings",
  								"en": "ESG ratings"
  							},
- 							"col_span": 4,
- 							"col_span_label": 5,
- 							"col_span_control": 1
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 2,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "sq7_physical",
@@ -5875,9 +5885,14 @@
  								"de": "Physische Risiken",
  								"en": "Physical risks"
  							},
- 							"col_span": 4,
- 							"col_span_label": 5,
- 							"col_span_control": 1
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 2,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "sq7_transitory",
@@ -5886,20 +5901,30 @@
  								"de": "Transitorische Risiken",
  								"en": "Transitory risks"
  							},
- 							"col_span": 4,
- 							"col_span_label": 5,
- 							"col_span_control": 1
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 2,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "sq7_project",
  							"type": "checkbox",
  							"label": {
- 								"de": "Projektbezogene Merkmale (z.B. Transformationsprojekt)",
- 								"en": "Project related characteristics (e.g. transformation project)"
+ 								"de": "Pro\u0026shy;jektbezogene Merkmale (z.B. Trans\u0026shy;for\u0026shy;ma\u0026shy;ti\u0026shy;ons\u0026shy;pro\u0026shy;jekt)",
+ 								"en": "Project related characteristics (e.g. trans\u0026shy;for\u0026shy;ma\u0026shy;ti\u0026shy;on project)"
  							},
- 							"col_span": 4,
- 							"col_span_label": 5,
- 							"col_span_control": 1
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 2,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "sq7_other",
@@ -5908,15 +5933,22 @@
  								"de": "Andere Kennwerte",
  								"en": "Other parameters"
  							},
- 							"col_span": 4,
- 							"col_span_label": 5,
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "sq7_other_free",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"col_span": 2,
  							"col_span_control": 1
  						}
  					]
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 9,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -5924,7 +5956,7 @@
  								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWie hoch schätzen Sie die Kom\u0026shy;po\u0026shy;nen\u0026shy;te für Klima- und Umweltrisiken in den Zinsmargen bei Krediten im Durschnitt ein (in Basispunkten)?\n\t\t\t",
  								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHow high do you es\u0026shy;ti\u0026shy;mate the component for climate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks in the interest margins for loans on av\u0026shy;er\u0026shy;age (in basis points)?  \n\t\t\t"
  							},
- 							"col_span": 9,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -5950,21 +5982,30 @@
  							"name": "sq8_now_noansw",
  							"type": "checkbox",
  							"label": {
- 								"de": "Kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
  								"en": "no an\u0026shy;swer"
  							},
  							"col_span": 3,
  							"col_span_label": 5,
- 							"col_span_control": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sq8_5yrs",
@@ -5989,21 +6030,30 @@
  							"name": "sq8_5yrs_noansw",
  							"type": "checkbox",
  							"label": {
- 								"de": "Kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
  								"en": "no an\u0026shy;swer"
  							},
  							"col_span": 3,
  							"col_span_label": 5,
- 							"col_span_control": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}

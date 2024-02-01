@@ -123,8 +123,10 @@ dummy
 
     /* Month 1 of quarter */
     #rev_free_label {
-        max-width: 6rem;
+        max-width: 5rem;
     }
+
+
     /* 2024-01 */
     #sq4_other_free {
         max-width: 4rem;
@@ -133,6 +135,10 @@ dummy
     /* 2024-02  */
     #qs5_free_label {
         max-width: 4rem;
+    }
+   /* 2024-02  */
+    #sq7_other_free {
+        max-width: 6rem;
     }
 
 }

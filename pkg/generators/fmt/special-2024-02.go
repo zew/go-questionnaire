@@ -215,7 +215,7 @@ func special202402(q *qst.QuestionnaireT) error {
 		// row free input
 		gr := page.AddGroup()
 		gr.Cols = float32(lenColLbls) + 1
-		gr.BottomVSpacers = 3
+		gr.BottomVSpacers = 4
 
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
@@ -271,8 +271,7 @@ func special202402(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": "Nein, derzeit nicht berücksichtigt",
-					"en": "No, currently not considered
-					",
+					"en": "No, currently not considered",
 				},
 				{
 					"de": "keine<br>Angabe",
@@ -298,7 +297,97 @@ func special202402(q *qst.QuestionnaireT) error {
 		}.Outline("6.")
 
 		gr := page.AddGrid(gb)
-		_ = gr
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Mobile.StyleGridContainer.GapColumn = "0.6rem"
+
+	}
+
+	// gr2
+	gr := page.AddGroup()
+	{
+		lbl := trl.S{
+			"de": `
+				Was denken Sie, auf welcher Basis erfolgt die Einbeziehung von Klima- und Umweltrisiken bei der Bepreisung in der Kreditvergabe? 
+				<br>
+				<small>
+				(mehrere Antworten möglich)
+				</small>
+			`,
+			"en": `  
+				On what basis do you think climate and environmental risks are included in the pricing of loans? 
+				<br>
+				<small>
+				(multiple answers possible) 
+				</small>
+			`,
+		}.Outline("7.")
+
+		lbls := []trl.S{
+			{
+				"de": `CO2-Emissionen`,
+				"en": `CO2 emissions`,
+			},
+			{
+				"de": `ESG-Ratings`,
+				"en": `ESG ratings`,
+			},
+			{
+				"de": `Physische Risiken`,
+				"en": `Physical risks`,
+			},
+			{
+				"de": `Transitorische Risiken`,
+				"en": `Transitory risks`,
+			},
+			{
+				"de": `Projektbezogene Merkmale (z.B. Transformationsprojekt)`,
+				"en": `Project related characteristics (e.g. transformation project)`,
+			},
+			{
+				"de": `Andere Kennwerte`,
+				"en": `Other parameters`,
+			},
+		}
+
+		inps := []string{
+			"sq7_co2",
+			"sq7_esg",
+			"sq7_physical",
+			"sq7_transitory",
+			"sq7_project",
+			"sq7_other",
+		}
+
+		col1 := float32(4)
+		col2 := float32(1)
+
+		gr.Cols = col1 + col2
+		gr.BottomVSpacers = 3
+		// gr.Style = css.NewStylesResponsive(gr.Style)
+		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = "5fr 1fr 1fr 0.4fr 0.4fr 0.4fr"
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = lbl
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+		}
+
+		for i, inpName := range inps {
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = inpName
+
+				inp.ColSpan = col1
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+
+				inp.Label = lbls[i]
+			}
+
+		}
 	}
 
 	return nil

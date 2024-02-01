@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "905f72f06c1a3b333ed5ad262b18b858103124f8dd8c4f674b5bf65560618158",
+ 	"md_5": "8a9c57b8b185cf3672c15a9ecaa2d0c957ed2189a8db51fe142fdbee777f7d9d",
  	"lang_codes": [
  		"de",
  		"en"
@@ -29,7 +29,7 @@
  	"shuffling_variations": 12,
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 5,
+ 	"max_groups": 6,
  	"pages": [
  		{
  			"label": {
@@ -5361,7 +5361,7 @@
  							"name": "qs5_risk_pref",
  							"type": "radio",
  							"label": {
- 								"de": "Risikopräferenz der Banken",
+ 								"de": "Ri\u0026shy;si\u0026shy;kopräferenz der Banken",
  								"en": "Risk preference of the banks"
  							},
  							"col_span_label": 3.6,
@@ -5495,7 +5495,7 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 4,
  					"columns": 7,
  					"inputs": [
  						{
@@ -5572,6 +5572,345 @@
  							"text_style": {}
  						}
  					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHaben Umwelt- und Klimarisiken, Ihrer Einschätzung nach, aktuell einen Ein\u0026shy;fluss auf die Kreditzinsen?\n\t\t\t",
+ 								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;   \n\t\t\t\tIn your opinion, do en\u0026shy;vi\u0026shy;ron\u0026shy;mental and climate risks currently have an impact on lending rates?\n\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Ja, über eine separate Ri\u0026shy;si\u0026shy;ko\u0026shy;kom\u0026shy;po\u0026shy;nen\u0026shy;te",
+ 								"en": "Yes, through a separate risk component"
+ 							},
+ 							"col_span_label": 0.2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Ja, indirekt über bestehende Ri\u0026shy;si\u0026shy;ko\u0026shy;kom\u0026shy;po\u0026shy;nen\u0026shy;ten",
+ 								"en": "Yes, indirectly through existing risk components"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Nein, derzeit nicht berücksichtigt",
+ 								"en": "No, currently not considered"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sq6",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span_label": 0.2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sq6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sq6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sq6",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1.2fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWas denken Sie, auf welcher Basis erfolgt die Einbeziehung von Klima- und Umweltrisiken bei der Bepreisung in der Kreditvergabe? \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t(mehrere Ant\u0026shy;worten möglich)\n\t\t\t\t\u003c/small\u003e\n\t\t\t",
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp;   \n\t\t\t\tOn what basis do you think climate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks are included in the pricing of loans? \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t(multiple an\u0026shy;swers possible) \n\t\t\t\t\u003c/small\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "sq7_co2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "CO2-Emissionen",
+ 								"en": "CO2 emissions"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq7_esg",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "ESG-Ratings",
+ 								"en": "ESG ratings"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq7_physical",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Physische Risiken",
+ 								"en": "Physical risks"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq7_transitory",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Transitorische Risiken",
+ 								"en": "Transitory risks"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq7_project",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Projektbezogene Merkmale (z.B. Transformationsprojekt)",
+ 								"en": "Project related characteristics (e.g. transformation project)"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sq7_other",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Andere Kennwerte",
+ 								"en": "Other parameters"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1
+ 						}
+ 					]
  				}
  			]
  		},

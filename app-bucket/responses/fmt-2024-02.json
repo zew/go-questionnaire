@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d64eb23b7bfd494fd4472250f69e67d0612030b0783c18083fa0773578828cb9",
+ 	"md_5": "9a049a1b4143c0a02d68d6817e35414313904c31b423b201b4543600a7db75d1",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4564,7 +4564,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\tKlima- und Umweltrisiken gewinnen zunehmend an Bedeutung für Finanzmärkte. \n\t\t\t\t\tIm Folgenden möchten wir Sie zum Ein\u0026shy;fluss Klima- und Umweltrisiken auf die Kreditvergabe befragen. \n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\tKlima- und Umweltrisiken gewinnen zunehmend an Bedeutung für Finanzmärkte. \n\t\t\t\t\tIm Folgenden möchten wir Sie zum Ein\u0026shy;fluss von Klima- und Umweltrisiken auf die Kreditvergabe befragen. \n\t\t\t\t",
  								"en": "  \n\t\t\t\t\tClimate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks are becoming increasingly important for financial markets. \n\t\t\t\t\tIn the following, we would like to ask you about the in\u0026shy;flu\u0026shy;ence of climate and en\u0026shy;vi\u0026shy;ron\u0026shy;mental risks on lending.\t\t\t\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -4694,7 +4694,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "weder noch",
- 								"en": "Nei\u0026shy;ther nor"
+ 								"en": "Nei\u0026shy;ther"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5982,7 +5982,7 @@
  							"name": "sq8_now_noansw",
  							"type": "checkbox",
  							"label": {
- 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
  								"en": "no an\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -6030,7 +6030,7 @@
  							"name": "sq8_5yrs_noansw",
  							"type": "checkbox",
  							"label": {
- 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
  								"en": "no an\u0026shy;swer"
  							},
  							"col_span": 3,

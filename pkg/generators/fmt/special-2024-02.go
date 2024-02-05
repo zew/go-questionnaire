@@ -41,7 +41,7 @@ func special202402(q *qst.QuestionnaireT) error {
 			inp.Label = trl.S{
 				"de": `
 					Klima- und Umweltrisiken gewinnen zunehmend an Bedeutung für Finanzmärkte. 
-					Im Folgenden möchten wir Sie zum Einfluss Klima- und Umweltrisiken auf die Kreditvergabe befragen. 
+					Im Folgenden möchten wir Sie zum Einfluss von Klima- und Umweltrisiken auf die Kreditvergabe befragen. 
 				`,
 				"en": `  
 					Climate and environmental risks are becoming increasingly important for financial markets. 
@@ -73,7 +73,7 @@ func special202402(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": "weder noch",
-					"en": "Neither nor",
+					"en": "Neither",
 				},
 				{
 					"de": "keine<br>Angabe",
@@ -478,7 +478,7 @@ func special202402(q *qst.QuestionnaireT) error {
 				inp.Type = "checkbox"
 				inp.Name = inpName + "_noansw"
 				inp.Label = trl.S{
-					"de": `Keine<br>Angabe`,
+					"de": `keine<br>Angabe`,
 					"en": `no answer`,
 				}
 

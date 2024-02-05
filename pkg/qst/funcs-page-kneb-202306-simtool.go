@@ -68,19 +68,18 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-
-					Im Folgenden stellen wir Ihnen Fragen, 
-					die Sie mit Hilfe der interaktiven Graphik beantworten können.
+					Um Sie beim Kennenlernen der Graphik weiter zu unterstützen, 
+					haben wir drei  Beispiele vorbereitet.
 					<br>
 					<br>
 
-					Frau Blau möchte über die Projektlaufzeit jedes Jahr 
-					100&nbsp;Bäume pflanzen. 
+					In Beispiel 1 bitten wir Sie, einen Wert in der Graphik <i>abzulesen</i>. 
+					<br>
+
 					
-					Sie wählt einen Anteil von 60% an Baumart&nbsp;2 aus. 
+					Sie müssen dafür keinen der Werte anpassen. 
 					
-					Wie hoch ist ihr prognostizierter Ertrag  in den  
-					<i><u>besten 5 von 100&nbsp;Fällen</u></i>?	
+					Bitte tragen Sie Ihre Antwort in das Antwortfeld ein.
 				`,
 					"en": `todo`,
 				}.OutlineHid("C24.")
@@ -103,8 +102,22 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					"en": `todo`,
 				}
 				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 2
+				inp.LabelPadRight()
+				inp.ControlBottom()
+				inp.Label = trl.S{
+					"de": `		
+					Beispiel 1: Frau Blau möchte über die Projektlaufzeit 
+					jedes Jahr 100&nbsp;Bäume pflanzen. 
+					Sie wählt einen Anteil von 50% an Baumart&nbsp;2 aus.
+
+					Wie hoch ist ihr prognostizierter Ertrag 
+					<u><b>in den besten 5 von 100 Fällen</b></u>?
+					`,
+					"en": `todo`,
+				}
+
 			}
 			{
 				inp := gr.AddInput()
@@ -124,25 +137,24 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
-
-						Im Folgenden stellen wir Ihnen Fragen, 
-						die Sie mit Hilfe der interaktiven Graphik beantworten können.
+						Um Sie beim Kennenlernen der Graphik weiter zu unterstützen, 
+						haben wir drei  Beispiele vorbereitet.
 						<br>
 						<br>
 	
-
-						Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
-						einen monatlichen Sparbetrag von 100&nbsp;Euro anlegen. 
+						In Beispiel 1 bitten wir Sie, einen Wert in der Graphik <i>abzulesen</i>. 
+						<br>
+	
 						
-						Sie wählt einen Aktienanteil von 60%.
-
-						Wie hoch ist ihr prognostiziertes 
-						Vermögen in den <i><u>besten 5 von 100&nbsp;Fällen</u></i>?
+						Sie müssen dafür keinen der Werte anpassen. 
+						
+						Bitte tragen Sie Ihre Antwort in das Antwortfeld ein.
 					`,
 						"en": `todo`,
 					}.OutlineHid("C24.")
 					inp.ColSpan = gr.Cols
 					inp.ColSpanLabel = 1
+
 				}
 				{
 					inp := gr.AddInput()
@@ -160,8 +172,21 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 						"en": `todo`,
 					}
 					inp.ColSpan = gr.Cols
-					inp.ColSpanLabel = 2
-					inp.ColSpanControl = 4
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 2
+					inp.LabelPadRight()
+					inp.ControlBottom()
+					inp.Label = trl.S{
+						"de": `					
+						Beispiel 1: Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
+						einen monatlichen Sparbetrag von 100&nbsp;Euro anlegen. 
+						Sie wählt einen Aktienanteil von 50%.
+
+						Wie hoch ist ihr prognostiziertes Vermögen  
+						<u><b>in den besten 5 von 100 Fällen</b></u>?
+						`,
+						"en": `todo`,
+					}
 				}
 
 			}
@@ -178,269 +203,54 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 	if instance == 2 {
 		if grIdx == 0 {
 			gr := page.AddGroup()
-			gr.BottomVSpacers = btmSpacers
-			gr.Cols = 4
-			var radioValues = []string{
-				"0pct",
-				"10pct",
-				"20pct",
-				"30pct",
-				"40pct",
-				"50pct",
-				"60pct",
-				"70pct",
-				"80pct",
-				"90pct",
-				"100pct",
-			}
-			var labels = []trl.S{
-				{
-					"de": "0% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "10% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "20% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "30% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "40% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "50% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "60% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "70% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "80% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "90% Anteil&nbsp;2",
-					"en": "todo",
-				},
-				{
-					"de": "100% Anteil&nbsp;2",
-					"en": "todo",
-				},
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-
-						Herr Lila kann jedes Jahr 100&nbsp;Bäume pflanzen. 
-						
-						Er möchte am Ende des Projekts einen Ertrag 
-						von ca. 42.000&nbsp;Euro (<u>im Durchschnitt</u>) erzielen.
-
-						<br>
-						Welchen Anteil an Baumart&nbsp;2 
-						muss sein Waldstück mindestens haben, damit ihm das gelingt? 
-
-					`,
-					"en": `todo`,
-				}.OutlineHid("C25.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Validator = "must;kneb_qc25_nf"
-				rad.Validator = "must"
-				rad.Name = "qc25_share_nf"
-
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols / 3
-				rad.ColSpan = 1
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-			}
-
-		} else {
-
-			gr := page.AddGroup()
-			gr.BottomVSpacers = btmSpacers
-			gr.Cols = 4
-			var radioValues = []string{
-				"0pct",
-				"10pct",
-				"20pct",
-				"30pct",
-				"40pct",
-				"50pct",
-				"60pct",
-				"70pct",
-				"80pct",
-				"90pct",
-				"100pct",
-			}
-			var labels = []trl.S{
-				{
-					"de": "0% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "10% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "20% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "30% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "40% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "50% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "60% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "70% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "80% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "90% Aktien&shy;anteil",
-					"en": "todo",
-				},
-				{
-					"de": "100% Aktien&shy;anteil",
-					"en": "todo",
-				},
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Herr Lila kann im Monat 100 Euro zur Seite legen. 
-						
-						Wenn er nach 20 Jahren ca. 34.000 Euro angespart haben möchte (<u>im Durchschnitt</u>), 
-						welchen Aktienanteil sollte sein Portfolio mindestens haben?
-					`,
-					"en": `todo`,
-				}.OutlineHid("C25.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 0
-			}
-
-			for idx, label := range labels {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Validator = "must;kneb_qc25_ff"
-				rad.Validator = "must"
-				rad.Name = "qc25_share_ff"
-
-				rad.ValueRadio = radioValues[idx]
-
-				rad.ColSpan = gr.Cols / 3
-				rad.ColSpan = 1
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-
-				rad.Label = label
-				rad.ControlFirst()
-			}
-
-		}
-	}
-
-	if instance == 3 {
-
-		if grIdx == 0 {
-			gr := page.AddGroup()
 			gr.Cols = 3
 			gr.BottomVSpacers = btmSpacers
-
 			{
+
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Frau Gelb möchte während des Projekts einen Ertrag von 40.000&nbsp;Euro erzielen. 
-												
-						Sie ist bereit einen Anteil von 50% an Baumart&nbsp;2 in ihrem Wald zu akzeptieren.
-			
-						Wie viele Bäume muss sie jährlich pflanzen, 
-						damit ihr dies 
-						<i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> 
-						gelingen kann?
-					
+					In Beispiel 2 bitten wir Sie den Anteil von Baumart&nbsp;2 anzupassen. 
+					Lesen Sie anschließend den durchschnittlichen Ertrag aus der Graphik ab 
+					und tragen Sie Ihre Antwort in das Antwortfeld ein.
 					`,
 					"en": `todo`,
-				}.OutlineHid("C26.")
+				}.OutlineHid("C25.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Validator = "must;kneb_qc26_nf"
+				inp.Validator = "must;kneb_qc24_nf"
 				inp.Validator = "must"
-				inp.Name = "qc26_area_nf"
+				inp.Name = "qc25_nf_return"
 
 				inp.Min = 0
-				// 40 Hektar
-				inp.Max = 700
-				inp.Step = 10
-				inp.Placeholder = trl.S{"de": "#", "en": "#"}
+				// 20.900 Tonnen
+				inp.Max = 280 * 1000
 				inp.MaxChars = 6
 				inp.Suffix = trl.S{
-					"de": `Bäume`,
+					"de": `€`,
 					"en": `todo`,
 				}
 				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
-			}
-			/*
-				{
-					inp := gr.AddInput()
-					inp.ColSpanControl = 1
-					inp.Type = "javascript-block"
-					inp.Name = "knebVisiblePrev" // js filename
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 2
+				inp.LabelPadRight()
+				inp.ControlBottom()
+				inp.Label = trl.S{
+					"de": `		
+					Beispiel 2: Herr Lila kann jedes Jahr 100 Bäume pflanzen. 
+					Er wählt einen Anteil von 70% an Baumart&nbsp;2 aus.
+					Wie hoch ist sein prognostizierter Ertrag am Ende des Projekts 
+					<u><b>im Durchschnitt</b></u>?
+					`,
+					"en": `todo`,
 				}
-			*/
+
+			}
 			{
 				inp := gr.AddInput()
 				inp.ColSpanControl = 1
@@ -449,61 +259,194 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 			}
 
 		} else {
-
 			gr := page.AddGroup()
 			gr.Cols = 3
 			gr.BottomVSpacers = btmSpacers
-
 			{
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+						In Beispiel 2 bitten wir Sie den Aktienanteil anzupassen. 
+						Lesen Sie anschließend den durchschnittlichen Ertrag 
+						aus der Graphik ab und tragen Sie Ihre Antwort in das Antwortfeld ein.
+						`,
+						"en": `todo`,
+					}.OutlineHid("C25.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "number"
+					inp.Validator = "must;kneb_qc24_ff"
+					inp.Validator = "must"
+					inp.Name = "qc25_ff_return"
+
+					inp.Min = 0
+					// 104.700 Euro
+					inp.Max = 100 * 1000 * 1000
+					inp.MaxChars = 6
+					inp.Suffix = trl.S{
+						"de": `€`,
+						"en": `todo`,
+					}
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 2
+					inp.LabelPadRight()
+					inp.ControlBottom()
+					inp.Label = trl.S{
+						"de": `		
+						Beispiel 2: Herr Lila kann im Monat 100&nbsp;Euro zur Seite legen. 
+						Er wählt einen Aktienanteil von 70% aus.
+
+						Wie hoch ist sein prognostiziertes Vermögen nach 20&nbsp;Jahren 
+						<u><b>im Durchschnitt</b></u>?
+						`,
+						"en": `todo`,
+					}
+				}
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebQuiz" // js filename
+			}
+
+		}
+	}
+
+	if instance == 3 {
+		if grIdx == 0 {
+			gr := page.AddGroup()
+			gr.Cols = 3
+			gr.BottomVSpacers = btmSpacers
+			{
+
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-						Frau Gelb möchte in 20 Jahren ein Vermögen von 40.000 Euro aufbauen. 
-
-						Sie ist bereit einen Aktienanteil von 50% in ihrem Portfolio zu akzeptieren.
-
-						Wie viele Euro muss sie monatlich sparen, 
-						damit ihr dies 
-						<i><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></i> 
-						gelingen kann?
-		
+					In Beispiel 3 bitten wir Sie die Anzahl der Bäume anzupassen. 
+					Bitte achten Sie dabei auf die Veränderungen in der Graphik. 
+					Tragen Sie Ihre Antwort in das Antwortfeld ein.
 					`,
 					"en": `todo`,
 				}.OutlineHid("C26.")
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Validator = "must;kneb_qc26_ff"
+				inp.Validator = "must;kneb_qc24_nf"
 				inp.Validator = "must"
-				inp.Name = "qc26_area_ff"
+				inp.Name = "qc26_nf_return"
 
 				inp.Min = 0
-				// 310€
-				inp.Max = 200 * 1000
-				// inp.Step = 10
-				inp.Placeholder = trl.S{"de": "#", "en": "#"}
+				// 20.900 Tonnen
+				inp.Max = 280 * 1000
 				inp.MaxChars = 6
 				inp.Suffix = trl.S{
-					"de": `€`,
+					"de": `Bäume`,
 					"en": `todo`,
 				}
 				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 4
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 2
+				inp.LabelPadRight()
+				inp.ControlBottom()
+				inp.Label = trl.S{
+					"de": `		
+					Beispiel 3: Frau Gelb ist bereit einen Anteil von 50% 
+					an Baumart&nbsp;2 in ihrem Wald zu pflanzen. 
+					Sie möchte während des Projekts 
+					<u><b>in den schlechtesten 5 von 100 Fällen</b></u>
+					einen Ertrag von 30.500&nbsp;Euro erzielen. 
+					
+					
+					Wie viele Bäume muss sie jährlich pflanzen, 
+					damit ihr dies 
+					<u><b>in den schlechtesten 5 von 100 Fällen</b></u>
+					gelingen kann?
+					`,
+					"en": `todo`,
+				}
+
 			}
-			/*
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "knebQuiz" // js filename
+			}
+
+		} else {
+			gr := page.AddGroup()
+			gr.Cols = 3
+			gr.BottomVSpacers = btmSpacers
+			{
+
 				{
 					inp := gr.AddInput()
-					inp.ColSpanControl = 1
-					inp.Type = "javascript-block"
-					inp.Name = "knebVisiblePrev" // js filename
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+						In Beispiel 3 bitten wir Sie den monatlichen Sparbetrag anzupassen. 
+						Bitte achten Sie dabei auf die Veränderungen in der Graphik. 
+						Tragen Sie Ihre Antwort in das Antwortfeld ein.
+						`,
+						"en": `todo`,
+					}.OutlineHid("C26.")
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+
 				}
-			*/
+				{
+					inp := gr.AddInput()
+					inp.Type = "number"
+					inp.Validator = "must;kneb_qc24_ff"
+					inp.Validator = "must"
+					inp.Name = "qc26_ff_return"
+
+					inp.Min = 0
+					// 104.700 Euro
+					inp.Max = 100 * 1000 * 1000
+					inp.MaxChars = 6
+					inp.Suffix = trl.S{
+						"de": `€`,
+						"en": `todo`,
+					}
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 2
+					inp.LabelPadRight()
+					inp.ControlBottom()
+					inp.Label = trl.S{
+						"de": `
+						Beispiel 3: Frau Gelb ist bereit einen Aktienanteil von 50% 
+						in ihrem Portfolio zu akzeptieren. 
+						Sie möchte in 20&nbsp;Jahren 
+						<b><u>in den schlechtesten 5 von 100 Fällen</u></b> 
+						ein Vermögen von 30.500&nbsp;Euro aufbauen. 
+						
+						Wie viel Euro muss sie monatlich sparen, 
+						damit ihr dies 
+						<b><u>in den schlechtesten 5 von 100 Fällen</u></b> 
+						 gelingen kann?
+
+						`,
+						"en": `todo`,
+					}
+				}
+
+			}
 			{
 				inp := gr.AddInput()
 				inp.ColSpanControl = 1

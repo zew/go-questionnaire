@@ -11,14 +11,14 @@
  		},
  		"year": 2023,
  		"month": 6,
- 		"deadline": "2030-01-01T00:00:00+01:00",
+ 		"deadline": "2024-02-12T17:15:00+01:00",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c6027830be34f0fca9c92623097f3e0ad46271188459f4ec901e83a7cb66f2fa",
+ 	"md_5": "b44c790f39e6b8ebc155aa0c9ae5201b30a3f0ae19e92d8035aab3e8e12f8b85",
  	"lang_codes": [
  		"de"
  	],
@@ -3585,7 +3585,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Risiko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet \"gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\" \n\t\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\", \n\t\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- R3. --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:120%\"\u003e\n\t\t\t\t\tBitte schätzen Sie Ihre Bereitschaft ein, ein \u003ci\u003efinanzielles\u003c/i\u003e Ri\u0026shy;si\u0026shy;ko ein\u0026shy;zu\u0026shy;ge\u0026shy;hen. \n\t\t\t\t\t\u003c/span\u003e\n\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tAnt\u0026shy;worten Sie bitte anhand der folgenden Skala, \n\t\t\t\t\t\t\twobei der Wert\u0026nbsp;0 bedeutet \"gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\" \n\t\t\t\t\t\t\tund der Wert\u0026nbsp;10 \"sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit\", \n\t\t\t\t\t\t\tum po\u0026shy;ten\u0026shy;zi\u0026shy;ell eine hö\u0026shy;here Rendite zu erzielen.\n\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- R3. --\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 11,
@@ -9126,7 +9126,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag\u003c/i\u003e über einen \u003ci\u003elangen Zeithorizont\u003c/i\u003e zu sparen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine Anlage mit \u003ci\u003egeringem Risiko\u003c/i\u003e \n\t\t\t\t\t\t\tund erzielt \u003ci\u003ekonstante Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, da die Erträge gering sind.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \u003ci\u003ehö\u0026shy;heres Risiko\u003c/i\u003e und erzielen \n\t\t\t\t\t\t\t\u003ci\u003eim Durchschnitt\u003c/i\u003e über einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tGleichzeitig können die Renditen und\n\t\t\t\t\t\t\t der Ge\u0026shy;samtwert des angesparten Vermögens \u003ci\u003eschwanken\u003c/i\u003e.\n\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIm Folgenden geht es um\n\t\t\t\t\t\t\u003ci\u003eInvestitionsentscheidungen im Rahmen der Altersvorsorge\u003c/i\u003e.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tEs gibt verschiedene Möglichkeiten für das Alter vorzusorgen.\n\t\t\t\t\t\tEine Möglichkeit ist\n\t\t\t\t\t\t\u003ci\u003eeinen monatlichen Geldbetrag\u003c/i\u003e über einen \u003ci\u003elangen Zeithorizont\u003c/i\u003e zu sparen.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003eIn diesem Beispiel kann eine Person zwi\u0026shy;schen zwei Anlageformen wählen.\u003c/p\u003e\n\n\t\t\t\t\t\u003cul\u003e\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 1:\u003c/i\u003e Sparen mit \u003cb\u003eSparbuch\u003c/b\u003e.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tEin Sparbuch ist eine Anlage mit \u003ci\u003egeringem Ri\u0026shy;si\u0026shy;ko\u003c/i\u003e \n\t\t\t\t\t\t\tund erzielt \u003ci\u003ekonstante Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tDas \u003ci\u003eangesparte Vermögen schwankt nicht\u003c/i\u003e, \n\t\t\t\t\t\t\tist im Durchschnitt jedoch \u003ci\u003egeringer\u003c/i\u003e, da die Erträge gering sind.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\t\u003ci\u003eMöglichkeit 2\u003c/i\u003e: Sparen mit \u003cb\u003eAktien\u003c/b\u003e. \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien sind Wertpapiere, mit denen Aktionäre Anteile an Un\u0026shy;ter\u0026shy;neh\u0026shy;men erwerben.\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tAktien haben ein \u003ci\u003ehö\u0026shy;heres Ri\u0026shy;si\u0026shy;ko\u003c/i\u003e und erzielen \n\t\t\t\t\t\t\t\u003ci\u003eim Durchschnitt\u003c/i\u003e über einen längeren Zeitraum \n\t\t\t\t\t\t\t\u003ci\u003ehö\u0026shy;here Erträge\u003c/i\u003e. \n\t\t\t\t\t\t\tGleichzeitig können die Renditen und\n\t\t\t\t\t\t\t der Ge\u0026shy;samtwert des angesparten Vermögens \u003ci\u003eschwanken\u003c/i\u003e.\n\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003c/ul\u003e\n\n\t\t\t\t\t\u003cp\u003e\t\t\t\t\t\n\t\t\t\t\t\tIn einer interaktiven Graphik versuchen wir, \n\t\t\t\t\t\tdie Abwägung zwi\u0026shy;schen \u003ci\u003eChancen und Risiken\u003c/i\u003e einer Anlage \n\t\t\t\t\t\tam Kapitalmarkt zu verdeut\u0026shy;lichen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -17538,7 +17538,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10-pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Risiko für Malik?\n\n\t\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- FL6. --\u003e\n\t\t\t\t\t\t\tEs besteht eine 50/50 Chance, dass Maliks Auto innerhalb der nächsten\n\t\t\t\t\t\t\tsechs Monate eine Motorreparatur benötigt, die 1.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tGleichzeitig besteht eine 10-pro\u0026shy;zentige Chance,\n\t\t\t\t\t\t\tdass er die Klimaanlage in seinem Haus ersetzen muss,\n\t\t\t\t\t\t\twas 4.000 Euro kosten würde.\n\n\t\t\t\t\t\t\tWelches ist das grö\u0026shy;ßere finanzielle Ri\u0026shy;si\u0026shy;ko für Malik?\n\n\t\t\t\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- FL6. --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 6,
@@ -22463,8 +22463,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "un\u0026shy;ter        500€ monatlich",
- 								"en": "under        500€ per month"
+ 								"de": "un\u0026shy;ter 500€ monatlich",
+ 								"en": "under 500€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22510,8 +22510,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "       500€ bis un\u0026shy;ter        750€ monatlich",
- 								"en": "       500€ to under         750€ per month"
+ 								"de": "500€ bis un\u0026shy;ter 750€ monatlich",
+ 								"en": "500€ to under  750€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22557,8 +22557,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "       750€ bis un\u0026shy;ter       1.000€ monatlich",
- 								"en": "       750€ to under        1.000€ per month"
+ 								"de": "750€ bis un\u0026shy;ter 1.000€ monatlich",
+ 								"en": "750€ to under  1.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22604,8 +22604,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      1.000€ bis un\u0026shy;ter       1250€ monatlich",
- 								"en": "      1.000€ to under        1250€ per month"
+ 								"de": "1.000€ bis un\u0026shy;ter 1.250€ monatlich",
+ 								"en": "1.000€ to under  1.250€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22651,8 +22651,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      1250€ bis un\u0026shy;ter       1500€ monatlich",
- 								"en": "      1250€ to under        1500€ per month"
+ 								"de": "1.250€ bis un\u0026shy;ter 1.500€ monatlich",
+ 								"en": "1.250€ to under  1.500€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22698,8 +22698,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      1500€ bis un\u0026shy;ter       2.000€ monatlich",
- 								"en": "      1500€ to under        2.000€ per month"
+ 								"de": "1.500€ bis un\u0026shy;ter 2.000€ monatlich",
+ 								"en": "1.500€ to under  2.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22745,8 +22745,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      2.000€ bis un\u0026shy;ter       2500€ monatlich",
- 								"en": "      2.000€ to under        2500€ per month"
+ 								"de": "2.000€ bis un\u0026shy;ter 2.500€ monatlich",
+ 								"en": "2.000€ to under  2.500€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22792,8 +22792,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      2500€ bis un\u0026shy;ter       3.000€ monatlich",
- 								"en": "      2500€ to under        3.000€ per month"
+ 								"de": "2.500€ bis un\u0026shy;ter 3.000€ monatlich",
+ 								"en": "2.500€ to under  3.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22839,8 +22839,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      3.000€ bis un\u0026shy;ter       3500€ monatlich",
- 								"en": "      3.000€ to under        3500€ per month"
+ 								"de": "3.000€ bis un\u0026shy;ter 3.500€ monatlich",
+ 								"en": "3.000€ to under  3.500€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22886,8 +22886,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      3500€ bis un\u0026shy;ter       4.000€ monatlich",
- 								"en": "      3500€ to under        4.000€ per month"
+ 								"de": "3.500€ bis un\u0026shy;ter 4.000€ monatlich",
+ 								"en": "3.500€ to under  4.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22933,8 +22933,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      4.000€ bis un\u0026shy;ter       4500€ monatlich",
- 								"en": "      4.000€ to under        4500€ per month"
+ 								"de": "4.000€ bis un\u0026shy;ter 4.500€ monatlich",
+ 								"en": "4.000€ to under  4.500€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -22980,8 +22980,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      4500€ bis un\u0026shy;ter       5.000€ monatlich",
- 								"en": "      4500€ to under        5.000€ per month"
+ 								"de": "4.500€ bis un\u0026shy;ter 5.000€ monatlich",
+ 								"en": "4.500€ to under  5.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -23027,8 +23027,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      5.000€ bis un\u0026shy;ter       7500€ monatlich",
- 								"en": "      5.000€ to under        7500€ per month"
+ 								"de": "5.000€ bis un\u0026shy;ter 7.500€ monatlich",
+ 								"en": "5.000€ to under  7.500€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -23074,8 +23074,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "      7500€ bis un\u0026shy;ter      10.000€ monatlich",
- 								"en": "      7500€ to under       10.000€ per month"
+ 								"de": "7.500€ bis un\u0026shy;ter 10.000€ monatlich",
+ 								"en": "7.500€ to under  10.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -23121,8 +23121,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "     10.000€ bis un\u0026shy;ter      15.000€ monatlich",
- 								"en": "     10.000€ to under       15.000€ per month"
+ 								"de": "10.000€ bis un\u0026shy;ter 15.000€ monatlich",
+ 								"en": "10.000€ to under  15.000€ per month"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -23168,8 +23168,8 @@
  							"name": "qh3_income",
  							"type": "radio",
  							"label": {
- 								"de": "     15.000€ und mehr",
- 								"en": "     15.000€ and more"
+ 								"de": "15.000€ und mehr",
+ 								"en": "15.000€ and more"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -23314,7 +23314,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(z.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Risikolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
+ 								"de": "\u003c!-- a) --\u003e\n\t\t\t\t\t\u003cspan style=\"font-size:115%\"\u003ePrivate Lebensversi\u0026shy;cherungen\u003c/span\u003e\n\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t(z.B. klassische und fondsgebundene Kapitallebensversi\u0026shy;cherungen,\n\t\t\t\t\t\t\u003ci\u003enicht\u003c/i\u003e reine Ri\u0026shy;si\u0026shy;kolebensversi\u0026shy;cherungen\n\t\t\t\t\t\toder Direktversi\u0026shy;cherungen über den Arbeitgeber)\n\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t\u003cdiv class='error-spacer'\u003e\u003c/div\u003e",
  								"en": "\u003c!-- a) --\u003etodo\u003cdiv class='error-spacer'\u003e\u003c/div\u003e"
  							},
  							"col_span": 7,

@@ -368,7 +368,11 @@ var optEchart = {
         // text: 'ECharts Getting Started Example'
         text: 'Angespartes Vermögen',
         text:  getChartTitle(yr,azV),
-        left: '1%'
+        left: '1%',
+        textStyle: {
+            fontSize: 18,
+            fontSize: 15,
+        }
     },
     tooltip: {},
     toolbox: {

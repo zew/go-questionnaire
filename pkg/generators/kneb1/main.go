@@ -3483,8 +3483,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				0,
 				500,
 				750,
+
 				1000,
-				// 1000,
 				1250,
 				1500,
 				2000,
@@ -3502,6 +3502,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			lbls := make([]trl.S, 0, len(ranges)+1)
 			opts := make([]string, 0, len(ranges)+1)
 
+			//
+			insertDot := func(s string) string {
+
+				s = strings.TrimSpace(s)
+
+				ln := len(s)
+				if ln > 3 {
+					s = s[0:ln-3] + "." + s[ln-3:]
+				}
+
+				return s
+
+			}
+
 			for i := 0; i < len(ranges); i++ {
 
 				rLow := ranges[i]
@@ -3512,16 +3526,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 				rsLow := fmt.Sprintf("%10.0f", float64(rLow))
 				rsHig := fmt.Sprintf("%10.0f", float64(rHig))
-				if strings.HasSuffix(rsLow, "000") {
-					ln := len(rsLow)
-					rsLow = rsLow[0:ln-3] + ".000"
-				}
-				if strings.HasSuffix(rsHig, "000") {
-					ln := len(rsHig)
-					rsHig = rsHig[0:ln-3] + ".000"
-				}
 				// rsLow = strings.ReplaceAll(rsLow, ",", ".")
 				// rsHig = strings.ReplaceAll(rsHig, ",", ".")
+
+				rsLow = insertDot(rsLow)
+				rsHig = insertDot(rsHig)
 
 				opt := fmt.Sprintf("upto%d", rHig)
 				lbl := trl.S{

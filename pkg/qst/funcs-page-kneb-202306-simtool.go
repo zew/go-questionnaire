@@ -69,17 +69,13 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.Label = trl.S{
 					"de": `
 					Um Sie beim Kennenlernen der Graphik weiter zu unterstützen, 
-					haben wir drei  Beispiele vorbereitet.
+					stellen wir Ihnen drei Szenarien vor.
 					<br>
 					<br>
 
-					In Beispiel 1 bitten wir Sie, einen Wert in der Graphik <i>abzulesen</i>. 
-					<br>
-
+					Im ersten Szenario bitten wir Sie, einen Wert in der Graphik <i>abzulesen</i>. 
+					Sie müssen keinen der Werte anpassen. 
 					
-					Sie müssen dafür keinen der Werte anpassen. 
-					
-					Bitte tragen Sie Ihre Antwort in das Antwortfeld ein.
 				`,
 					"en": `todo`,
 				}.OutlineHid("C24.")
@@ -108,12 +104,12 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.ControlBottom()
 				inp.Label = trl.S{
 					"de": `		
-					Beispiel 1: Frau Blau möchte über die Projektlaufzeit 
+					Szenario 1: Frau Blau möchte über die Projektlaufzeit 
 					jedes Jahr 100&nbsp;Bäume pflanzen. 
 					Sie wählt einen Anteil von 50% an Baumart&nbsp;2 aus.
 
 					Wie hoch ist ihr prognostizierter Ertrag 
-					<u><b>in den besten 5 von 100 Fällen</b></u>?
+					<u><b>in den besten 5 von 100&nbsp;Fällen</b></u>?
 					`,
 					"en": `todo`,
 				}
@@ -138,17 +134,12 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.Label = trl.S{
 						"de": `
 						Um Sie beim Kennenlernen der Graphik weiter zu unterstützen, 
-						haben wir drei  Beispiele vorbereitet.
+						stellen wir Ihnen drei Szenarien vor.
 						<br>
 						<br>
 	
-						In Beispiel 1 bitten wir Sie, einen Wert in der Graphik <i>abzulesen</i>. 
-						<br>
-	
-						
-						Sie müssen dafür keinen der Werte anpassen. 
-						
-						Bitte tragen Sie Ihre Antwort in das Antwortfeld ein.
+						Im ersten Szenario bitten wir Sie, einen Wert in der Graphik <i>abzulesen</i>. 
+						Sie müssen keinen der Werte anpassen. 	
 					`,
 						"en": `todo`,
 					}.OutlineHid("C24.")
@@ -178,12 +169,12 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.ControlBottom()
 					inp.Label = trl.S{
 						"de": `					
-						Beispiel 1: Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
+						Szenario 1: Frau Blau möchte über einen Zeitraum von 20&nbsp;Jahren 
 						einen monatlichen Sparbetrag von 100&nbsp;Euro anlegen. 
 						Sie wählt einen Aktienanteil von 50%.
 
 						Wie hoch ist ihr prognostiziertes Vermögen  
-						<u><b>in den besten 5 von 100 Fällen</b></u>?
+						<u><b>in den besten 5 von 100&nbsp;Fällen</b></u>?
 						`,
 						"en": `todo`,
 					}
@@ -211,9 +202,9 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-					In Beispiel 2 bitten wir Sie den Anteil von Baumart&nbsp;2 anzupassen. 
-					Lesen Sie anschließend den durchschnittlichen Ertrag aus der Graphik ab 
-					und tragen Sie Ihre Antwort in das Antwortfeld ein.
+					In Szenario 2 bitten wir Sie, den Anteil von Baumart&nbsp;2 anzupassen
+					und anschließend den durchschnittlichen Ertrag aus der Graphik 
+					abzulesen. 
 					`,
 					"en": `todo`,
 				}.OutlineHid("C25.")
@@ -242,8 +233,8 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.ControlBottom()
 				inp.Label = trl.S{
 					"de": `		
-					Beispiel 2: Herr Lila kann jedes Jahr 100 Bäume pflanzen. 
-					Er wählt einen Anteil von 70% an Baumart&nbsp;2 aus.
+					Szenario 2: Herr Lila kann jedes Jahr 100 Bäume pflanzen. 
+					Er wählt einen Anteil von <i>70%</i> an Baumart&nbsp;2 aus.
 					Wie hoch ist sein prognostizierter Ertrag am Ende des Projekts 
 					<u><b>im Durchschnitt</b></u>?
 					`,
@@ -269,9 +260,10 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
-						In Beispiel 2 bitten wir Sie den Aktienanteil anzupassen. 
-						Lesen Sie anschließend den durchschnittlichen Ertrag 
-						aus der Graphik ab und tragen Sie Ihre Antwort in das Antwortfeld ein.
+						In Szenario 2 bitten wir Sie,
+						 den Aktienanteil anzupassen und 
+						 anschließend den durchschnittlichen Ertrag 
+						aus der Graphik abzulesen.
 						`,
 						"en": `todo`,
 					}.OutlineHid("C25.")
@@ -301,8 +293,8 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.ControlBottom()
 					inp.Label = trl.S{
 						"de": `		
-						Beispiel 2: Herr Lila kann im Monat 100&nbsp;Euro zur Seite legen. 
-						Er wählt einen Aktienanteil von 70% aus.
+						Szenario 2: Herr Lila kann im Monat 100&nbsp;Euro zur Seite legen. 
+						Er wählt einen Aktienanteil von <i>70%</i> aus.
 
 						Wie hoch ist sein prognostiziertes Vermögen nach 20&nbsp;Jahren 
 						<u><b>im Durchschnitt</b></u>?
@@ -333,9 +325,10 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `
-					In Beispiel 3 bitten wir Sie die Anzahl der Bäume anzupassen. 
+					In Szenario 3 bitten wir Sie,
+					 die Anzahl der Bäume anzupassen. 
 					Bitte achten Sie dabei auf die Veränderungen in der Graphik. 
-					Tragen Sie Ihre Antwort in das Antwortfeld ein.
+					
 					`,
 					"en": `todo`,
 				}.OutlineHid("C26.")
@@ -364,16 +357,16 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 				inp.ControlBottom()
 				inp.Label = trl.S{
 					"de": `		
-					Beispiel 3: Frau Gelb ist bereit einen Anteil von 50% 
+					Szenario 3: Frau Gelb ist bereit einen Anteil von 50% 
 					an Baumart&nbsp;2 in ihrem Wald zu pflanzen. 
 					Sie möchte während des Projekts 
-					<u><b>in den schlechtesten 5 von 100 Fällen</b></u>
+					<u><b>in den schlechtesten 5 von 100&nbsp;Fällen</b></u>
 					einen Ertrag von 30.500&nbsp;Euro erzielen. 
 					
 					
 					Wie viele Bäume muss sie jährlich pflanzen, 
 					damit ihr dies 
-					<u><b>in den schlechtesten 5 von 100 Fällen</b></u>
+					<u><b>in den schlechtesten 5 von 100&nbsp;Fällen</b></u>
 					gelingen kann?
 					`,
 					"en": `todo`,
@@ -398,9 +391,9 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.Type = "textblock"
 					inp.Label = trl.S{
 						"de": `
-						In Beispiel 3 bitten wir Sie den monatlichen Sparbetrag anzupassen. 
+						In Szenario 3 bitten wir Sie,
+						 den monatlichen Sparbetrag anzupassen. 
 						Bitte achten Sie dabei auf die Veränderungen in der Graphik. 
-						Tragen Sie Ihre Antwort in das Antwortfeld ein.
 						`,
 						"en": `todo`,
 					}.OutlineHid("C26.")
@@ -430,15 +423,15 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 					inp.ControlBottom()
 					inp.Label = trl.S{
 						"de": `
-						Beispiel 3: Frau Gelb ist bereit einen Aktienanteil von 50% 
+						Szenario 3: Frau Gelb ist bereit einen Aktienanteil von 50% 
 						in ihrem Portfolio zu akzeptieren. 
 						Sie möchte in 20&nbsp;Jahren 
-						<b><u>in den schlechtesten 5 von 100 Fällen</u></b> 
+						<b><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></b> 
 						ein Vermögen von 30.500&nbsp;Euro aufbauen. 
 						
 						Wie viel Euro muss sie monatlich sparen, 
 						damit ihr dies 
-						<b><u>in den schlechtesten 5 von 100 Fällen</u></b> 
+						<b><u>in den schlechtesten 5 von 100&nbsp;Fällen</u></b> 
 						 gelingen kann?
 
 						`,

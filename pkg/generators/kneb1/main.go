@@ -2893,6 +2893,127 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
+	// FL confidence - new 2024-02
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"de": "Vertrauen in Fin Quiz",
+			"en": "todo",
+		}
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.SuppressInProgressbar = true
+
+		page.WidthMax("48rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Im Laufe der Befragung haben wir Ihnen sechs Quizfragen zu finanziellem Wissen gestellt.
+						<br>
+						Wie viele Fragen haben Sie Ihrer Meinung nach richtig beantwortet?									
+					`,
+					"en": `todo`,
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+
+			inputs := []string{
+				"qfl_confidence_",
+			}
+			lblsQ := []trl.S{
+				{
+					"de": `&nbsp;`,
+					"en": `&nbsp;`,
+				},
+			}
+
+			for i := 0; i < len(inputs); i++ {
+				lbls := []trl.S{
+					{
+						"de": "keine",
+						"en": "keine",
+					},
+					// 1-6
+					{
+						"de": " 1",
+						"en": " 1",
+					},
+					{
+						"de": " 2",
+						"en": " 2",
+					},
+					{
+						"de": " 3",
+						"en": " 3",
+					},
+					{
+						"de": " 4",
+						"en": " 4",
+					},
+					{
+						"de": " 5",
+						"en": " 5",
+					},
+					{
+						"de": " 6",
+						"en": " 6",
+					},
+
+					{
+						"de": "weiß<br>nicht",
+						"en": "weiß<br>nicht",
+					},
+					{
+						"de": "keine<br>Angabe",
+						"en": "keine<br>Angabe",
+					},
+				}
+
+				gb := qst.NewGridBuilderRadiosWithValidator(
+					[]float32{
+
+						0.2, 1.2,
+
+						0, 1,
+						0, 1,
+						0, 1,
+						0, 1,
+						0, 1,
+						0, 1,
+
+						0.2, 1.2,
+						0.0, 1.2,
+					},
+					lbls,
+					[]string{inputs[i]},
+					[]string{
+						"keine", "1", "2", "3", "4", "5", "6",
+						"dontknow", "noanswer",
+					},
+					[]trl.S{{"de": ``, "en": ``}},
+					"mustRadioGroup",
+				)
+				gb.MainLabel = lblsQ[i].OutlineHid("FLConf")
+				gr := page.AddGrid(gb)
+				_ = gr
+				// gr.BottomVSpacers = 2
+			}
+
+		}
+
+	}
+
 	// page experiment +5
 	erfahrungMitFinanzenSplit1(&q, 0, 0)
 	erfahrungMitFinanzenSplit2(&q, 0, 0)
@@ -3820,7 +3941,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// knebDownloadURL
 			var labels = []trl.S{
 				{
-					"de": `Das E-Book "Einfach Genial investieren" von Prof. Martin Weber `,
+					"de": `Das E-Book "Genial einfach investieren" von Prof. Martin Weber `,
 					"en": `todo`,
 				},
 				{

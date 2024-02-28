@@ -57,7 +57,7 @@ func (us unsubscribeT) CSVHeader() string {
 	fmt.Fprintf(b, "%v;", "email")
 	fmt.Fprintf(b, "%v;", "date")
 	fmt.Fprintf(b, "%v;", "path")
-	fmt.Fprintf(b, "%v;", "query")
+	fmt.Fprintf(b, "%v;", "query") // remove trailing ;  at next release
 	fmt.Fprint(b, "\n")
 	return b.String()
 }
@@ -69,7 +69,7 @@ func (us unsubscribeT) CSVRow() string {
 	fmt.Fprintf(b, "%v;", us.Email)
 	fmt.Fprintf(b, "%v;", us.Date)
 	fmt.Fprintf(b, "%v;", us.Path)
-	fmt.Fprintf(b, "%v;", us.Query)
+	fmt.Fprintf(b, "%v;", us.Query) // remove trailing ;  at next release
 	fmt.Fprint(b, "\n")
 	return b.String()
 }
@@ -192,7 +192,8 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 	//
 	// data from URL path
 	dirs := strings.Split(r.URL.Path, "/") // path.SplitList(r.URL.Path) does not exist
-	// pths[0...x] is "/.../.../unsubscribe/proj/tsk/someemail"
+	// pths[0...x] is "/.../.../unsubscribe/proj/tsk/someemail/dummy"
+	dirs = dirs[:len(dirs)-1] // cut off the last element - "dummy"
 	// from the end...
 	if len(dirs) > 3 {
 		ln := len(dirs) - 1

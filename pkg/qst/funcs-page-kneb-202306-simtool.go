@@ -262,7 +262,7 @@ func kneb202306simtool(q *QuestionnaireT, page *pageT, instance int) error {
 						"de": `
 						In Szenario 2 bitten wir Sie,
 						 den Aktienanteil anzupassen und 
-						 anschließend den durchschnittlichen Ertrag 
+						 anschließend das durchschnittliche Vermögen 
 						aus der Graphik abzulesen.
 						`,
 						"en": `todo`,

@@ -11,8 +11,8 @@
 
 @REM -race needs CGO since 1.22 
 SET CGO_ENABLED=1
-go build -v -race .\cmd\server\main.go
-@REM go build -v  .\cmd\server\main.go
+@REM go build -v -race .\cmd\server\main.go
+go build -v  .\cmd\server\main.go
 
 del    /s  go-questionnaire.exe
 rename main.exe  go-questionnaire.exe

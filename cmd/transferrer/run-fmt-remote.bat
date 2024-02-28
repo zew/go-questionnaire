@@ -39,4 +39,4 @@ php import-fmt-from-csv.php  >>c:\xampp\htdocs\go-questionnaire\cmd\transferrer\
 
 
 @REM call FILENAME
-call run-kneb-remote.bat
+@REM call "run-kneb-remote.bat"

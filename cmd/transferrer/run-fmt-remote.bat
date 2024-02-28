@@ -11,7 +11,8 @@ setlocal
 CD c:\xampp\htdocs\go-questionnaire\cmd\transferrer\
 
 SET JOBTIME=%date:~6,4%-%date:~3,2%-%date:~0,2%-%time:~0,5%
-SET LOGFILE=fmt-import-%date:~6,4%-%date:~3,2%-%date:~0,2%.log
+mkdir "logs-fmt"
+SET LOGFILE=.\logs-fmt\import-%date:~6,4%-%date:~3,2%-%date:~0,2%.log
 
 
 @REM quotes will be in log - but I dont care
@@ -36,3 +37,6 @@ php import-fmt-from-csv.php  >>c:\xampp\htdocs\go-questionnaire\cmd\transferrer\
 @REM no pause - dont stall scheduler
 @REM pause
 
+
+@REM call FILENAME
+@REM call "run-kneb-remote.bat"

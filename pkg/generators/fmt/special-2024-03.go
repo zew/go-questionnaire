@@ -26,7 +26,7 @@ func special202403(q *qst.QuestionnaireT) error {
 		"de": "todo",
 		"en": "Questions about<br>climate transition",
 	}
-	page.WidthMax("48rem")
+	page.WidthMax("75rem")
 
 	{
 		gr := page.AddGroup()
@@ -36,12 +36,12 @@ func special202403(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "dyn-composite"
-			inp.DynamicFunc = fmt.Sprintf("Special202403__%v__%v", 0, 0)
+			inp.DynamicFunc = fmt.Sprintf("Special202403QS1__%v__%v", 0, 0)
 			inp.DynamicFuncParamset = ""
 			inp.ColSpanControl = 1
 		}
 
-		_, inputNames, _ := cpfmt.Special202403(q, 0, 0, true)
+		_, inputNames, _ := cpfmt.Special202403QS1(q, 0, 0, true)
 		for _, inpName := range inputNames {
 			inp := gr.AddInput()
 			inp.Type = "dyn-composite-scalar"

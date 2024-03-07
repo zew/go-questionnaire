@@ -2,115 +2,88 @@ package cpfmt
 
 import (
 	"fmt"
-	"log"
 	"strings"
 
 	qstif "github.com/zew/go-questionnaire/pkg/qstif"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func selectInp02(langCode, inpName, inpValue string) string {
+func oneRadio(q qstif.Q, inpName, mod string) string {
 
-	ret := ""
+	// tpl := `
+	// <input type="radio" name="inpname_mod"   value="1" />
+	// <input type="radio" name="inpname_mod"   value="2" />
+	// <input type="radio" name="inpname_mod"   value="3" />
+	// <input type="radio" name="inpname_mod"   value="4" />
 
-	if langCode == "de" {
-		ret = fmt.Sprintf(`
-		<select name="%v" type="select">
-			<option value="" >bitte wählen</option>
-			<option value="1">stark positiv korreliert</option>
-			<option value="2">leicht positiv korreliert</option>
-			<option value="3">unkorreliert</option>
-			<option value="4">leicht negativ korreliert</option>
-			<option value="5">stark negativ korreliert</option>
-			<option value="6">keine Angabe</option>
-        </select>	
-		`,
-			inpName,
-		)
+	// `
 
-	} else {
-		ret = fmt.Sprintf(`
-		<select name="%v" type="select">
-			<option value="" >please select</option>
-			<option value="1">strongly positively correlated</option>
-			<option value="2">slightly positively correlated</option>
-			<option value="3">uncorrelated</option>
-			<option value="4">slightly negatively correlated</option>
-			<option value="5">strongly negatively correlated</option>
-			<option value="6">no answer</option>
-        </select>	
-		`,
-			inpName,
+	sb := &strings.Builder{}
+	for i := 1; i <= 4; i++ {
+		inm := fmt.Sprintf("%v_%v", inpName, mod) // input name multiplied
+		checked := ""
+		vl, err := q.ResponseByName(inm)
+		if err == nil && fmt.Sprintf("%v", i) == vl {
+			checked = "checked"
+		}
+		fmt.Fprintf(
+			sb,
+			"	<input type=\"radio\" name=\"%v\"   value=\"%v\"   %v />\n",
+			inm,
+			i,
+			checked,
 		)
 	}
 
-	anchor := fmt.Sprintf(`value="%v"`, inpValue)
-	ret = strings.ReplaceAll(ret, anchor, anchor+" selected")
+	return sb.String()
 
-	return ret
 }
 
-func Special202403(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
+func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (string, []string, error) {
 
 	inpNames := []string{
 		"qs1_automotive",
-		"qs1_industrials",
+		"qs1_industr", // industrials gets hyphenated
 		"qs1_construction",
 		"qs1_utilities",
 	}
-
-	if preflight {
-		return "", inpNames, nil
+	mods := []string{
+		"2030",
+		"2040",
+		"2050",
+		"2050_after",
 	}
 
-	inpValues := make([]string, 0, len(inpNames))
-	for _, n := range inpNames {
-		v, err := q.ResponseByName(n)
-		if err != nil {
-			log.Printf("could not find input name %v: %v", n, err)
+	//
+	//
+	inpNamesMult := []string{} // input names multiplied
+	for _, inp := range inpNames {
+		for _, mod := range mods {
+			inpNamesMult = append(inpNamesMult, fmt.Sprintf("%v_%v", inp, mod))
 		}
-		inpValues = append(inpValues, v)
+		inpNamesMult = append(inpNamesMult, inp+"_noaw")
 	}
 
-	// if q.UserIDInt() < -100*1000 {
-	// 	return "", []string{}, nil
-	// }
-
-	headerLbls := []trl.S{
-		{
-			"de": `2030`,
-			"en": `2030`,
-		},
-		{
-			"de": `2040`,
-			"en": `2040`,
-		},
-		{
-			"de": `2050`,
-			"en": `2050`,
-		},
-		{
-			"de": `after 2050`,
-			"en": `nach  2050`,
-		},
-		{
-			"de": `2030`,
-			"en": `2030`,
-		},
+	if modePreflight {
+		return "", inpNamesMult, nil
 	}
 
 	rowLbls := []trl.S{
 		{
-			"de": `Aktien               <br>Eurogebiet`,
-			"en": `stocks               <br>(euro area)`,
+			"de": `todo`,
+			"en": `Automotive`,
 		},
 		{
-			"de": `Staatsanleihen       <br>Eurogebiet`,
-			"en": `sovereign bonds      <br>(euro area)`,
+			"de": `todo`,
+			"en": `Industrials <small>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</small>`,
 		},
 		{
-			"de": `Unternehmensanleihen <br>Eurogebiet`,
-			"en": `corporate bonds      <br>(euro area)`,
+			"de": `todo`,
+			"en": `Construction`,
+		},
+		{
+			"de": `todo`,
+			"en": `Utilities  <small>(e.g. electricity, gas, water)</small>`,
 		},
 	}
 
@@ -118,135 +91,219 @@ func Special202403(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string,
 
 	sb := &strings.Builder{}
 
+	//
+	//
 	fmt.Fprint(sb, `
-		<style>
-
-			table.table-special-202303 {
-				width:     99%;
-				max-width: 75rem;
-				min-width: 60rem;
-
-				margin: 0.1rem auto;
-
-				background-color: transparent;
-				/* border: 1px solid blanchedalmond; */
-
-			}
+	<style>
 
 
-			table.table-special-202303,
-			table.table-special-202303 td,
-			dummy {
-				border-collapse: collapse;
-				border: 1px solid black;
-				border: none;
-			}
+	input[type=radio]:focus {
+		box-shadow: none !important;
+	}
+	
 
-			table.table-special-202303 td,
-			dummy {
-				border: 2px solid var(--clr-sec);
-			}
+    .tbl-1 {
+        width: 99%;
+        max-width: 75rem;
+        min-width: 60rem;
+
+        margin: 0.1rem auto;
+
+        background-color: transparent;
+
+ 
+    }
+
+    table.tbl-1 td,
+    dummy {
+
+        margin:  0;
+        padding: 0;
+
+        border: 2px solid var(--clr-sec);
+
+        border: 1px solid black;
+        border-collapse: collapse;
+        border: none;
+
+    }
+
+    table.tbl-1 td {
+        text-align: center;
+        vertical-align: middle;
+        
+        padding: 0.4rem 0.2rem;
+        width: 21%;
+    }
+    table.tbl-1 tr:first-child td {
+        vertical-align:  bottom;
+    }
+
+    
 
 
-			table.table-special-202303 td {
-				text-align:     center;
-				vertical-align: middle;
+    /* first and last column */
+    table.tbl-1 td:first-child {
+        width: 11%;
+        text-align: right;
+        text-align: left;
+        padding-right: 0.4rem;
+    }
 
-				padding: 0.4rem 0.2rem;
-				width: 18.5%;
-			}
-
-			table.table-special-202303 td:first-child {
-				width: 18%;
-				text-align: right;
-				padding-right: 0.7rem;
-			}
-
-			table.table-special-202303 td:nth-child(2) {
-				width: 12%;
-			}
+    table.tbl-1 td:last-child {
+        width: 3%;
+    }
+    /* second column */
+    table.tbl-1  td:nth-child(2) {
+        /* background-color: chartreuse; */
+    }
 
 
+    /* contents */
+    table.tbl-1 td .hdr{
+        font-size: 85%;
+        font-size: 92%;
+    }
 
 
-			table.table-special-202303 tr:first-child td {
-				background-color: var(--clr-sec-lgt1);
-			}
-			table.table-special-202303 td:first-child {
-				background-color: var(--clr-sec-lgt1);
-			}
+    table.tbl-1 td input[type=radio],
+    table.tbl-1 td .hdr,
+    dummy
+    {
+        display: inline-block;
+        width: 22%;
+        width: 20%;
+        width: 18%;
+        margin: 0;
+        padding-left:  0.02rem;
+        /* padding-right: 1.2rem; */
+        border: 1px solid red;
+        border: none;
+    }
+
+    table.tbl-1 td input:last-child,
+    table.tbl-1 td .hdr:last-child
+    {
+        padding-right: 0.02rem;
+    }
+
+    
 
 
-		</style>
+</style>
 
 	`)
 
-	tplContainer := `
-    <table border="border: 1px solid grey" class="table-special-202303" >
-        <tr>    
-            <td> <span style="font-size: 85%%">  %v  </span> </td>
-            <td> %v </td>
-            <td> %v </td>
-            <td> %v </td>
-            <td> %v </td>
-        </tr>
+	tblStart := `
+	<table class="tbl-1">
 
-        <tr>    
-            <td>%v</td>
-
-            <td> - </td>
-            <td> %v </td>
-            <td> %v </td>
-            <td> %v </td>
-
-        </tr>
-
-        <tr>    
-            <td>%v</td>
-
-            <td> - </td>
-            <td> - </td>
-            <td> %v </td>
-            <td> %v </td>
-        </tr>
-
-        <tr>    
-            <td>%v</td>
-
-            <td> - </td>
-            <td> - </td>
-            <td> - </td>
-            <td> %v </td>
-
-        </tr>
-
-
-    </table>
+    <tr>
+        <td> &nbsp; </td>
+        <td> 2030 </td>
+        <td> 2040 </td>
+        <td> 2050 </td>
+        <td> after 2050 </td>
+        <td> no answer </td>
+    </tr>
+    <tr>
+        <td> &nbsp; </td>
+        <td> 
+            <span class="hdr">--</span>
+            <span class="hdr">-</span>
+            <span class="hdr">+</span>
+            <span class="hdr">++</span>
+        </td>
+        <td> 
+            <span class="hdr">--</span>
+            <span class="hdr">-</span>
+            <span class="hdr">+</span>
+            <span class="hdr">++</span>
+        </td>
+        <td> 
+            <span class="hdr">--</span>
+            <span class="hdr">-</span>
+            <span class="hdr">+</span>
+            <span class="hdr">++</span>
+        </td>
+        <td> 
+            <span class="hdr">--</span>
+            <span class="hdr">-</span>
+            <span class="hdr">+</span>
+            <span class="hdr">++</span>
+        </td>
+        <td> &nbsp; </td>
+    </tr>
 
 	`
 
+	if lc == "de" {
+		tblStart = strings.ReplaceAll(tblStart, "after", "nach")
+		tblStart = strings.ReplaceAll(tblStart, "no answer", "keine Antw.")
+	}
+
 	fmt.Fprintf(
-
 		sb,
-		tplContainer,
+		tblStart,
+	)
 
-		headerLbls[0].Tr(lc),
-		headerLbls[1].Tr(lc),
-		headerLbls[2].Tr(lc),
-		headerLbls[3].Tr(lc),
-		headerLbls[4].Tr(lc),
+	rowTpl := `
+	<tr>
+		<td> rowLabel </td>
+		<td>
+			<input type="radio" name="inpname_2030"   value="1" />
+			<input type="radio" name="inpname_2030"   value="2" />
+			<input type="radio" name="inpname_2030"   value="3" />
+			<input type="radio" name="inpname_2030"   value="4" />
+		</td>
+		<td>
+			<input type="radio" name="inpname_2040"   value="1" />
+			<input type="radio" name="inpname_2040"   value="2" />
+			<input type="radio" name="inpname_2040"   value="3" />
+			<input type="radio" name="inpname_2040"   value="4" />
+		</td>
+		<td>
+			<input type="radio" name="inpname_2050"   value="1" />
+			<input type="radio" name="inpname_2050"   value="2" />
+			<input type="radio" name="inpname_2050"   value="3" />
+			<input type="radio" name="inpname_2050"   value="4" />
+		</td>
+		<td>
+			<input type="radio" name="inpname_2050_after"   value="1" />
+			<input type="radio" name="inpname_2050_after"   value="2" />
+			<input type="radio" name="inpname_2050_after"   value="3" />
+			<input type="radio" name="inpname_2050_after"   value="4" />
+		</td>
+		<td>
+			<input type="checkbox" name="inpname_noaw">
+		</td>
+	</tr>
+			
+	`
+	_ = rowTpl
 
-		rowLbls[0].Tr(lc),
-		selectInp02(lc, inpNames[0], inpValues[0]),
-		selectInp02(lc, inpNames[1], inpValues[1]),
-		selectInp02(lc, inpNames[2], inpValues[2]),
+	for rowIdx, inp := range inpNames {
+		fmt.Fprint(sb, "<tr>\n")
+		fmt.Fprintf(sb, "	<td> %v</td>\n", rowLbls[rowIdx].Tr(lc))
+		for _, mod := range mods {
+			fmt.Fprintf(sb, "	<td> %v</td>\n", oneRadio(q, inp, mod))
+		}
 
-		rowLbls[1].Tr(lc),
-		selectInp02(lc, inpNames[3], inpValues[3]),
-		selectInp02(lc, inpNames[4], inpValues[4]),
+		//
+		inpNA := fmt.Sprintf("%v_noaw", inp)
+		checked := ""
+		vl, err := q.ResponseByName(inpNA)
+		if err == nil && vl != "" {
+			checked = "checked"
+		}
+		fmt.Fprintf(sb, "	<td><input type=\"checkbox\" name=\"%v_noaw\" %v>\n", inp, checked)
+		fmt.Fprint(sb, "</tr>\n")
+	}
 
-		rowLbls[2].Tr(lc),
-		selectInp02(lc, inpNames[5], inpValues[5]),
+	//
+	// close table
+	fmt.Fprintf(
+		sb,
+		"</table>",
 	)
 
 	return sb.String(), inpNames, nil

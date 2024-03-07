@@ -51,4 +51,5 @@ var CompositeFuncs = map[string]CompositeFuncT{
 	"Special202212Q3":                        cpfmt.Special202212Q3,                        //
 	"Special202303":                          cpfmt.Special202303,                          //
 	"Special202403QS1":                       cpfmt.Special202403QS1,                       //
+	"Special202403QS2":                       cpfmt.Special202403QS2,                       //
 }

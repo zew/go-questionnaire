@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func oneRadio(q qstif.Q, inpName, mod string) string {
+func fourRadios(q qstif.Q, inpName, mod string) string {
 
 	// tpl := `
 	// <input type="radio" name="inpname_mod"   value="1" />
@@ -70,20 +70,20 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 	rowLbls := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Fahrzeugbau`,
 			"en": `Automotive`,
 		},
 		{
-			"de": `todo`,
-			"en": `Industrials <small>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</small>`,
+			"de": `Industrieunternehmen <ssmall>(Chemie, Pharma, Stahl, NE-Metalle, Elektro, Maschinenbau)</ssmall>`,
+			"en": `Industrials <ssmall>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</ssmall>`,
 		},
 		{
-			"de": `todo`,
+			"de": `Baugewerbe`,
 			"en": `Construction`,
 		},
 		{
-			"de": `todo`,
-			"en": `Utilities  <small>(e.g. electricity, gas, water)</small>`,
+			"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
+			"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
 		},
 	}
 
@@ -98,7 +98,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 
 	input[type=radio]:focus {
-		box-shadow: none !important;
+		box-shadow: none;
 	}
 	
 
@@ -151,7 +151,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
     }
 
     table.tbl-1 td:last-child {
-        width: 3%;
+        width: 4%;
     }
     /* second column */
     table.tbl-1  td:nth-child(2) {
@@ -238,7 +238,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 	if lc == "de" {
 		tblStart = strings.ReplaceAll(tblStart, "after", "nach")
-		tblStart = strings.ReplaceAll(tblStart, "no answer", "keine Antw.")
+		tblStart = strings.ReplaceAll(tblStart, "no answer", "keine Ang.")
 	}
 
 	fmt.Fprintf(
@@ -285,7 +285,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 		fmt.Fprint(sb, "<tr>\n")
 		fmt.Fprintf(sb, "	<td> %v</td>\n", rowLbls[rowIdx].Tr(lc))
 		for _, mod := range mods {
-			fmt.Fprintf(sb, "	<td> %v</td>\n", oneRadio(q, inp, mod))
+			fmt.Fprintf(sb, "	<td> %v</td>\n", fourRadios(q, inp, mod))
 		}
 
 		//
@@ -301,7 +301,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 	//
 	// close table
-	fmt.Fprintf(
+	fmt.Fprint(
 		sb,
 		"</table>",
 	)

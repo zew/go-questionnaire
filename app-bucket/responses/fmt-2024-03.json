@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2319cb0e96f01a5a0da38e2f74f8e2f1c24bc0871b39be95366aa5eeb52ac5c8",
+ 	"md_5": "4742dc0a7a765ad486137738e9e5b80a7dfd0fed9d208781bee23c9daa25a002",
  	"lang_codes": [
  		"de",
  		"en"
@@ -8268,7 +8268,7 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
+ 				"de": "Fragen zur Transition der Wirtschaft zur Klimaneutralität",
  				"en": "Questions about climate transition"
  			},
  			"description": {
@@ -8276,7 +8276,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "todo",
+ 				"de": "Transition zur\u003cbr\u003eKlimaneutralität",
  				"en": "Questions about\u003cbr\u003eclimate transition"
  			},
  			"style": {
@@ -8299,6 +8299,20 @@
  			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür wie wahrscheinlich halten Sie es aus technologischer Sicht, \n\t\t\t\t\tdass eine Mehrheit der Un\u0026shy;ter\u0026shy;neh\u0026shy;men aus den folgenden Branchen zu den folgenden Zeitpunkten klimaneu\u0026shy;tral wird?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eKategorien: --: sehr unwahrscheinlich, -: unwahrscheinlich, +: wahrscheinlich, ++: sehr wahrscheinlich \u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhat do you think how likely it is, from a technological standpoint, \n\t\t\t\t\tthat a majority of firms from the following sectors will become climate-neu\u0026shy;tral by the following years?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eCategories: --: very unlikely, -: unlikely, +: likely, ++: very likely \u003c/small\u003e\n\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
  				{
  					"bottom_vspacers": 3,
  					"columns": 1,
@@ -8386,6 +8400,111 @@
  						},
  						{
  							"name": "qs1_utilities_noaw",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie hoch schätzen Sie den wirt\u0026shy;schaft\u0026shy;lichen Nutzen und die Kosten des Übergangs zur Klimaneu\u0026shy;tralität für Un\u0026shy;ter\u0026shy;neh\u0026shy;men aus den folgenden Sektoren insge\u0026shy;samt ein? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eKategorien:  0: ir\u0026shy;re\u0026shy;le\u0026shy;vant, +: nied\u0026shy;rig, ++: mittel, +++: groß, ++++: sehr groß\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow sig\u0026shy;nif\u0026shy;i\u0026shy;cant in eco\u0026shy;nom\u0026shy;ic terms do you think will the benefits and costs of the transition to climate-neu\u0026shy;trality be for firms from the following sectors? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eCategories:  0: insig\u0026shy;nif\u0026shy;i\u0026shy;cant, +: low significance, ++: medium significance, +++: large significance, ++++: very large significance \u003c/small\u003e\n\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "Special202403QS2__0__0"
+ 						},
+ 						{
+ 							"name": "qs2_automotive_2030",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_automotive_2040",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_automotive_2050",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_automotive_2050_after",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_automotive_noaw",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_industr_2030",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_industr_2040",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_industr_2050",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_industr_2050_after",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_industr_noaw",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_construction_2030",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_construction_2040",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_construction_2050",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_construction_2050_after",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_construction_noaw",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_utilities_2030",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_utilities_2040",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_utilities_2050",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_utilities_2050_after",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "qs2_utilities_noaw",
  							"type": "dyn-composite-scalar"
  						}
  					]

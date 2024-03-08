@@ -180,6 +180,12 @@ func special202403(q *qst.QuestionnaireT) error {
 		"qss3_construction",
 		"qss3_utilities",
 	}
+	inpNamesQSS4 := []string{
+		"qss4_automotive",
+		"qss4_industr", // industrials gets hyphenated
+		"qss4_construction",
+		"qss4_utilities",
+	}
 
 	{
 		gb := qst.NewGridBuilderRadios(
@@ -192,6 +198,10 @@ func special202403(q *qst.QuestionnaireT) error {
 
 		gb.MainLabel = trl.S{
 			"de": `
+
+						<style> i {font-size:110%} </style>
+
+
 						Stellen Sie sich bitte vor, 
 						dass es in jedem der folgenden Sektoren die folgenden zwei Typen von Unternehmen gibt: 						
 
@@ -211,6 +221,9 @@ func special202403(q *qst.QuestionnaireT) error {
 						
 				`,
 			"en": `
+
+						<style> i {font-size:110%} </style>
+
 						Imagine that in every of the following sectors, there are firms that
 
 					<div style='margin-left: 2rem;'>
@@ -229,6 +242,61 @@ func special202403(q *qst.QuestionnaireT) error {
 
 				`,
 		}.Outline("3.")
+
+		gr := page.AddGrid(gb)
+		_ = gr
+	}
+
+	//
+	//
+	{
+		gb := qst.NewGridBuilderRadios(
+			columnTplQSS3and4,
+			hrdsQSS3and4,
+			inpNamesQSS4,
+			radioVals6,
+			rowLbls202403QSS,
+		)
+
+		gb.MainLabel = trl.S{
+			"de": `
+					Stellen Sie sich bitte erneut vor, 
+					dass es in jedem der folgenden Sektoren die folgenden zwei Typen von Unternehmen gibt: 						
+
+					<div style='margin-left: 2rem;'>
+						<p>
+							<b>A:</b>&nbsp; Unternehmen, die bis zum Jahr 2050 klimaneutral sein werden,
+						</p>
+						<p>
+							<b>B:</b>&nbsp; Unternehmen, die sich nicht anpassen und bis zum Jahr 2050 nicht klimaneutral sein werden.
+						</p>
+					</div>
+						
+					<p >
+						Wann, glauben Sie, werden Unternehmen des Typs A im Durchschnitt 
+						<i>weniger riskant</i> (mit Blick auf das Ausfallrisiko) sein als Unternehmen des Typs B?
+					</p>
+						
+				`,
+			"en": `
+						Imagine again that in every of the following sectors, there are firms that
+
+					<div style='margin-left: 2rem;'>
+						<p>
+							<b>A:</b>&nbsp; will transition to climate-neutrality by 2050
+						</p>
+						<p>
+							<b>B:</b>&nbsp; do not want to change and will not be climate neutral by 2050
+						</p>
+					</div>
+						
+					<p >
+						When do you think will firms of type A begin to be on average less <i>risky</i> (in terms of default risk) than firms of type B?
+					</p>
+
+
+				`,
+		}.Outline("4.")
 
 		gr := page.AddGrid(gb)
 		_ = gr

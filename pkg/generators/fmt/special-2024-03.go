@@ -124,5 +124,115 @@ func special202403(q *qst.QuestionnaireT) error {
 
 	}
 
+	//
+	// gr1
+	rowLbls202403QSS := []trl.S{
+		{
+			"de": `Fahrzeugbau`,
+			"en": `Automotive`,
+		},
+		{
+			"de": `Industrieunternehmen <ssmall>(Chemie, Pharma, Stahl, NE-Metalle, Elektro, Maschinenbau)</ssmall>`,
+			"en": `Industrials <ssmall>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</ssmall>`,
+		},
+		{
+			"de": `Baugewerbe`,
+			"en": `Construction`,
+		},
+		{
+			"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
+			"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
+		},
+	}
+	hrdsQSS3and4 := []trl.S{
+		{
+			"de": "2024-2030",
+			"en": "2024-2030",
+		},
+		{
+			"de": "2030-2040",
+			"en": "2030-2040",
+		},
+		{
+			"de": "2040-2050",
+			"en": "2040-2050",
+		},
+		{
+			"de": "nie",
+			"en": "never",
+		},
+		{
+			"de": "keine <br> Angabe",
+			"en": "no <br> answer",
+		},
+	}
+	columnTplQSS3and4 := []float32{
+		3.0, 1,
+		0.0, 1,
+		0.0, 1,
+		0.0, 1,
+		0.5, 1,
+	}
+
+	inpNamesQSS3 := []string{
+		"qss3_automotive",
+		"qss3_industr", // industrials gets hyphenated
+		"qss3_construction",
+		"qss3_utilities",
+	}
+
+	{
+		gb := qst.NewGridBuilderRadios(
+			columnTplQSS3and4,
+			hrdsQSS3and4,
+			inpNamesQSS3,
+			radioVals6,
+			rowLbls202403QSS,
+		)
+
+		gb.MainLabel = trl.S{
+			"de": `
+						Stellen Sie sich bitte vor, 
+						dass es in jedem der folgenden Sektoren die folgenden zwei Typen von Unternehmen gibt: 						
+
+					<div style='margin-left: 2rem;'>
+						<p>
+							<b>A:</b>&nbsp; Unternehmen, die bis zum Jahr 2050 klimaneutral sein werden,
+						</p>
+						<p>
+							<b>B:</b>&nbsp; Unternehmen, die sich nicht anpassen und bis zum Jahr 2050 nicht klimaneutral sein werden.
+						</p>
+					</div>
+						
+					<p >
+						Wann, glauben Sie, werden Unternehmen des Typs A im Durchschnitt <i>profitabler</i> sein 
+						als Unternehmen des Typs B?
+					</p>
+						
+				`,
+			"en": `
+						Imagine that in every of the following sectors, there are firms that
+
+					<div style='margin-left: 2rem;'>
+						<p>
+							<b>A:</b>&nbsp; will transition to climate-neutrality by 2050
+						</p>
+						<p>
+							<b>B:</b>&nbsp; do not want to change and will not be climate neutral by 2050
+						</p>
+					</div>
+						
+					<p >
+						When do you think will firms of type A begin to be on average more <i>profitable</i> than firms of type B?	
+					</p>
+
+
+				`,
+		}.Outline("3.")
+
+		gr := page.AddGrid(gb)
+		_ = gr
+	}
+
 	return nil
 }

@@ -8,6 +8,25 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+var rowLbls202403 = []trl.S{
+	{
+		"de": `Fahrzeugbau`,
+		"en": `Automotive`,
+	},
+	{
+		"de": `Industrieunternehmen <ssmall>(Chemie, Pharma, Stahl, NE-Metalle, Elektro, Maschinenbau)</ssmall>`,
+		"en": `Industrials <ssmall>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</ssmall>`,
+	},
+	{
+		"de": `Baugewerbe`,
+		"en": `Construction`,
+	},
+	{
+		"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
+		"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
+	},
+}
+
 func fourRadios(q qstif.Q, inpName, mod string) string {
 
 	// tpl := `
@@ -42,10 +61,10 @@ func fourRadios(q qstif.Q, inpName, mod string) string {
 func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (string, []string, error) {
 
 	inpNames := []string{
-		"qs1_automotive",
-		"qs1_industr", // industrials gets hyphenated
-		"qs1_construction",
-		"qs1_utilities",
+		"qss1_automotive",
+		"qss1_industr", // industrials gets hyphenated
+		"qss1_construction",
+		"qss1_utilities",
 	}
 	mods := []string{
 		"2030",
@@ -66,25 +85,6 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 	if modePreflight {
 		return "", inpNamesMult, nil
-	}
-
-	rowLbls := []trl.S{
-		{
-			"de": `Fahrzeugbau`,
-			"en": `Automotive`,
-		},
-		{
-			"de": `Industrieunternehmen <ssmall>(Chemie, Pharma, Stahl, NE-Metalle, Elektro, Maschinenbau)</ssmall>`,
-			"en": `Industrials <ssmall>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</ssmall>`,
-		},
-		{
-			"de": `Baugewerbe`,
-			"en": `Construction`,
-		},
-		{
-			"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
-			"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
-		},
 	}
 
 	lc := q.GetLangCode()
@@ -135,6 +135,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
         padding: 0.4rem 0.2rem;
         width: 21%;
     }
+	/* first row */
     table.tbl-1 tr:first-child td {
         vertical-align:  bottom;
     }
@@ -161,7 +162,6 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
     /* contents */
     table.tbl-1 td .hdr{
-        font-size: 85%;
         font-size: 92%;
     }
 
@@ -283,7 +283,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 	for rowIdx, inp := range inpNames {
 		fmt.Fprint(sb, "<tr>\n")
-		fmt.Fprintf(sb, "	<td> %v</td>\n", rowLbls[rowIdx].Tr(lc))
+		fmt.Fprintf(sb, "	<td> %v</td>\n", rowLbls202403[rowIdx].Tr(lc))
 		for _, mod := range mods {
 			fmt.Fprintf(sb, "	<td> %v</td>\n", fourRadios(q, inp, mod))
 		}

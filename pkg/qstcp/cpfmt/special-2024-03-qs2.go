@@ -5,27 +5,51 @@ import (
 	"strings"
 
 	qstif "github.com/zew/go-questionnaire/pkg/qstif"
-	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func oneRadioBlock(q qstif.Q, inpName, mod string) string {
-	return ""
+func fiveRadios(q qstif.Q, inpName, mod string) string {
+
+	// tpl := `
+	// <input type="radio" name="inpname_mod"   value="1" />
+	// <input type="radio" name="inpname_mod"   value="2" />
+	// <input type="radio" name="inpname_mod"   value="3" />
+	// <input type="radio" name="inpname_mod"   value="4" />
+	// <input type="radio" name="inpname_mod"   value="5" />
+
+	// `
+
+	sb := &strings.Builder{}
+	for i := 1; i <= 5; i++ {
+		inm := fmt.Sprintf("%v_%v", inpName, mod) // input name multiplied
+		checked := ""
+		vl, err := q.ResponseByName(inm)
+		if err == nil && fmt.Sprintf("%v", i) == vl {
+			checked = "checked"
+		}
+		fmt.Fprintf(
+			sb,
+			"	<input type=\"radio\" name=\"%v\"   value=\"%v\"   %v />\n",
+			inm,
+			i,
+			checked,
+		)
+	}
+
+	return sb.String()
 
 }
 
 func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (string, []string, error) {
 
 	inpNames := []string{
-		"qs2_automotive",
-		"qs2_industr", // industrials gets hyphenated
-		"qs2_construction",
-		"qs2_utilities",
+		"qss2_automotive",
+		"qss2_industr", // industrials gets hyphenated
+		"qss2_construction",
+		"qss2_utilities",
 	}
 	mods := []string{
-		"2030",
-		"2040",
-		"2050",
-		"2050_after",
+		"benefit",
+		"cost",
 	}
 
 	//
@@ -40,25 +64,6 @@ func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
 	if modePreflight {
 		return "", inpNamesMult, nil
-	}
-
-	rowLbls := []trl.S{
-		{
-			"de": `Fahrzeugbau`,
-			"en": `Automotive`,
-		},
-		{
-			"de": `Industrieunternehmen <ssmall>(Chemie, Pharma, Stahl, NE-Metalle, Elektro, Maschinenbau)</ssmall>`,
-			"en": `Industrials <ssmall>(Chemicals, Pharma, Steel, Metal Products, Electronics, Machinery)</ssmall>`,
-		},
-		{
-			"de": `Baugewerbe`,
-			"en": `Construction`,
-		},
-		{
-			"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
-			"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
-		},
 	}
 
 	lc := q.GetLangCode()
@@ -220,12 +225,13 @@ func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
     }
 
     table.tbl-2 td {
-        text-align: center;
+        text-align:     center;
         vertical-align: middle;
         
         padding: 0.4rem 0.2rem;
-        width: 21%;
+        width: 42%;
     }
+	/* first row */
     table.tbl-2 tr:first-child td {
         vertical-align:  bottom;
     }
@@ -252,7 +258,6 @@ func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
     /* contents */
     table.tbl-2 td .hdr{
-        font-size: 85%;
         font-size: 92%;
     }
 
@@ -262,9 +267,7 @@ func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
     dummy
     {
         display: inline-block;
-        width: 22%;
-        width: 20%;
-        width: 18%;
+        width: 14%;
         margin: 0;
         padding-left:  0.02rem;
         /* padding-right: 1.2rem; */
@@ -290,37 +293,25 @@ func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 
     <tr>
         <td> &nbsp; </td>
-        <td> 2030 </td>
-        <td> 2040 </td>
-        <td> 2050 </td>
-        <td> after 2050 </td>
+        <td> Benefits </td>
+        <td> Costs </td>
         <td> no answer </td>
     </tr>
     <tr>
         <td> &nbsp; </td>
         <td> 
-            <span class="hdr">--</span>
-            <span class="hdr">-</span>
+            <span class="hdr">0</span>
             <span class="hdr">+</span>
             <span class="hdr">++</span>
+            <span class="hdr">+++</span>
+            <span class="hdr">++++</span>
         </td>
         <td> 
-            <span class="hdr">--</span>
-            <span class="hdr">-</span>
+            <span class="hdr">0</span>
             <span class="hdr">+</span>
             <span class="hdr">++</span>
-        </td>
-        <td> 
-            <span class="hdr">--</span>
-            <span class="hdr">-</span>
-            <span class="hdr">+</span>
-            <span class="hdr">++</span>
-        </td>
-        <td> 
-            <span class="hdr">--</span>
-            <span class="hdr">-</span>
-            <span class="hdr">+</span>
-            <span class="hdr">++</span>
+            <span class="hdr">+++</span>
+            <span class="hdr">++++</span>
         </td>
         <td> &nbsp; </td>
     </tr>
@@ -328,55 +319,21 @@ func Special202403QS2(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 	`
 
 	if lc == "de" {
-		tblStart = strings.ReplaceAll(tblStart, "after", "nach")
+		tblStart = strings.ReplaceAll(tblStart, "Benefits", "Wirtschaftlicher Nutzen")
+		tblStart = strings.ReplaceAll(tblStart, "Costs", "Wirtschaftliche Kosten")
 		tblStart = strings.ReplaceAll(tblStart, "no answer", "keine Ang.")
 	}
 
-	fmt.Fprintf(
+	fmt.Fprint(
 		sb,
 		tblStart,
 	)
 
-	rowTpl := `
-	<tr>
-		<td> rowLabel </td>
-		<td>
-			<input type="radio" name="inpname_2030"   value="1" />
-			<input type="radio" name="inpname_2030"   value="2" />
-			<input type="radio" name="inpname_2030"   value="3" />
-			<input type="radio" name="inpname_2030"   value="4" />
-		</td>
-		<td>
-			<input type="radio" name="inpname_2040"   value="1" />
-			<input type="radio" name="inpname_2040"   value="2" />
-			<input type="radio" name="inpname_2040"   value="3" />
-			<input type="radio" name="inpname_2040"   value="4" />
-		</td>
-		<td>
-			<input type="radio" name="inpname_2050"   value="1" />
-			<input type="radio" name="inpname_2050"   value="2" />
-			<input type="radio" name="inpname_2050"   value="3" />
-			<input type="radio" name="inpname_2050"   value="4" />
-		</td>
-		<td>
-			<input type="radio" name="inpname_2050_after"   value="1" />
-			<input type="radio" name="inpname_2050_after"   value="2" />
-			<input type="radio" name="inpname_2050_after"   value="3" />
-			<input type="radio" name="inpname_2050_after"   value="4" />
-		</td>
-		<td>
-			<input type="checkbox" name="inpname_noaw">
-		</td>
-	</tr>
-			
-	`
-	_ = rowTpl
-
 	for rowIdx, inp := range inpNames {
 		fmt.Fprint(sb, "<tr>\n")
-		fmt.Fprintf(sb, "	<td> %v</td>\n", rowLbls[rowIdx].Tr(lc))
+		fmt.Fprintf(sb, "	<td> %v</td>\n", rowLbls202403[rowIdx].Tr(lc))
 		for _, mod := range mods {
-			fmt.Fprintf(sb, "	<td> %v</td>\n", oneRadioBlock(q, inp, mod))
+			fmt.Fprintf(sb, "	<td> %v</td>\n", fiveRadios(q, inp, mod))
 		}
 
 		//

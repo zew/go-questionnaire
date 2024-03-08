@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4742dc0a7a765ad486137738e9e5b80a7dfd0fed9d208781bee23c9daa25a002",
+ 	"md_5": "17be5e520deaf2d5ce041dfe092978b7c5fc7b9de6baa0ca4523237ffa3242d7",
  	"lang_codes": [
  		"de",
  		"en"
@@ -8323,83 +8323,83 @@
  							"dynamic_func": "Special202403QS1__0__0"
  						},
  						{
- 							"name": "qs1_automotive_2030",
+ 							"name": "qss1_automotive_2030",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_automotive_2040",
+ 							"name": "qss1_automotive_2040",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_automotive_2050",
+ 							"name": "qss1_automotive_2050",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_automotive_2050_after",
+ 							"name": "qss1_automotive_2050_after",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_automotive_noaw",
+ 							"name": "qss1_automotive_noaw",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_industr_2030",
+ 							"name": "qss1_industr_2030",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_industr_2040",
+ 							"name": "qss1_industr_2040",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_industr_2050",
+ 							"name": "qss1_industr_2050",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_industr_2050_after",
+ 							"name": "qss1_industr_2050_after",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_industr_noaw",
+ 							"name": "qss1_industr_noaw",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_construction_2030",
+ 							"name": "qss1_construction_2030",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_construction_2040",
+ 							"name": "qss1_construction_2040",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_construction_2050",
+ 							"name": "qss1_construction_2050",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_construction_2050_after",
+ 							"name": "qss1_construction_2050_after",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_construction_noaw",
+ 							"name": "qss1_construction_noaw",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_utilities_2030",
+ 							"name": "qss1_utilities_2030",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_utilities_2040",
+ 							"name": "qss1_utilities_2040",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_utilities_2050",
+ 							"name": "qss1_utilities_2050",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_utilities_2050_after",
+ 							"name": "qss1_utilities_2050_after",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs1_utilities_noaw",
+ 							"name": "qss1_utilities_noaw",
  							"type": "dyn-composite-scalar"
  						}
  					]
@@ -8428,86 +8428,608 @@
  							"dynamic_func": "Special202403QS2__0__0"
  						},
  						{
- 							"name": "qs2_automotive_2030",
+ 							"name": "qss2_automotive_benefit",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_automotive_2040",
+ 							"name": "qss2_automotive_cost",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_automotive_2050",
+ 							"name": "qss2_automotive_noaw",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_automotive_2050_after",
+ 							"name": "qss2_industr_benefit",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_automotive_noaw",
+ 							"name": "qss2_industr_cost",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_industr_2030",
+ 							"name": "qss2_industr_noaw",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_industr_2040",
+ 							"name": "qss2_construction_benefit",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_industr_2050",
+ 							"name": "qss2_construction_cost",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_industr_2050_after",
+ 							"name": "qss2_construction_noaw",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_industr_noaw",
+ 							"name": "qss2_utilities_benefit",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_construction_2030",
+ 							"name": "qss2_utilities_cost",
  							"type": "dyn-composite-scalar"
  						},
  						{
- 							"name": "qs2_construction_2040",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_construction_2050",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_construction_2050_after",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_construction_noaw",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_utilities_2030",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_utilities_2040",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_utilities_2050",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_utilities_2050_after",
- 							"type": "dyn-composite-scalar"
- 						},
- 						{
- 							"name": "qs2_utilities_noaw",
+ 							"name": "qss2_utilities_noaw",
  							"type": "dyn-composite-scalar"
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tStellen Sie sich bitte vor, \n\t\t\t\t\t\tdass es in jedem der folgenden Sektoren die folgenden zwei Typen von Un\u0026shy;ter\u0026shy;neh\u0026shy;men gibt: \t\t\t\t\t\t\n\n\t\t\t\t\t\u003cdiv style='margin-left: 2rem;'\u003e\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\t\u003cb\u003eA:\u003c/b\u003e\u0026nbsp; Un\u0026shy;ter\u0026shy;neh\u0026shy;men, die bis zum Jahr 2050 klimaneu\u0026shy;tral sein werden,\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\t\u003cb\u003eB:\u003c/b\u003e\u0026nbsp; Un\u0026shy;ter\u0026shy;neh\u0026shy;men, die sich nicht anpassen und bis zum Jahr 2050 nicht klimaneu\u0026shy;tral sein werden.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp \u003e\n\t\t\t\t\t\tWann, glauben Sie, werden Un\u0026shy;ter\u0026shy;neh\u0026shy;men des Typs A im Durchschnitt \u003ci\u003eprofitabler\u003c/i\u003e sein \n\t\t\t\t\t\tals Un\u0026shy;ter\u0026shy;neh\u0026shy;men des Typs B?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\n\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tImagine that in every of the following sectors, there are firms that\n\n\t\t\t\t\t\u003cdiv style='margin-left: 2rem;'\u003e\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\t\u003cb\u003eA:\u003c/b\u003e\u0026nbsp; will transition to climate-neu\u0026shy;trality by 2050\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\t\u003cb\u003eB:\u003c/b\u003e\u0026nbsp; do not want to change and will not be climate neu\u0026shy;tral by 2050\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\u003cp \u003e\n\t\t\t\t\t\tWhen do you think will firms of type A begin to be on av\u0026shy;er\u0026shy;age more \u003ci\u003eprofitable\u003c/i\u003e than firms of type B?\t\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "2024-2030",
+ 								"en": "2024-2030"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "2030-2040",
+ 								"en": "2030-2040"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "2040-2050",
+ 								"en": "2040-2050"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "nie",
+ 								"en": "never"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne \u003cbr\u003e An\u0026shy;ga\u0026shy;be",
+ 								"en": "no \u003cbr\u003e an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_automotive",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Fahrzeugbau",
+ 								"en": "Automotive"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_automotive",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qss3_automotive",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qss3_automotive",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qss3_automotive",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qss3_industr",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Industrieun\u0026shy;ter\u0026shy;neh\u0026shy;men \u003cssmall\u003e(Chemie, Pharma, Stahl, NE-Metalle, Elektro, Maschinenbau)\u003c/ssmall\u003e",
+ 								"en": "In\u0026shy;dus\u0026shy;tri\u0026shy;als \u003cssmall\u003e(Chem\u0026shy;i\u0026shy;cals, Pharma, Steel, Metal Products, Electronics, Machinery)\u003c/ssmall\u003e"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_industr",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_industr",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_industr",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_industr",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_construction",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Baugewerbe",
+ 								"en": "Construction"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_construction",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qss3_construction",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qss3_construction",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qss3_construction",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qss3_utilities",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Versorger  \u003cssmall\u003e(e.g. Elektrizität, Gas, Wasser)\u003c/ssmall\u003e",
+ 								"en": "Utilities  \u003cssmall\u003e(e.g. electricity, gas, water)\u003c/ssmall\u003e"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qss3_utilities",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qss3_utilities",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qss3_utilities",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qss3_utilities",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   4fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},

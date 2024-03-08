@@ -5,6 +5,7 @@ import (
 )
 
 var radioVals4 = []string{"1", "2", "3", "4"}
+var radioVals5 = []string{"1", "2", "3", "4", "5"}
 var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
 var radioVals7 = []string{"1", "2", "3", "4", "5", "6", "7"}
 var columnTemplate4 = []float32{

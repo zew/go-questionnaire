@@ -126,6 +126,16 @@ dummy
         max-width: 5rem;
     }
 
+    /* Month 3 of quarter */
+    #chg_euro_stocks__other_label,
+    #chg_euro_bonds_govt__other_label,
+    #chg_euro_bonds_corp__other_label,
+    #chg_euro_re__other_label,
+    dummy
+    {
+        max-width: 5rem;
+    }
+
 
     /* 2024-01 */
     #sq4_other_free {
@@ -140,5 +150,7 @@ dummy
     #sq7_other_free {
         max-width: 6rem;
     }
+
+    chg_euro_stocks__other_label
 
 }

@@ -19,8 +19,8 @@ func special202403(q *qst.QuestionnaireT) error {
 	page := q.AddPage()
 
 	page.Label = trl.S{
-		"de": "Fragen zur Transition der Wirtschaft zur Klimaneutralität",
-		"en": "Questions about climate transition",
+		"de": "Zusätzliche Fragen zur Transition der Wirtschaft zur Klimaneutralität",
+		"en": "Additional questions about climate transition",
 	}
 	page.Short = trl.S{
 		"de": "Transition zur<br>Klimaneutralität",
@@ -47,7 +47,7 @@ func special202403(q *qst.QuestionnaireT) error {
 					<small>Kategorien: --: sehr unwahrscheinlich, -: unwahrscheinlich, +: wahrscheinlich, ++: sehr wahrscheinlich </small>
 				`,
 				"en": `
-					What do you think how likely it is, from a technological standpoint, 
+					How likely do you think it is, from a technological standpoint, 
 					that a majority of firms from the following sectors will become climate-neutral by the following years?
 					<br>
 					<small>Categories: --: very unlikely, -: unlikely, +: likely, ++: very likely </small>
@@ -140,7 +140,7 @@ func special202403(q *qst.QuestionnaireT) error {
 			"en": `Construction`,
 		},
 		{
-			"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
+			"de": `Versorger  <ssmall>(z.B. Elektrizität, Gas, Wasser)</ssmall>`,
 			"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
 		},
 	}

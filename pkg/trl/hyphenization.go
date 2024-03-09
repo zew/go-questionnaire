@@ -31,6 +31,7 @@ var hyph = []string{
 	"Kredit|geber",
 	"Kredit|nehmer",
 	"Risiko|komponente",
+	"Maschinen|bau",
 	"Prozent|punkt",
 	"Transformations|projekt",
 

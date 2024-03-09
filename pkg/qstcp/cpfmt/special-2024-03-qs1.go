@@ -22,7 +22,7 @@ var rowLbls202403 = []trl.S{
 		"en": `Construction`,
 	},
 	{
-		"de": `Versorger  <ssmall>(e.g. Elektrizität, Gas, Wasser)</ssmall>`,
+		"de": `Versorger  <ssmall>(z.B. Elektrizität, Gas, Wasser)</ssmall>`,
 		"en": `Utilities  <ssmall>(e.g. electricity, gas, water)</ssmall>`,
 	},
 }

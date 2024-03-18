@@ -53,4 +53,4 @@ updater/updater.exe
 # dont clutter repo with JS libs
 app-bucket/**/echarts.min.js
 
-!.devcontainer.json
+!devcontainer.json

@@ -312,6 +312,52 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	}
 
+	// Beliefs question
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Beliefs"}
+		page.WidthMax("36rem") // 60
+
+		page.ValidationFuncName = "patBeliefs"
+		page.ValidationFuncMsg = trl.S{
+			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
+			// "en": "Does not add up. Really continue?",
+		}
+		if vE.AllMandatory {
+			page.ValidationFuncName = "" // redundant
+		}
+
+		// items := [5]string{"one", "two", "three", "four", "five"}  
+		groups := [3]string{"gOne", "gTwo", "gThree"}  
+
+		// loop over matrix questions
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 3
+
+			for i := 0; i < len(groups); i++ {
+				{
+					inp := gr.AddInput()
+					inp.Name =  fmt.Sprintf(`group_%i`, i)
+					inp.MaxChars = 20
+					inp.Label = trl.S{
+						"de": groups[i],
+					}
+					inp.Desc = trl.S{
+						"de": fmt.Sprintf(`
+						%s
+						<br>
+						`, groups[i]),
+					}
+					inp.Type = "text"
+					inp.ColSpanControl = 1
+					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)}
+				}
+			}
+		}
+
 	return nil
 }
 

@@ -334,14 +334,77 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			page.ValidationFuncName = "" // redundant
 		}
 
-		items := [5]string{"one", "two", "three", "four", "five"}
+		type DraggableItem struct {
+			Name  string `json:"name"`
+			Value string `json:"value"`
+		}
+
+		items := [5]DraggableItem{{
+			Name:  "one",
+			Value: "1",
+		}, {
+			Name:  "two",
+			Value: "2",
+		}, {
+			Name:  "three",
+			Value: "3",
+		}, {
+			Name:  "four",
+			Value: "4",
+		}, {
+			Name:  "five",
+			Value: "5",
+		}}
+
 		choices := [3]string{"gOne", "gTwo", "gThree"}
 
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.Class = "hidden-group"
 			gr.BottomVSpacers = 3
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{"de": `
+				<p>Bisher haben wir die drei Stiftungen, welche die Spende von 30€ erhalten könnten anonymisiert.</p>
+
+				<p>Was denken Sie, welche der Buchstaben A, B, C repräsentiert welche Stiftung in dieser Umfrage?</p>
+
+				<p>Die Kästchen auf der rechten Seite listen alle möglichen Zuordnungen der Buchstaben zu den Stiftungen auf.</p>
+
+				<p>Sortieren Sie die 12 Bälle auf der linken Seite in die Kästchen auf der rechten Seite um die Wahrscheinlichkeit
+					anzugeben, mit welcher Sie denken, dass die entsprechende Zuordnung die Stiftungen in dieser Umfrage repräsentiert.
+				</p>
+
+				<p>Wenn Sie beispielsweise denken, dass es völlig unmöglich ist, die Zuordnung zu bestimmen, dann legen Sie in jedes der
+					6 Kästchen gleich viele Bälle. Wenn Sie sich andrerseits vollständig sicher sind, dass die Zuordnung so gegeben ist
+					wie im dritten Kästchen, dann legen Sie alle 12 Bälle in dieses Kästchen. Es ist auch möglich, dass Sie denken, dass
+					eine der Zuordnungen wahrscheinlicher ist als eine andere. Legen Sie in diesem Fall Bälle in alle Kästchen von denen
+					Sie denken, dass sie möglich sind, und mehr in jene Kästchen von denen Sie denken, dass sie wahrscheinlicher sind.
+				</p>
+
+				<h3>Bezahlung</h3>
+
+				<p>Ihre Antwort auf diese Frage bestimmt möglicherweise Ihre Bezahlung für diese Umfrage. Das Bezahlsystem ist so
+					konstruiert, dass es in Ihrem eigenen besten Interesse liegt, die Bälle so zuzuordnen, welche möglichst genau
+					repräsentiert, was sie wirklich denken. Insbesondere liegt es auch in Ihrem Interesse, die Bälle so zu verteilen,
+					dass der Grad Ihrer Unsicherheit akkurat repräsentiert ist.</p>
+
+				<h3>Details</h3>
+				<p>Wenn Sie für Ihre Antworten auf diese Frage bezahlt werden, passiert folgendes. Wir schauen, wieviele Bälle wir von
+					Ihrer Antwort ausgehend umordnen müssen, um die wahre Zuordnung abzubilden. Wenn wir keine Bälle umordnen müssen,
+					erhalten Sie 6€. Für jeden Ball den wir umordnen müssen ziehen wir 0.50€ davon ab. Wenn wir beispielsweise 5 Bälle
+					umordnen müssen, erhalten Sie (6-5*0.50)€ = 3.50€.</p>
+				`}
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Class = "hidden-group"
+			gr.BottomVSpacers = 0
 
 			for i := 0; i < len(choices); i++ {
 				{
@@ -375,7 +438,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
 			itemsHtml := make([]string, len(items))
 			for i, choice := range items {
-				itemsHtml[i] = fmt.Sprintf("<div class='item' id='item-%v' draggable='true' data-value='%s'>%s</div>", i, choice, choice)
+				itemsHtml[i] = fmt.Sprintf("<div class='item' id='item-%v' draggable='true' data-value='%s'>%s</div>", i, choice.Value, choice.Name)
 			}
 
 			html := fmt.Sprintf("<div class='droppable-container'>%s</div><div id='draggable-list'>%s</div>", strings.Join(choicesHtml, ""), strings.Join(itemsHtml, ""))

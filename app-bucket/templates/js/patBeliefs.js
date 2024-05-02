@@ -24,6 +24,7 @@ const init = () => {
 
     const boxes = document.querySelectorAll("[data-droppable]");
     const inputs = {};
+    const items = document.querySelectorAll("#draggable-list .item");
 
     for (let i = 0; i < boxes.length; i++) {
         const box = boxes[i]
@@ -31,12 +32,21 @@ const init = () => {
         if (!input) {
             throw new Error("Missing input element.")
         }
-
         inputs[i] = {
             input: input,
             droppable: box
         };
     }
+
+    Object.values(inputs).forEach(({ input, droppable }) => {
+        const values = input.value ? input.value.split(",") : []
+        values.forEach(value => {
+            const item = [...items].find(el => el.dataset.value === value)
+            if (item) {
+                droppable.appendChild(item);
+            }
+        })
+    })
 
     const handleUpdateValues = () => {
         Object.values(inputs).forEach(({ input, droppable }) => {
@@ -46,11 +56,10 @@ const init = () => {
         })
     }
 
-    const items = document.querySelectorAll("#draggable-list .item");
-
     if (!boxes.length || !items.length) {
         return
     }
+
     const handleDrop = (ev) => {
         ev.preventDefault();
         const data = ev.dataTransfer.getData("text");
@@ -70,7 +79,7 @@ const init = () => {
         ev.dataTransfer.setData(" text", ev.target.id);
     }
 
-    function handleDragOver(ev) {
+    const handleDragOver = (ev) => {
         ev.preventDefault();
     }
 

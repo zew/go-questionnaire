@@ -1,4 +1,4 @@
-package fmt
+package qst
 
 import (
 	"fmt"
@@ -6,39 +6,10 @@ import (
 	"time"
 
 	"github.com/zew/go-questionnaire/pkg/css"
-	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func eachMonth2inQ(q *qst.QuestionnaireT) error {
-
-	if q.Survey.MonthOfQuarter() != 2 {
-		return nil
-	}
-
-	if q.Survey.Year == 2021 && q.Survey.Month == 8 {
-		return nil
-	}
-
-	if q.Survey.Year == 2021 && q.Survey.Month == 11 {
-		return nil
-	}
-
-	if q.Survey.Year == 2022 && q.Survey.Month == 2 {
-		return nil
-	}
-
-	if q.Survey.Year == 2022 && q.Survey.Month == 5 {
-		return nil
-	}
-
-	if q.Survey.Year == 2024 && q.Survey.Month == 2 {
-		return nil
-	}
-
-	if q.Survey.Year == 2024 && q.Survey.Month == 5 {
-		return nil
-	}
+func fmt202405(q *QuestionnaireT, page *pageT) error {
 
 	// not 6 as in m3 of q
 	monthsBack := 3
@@ -65,8 +36,91 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		GROUP BY frage_kurz
 	*/
 
-	page := q.AddPage()
 	// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+
+	cond := q.Survey.Year == 2024 && q.Survey.Month == 5
+	if !cond {
+		return nil
+	}
+
+	page.Groups = nil // dynamically recreate the groups
+
+	grIdx := q.UserIDInt() % 2
+
+	yearsEffective := []int{0, 1, 2}
+
+	inpNamesInfRanges := []string{
+		"under2",
+		"between2and4",
+		"between4and6",
+		"between6and8",
+		"between8and10",
+		"above10",
+	}
+	lblsBrackets := []trl.S{
+		{
+			"de": "unter <br>2&nbsp;Prozent",
+			"en": "below <br>2&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;8 und  <br>10&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;8 and  <br>10&nbsp;percent",
+		},
+		{
+			"de": "größer <br> 10&nbsp;Prozent",
+			"en": "above  <br>10&nbsp;percent",
+		},
+	}
+
+	if grIdx == 1 {
+		inpNamesInfRanges = []string{
+			"under0",
+			"between0and2",
+			"between2and4",
+			"between4and6",
+			"between6and8",
+			"above8",
+		}
+		lblsBrackets = []trl.S{
+			{
+				"de": "unter <br>0&nbsp;Prozent",
+				"en": "below <br>0&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;0 und  <br><2&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;0 and  <br><2&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
+			},
+			{
+				"de": "größer <br> 8&nbsp;Prozent",
+				"en": "above  <br>8&nbsp;percent",
+			},
+		}
+	}
+
 	page.Label = trl.S{
 		"de": "Sonderfrage: Inflation, Inflationstreiber und Geldpolitik",
 		"en": "Special Questions: Inflation, its causes, and monetary policy ",
@@ -79,7 +133,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	{
 		gr := page.AddGroup()
-		gr.Cols = 9
+		gr.Cols = 3 * float32(len(yearsEffective))
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleBox.Width = "70%"
 		gr.Style.Mobile.StyleBox.Width = "100%"
@@ -87,7 +141,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpan = 9
+			inp.ColSpan = gr.Cols
 			// inp.ColSpanLabel = 12
 			inp.Label = trl.S{
 				"de": `
@@ -105,7 +159,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			}.Outline("1a.")
 		}
 
-		for idx := range []int{0, 1, 2} {
+		for idx := range yearsEffective {
 
 			inp := gr.AddInput()
 			inp.Type = "number"
@@ -139,15 +193,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	//
 	//
 	// gr2
-	inpNamesInfRanges := []string{
-		// 	"under2", "between2and3", "between3and4", "above4",
-		"under2",
-		"between2and4",
-		"between4and6",
-		"between6and8",
-		"between8and10",
-		"above10",
-	}
 	{
 
 		// colspan := float32(2 + 4*3 + 2 + 2)
@@ -212,35 +257,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			}
 		}
 
-		labels := []trl.S{
-			{
-				"de": "unter <br>2&nbsp;Prozent",
-				"en": "below <br>2&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;8 und  <br>10&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;8 and  <br>10&nbsp;percent",
-			},
-			{
-				"de": "größer <br> 10&nbsp;Prozent",
-				"en": "above  <br>10&nbsp;percent",
-			},
-		}
-
 		// first row - cols 2-5
-		for _, lbl := range labels {
+		for _, lbl := range lblsBrackets {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 1
@@ -293,7 +311,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		//
 		//
 		// second to fourth row: inputs
-		for i := q.Survey.Year; i <= q.Survey.Year+2; i++ {
+		for i := q.Survey.Year; i <= q.Survey.Year+len(yearsEffective)-1; i++ {
 
 			{
 				// introducing a line-break of the year 2023 into 20<br>23
@@ -437,13 +455,17 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"de": "Krieg in der Ukraine",
 				"en": "War in Ukraine",
 			},
+			// {
+			// 	"de": "Israel-Konflikt",
+			// 	"en": "Conflict in Israel",
+			// },
 			{
-				"de": "Israel-Konflikt",
-				"en": "Conflict in Israel",
+				"de": "Nahost-Konflikt",
+				"en": "Middle east conflict",
 			},
 		}
 
-		gb := qst.NewGridBuilderRadios(
+		gb := NewGridBuilderRadios(
 			colTemplate,
 			labelsPlusPlusMinusMinus(),
 			// prefix ioi_ => impact on inflation
@@ -462,7 +484,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"rev_war_ukraine",
 				"rev_war_israel",
 			},
-			radioVals6,
+			[]string{"1", "2", "3", "4", "5", "6"},
 			rowLabelsEconomicAreasShort,
 		)
 
@@ -485,7 +507,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				(-) means decrease in inflation forecast.
 				<br>
 				<br>
-				<b>For the years %d, and %d</b>
+				<b>For the years %d and %d</b>
 			`,
 				monthMinus3.Tr("en"), yearMinus1Q.Year(),
 				q.Survey.Year+0, q.Survey.Year+1,
@@ -540,10 +562,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			rad.ColSpanControl = colsRowFree[2*(idx+1)] + 1
 		}
 
-	}
-
-	if q.Survey.Year == 2023 && q.Survey.Month == 11 {
-		special202311(q, qst.WrapPageT(page))
 	}
 
 	// gr3
@@ -607,6 +625,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+2),
 				"en": fmt.Sprintf("End of %v", q.Survey.Year+2),
 			},
+			{
+				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+3),
+				"en": fmt.Sprintf("End of %v", q.Survey.Year+3),
+			},
 		}
 
 		inputs := []string{
@@ -614,10 +636,11 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			fmt.Sprintf("ezb%d", q.Survey.Year+0),
 			fmt.Sprintf("ezb%d", q.Survey.Year+1),
 			fmt.Sprintf("ezb%d", q.Survey.Year+2),
+			fmt.Sprintf("ezb%d", q.Survey.Year+3),
 		}
 
 		// rows 2...5
-		for i := 0; i < 4; i++ {
+		for i := 0; i < len(yearsEffective)+1; i++ {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -703,82 +726,5 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	}
 
-	if q.Survey.Year == 2022 && q.Survey.Month == 11 {
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 14
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 14
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{
-					"de": `<b>4.</b> &nbsp; 
-					Mit Blick auf das Jahr 2023, wie beeinflusst die aktuelle Entwicklung der Inflation Ihre Beurteilung des Rendite‐Risiko‐Profils des DAX?
-				`,
-					"en": `<b>4.</b> &nbsp; 
-					How do current developments of inflation affect your assessment of the return-risk-profile of the DAX for the year 2023?
-				`,
-				}
-			}
-
-			lbls := labelsPositiveNeutralNegative()
-
-			{
-				for idx2 := 0; idx2 < len(lbls); idx2++ {
-					inp := gr.AddInput()
-					inp.Type = "radio"
-					inp.Name = fmt.Sprintf("%v", "spec_4")
-					inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
-					inp.Label = lbls[idx2]
-					inp.ColSpan = 2
-					inp.ColSpanControl = 1
-					inp.Vertical()
-					inp.LabelVerticallyCentered()
-
-					if idx2 == len(lbls)-1 {
-						inp.ColSpan = 4
-					}
-
-				}
-
-			}
-
-		}
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{
-					"de": `<b>5.</b> &nbsp; 
-					Beschreiben Sie kurz in ganzen Sätzen über welche Mechanismen die Inflation Ihre Rendite- und Risiko-Erwartungen für den DAX in 2023 beeinflusst bzw. warum Sie keinen Zusammenhang sehen.
-				`,
-					"en": `<b>5.</b> &nbsp; 
-					Please describe briefly in whole sentences via which mechanisms inflation affects your return-risk-expectations of the DAX for the year 2023 or why you see no relationship.
-				`,
-				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "spec_5"
-				inp.MaxChars = 300
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-		}
-
-	}
-
 	return nil
-
 }

@@ -905,6 +905,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("error adding special202403(): %v", err)
 	}
 
+	// 202405
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "fmt202405"
+	}
+
 	//
 	// page 7 - after seasonal
 	// Finish questionnaire?  - one before last page

@@ -268,14 +268,14 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"de": "Krieg in der Ukraine",
 			"en": "War in Ukraine",
 		},
-		{
-			"de": "Spannungen im Bankensystem",
-			"en": "Tensions in the banking sector",
-		},
-		{
-			"de": "Die Schuldenbremse",
-			"en": "The debt brake",
-		},
+		// {
+		// 	"de": "Spannungen im Bankensystem",
+		// 	"en": "Tensions in the banking sector",
+		// },
+		// {
+		// 	"de": "Die Schuldenbremse",
+		// 	"en": "The debt brake",
+		// },
 	}
 
 	colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
@@ -299,8 +299,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_shortages_raw_mat",
 				"rev_inflation",
 				"rev_ukraine",
-				"rev_banking_strain",
-				"rev_debt_brake",
+				// "rev_banking_strain",
+				// "rev_debt_brake",
 				// "rev_free",
 			},
 			radioVals6,

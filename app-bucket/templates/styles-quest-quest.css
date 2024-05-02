@@ -1,0 +1,42 @@
+.hidden-group {
+    display: none !important;
+}
+
+.droppable-container {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.droppable-box {
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+[data-droppable] {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.droppable-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.item[draggable] {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: move;
+}

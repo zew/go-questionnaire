@@ -2,6 +2,7 @@ package quest
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
@@ -114,6 +115,10 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 
 	}
 	return nil
+}
+
+func groupName(i int) string {
+	return fmt.Sprintf("group_%d", i)
 }
 
 // Part1Entscheidung1bis6 renders
@@ -314,6 +319,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	// Beliefs question
 	{
+
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Beliefs"}
@@ -328,35 +334,59 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			page.ValidationFuncName = "" // redundant
 		}
 
-		// items := [5]string{"one", "two", "three", "four", "five"}  
-		groups := [3]string{"gOne", "gTwo", "gThree"}  
+		items := [5]string{"one", "two", "three", "four", "five"}
+		choices := [3]string{"gOne", "gTwo", "gThree"}
 
-		// loop over matrix questions
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.Class = "hidden-group"
 			gr.BottomVSpacers = 3
 
-			for i := 0; i < len(groups); i++ {
+			for i := 0; i < len(choices); i++ {
 				{
 					inp := gr.AddInput()
-					inp.Name =  fmt.Sprintf(`group_%i`, i)
+					inp.Name = groupName(i)
 					inp.MaxChars = 20
 					inp.Label = trl.S{
-						"de": groups[i],
+						"de": choices[i],
 					}
 					inp.Desc = trl.S{
 						"de": fmt.Sprintf(`
 						%s
 						<br>
-						`, groups[i]),
+						`, choices[i]),
 					}
 					inp.Type = "text"
 					inp.ColSpanControl = 1
-					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)}
 				}
 			}
 		}
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Class = "beliefs-group"
+			gr.BottomVSpacers = 3
+
+			choicesHtml := make([]string, len(choices))
+			for i, choice := range choices {
+				choicesHtml[i] = fmt.Sprintf("<div class='droppable-box'><div class='droppable-header'>%s</div><div data-droppable data-target='%s' data-id='%v'></div></div>", choice, groupName(i), i)
+			}
+
+			itemsHtml := make([]string, len(items))
+			for i, choice := range items {
+				itemsHtml[i] = fmt.Sprintf("<div class='item' id='item-%v' draggable='true' data-value='%s'>%s</div>", i, choice, choice)
+			}
+
+			html := fmt.Sprintf("<div class='droppable-container'>%s</div><div id='draggable-list'>%s</div>", strings.Join(choicesHtml, ""), strings.Join(itemsHtml, ""))
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{"de": html}
+			}
+		}
+	}
 
 	return nil
 }

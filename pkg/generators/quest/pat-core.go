@@ -2,12 +2,12 @@ package quest
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/qstcp/cppat"
+	"github.com/zew/go-questionnaire/pkg/qstcp/patbelief"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -115,15 +115,6 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 
 	}
 	return nil
-}
-
-type DraggableItem struct {
-	Name  string `json:"name"`
-	Value string `json:"value"`
-}
-
-func groupName(g DraggableItem) string {
-	return fmt.Sprintf("group_%s", g.Value)
 }
 
 // Part1Entscheidung1bis6 renders
@@ -339,49 +330,6 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			page.ValidationFuncName = "" // redundant
 		}
 
-		items := [5]DraggableItem{{
-			Name:  "one",
-			Value: "1",
-		}, {
-			Name:  "two",
-			Value: "2",
-		}, {
-			Name:  "three",
-			Value: "3",
-		}, {
-			Name:  "four",
-			Value: "4",
-		}, {
-			Name:  "five",
-			Value: "5",
-		}}
-
-		choices := [6]DraggableItem{{
-			Name:  "A = Hans Böckler<br>B = Bund der Steuerzahler<br>C = Ludwig Erhard<br>",
-			Value: "hbl",
-		}, {
-			Name:  "A = Hans Böckler<br>B = Ludwig Erhard<br>C = Bund der Steuerzahler<br>",
-			Value: "hlb",
-		}, {
-			Name:  "A = Bund der Steuerzahler<br>B = Hans Böckler<br>C = Ludwig Erhard<br>",
-			Value: "bhl",
-		}, {
-			Name:  "A = Bund der Steuerzahler<br>B = Ludwig Erhard<br>C = Hans Böckler<br>",
-			Value: "blh",
-		}, {
-			Name:  "A = Ludwig Erhard<br>B = Hans Böckler<br>C = Bund der Steuerzahler<br>",
-			Value: "lhb",
-		}, {
-			Name:  "A = Ludwig Erhard<br>B = Bund der Steuerzahler<br>C = Hans Böckler<br>",
-			Value: "lbh",
-		}}
-
-		var choiceValues []string
-		for i := 0; i < len(choices); i++ {
-			choiceValues = append(choiceValues, choices[i].Value)
-		}
-		randomChoices, _ := qst.ShuffleChoicesBasedOnUid(q, choiceValues)
-
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -427,63 +375,22 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.Class = "hidden-group"
-			gr.BottomVSpacers = 0
-
-			for i := 0; i < len(choices); i++ {
-				{
-					inp := gr.AddInput()
-					inp.Name = groupName(choices[i])
-					inp.MaxChars = 20
-					inp.Label = trl.S{
-						"de": choices[i].Name,
-					}
-					inp.Type = "text"
-					inp.ColSpanControl = 1
-				}
-			}
-
-			// TODO: Probably, dyn composite should be used
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Name = "choices-order"
-			// 	inp.Type = "dyn-textblock"
-			// 	inp.MaxChars = 50
-			// 	inp.DynamicFunc = "ShuffleChoicesBasedOnUid"
-			// 	inp.DynamicFuncParamset = strings.Join(choiceValues, ",")
-			// }
-
-			{
-				inp := gr.AddInput()
-				inp.Name = "choices-order"
-				inp.Type = "text"
-				inp.MaxChars = 50
-				inp.Response = randomChoices
-
-			}
-		}
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.Class = "beliefs-group"
+			gr.Class = "dynamic-beliefs"
 			gr.BottomVSpacers = 3
 
-			choicesHtml := make([]string, len(choices))
-			for i, choice := range choices {
-				choicesHtml[i] = fmt.Sprintf("<div class='droppable-box'><div class='droppable-header'>%s</div><div data-droppable data-target='%s' data-id='%v'></div></div>", choice.Name, groupName(choices[i]), i)
-			}
-
-			itemsHtml := make([]string, len(items))
-			for i, choice := range items {
-				itemsHtml[i] = fmt.Sprintf("<div class='item' id='item-%v' draggable='true' data-value='%s'>%s</div>", i, choice.Value, choice.Name)
-			}
-
-			html := fmt.Sprintf("<div class='droppable-container'>%s</div><div id='draggable-list'>%s</div>", strings.Join(choicesHtml, ""), strings.Join(itemsHtml, ""))
-
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{"de": html}
+				inp.Type = "dyn-composite"
+				inp.DynamicFunc = fmt.Sprintf("PatPoliticalBeliefs__%v__%v", 0, 0)
+				inp.DynamicFuncParamset = ""
+				inp.ColSpanControl = 1
+			}
+
+			_, inputNames, _ := patbelief.PatPoliticalBeliefs(q, 0, 0, true)
+			for _, inpName := range inputNames {
+				inp := gr.AddInput()
+				inp.Type = "dyn-composite-scalar"
+				inp.Name = inpName
 			}
 		}
 	}

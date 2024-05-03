@@ -4,6 +4,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qstcp/cpbiii"
 	"github.com/zew/go-questionnaire/pkg/qstcp/cpfmt"
 	"github.com/zew/go-questionnaire/pkg/qstcp/cppat"
+	"github.com/zew/go-questionnaire/pkg/qstcp/patbelief"
 	"github.com/zew/go-questionnaire/pkg/qstif"
 )
 
@@ -52,4 +53,5 @@ var CompositeFuncs = map[string]CompositeFuncT{
 	"Special202303":                          cpfmt.Special202303,                          //
 	"Special202403QS1":                       cpfmt.Special202403QS1,                       //
 	"Special202403QS2":                       cpfmt.Special202403QS2,                       //
+	"PatPoliticalBeliefs":                    patbelief.PatPoliticalBeliefs,
 }

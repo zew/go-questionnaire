@@ -111,8 +111,8 @@ func fmt202405(q *QuestionnaireT, page *pageT) error {
 				"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
 			},
 			{
-				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
+				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br>&nbsp; 8&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;6 and  <br>&nbsp; 8&nbsp;percent",
 			},
 			{
 				"de": "größer <br> 8&nbsp;Prozent",
@@ -495,10 +495,12 @@ func fmt202405(q *QuestionnaireT, page *pageT) error {
 				und wenn ja, nach oben (+) oder unten (-)?
 				<br>
 				<br>
-				<b>Für die Jahre %d und %d</b>
+				<b>Für die Jahre %d, %d und %d</b>
 			`,
 				monthMinus3.Tr("de"), yearMinus1Q.Year(),
-				q.Survey.Year+0, q.Survey.Year+1,
+				q.Survey.Year+0,
+				q.Survey.Year+1,
+				q.Survey.Year+2,
 			),
 			"en": fmt.Sprintf(`
 				What are the main factors leading you to change your inflation forecasts
@@ -507,10 +509,12 @@ func fmt202405(q *QuestionnaireT, page *pageT) error {
 				(-) means decrease in inflation forecast.
 				<br>
 				<br>
-				<b>For the years %d and %d</b>
+				<b>For the years %d, %d and %d</b>
 			`,
 				monthMinus3.Tr("en"), yearMinus1Q.Year(),
-				q.Survey.Year+0, q.Survey.Year+1,
+				q.Survey.Year+0,
+				q.Survey.Year+1,
+				q.Survey.Year+2,
 			),
 		}.Outline("2.")
 		gr := page.AddGrid(gb)

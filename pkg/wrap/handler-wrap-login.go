@@ -66,12 +66,12 @@ func (wr *mustLogin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			fmt.Fprintf(w, "Not logged in\n")
 			return
 		}
-		// if wr.mustAdmin {
-		// 	if !l.HasRole("admin") {
-		// 		fmt.Fprintf(w, "Login found, but must have role 'admin' - and no init password\n")
-		// 		return
-		// 	}
-		// }
+		if wr.mustAdmin {
+			if !l.HasRole("admin") {
+				fmt.Fprintf(w, "Login found, but must have role 'admin' - and no init password\n")
+				return
+			}
+		}
 	}
 
 	//
@@ -80,7 +80,6 @@ func (wr *mustLogin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 }
 
-//
 // UseAdmin is an alternative way to create the same middle ware.
 func UseAdmin(inner http.Handler, aParam int) http.Handler {
 	// Possible stuff outside the closure

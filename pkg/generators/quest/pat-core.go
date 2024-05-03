@@ -117,8 +117,13 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 	return nil
 }
 
-func groupName(i int) string {
-	return fmt.Sprintf("group_%d", i)
+type DraggableItem struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
+}
+
+func groupName(g DraggableItem) string {
+	return fmt.Sprintf("group_%s", g.Value)
 }
 
 // Part1Entscheidung1bis6 renders
@@ -202,7 +207,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		err := ComprehensionCheck1(q)
 		if err != nil {
-			return fmt.Errorf("Error adding ComprehensionCheck1(): %v", err)
+			return fmt.Errorf("error adding ComprehensionCheck1(): %v", err)
 		}
 
 	}
@@ -334,11 +339,6 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			page.ValidationFuncName = "" // redundant
 		}
 
-		type DraggableItem struct {
-			Name  string `json:"name"`
-			Value string `json:"value"`
-		}
-
 		items := [5]DraggableItem{{
 			Name:  "one",
 			Value: "1",
@@ -356,7 +356,31 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			Value: "5",
 		}}
 
-		choices := [3]string{"gOne", "gTwo", "gThree"}
+		choices := [6]DraggableItem{{
+			Name:  "A = Hans Böckler<br>B = Bund der Steuerzahler<br>C = Ludwig Erhard<br>",
+			Value: "hbl",
+		}, {
+			Name:  "A = Hans Böckler<br>B = Ludwig Erhard<br>C = Bund der Steuerzahler<br>",
+			Value: "hlb",
+		}, {
+			Name:  "A = Bund der Steuerzahler<br>B = Hans Böckler<br>C = Ludwig Erhard<br>",
+			Value: "bhl",
+		}, {
+			Name:  "A = Bund der Steuerzahler<br>B = Ludwig Erhard<br>C = Hans Böckler<br>",
+			Value: "blh",
+		}, {
+			Name:  "A = Ludwig Erhard<br>B = Hans Böckler<br>C = Bund der Steuerzahler<br>",
+			Value: "lhb",
+		}, {
+			Name:  "A = Ludwig Erhard<br>B = Bund der Steuerzahler<br>C = Hans Böckler<br>",
+			Value: "lbh",
+		}}
+
+		var choiceValues []string
+		for i := 0; i < len(choices); i++ {
+			choiceValues = append(choiceValues, choices[i].Value)
+		}
+		randomChoices, _ := qst.ShuffleChoicesBasedOnUid(q, choiceValues)
 
 		{
 			gr := page.AddGroup()
@@ -409,20 +433,33 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			for i := 0; i < len(choices); i++ {
 				{
 					inp := gr.AddInput()
-					inp.Name = groupName(i)
+					inp.Name = groupName(choices[i])
 					inp.MaxChars = 20
 					inp.Label = trl.S{
-						"de": choices[i],
-					}
-					inp.Desc = trl.S{
-						"de": fmt.Sprintf(`
-						%s
-						<br>
-						`, choices[i]),
+						"de": choices[i].Name,
 					}
 					inp.Type = "text"
 					inp.ColSpanControl = 1
 				}
+			}
+
+			// TODO: Probably, dyn composite should be used
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Name = "choices-order"
+			// 	inp.Type = "dyn-textblock"
+			// 	inp.MaxChars = 50
+			// 	inp.DynamicFunc = "ShuffleChoicesBasedOnUid"
+			// 	inp.DynamicFuncParamset = strings.Join(choiceValues, ",")
+			// }
+
+			{
+				inp := gr.AddInput()
+				inp.Name = "choices-order"
+				inp.Type = "text"
+				inp.MaxChars = 50
+				inp.Response = randomChoices
+
 			}
 		}
 		{
@@ -433,7 +470,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
 			choicesHtml := make([]string, len(choices))
 			for i, choice := range choices {
-				choicesHtml[i] = fmt.Sprintf("<div class='droppable-box'><div class='droppable-header'>%s</div><div data-droppable data-target='%s' data-id='%v'></div></div>", choice, groupName(i), i)
+				choicesHtml[i] = fmt.Sprintf("<div class='droppable-box'><div class='droppable-header'>%s</div><div data-droppable data-target='%s' data-id='%v'></div></div>", choice.Name, groupName(choices[i]), i)
 			}
 
 			itemsHtml := make([]string, len(items))

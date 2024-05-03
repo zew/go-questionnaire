@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"strings"
 	"time"
@@ -31,6 +32,7 @@ var dynFuncs = map[string]dynFuncT{
 	"knebSlightlyDistinctLabel":      knebSlightlyDistinctLabel,
 	"knebsDownloadURL":               knebDownloadURL,
 	"knebLinkBackToPanel":            knebLinkBackToPanel,
+	"ShuffleChoicesBasedOnUid":       ShuffleChoicesBasedOnUid,
 }
 
 func isOther(inpName string) bool {
@@ -457,4 +459,18 @@ func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (strin
 		`, mailLink),
 		nil
 
+}
+
+// Shuffle items for political beliefs quesetion
+func ShuffleChoicesBasedOnUid(q *QuestionnaireT, items []string) (string, error) {
+	userId := q.UserIDInt()
+	rand.New(rand.NewSource(int64(userId)))
+	shuffled := make([]string, len(items))
+	copy(shuffled, items)
+
+	for i := len(shuffled) - 1; i > 0; i-- {
+		j := rand.Intn(i + 1)
+		shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
+	}
+	return strings.Join(shuffled, ","), nil
 }

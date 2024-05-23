@@ -488,6 +488,40 @@ func fmt202405(q *QuestionnaireT, page *pageT) error {
 			rowLabelsEconomicAreasShort,
 		)
 
+		/*
+			variation in special question 2 - 2023-05
+
+			Q1-February:
+			„Für die Jahre Y0 und Y1“
+
+			Q2-May, Q3-August and Q4-November:
+			„Für die Jahre Y0, Y1 und Y2“
+
+			Special question 2 asks for the reasons behind revisions in inflation expectations
+			relative to the previous wave in which we asked for inflation expectations.
+			The rule is different for Q1-February in a given year because the last time we asked
+			for inflation expectations was Q4-November of the previous year and thus we asked for inflation
+			in different years in the two waves.
+
+			For example, in Q4-November 2023 we asked for inflation in 2023, 2024 and 2025.
+			In Q1-February 2024 we asked for inflation in 2024, 2025 and 2026.
+			Hence, the overlap is only two years and we must ask for the reasons behind the revisions for inflation expectations
+			for the years 2024 and 2025 only.
+			In all other waves, the target years are identical between the two waves.
+
+
+		*/
+
+		changeYrDe := fmt.Sprintf("<b>Für die Jahre %d, %d und %d</b>", q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2)
+		if q.Survey.Month <= 3 {
+			changeYrDe = fmt.Sprintf("<b>Für die Jahre %d und %d</b>", q.Survey.Year+0, q.Survey.Year+1)
+		}
+
+		changeYrEn := fmt.Sprintf("<b>For the years %d, %d and %d</b>", q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2)
+		if q.Survey.Month <= 3 {
+			changeYrEn = fmt.Sprintf("<b>For the years %d and %d</b>", q.Survey.Year+0, q.Survey.Year+1)
+		}
+
 		gb.MainLabel = trl.S{
 			"de": fmt.Sprintf(` 
 				Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision 
@@ -495,12 +529,10 @@ func fmt202405(q *QuestionnaireT, page *pageT) error {
 				und wenn ja, nach oben (+) oder unten (-)?
 				<br>
 				<br>
-				<b>Für die Jahre %d, %d und %d</b>
+				%v
 			`,
 				monthMinus3.Tr("de"), yearMinus1Q.Year(),
-				q.Survey.Year+0,
-				q.Survey.Year+1,
-				q.Survey.Year+2,
+				changeYrDe,
 			),
 			"en": fmt.Sprintf(`
 				What are the main factors leading you to change your inflation forecasts
@@ -509,12 +541,10 @@ func fmt202405(q *QuestionnaireT, page *pageT) error {
 				(-) means decrease in inflation forecast.
 				<br>
 				<br>
-				<b>For the years %d, %d and %d</b>
+				%v
 			`,
 				monthMinus3.Tr("en"), yearMinus1Q.Year(),
-				q.Survey.Year+0,
-				q.Survey.Year+1,
-				q.Survey.Year+2,
+				changeYrEn,
 			),
 		}.Outline("2.")
 		gr := page.AddGrid(gb)

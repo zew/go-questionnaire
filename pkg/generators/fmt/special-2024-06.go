@@ -20,8 +20,7 @@ func twoNumbersNoAnswer(
 	gr := page.AddGroup()
 	gr.BottomVSpacers = 4
 	gr.Cols = 4
-	// gr.ColWidths("2.6fr  1.7fr  1.7fr 1.4fr")
-	gr.ColWidths("2.1fr  1.7fr  1.7fr 1.4fr")
+	gr.ColWidths("1.9fr  1.7fr  1.7fr 1.4fr")
 
 	gr.Style = css.NewStylesResponsive(gr.Style)
 	gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
@@ -62,7 +61,6 @@ func twoNumbersNoAnswer(
 	}
 
 	//
-
 	//
 	//
 	// second to fourth row: inputs
@@ -82,9 +80,7 @@ func twoNumbersNoAnswer(
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 			inp.ColSpan = 1
 			inp.ColSpanControl = 3
-			inp.Min = -40
 			inp.Min = -100
-			inp.Max = 50
 			inp.Max = 1000
 			inp.Step = 0.01
 			inp.MaxChars = 5
@@ -100,9 +96,7 @@ func twoNumbersNoAnswer(
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 			inp.ColSpan = 1
 			inp.ColSpanControl = 3
-			inp.Min = -40
 			inp.Min = -100
-			inp.Max = 50
 			inp.Max = 1000
 			inp.Step = 0.01
 			inp.MaxChars = 5
@@ -124,6 +118,96 @@ func twoNumbersNoAnswer(
 
 }
 
+func labelNumberX2(
+	page *qst.WrappedPageT,
+	main trl.S,
+	inps []string, // input base for each row
+	colHeaders []trl.S,
+	rowLabels1 []trl.S,
+	rowLabels2 []trl.S,
+) {
+
+	gr := page.AddGroup()
+	gr.BottomVSpacers = 3
+	gr.Cols = 4
+	gr.ColWidths("2.1fr  1.9fr  2.1fr   1.9fr")
+
+	// main label
+	{
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.ColSpan = gr.Cols
+		inp.Label = main
+	}
+
+	// first row
+	for _, lbl := range colHeaders {
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.ColSpan = 2
+		inp.Label = lbl.Bold()
+		// inp.Style = css.ItemCenteredMCA(inp.Style)
+		inp.Style = css.ItemEndCA(inp.Style)
+		inp.Style.Desktop.StyleBox.Position = "relative"
+		inp.Style.Desktop.StyleBox.Top = "0.15rem"
+		inp.Style.Desktop.StyleBox.Padding = "0 1.5rem 0 4.5rem"
+		inp.Style.Mobile.StyleBox.Padding = "0  1.5rem 0 0"
+	}
+
+	//
+	//
+	// second to fourth row: inputs
+	for i, row := range rowLabels1 {
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.Label = row
+			inp.Style = css.ItemEndMA(inp.Style)
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = fmt.Sprintf("rexp_ecb_%v", inps[i])
+			inp.Suffix = trl.S{"de": "Basispunkte", "en": "basis points"}
+			inp.ColSpan = 1
+			inp.ColSpanControl = 3
+			inp.Min = -200
+			inp.Max = 200
+			inp.Step = 1
+			inp.MaxChars = 5
+			inp.Style = css.ItemCenteredMCA(inp.Style)
+			inp.Style = css.ItemEndCA(inp.Style)
+		}
+
+		// different suffix
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.Label = rowLabels2[i]
+			inp.Style = css.ItemEndMA(inp.Style)
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = fmt.Sprintf("rexp_fed_%v", inps[i])
+			inp.Suffix = trl.S{"de": "Basispunkte", "en": "basis points"}
+			inp.ColSpan = 1
+			inp.ColSpanControl = 3
+			inp.Min = -200
+			inp.Max = 200
+			inp.Step = 1
+			inp.MaxChars = 5
+			inp.Style = css.ItemCenteredMCA(inp.Style)
+			inp.Style = css.ItemEndCA(inp.Style)
+		}
+
+	}
+
+}
+
 func special202406b(q *qst.QuestionnaireT) error {
 
 	cond := false
@@ -138,11 +222,148 @@ func special202406b(q *qst.QuestionnaireT) error {
 		"en": "Special questions: Interest rate expectations",
 	}
 	page.Short = trl.S{
-		"de": "Sonderfragen<br>Zinserwartungen",
-		"en": "Special questions<br>Interest rates",
+		"de": "Sonderfragen:<br>Zinserwartungen",
+		"en": "Special questions:<br>Interest rates",
 	}
 
 	page.WidthMax("42rem")
+
+	{
+
+		inps := []string{
+			"2024_6",
+			"2024_7",
+			"2024_9",
+			"2024_10",
+			"2024_12",
+			"2025_1",
+			"2025_3",
+			"2025_4",
+			"2025_6",
+			"2025_7",
+		}
+
+		lblMain := trl.S{
+			"de": `
+				Wir möchten Sie zu Ihren Erwartungen über zukünftige Zinsentscheidungen der Europäischen Zentralbank (EZB) und des Federal Open Market Commitee (FOMC) des Federal Reserve System befragen. Geben Sie hierzu Ihre Erwartungen bezüglich der Zinsschritte (in Basispunkten) bei den nachfolgenden Treffen der Komitees an: 
+
+				<br>
+				<small>Hinweis: Derzeit liegt der Leitzins der EZB bei 4,5% und die Federal Funds Rate in den USA bei 5,25-5,50%. Für die FOMC-Treffen im Jahr 2025 sind noch keine genauen Termine bekannt.</small>
+			`,
+			"en": `
+				We would now like to ask you about your expectations on future interest rate decisions by the European Central Bank (ECB) and the Federal Open Market Commitee (FOMC) of the Federal Reserve System. Please state your expectations on <i>interest rate movements (in basis points)</i> after the following meetings of the commitees: 
+
+				<br>
+				<small>Hint: The Main Refinancing Operations Rate of the ECB currently stands at 4,5% and the Federal Funds Rate in the USA stands at 5,25-5,50%. The precise dates for the FOMC meetings in 2025 are unknown at this point.</small>
+			
+			`,
+		}.Outline("3.")
+
+		headers := []trl.S{
+			{
+				"de": `Änderung des Leitzins (EZB)`,
+				"en": `Changes of <br>the Main Refinancing Operations Rate (ECB)`,
+			},
+			{
+				"de": `Änderung der Federal Funds Rate (FOMC)`,
+				"en": `Changes of <br>the Federal Funds Rate (FOMC)`,
+			},
+		}
+
+		rowsLeft := []trl.S{
+			{
+				"de": "6. Juni 2024",
+				"en": "June 6, 2024",
+			},
+			{
+				"de": "18. Juli 2024",
+				"en": "July 18, 2024",
+			},
+			{
+				"de": "12. September 2024",
+				"en": "September 12, 2024",
+			},
+			{
+				"de": "17. Oktober 2024",
+				"en": "October 17, 2024",
+			},
+			{
+				"de": "12. Dezember 2024",
+				"en": "December 12, 2024",
+			},
+			{
+				"de": "1. Januar 2025",
+				"en": "January 1, 2025",
+			},
+			{
+				"de": "6. März 2025",
+				"en": "March 6, 2025",
+			},
+			{
+				"de": "17. April 2025",
+				"en": "April 17, 2025",
+			},
+			{
+				"de": "5. Juni 2025",
+				"en": "June 5, 2025",
+			},
+			{
+				"de": "24. Juli 2025",
+				"en": "Juli 24, 2025",
+			},
+		}
+		rowsRight := []trl.S{
+			{
+				"de": "12. Juni 2024",
+				"en": "June 12, 2024",
+			},
+			{
+				"de": "31. Juli 2024",
+				"en": "July 31, 2024",
+			},
+			{
+				"de": "18. September 2024",
+				"en": "September 18, 2024",
+			},
+			{
+				"de": "7. November 2024",
+				"en": "November 7, 2024",
+			},
+			{
+				"de": "18. Dezember 2024",
+				"en": "December 18, 2024",
+			},
+			{
+				"de": "Januar 2025",
+				"en": "January 2025",
+			},
+			{
+				"de": "März 2025",
+				"en": "March 2025",
+			},
+			{
+				"de": "April/Mai 2025",
+				"en": "April/May 2025",
+			},
+			{
+				"de": "Juni 2025",
+				"en": "June 2025",
+			},
+			{
+				"de": "Juli 2025",
+				"en": "July 2025",
+			},
+		}
+
+		labelNumberX2(
+			qst.WrapPageT(page),
+			lblMain,
+			inps,
+			headers,
+			rowsLeft,
+			rowsRight,
+		)
+	}
 
 	//
 	//
@@ -262,7 +483,7 @@ func special202406b(q *qst.QuestionnaireT) error {
 		rows := []trl.S{
 			{
 				"de": `BIP-Wachstumsrate,<br> Deutschland`,
-				"en": `Real GDP growth rate, G<br>ermany`,
+				"en": `Real GDP growth rate, <br>Germany`,
 			},
 			{
 				"de": `BIP-Wachstumsrate,<br> USA `,
@@ -278,6 +499,37 @@ func special202406b(q *qst.QuestionnaireT) error {
 			headers,
 			rows,
 		)
+	}
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleGridContainer.GapColumn = "0rem"
+		gr.Style.Desktop.StyleGridContainer.GapRow = "0.4rem"
+		{
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = "dow_exp_6m"
+
+			inp.Label = trl.S{
+				"de": `Den <i>Dow Jones (USA)</i> erwarte ich in 6 Monaten bei `,
+				"en": `Six months ahead, I expect the <i>Dow Jones (USA)</i> to stand at`,
+			}.Outline("6.")
+			inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
+			inp.Placeholder = trl.S{
+				"de": "00000",
+				"en": "00000",
+			}
+			inp.Min = 1000
+			inp.Max = 90000
+			inp.Step = 0
+			inp.MaxChars = 6
+
+			inp.ColSpan = 6
+			inp.ColSpanLabel = 4
+			inp.ColSpanControl = 2
+		}
 	}
 
 	return nil

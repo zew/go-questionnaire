@@ -9,6 +9,10 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+/*
+Most recent version of Month 2 of quarter special question.
+Contains some randomization of inflation brackets.
+*/
 func fmt202405(q *QuestionnaireT, page *pageT) error {
 
 	// not 6 as in m3 of q

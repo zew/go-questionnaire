@@ -30,6 +30,7 @@ var hyph = []string{
 	"Konjunktur|entwicklung",
 	"Kredit|geber",
 	"Kredit|nehmer",
+	"Punkt|pro|gno|se",
 	"Risiko|komponente",
 	"Maschinen|bau",
 	"Prozent|punkt",

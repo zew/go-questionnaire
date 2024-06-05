@@ -905,10 +905,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("error adding special202403(): %v", err)
 	}
 
+	err = special202406b(&q)
+	if err != nil {
+		return nil, fmt.Errorf("error adding special202406b(): %v", err)
+	}
+
 	// 202405
 	{
-		page := q.AddPage()
-		page.GeneratorFuncName = "fmt202405"
+		// page := q.AddPage()
+		// page.GeneratorFuncName = "fmt202405"
 	}
 
 	//

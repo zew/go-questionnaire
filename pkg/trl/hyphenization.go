@@ -36,6 +36,7 @@ var hyph = []string{
 	"Maschinen|bau",
 	"Prozent|punkt",
 	"Transformations|projekt",
+	"Wachstums|rate",
 
 	"Ober|gren|ze",
 	"Kon|fi|denz|in|ter|vall",

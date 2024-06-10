@@ -15,7 +15,7 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "4.5%"
+ 				"val": "4.25%"
  			},
  			{
  				"name": "destatis",
@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "70094c764cea2bae4f3baf1ee0261250f57a6bf7fc84bf8a4588315e47be57b6",
+ 	"md_5": "b3f0d233562538e52e6dd5db36e3f37d29119d723566330964742b7d816ab1e7",
  	"lang_codes": [
  		"de",
  		"en"
@@ -8268,14 +8268,728 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; Die \n\t\t\t\t\t\t\u003ci\u003ejährliche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum\u003c/i\u003e \n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HVPI in Pro\u0026shy;zent) \n\t\t\t\t\tsowie den \n\t\t\t\t\t\t\u003ci\u003eUSA\u003c/i\u003e\n\t\t\t\t\t(durchschnittliche jährliche Veränderung des PCE in Pro\u0026shy;zent) \n\t\t\t\t\t\t\u003ci\u003efür 2024 bzw. im Zeitraum 2024-2026 \u003c/i\u003e\n\t\t\t\t\terwarte ich bei den folgenden Werten:\n\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the following values \n\t\t\t\t\t\t\u003ci\u003efor the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in the euro area\u003c/i\u003e \n\t\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the HICP, in per\u0026shy;cent) \n\t\t\t\t\tand the \n\t\t\t\t\t\t\u003ci\u003eUSA\u003c/i\u003e\n\t\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the PCE, in per\u0026shy;cent) \n\t\t\t\t\t\t\u003ci\u003efor 2024 respectively the period 2024-2026\u003c/i\u003e:\n\t\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.55rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für das Jahr 2024",
+ 								"en": "Point forecast in per\u0026shy;cent for the year 2024"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.85rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für den Zeitraum 2024-2026",
+ 								"en": "Point forecast in per\u0026shy;cent for the period   2024-2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.85rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.85rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on,\u003cbr\u003e Eurozone",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on rate,\u003cbr\u003e euro area"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "inf_ger_0yr",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_ger_3yrs",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_ger__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on,\u003cbr\u003e USA",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on rate,\u003cbr\u003e USA "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "inf_us_0yr",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_us_3yrs",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_us__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "1.9fr  1.7fr  1.7fr 1.4fr",
+ 								"column_gap": "1.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tDie \n\t\t\t\t\t\u003ci\u003ejährliche Wachstums\u0026shy;rate des realen Bruttoinlandprodukts im Euro\u0026shy;raum\u003c/i\u003e \n\t\t\t\tsowie den \n\t\t\t\t\t\u003ci\u003eUSA für 2024 bzw. im Zeitraum 2024-2026\u003c/i\u003e\n\t\t\t\terwarte ich bei den folgenden Werten:\t\t\t\n\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tI expect the following values for the \n\t\t\t\t\t\u003ci\u003eannual real GDP growth rate in the euro area\u003c/i\u003e\n\t\t\t\t and the \n\t\t\t\t \t\u003ci\u003eUSA\u003c/i\u003e \n\t\t\t\t\t\u003ci\u003efor 2024 respectively the period 2024-2026\u003c/i\u003e:\t\t\t\n\t\t\t\n\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.55rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für das Jahr 2024",
+ 								"en": "Point forecast in per\u0026shy;cent for the year 2024"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.85rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für den Zeitraum 2024-2026",
+ 								"en": "Point forecast in per\u0026shy;cent for the period   2024-2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.85rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.85rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "BIP-Wachstums\u0026shy;rate,\u003cbr\u003e Eurozone",
+ 								"en": "Real GDP growth rate, \u003cbr\u003eeuro area"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gdp_growth_ger_0yr",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "gdp_growth_ger_3yrs",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "gdp_growth_ger__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "BIP-Wachstums\u0026shy;rate,\u003cbr\u003e USA ",
+ 								"en": "Real GDP growth rate,\u003cbr\u003e USA  "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gdp_growth_us_0yr",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "gdp_growth_us_3yrs",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -100,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "gdp_growth_us__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "1.9fr  1.7fr  1.7fr 1.4fr",
+ 								"column_gap": "1.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 4,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWir möchten Sie zu Ihren Erwartungen über zukünftige Zinsentscheidungen der Europäischen Zentralbank (EZB) und des Federal Open Market Commitee (FOMC) des Federal Reserve System befragen. Geben Sie hierzu Ihre Erwartungen bezüglich der Zinsschritte (in Basis\u0026shy;punkten) bei den nachfolgenden Treffen der Komitees an: \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003eHinweis: Derzeit liegt der Leitzins der EZB bei 4,5% und die Federal Funds Rate in den USA bei 5,25-5,50%. Für die FOMC-Treffen im Jahr 2025 sind noch kei\u0026shy;ne genauen Termine bekannt.\u003c/small\u003e\n\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWe would now like to ask you about your expectations on future interest rate decisions by the European Central Bank (ECB) and the Federal Open Market Commitee (FOMC) of the Federal Reserve System. Please state your expectations on \u003ci\u003einterest rate movements (in basis points)\u003c/i\u003e after the following meetings of the commitees: \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003eHint: The Main Re\u0026shy;financing Operations Rate of the ECB currently stands at 4,5% and the Federal Funds Rate in the USA stands at 5,25-5,50%. The precise dates for the FOMC meetings in 2025 are unknown at this point.\u003c/small\u003e\n\t\t\t\n\t\t\t"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWir möchten Sie zu Ihren Erwartungen über zukünftige Zinsentscheidungen der Europäischen Zentralbank (EZB) und des Federal Open Market Commitee (FOMC) des Federal Reserve System befragen. Geben Sie hierzu Ihre Erwartungen bezüglich der \n\t\t\t\t\t\u003ci\u003eZinsschritte (in Basis\u0026shy;punkten, neg\u0026shy;ative Werte für Zinssenkungen)\u003c/i\u003e \n\t\t\t\tbei den nachfolgenden Treffen der Komitees an: \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003eHinweis: Derzeit liegt der Leitzins der EZB bei 4,25% und die Federal Funds Rate in den USA bei 5,25-5,50%. Für die FOMC-Treffen im Jahr 2025 sind noch kei\u0026shy;ne genauen Termine bekannt.\u003c/small\u003e\n\t\t\t",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWe would now like to ask you about your expectations on future interest rate decisions by the European Central Bank (ECB) and the Federal Open Market Commitee (FOMC) of the Federal Reserve System. Please state your expectations on \n\t\t\t\t\t\u003ci\u003einterest rate movements (in basis points, neg\u0026shy;ative values for interest rate cuts)\u003c/i\u003e \n\t\t\t\tafter the following meetings of the commitees: \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003eHint: The Main Re\u0026shy;financing Operations Rate of the ECB currently stands at 4,25% and the Federal Funds Rate in the USA stands at 5,25-5,50%. The precise dates for the FOMC meetings in 2025 are unknown at this point.\u003c/small\u003e\n\t\t\t\n\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -8307,7 +9021,10 @@
  										"padding": "0  1.5rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
  								}
  							}
  						},
@@ -8338,15 +9055,18 @@
  										"padding": "0  1.5rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"line_height": 100
+ 									}
  								}
  							}
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "6. Juni 2024",
- 								"en": "June 6, 2024"
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -8368,37 +9088,13 @@
  							}
  						},
  						{
- 							"name": "rexp_ecb_2024_6",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 1,
- 							"min": -200,
- 							"max": 200,
- 							"suffix": {
- 								"de": "Basis\u0026shy;punkte",
- 								"en": "basis points"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
  							},
  							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -9524,702 +10220,6 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 4,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; Die \n\t\t\t\t\t\u003ci\u003ejährliche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\t\t\tsowie den \n\t\t\t\t\t\u003ci\u003eUSA\u003c/i\u003e\n\t\t\t\t\t\t(durchschnittliche jährliche Veränderung des VPI in Pro\u0026shy;zent) \n\t\t\t\t\t\u003ci\u003efür 2024 bzw. im Zeitraum 2024-2027 \u003c/i\u003e\n\t\t\t\t\terwarte ich bei den folgenden Werten:\n\t\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tI expect the following values \n\t\t\t\t\t\u003ci\u003efor the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny\u003c/i\u003e \n\t\t\t\tand the \n\t\t\t\t\t\u003ci\u003eUSA\u003c/i\u003e\n\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the CPI, in per\u0026shy;cent) \n\t\t\t\t\t\u003ci\u003efor 2024 respectively the period 2024-2027\u003c/i\u003e:\n\t\t\t\t"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.55rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für das Jahr 2024",
- 								"en": "Point forecast in per\u0026shy;cent for the year 2024"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.85rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für den Zeitraum 2024-2027",
- 								"en": "Point forecast in per\u0026shy;cent for the period   2024-2027"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.85rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "no es\u0026shy;ti\u0026shy;mate"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.85rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on,\u003cbr\u003e Deutsch\u0026shy;land",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on rate,\u003cbr\u003e Ger\u0026shy;ma\u0026shy;ny"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "inf_ger_0yr",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "inf_ger_3yrs",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "inf_ger__noanswer",
- 							"type": "checkbox",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on,\u003cbr\u003e USA",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on rate,\u003cbr\u003e USA "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "inf_us_0yr",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "inf_us_3yrs",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "inf_us__noanswer",
- 							"type": "checkbox",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "1.9fr  1.7fr  1.7fr 1.4fr",
- 								"column_gap": "1.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tDie \n\t\t\t\t\t\u003ci\u003ejährliche Wachstumsrate des realen Bruttoinlandprodukts in Deutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\tsowie den \n\t\t\t\t\t\u003ci\u003eUSA für 2024 bzw. im Zeitraum 2024-2027\u003c/i\u003e\n\t\t\t\terwarte ich bei den folgenden Werten:\t\t\t\n\t\t\t",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tI expect the following values for the \n\t\t\t\t\t\u003ci\u003eannual real GDP growth rate in Ger\u0026shy;ma\u0026shy;ny\u003c/i\u003e\n\t\t\t\t and the \n\t\t\t\t \t\u003ci\u003eUSA\u003c/i\u003e \n\t\t\t\t\t\u003ci\u003efor 2024 respectively the period 2024-2027\u003c/i\u003e:\t\t\t\n\t\t\t\n\t\t\t"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.55rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für das Jahr 2024",
- 								"en": "Point forecast in per\u0026shy;cent for the year 2024"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.85rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se  in Pro\u0026shy;zent für den Zeitraum 2024-2027",
- 								"en": "Point forecast in per\u0026shy;cent for the period   2024-2027"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.85rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "no es\u0026shy;ti\u0026shy;mate"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.85rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "BIP-Wachstumsrate,\u003cbr\u003e Deutsch\u0026shy;land",
- 								"en": "Real GDP growth rate, \u003cbr\u003eGer\u0026shy;ma\u0026shy;ny"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "gdp_growth_ger_0yr",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_growth_ger_3yrs",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_growth_ger__noanswer",
- 							"type": "checkbox",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "BIP-Wachstumsrate,\u003cbr\u003e USA ",
- 								"en": "Real GDP growth rate,\u003cbr\u003e USA  "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "gdp_growth_us_0yr",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_growth_us_3yrs",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -100,
- 							"max": 1000,
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_growth_us__noanswer",
- 							"type": "checkbox",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "1.9fr  1.7fr  1.7fr 1.4fr",
- 								"column_gap": "1.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
  					"bottom_vspacers": 3,
  					"columns": 6,
  					"inputs": [
@@ -10238,8 +10238,8 @@
  								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; Six months ahead, I expect the \u003ci\u003eDow Jones (USA)\u003c/i\u003e to stand at"
  							},
  							"suffix": {
- 								"de": "Punkten",
- 								"en": "points"
+ 								"de": "Punkten.",
+ 								"en": "points."
  							},
  							"col_span": 6,
  							"col_span_label": 4,

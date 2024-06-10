@@ -58,6 +58,10 @@ func twoNumbersNoAnswer(
 		inp.Style = css.ItemEndCA(inp.Style)
 		inp.Style.Desktop.StyleBox.Position = "relative"
 		inp.Style.Desktop.StyleBox.Top = "0.85rem"
+
+		inp.Style.Mobile.StyleText.FontSize = 90
+		inp.Style.Mobile.StyleText.LineHeight = 100
+
 	}
 
 	//
@@ -152,6 +156,9 @@ func labelNumberX2(
 		inp.Style.Desktop.StyleBox.Top = "0.15rem"
 		inp.Style.Desktop.StyleBox.Padding = "0 1.5rem 0 4.5rem"
 		inp.Style.Mobile.StyleBox.Padding = "0  1.5rem 0 0"
+
+		inp.Style.Mobile.StyleText.FontSize = 90
+		inp.Style.Mobile.StyleText.LineHeight = 100
 	}
 
 	//
@@ -166,7 +173,8 @@ func labelNumberX2(
 			inp.Label = row
 			inp.Style = css.ItemEndMA(inp.Style)
 		}
-		{
+
+		if i != 0 {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = fmt.Sprintf("rexp_ecb_%v", inps[i])
@@ -179,6 +187,14 @@ func labelNumberX2(
 			inp.MaxChars = 5
 			inp.Style = css.ItemCenteredMCA(inp.Style)
 			inp.Style = css.ItemEndCA(inp.Style)
+		} else {
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.Label = trl.S{"de": "&nbsp;", "en": "&nbsp;"}
+			}
+
 		}
 
 		// different suffix
@@ -228,6 +244,144 @@ func special202406b(q *qst.QuestionnaireT) error {
 
 	page.WidthMax("42rem")
 
+	//
+	//
+	//
+	{
+
+		inps := []string{
+			"inf_ger",
+			"inf_us",
+		}
+		suffixes := []string{
+			// "2024",
+			"0yr",
+			"3yrs",
+		}
+
+		lblMain := trl.S{
+			"de": `Die 
+						<i>jährliche Inflationsrate im Euroraum</i> 
+					(durchschnittliche jährliche Veränderung des HVPI in Prozent) 
+					sowie den 
+						<i>USA</i>
+					(durchschnittliche jährliche Veränderung des PCE in Prozent) 
+						<i>für 2024 bzw. im Zeitraum 2024-2026 </i>
+					erwarte ich bei den folgenden Werten:
+				`,
+			"en": `
+					I expect the following values 
+						<i>for the annual inflation rate in the euro area</i> 
+					(annual average change of the HICP, in percent) 
+					and the 
+						<i>USA</i>
+					(annual average change of the PCE, in percent) 
+						<i>for 2024 respectively the period 2024-2026</i>:
+				`,
+		}.Outline("3.")
+
+		headers := []trl.S{
+			{
+				"de": `Punktprognose  in Prozent für das Jahr 2024`,
+				"en": `Point forecast in percent for the year 2024`,
+			},
+			{
+				"de": `Punktprognose  in Prozent für den Zeitraum 2024-2026`,
+				"en": `Point forecast in percent for the period   2024-2026`,
+			},
+			{
+				"de": `keine<br>Angabe`,
+				"en": `no estimate`,
+			},
+		}
+
+		rows := []trl.S{
+			{
+				"de": `Inflation,<br> Eurozone`,
+				"en": `Inflation rate,<br> euro area`,
+			}, {
+				"de": `Inflation,<br> USA`,
+				"en": `Inflation rate,<br> USA `,
+			},
+		}
+
+		twoNumbersNoAnswer(
+			qst.WrapPageT(page),
+			lblMain,
+			inps,
+			suffixes,
+			headers,
+			rows,
+		)
+	}
+
+	//
+	//
+	//
+	{
+
+		inps := []string{
+			"gdp_growth_ger",
+			"gdp_growth_us",
+		}
+		suffixes := []string{
+			"0yr",
+			"3yrs",
+		}
+		lblMain := trl.S{
+			"de": `
+				Die 
+					<i>jährliche Wachstumsrate des realen Bruttoinlandprodukts im Euroraum</i> 
+				sowie den 
+					<i>USA für 2024 bzw. im Zeitraum 2024-2026</i>
+				erwarte ich bei den folgenden Werten:			
+			`,
+			"en": `
+				I expect the following values for the 
+					<i>annual real GDP growth rate in the euro area</i>
+				 and the 
+				 	<i>USA</i> 
+					<i>for 2024 respectively the period 2024-2026</i>:			
+			
+			`,
+		}.Outline("4.")
+
+		headers := []trl.S{
+			{
+				"de": `Punktprognose  in Prozent für das Jahr 2024`,
+				"en": `Point forecast in percent for the year 2024`,
+			},
+			{
+				"de": `Punktprognose  in Prozent für den Zeitraum 2024-2026`,
+				"en": `Point forecast in percent for the period   2024-2026`,
+			},
+			{
+				"de": `keine<br>Angabe`,
+				"en": `no estimate`,
+			},
+		}
+
+		rows := []trl.S{
+			{
+				"de": `BIP-Wachstumsrate,<br> Eurozone`,
+				"en": `Real GDP growth rate, <br>euro area`,
+			},
+			{
+				"de": `BIP-Wachstumsrate,<br> USA `,
+				"en": `Real GDP growth rate,<br> USA  `,
+			},
+		}
+
+		twoNumbersNoAnswer(
+			qst.WrapPageT(page),
+			lblMain,
+			inps,
+			suffixes,
+			headers,
+			rows,
+		)
+	}
+
 	{
 
 		inps := []string{
@@ -245,19 +399,23 @@ func special202406b(q *qst.QuestionnaireT) error {
 
 		lblMain := trl.S{
 			"de": `
-				Wir möchten Sie zu Ihren Erwartungen über zukünftige Zinsentscheidungen der Europäischen Zentralbank (EZB) und des Federal Open Market Commitee (FOMC) des Federal Reserve System befragen. Geben Sie hierzu Ihre Erwartungen bezüglich der Zinsschritte (in Basispunkten) bei den nachfolgenden Treffen der Komitees an: 
+				Wir möchten Sie zu Ihren Erwartungen über zukünftige Zinsentscheidungen der Europäischen Zentralbank (EZB) und des Federal Open Market Commitee (FOMC) des Federal Reserve System befragen. Geben Sie hierzu Ihre Erwartungen bezüglich der 
+					<i>Zinsschritte (in Basispunkten, negative Werte für Zinssenkungen)</i> 
+				bei den nachfolgenden Treffen der Komitees an: 
 
 				<br>
-				<small>Hinweis: Derzeit liegt der Leitzins der EZB bei 4,5% und die Federal Funds Rate in den USA bei 5,25-5,50%. Für die FOMC-Treffen im Jahr 2025 sind noch keine genauen Termine bekannt.</small>
+				<small>Hinweis: Derzeit liegt der Leitzins der EZB bei 4,25% und die Federal Funds Rate in den USA bei 5,25-5,50%. Für die FOMC-Treffen im Jahr 2025 sind noch keine genauen Termine bekannt.</small>
 			`,
 			"en": `
-				We would now like to ask you about your expectations on future interest rate decisions by the European Central Bank (ECB) and the Federal Open Market Commitee (FOMC) of the Federal Reserve System. Please state your expectations on <i>interest rate movements (in basis points)</i> after the following meetings of the commitees: 
+				We would now like to ask you about your expectations on future interest rate decisions by the European Central Bank (ECB) and the Federal Open Market Commitee (FOMC) of the Federal Reserve System. Please state your expectations on 
+					<i>interest rate movements (in basis points, negative values for interest rate cuts)</i> 
+				after the following meetings of the commitees: 
 
 				<br>
-				<small>Hint: The Main Refinancing Operations Rate of the ECB currently stands at 4,5% and the Federal Funds Rate in the USA stands at 5,25-5,50%. The precise dates for the FOMC meetings in 2025 are unknown at this point.</small>
+				<small>Hint: The Main Refinancing Operations Rate of the ECB currently stands at 4,25% and the Federal Funds Rate in the USA stands at 5,25-5,50%. The precise dates for the FOMC meetings in 2025 are unknown at this point.</small>
 			
 			`,
-		}.Outline("3.")
+		}.Outline("5.")
 
 		headers := []trl.S{
 			{
@@ -272,8 +430,10 @@ func special202406b(q *qst.QuestionnaireT) error {
 
 		rowsLeft := []trl.S{
 			{
-				"de": "6. Juni 2024",
-				"en": "June 6, 2024",
+				// "de": "6. Juni 2024",
+				// "en": "June 6, 2024",
+				"de": "&nbsp;",
+				"en": "&nbsp;",
 			},
 			{
 				"de": "18. Juli 2024",
@@ -369,139 +529,6 @@ func special202406b(q *qst.QuestionnaireT) error {
 	//
 	//
 	{
-
-		inps := []string{
-			"inf_ger",
-			"inf_us",
-		}
-		suffixes := []string{
-			// "2024",
-			"0yr",
-			"3yrs",
-		}
-
-		lblMain := trl.S{
-			"de": `Die 
-					<i>jährliche Inflationsrate in Deutschland</i> 
-						sowie den 
-					<i>USA</i>
-						(durchschnittliche jährliche Veränderung des VPI in Prozent) 
-					<i>für 2024 bzw. im Zeitraum 2024-2027 </i>
-					erwarte ich bei den folgenden Werten:
-				`,
-			"en": `
-				I expect the following values 
-					<i>for the annual inflation rate in Germany</i> 
-				and the 
-					<i>USA</i>
-				(annual average change of the CPI, in percent) 
-					<i>for 2024 respectively the period 2024-2027</i>:
-				`,
-		}.Outline("4.")
-
-		headers := []trl.S{
-			{
-				"de": `Punktprognose  in Prozent für das Jahr 2024`,
-				"en": `Point forecast in percent for the year 2024`,
-			},
-			{
-				"de": `Punktprognose  in Prozent für den Zeitraum 2024-2027`,
-				"en": `Point forecast in percent for the period   2024-2027`,
-			},
-			{
-				"de": `keine<br>Angabe`,
-				"en": `no estimate`,
-			},
-		}
-
-		rows := []trl.S{
-			{
-				"de": `Inflation,<br> Deutschland`,
-				"en": `Inflation rate,<br> Germany`,
-			}, {
-				"de": `Inflation,<br> USA`,
-				"en": `Inflation rate,<br> USA `,
-			},
-		}
-
-		twoNumbersNoAnswer(
-			qst.WrapPageT(page),
-			lblMain,
-			inps,
-			suffixes,
-			headers,
-			rows,
-		)
-	}
-
-	//
-	//
-	//
-	{
-
-		inps := []string{
-			"gdp_growth_ger",
-			"gdp_growth_us",
-		}
-		suffixes := []string{
-			"0yr",
-			"3yrs",
-		}
-		lblMain := trl.S{
-			"de": `
-				Die 
-					<i>jährliche Wachstumsrate des realen Bruttoinlandprodukts in Deutschland</i> 
-				sowie den 
-					<i>USA für 2024 bzw. im Zeitraum 2024-2027</i>
-				erwarte ich bei den folgenden Werten:			
-			`,
-			"en": `
-				I expect the following values for the 
-					<i>annual real GDP growth rate in Germany</i>
-				 and the 
-				 	<i>USA</i> 
-					<i>for 2024 respectively the period 2024-2027</i>:			
-			
-			`,
-		}.Outline("5.")
-
-		headers := []trl.S{
-			{
-				"de": `Punktprognose  in Prozent für das Jahr 2024`,
-				"en": `Point forecast in percent for the year 2024`,
-			},
-			{
-				"de": `Punktprognose  in Prozent für den Zeitraum 2024-2027`,
-				"en": `Point forecast in percent for the period   2024-2027`,
-			},
-			{
-				"de": `keine<br>Angabe`,
-				"en": `no estimate`,
-			},
-		}
-
-		rows := []trl.S{
-			{
-				"de": `BIP-Wachstumsrate,<br> Deutschland`,
-				"en": `Real GDP growth rate, <br>Germany`,
-			},
-			{
-				"de": `BIP-Wachstumsrate,<br> USA `,
-				"en": `Real GDP growth rate,<br> USA  `,
-			},
-		}
-
-		twoNumbersNoAnswer(
-			qst.WrapPageT(page),
-			lblMain,
-			inps,
-			suffixes,
-			headers,
-			rows,
-		)
-	}
-
-	{
 		gr := page.AddGroup()
 		gr.Cols = 6
 		gr.Style = css.NewStylesResponsive(gr.Style)
@@ -516,7 +543,7 @@ func special202406b(q *qst.QuestionnaireT) error {
 				"de": `Den <i>Dow Jones (USA)</i> erwarte ich in 6 Monaten bei `,
 				"en": `Six months ahead, I expect the <i>Dow Jones (USA)</i> to stand at`,
 			}.Outline("6.")
-			inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
+			inp.Suffix = trl.S{"de": "Punkten.", "en": "points."}
 			inp.Placeholder = trl.S{
 				"de": "00000",
 				"en": "00000",

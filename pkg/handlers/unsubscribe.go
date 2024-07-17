@@ -230,7 +230,7 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 		msg := "Task cannot be empty; 'invitation' or 'reminder'"
 		fe.Response += template.HTML(msg + "<br>")
 	}
-	if fe.Email == "" {
+	if fe.Email == "" || fe.Email == "your-email" {
 		msg := "Email cannot be empty"
 		fe.Response += template.HTML(msg + "<br>")
 	}

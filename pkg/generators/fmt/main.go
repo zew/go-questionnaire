@@ -879,6 +879,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	if err != nil {
 		return nil, fmt.Errorf("error adding special202304(): %v", err)
 	}
+	err = special202408(&q)
+	if err != nil {
+		return nil, fmt.Errorf("error adding special202408(): %v", err)
+	}
 
 	// special202312
 	// {

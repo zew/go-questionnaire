@@ -10,6 +10,12 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+/*
+Special question for Month 2 of quarter.
+ 2024-08 - merged in changes from 2024-05
+   => *Can* contain some randomization of inflation brackets.
+   => Question 2. may have three or *four* rows
+*/
 func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	if q.Survey.MonthOfQuarter() != 2 {
@@ -67,6 +73,85 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+
+	grIdx := q.UserIDInt() % 2
+
+	yearsEffective := []int{0, 1, 2}
+
+	// randomization of Q 1.b of 2024-05:
+	inpsInfRanges := []string{
+		"under2",
+		"between2and4",
+		"between4and6",
+		"between6and8",
+		"between8and10",
+		"above10",
+	}
+	lblsInfRanges := []trl.S{
+		{
+			"de": "unter <br>2&nbsp;Prozent",
+			"en": "below <br>2&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
+		},
+		{
+			"de": "zwischen<br>&nbsp;&nbsp;8 und  <br>10&nbsp;Prozent",
+			"en": "between <br>&nbsp;&nbsp;8 and  <br>10&nbsp;percent",
+		},
+		{
+			"de": "größer <br> 10&nbsp;Prozent",
+			"en": "above  <br>10&nbsp;percent",
+		},
+	}
+
+	// 2024-08: always lower brackets
+	if true || grIdx == 1 {
+		inpsInfRanges = []string{
+			"under0",
+			"between0and2",
+			"between2and4",
+			"between4and6",
+			"between6and8",
+			"above8",
+		}
+		lblsInfRanges = []trl.S{
+			{
+				"de": "unter <br>0&nbsp;Prozent",
+				"en": "below <br>0&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;0 und  <br><2&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;0 and  <br><2&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
+			},
+			{
+				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br>&nbsp; 8&nbsp;Prozent",
+				"en": "between <br>&nbsp;&nbsp;6 and  <br>&nbsp; 8&nbsp;percent",
+			},
+			{
+				"de": "größer <br> 8&nbsp;Prozent",
+				"en": "above  <br>8&nbsp;percent",
+			},
+		}
+	}
+
 	page.Label = trl.S{
 		"de": "Sonderfrage: Inflation, Inflationstreiber und Geldpolitik",
 		"en": "Special Questions: Inflation, its causes, and monetary policy ",
@@ -79,7 +164,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	{
 		gr := page.AddGroup()
-		gr.Cols = 9
+		gr.Cols = 3 * float32(len(yearsEffective))
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleBox.Width = "70%"
 		gr.Style.Mobile.StyleBox.Width = "100%"
@@ -87,8 +172,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpan = 9
-			// inp.ColSpanLabel = 12
+			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
 					Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
@@ -105,7 +189,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			}.Outline("1a.")
 		}
 
-		for idx := range []int{0, 1, 2} {
+		for idx := range yearsEffective {
 
 			inp := gr.AddInput()
 			inp.Type = "number"
@@ -139,15 +223,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	//
 	//
 	// gr2
-	inpNamesInfRanges := []string{
-		// 	"under2", "between2and3", "between3and4", "above4",
-		"under2",
-		"between2and4",
-		"between4and6",
-		"between6and8",
-		"between8and10",
-		"above10",
-	}
 	{
 
 		// colspan := float32(2 + 4*3 + 2 + 2)
@@ -212,35 +287,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			}
 		}
 
-		labels := []trl.S{
-			{
-				"de": "unter <br>2&nbsp;Prozent",
-				"en": "below <br>2&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;2 und  <br><4&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;2 and  <br><4&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;4 und  <br><6&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;4 and  <br><6&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;6 und  <br><8&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;6 and  <br><8&nbsp;percent",
-			},
-			{
-				"de": "zwischen<br>&nbsp;&nbsp;8 und  <br>10&nbsp;Prozent",
-				"en": "between <br>&nbsp;&nbsp;8 and  <br>10&nbsp;percent",
-			},
-			{
-				"de": "größer <br> 10&nbsp;Prozent",
-				"en": "above  <br>10&nbsp;percent",
-			},
-		}
-
 		// first row - cols 2-5
-		for _, lbl := range labels {
+		for _, lbl := range lblsInfRanges {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 1
@@ -293,7 +341,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		//
 		//
 		// second to fourth row: inputs
-		for i := q.Survey.Year; i <= q.Survey.Year+2; i++ {
+		for i := q.Survey.Year; i <= q.Survey.Year+len(yearsEffective)-1; i++ {
 
 			{
 				// introducing a line-break of the year 2023 into 20<br>23
@@ -312,7 +360,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				}
 			}
 
-			for _, inpname := range inpNamesInfRanges {
+			for _, inpname := range inpsInfRanges {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("inf%v_%v", i, inpname)
@@ -378,7 +426,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.JSBlockStrings["Yrs"] = "[" + strings.Join(yrs, ", ") + "]"
 
 			ivls := []string{} // intervals
-			for _, name := range inpNamesInfRanges {
+			for _, name := range inpsInfRanges {
 				ivl := fmt.Sprintf("\"%v\"", name)
 				ivls = append(ivls, ivl)
 			}
@@ -437,9 +485,13 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"de": "Krieg in der Ukraine",
 				"en": "War in Ukraine",
 			},
+			// {
+			// 	"de": "Israel-Konflikt",
+			// 	"en": "Conflict in Israel",
+			// },
 			{
-				"de": "Israel-Konflikt",
-				"en": "Conflict in Israel",
+				"de": "Nahost-Konflikt",
+				"en": "Middle east conflict",
 			},
 		}
 
@@ -466,17 +518,51 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			rowLabelsEconomicAreasShort,
 		)
 
+		/*
+			variation in special question 2 - 2023-05
+
+			Q1-February:
+			„Für die Jahre Y0 und Y1“
+
+			Q2-May, Q3-August and Q4-November:
+			„Für die Jahre Y0, Y1 und Y2“
+
+			Special question 2 asks for the reasons behind revisions in inflation expectations
+			relative to the previous wave in which we asked for inflation expectations.
+			The rule is different for Q1-February in a given year because the last time we asked
+			for inflation expectations was Q4-November of the previous year and thus we asked for inflation
+			in different years in the two waves.
+
+			For example, in Q4-November 2023 we asked for inflation in 2023, 2024 and 2025.
+			In Q1-February 2024 we asked for inflation in 2024, 2025 and 2026.
+			Hence, the overlap is only two years and we must ask for the reasons behind the revisions for inflation expectations
+			for the years 2024 and 2025 only.
+			In all other waves, the target years are identical between the two waves.
+
+
+		*/
+
+		changeYrDe := fmt.Sprintf("<b>Für die Jahre %d, %d und %d</b>", q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2)
+		if q.Survey.Month <= 3 {
+			changeYrDe = fmt.Sprintf("<b>Für die Jahre %d und %d</b>", q.Survey.Year+0, q.Survey.Year+1)
+		}
+
+		changeYrEn := fmt.Sprintf("<b>For the years %d, %d and %d</b>", q.Survey.Year+0, q.Survey.Year+1, q.Survey.Year+2)
+		if q.Survey.Month <= 3 {
+			changeYrEn = fmt.Sprintf("<b>For the years %d and %d</b>", q.Survey.Year+0, q.Survey.Year+1)
+		}
+
 		gb.MainLabel = trl.S{
-			"de": fmt.Sprintf(` 
-				Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision 
-				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. %v %v) bewogen 
+			"de": fmt.Sprintf(`
+				Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision
+				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. %v %v) bewogen
 				und wenn ja, nach oben (+) oder unten (-)?
 				<br>
 				<br>
-				<b>Für die Jahre %d und %d</b>
+				%v
 			`,
 				monthMinus3.Tr("de"), yearMinus1Q.Year(),
-				q.Survey.Year+0, q.Survey.Year+1,
+				changeYrDe,
 			),
 			"en": fmt.Sprintf(`
 				What are the main factors leading you to change your inflation forecasts
@@ -485,10 +571,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				(-) means decrease in inflation forecast.
 				<br>
 				<br>
-				<b>For the years %d, and %d</b>
+				%v
 			`,
 				monthMinus3.Tr("en"), yearMinus1Q.Year(),
-				q.Survey.Year+0, q.Survey.Year+1,
+				changeYrEn,
 			),
 		}.Outline("2.")
 		gr := page.AddGrid(gb)
@@ -539,7 +625,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			rad.ColSpanLabel = colsRowFree[2*(idx+1)]
 			rad.ColSpanControl = colsRowFree[2*(idx+1)] + 1
 		}
-
 	}
 
 	if q.Survey.Year == 2023 && q.Survey.Month == 11 {
@@ -607,6 +692,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+2),
 				"en": fmt.Sprintf("End of %v", q.Survey.Year+2),
 			},
+			{
+				"de": fmt.Sprintf("Ende   %v", q.Survey.Year+3),
+				"en": fmt.Sprintf("End of %v", q.Survey.Year+3),
+			},
 		}
 
 		inputs := []string{
@@ -614,10 +703,11 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			fmt.Sprintf("ezb%d", q.Survey.Year+0),
 			fmt.Sprintf("ezb%d", q.Survey.Year+1),
 			fmt.Sprintf("ezb%d", q.Survey.Year+2),
+			fmt.Sprintf("ezb%d", q.Survey.Year+3),
 		}
 
 		// rows 2...5
-		for i := 0; i < 4; i++ {
+		for i := 0; i < len(yearsEffective)+1; i++ {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

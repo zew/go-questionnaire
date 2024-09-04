@@ -22,8 +22,8 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 9
 	include = include || q.Survey.Year == 2023 && q.Survey.Month == 12
-	include = include || q.Survey.Year == 2024 && q.Survey.Month == 03
-	include = include || q.Survey.Year == 2024 && q.Survey.Month == 06
+	include = include || q.Survey.Year == 2024 && q.Survey.Month == 3
+	include = include || q.Survey.Year == 2024 && q.Survey.Month == 6
 
 	if !include {
 		return nil

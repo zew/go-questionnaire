@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e9bb008b12825f6064eb942cacb307c98b5ca4db7ba334301158938695b98763",
+ 	"md_5": "1884aace74b21ea073937ad507a6044bf0143d1070f2a362c061c040d20009c4",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4728,7 +4728,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4754,7 +4754,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4780,7 +4780,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4806,7 +4806,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4832,7 +4832,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5043,7 +5043,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5069,7 +5069,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5095,7 +5095,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5121,7 +5121,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5147,7 +5147,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.2rem"
+ 										"top": "0.3rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5457,8 +5457,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Kei\u0026shy;ner der beiden",
- 								"en": "Nei\u0026shy;ther of the two"
+ 								"de": "kei\u0026shy;ner der beiden",
+ 								"en": "nei\u0026shy;ther of the two"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5501,8 +5501,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gleich wahrscheinlich",
- 								"en": "Equally by both"
+ 								"de": "gleich wahrscheinlich",
+ 								"en": "equally by both"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5543,7 +5543,7 @@
  							}
  						},
  						{
- 							"name": "sq4_1",
+ 							"name": "sq4_1_stabfinmark",
  							"type": "radio",
  							"label": {
  								"de": "Stabilisierung globaler Finanzmärkte",
@@ -5570,25 +5570,25 @@
  							}
  						},
  						{
- 							"name": "sq4_1",
+ 							"name": "sq4_1_stabfinmark",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_1",
+ 							"name": "sq4_1_stabfinmark",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_1",
+ 							"name": "sq4_1_stabfinmark",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_2",
+ 							"name": "sq4_2_finrestrict",
  							"type": "radio",
  							"label": {
  								"de": "Strengere finanzielle Bedingungen für US-Firmen ",
@@ -5615,25 +5615,25 @@
  							}
  						},
  						{
- 							"name": "sq4_2",
+ 							"name": "sq4_2_finrestrict",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_2",
+ 							"name": "sq4_2_finrestrict",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_2",
+ 							"name": "sq4_2_finrestrict",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_3",
+ 							"name": "sq4_3_dollarappr",
  							"type": "radio",
  							"label": {
  								"de": "Stärkung des US-Dollar gegenüber dem Euro ",
@@ -5660,25 +5660,25 @@
  							}
  						},
  						{
- 							"name": "sq4_3",
+ 							"name": "sq4_3_dollarappr",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_3",
+ 							"name": "sq4_3_dollarappr",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_3",
+ 							"name": "sq4_3_dollarappr",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_4",
+ 							"name": "sq4_4_independence",
  							"type": "radio",
  							"label": {
  								"de": "Aufrecherhaltung der Zentralbankunabhängigkeit ",
@@ -5705,28 +5705,28 @@
  							}
  						},
  						{
- 							"name": "sq4_4",
+ 							"name": "sq4_4_independence",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_4",
+ 							"name": "sq4_4_independence",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_4",
+ 							"name": "sq4_4_independence",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_5",
+ 							"name": "sq4_5_employm",
  							"type": "radio",
  							"label": {
- 								"de": "Beschäftigungsanstieg relative zum aktuellen Niveau",
+ 								"de": "Beschäftigungsanstieg relativ zum aktuellen Niveau",
  								"en": "In\u0026shy;crease in employment relative to current levels"
  							},
  							"col_span_label": 4,
@@ -5750,25 +5750,25 @@
  							}
  						},
  						{
- 							"name": "sq4_5",
+ 							"name": "sq4_5_employm",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_5",
+ 							"name": "sq4_5_employm",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_5",
+ 							"name": "sq4_5_employm",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_6",
+ 							"name": "sq4_6_infl",
  							"type": "radio",
  							"label": {
  								"de": "Preisstabilität",
@@ -5795,25 +5795,25 @@
  							}
  						},
  						{
- 							"name": "sq4_6",
+ 							"name": "sq4_6_infl",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_6",
+ 							"name": "sq4_6_infl",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_6",
+ 							"name": "sq4_6_infl",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_7",
+ 							"name": "sq4_7_dominance",
  							"type": "radio",
  							"label": {
  								"de": "Fiskalische Dominanz",
@@ -5840,25 +5840,25 @@
  							}
  						},
  						{
- 							"name": "sq4_7",
+ 							"name": "sq4_7_dominance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_7",
+ 							"name": "sq4_7_dominance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_7",
+ 							"name": "sq4_7_dominance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_8",
+ 							"name": "sq4_8_relations",
  							"type": "radio",
  							"label": {
  								"de": "Ver\u0026shy;bes\u0026shy;se\u0026shy;rung der deutsch-amerikanischen wirt\u0026shy;schaft\u0026shy;lichen Beziehungen ",
@@ -5885,25 +5885,25 @@
  							}
  						},
  						{
- 							"name": "sq4_8",
+ 							"name": "sq4_8_relations",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_8",
+ 							"name": "sq4_8_relations",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_8",
+ 							"name": "sq4_8_relations",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_9",
+ 							"name": "sq4_9_ukraine",
  							"type": "radio",
  							"label": {
  								"de": "Das Finden einer Vereinbarung zum Beenden des Ukraine-Krieges ",
@@ -5930,19 +5930,19 @@
  							}
  						},
  						{
- 							"name": "sq4_9",
+ 							"name": "sq4_9_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_9",
+ 							"name": "sq4_9_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_9",
+ 							"name": "sq4_9_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"

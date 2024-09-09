@@ -22,7 +22,7 @@ func forecastDependingOnWinner(
 
 	fourYears := []int{0, 1, 2, 4}
 
-	// sq2
+	// sq2/3
 	{
 		gr := page.AddGroup()
 		const colsFirstCol = 8
@@ -137,7 +137,7 @@ func special202409(q *qst.QuestionnaireT) error {
 
 	indent.Desktop.StyleBox.Margin = "0  0  0.95rem  0"
 
-	// gr0
+	// sq1
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
@@ -198,7 +198,7 @@ func special202409(q *qst.QuestionnaireT) error {
 					"en": `…after the Democratic National Convention from 19-22 August 2024 but before the TV debate between Trump and Harris on 10 September 2024?`,
 				},
 				{
-					"de": `…TV-Duell zwischen Trump und Harris am 10. September 2024?`,
+					"de": `…nach dem TV-Duell zwischen Trump und Harris am 10. September 2024?`,
 					"en": `…after the TV debate between Trump and Harris on 10 September 2024?`,
 				},
 			}
@@ -282,7 +282,7 @@ func special202409(q *qst.QuestionnaireT) error {
 			<br>
 			<xxsmall>Please indicate the annual average change of the HICP in percent.</xxsmall>
 		`,
-	}
+	}.Outline("3.")
 
 	forecastDependingOnWinner(
 		q,
@@ -295,10 +295,10 @@ func special202409(q *qst.QuestionnaireT) error {
 		q,
 		qst.WrapPageT(page),
 		lbl2,
-		"sq2_pp_inf",
+		"sq3_pp_inf",
 	)
 
-	// gr1
+	// sq4
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
@@ -326,20 +326,20 @@ func special202409(q *qst.QuestionnaireT) error {
 					effects of policies implemented by the new US government? 					
 				
 				`,
-			}.Outline("3.")
+			}.Outline("4.")
 			inp.ColSpanLabel = 1
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "textarea"
-			inp.Name = "sq3_free"
+			inp.Name = "sq4_free"
 			inp.MaxChars = 300
 			inp.ColSpanLabel = 0
 			inp.ColSpanControl = 1
 		}
 	}
 
-	// sq4
+	// sq5
 	{
 		lbls := []trl.S{
 			{
@@ -381,15 +381,15 @@ func special202409(q *qst.QuestionnaireT) error {
 		}
 
 		inps := []string{
-			"sq4_1_stabfinmark",
-			"sq4_2_finrestrict",
-			"sq4_3_dollarappr",
-			"sq4_4_independence",
-			"sq4_5_employm",
-			"sq4_6_infl",
-			"sq4_7_dominance",
-			"sq4_8_relations",
-			"sq4_9_ukraine",
+			"sq5_1_stabfinmark",
+			"sq5_2_finrestrict",
+			"sq5_3_dollarappr",
+			"sq5_4_independence",
+			"sq5_5_employm",
+			"sq5_6_infl",
+			"sq5_7_dominance",
+			"sq5_8_relations",
+			"sq5_9_ukraine",
 		}
 
 		colTpl := []float32{
@@ -431,7 +431,7 @@ func special202409(q *qst.QuestionnaireT) error {
 				Geben Sie bitte für die folgenden ökonomischen, 
 				politischen oder geldpolitischen Ergebnisse an, 
 				ob diese vermutlich eher unter der Präsidentschaft 
-				von Donald Trump oder von Kamala Harris erreicht wird, 
+				von Donald Trump oder von Kamala Harris erreicht werden, 
 				von keinem der beiden oder gleich wahrscheinlich von beiden.
 			`,
 			"en": `
@@ -441,7 +441,7 @@ func special202409(q *qst.QuestionnaireT) error {
 				of either Donald Trump, Kamala Harris, neither of the two, 
 				or equally by both.
 			`,
-		}.Outline("4.")
+		}.Outline("5.")
 		gr := page.AddGrid(gb)
 		_ = gr
 	}

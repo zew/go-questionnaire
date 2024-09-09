@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1884aace74b21ea073937ad507a6044bf0143d1070f2a362c061c040d20009c4",
+ 	"md_5": "9becc76feddafbf2dc1e73dbe726e5dd7552e3ed8339910757f65f1093b5ba11",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4654,7 +4654,7 @@
  								"en": "00"
  							},
  							"label": {
- 								"de": "…TV-Duell zwi\u0026shy;schen Trump und Harris am 10. September 2024?",
+ 								"de": "…nach dem TV-Duell zwi\u0026shy;schen Trump und Harris am 10. September 2024?",
  								"en": "…after the TV debate be\u0026shy;tween Trump and Harris on 10 September 2024?"
  							},
  							"suffix": {
@@ -5024,8 +5024,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\tWir möchten Sie nun gerne nach Ihren \n\t\t\t\t\u003ci\u003eszenarienbasierten Punkt\u0026shy;pro\u0026shy;gno\u0026shy;sen\u003c/i\u003e \n\t\t\tfür die Wachstums\u0026shy;rate des \n\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land \u003c/i\u003e \n\t\t\tin Abhängigkeit vom Ausgang der US-Präsidentschaftswahl fragen:\n\t\t\t\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cxxsmall\u003eBitte geben die die durchschnittliche jährliche Veränderung des HVPI in Pro\u0026shy;zent an.\u003c/xxsmall\u003e\n\t\t",
- 								"en": "\n\t\t\tWe would like to ask you for your \n\t\t\t\t\u003ci\u003escenario-based point forecast\u003c/i\u003e \n\t\t\tof the growth rate of the \n\t\t\t\t\u003ci\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny\u003c/i\u003e \n\t\t\tdepending on the outcome of the US presidential election:\n\t\t\t\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cxxsmall\u003ePlease indicate the annual av\u0026shy;er\u0026shy;age change of the HICP in per\u0026shy;cent.\u003c/xxsmall\u003e\n\t\t"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\tWir möchten Sie nun gerne nach Ihren \n\t\t\t\t\u003ci\u003eszenarienbasierten Punkt\u0026shy;pro\u0026shy;gno\u0026shy;sen\u003c/i\u003e \n\t\t\tfür die Wachstums\u0026shy;rate des \n\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land \u003c/i\u003e \n\t\t\tin Abhängigkeit vom Ausgang der US-Präsidentschaftswahl fragen:\n\t\t\t\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cxxsmall\u003eBitte geben die die durchschnittliche jährliche Veränderung des HVPI in Pro\u0026shy;zent an.\u003c/xxsmall\u003e\n\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\tWe would like to ask you for your \n\t\t\t\t\u003ci\u003escenario-based point forecast\u003c/i\u003e \n\t\t\tof the growth rate of the \n\t\t\t\t\u003ci\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny\u003c/i\u003e \n\t\t\tdepending on the outcome of the US presidential election:\n\t\t\t\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cxxsmall\u003ePlease indicate the annual av\u0026shy;er\u0026shy;age change of the HICP in per\u0026shy;cent.\u003c/xxsmall\u003e\n\t\t"
  							},
  							"col_span": 20,
  							"col_span_label": 1
@@ -5186,7 +5186,7 @@
  							}
  						},
  						{
- 							"name": "sq2_pp_inf_trump_1",
+ 							"name": "sq3_pp_inf_trump_1",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5201,7 +5201,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "sq2_pp_inf_trump_2",
+ 							"name": "sq3_pp_inf_trump_2",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5216,7 +5216,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "sq2_pp_inf_trump_3",
+ 							"name": "sq3_pp_inf_trump_3",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5231,7 +5231,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "sq2_pp_inf_trump_4",
+ 							"name": "sq3_pp_inf_trump_4",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5271,7 +5271,7 @@
  							}
  						},
  						{
- 							"name": "sq2_pp_inf_harris_1",
+ 							"name": "sq3_pp_inf_harris_1",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5286,7 +5286,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "sq2_pp_inf_harris_2",
+ 							"name": "sq3_pp_inf_harris_2",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5301,7 +5301,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "sq2_pp_inf_harris_3",
+ 							"name": "sq3_pp_inf_harris_3",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5316,7 +5316,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "sq2_pp_inf_harris_4",
+ 							"name": "sq3_pp_inf_harris_4",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -5339,13 +5339,13 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWelche ökonomischen und/oder politischen Maßnahmen \n\t\t\t\t\tsollte die deutsche Re\u0026shy;gie\u0026shy;rung idealerweise \n\t\t\t\t\t\u003ci\u003ejetzt schon\u003c/i\u003e \n\t\t\t\t\t(d.h. vor dem Ausgang der US-Präsidentschaftswahl) implementieren, \n\t\t\t\t\tum die deutsche Wirt\u0026shy;schaft vor po\u0026shy;ten\u0026shy;zi\u0026shy;ellen \n\t\t\t\t\tadversen Effekten der Gesetzgebung durch die neue US-Re\u0026shy;gie\u0026shy;rung zu wappnen?\n\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich eco\u0026shy;nom\u0026shy;ic and/or political measures should \n\t\t\t\t\tthe German government ideally implement \n\t\t\t\t\t\u003ci\u003eright now\u003c/i\u003e \n\t\t\t\t\t(i.e., before the outcome of the US presidential election is known) \n\t\t\t\t\tto safeguard the German econ\u0026shy;o\u0026shy;my against po\u0026shy;ten\u0026shy;tial adverse \n\t\t\t\t\teffects of policies implemented by the new US government? \t\t\t\t\t\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWelche ökonomischen und/oder politischen Maßnahmen \n\t\t\t\t\tsollte die deutsche Re\u0026shy;gie\u0026shy;rung idealerweise \n\t\t\t\t\t\u003ci\u003ejetzt schon\u003c/i\u003e \n\t\t\t\t\t(d.h. vor dem Ausgang der US-Präsidentschaftswahl) implementieren, \n\t\t\t\t\tum die deutsche Wirt\u0026shy;schaft vor po\u0026shy;ten\u0026shy;zi\u0026shy;ellen \n\t\t\t\t\tadversen Effekten der Gesetzgebung durch die neue US-Re\u0026shy;gie\u0026shy;rung zu wappnen?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich eco\u0026shy;nom\u0026shy;ic and/or political measures should \n\t\t\t\t\tthe German government ideally implement \n\t\t\t\t\t\u003ci\u003eright now\u003c/i\u003e \n\t\t\t\t\t(i.e., before the outcome of the US presidential election is known) \n\t\t\t\t\tto safeguard the German econ\u0026shy;o\u0026shy;my against po\u0026shy;ten\u0026shy;tial adverse \n\t\t\t\t\teffects of policies implemented by the new US government? \t\t\t\t\t\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
  						{
- 							"name": "sq3_free",
+ 							"name": "sq4_free",
  							"type": "textarea",
  							"max_chars": 300,
  							"col_span_control": 1
@@ -5359,8 +5359,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tGeben Sie bitte für die folgenden ökonomischen, \n\t\t\t\tpolitischen oder geldpolitischen Ergebnisse an, \n\t\t\t\tob diese vermutlich eher un\u0026shy;ter der Präsidentschaft \n\t\t\t\tvon Donald Trump oder von Kamala Harris erreicht wird, \n\t\t\t\tvon kei\u0026shy;nem der beiden oder gleich wahrscheinlich von beiden.\n\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tPlease indicate for the following eco\u0026shy;nom\u0026shy;ic, \n\t\t\t\tpolitical, or monetary policy outcomes whether \n\t\t\t\tthey are more likely to be achieved during a presidency \n\t\t\t\tof either Donald Trump, Kamala Harris, nei\u0026shy;ther of the two, \n\t\t\t\tor equally by both.\n\t\t\t"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tGeben Sie bitte für die folgenden ökonomischen, \n\t\t\t\tpolitischen oder geldpolitischen Ergebnisse an, \n\t\t\t\tob diese vermutlich eher un\u0026shy;ter der Präsidentschaft \n\t\t\t\tvon Donald Trump oder von Kamala Harris erreicht werden, \n\t\t\t\tvon kei\u0026shy;nem der beiden oder gleich wahrscheinlich von beiden.\n\t\t\t",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tPlease indicate for the following eco\u0026shy;nom\u0026shy;ic, \n\t\t\t\tpolitical, or monetary policy outcomes whether \n\t\t\t\tthey are more likely to be achieved during a presidency \n\t\t\t\tof either Donald Trump, Kamala Harris, nei\u0026shy;ther of the two, \n\t\t\t\tor equally by both.\n\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -5543,7 +5543,7 @@
  							}
  						},
  						{
- 							"name": "sq4_1_stabfinmark",
+ 							"name": "sq5_1_stabfinmark",
  							"type": "radio",
  							"label": {
  								"de": "Stabilisierung globaler Finanzmärkte",
@@ -5570,25 +5570,25 @@
  							}
  						},
  						{
- 							"name": "sq4_1_stabfinmark",
+ 							"name": "sq5_1_stabfinmark",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_1_stabfinmark",
+ 							"name": "sq5_1_stabfinmark",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_1_stabfinmark",
+ 							"name": "sq5_1_stabfinmark",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_2_finrestrict",
+ 							"name": "sq5_2_finrestrict",
  							"type": "radio",
  							"label": {
  								"de": "Strengere finanzielle Bedingungen für US-Firmen ",
@@ -5615,25 +5615,25 @@
  							}
  						},
  						{
- 							"name": "sq4_2_finrestrict",
+ 							"name": "sq5_2_finrestrict",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_2_finrestrict",
+ 							"name": "sq5_2_finrestrict",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_2_finrestrict",
+ 							"name": "sq5_2_finrestrict",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_3_dollarappr",
+ 							"name": "sq5_3_dollarappr",
  							"type": "radio",
  							"label": {
  								"de": "Stärkung des US-Dollar gegenüber dem Euro ",
@@ -5660,25 +5660,25 @@
  							}
  						},
  						{
- 							"name": "sq4_3_dollarappr",
+ 							"name": "sq5_3_dollarappr",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_3_dollarappr",
+ 							"name": "sq5_3_dollarappr",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_3_dollarappr",
+ 							"name": "sq5_3_dollarappr",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_4_independence",
+ 							"name": "sq5_4_independence",
  							"type": "radio",
  							"label": {
  								"de": "Aufrecherhaltung der Zentralbankunabhängigkeit ",
@@ -5705,25 +5705,25 @@
  							}
  						},
  						{
- 							"name": "sq4_4_independence",
+ 							"name": "sq5_4_independence",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_4_independence",
+ 							"name": "sq5_4_independence",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_4_independence",
+ 							"name": "sq5_4_independence",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_5_employm",
+ 							"name": "sq5_5_employm",
  							"type": "radio",
  							"label": {
  								"de": "Beschäftigungsanstieg relativ zum aktuellen Niveau",
@@ -5750,25 +5750,25 @@
  							}
  						},
  						{
- 							"name": "sq4_5_employm",
+ 							"name": "sq5_5_employm",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_5_employm",
+ 							"name": "sq5_5_employm",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_5_employm",
+ 							"name": "sq5_5_employm",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_6_infl",
+ 							"name": "sq5_6_infl",
  							"type": "radio",
  							"label": {
  								"de": "Preisstabilität",
@@ -5795,25 +5795,25 @@
  							}
  						},
  						{
- 							"name": "sq4_6_infl",
+ 							"name": "sq5_6_infl",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_6_infl",
+ 							"name": "sq5_6_infl",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_6_infl",
+ 							"name": "sq5_6_infl",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_7_dominance",
+ 							"name": "sq5_7_dominance",
  							"type": "radio",
  							"label": {
  								"de": "Fiskalische Dominanz",
@@ -5840,25 +5840,25 @@
  							}
  						},
  						{
- 							"name": "sq4_7_dominance",
+ 							"name": "sq5_7_dominance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_7_dominance",
+ 							"name": "sq5_7_dominance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_7_dominance",
+ 							"name": "sq5_7_dominance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_8_relations",
+ 							"name": "sq5_8_relations",
  							"type": "radio",
  							"label": {
  								"de": "Ver\u0026shy;bes\u0026shy;se\u0026shy;rung der deutsch-amerikanischen wirt\u0026shy;schaft\u0026shy;lichen Beziehungen ",
@@ -5885,25 +5885,25 @@
  							}
  						},
  						{
- 							"name": "sq4_8_relations",
+ 							"name": "sq5_8_relations",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_8_relations",
+ 							"name": "sq5_8_relations",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_8_relations",
+ 							"name": "sq5_8_relations",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sq4_9_ukraine",
+ 							"name": "sq5_9_ukraine",
  							"type": "radio",
  							"label": {
  								"de": "Das Finden einer Vereinbarung zum Beenden des Ukraine-Krieges ",
@@ -5930,19 +5930,19 @@
  							}
  						},
  						{
- 							"name": "sq4_9_ukraine",
+ 							"name": "sq5_9_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sq4_9_ukraine",
+ 							"name": "sq5_9_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sq4_9_ukraine",
+ 							"name": "sq5_9_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"

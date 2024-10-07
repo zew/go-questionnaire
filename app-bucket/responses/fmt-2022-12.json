@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "24ad4efab708553cfc5e8a91148ce81869cce35db2d086b3f9c51a6a84cf4983",
+ 	"md_5": "42a49131d6397df46f81deef3e0a026067e53bebf950346200bd249f12294f27",
  	"lang_codes": [
  		"de",
  		"en"
@@ -296,8 +296,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation beurteilen wir zurzeit als",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; We es\u0026shy;ti\u0026shy;mate the current overall macroeco\u0026shy;nom\u0026shy;ic situation as being"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on beurteilen wir zurzeit als",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; We es\u0026shy;ti\u0026shy;mate the current overall macroeco\u0026shy;nom\u0026shy;ic si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on as being"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -692,8 +692,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the overall macroeco\u0026shy;nom\u0026shy;ic situation will"
+ 								"de": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the overall macroeco\u0026shy;nom\u0026shy;ic si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1088,8 +1088,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
- 								"en": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic situation in Ger\u0026shy;ma\u0026shy;ny (in per\u0026shy;cent)."
+ 								"de": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on in Deutsch\u0026shy;land?",
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on in Ger\u0026shy;ma\u0026shy;ny (in per\u0026shy;cent)."
  							},
  							"col_span": 10,
  							"col_span_label": 1,
@@ -1325,7 +1325,7 @@
  							"max": 100,
  							"label": {
  								"de": "Aktuelles Quartal (Q4\u0026nbsp;2022)",
- 								"en": "Current quarter  (Q4\u0026nbsp;2022)"
+ 								"en": "current quarter  (Q4\u0026nbsp;2022)"
  							},
  							"suffix": {
  								"de": "%",
@@ -1343,7 +1343,7 @@
  							"max": 100,
  							"label": {
  								"de": "Folgendes Quartal (Q1\u0026nbsp;2023)",
- 								"en": "Next quarter  (Q1\u0026nbsp;2023)"
+ 								"en": "next quarter  (Q1\u0026nbsp;2023)"
  							},
  							"suffix": {
  								"de": "%",
@@ -2166,7 +2166,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (Renditen zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
  								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
  							},
  							"col_span": 4,
@@ -2951,8 +2951,8 @@
  							"min": 2000,
  							"max": 50000,
  							"placeholder": {
- 								"de": "0000",
- 								"en": "0000"
+ 								"de": "00000",
+ 								"en": "00000"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\t\t   Den DAX erwarte ich in 6\u0026nbsp;Monaten\u0026nbsp;bei \n\t\t\t\t\t",
@@ -2982,8 +2982,8 @@
  							"min": 2000,
  							"max": 50000,
  							"placeholder": {
- 								"de": "0000",
- 								"en": "0000"
+ 								"de": "00000",
+ 								"en": "00000"
  							},
  							"label": {
  								"de": " \u0026nbsp; ",
@@ -3028,8 +3028,8 @@
  							"min": 2000,
  							"max": 50000,
  							"placeholder": {
- 								"de": "0000",
- 								"en": "0000"
+ 								"de": "00000",
+ 								"en": "00000"
  							},
  							"suffix": {
  								"de": "Punkten",
@@ -3181,7 +3181,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "unter\u0026shy;be\u0026shy;wer\u0026shy;tet",
+ 								"de": "un\u0026shy;ter\u0026shy;be\u0026shy;wer\u0026shy;tet",
  								"en": "under-priced"
  							},
  							"col_span_control": 1,
@@ -3708,7 +3708,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the profit situation of German companies in the following sectors will"
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the profit si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on of German companies in the following sectors will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -4356,7 +4356,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Dienstleister",
- 								"en": "Services"
+ 								"en": "Ser\u0026shy;vices"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4602,7 +4602,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit einer Wahrscheinlichkeit von 90 Pro\u0026shy;zent werden die jährliche \n\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HICP in Pro\u0026shy;zent) bzw. die jährliche \n\t\t\t\t\t\u003ci\u003eWachstumsrate des realen Bruttoinlandprodukts in Deutsch\u0026shy;land 2023\u003c/i\u003e \n\t\t\t\t\tbzw. \n\t\t\t\t\t\u003ci\u003eim Zeitraum 2023\u0026#8209;2025\u003c/i\u003e \n\t\t\t\t\tzwi\u0026shy;schen den folgenden Werten liegen:\n\t\t\t\t",
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit einer Wahrscheinlichkeit von 90 Pro\u0026shy;zent werden die jährliche \n\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HICP in Pro\u0026shy;zent) bzw. die jährliche \n\t\t\t\t\t\u003ci\u003eWachstums\u0026shy;rate des realen Bruttoinlandprodukts in Deutsch\u0026shy;land 2023\u003c/i\u003e \n\t\t\t\t\tbzw. \n\t\t\t\t\t\u003ci\u003eim Zeitraum 2023\u0026#8209;2025\u003c/i\u003e \n\t\t\t\t\tzwi\u0026shy;schen den folgenden Werten liegen:\n\t\t\t\t",
  								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWith a probability of 90 per cent, the annual \n\t\t\t\t\t\u003ci\u003ein\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny\u003c/i\u003e \n\t\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the HICP, in per\u0026shy;cent) and the annual growth rate of real \n\t\t\t\t\t\u003ci\u003eGerman GDP\u003c/i\u003e \n\t\t\t\t\tfor the year \n\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e \n\t\t\t\t\tand the \n\t\t\t\t\t\u003ci\u003eyears be\u0026shy;tween 2023 and 2025\u003c/i\u003e \n\t\t\t\t\twill lie be\u0026shy;tween the following values:\n\t\t\t\t"
  							},
  							"col_span": 9,
@@ -4909,8 +4909,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "BIP-Wachstumsrate in Deutsch\u0026shy;land, 2023",
- 								"en": "Growth rate of annual real German GDP, 2023"
+ 								"de": "BIP-Wachstums\u0026shy;rate in Deutsch\u0026shy;land, 2023",
+ 								"en": "Growth rate of annual German real GDP, 2023"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -5002,8 +5002,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Durchschn. BIP-Wachstumsrate in Deutsch\u0026shy;land pro Jahr, 2023\u0026#8209;2025",
- 								"en": "Avg. growth rate of annual real German GDP per year, 2023\u0026#8209;2025"
+ 								"de": "Durchschn. BIP-Wachstums\u0026shy;rate in Deutsch\u0026shy;land pro Jahr, 2023\u0026#8209;2025",
+ 								"en": "Avg. growth rate of annual German real GDP per year, 2023\u0026#8209;2025"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -5446,7 +5446,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwi\u0026shy;schen der \n\t\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung\u003c/i\u003e\n\t\t\t\t\t\tund dem \n\t\t\t\t\t\t\u003ci\u003eRendite-Risiko-Profil des DAX\u003c/i\u003e\n\t\t\t\t\t\tin \n\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e\n\t\t\t\t\t\t?\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwi\u0026shy;schen der \n\t\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung\u003c/i\u003e\n\t\t\t\t\t\tund dem \n\t\t\t\t\t\t\u003ci\u003eRendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX\u003c/i\u003e\n\t\t\t\t\t\tin \n\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e\n\t\t\t\t\t\t?\n\t\t\t\t\t",
  								"en": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tDo you agree or dis\u0026shy;agree with the following statements about the relationship be\u0026shy;tween the \n\t\t\t\t\t\t\u003ci\u003ede\u0026shy;vel\u0026shy;op\u0026shy;ments of in\u0026shy;fla\u0026shy;ti\u0026shy;on \u003c/i\u003e\n\t\t\t\t\t\tand the \n\t\t\t\t\t\t\u003ci\u003ereturn-risk-profile of the DAX\u003c/i\u003e\n\t\t\t\t\t\tin \n\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e\n\t\t\t\t\t\t?\n\t\t\t\t\t"
  							},
  							"col_span": 6,
@@ -5747,7 +5747,7 @@
  							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"label": {
- 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.",
+ 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 aus.",
  								"en": "An easing in the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on, a less restrictive monetary stance by the ECB and diminishing recession risks have a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile in 2023."
  							},
  							"col_span_label": 4,
@@ -5939,7 +5939,7 @@
  							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"label": {
- 								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
+ 								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 auswirkt. ",
  								"en": "DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore re\u0026shy;main un\u0026shy;changed or even in\u0026shy;crease, which has a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span_label": 4,
@@ -6131,7 +6131,7 @@
  							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"label": {
- 								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
+ 								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
  								"en": "The de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on does\n\t\t\t\t\t\t\t\t\u003ci\u003enot impact\u003c/i\u003e\n\t\t\t\t\t\t\t\tthe return-risk-profile of the DAX."
  							},
  							"col_span_label": 4,
@@ -6323,7 +6323,7 @@
  							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"label": {
- 								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
+ 								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023.",
  								"en": "\n\t\t\t\t\t\t\t\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tand\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\teffects of in\u0026shy;fla\u0026shy;ti\u0026shy;on cancel each other out. Overall, the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on is\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfor the return-risk-profile of the DAX in 2023."
  							},
  							"col_span_label": 4,
@@ -6515,7 +6515,7 @@
  							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"label": {
- 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
+ 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 auswirkt.",
  								"en": "DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore de\u0026shy;crease, which has a\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span_label": 4,
@@ -6707,7 +6707,7 @@
  							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"label": {
- 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
+ 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
  								"en": "Persistently high in\u0026shy;fla\u0026shy;ti\u0026shy;on rates, further interest rate hikes by the ECB and increasing recession risks will have a\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span_label": 4,
@@ -6907,7 +6907,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tBitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwi\u0026shy;schen der \n\t\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung \u003c/i\u003e\n\t\t\t\t\t\tund dem \n\t\t\t\t\t\t\u003ci\u003eRendite-Risiko-Profil des DAX \u003c/i\u003e\n\t\t\t\t\t\tin \n\t\t\t\t\t\t\u003ci\u003e2023 \u003c/i\u003e\n\t\t\t\t\t\tam besten widerspiegelt:\n\t\t\t\t\t",
+ 								"de": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tBitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwi\u0026shy;schen der \n\t\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung \u003c/i\u003e\n\t\t\t\t\t\tund dem \n\t\t\t\t\t\t\u003ci\u003eRendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX \u003c/i\u003e\n\t\t\t\t\t\tin \n\t\t\t\t\t\t\u003ci\u003e2023 \u003c/i\u003e\n\t\t\t\t\t\tam besten widerspiegelt:\n\t\t\t\t\t",
  								"en": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tFrom the following statements, please select the one that, in your opinion, best reflects the relationship be\u0026shy;tween the \n\t\t\t\t\t\t\u003ci\u003ede\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on \u003c/i\u003e\n\t\t\t\t\t\tand the \n\t\t\t\t\t\t\u003ci\u003erisk-return profile of the DAX\u003c/i\u003e\n\t\t\t\t\t\t in \n\t\t\t\t\t\t \u003ci\u003e2023\u003c/i\u003e\n\t\t\t\t\t\t :\n\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -6923,7 +6923,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.",
+ 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 aus.",
  								"en": "An easing in the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on, a less restrictive monetary stance by the ECB and diminishing recession risks have a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile in 2023."
  							},
  							"col_span": 1,
@@ -6980,7 +6980,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
+ 								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 auswirkt. ",
  								"en": "DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore re\u0026shy;main un\u0026shy;changed or even in\u0026shy;crease, which has a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
@@ -7037,7 +7037,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
+ 								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
  								"en": "The de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on does\n\t\t\t\t\t\t\t\t\u003ci\u003enot impact\u003c/i\u003e\n\t\t\t\t\t\t\t\tthe return-risk-profile of the DAX."
  							},
  							"col_span": 1,
@@ -7094,7 +7094,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
+ 								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023.",
  								"en": "\n\t\t\t\t\t\t\t\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tand\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\teffects of in\u0026shy;fla\u0026shy;ti\u0026shy;on cancel each other out. Overall, the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on is\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfor the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
@@ -7151,7 +7151,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
+ 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 auswirkt.",
  								"en": "DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore de\u0026shy;crease, which has a\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
@@ -7208,7 +7208,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
+ 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Ri\u0026shy;si\u0026shy;ko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
  								"en": "Persistently high in\u0026shy;fla\u0026shy;ti\u0026shy;on rates, further interest rate hikes by the ECB and increasing recession risks will have a\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
@@ -7265,7 +7265,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Kei\u0026shy;ne Antwort",
+ 								"de": "Kei\u0026shy;ne Ant\u0026shy;wort",
  								"en": "No an\u0026shy;swer"
  							},
  							"col_span": 1,
@@ -7391,7 +7391,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
  								"en": "point forecast in per\u0026shy;cent"
  							},
  							"col_span": 3,
@@ -7433,7 +7433,7 @@
  							"min": -100,
  							"max": 100,
  							"label": {
- 								"de": "\u003cb\u003e5a.\u003c/b\u003e \u0026nbsp; Die Wachstumsrate des \n\t\t\t\t\t\t\t\u003ci\u003erealen Bruttoinlandprodukts\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003eDeutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e \n\t\t\t\t\t\t\terwarte ich bei ",
+ 								"de": "\u003cb\u003e5a.\u003c/b\u003e \u0026nbsp; Die Wachstums\u0026shy;rate des \n\t\t\t\t\t\t\t\u003ci\u003erealen Bruttoinlandprodukts\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003eDeutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e \n\t\t\t\t\t\t\terwarte ich bei ",
  								"en": "\u003cb\u003e5a.\u003c/b\u003e \u0026nbsp; I expect the growth rate of annual real \n\t\t\t\t\t\t\t\u003ci\u003eGerman GDP\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e \n\t\t\t\t\t\t\tto come in at "
  							},
  							"suffix": {
@@ -7515,7 +7515,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
  								"en": "point forecast in per\u0026shy;cent"
  							},
  							"col_span": 3,
@@ -7607,7 +7607,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
  								"en": "point forecast in per\u0026shy;cent"
  							},
  							"col_span": 3,
@@ -7767,7 +7767,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
  								"en": "point forecast in per\u0026shy;cent"
  							},
  							"col_span": 3,
@@ -7851,7 +7851,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"de": "Punkt\u0026shy;pro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
  								"en": "point forecast in per\u0026shy;cent"
  							},
  							"col_span": 3,
@@ -7893,8 +7893,8 @@
  							"min": -100,
  							"max": 100,
  							"label": {
- 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tNehmen Sie an, dass Sie am 01.01.2023 1 Million Euro \n\t\t\t\t\t\t\u003ci\u003eüber die nächsten zwölf Monat\u003c/i\u003ee\n\t\t\t\t\t\t in ein Portfolio bestehend aus dem \n\t\t\t\t\t\t \u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\t und einer \n\t\t\t\t\t\t \u003ci\u003erisikolosen Anlage\u003c/i\u003e \n\t\t\t\t\t\t mit jährlicher Verzinsung von 2 Pro\u0026shy;zent anlegen. Wie groß wäre der Anteil, den Sie persönlich in der aktuellen Situation in den \n\t\t\t\t\t\t \u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\t investieren würden?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnteil DAX:\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAssume that on January 1, 2023 you invest 1 million euros \n\t\t\t\t\t\t\u003ci\u003eover the next twelve months\u003c/i\u003e \n\t\t\t\t\t\tin a portfolio consisting of the \n\t\t\t\t\t\t\u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\tand a \n\t\t\t\t\t\t\u003ci\u003erisk-free in\u0026shy;vest\u0026shy;ment\u003c/i\u003e \n\t\t\t\t\t\twith an annual interest rate of 2 per\u0026shy;cent. What proportion would you personally invest in the \n\t\t\t\t\t\t\u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\tin the current situation?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tShare DAX:\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tNehmen Sie an, dass Sie am 01.01.2023 1 Million Euro \n\t\t\t\t\t\t\u003ci\u003eüber die nächsten zwölf Monat\u003c/i\u003ee\n\t\t\t\t\t\t in ein Portfolio bestehend aus dem \n\t\t\t\t\t\t \u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\t und einer \n\t\t\t\t\t\t \u003ci\u003eri\u0026shy;si\u0026shy;kolosen Anlage\u003c/i\u003e \n\t\t\t\t\t\t mit jährlicher Verzinsung von 2 Pro\u0026shy;zent anlegen. Wie groß wäre der Anteil, den Sie persönlich in der aktuellen Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on in den \n\t\t\t\t\t\t \u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\t investieren würden?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnteil DAX:\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAssume that on January 1, 2023 you invest 1 million euros \n\t\t\t\t\t\t\u003ci\u003eover the next twelve months\u003c/i\u003e \n\t\t\t\t\t\tin a portfolio consisting of the \n\t\t\t\t\t\t\u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\tand a \n\t\t\t\t\t\t\u003ci\u003erisk-free in\u0026shy;vest\u0026shy;ment\u003c/i\u003e \n\t\t\t\t\t\twith an annual interest rate of 2 per\u0026shy;cent. What proportion would you personally invest in the \n\t\t\t\t\t\t\u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\tin the current si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tShare DAX:\n\t\t\t\t\t"
  							},
  							"suffix": {
  								"de": "%",
@@ -8053,7 +8053,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Durch Klicken er\u0026shy;hal\u0026shy;ten Sie eine Zusammenfassung Ihrer Antworten",
+ 								"de": "Durch Klicken er\u0026shy;hal\u0026shy;ten Sie eine Zusammenfassung Ihrer Ant\u0026shy;worten",
  								"en": "By clicking, you will receive a summary of your an\u0026shy;swers."
  							},
  							"col_span": 1,

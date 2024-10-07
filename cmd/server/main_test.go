@@ -195,6 +195,10 @@ func TestSystem(t *testing.T) {
 		// 	continue
 		// }
 
+		// if !(surveyID == "fmt" && (waveID == "2022-12")) {
+		// 	continue
+		// }
+
 		// call with last arg "0" was for http user agend based differentiation of mobile or desktop rendering
 		systemtest.SimulateLoad(t, qTpl, loginURL, "1")
 

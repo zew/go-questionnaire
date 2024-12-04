@@ -1,0 +1,7194 @@
+{
+ 	"survey": {
+ 		"type": "fmt",
+ 		"org": {
+ 			"de": "ZEW",
+ 			"en": "ZEW"
+ 		},
+ 		"name": {
+ 			"de": "Index / Finanzmarkttest",
+ 			"en": "Index / Indicator of Econ. Sentiment"
+ 		},
+ 		"year": 2024,
+ 		"month": 11,
+ 		"deadline": "2024-11-11T17:15:00+01:00",
+ 		"params": [
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "3.40%"
+ 			},
+ 			{
+ 				"name": "destatis",
+ 				"val": "0"
+ 			}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "1a7d1045a7bb24dcd9e287fce77a24e96027491c7d14dc1603aa058736583f14",
+ 	"lang_codes": [
+ 		"de",
+ 		"en"
+ 	],
+ 	"shuffling_variations": 12,
+ 	"allow_skip_forward": false,
+ 	"version_effective": 0,
+ 	"max_groups": 5,
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"de": "Begrüßung",
+ 				"en": "Greeting"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_progressbar": true,
+ 			"no_navigation": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Sehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest.",
+ 								"en": "Dear expert, welcome to the ZEW financial markets survey."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "page-0-data-protection.md"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Sind Sie die angeschriebene Person?",
+ 								"en": "Are you the addressee?"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 6
+ 						},
+ 						{
+ 							"name": "selbst",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, ich bin die angeschriebene Person.",
+ 								"en": "Yes, I am the addressee."
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "selbst",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
+ 								"en": "No, I am filling in for the addressee."
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "26rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Meine Adresse hat sich geändert",
+ 								"en": "My address has changed"
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "contact",
+ 							"type": "textarea",
+ 							"max_chars": 150,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Weiter\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Next\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"es": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuar\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"fr": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuer\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"it": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuare\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"pl": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Kontynuować\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span_control": 1,
+ 							"response": "1",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Konjunktur",
+ 				"en": "Business cycle"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Konjunktur",
+ 				"en": "Business cycle"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "34rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on beurteilen wir zurzeit als",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; We es\u0026shy;ti\u0026shy;mate the current overall macroeco\u0026shy;nom\u0026shy;ic si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on as being"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gut",
+ 								"en": "good"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "nor\u0026shy;mal",
+ 								"en": "nor\u0026shy;mal"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "schlecht",
+ 								"en": "bad"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Euro\u0026shy;raum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "y0_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y0_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the overall macroeco\u0026shy;nom\u0026shy;ic si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "ver\u0026shy;bes\u0026shy;sern",
+ 								"en": "im\u0026shy;prove"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "nicht\u003cbr\u003ever\u0026shy;än\u0026shy;dern",
+ 								"en": "not change"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "ver\u0026shy;schlech\u0026shy;tern",
+ 								"en": "wors\u0026shy;en"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y_ez",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Euro\u0026shy;raum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y_ez",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "y_deu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y_deu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "y_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "y_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 10,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on in Deutsch\u0026shy;land?",
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on in Ger\u0026shy;ma\u0026shy;ny (in per\u0026shy;cent)."
+ 							},
+ 							"col_span": 10,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0.8rem 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ver\u0026shy;bes\u0026shy;se\u0026shy;rung",
+ 								"en": "im\u0026shy;prove\u0026shy;ment"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Gleich blei\u0026shy;ben",
+ 								"en": "no change"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ver\u0026shy;schlech\u0026shy;te\u0026shy;rung",
+ 								"en": "wors\u0026shy;ening"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026#931;",
+ 								"en": "\u0026#931;"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "y_probgood",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "y_probnormal",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "y_probbad",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "100%",
+ 								"en": "100%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.02rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2c.\u003c/b\u003e \u0026nbsp; Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
+ 								"en": "\u003cb\u003e2c.\u003c/b\u003e \u0026nbsp; The probability of a neg\u0026shy;ative GDP growth in Ger\u0026shy;ma\u0026shy;ny (quarterly growth of the seasonally adjusted real GDP) will be"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 5
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "y_recession_q0",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Aktuelles Quartal (Q4\u0026nbsp;2024)",
+ 								"en": "current quarter  (Q4\u0026nbsp;2024)"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "y_recession_q1",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Folgendes Quartal (Q1\u0026nbsp;2025)",
+ 								"en": "next quarter  (Q1\u0026nbsp;2025)"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "15rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			],
+ 			"validation_func_name": "fmtPage1",
+ 			"validation_func_msg": {
+ 				"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
+ 				"en": "Your answers to question 2b dont add up to 100%. Continue anyway?"
+ 			}
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Inflation und Zinsen",
+ 				"en": "Inflation and Interest Rates"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Inflation,\u003cbr\u003eZinsen",
+ 				"en": "Inflation,\u003cbr\u003eInterest Rates"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
+ 								"en": "not change"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_ez",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Euro\u0026shy;raum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "pi_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "pi_ez",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "pi_deu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "pi_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "pi_deu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003ekurzfristigen\u003c/i\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), \u003ci\u003eshort-term\u003c/i\u003e interest rates (3-month interbank rates) will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
+ 								"en": "not change"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "i_deu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Euro\u0026shy;raum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "i_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "i_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "i_deu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (Renditen zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
+ 								"en": "not change"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Aktienmärkte",
+ 				"en": "Stock Markets"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Aktien-\u003cbr\u003emärkte",
+ 				"en": "Stock\u003cbr\u003eMarkets"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e6a.\u003c/b\u003e \u0026nbsp; Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following stock market indices will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
+ 								"en": "not change"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_ez",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "EURO STOXX 50",
+ 								"en": "EURO STOXX 50"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sto_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sto_ez",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "DAX",
+ 								"en": "DAX (Ger\u0026shy;ma\u0026shy;ny)"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sto_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Dow Jones (USA)",
+ 								"en": "Dow Jones (USA)"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sto_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sto_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sto_sse_comp_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "SSE Composite (China)",
+ 								"en": "SSE Composite (China)"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_sse_comp_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sto_sse_comp_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sto_sse_comp_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "dax_erw",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"min": 2000,
+ 							"max": 50000,
+ 							"placeholder": {
+ 								"de": "00000",
+ 								"en": "00000"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\t\t   Den DAX erwarte ich in 6\u0026nbsp;Monaten\u0026nbsp;bei \n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t   Six\u0026nbsp;months ahead, I expect the DAX to stand\u0026nbsp;at\n\t\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten",
+ 								"en": "points"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u003cbr\u003eMit einer Wahrscheinlichkeit von 90\u0026nbsp;Pro\u0026shy;zent liegt der DAX dann zwi\u0026shy;schen ",
+ 								"en": " \u003cbr\u003eWith a probability of 90\u0026nbsp;per\u0026nbsp;cent, the DAX will then range be\u0026shy;tween"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 6
+ 						},
+ 						{
+ 							"name": "dax_min",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"min": 2000,
+ 							"max": 50000,
+ 							"placeholder": {
+ 								"de": "00000",
+ 								"en": "00000"
+ 							},
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten ",
+ 								"en": "points"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " und \u0026nbsp; ",
+ 								"en": " and \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dax_max",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"min": 2000,
+ 							"max": 50000,
+ 							"placeholder": {
+ 								"de": "00000",
+ 								"en": "00000"
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten",
+ 								"en": "points"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 2
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0rem",
+ 								"row_gap": "0.4rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e6c.\u003c/b\u003e \u0026nbsp; Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Un\u0026shy;ter\u0026shy;neh\u0026shy;men ist der DAX derzeit",
+ 								"en": "\u003cb\u003e6c.\u003c/b\u003e \u0026nbsp; In view of the fundamentals of the DAX companies, the DAX is currently"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"padding": "0 0 0.5rem  0"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "über\u0026shy;be\u0026shy;wer\u0026shy;tet",
+ 								"en": "over-priced"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "fair be\u0026shy;wer\u0026shy;tet",
+ 								"en": "fairly priced"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "un\u0026shy;ter\u0026shy;be\u0026shy;wer\u0026shy;tet",
+ 								"en": "under-priced"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr ",
+ 								"column_gap": "0.2rem",
+ 								"row_gap": "0.5rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"position": "relative",
+ 								"left": "2rem",
+ 								"width_max": "30rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.9rem"
+ 							},
+ 							"box_style": {
+ 								"left": "0",
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			],
+ 			"validation_func_name": "fmtPage3",
+ 			"validation_func_msg": {
+ 				"de": "Ihre Punktprognose für den DAX in sechs Monaten liegt nicht in dem von Ihnen angegebenen Intervall. Wirklich weiter?",
+ 				"en": "Your forcecast for the DAX in six months is not inside your MIN/MAX interval. Continue anyway?"
+ 			}
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Währungen",
+ 				"en": "Currencies"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Währungen",
+ 				"en": "Currencies"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following currencies compared to the Euro will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "auf\u0026shy;wer\u0026shy;ten",
+ 								"en": "ap\u0026shy;pre\u0026shy;ci\u0026shy;ate"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
+ 								"en": "stay con\u0026shy;stant"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "ab\u0026shy;wer\u0026shy;ten",
+ 								"en": "de\u0026shy;pre\u0026shy;ci\u0026shy;ate"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "fx_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "US Dollar",
+ 								"en": "US Dollar"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "fx_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "fx_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "fx_usa",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "fx_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Yuan",
+ 								"en": "Yuan"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "fx_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "fx_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "fx_chn",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Sektoren",
+ 				"en": "Sectors"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Sektoren",
+ 				"en": "Sectors"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the profit si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on of German companies in the following sectors will"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "besser",
+ 								"en": "im\u0026shy;prove"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
+ 								"en": "not change"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "schlech\u0026shy;ter",
+ 								"en": "wors\u0026shy;en"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_banks",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Banken",
+ 								"en": "Banks"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_banks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_banks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_banks",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_insur",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Versi\u0026shy;cherungen",
+ 								"en": "Insurance"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_insur",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_insur",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_insur",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_cars",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Fahrzeugbau",
+ 								"en": "Automotive"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_cars",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_cars",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_cars",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_chemi",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Chemie/Pharma",
+ 								"en": "Chem\u0026shy;i\u0026shy;cals/Pharma"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_chemi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_chemi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_chemi",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_steel",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Stahl/NE-Metalle",
+ 								"en": "Steel/Metal Products"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_steel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_steel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_steel",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_elect",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Elektronik",
+ 								"en": "Electronics"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_elect",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_elect",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_elect",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_mecha",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Maschinen\u0026shy;bau",
+ 								"en": "Machinery"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_mecha",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_mecha",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_mecha",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_consu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Konsum, Handel",
+ 								"en": "Private Consumption / Retail Sales"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_consu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_consu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_consu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_const",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Baugewerbe",
+ 								"en": "Construction"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_const",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_const",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_const",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_utili",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Versorger",
+ 								"en": "Utilities"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_utili",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_utili",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_utili",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_servi",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Dienstleister",
+ 								"en": "Ser\u0026shy;vices"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_servi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_servi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_servi",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_telec",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Te\u0026shy;le\u0026shy;kom\u0026shy;mu\u0026shy;ni\u0026shy;ka\u0026shy;ti\u0026shy;on",
+ 								"en": "Tele\u0026shy;com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tions"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_telec",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_telec",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_telec",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sec_infor",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Inform.-Technologien",
+ 								"en": "Inform.-Technologies"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sec_infor",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sec_infor",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sec_infor",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Sonderfrage: Inflation, Inflationstreiber und Geldpolitik",
+ 				"en": "Special Questions: Inflation, its causes, and monetary policy "
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Inflation,\u003cbr\u003eGeldpolitik",
+ 				"en": "Inflation,\u003cbr\u003eMonetary Policy"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "54rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPunkt\u0026shy;pro\u0026shy;gno\u0026shy;se der \u003cb\u003ejährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HVPI in Pro\u0026shy;zent)\n\t\t\t\t\t\u003c!-- Anstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert --\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPoint forecast of the \u003cb\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in the euro area\u003c/b\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(annual av\u0026shy;er\u0026shy;age change of the HICP, in per\u0026shy;cent)\n\t\t\t\t\t\u003c!-- Avg. per\u0026shy;centage change in HICP from Jan to Dec; --\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ppjinf_jp0",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "2024",
+ 								"en": "2024"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ppjinf_jp1",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "2025",
+ 								"en": "2025"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ppjinf_jp2",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "2026",
+ 								"en": "2026"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width": "70%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width": "100%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; Wir möchten gerne von Ihnen erfahren, \n\t\t\t\t\t\tfür wie wahrscheinlich Sie bestimmte Ausprägungen \n\t\t\t\t\t\tder durchschnittlichen jährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate \n\t\t\t\t\t\tin den folgenden Jahren halten.\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tBitte stellen Sie si\u0026shy;cher, \n\t\t\t\t\t\tdass die Summen der Wahrscheinlichkeiten \n\t\t\t\t\t\tin den Zeilen jeweils 100% ergeben.\n\t\t\t\t\t\t\u003c/i\u003e\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t",
+ 								"en": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tHow likely are specific future realizations of in\u0026shy;fla\u0026shy;ti\u0026shy;on? \n\t\t\t\t\t\t\n\t\t\t\t\t\tPlease give us your assessments for the annual av\u0026shy;er\u0026shy;age in\u0026shy;fla\u0026shy;ti\u0026shy;on rate \n\t\t\t\t\t\tin the euro area.\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tPlease ensure that the probabilities \n\t\t\t\t\t\tin every line add up to 100%.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 9,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0.8rem 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "un\u0026shy;ter \u003cbr\u003e0\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;low \u003cbr\u003e0\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 87
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;0 und  \u003cbr\u003e\u003c2\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;0 and  \u003cbr\u003e\u003c2\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 87
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;2 und  \u003cbr\u003e\u003c4\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;2 and  \u003cbr\u003e\u003c4\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 87
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;4 und  \u003cbr\u003e\u003c6\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;4 and  \u003cbr\u003e\u003c6\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 87
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u003cbr\u003e\u0026nbsp;\u0026nbsp;6 und  \u003cbr\u003e\u0026nbsp; 8\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween \u003cbr\u003e\u0026nbsp;\u0026nbsp;6 and  \u003cbr\u003e\u0026nbsp; 8\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 87
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "grö\u0026shy;ßer \u003cbr\u003e 8\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "above  \u003cbr\u003e8\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 87
+ 									}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026#931;",
+ 								"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026#931;"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 120,
+ 										"align_horizontal": "left",
+ 										"align_vertical": "middle"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne Ang.",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "20\u003cspan class='mobile-brkr'\u003e\u003c/span\u003e24",
+ 								"en": "20\u003cspan class='mobile-brkr'\u003e\u003c/span\u003e24"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "inf2024_under0",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2024_between0and2",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2024_between2and4",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2024_between4and6",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2024_between6and8",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2024_above8",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;100%",
+ 								"en": "\u0026nbsp;\u0026nbsp;100%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf2024__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "20\u003cspan class='mobile-brkr'\u003e\u003c/span\u003e25",
+ 								"en": "20\u003cspan class='mobile-brkr'\u003e\u003c/span\u003e25"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "inf2025_under0",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2025_between0and2",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2025_between2and4",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2025_between4and6",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2025_between6and8",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2025_above8",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;100%",
+ 								"en": "\u0026nbsp;\u0026nbsp;100%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf2025__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "20\u003cspan class='mobile-brkr'\u003e\u003c/span\u003e26",
+ 								"en": "20\u003cspan class='mobile-brkr'\u003e\u003c/span\u003e26"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "inf2026_under0",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2026_between0and2",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2026_between2and4",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2026_between4and6",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2026_between6and8",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2026_above8",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;100%",
+ 								"en": "\u0026nbsp;\u0026nbsp;100%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf2026__noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inflationRange",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"Ivls": "[\"under0\", \"between0and2\", \"between2and4\", \"between4and6\", \"between6and8\", \"above8\"]",
+ 								"Yrs": "[\"inf2024\", \"inf2025\", \"inf2026\"]"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
+ 									"en": "Your answers to question 1b dont add up to 100%. Continue anyway?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "2.2fr    3.1fr 3.1fr 3.1fr 3.1fr 3.1fr 2.4fr    2.8fr  1.2fr",
+ 								"row_gap": "0.02rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie zu einer Revision\n\t\t\t\tIhrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum (ggü. August 2024) bewogen\n\t\t\t\tund wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFür die Jahre 2024, 2025 und 2026\u003c/b\u003e\n\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWhat are the main factors leading you to change your in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts\n\t\t\t\tfor the euro area (in comparison to your forecasts as of August 2024).\n\t\t\t\t(+) means in\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast,\n\t\t\t\t(-) means de\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFor the years 2024, 2025 and 2026\u003c/b\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "++",
+ 								"en": "++"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "+",
+ 								"en": "+"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "0",
+ 								"en": "0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "-",
+ 								"en": "-"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "--",
+ 								"en": "--"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_bus_cycle",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Konjunktur\u0026shy;entwicklung im Euro\u0026shy;gebiet",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of GDP in the euro area"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_bus_cycle",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_bus_cycle",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_bus_cycle",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_bus_cycle",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_bus_cycle",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_wages",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of wages in the euro area"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_wages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_wages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_wages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_wages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_wages",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Entwicklung der Energiepreise",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of energy prices"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_commodity_prices",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Entwicklung der Roh\u0026shy;stoff\u0026shy;preise (ohne Energiepreise)",
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of prices for raw materials (except energy) "
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_commodity_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_commodity_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_commodity_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_commodity_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_commodity_prices",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_exch_rates",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Veränderung der Wechsel\u0026shy;kurse (relativ zum Euro)",
+ 								"en": "Changes in exchange rates (relative to the euro)"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_exch_rates",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_exch_rates",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_exch_rates",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_exch_rates",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_exch_rates",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_mp_ecb",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
+ 								"en": "Monetary policy of the ECB"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_mp_ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_mp_ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_mp_ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_mp_ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_mp_ecb",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_trade_conflicts",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Handels\u0026shy;konflikte",
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al trade conflicts"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_trade_conflicts",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_trade_conflicts",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_trade_conflicts",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_trade_conflicts",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_trade_conflicts",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_supply_shortages",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply bottlenecks"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_supply_shortages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_supply_shortages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_supply_shortages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_supply_shortages",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_supply_shortages",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_green_trafo",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Grüne Trans\u0026shy;for\u0026shy;ma\u0026shy;ti\u0026shy;on",
+ 								"en": "Green trans\u0026shy;for\u0026shy;ma\u0026shy;ti\u0026shy;on"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_green_trafo",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_green_trafo",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_green_trafo",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_green_trafo",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_green_trafo",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_war_ukraine",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Krieg in der Ukraine",
+ 								"en": "War in Ukraine"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_war_ukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_war_ukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_war_ukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_war_ukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_war_ukraine",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_war_israel",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nahost-Konflikt",
+ 								"en": "Middle east conflict"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_war_israel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_war_israel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_war_israel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_war_israel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_war_israel",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"name": "rev_free_label",
+ 							"type": "text",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "rev_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "rev_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 3.40%) erwarte ich \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 3.40%) to be \n\t\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 12
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In 6\u0026nbsp;Monaten",
+ 								"en": "In 6\u0026nbsp;months"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb6min",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u0026nbsp;",
+ 								"en": "be\u0026shy;tween\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb6max",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ende   2024",
+ 								"en": "End of 2024"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb2024min",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u0026nbsp;",
+ 								"en": "be\u0026shy;tween\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb2024max",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ende   2025",
+ 								"en": "End of 2025"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb2025min",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u0026nbsp;",
+ 								"en": "be\u0026shy;tween\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb2025max",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ende   2026",
+ 								"en": "End of 2026"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb2026min",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "zwi\u0026shy;schen\u0026nbsp;",
+ 								"en": "be\u0026shy;tween\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ezb2026max",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.01,
+ 							"min": -10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp;",
+ 								"en": " \u0026nbsp;"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "[zentrales 90% Kon\u0026shy;fi\u0026shy;denz\u0026shy;in\u0026shy;ter\u0026shy;vall]",
+ 								"en": "[central 90% con\u0026shy;fi\u0026shy;dence in\u0026shy;ter\u0026shy;val]"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "2rem",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0",
+ 										"top": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width": "70%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width": "100%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Abschluss",
+ 				"en": "Finalization"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Abschluss",
+ 				"en": "Finalization"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Wollen Sie uns noch etwas mitteilen?",
+ 								"en": "Any remarks or advice for us?"
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "comment",
+ 							"type": "textarea",
+ 							"max_chars": 300,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "finished",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. ",
+ 								"en": "Leave the ques\u0026shy;tion\u0026shy;naire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1,
+ 							"value_radio": "remain-open"
+ 						},
+ 						{
+ 							"name": "finished",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
+ 								"en": "The ques\u0026shy;tion\u0026shy;naire is finished. No more edits.                         "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1,
+ 							"value_radio": "qst-finished"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Durch Klicken er\u0026shy;hal\u0026shy;ten Sie eine Zusammenfassung Ihrer Ant\u0026shy;worten",
+ 								"en": "By clicking, you will receive a summary of your an\u0026shy;swers."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Fragebogen abschließen",
+ 								"en": "Finish this survey",
+ 								"es": "Terminé esta encuesta",
+ 								"fr": "Terminer ce sondage",
+ 								"it": "Finire questo sondaggio",
+ 								"pl": "Zakończyłem tę ankietę"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"response": "8",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "3fr 1fr"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ihre Eingaben",
+ 				"en": "Summary of results"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_progressbar": true,
+ 			"no_navigation": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "40rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ResponseStatistics"
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PersonalLink"
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "site-imprint.md"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		}
+ 	]
+ }

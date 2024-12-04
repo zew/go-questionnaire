@@ -655,6 +655,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.Type = "textblock"
 			inp.ColSpan = 12
 			inp.ColSpanLabel = 12
+
+			// https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html
 			inp.Label = trl.S{
 				"de": fmt.Sprintf(
 					`

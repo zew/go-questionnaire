@@ -6,5 +6,5 @@ go clean --modcache
 go get -u 
 go get -u -d
 
-@REM memcache is here
+@REM module cache is here
 C:\Users\pbu\go\pkg\mod\cache\

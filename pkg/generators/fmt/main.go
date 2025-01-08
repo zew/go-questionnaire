@@ -792,14 +792,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = special202309a(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202309(): %v", err)
-	}
-	err = special202309b(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202309a(): %v", err)
-	}
 
 	err = eachMonth1inQ(&q)
 	if err != nil {
@@ -812,80 +804,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	err = eachMonth3inQ(&q)
 	if err != nil {
 		return nil, fmt.Errorf("error adding specialQ3(): %v", err)
-	}
-
-	// err = special202106(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202106(): %v", err)
-	// }
-	// err = special202108(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202108(): %v", err)
-	// }
-	// err = special202110(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202110(): %v", err)
-	// }
-	// err = special202111a(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202111a(): %v", err)
-	// }
-	// err = special202111b(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202111b(): %v", err)
-	// }
-	// err = special202111c(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202111c(): %v", err)
-	// }
-	// err = special_2022_01(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special_2022_01(): %v", err)
-	// }
-	// err = special202202a(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202202a(): %v", err)
-	// }
-	// err = special202202b(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202202b(): %v", err)
-	// }
-	// err = special202203(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202203(): %v", err)
-	// }
-	// err = special202204(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202204(): %v", err)
-	// }
-	// err = special202205(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202205(): %v", err)
-	// }
-	// err = special202206(&q)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("error adding special202206(): %v", err)
-	// }
-
-	err = special202212(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202212(): %v", err)
-	}
-	err = special202303(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202303(): %v", err)
-	}
-	err = special202304(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202304(): %v", err)
-	}
-	err = special202408(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202408(): %v", err)
-	}
-	err = special202409(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202409(): %v", err)
 	}
 
 	// special202312

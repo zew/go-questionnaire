@@ -292,7 +292,7 @@ func (s *SurveyT) HTMLForm(questTypes []string, errStr string) string {
             Deadline <input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm CEST"   xxlist="time-entries" size=30 /> 
 
 for FMT desstatis = [0,-1]			
-for FMT eachMonth1inQ() main_refinance_rate_ecb' <a href='www.euribor-rates.eu/en/ecb-refinancing-rate'>*</a> : 0,5%%
+for FMT eachMonth1inQ() main_refinance_rate_ecb' <a  target='_blank' href='https://www.euribor-rates.eu/en/ecb-refinancing-rate'>*</a> : 0,5%%
 %v
                      <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  tabindex=1 /> <br>
 		</form>

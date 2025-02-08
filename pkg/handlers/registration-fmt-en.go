@@ -153,9 +153,9 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 		"max-width: 40px;",
 		"max-width: 220px;",
 	)
-	s2f.CSS += ` 
-	* { 
-		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; 
+	s2f.CSS += `
+	* {
+		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
 	s2f.CSS += ` div.struc2frm input[type=radio] { margin-left: 0.8rem ; margin-right: 4.8rem } `
@@ -204,7 +204,9 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 		} else {
 			//
 			// further processing with valid form data
+			log.Printf("trying to acquire mtxFMT lock...")
 			mtxFMT.Lock()
+			log.Printf("mtxFMT lock acquired")
 			defer mtxFMT.Unlock()
 
 			var failureEmail, failureCSV bool
@@ -220,18 +222,26 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
 			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
-			err = smtp.SendMail(
-				emailHost(),
-				nil,                               // smtp.Auth interface
-				"Registration-FMT@survey2.zew.de", // from
-				adminEmail(),                      // twice - once here - and then again inside the body
-				body.Bytes(),
-			)
+
+			err = isPortOpen( emailHost(), 4000*time.Second)
 			if err != nil {
-				// fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
-				log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
+				log.Print(w, fmt.Sprintf(" Error connecting to %v: %v", emailHost(), err))
 				failureEmail = true
+			} else {
+				err = smtp.SendMail(
+					emailHost(),
+					nil,                               // smtp.Auth interface
+					"Registration-FMT@survey2.zew.de", // from
+					adminEmail(),                      // twice - once here - and then again inside the body
+					body.Bytes(),
+				)
+				if err != nil {
+					// fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
+					log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
+					failureEmail = true
+				}
 			}
+
 			fn := "registration-fmt-en.csv"
 			fd, size := mustDir(fn)
 			f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
@@ -265,19 +275,19 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 
 		s2 := strings.ReplaceAll(w1.String(), "replace_me_1",
 			`<div style="aamargin-top: 1.8em; max-width: 18rem; ">
-			I acknowledge the  <a tabindex='-1' 
-			href='https://www.zew.de/en/commitment-to-data-protection' target='_blank' >date protection terms</a> 
+			I acknowledge the  <a tabindex='-1'
+			href='https://www.zew.de/en/commitment-to-data-protection' target='_blank' >date protection terms</a>
 			</div>`,
 		)
 
 		s3 := strings.ReplaceAll(s2, "replace_me_2",
 			`
 			<div style="
-				margin:0.2rem  3rem;  
-				margin-top:    1.4rem; 
-				margin-bottom: 1.4rem; 
+				margin:0.2rem  3rem;
+				margin-top:    1.4rem;
+				margin-bottom: 1.4rem;
 				max-width: 49rem;
-				" 			
+				"
 			>
 
 				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); white-space: normal; ">
@@ -292,15 +302,15 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 						</li>
 					</ul>
 
-				</label> 
+				</label>
 
 				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); ">
-					We would greatly appreciate it if you were able to provide additional information about yourself. 
-					Your personal details will remain completely anonymous, 
-					so that it will not be possible to trace this information back to yourself or your company. 
+					We would greatly appreciate it if you were able to provide additional information about yourself.
+					Your personal details will remain completely anonymous,
+					so that it will not be possible to trace this information back to yourself or your company.
 					These data will only be used for scientific purposes.
-				</label> 
-				
+				</label>
+
 
 			</div>
 		 `)

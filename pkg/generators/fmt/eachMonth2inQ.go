@@ -37,6 +37,31 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	}
 	page.WidthMax("42rem")
 
+	if q.Survey.Year == 2025 && q.Survey.Month == 2 {
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		// gr.Style.Desktop.StyleBox.Width = "70%"
+		// gr.Style.Mobile.StyleBox.Width = "100%"
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+					<i>Hinweis</i>:
+					Beginnend mit der Januar-Umfragewelle wurde der Turnus der Sonderfragen angepasst. Im ersten Monat jedes Quartals werden nun Fragen zur Inflation im Euroraum gestellt und im zweiten Monat jedes Quartals Fragen zum Wirtschaftswachstum in Deutschland.
+				`,
+				"en": `
+					<i>Note</i>:
+					Starting with the January survey wave, the schedule for the special questions has been adjusted. In the first month of each quarter, questions are asked about inflation in the euro area and in the second month of each quarter questions about economic growth in Germany.
+				`,
+			}
+		}
+	}
+
+
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
@@ -46,23 +71,23 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.Type = "textblock"
 			inp.ColSpan = 12
 			inp.Label = trl.S{
-				"de": `<b>1.</b> 
+				"de": `<b>1.</b>
 				Punktprognose der Wachstumsrate des deutschen BIP <br>
 				<div class='vspacer-08' ></div>
 				<p style='font-size: 90%'>
-				Bei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum 
-						des realen & saisonbereinigten BIP angeben. 
+				Bei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum
+						des realen & saisonbereinigten BIP angeben.
 				Bei den Jahreswerten die Jahreswachstumsrate des realen BIP.
 				</p>
 				`,
-				"en": `<b>1.</b> 
+				"en": `<b>1.</b>
 				Point forecast of the growth rate of the <b>German GDP</b> <br>
 				<div class='vspacer-08' ></div>
 				<p style='font-size: 90%'>
-				For the quarterly values, 
-				please indicate non-annualized quarterly 
-				real & seasonally adjusted GDP growth. 
-				For the yearly values, 
+				For the quarterly values,
+				please indicate non-annualized quarterly
+				real & seasonally adjusted GDP growth.
+				For the yearly values,
 				please indicate the annual real GDP growth rate.
 				</p>
 				`,
@@ -91,6 +116,12 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			Thus: Previous quarter, current, next ...
 
 		*/
+
+		offsetDestatis := 0 // next quarter
+		if osd, err := q.Survey.Param("destatis"); err == nil {
+			offsetDestatis, _ = strconv.Atoi(osd)
+		}
+
 		// row 1 - four quarters - label
 		{
 			inp := gr.AddInput()
@@ -123,12 +154,18 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 					"de": q.Survey.Quarter(i),
 					"en": q.Survey.Quarter(i),
 				}
-				if i == 0 {
-					inp.Label = trl.S{
-						"de": q.Survey.Quarter(i) + "*",
-						"en": q.Survey.Quarter(i) + "*",
+
+				// append asterisk
+				if offsetDestatis != 0 {
+					if i == 0 {
+						inp.Label = trl.S{
+							"de": q.Survey.Quarter(i) + "*",
+							"en": q.Survey.Quarter(i) + "*",
+						}
 					}
 				}
+
+
 				inp.Suffix = trl.S{
 					"de": "%",
 					"en": "pct",
@@ -149,10 +186,19 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			return err
 		}
 
+
 		var lblFootnote = trl.S{
-			"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
-			"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+			"de": fmt.Sprintf("&nbsp;"),
+			"en": fmt.Sprintf("&nbsp;"),
 		}
+
+		if offsetDestatis != 0 {
+			lblFootnote = trl.S{
+				"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
+				"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+			}
+		}
+
 
 		// row 2a quarter explanation / footnote
 		{
@@ -312,6 +358,11 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		// not 6 as in m3 of q
 		monthsBack := 3
 
+		if q.Survey.Year == 2025 && q.Survey.Month == 2 {
+			monthsBack = 4
+		}
+
+
 		oneMonthPrev := time.Date(
 			q.Survey.Year, time.Month(q.Survey.Month), 2,
 			0, 0, 0, 0, cfg.Get().Loc,
@@ -320,24 +371,24 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		month := int(oneMonthPrev.Month())
 
 		gb.MainLabel = trl.S{
-			"de": fmt.Sprintf(`<b>2.</b> 
-					Haben Entwicklungen in den folgenden Bereichen Sie 
-					zu einer Revision 
+			"de": fmt.Sprintf(`<b>2.</b>
+					Haben Entwicklungen in den folgenden Bereichen Sie
+					zu einer Revision
 					(ggü. <i>%v %v</i>)
-					Ihrer Konjunkturprognosen 
-					für die deutsche Wirtschaft bewogen 					
-					und wenn ja in welche Richtung? 
+					Ihrer Konjunkturprognosen
+					für die deutsche Wirtschaft bewogen
+					und wenn ja in welche Richtung?
 					<br>
-					(Erhöhung (+), Senkung (-))	
+					(Erhöhung (+), Senkung (-))
 			`, trl.MonthByInt(month)["de"], oneMonthPrev.Year(),
 			),
-			"en": fmt.Sprintf(`<b>2.</b> 
-					Which developments have led you to change 
+			"en": fmt.Sprintf(`<b>2.</b>
+					Which developments have led you to change
 					(relative to <i>%v %v</i>)
-					your assessment 
-					of the business cycle outlook for the German economy? 
+					your assessment
+					of the business cycle outlook for the German economy?
 					<br>
-					If they made you change your assessment, 
+					If they made you change your assessment,
 					did they make you revise your assessment up (+) or down (-)?
 					`, trl.MonthByInt(month)["en"], oneMonthPrev.Year(),
 			),

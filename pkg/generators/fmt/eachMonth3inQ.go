@@ -243,11 +243,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 			gb.MainLabel = trl.S{
 				"de": `
-					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil 
+					Mit Blick auf die nächsten sechs Monate,
+					wie beurteilen Sie das Rendite-Risko-Profil
 					der folgenden Anlageklassen?
-					
-					Orientieren Sie sich an breit gestreuten Indizes 
+
+					Orientieren Sie sich an breit gestreuten Indizes
 					für das <b><i>Eurogebiet</i></b>.
 
 					<p style='position: relative; top: 0.47rem'>
@@ -255,12 +255,12 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					</p>
 				`,
 				"en": `
-					How do you assess the return-risk profile of the following asset classes 
-					in the <b><i>euro area</i></b> for the next 6&nbsp;months? 
+					How do you assess the return-risk profile of the following asset classes
+					in the <b><i>euro area</i></b> for the next 6&nbsp;months?
 
 					Please consider well-diversified indices.
-					
-					
+
+
 					<p style='position: relative; top: 0.47rem'>
 						My assessment of the return-risk profile is …
 					</p>
@@ -299,8 +299,8 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 			gb.MainLabel = trl.S{
 				"de": `
-					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil 
+					Mit Blick auf die nächsten sechs Monate,
+					wie beurteilen Sie das Rendite-Risko-Profil
 					der folgenden Anlageklassen?
 
 					Orientieren Sie sich an breit gestreuten <b><i>globalen</i></b> Indizes.
@@ -310,12 +310,12 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					</p>
 				`,
 				"en": `
-					How do you assess the return-risk profile  
-					of the following <b><i>global</i></b> asset classes for the next 6&nbsp;months? 
+					How do you assess the return-risk profile
+					of the following <b><i>global</i></b> asset classes for the next 6&nbsp;months?
 
 					Please consider well-diversified indices.
-					
-					
+
+
 					<p style='position: relative; top: 0.47rem'>
 						My assessment of the return-risk profile is …
 					</p>
@@ -341,10 +341,10 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
-							Haben Entwicklungen der folgenden Faktoren 
-							Sie zu einer Revision Ihrer Einschätzungen 
+							Haben Entwicklungen der folgenden Faktoren
+							Sie zu einer Revision Ihrer Einschätzungen
 							zum Rendite-Risiko-Profil der einzelnen Assetklassen
-							im <b><i>Eurogebiet</i></b> 
+							im <b><i>Eurogebiet</i></b>
 							gegenüber %v %v bewogen?
 
 							<p style='margin-top: 0.46rem'>
@@ -359,9 +359,9 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					"en": fmt.Sprintf(`
 
 							Did developments in the following areas
-							lead you to change your assessment 
+							lead you to change your assessment
 							of the return-risk profiles
-							of the following four asset classes 
+							of the following four asset classes
 							(compared to %v %v)
 							in the <b><i>euro area</i></b>?
 
@@ -441,7 +441,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					<p style='position: relative; top: 0.8rem'>
 						<span  style='font-weight: bold' >%v.%v.</span> &nbsp;
 						%v
-						 &nbsp; - &nbsp;  Eurogebiet 
+						 &nbsp; - &nbsp;  Eurogebiet
 					</p>
 					`,
 						outline,
@@ -453,7 +453,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 						<span  style='font-weight: bold' >%v.%v.</span> &nbsp;
 
 						%v
-						 &nbsp; - &nbsp;  euro area 
+						 &nbsp; - &nbsp;  euro area
 					</p>
 					`,
 						outline,

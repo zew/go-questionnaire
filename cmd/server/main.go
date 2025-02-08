@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"runtime"
 	"time"
 
 	"github.com/zew/go-questionnaire/pkg/bootstrap"
@@ -17,6 +18,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/tpl"
 	"github.com/zew/go-questionnaire/pkg/wrap"
 	"golang.org/x/crypto/acme/autocert"
+
 )
 
 func main() {
@@ -103,6 +105,8 @@ func main() {
 		port = fmt.Sprintf("%v", cfg.Get().BindSocket)
 		log.Printf("No env variable PORT - defaulting cfg val %s", port)
 	}
+
+	log.Printf("gomaxprocs is %v", runtime.GOMAXPROCS(0))
 
 	IPPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, port)
 	log.Printf("starting http server at %v ... (Forward from %v)", IPPort, cfg.Get().BindSocketFallbackHTTP)

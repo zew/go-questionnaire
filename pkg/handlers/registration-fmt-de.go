@@ -140,9 +140,9 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 		"max-width: 40px;",
 		"max-width: 220px;",
 	)
-	s2f.CSS += ` 
-	* { 
-		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; 
+	s2f.CSS += `
+	* {
+		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
 	s2f.CSS += ` div.struc2frm input[type=radio] { margin-left: 0.8rem ; margin-right: 4.8rem } `
@@ -190,7 +190,9 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 		} else {
 			//
 			// further processing with valid form data
+			log.Printf("trying to acquire mtxFMT lock")
 			mtxFMT.Lock()
+			log.Printf("mtxFMT lock acquired")
 			defer mtxFMT.Unlock()
 
 			var failureEmail, failureCSV bool
@@ -206,6 +208,26 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
 			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
+
+			err = isPortOpen( emailHost(), 4000*time.Second)
+			if err != nil {
+				log.Print(w, fmt.Sprintf(" Error connecting to %v: %v", emailHost(), err))
+				failureEmail = true
+			} else {
+				err = smtp.SendMail(
+					emailHost(),
+					nil,                               // smtp.Auth interface
+					"Registration-FMT@survey2.zew.de", // from
+					adminEmail(),                      // twice - once here - and then again inside the body
+					body.Bytes(),
+				)
+				if err != nil {
+					// fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
+					log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
+					failureEmail = true
+				}
+			}
+
 			err = smtp.SendMail(
 				emailHost(),
 				nil,                               // smtp.Auth interface
@@ -251,19 +273,19 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 
 		s2 := strings.ReplaceAll(w1.String(), "replace_me_1",
 			`<div style="aamargin-top: 1.8em; max-width: 18rem; ">
-			Ich erkläre mich mit den <a tabindex='-1' 
-			href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a> 
+			Ich erkläre mich mit den <a tabindex='-1'
+			href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a>
 			einverstanden</div>`,
 		)
 
 		s3 := strings.ReplaceAll(s2, "replace_me_2",
 			`
 			<div style="
-				margin:0.2rem  3rem;  
-				margin-top:    1.4rem; 
-				margin-bottom: 1.4rem; 
+				margin:0.2rem  3rem;
+				margin-top:    1.4rem;
+				margin-bottom: 1.4rem;
 				max-width: 49rem;
-				" 			
+				"
 			>
 
 				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); white-space: normal; ">
@@ -277,20 +299,20 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 							Die Umfrageergebnisse, jeweils zum Veröffentlichungszeitpunkt
 						</li>
 						<li style='margin-bottom: 0.4rem;'>
-							Den ZEW-Finanzmarktteport, in dem die Ergebnisse detailliert analysiert werden, 
+							Den ZEW-Finanzmarktteport, in dem die Ergebnisse detailliert analysiert werden,
 							einige Tage nach Veröffentlichung der jeweils neusten Umfrageergebnisse.
 						</li>
 					</ul>
 
-				</label> 
+				</label>
 
 				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); ">
-					Wir würden uns freuen, wenn Sie uns noch zusätzliche Angaben zu Ihrer Person machen könnten. 
-					Diese Informationen werden <u><b>ausschließlich für wissenschaftliche Zwecke</b></u> verwendet. 
-					Alle Informationen, die Sie uns mit dieser Anmeldung geben, bleiben anonym, 
+					Wir würden uns freuen, wenn Sie uns noch zusätzliche Angaben zu Ihrer Person machen könnten.
+					Diese Informationen werden <u><b>ausschließlich für wissenschaftliche Zwecke</b></u> verwendet.
+					Alle Informationen, die Sie uns mit dieser Anmeldung geben, bleiben anonym,
 					so dass keine Rückschlüsse auf Ihre Person oder Ihr Unternehmen möglich sind.
-				</label> 
-				
+				</label>
+
 
 			</div>
 		 `)
@@ -304,7 +326,7 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 		s5 := strings.ReplaceAll(
 			s4,
 			"<h3>Form registration fmtde</h3>",
-			fmt.Sprintf(`<h3>Registrierung für Teilnahme am ZEW Index / 
+			fmt.Sprintf(`<h3>Registrierung für Teilnahme am ZEW Index /
 				ZEW Finanzmarkttest <br>
 				&nbsp; <a href='%v' style='font-size: 70%%; font-weight: normal;' >Englische Version</a>
 			</h3>

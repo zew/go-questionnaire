@@ -169,6 +169,31 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	}
 	page.WidthMax("54rem")
 
+	if q.Survey.Year == 2025 && q.Survey.Month == 1 {
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		// gr.Style.Desktop.StyleBox.Width = "70%"
+		// gr.Style.Mobile.StyleBox.Width = "100%"
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+
+					<i>Hinweis</i>: Beginnend mit der aktuellen Umfragewelle wurde der Turnus der Sonderfragen angepasst. Im ersten Monat jedes Quartals werden nun Fragen zur Inflation im Euroraum gestellt und im zweiten Monat jedes Quartals Fragen zum Wirtschaftswachstum in Deutschland.
+				`,
+				"en": `
+					<i>Note</i>: Starting with the current survey wave, the schedule for the special questions has been adjusted. In the first month of each quarter, questions are asked about inflation in the euro area and in the second month of each quarter questions about economic growth in Germany.
+				`,
+			}
+		}
+	}
+
+
+
 	{
 		gr := page.AddGroup()
 		gr.Cols = 3 * float32(len(yearsEffective))
@@ -251,29 +276,29 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			inp.Type = "textblock"
 			inp.ColSpan = 9
 			inp.Label = trl.S{
-				"de": `Wir möchten gerne von Ihnen erfahren, 
-						für wie wahrscheinlich Sie bestimmte Ausprägungen 
-						der durchschnittlichen jährlichen Inflationsrate 
+				"de": `Wir möchten gerne von Ihnen erfahren,
+						für wie wahrscheinlich Sie bestimmte Ausprägungen
+						der durchschnittlichen jährlichen Inflationsrate
 						in den folgenden Jahren halten.
-						
+
 						<br>
 						<i>
-						Bitte stellen Sie sicher, 
-						dass die Summen der Wahrscheinlichkeiten 
+						Bitte stellen Sie sicher,
+						dass die Summen der Wahrscheinlichkeiten
 						in den Zeilen jeweils 100% ergeben.
 						</i>
 
-						
+
 						`,
 				"en": `
-						How likely are specific future realizations of inflation? 
-						
-						Please give us your assessments for the annual average inflation rate 
+						How likely are specific future realizations of inflation?
+
+						Please give us your assessments for the annual average inflation rate
 						in the euro area.
-						
+
 						<br>
 						<i>
-						Please ensure that the probabilities 
+						Please ensure that the probabilities
 						in every line add up to 100%.
 						</i>
 						`,
@@ -666,12 +691,12 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			inp.Label = trl.S{
 				"de": fmt.Sprintf(
 					`
-					Den <b>Hauptrefinanzierungssatz</b> der EZB (derzeit %v) erwarte ich 
+					Den <b>Hauptrefinanzierungssatz</b> der EZB (derzeit %v) erwarte ich
 					`, latestECBRate,
 				),
 				"en": fmt.Sprintf(
 					`
-					I expect the <b>main refinancing facility rate</b> of the ECB (currently at %v) to be 
+					I expect the <b>main refinancing facility rate</b> of the ECB (currently at %v) to be
 					`, latestECBRate,
 				),
 			}
@@ -813,10 +838,10 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 14
 				inp.ColSpanLabel = 1
 				inp.Label = trl.S{
-					"de": `<b>4.</b> &nbsp; 
+					"de": `<b>4.</b> &nbsp;
 					Mit Blick auf das Jahr 2023, wie beeinflusst die aktuelle Entwicklung der Inflation Ihre Beurteilung des Rendite‐Risiko‐Profils des DAX?
 				`,
-					"en": `<b>4.</b> &nbsp; 
+					"en": `<b>4.</b> &nbsp;
 					How do current developments of inflation affect your assessment of the return-risk-profile of the DAX for the year 2023?
 				`,
 				}
@@ -856,10 +881,10 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 				inp.Label = trl.S{
-					"de": `<b>5.</b> &nbsp; 
+					"de": `<b>5.</b> &nbsp;
 					Beschreiben Sie kurz in ganzen Sätzen über welche Mechanismen die Inflation Ihre Rendite- und Risiko-Erwartungen für den DAX in 2023 beeinflusst bzw. warum Sie keinen Zusammenhang sehen.
 				`,
-					"en": `<b>5.</b> &nbsp; 
+					"en": `<b>5.</b> &nbsp;
 					Please describe briefly in whole sentences via which mechanisms inflation affects your return-risk-expectations of the DAX for the year 2023 or why you see no relationship.
 				`,
 				}

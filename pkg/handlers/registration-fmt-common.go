@@ -5,11 +5,13 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strconv"
 	"sync"
+	"time"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/lgn"
@@ -114,4 +116,15 @@ func RegistrationsFMTDownload(w http.ResponseWriter, r *http.Request) {
 	bRdr := bytes.NewReader(bts)
 	io.Copy(w, bRdr)
 
+}
+
+
+func isPortOpen(hostPort string, timeout time.Duration) error {
+	address := hostPort
+	conn, err := net.DialTimeout("tcp", address, timeout)
+	if err != nil {
+		return err
+	}
+	defer conn.Close()
+	return nil
 }

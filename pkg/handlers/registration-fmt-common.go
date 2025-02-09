@@ -121,8 +121,7 @@ func RegistrationsFMTDownload1(w http.ResponseWriter, r *http.Request) {
 // test a connection with *short* timeout
 // => preventing http response from being blocked
 func isPortOpen(hostPort string, shortTO time.Duration) error {
-	address := hostPort
-	conn, err := net.DialTimeout("tcp", address, shortTO)
+	conn, err := net.DialTimeout("tcp", hostPort, shortTO)
 	if err != nil {
 		return err
 	}

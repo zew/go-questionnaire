@@ -1,7 +1,7 @@
 package fmtest
 
 import (
-	fmtX "fmt" // confusion with name of module
+	"fmt"
 	"strconv"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
@@ -340,8 +340,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 5
 				inp.ColSpanLabel = 5
 				inp.Label = trl.S{
-					"de": fmtX.Sprint("<b>2c.</b> &nbsp; Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-					"en": fmtX.Sprint("<b>2c.</b> &nbsp; The probability of a negative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"),                         // nextQ()
+					"de": fmt.Sprint("<b>2c.</b> &nbsp; Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
+					"en": fmt.Sprint("<b>2c.</b> &nbsp; The probability of a negative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"),                         // nextQ()
 				}
 			}
 		}
@@ -356,8 +356,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmtX.Sprintf("Aktuelles Quartal (%v)", q.Survey.Quarter(0)),
-					"en": fmtX.Sprintf("current quarter  (%v)", q.Survey.Quarter(0)),
+					"de": fmt.Sprintf("Aktuelles Quartal (%v)", q.Survey.Quarter(0)),
+					"en": fmt.Sprintf("current quarter  (%v)", q.Survey.Quarter(0)),
 				}
 				if offsetDestatis != 0 {
 					for key, val := range inp.Label {
@@ -366,8 +366,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 
 				// inp.Tooltip = trl.S{
-				// 	"de": fmtX.Sprintf("Unmittelbar zurückliegendes Quartal"),
-				// 	"en": fmtX.Sprintf("Most recent quarter"),
+				// 	"de": fmt.Sprintf("Unmittelbar zurückliegendes Quartal"),
+				// 	"en": fmt.Sprintf("Most recent quarter"),
 				// }
 				inp.Type = "number"
 				inp.Name = "y_recession_q0"
@@ -384,8 +384,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmtX.Sprintf("Folgendes Quartal (%v)", q.Survey.Quarter(1)),
-					"en": fmtX.Sprintf("next quarter  (%v)", q.Survey.Quarter(1)),
+					"de": fmt.Sprintf("Folgendes Quartal (%v)", q.Survey.Quarter(1)),
+					"en": fmt.Sprintf("next quarter  (%v)", q.Survey.Quarter(1)),
 				}
 				inp.Type = "number"
 				inp.Name = "y_recession_q1"
@@ -406,8 +406,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		if offsetDestatis != 0 {
 			var lblFootnote = trl.S{
-				"de": fmtX.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
-				"en": fmtX.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+				"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
+				"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
 			}
 
 			// gr3c
@@ -794,15 +794,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	err = eachMonth1inQ(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding month 1 per quarter: %v", err)
+		return nil, fmt.Errorf("error adding month 1 per quarter: %v", err)
 	}
 	err = eachMonth2inQ(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding month 2 per quarter: %v", err)
+		return nil, fmt.Errorf("error adding month 2 per quarter: %v", err)
 	}
 	err = eachMonth3inQ(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding specialQ3(): %v", err)
+		return nil, fmt.Errorf("error adding specialQ3(): %v", err)
 	}
 
 	// special202312
@@ -813,7 +813,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	err = special202401(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding special202401(): %v", err)
+		return nil, fmt.Errorf("error adding special202401(): %v", err)
 	}
 
 	// special202402
@@ -823,16 +823,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 	err = special202402(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding special202402(): %v", err)
+		return nil, fmt.Errorf("error adding special202402(): %v", err)
 	}
 	err = special202403(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding special202403(): %v", err)
+		return nil, fmt.Errorf("error adding special202403(): %v", err)
 	}
 
 	err = special202406b(&q)
 	if err != nil {
-		return nil, fmtX.Errorf("error adding special202406b(): %v", err)
+		return nil, fmt.Errorf("error adding special202406b(): %v", err)
 	}
 
 	// 202405
@@ -932,7 +932,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
-				inp.Response = fmtX.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = cfg.Get().Mp["end"]
 				inp.Label = cfg.Get().Mp["finish_questionnaire"]
 				inp.ColSpan = 1

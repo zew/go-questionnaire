@@ -1,5 +1,8 @@
 @REM from app root
 
+setlocal
+
+
 SET GOOS=solaris
 SET GOOS=openbsd
 SET GOOS=linux
@@ -17,5 +20,6 @@ del    /s  go-questionnaire-new
 rename main  go-questionnaire-new
 
 
+endlocal
 
 pause

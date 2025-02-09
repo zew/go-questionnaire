@@ -19,7 +19,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/generators/biii"
 	"github.com/zew/go-questionnaire/pkg/generators/example"
 	"github.com/zew/go-questionnaire/pkg/generators/flit"
-	"github.com/zew/go-questionnaire/pkg/generators/fmt"
+	"github.com/zew/go-questionnaire/pkg/generators/fmtest"
 	"github.com/zew/go-questionnaire/pkg/generators/kneb1"
 	"github.com/zew/go-questionnaire/pkg/generators/pat"
 	"github.com/zew/go-questionnaire/pkg/generators/pat1"
@@ -35,7 +35,7 @@ type genT func(s qst.SurveyT) (*qst.QuestionnaireT, error)
 var gens = map[string]genT{
 
 	"pds": pds.Create,
-	"fmt": fmt.Create,
+	"fmt": fmtest.Create, // package renamed due to conflict with standard package fmt under modules
 
 	"example": example.Create,
 	"flit":    flit.Create,

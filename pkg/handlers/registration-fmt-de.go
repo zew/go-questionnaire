@@ -209,7 +209,7 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprint(body, s2f.Card(frm))
 			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
 
-			err = isPortOpen( emailHost(), 4000*time.Second)
+			err = isPortOpen(emailHost(), 4*time.Second)
 			if err != nil {
 				log.Print(w, fmt.Sprintf(" Error connecting to %v: %v", emailHost(), err))
 				failureEmail = true

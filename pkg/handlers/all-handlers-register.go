@@ -249,10 +249,18 @@ func RegisterHandlers(mux *http.ServeMux) {
 		},
 		{
 			Urls:    []string{"/registration-fmt-download"},
-			Title:   "Registration FMT English",
-			Handler: RegistrationsFMTDownload,
+			Title:   "Download CSV files - based on login",
+			Handler: RegistrationsFMTDownload1,
 			Keys:    []string{"registration-fmt-download"},
 		},
+		{
+			Urls:    []string{"/registration-fmt-download-2"},
+			Title:   "Download CSV files - based on internal IP",
+			Handler: RegistrationsFMTDownload2,
+			Keys:    []string{"registration-fmt-download-2"},
+		},
+
+		//
 		{
 			Urls:    []string{"/unsubscribe"},
 			Title:   "Unsubscribe from Emails lists",

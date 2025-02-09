@@ -2,7 +2,7 @@ package generators
 
 import (
 	"bytes"
-	myfmt "fmt"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -87,13 +87,13 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	s := qst.NewSurvey("placeholder") // type is modified later
 	errStr := ""
 	if r.Method == "POST" {
-		// myfmt.Fprint(w, "is POST<br>\n")
+		// fmt.Fprint(w, "is POST<br>\n")
 		frm := frmT{}
 		dec := form.NewDecoder()
 		dec.SetTagName("json") // recognizes and ignores ,omitempty
 		err := dec.Decode(&frm, r.Form)
 		if err != nil {
-			errStr += myfmt.Sprint(err.Error() + "<br>\n")
+			errStr += fmt.Sprint(err.Error() + "<br>\n")
 		}
 
 		s.Type = frm.Type
@@ -102,12 +102,12 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 
 		t, err := time.ParseInLocation("02.01.2006 15:04 CEST", frm.Deadline, cfg.Get().Loc)
 		if err != nil {
-			errStr += myfmt.Sprint(err.Error() + "<br>\n")
+			errStr += fmt.Sprint(err.Error() + "<br>\n")
 		}
 		wavePeriod := time.Date(s.Year, s.Month, 1, 0, 0, 0, 0, cfg.Get().Loc)
 		if t.Sub(wavePeriod) > (30*24)*time.Hour ||
 			t.Sub(wavePeriod) < -(10*24)*time.Hour {
-			errStr += myfmt.Sprint("Should the deadline not be close to the Year-Month?<br>\n")
+			errStr += fmt.Sprint("Should the deadline not be close to the Year-Month?<br>\n")
 		}
 		s.Deadline = t
 
@@ -123,12 +123,12 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	}
 
 	html := s.HTMLForm(sortedKeys(), errStr)
-	myfmt.Fprint(w, html) // not Fprintf
-	myfmt.Fprintf(w, "<br>")
+	fmt.Fprint(w, html) // not Fprintf
+	fmt.Fprintf(w, "<br>")
 	//
 
 	if r.Method != "POST" {
-		myfmt.Fprintf(w, "Not a POST request. Won't generate any questionnaire<br>\n")
+		fmt.Fprintf(w, "Not a POST request. Won't generate any questionnaire<br>\n")
 		return
 	}
 
@@ -142,20 +142,20 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	fnc := gens[s.Type]
 	q, err := fnc(s)
 	if err != nil {
-		myfmt.Fprintf(w, "Error creating %v: %v<br>\n", s.Type, err)
+		fmt.Fprintf(w, "Error creating %v: %v<br>\n", s.Type, err)
 		return
 	}
 
 	fn := path.Join(qst.BasePath(), s.Filename()+".json")
 	err = q.Save1(fn)
 	if err != nil {
-		myfmt.Fprintf(w, "Error saving %v: %v<br>\n", fn, err)
+		fmt.Fprintf(w, "Error saving %v: %v<br>\n", fn, err)
 		return
 	}
-	myfmt.Fprintf(w, "%v generated<br>\n", fn)
+	fmt.Fprintf(w, "%v generated<br>\n", fn)
 
 	if cfg.Get().AnonymousSurveyID == s.Type {
-		myfmt.Fprint(
+		fmt.Fprint(
 			w,
 			`<a  
 				accesskey='c'  
@@ -178,12 +178,12 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 				rdr := &bytes.Buffer{}
 				err := cloudio.WriteFile(pth, rdr, 0755)
 				if err != nil {
-					return false, myfmt.Errorf("could not create %v: %v <br>\n", pth, err)
+					return false, fmt.Errorf("could not create %v: %v <br>\n", pth, err)
 				}
-				myfmt.Fprintf(w, "Done creating template %v<br>\n", pth)
+				fmt.Fprintf(w, "Done creating template %v<br>\n", pth)
 				return true, nil
 			}
-			return false, myfmt.Errorf("other error while checking for %v: %v <br>\n", pth, err)
+			return false, fmt.Errorf("other error while checking for %v: %v <br>\n", pth, err)
 		}
 		return false, nil
 	}
@@ -192,7 +192,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	for _, bt := range []string{"styles-quest-"} {
 		ok, err := fcCreate(bt)
 		if err != nil {
-			myfmt.Fprintf(w, "Could not generate template %v for %v<br>\n", bt, err)
+			fmt.Fprintf(w, "Could not generate template %v for %v<br>\n", bt, err)
 			continue
 		}
 		if ok {
@@ -225,7 +225,7 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 		form.Add("month", "5")
 		form.Add("deadline", "01.01.2030 00:00")
 		form.Add("params[0].name", "varianten")
-		form.Add("params[0].val", myfmt.Sprintf("%04b", i%16))
+		form.Add("params[0].val", fmt.Sprintf("%04b", i%16))
 		form.Add("params[1].name", "aboveOrBelowMedian")
 		if i < 16 {
 			form.Add("params[1].val", "besseren")
@@ -244,14 +244,14 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 				bytes.NewBufferString(form.Encode()),
 			)
 			if err != nil {
-				myfmt.Fprintf(w, "Request creation error %v", err)
+				fmt.Fprintf(w, "Request creation error %v", err)
 				return
 			}
 			req.Header.Set("Content-Type", "application/x-www-form-urlencoded; param=value")
 			client := http.DefaultClient
 			resp, err = client.Do(req)
 			if err != nil {
-				myfmt.Fprintf(w, "Request execution error %v", err)
+				fmt.Fprintf(w, "Request execution error %v", err)
 				return
 			}
 		} else {
@@ -260,7 +260,7 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 				form,
 			)
 			if err != nil {
-				myfmt.Fprintf(w, "Request execution error %v", err)
+				fmt.Fprintf(w, "Request execution error %v", err)
 				return
 			}
 		}
@@ -268,24 +268,24 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 		defer resp.Body.Close()
 		respBts, err := io.ReadAll(resp.Body)
 		if err != nil {
-			myfmt.Fprintf(w, "Error reading response body %v", err)
+			fmt.Fprintf(w, "Error reading response body %v", err)
 			return
 		}
 
-		myfmt.Fprintf(w, "%s\n", respBts)
+		fmt.Fprintf(w, "%s\n", respBts)
 
 		fn := path.Join(qst.BasePath(), key+".json")
 		qst, err := qst.Load1(fn)
 		if err != nil {
-			myfmt.Fprintf(w, "Error re-loading qst for %v: %v", fn, err)
+			fmt.Fprintf(w, "Error re-loading qst for %v: %v", fn, err)
 			return
 		}
 
-		fnNew := strings.ReplaceAll(fn, ".json", myfmt.Sprintf("-%02v.json", i))
+		fnNew := strings.ReplaceAll(fn, ".json", fmt.Sprintf("-%02v.json", i))
 		qst.Save1(fnNew)
 
-		myfmt.Fprintf(w, "Iter %v - stop; resp status %v<br><br>\n", i, resp.Status)
-		myfmt.Fprintf(w, "<hr>\n")
+		fmt.Fprintf(w, "Iter %v - stop; resp status %v<br><br>\n", i, resp.Status)
+		fmt.Fprintf(w, "<hr>\n")
 
 	}
 

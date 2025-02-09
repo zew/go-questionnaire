@@ -201,17 +201,17 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 			body := &bytes.Buffer{}
 			// headers
 			fmt.Fprintf(body, "To: %v \r\n", strings.Join(adminEmail(), ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
-			fmt.Fprintf(body, mimeHTML)
-			fmt.Fprintf(body, frm.Headline())
+			fmt.Fprint(body, mimeHTML)
+			fmt.Fprint(body, frm.Headline())
 			// ending of headers
 			fmt.Fprint(body, "\r\n")
 			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
 			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
 
-			err = isPortOpen(emailHost(), 4*time.Second)
+			err = isPortOpen(emailHost(), 3*time.Second)
 			if err != nil {
-				log.Print(w, fmt.Sprintf(" Error connecting to %v: %v", emailHost(), err))
+				log.Printf("failure connecting to %v: %v", emailHost(), err)
 				failureEmail = true
 			} else {
 				err = smtp.SendMail(
@@ -223,23 +223,12 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 				)
 				if err != nil {
 					// fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
-					log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
+					log.Printf("failure sending email: %v", err)
 					failureEmail = true
 				}
 			}
 
-			err = smtp.SendMail(
-				emailHost(),
-				nil,                               // smtp.Auth interface
-				"Registration-FMT@survey2.zew.de", // from
-				adminEmail(),                      // twice - once here - and then again inside the body
-				body.Bytes(),
-			)
-			if err != nil {
-				// fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
-				log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
-				failureEmail = true
-			}
+			//
 			fn := "registration-fmt-de.csv"
 			fd, size := mustDir(fn)
 			f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
@@ -260,8 +249,11 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 			}
 
 			if failureEmail && failureCSV {
+				// logging and messaging above
 				return
 			}
+
+			w.WriteHeader(http.StatusOK)
 			fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten wurden gespeichert</p>")
 
 		}

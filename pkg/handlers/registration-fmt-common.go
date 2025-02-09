@@ -72,8 +72,8 @@ func mustDir(fn string) (string, int64) {
 	return dir, fSize
 }
 
-// RegistrationsFMTDownload returns the CSV files
-func RegistrationsFMTDownload(w http.ResponseWriter, r *http.Request) {
+// RegistrationsFMTDownload1 returns the CSV files
+func RegistrationsFMTDownload1(w http.ResponseWriter, r *http.Request) {
 
 	if cfg.Get().IsProduction {
 		l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
@@ -118,13 +118,76 @@ func RegistrationsFMTDownload(w http.ResponseWriter, r *http.Request) {
 
 }
 
-
-func isPortOpen(hostPort string, timeout time.Duration) error {
+// test a connection with *short* timeout
+// => preventing http response from being blocked
+func isPortOpen(hostPort string, shortTO time.Duration) error {
 	address := hostPort
-	conn, err := net.DialTimeout("tcp", address, timeout)
+	conn, err := net.DialTimeout("tcp", address, shortTO)
 	if err != nil {
 		return err
 	}
 	defer conn.Close()
 	return nil
+}
+
+func isPrivateIP(ip net.IP) bool {
+	privateRanges := []net.IPNet{
+		{IP: net.IPv4(10, 0, 0, 0), Mask: net.CIDRMask(8, 32)},
+		{IP: net.IPv4(172, 16, 0, 0), Mask: net.CIDRMask(12, 32)},
+		{IP: net.IPv4(192, 168, 0, 0), Mask: net.CIDRMask(16, 32)},
+		// zew specific
+		{IP: net.IPv4(193, 196, 0, 0), Mask: net.CIDRMask(16, 32)},
+	}
+
+	for _, r := range privateRanges {
+		if r.Contains(ip) {
+			return true
+		}
+	}
+	return false
+}
+
+func RegistrationsFMTDownload2(w http.ResponseWriter, r *http.Request) {
+
+	remoteIP, _, err := net.SplitHostPort(r.RemoteAddr)
+	if err != nil {
+		http.Error(w, "Invalid request", http.StatusBadRequest)
+		return
+	}
+
+	ip := net.ParseIP(remoteIP)
+	if ip == nil || !isPrivateIP(ip) {
+		http.Error(w, "Access denied", http.StatusForbidden)
+		log.Printf("IP %v blocked from accessing registration CSV", remoteIP)
+		return
+	}
+
+	fn := "registration-fmt-de.csv"
+	fd, _ := mustDir(fn)
+	pth := filepath.Join(fd, fn)
+
+	// open f
+	f, err := os.Open(pth)
+	if err != nil {
+		http.Error(w, "File not found", http.StatusNotFound)
+		return
+	}
+	defer f.Close()
+
+	// file info to set headers
+	stat, err := f.Stat()
+	if err != nil {
+		http.Error(w, "Could not get file info", http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/octet-stream") // or use "text/plain"
+	w.Header().Set("Content-Length", fmt.Sprintf("%d", stat.Size()))
+	w.Header().Set("Content-Disposition", "attachment; filename="+stat.Name())
+
+	if _, err := io.Copy(w, f); err != nil {
+		http.Error(w, "Failed to send file", http.StatusInternalServerError)
+	}
+
+	// fmt.Fprintf(w, "Welcome Internal User! Your IP: %s\n", remoteIP)
+
 }

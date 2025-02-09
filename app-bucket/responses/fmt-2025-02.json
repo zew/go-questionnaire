@@ -11,7 +11,7 @@
  		},
  		"year": 2025,
  		"month": 2,
- 		"deadline": "2025-02-16T17:15:00+01:00",
+ 		"deadline": "2025-02-17T17:15:00+01:00",
  		"params": [
  			{
  				"name": "destatis",
@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "25299a814109d95a066cf3c85266f700ac38a0bcb1e2ee22a43524d85de74cfe",
+ 	"md_5": "5f57349f72c510fecb8c86da17cd93f77ed90292ee8a2e8647d6fb1cebb47190",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4555,8 +4555,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003ci\u003eHinweis\u003c/i\u003e: \n\t\t\t\t\tBeginnend mit der Januar-Umfragewelle wurde der Turnus der Sonderfragen angepasst. Im ersten Monat jedes Quartals werden nun Fragen zur In\u0026shy;fla\u0026shy;ti\u0026shy;on im Euro\u0026shy;raum gestellt und im zweiten Monat jedes Quartals Fragen zum Wirt\u0026shy;schaftswachstum in Deutsch\u0026shy;land. \n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003ci\u003eNote\u003c/i\u003e: \n\t\t\t\t\tStarting with the January survey wave, the schedule for the special questions has been adjusted. In the first month of each quarter, questions are asked about in\u0026shy;fla\u0026shy;ti\u0026shy;on in the euro area and in the second month of each quarter questions about eco\u0026shy;nom\u0026shy;ic growth in Ger\u0026shy;ma\u0026shy;ny.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003ci\u003eHinweis\u003c/i\u003e:\n\t\t\t\t\tBeginnend mit der Januar-Umfragewelle wurde der Turnus der Sonderfragen angepasst. Im ersten Monat jedes Quartals werden nun Fragen zur In\u0026shy;fla\u0026shy;ti\u0026shy;on im Euro\u0026shy;raum gestellt und im zweiten Monat jedes Quartals Fragen zum Wirt\u0026shy;schaftswachstum in Deutsch\u0026shy;land.\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003ci\u003eNote\u003c/i\u003e:\n\t\t\t\t\tStarting with the January survey wave, the schedule for the special questions has been adjusted. In the first month of each quarter, questions are asked about in\u0026shy;fla\u0026shy;ti\u0026shy;on in the euro area and in the second month of each quarter questions about eco\u0026shy;nom\u0026shy;ic growth in Ger\u0026shy;ma\u0026shy;ny.\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4584,8 +4584,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunkt\u0026shy;pro\u0026shy;gno\u0026shy;se der Wachstums\u0026shy;rate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstums\u0026shy;rate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPoint forecast of the growth rate of the \u003cb\u003eGerman GDP\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, \n\t\t\t\tplease indicate non-annualized quarterly \n\t\t\t\treal \u0026 seasonally adjusted GDP growth. \n\t\t\t\tFor the yearly values, \n\t\t\t\tplease indicate the annual real GDP growth rate.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tPunkt\u0026shy;pro\u0026shy;gno\u0026shy;se der Wachstums\u0026shy;rate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum\n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben.\n\t\t\t\tBei den Jahreswerten die Jahreswachstums\u0026shy;rate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tPoint forecast of the growth rate of the \u003cb\u003eGerman GDP\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values,\n\t\t\t\tplease indicate non-annualized quarterly\n\t\t\t\treal \u0026 seasonally adjusted GDP growth.\n\t\t\t\tFor the yearly values,\n\t\t\t\tplease indicate the annual real GDP growth rate.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -5090,8 +5090,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie \n\t\t\t\t\tzu einer Revision \n\t\t\t\t\t(ggü. \u003ci\u003eOktober 2024\u003c/i\u003e)\n\t\t\t\t\tIhrer Konjunkturpro\u0026shy;gno\u0026shy;sen \n\t\t\t\t\tfür die deutsche Wirt\u0026shy;schaft bewogen \t\t\t\t\t\n\t\t\t\t\tund wenn ja in welche Richtung? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Erhöhung (+), Senkung (-))\t\n\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tWhich de\u0026shy;vel\u0026shy;op\u0026shy;ments have led you to change \n\t\t\t\t\t(relative to \u003ci\u003eOctober 2024\u003c/i\u003e)\n\t\t\t\t\tyour assessment \n\t\t\t\t\tof the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tIf they made you change your assessment, \n\t\t\t\t\tdid they make you revise your assessment up (+) or down (-)?\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie\n\t\t\t\t\tzu einer Revision\n\t\t\t\t\t(ggü. \u003ci\u003eOktober 2024\u003c/i\u003e)\n\t\t\t\t\tIhrer Konjunkturpro\u0026shy;gno\u0026shy;sen\n\t\t\t\t\tfür die deutsche Wirt\u0026shy;schaft bewogen\n\t\t\t\t\tund wenn ja in welche Richtung?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Erhöhung (+), Senkung (-))\n\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\tWhich de\u0026shy;vel\u0026shy;op\u0026shy;ments have led you to change\n\t\t\t\t\t(relative to \u003ci\u003eOctober 2024\u003c/i\u003e)\n\t\t\t\t\tyour assessment\n\t\t\t\t\tof the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tIf they made you change your assessment,\n\t\t\t\t\tdid they make you revise your assessment up (+) or down (-)?\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1

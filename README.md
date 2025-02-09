@@ -37,7 +37,7 @@ Productive use at our research institute.
 
 ## Requirements
 
-Go Version 1.__16__
+Go Version 1.__22__
 
 ### Non-technical properties
 

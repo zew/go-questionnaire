@@ -1,3 +1,7 @@
+// Package generators contains packages creating particular questionnaires.
+// 2025-02: since go workspaces - the package "generators" and "fmt" were not recognized.
+// "fmt" was renamed to "fmtest".
+// I am hesitating to rename "generators"
 package generators
 
 import (
@@ -25,7 +29,6 @@ import (
 	"github.com/zew/go-questionnaire/pkg/generators/pat1"
 	"github.com/zew/go-questionnaire/pkg/generators/pat2"
 	"github.com/zew/go-questionnaire/pkg/generators/pat3"
-	"github.com/zew/go-questionnaire/pkg/generators/pds"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/tpl"
 )
@@ -34,7 +37,6 @@ type genT func(s qst.SurveyT) (*qst.QuestionnaireT, error)
 
 var gens = map[string]genT{
 
-	"pds": pds.Create,
 	"fmt": fmtest.Create, // package renamed due to conflict with standard package fmt under modules
 
 	"example": example.Create,
@@ -49,8 +51,7 @@ var gens = map[string]genT{
 	"pat3": pat3.Create,
 
 	// disabled to reduce compile times
-	/*
-	 */
+	// "pds":     pds.Create,
 
 	// disabled, because not migrated to Version 2.0
 	// "peu2018": peu2018.Create,
@@ -107,7 +108,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		wavePeriod := time.Date(s.Year, s.Month, 1, 0, 0, 0, 0, cfg.Get().Loc)
 		if t.Sub(wavePeriod) > (30*24)*time.Hour ||
 			t.Sub(wavePeriod) < -(10*24)*time.Hour {
-			errStr += fmt.Sprint("Should the deadline not be close to the Year-Month?<br>\n")
+			errStr += "Should the deadline not be close to the Year-Month?<br>\n"
 		}
 		s.Deadline = t
 

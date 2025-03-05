@@ -32,6 +32,13 @@
  		"it",
  		"pl"
  	],
+ 	"smtp_host": {
+ 		"host_name_port": "hermes.zew-private.de:25"
+ 	},
+ 	"admin_emails": [
+ 		"finanzmarkttest@zew.de",
+ 		"peter.buchmann@zew.de"
+ 	],
  	"cpu_profile": "",
  	"translations_generic": {
  		"app_dept": {

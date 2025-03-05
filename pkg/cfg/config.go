@@ -34,6 +34,12 @@ type directLoginRangeT struct {
 	Profile  map[string]string `json:"profile,omitempty"`
 }
 
+type SMTPHostT struct {
+	HostNamePort string `json:"host_name_port,omitempty"`
+	Username     string `json:"username,omitempty"` // smtp password, see getenv in go massmail
+	Delay        int    `json:"delay,omitempty"`    // between messages, milliseconds
+}
+
 // ConfigT holds the application config
 type ConfigT struct {
 	// sync.Mutex not needed since we swap the pointer
@@ -72,6 +78,9 @@ type ConfigT struct {
 
 	AppInstanceID int64    `json:"app_instance_id,omitempty"` // append to URLs of cached static jpg, js and css files - change to trigger reload
 	LangCodes     []string `json:"lang_codes"`                // available language codes for the application, first element is default
+
+	SMTPHost    SMTPHostT `json:"smtp_host"`
+	AdminEmails []string  `json:"admin_emails"`
 
 	CPUProfile string `json:"cpu_profile"` // CPUProfile - output filename
 
@@ -331,6 +340,20 @@ func Example() *ConfigT {
 		// each cfg load or reload updates this value
 		// AppInstanceID:          time.Now().Unix(),
 		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
+
+		SMTPHost: SMTPHostT{
+			HostNamePort: "hermes.zew-private.de:25",
+			// for production - DMZ
+			// HostNamePort: "hermes.zew.de:25",
+			// HostNamePort: "10.8.1.65:25",
+		},
+		AdminEmails: []string{
+			"finanzmarkttest@zew.de",
+			"peter.buchmann@zew.de",
+		},
+
+		CPUProfile: "", // the filename, i.e. cpu.pprof
+
 		CSSVars: cssVars{
 			// {Key: "logo-text", Val: "ZEW"}, // use localized trl.Map app_label, app_org
 			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
@@ -406,7 +429,6 @@ func Example() *ConfigT {
 				{IsURL: true, Key: "img-bg", Val: "none"},
 			},
 		},
-		CPUProfile: "", // the filename, i.e. cpu.pprof
 
 		Profiles: map[string]map[string]string{
 			"fmt1": {

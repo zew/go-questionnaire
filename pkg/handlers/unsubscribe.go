@@ -22,19 +22,11 @@ var mtxUnsubscribe = sync.Mutex{}
 const fileCSV = "unsubscribe.csv"
 
 func emailHost() string {
-	emailHorst := "hermes.zew-private.de:25" // developer machine - must be inside ZEW or ZEW VPN
-	if cfg.Get().IsProduction {
-		emailHorst = "hermes.zew.de:25" // from DMZ - does not work
-	}
-	return emailHorst
+	return cfg.Get().SMTPHost.HostNamePort
 }
 
 func adminEmail() []string {
-	to := []string{"peter.buchmann@zew.de"}
-	if cfg.Get().IsProduction {
-		to = []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
-	}
-	return to
+	return cfg.Get().AdminEmails
 }
 
 type unsubscribeT struct {

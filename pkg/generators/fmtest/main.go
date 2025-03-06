@@ -506,7 +506,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>5.</b> &nbsp; Die <i>langfristigen</i> Zinsen (Renditen zehnjähriger Staatsanleihen) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>5.</b> &nbsp; In the medium-term, <i>long-term</i> interest rates (yields on 10-year sovereign bonds) will",
+				"en": "<b>5.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), <i>long-term</i> interest rates (yields on 10-year sovereign bonds) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 4

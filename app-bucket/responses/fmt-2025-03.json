@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8425ce9317d2f0a87038580b0f0f3857d09d55f1db98df5c142a9bdf500bfbec",
+ 	"md_5": "764fc34d92fab09082341ab60007bf0709486dda6fe9f2aaf877a4ceb5e5e592",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2167,7 +2167,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (Renditen zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -5068,8 +5068,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren\n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen\n\t\t\t\t\t\t\tzum Rendite-Ri\u0026shy;si\u0026shy;ko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\tgegenüber September 2024 bewogen?\n\n\t\t\t\t\t\t\t\u003cp style='margin-top: 0.46rem'\u003e\n\t\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment\n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes\n\t\t\t\t\t\t\t(compared to September 2024)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\n\t\t\t\t\t\t\t\u003cp style='margin-top: 0.46rem'\u003e\n\t\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren\n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen\n\t\t\t\t\t\t\tzum Rendite-Ri\u0026shy;si\u0026shy;ko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\tgegenüber Dezember 2024 bewogen?\n\n\t\t\t\t\t\t\t\u003cp style='margin-top: 0.46rem'\u003e\n\t\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment\n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes\n\t\t\t\t\t\t\t(compared to December 2024)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\n\t\t\t\t\t\t\t\u003cp style='margin-top: 0.46rem'\u003e\n\t\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}

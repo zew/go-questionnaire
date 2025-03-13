@@ -1,7 +1,6 @@
 module github.com/zew/go-questionnaire
 
 go 1.23
-
 require (
 	cloud.google.com/go/storage v1.44.0
 	github.com/alexedwards/scs/redisstore v0.0.0-20240316134038-7e11d57e8885
@@ -17,7 +16,7 @@ require (
 	github.com/speps/go-hashids v2.0.0+incompatible
 	github.com/zew/util v1.0.5
 	gocloud.dev v0.39.0
-	golang.org/x/crypto v0.31.0
+	golang.org/x/crypto v0.35.0
 	google.golang.org/api v0.199.0
 )
 
@@ -58,11 +57,11 @@ require (
 	go.opentelemetry.io/otel/sdk v1.30.0 // indirect
 	go.opentelemetry.io/otel/sdk/metric v1.30.0 // indirect
 	go.opentelemetry.io/otel/trace v1.30.0 // indirect
-	golang.org/x/net v0.30.0 // indirect
+	golang.org/x/net v0.36.0 // indirect
 	golang.org/x/oauth2 v0.23.0 // indirect
-	golang.org/x/sync v0.10.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/sync v0.11.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/time v0.7.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	google.golang.org/genproto v0.0.0-20241007155032-5fefd90f89a9 // indirect

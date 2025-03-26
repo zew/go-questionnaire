@@ -52,9 +52,8 @@ sudo chown -R gquser:gquser /opt/go-questionnaire/*
 sudo chmod -R 644   /opt/go-questionnaire/*
 sudo chmod -R 755   /opt/go-questionnaire/go-questionnaire # make it executable
 sudo chmod -R 755   /opt/go-questionnaire/static
-sudo chmod -R 755   /opt/go-questionnaire/templates
 sudo chmod -R 755   /opt/go-questionnaire/certs
-sudo chmod -R 755   /opt/go-questionnaire/responses
+sudo chmod -R 755   /opt/go-questionnaire/app-bucket
 ```
 
 ### Enable ports 80 and 443 for non-root
@@ -153,6 +152,14 @@ sudo systemctl start    go-questionnaire.service
 sudo systemctl status   go-questionnaire.service
 
 sudo systemctl enable   go-questionnaire.service
+
+# to get a http only test site runnig,
+# temporarily install apache2
+sudo systemctl disable  go-questionnaire.service
+sudo apt-get install apache2
+sudo systemctl enable  apache2.service
+sudo systemctl status  apache2.service
+
 
 # put together
 sudo systemctl daemon-reload && sudo systemctl restart  go-questionnaire.service

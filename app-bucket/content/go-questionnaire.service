@@ -22,6 +22,7 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 #
 # stackoverflow.com/questions/37585758/
 SyslogIdentifier=go-questionnaire
+# 2025 linux distribs: StandardOutput and -Error seem obsolete
 StandardOutput=syslog
 StandardError=syslog
 # file:/var/log/go-questionnaire.log does not work yet...

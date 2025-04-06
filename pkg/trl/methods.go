@@ -116,6 +116,14 @@ func (s S) Bold() S {
 	return ret
 }
 
+func (s S) Italic() S {
+	ret := S{}
+	for key, val := range s {
+		ret[key] = fmt.Sprintf("<i>%v</i>", val)
+	}
+	return ret
+}
+
 // stackoverflow.com/questions/37027727/
 // Compare codebase openingDiv, openingP.
 // A variation would be .*? as in `<span.*?>` with the ? as non-greedy/lazy quantifier from stackoverflow.com/questions/5583579/.

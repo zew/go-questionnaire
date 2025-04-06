@@ -13,10 +13,11 @@ import (
 )
 
 /*
-Special question for Month 2 of quarter.
- 2024-08 - merged in changes from 2024-05
-   => *Can* contain some randomization of inflation brackets.
-   => Question 2. may have three or *four* rows
+Special question for Month 1 of quarter.
+
+	2024-08 - merged in changes from 2024-05
+	  => *Can* contain some randomization of inflation brackets.
+	  => Question 2. may have three or *four* rows
 */
 func eachMonth1inQ(q *qst.QuestionnaireT) error {
 
@@ -65,7 +66,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 
 	lblStyleRight := css.NewStylesResponsive(nil)
 	lblStyleRight.Desktop.StyleText.AlignHorizontal = "right"
-	lblStyleRight.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
+	lblStyleRight.Desktop.StyleBox.Padding = "0 0.8rem 0 0"
 	lblStyleRight.Mobile.StyleBox.Padding = " 0 0.2rem 0 0"
 
 	/*
@@ -173,8 +174,6 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.Style = css.NewStylesResponsive(gr.Style)
-		// gr.Style.Desktop.StyleBox.Width = "70%"
-		// gr.Style.Mobile.StyleBox.Width = "100%"
 
 		{
 			inp := gr.AddInput()
@@ -192,13 +191,12 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		}
 	}
 
-
-
 	{
 		gr := page.AddGroup()
-		gr.Cols = 3 * float32(len(yearsEffective))
+		firstCol := float32(3)
+		gr.Cols = firstCol + 3*float32(len(yearsEffective))
 		gr.Style = css.NewStylesResponsive(gr.Style)
-		gr.Style.Desktop.StyleBox.Width = "70%"
+		gr.Style.Desktop.StyleBox.Width = "80%"
 		gr.Style.Mobile.StyleBox.Width = "100%"
 
 		{
@@ -207,13 +205,15 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
+					Punktprognose der <b>jährlichen Inflationsrate</b> <br> 
+					in <i>Deutschland, dem Euroraum und den USA</i>
 					<br>
 					(durchschnittliche jährliche Veränderung des HVPI in Prozent)
 					<!-- Anstieg des HICP von Jan bis Dez; Erwartungswert -->
 				`,
 				"en": `
-					Point forecast of the <b>annual inflation rate in the euro area</b>
+					Point forecast of the <b>annual inflation rate</b>  <br> 
+					in <i>Germany, the euro area and USA</i>
 					<br>
 					(annual average change of the HICP, in percent)
 					<!-- Avg. percentage change in HICP from Jan to Dec; -->
@@ -221,30 +221,65 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			}.Outline("1a.")
 		}
 
-		for idx := range yearsEffective {
+		// before 2025-04: one stage  -                          by year
+		// since  2025-04: two stages - first by regions, second by year
+		pointForecastRegion := []string{
+			"ger",
+			"eu",
+			"us",
+		}
+		pointForecastLabels := []trl.S{
+			{
+				"de": "Deutschland",
+				"en": "Germany",
+			},
+			{
+				"de": "Euroraum",
+				"en": "Euro area",
+			},
+			{
+				"de": "USA",
+				"en": "USA",
+			},
+		}
 
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = fmt.Sprintf("ppjinf_jp%v", idx) //"p1_y1"
-			inp.Min = -10
-			inp.Max = +20
-			inp.Validator = "inRange20"
-			inp.MaxChars = 5
-			inp.Step = 0.01
-			inp.Label = trl.S{
-				"de": q.Survey.YearStr(idx),
-				"en": q.Survey.YearStr(idx),
+		for idx1, region := range pointForecastRegion {
+
+			rowLbl := pointForecastLabels[idx1]
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = rowLbl
+				inp.ColSpan = firstCol
 			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
+
+			for idx2 := range yearsEffective {
+
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("ppjinf_%v_jp%v", idx2, region) //"p1_y1"
+				inp.Min = -10
+				inp.Max = +20
+				inp.Validator = "inRange20"
+				inp.MaxChars = 5
+				inp.Step = 0.01
+				inp.Label = trl.S{
+					"de": q.Survey.YearStr(idx2),
+					"en": q.Survey.YearStr(idx2),
+				}
+				inp.Suffix = trl.S{
+					"de": "%",
+					"en": "pct",
+				}
+
+				inp.ColSpan = 3
+
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 2
+
+				inp.StyleLbl = lblStyleRight
 			}
 
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 2
-			inp.ColSpanControl = 2
-
-			inp.StyleLbl = lblStyleRight
 		}
 
 	}
@@ -472,13 +507,30 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
 
 	{
-		rowLabelsEconomicAreasShort := []trl.S{
+		// prefix ioi_ => impact on inflation
+		//   but we stick to rev_ => revision
+		rowInpNames := []string{
+			"rev_bus_cycle",
+			"rev_wages",
+			"rev_energy_prices",
+			"rev_commodity_prices",
+			"rev_exch_rates",
+			"rev_mp_ecb",
+			"rev_trade_conflicts",
+			"rev_supply_shortages",
+			// "rev_corona",
+			"rev_green_trafo",
+			"rev_war_ukraine",
+			"rev_war_israel",
+		}
+
+		colLabels := []trl.S{
 			{
-				"de": "Konjunkturentwicklung im Eurogebiet",
+				"de": "Konjunkturentwicklung im Euroraum",
 				"en": "Development of GDP in the euro area",
 			},
 			{
-				"de": "Entwicklung der Löhne im Eurogebiet",
+				"de": "Entwicklung der Löhne im Euroraum",
 				"en": "Development of wages in the euro area",
 			},
 			{
@@ -527,27 +579,33 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			},
 		}
 
+		//
+		if q.Survey.Year == 2025 && q.Survey.Month == 4 {
+			moreInps := []string{
+				"rev_tariffs",
+				"rev_fiscal_spending",
+			}
+			rowInpNames = append(rowInpNames, moreInps...)
+			moreL := []trl.S{
+				{
+					"de": "Handelsprotektionismus und Zölle seitens USA",
+					"en": "US trade protectionism/ tariffs",
+				},
+				{
+					"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+					"en": "Recent announcements on military and fiscal spending",
+				},
+			}
+
+			colLabels = append(colLabels, moreL...)
+		}
+
 		gb := qst.NewGridBuilderRadios(
 			colTemplate,
 			labelsPlusPlusMinusMinus(),
-			// prefix ioi_ => impact on inflation
-			//   but we stick to rev_ => revision
-			[]string{
-				"rev_bus_cycle",
-				"rev_wages",
-				"rev_energy_prices",
-				"rev_commodity_prices",
-				"rev_exch_rates",
-				"rev_mp_ecb",
-				"rev_trade_conflicts",
-				"rev_supply_shortages",
-				// "rev_corona",
-				"rev_green_trafo",
-				"rev_war_ukraine",
-				"rev_war_israel",
-			},
+			rowInpNames,
 			radioVals6,
-			rowLabelsEconomicAreasShort,
+			colLabels,
 		)
 
 		/*

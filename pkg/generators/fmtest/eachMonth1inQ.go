@@ -314,7 +314,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"de": `Wir möchten gerne von Ihnen erfahren,
 						für wie wahrscheinlich Sie bestimmte Ausprägungen
 						der durchschnittlichen jährlichen Inflationsrate
-						in den folgenden Jahren halten.
+						im Euroraum  in den folgenden Jahren halten.
 
 						<br>
 						<i>

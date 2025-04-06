@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d37a4365acc541a001fee892638a0f82b912c3368cb76e14e8282df5c75d2d03",
+ 	"md_5": "c0d9c32010d1e59655991c247f0d9d4abab3fd8629ac944653e8f2be308a6d7b",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4975,7 +4975,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; Wir möchten gerne von Ihnen erfahren,\n\t\t\t\t\t\tfür wie wahrscheinlich Sie bestimmte Ausprägungen\n\t\t\t\t\t\tder durchschnittlichen jährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate\n\t\t\t\t\t\tin den folgenden Jahren halten.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tBitte stellen Sie si\u0026shy;cher,\n\t\t\t\t\t\tdass die Summen der Wahrscheinlichkeiten\n\t\t\t\t\t\tin den Zeilen jeweils 100% ergeben.\n\t\t\t\t\t\t\u003c/i\u003e\n\n\n\t\t\t\t\t\t",
+ 								"de": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; Wir möchten gerne von Ihnen erfahren,\n\t\t\t\t\t\tfür wie wahrscheinlich Sie bestimmte Ausprägungen\n\t\t\t\t\t\tder durchschnittlichen jährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate\n\t\t\t\t\t\tim Euro\u0026shy;raum  in den folgenden Jahren halten.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tBitte stellen Sie si\u0026shy;cher,\n\t\t\t\t\t\tdass die Summen der Wahrscheinlichkeiten\n\t\t\t\t\t\tin den Zeilen jeweils 100% ergeben.\n\t\t\t\t\t\t\u003c/i\u003e\n\n\n\t\t\t\t\t\t",
  								"en": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tHow likely are specific future realizations of in\u0026shy;fla\u0026shy;ti\u0026shy;on?\n\n\t\t\t\t\t\tPlease give us your assessments for the annual av\u0026shy;er\u0026shy;age in\u0026shy;fla\u0026shy;ti\u0026shy;on rate\n\t\t\t\t\t\tin the euro area.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tPlease ensure that the probabilities\n\t\t\t\t\t\tin every line add up to 100%.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\t"
  							},
  							"col_span": 9,
@@ -7813,7 +7813,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tVerglichen mit Ihren letzten prognostizierten Wachstums\u0026shy;raten des realen BIP (vor der Ankündigung der neuen US-Zölle am 2. April), \n\t\t\t\t\tsind diese Punkt\u0026shy;pro\u0026shy;gno\u0026shy;sen gleich geblieben, hö\u0026shy;her oder nied\u0026shy;riger ausgefallen? \n\t\t\t\t\tBitte geben Sie an, ob \n\t\t\t\t\t\u003ci\u003eIhre Revision\u003c/i\u003e \n\t\t\t\t\tpo\u0026shy;si\u0026shy;tiv oder ne\u0026shy;ga\u0026shy;tiv ist und wie groß diese ist (in Pro\u0026shy;zent\u0026shy;punkten).\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tVerglichen mit Ihren letzten prognostizierten Wachstums\u0026shy;raten des realen BIP (vor der Ankündigung der neuen US-Zölle am 2. April), \n\t\t\t\t\tsind diese Punkt\u0026shy;pro\u0026shy;gno\u0026shy;sen gleich ge\u0026shy;blie\u0026shy;ben, hö\u0026shy;her oder nied\u0026shy;riger ausgefallen? \n\t\t\t\t\tBitte geben Sie an, ob \n\t\t\t\t\t\u003ci\u003eIhre Revision\u003c/i\u003e \n\t\t\t\t\tpo\u0026shy;si\u0026shy;tiv oder ne\u0026shy;ga\u0026shy;tiv ist und wie groß diese ist (in Pro\u0026shy;zent\u0026shy;punkten).\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tCompared with your most recent forecasted real GDP growth rates (before the new US tariffs were announced on April 2), \n\t\t\t\t\tare these point forecasts the same, higher or lower? Please indicate whether \n\t\t\t\t\t\u003ci\u003eyour revision\u003c/i\u003e \n\t\t\t\t\tis pos\u0026shy;itive or neg\u0026shy;ative, and how large it is in per\u0026shy;centage points.\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 11,
@@ -7831,8 +7831,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003ci\u003e+\u003c/i\u003e",
- 								"en": "\u003ci\u003e+\u003c/i\u003e"
+ 								"de": "\u003ci\u003e\u003cspan style='font-size:120%'\u003e+\u003c/span\u003e\u003c/i\u003e",
+ 								"en": "\u003ci\u003e\u003cspan style='font-size:120%'\u003e+\u003c/span\u003e\u003c/i\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7862,8 +7862,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003ci\u003e-\u003c/i\u003e",
- 								"en": "\u003ci\u003e-\u003c/i\u003e"
+ 								"de": "\u003ci\u003e\u003cspan style='font-size:135%'\u003e-\u003c/span\u003e\u003c/i\u003e",
+ 								"en": "\u003ci\u003e\u003cspan style='font-size:135%'\u003e-\u003c/span\u003e\u003c/i\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7986,7 +7986,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003ci\u003egleich\u003cbr\u003e geblieben\u003c/i\u003e",
+ 								"de": "\u003ci\u003egleich\u003cbr\u003e ge\u0026shy;blie\u0026shy;ben\u003c/i\u003e",
  								"en": "\u003ci\u003estayed\u003cbr\u003ethe same \u003c/i\u003e"
  							},
  							"col_span": 2,

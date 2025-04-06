@@ -92,6 +92,7 @@ var hyph = []string{
 	"Finanz|wirt|schaft",
 	"For|schung",
 	"ge|samt",
+	"ge|blie|ben",
 	"ge|ra|ten", // www.duden.de/rechtschreibung/geraten_gelingen_hingelangen
 	"ge|eig|net",
 	"Geld|po|li|tik",

@@ -160,12 +160,12 @@ func special202504(q *qst.QuestionnaireT) error {
 		}
 		lblHeaders := []trl.S{
 			{
-				"de": "+",
-				"en": "+",
+				"de": "<span style='font-size:120%'>+</span>",
+				"en": "<span style='font-size:120%'>+</span>",
 			},
 			{
-				"de": "-",
-				"en": "-",
+				"de": "<span style='font-size:135%'>-</span>",
+				"en": "<span style='font-size:135%'>-</span>",
 			},
 			{
 				"de": "0-0.5<br>PP",

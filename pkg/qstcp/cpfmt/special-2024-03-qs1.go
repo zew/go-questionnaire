@@ -241,7 +241,7 @@ func Special202403QS1(q qstif.Q, seq0to5, paramSetIdx int, modePreflight bool) (
 		tblStart = strings.ReplaceAll(tblStart, "no answer", "keine Ang.")
 	}
 
-	fmt.Fprintf(
+	fmt.Fprint(
 		sb,
 		tblStart,
 	)

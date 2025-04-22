@@ -343,7 +343,7 @@ func PoliticalFoundationsStatic(q qstif.Q, seq0to5, paramSetIdx int, preflight b
 	rets := strings.Split(ret, sep)
 	if len(rets) != 2 {
 		msg := fmt.Sprintf("Splitting by <pre>%v </pre> failed: Changes in politicalFoundations()?", sep)
-		return msg, nil, fmt.Errorf(msg)
+		return msg, nil, fmt.Errorf("%s", msg)
 	}
 
 	rets[1] = sep + rets[1]
@@ -398,7 +398,7 @@ func PoliticalFoundationsComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int,
 	rets := strings.Split(ret, sep)
 	if len(rets) != 2 {
 		msg := fmt.Sprintf("Splitting by <pre>%v </pre> failed: Changes in politicalFoundations()?", sep)
-		return msg, nil, fmt.Errorf(msg)
+		return msg, nil, fmt.Errorf("%s", msg)
 	}
 
 	rets[1] = sep + rets[1]

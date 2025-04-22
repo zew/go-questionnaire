@@ -50,16 +50,19 @@ func init() {
 		if err != nil {
 			// ParseFloat yields ugly error messages
 			// strconv.ParseFloat: parsing "3 3" invalid syntax
-			return fmt.Errorf(cfg.Get().Mp["not_a_number"].Tr(q.LangCode), arg)
+			s := fmt.Sprintf(cfg.Get().Mp["not_a_number"].Tr(q.LangCode), arg)
+			return fmt.Errorf("%s", s)
 		}
 		// Understandable in every language
 		if fl > limit {
 			log.Printf("%.2f > max %.0f", fl, limit)
-			return fmt.Errorf(cfg.Get().Mp["too_big"].Tr(q.LangCode), limit)
+			s := fmt.Sprintf(cfg.Get().Mp["too_big"].Tr(q.LangCode), limit)
+			return fmt.Errorf("%s", s)
 		}
 		if fl < -limit {
 			log.Printf("%.2f < min %.0f", fl, -limit)
-			return fmt.Errorf(cfg.Get().Mp["too_small"].Tr(q.LangCode), -limit)
+			s := fmt.Sprintf(cfg.Get().Mp["too_small"].Tr(q.LangCode), -limit)
+			return fmt.Errorf("%s", s)
 		}
 		return nil
 	}
@@ -75,10 +78,10 @@ func init() {
 	validators["must"] = func(q *QuestionnaireT, inp *inputT) error {
 		arg := strings.TrimSpace(inp.Response)
 		if arg == "" {
-			return fmt.Errorf(cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
+			return fmt.Errorf("%s", cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
 		}
 		if inp.Type == "checkbox" && arg == "0" {
-			return fmt.Errorf(cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
+			return fmt.Errorf("%s", cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
 		}
 		return nil
 	}
@@ -87,7 +90,7 @@ func init() {
 	validators["mustRadioGroup"] = func(q *QuestionnaireT, inp *inputT) error {
 		arg := strings.TrimSpace(inp.Response)
 		if arg == "0" || arg == "" {
-			return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(q.LangCode))
+			return fmt.Errorf("%s", cfg.Get().Mp["must_one_option"].Tr(q.LangCode))
 		}
 		return nil
 	}
@@ -492,8 +495,7 @@ func init() {
 			// return fmt.Errorf("later " + s)
 			return nil
 		}
-
-		return fmt.Errorf(s)
+		return fmt.Errorf("%s", s)
 	}
 
 	//

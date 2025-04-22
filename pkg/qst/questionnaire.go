@@ -1011,7 +1011,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	if q.CurrPage > len(q.Pages)-1 || q.CurrPage < 0 {
 		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", pageIdx, len(q.Pages)-1)
 		log.Print(s)
-		return s, fmt.Errorf(s)
+		return s, fmt.Errorf("%s", s)
 	}
 
 	page := q.Pages[pageIdx]
@@ -1046,7 +1046,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	if !found {
 		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
 		log.Print(s)
-		return s, fmt.Errorf(s)
+		return s, fmt.Errorf("%s", s)
 	}
 
 	// adding a group containing the previous/next buttons
@@ -2157,7 +2157,7 @@ func (q *QuestionnaireT) DynamicPages(onlyThisIndex int) error {
 					err,
 				)
 				log.Print(s)
-				return fmt.Errorf(s)
+				return fmt.Errorf("%s", s)
 			}
 			// log.Printf("dyn page#%02v - generator %q created %v groups", i1, q.Pages[i1].GeneratorFuncName, len(q.Pages[i1].Groups))
 		}

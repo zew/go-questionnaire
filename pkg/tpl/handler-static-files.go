@@ -72,7 +72,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	f, err := os.Open(fpth)
 	if err != nil {
 		s := fmt.Sprintf("StaticDownloadH: Could not open %v: %v", fpth, err)
-		log.Printf(s)
+		log.Print(s)
 		fmt.Fprint(w, s)
 		w.WriteHeader(http.StatusNotFound) // otherwise - browser CSS files are retried eternally
 		return

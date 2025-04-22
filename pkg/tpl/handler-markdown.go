@@ -167,7 +167,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 		if err != nil {
 			s := fmt.Sprintf("DocHandler cannot open non-markdown %v or upwards: %v", path.Join(".", "content", siteName, langCode, pth), err)
-			log.Printf(s)
+			log.Print(s)
 			return
 		}
 		fmt.Fprint(w, string(bts))

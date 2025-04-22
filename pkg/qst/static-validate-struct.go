@@ -191,14 +191,14 @@ func (q *QuestionnaireT) Validate() error {
 	if q.Survey.Type == "" || !Mustaz09Underscore(q.Survey.Type) {
 		s := fmt.Sprintf("WaveID must contain a SurveyID string consisting of lower case letters: %v", q.Survey.Type)
 		log.Print(s)
-		return fmt.Errorf(s)
+		return fmt.Errorf("%s", s)
 	}
 
 	for _, lc := range q.LangCodes {
 		if _, ok := cfg.Get().Mp["lang_"+lc]; !ok {
 			s := fmt.Sprintf("LangCodes val %v is not a key in cfg.Get().Mp['lang_...']", lc)
 			log.Print(s)
-			return fmt.Errorf(s)
+			return fmt.Errorf("%s", s)
 		}
 	}
 
@@ -286,7 +286,7 @@ func (q *QuestionnaireT) Validate() error {
 					for _, valiKey := range valiKeys {
 						valiKey = strings.TrimSpace(valiKey)
 						if _, ok := validators[valiKey]; !ok {
-							return fmt.Errorf(s + fmt.Sprintf("%v - validator '%v' is not in %v ", s, valiKey, validators))
+							return fmt.Errorf("%s", s+fmt.Sprintf("%v - validator '%v' is not in %v ", s, valiKey, validators))
 						}
 					}
 				}
@@ -294,7 +294,7 @@ func (q *QuestionnaireT) Validate() error {
 				if inp.Type == "radio" {
 					if inp.ValueRadio == "" {
 						// missing ValueRadio should be caught by non-unique inputs
-						return fmt.Errorf(s + fmt.Sprintf("%v - must have a distinct ValueRadio", s))
+						return fmt.Errorf("%s", s+fmt.Sprintf("%v - must have a distinct ValueRadio", s))
 					}
 				}
 
@@ -381,17 +381,17 @@ func (q *QuestionnaireT) Validate() error {
 		if v > 1 {
 			s := fmt.Sprintf("page element '%v' is not unique  (%v)", k, v)
 			log.Print(s)
-			return fmt.Errorf(s)
+			return fmt.Errorf("%s", s)
 		}
 		if k != strings.ToLower(k) {
 			s := fmt.Sprintf("page element '%v' is not lower case  (%v)", k, v)
 			log.Print(s)
-			return fmt.Errorf(s)
+			return fmt.Errorf("%s", s)
 		}
 		if _, ok := namesRadio[k]; ok {
 			s := fmt.Sprintf("page element '%v' input as radio and non-radio (%v)", k, v)
 			log.Print(s)
-			return fmt.Errorf(s)
+			return fmt.Errorf("%s", s)
 		}
 	}
 	return nil

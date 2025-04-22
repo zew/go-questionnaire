@@ -153,9 +153,10 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 	if len(msgs) > 0 {
 		if err == nil {
-			err = fmt.Errorf(msgs[0])
+			err = fmt.Errorf("%s", msgs[0])
 		} else {
-			err = fmt.Errorf(msgs[0]+" w", err)
+			s := fmt.Sprintf(msgs[0]+" w", err)
+			err = fmt.Errorf("%s", s)
 		}
 	}
 	// log.Print(shorter) errorH does logging

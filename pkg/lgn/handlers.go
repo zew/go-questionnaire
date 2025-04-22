@@ -444,7 +444,7 @@ func loginPrimitive(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 	}
 	if isLoggedIn {
 		s := fmt.Sprintf("Logged in as %v\n", l.User)
-		log.Printf(s)
+		log.Print(s)
 		msg += s
 		// http.Redirect(w, r, cfg.Pref("/"), http.StatusFound)
 	}

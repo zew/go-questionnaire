@@ -61,7 +61,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		}
 	}
 
-
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
@@ -165,7 +164,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 					}
 				}
 
-
 				inp.Suffix = trl.S{
 					"de": "%",
 					"en": "pct",
@@ -186,7 +184,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			return err
 		}
 
-
 		var lblFootnote = trl.S{
 			"de": fmt.Sprintf("&nbsp;"),
 			"en": fmt.Sprintf("&nbsp;"),
@@ -198,7 +195,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
 			}
 		}
-
 
 		// row 2a quarter explanation / footnote
 		{
@@ -316,6 +312,15 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			"de": "Krieg in der Ukraine",
 			"en": "War in Ukraine",
 		},
+		// 2025-05
+		{
+			"de": "Handels&shy;protektionismus und Zölle seitens USA",
+			"en": "US trade protectionism/ tariffs",
+		},
+		{
+			"de": "Jüngste Ankündigungen zu Verteidigungs- und Staats&shy;ausgaben",
+			"en": "Recent announcements on military and fiscal spending",
+		},
 		// {
 		// 	"de": "Spannungen im Bankensystem",
 		// 	"en": "Tensions in the banking sector",
@@ -347,6 +352,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"rev_shortages_raw_mat",
 				"rev_inflation",
 				"rev_ukraine",
+				"rev_us_tariffs",
+				"rev_defence_spending",
 				// "rev_banking_strain",
 				// "rev_debt_brake",
 				// "rev_free",
@@ -361,7 +368,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		if q.Survey.Year == 2025 && q.Survey.Month == 2 {
 			monthsBack = 4
 		}
-
 
 		oneMonthPrev := time.Date(
 			q.Survey.Year, time.Month(q.Survey.Month), 2,

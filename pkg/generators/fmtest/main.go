@@ -966,12 +966,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.ColSpanControl = 1
-				inp.DynamicFunc = "ResponseStatistics"
-			}
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "dyn-textblock"
+			// 	inp.ColSpanControl = 1
+			// 	inp.DynamicFunc = "ResponseStatistics"
+			// }
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"

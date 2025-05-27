@@ -26,6 +26,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2024 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2024 && q.Survey.Month == 12
 	include = include || q.Survey.Year == 2025 && q.Survey.Month == 3
+	include = include || q.Survey.Year == 2025 && q.Survey.Month == 6
 
 	// adapte - depending on previous inclusion => six or three months
 	monthsBack := 6
@@ -136,13 +137,15 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		"chg_euro_re",
 	}
 	var namesQ3Influence = []string{
-		"economy",    // overall economic outlook
-		"ecb",        // monetary policy ecb
-		"fed",        // monetary policy fed
-		"inflation",  // outlook inflation
-		"politics",   // political framework
-		"valuation",  // market valuation
-		"warukraine", //
+		"economy",           // overall economic outlook
+		"ecb",               // monetary policy ecb
+		"fed",               // monetary policy fed
+		"inflation",         // outlook inflation
+		"politics",          // political framework
+		"valuation",         // market valuation
+		"warukraine",        //
+		"us_tariffs",        //
+		"military_spending", //
 		// "covid19",    //
 	}
 
@@ -197,6 +200,14 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			// "de": "Krieg Russ&shy;land - Ukraine",
 			"de": "Russ&shy;land-Ukraine-Krieg",
 			"en": "Russia's war with Ukraine",
+		},
+		{
+			"de": "Handels&shy;protektionismus und Zölle seitens der USA",
+			"en": "US trade protectionism/&shy;tariffs",
+		},
+		{
+			"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+			"en": "Recent announcements on military and fiscal spending",
 		},
 		// {
 		// 	// "de": "Covid-19 Pandemie",

@@ -580,11 +580,12 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		}
 
 		//
-		if q.Survey.Year == 2025 && q.Survey.Month == 4 {
+		if q.Survey.Year == 2025 && (q.Survey.Month == 4 || q.Survey.Month == 7) {
 			moreInps := []string{
 				"rev_tariffs",
 				"rev_fiscal_spending",
 			}
+
 			rowInpNames = append(rowInpNames, moreInps...)
 			moreL := []trl.S{
 				{
@@ -593,7 +594,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
-					"en": "Recent announcements on military and fiscal spending",
+					"en": "Announcements from the German government on military and fiscal spending",
 				},
 			}
 
@@ -719,6 +720,10 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 
 	if q.Survey.Year == 2023 && q.Survey.Month == 11 {
 		special202311(q, qst.WrapPageT(page))
+	}
+
+	if q.Survey.Year == 2025 && q.Survey.Month == 7 {
+		special202507a(q, qst.WrapPageT(page))
 	}
 
 	// gr3
@@ -882,6 +887,10 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 
 		}
 
+	}
+
+	if q.Survey.Year == 2025 && q.Survey.Month == 7 {
+		special202507b(q, qst.WrapPageT(page))
 	}
 
 	if q.Survey.Year == 2022 && q.Survey.Month == 11 {

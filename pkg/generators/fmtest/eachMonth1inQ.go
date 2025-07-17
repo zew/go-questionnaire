@@ -219,28 +219,44 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 					<!-- Avg. percentage change in HICP from Jan to Dec; -->
 				`,
 			}.Outline("1a.")
+			inp.Label = trl.S{
+				"de": `
+					Punktprognose der <b>jährlichen Inflationsrate</b> 
+					im <i>Euroraum</i>
+					<br>
+					(durchschnittliche jährliche Veränderung des HVPI in Prozent)
+					<!-- Anstieg des HICP von Jan bis Dez; Erwartungswert -->
+				`,
+				"en": `
+					Point forecast of the <b>annual inflation rate</b> 
+					in <i>the euro area</i>
+					<br>
+					(annual average change of the HICP, in percent)
+					<!-- Avg. percentage change in HICP from Jan to Dec; -->
+				`,
+			}.Outline("1a.")
 		}
 
 		// before 2025-04: one stage  -                          by year
 		// since  2025-04: two stages - first by regions, second by year
 		pointForecastRegion := []string{
-			"ger",
+			// "ger",
 			"eu",
-			"us",
+			// "us",
 		}
 		pointForecastLabels := []trl.S{
-			{
-				"de": "Deutschland",
-				"en": "Germany",
-			},
+			// {
+			// 	"de": "Deutschland",
+			// 	"en": "Germany",
+			// },
 			{
 				"de": "Euroraum",
 				"en": "Euro area",
 			},
-			{
-				"de": "USA",
-				"en": "USA",
-			},
+			// {
+			// 	"de": "USA",
+			// 	"en": "USA",
+			// },
 		}
 
 		for idx1, region := range pointForecastRegion {
@@ -593,7 +609,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 					"en": "US trade protectionism/ tariffs",
 				},
 				{
-					"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+					"de": "Ankündigungen der deutschen Bundesregierung zu Verteidigungs- und Staatsausgaben",
 					"en": "Announcements from the German government on military and fiscal spending",
 				},
 			}

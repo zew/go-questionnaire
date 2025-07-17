@@ -20,7 +20,7 @@ func special202507a(q *qst.QuestionnaireT, page *qst.WrappedPageT) error {
 	{
 		lblMain := trl.S{
 			"de": `
-					Was ist Ihre Prognose für den <i>durchschnittlichen Brent Rohölpreis (USD pro Barrel)</i> für die kommenden Quartale? Bitte geben Sie Punktschätzungen zusammen mit einem zentralen 90% Konfidenzintervall an.
+					Was ist Ihre Prognose für den <i>durchschnittlichen Brent Rohölpreis (USD pro Barrel)</i> für die folgenden Perioden? Bitte geben Sie Punktschätzungen zusammen mit einem zentralen 90% Konfidenzintervall an.
 				`,
 			"en": `
 					What is your forecast for the <i>average Brent crude oil price (USD per barrel)</i> for the following periods? Please provide point estimates along with a central 90% confidence interval.

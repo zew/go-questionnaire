@@ -498,6 +498,39 @@ func labelsPlusPlusMinusMinus() []trl.S {
 
 }
 
+func labels202508() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "Starker<br>Anstieg ",
+			"en": "Strong<br>increase",
+		},
+		{
+			"de": "Leichter<br>Anstieg",
+			"en": "Slight<br>increase",
+		},
+		{
+			"de": "Keine<br>Auswirkung",
+			"en": "No effect",
+		},
+		{
+			"de": "Leichter<br>Rückgang",
+			"en": "Slight<br>decrease",
+		},
+		{
+			"de": "Starker<br>Rückgang",
+			"en": "Strong<br>decrease",
+		},
+		{
+			"de": "Keine<br>Antwort",
+			"en": "No answer",
+		},
+	}
+
+	return tm
+
+}
+
 func positiveNegative5() []trl.S {
 
 	tm := []trl.S{

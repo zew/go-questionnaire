@@ -19,6 +19,8 @@ var hyph = []string{
 	"All|tags|si|tu|a|ti|on",
 	"All|tags|si|tu|a|ti|on|en",
 	"Aktien|markt",
+	"Aus|wir|kung",
+	"Rück|gang",
 	"Basis|punkt",
 	"Bildungs|abschluss",
 	"unter|bewertet", // 	"be|wer|tet",

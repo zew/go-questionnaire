@@ -111,8 +111,12 @@ function Validator(argForm) {
         }
     }
 
+
     // clearing and re-creating a custom message 
     // right-beside or -below DOM element el
+    //    2025-07:  eliminated parent.insertAdjacentHTML() 
+
+
     function showPopup(el, msg, overrideCheckValidity) {
 
         if (!el) {
@@ -133,20 +137,27 @@ function Validator(argForm) {
             clearPopup(el);
         }
 
+
         if (!el.checkValidity() || overrideCheckValidity === true) {
             var parent = el.parentNode;
             if (attachGrandparent) {
                 parent = el.parentNode.parentNode;
             }
+
+
             // el.validationMessage is mathematical has is always in browser local
-            parent.insertAdjacentHTML(
-                "beforeend",
-                `<div class='popup-invalid-anchor'  id='err-${el.getAttribute('name')}' >
-                    <div class='popup-invalid-content'>
-                    ${msg}
-                    </div>
-                </div>`
-            );
+            // Build the popup DOM safely
+            var outer = document.createElement("div");
+            outer.className = "popup-invalid-anchor";
+            outer.id = "err-" + el.getAttribute("name");
+
+            var inner = document.createElement("div");
+            inner.className = "popup-invalid-content";
+            inner.textContent = msg;  // ← safe: no HTML parsing
+
+            outer.appendChild(inner);
+            parent.appendChild(outer);
+
         }
 
     }

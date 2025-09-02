@@ -27,8 +27,9 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2024 && q.Survey.Month == 12
 	include = include || q.Survey.Year == 2025 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2025 && q.Survey.Month == 6
+	include = include || q.Survey.Year == 2025 && q.Survey.Month == 9
 
-	// adapte - depending on previous inclusion => six or three months
+	// adapt - depending on previous inclusion => six or three months
 	monthsBack := 6
 	monthsBack = 3
 

@@ -257,8 +257,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	// gr2
 	rowLabelsEconomicAreas := []trl.S{
 		{
-			// "de": "Konjunkturdaten Deutschland",
-			"de": "Konjunkturentwicklung Deutschland",
+			"de": "Konjunkturdaten Deutschland",
+			// "de": "Konjunkturentwicklung Deutschland",
 			"en": "Economic development<br>Germany",
 		},
 		{
@@ -319,7 +319,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			"en": "US trade protectionism/ tariffs",
 		},
 		{
-			"de": "Ankündigungen zu Verteidigungs- und Staats&shy;ausgaben",
+			// "de": "Ankündigungen zu Verteidigungs- und Staats&shy;ausgaben",
+			"de": "Ankündigungen der deutschen Bundesregierung zu Verteidigungs- und Staats&shy;ausgaben",
 			"en": "Announcements from the German government on military and fiscal spending",
 		},
 		// {

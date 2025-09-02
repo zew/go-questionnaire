@@ -10,8 +10,8 @@
  			"en": "Index / Indicator of Econ. Sentiment"
  		},
  		"year": 2025,
- 		"month": 8,
- 		"deadline": "2025-08-11T17:15:00+02:00",
+ 		"month": 9,
+ 		"deadline": "2025-09-15T17:15:00+02:00",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2d64199587a1225c9c6dc0fb182f634a4ce3d1333131b2bf6f3c2d18d31e11b0",
+ 	"md_5": "725c33252648b9d761d313c6bd71b930b945066b494876f42a48321187f600eb",
  	"lang_codes": [
  		"de",
  		"en"
@@ -29,7 +29,7 @@
  	"shuffling_variations": 12,
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 5,
+ 	"max_groups": 10,
  	"pages": [
  		{
  			"label": {
@@ -4514,22 +4514,22 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum",
- 				"en": "Special: Short- and Medium-Term Economic Growth"
+ 				"de": "Sonderfragen zu Anlageklassen im Eurogebiet",
+ 				"en": "Additional questions on the attractiveness of different asset classes"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wirtschafts-\u003cbr\u003ewachstum",
- 				"en": "Economic\u003cbr\u003eGrowth"
+ 				"de": "Sonderfragen:\u003cbr\u003eAnlageklassen",
+ 				"en": "Special questions:\u003cbr\u003eAsset classes"
  			},
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "42rem"
+ 						"width_max": "46rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4547,60 +4547,24 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 12,
+ 					"columns": 5,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tPunkt\u0026shy;pro\u0026shy;gno\u0026shy;se der Wachstums\u0026shy;rate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum\n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben.\n\t\t\t\tBei den Jahreswerten die Jahreswachstums\u0026shy;rate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tPoint forecast of the growth rate of the \u003cb\u003eGerman GDP\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values,\n\t\t\t\tplease indicate non-annualized quarterly\n\t\t\t\treal \u0026 seasonally adjusted GDP growth.\n\t\t\t\tFor the yearly values,\n\t\t\t\tplease indicate the annual real GDP growth rate.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit Blick auf die nächsten sechs Monate,\n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil\n\t\t\t\t\tder folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten Indizes\n\t\t\t\t\tfür das \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e.\n\n\t\t\t\t\t\u003cp style='position: relative; top: 0.47rem'\u003e\n\t\t\t\t\t\tDas Rendite-Ri\u0026shy;si\u0026shy;ko-Profil von … beurteile ich …\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow do you assess the return-risk profile of the following asset classes\n\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e for the next 6\u0026nbsp;months?\n\n\t\t\t\t\tPlease consider well-diversified indices.\n\n\n\t\t\t\t\t\u003cp style='position: relative; top: 0.47rem'\u003e\n\t\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span": 12,
+ 							"col_span": 5,
  							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
- 								"de": "Pro\u0026shy;gno\u0026shy;se \u003cbx\u003eQuartal\u003c/bx\u003e",
- 								"en": "Forecast \u003cbx\u003eQuarter\u003c/bx\u003e"
+ 								"de": "stark \u003cbr\u003e po\u0026shy;si\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly \u003cbr\u003e pos\u0026shy;itive"
  							},
- 							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq1",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q3\u0026nbsp;2025",
- 								"en": "Q3\u0026nbsp;2025"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -4610,56 +4574,41 @@
  									"text_style": {}
  								},
  								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 0.1rem"
  									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"align_self": "end"
  									},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipq2",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
+ 							"type": "label-as-input",
  							"label": {
- 								"de": "Q4\u0026nbsp;2025",
- 								"en": "Q4\u0026nbsp;2025"
+ 								"de": "leicht \u003cbr\u003e po\u0026shy;si\u0026shy;tiv",
+ 								"en": "slight\u0026shy;ly \u003cbr\u003e pos\u0026shy;itive"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -4669,56 +4618,41 @@
  									"text_style": {}
  								},
  								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 0.1rem"
  									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"align_self": "end"
  									},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipq3",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
+ 							"type": "label-as-input",
  							"label": {
- 								"de": "Q1\u0026nbsp;2026",
- 								"en": "Q1\u0026nbsp;2026"
+ 								"de": "leicht \u003cbr\u003e ne\u0026shy;ga\u0026shy;tiv",
+ 								"en": "slight\u0026shy;ly \u003cbr\u003e neg\u0026shy;ative"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -4728,56 +4662,41 @@
  									"text_style": {}
  								},
  								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 0.1rem"
  									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"align_self": "end"
  									},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipq4",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
+ 							"type": "label-as-input",
  							"label": {
- 								"de": "Q2\u0026nbsp;2026",
- 								"en": "Q2\u0026nbsp;2026"
+ 								"de": "stark \u003cbr\u003e ne\u0026shy;ga\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly \u003cbr\u003e neg\u0026shy;ative"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -4787,108 +4706,42 @@
  									"text_style": {}
  								},
  								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 0.1rem"
  									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"align_self": "end"
  									},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
  								},
  								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
  								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
- 								"de": "Pro\u0026shy;gno\u0026shy;se  \u003cbx\u003eJahr\u003c/bx\u003e",
- 								"en": "Forecast  \u003cbx\u003eYear\u003c/bx\u003e"
+ 								"de": "kei\u0026shy;ne \u003cbr\u003e An\u0026shy;ga\u0026shy;be",
+ 								"en": "no \u003cbr\u003e an\u0026shy;swer"
  							},
- 							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipj1",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "2025",
- 								"en": "2025"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
+ 							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -4898,158 +4751,343 @@
  									"text_style": {}
  								},
  								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 0.1rem"
  									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"align_self": "end"
  									},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipj2",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
+ 							"name": "ass_euro_stocks",
+ 							"type": "radio",
  							"label": {
- 								"de": "2026",
- 								"en": "2026"
+ 								"de": "Aktien",
+ 								"en": "Stocks"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipj3",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "2027",
- 								"en": "2027"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
+ 							"name": "ass_euro_stocks",
+ 							"type": "radio",
  							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_euro_stocks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_euro_stocks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_euro_stocks",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Staats\u0026shy;anleihen",
+ 								"en": "Govt. bonds"
  							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsindexierte Staatsanleihen",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on-linked government bonds"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_govt_infadj",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_corp",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Un\u0026shy;ter\u0026shy;nehmens\u0026shy;anleihen",
+ 								"en": "Corporate bonds"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_corp",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_corp",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_corp",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_euro_bonds_corp",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ass_euro_re",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Immobilien",
+ 								"en": "Real estate"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ass_euro_re",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ass_euro_re",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ass_euro_re",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ass_euro_re",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   4fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren\n\t\t\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen\n\t\t\t\t\t\t\tzum Rendite-Ri\u0026shy;si\u0026shy;ko-Profil der einzelnen Assetklassen\n\t\t\t\t\t\t\tim \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\tgegenüber Juni 2025 bewogen?\n\n\t\t\t\t\t\t\t\u003cp style='margin-top: 0.46rem'\u003e\n\t\t\t\t\t\t\t\tUnd wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\n\t\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\t\t\tlead you to change your assessment\n\t\t\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\t\t\tof the following four asset classes\n\t\t\t\t\t\t\t(compared to June 2025)\n\t\t\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e?\n\n\n\t\t\t\t\t\t\t\u003cp style='margin-top: 0.46rem'\u003e\n\t\t\t\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -5058,8 +5096,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie\n\t\t\t\t\tzu einer Revision\n\t\t\t\t\t(ggü. \u003ci\u003eMai 2025\u003c/i\u003e)\n\t\t\t\t\tIhrer Konjunkturpro\u0026shy;gno\u0026shy;sen\n\t\t\t\t\tfür die deutsche Wirt\u0026shy;schaft bewogen\n\t\t\t\t\tund wenn ja in welche Richtung?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Erhöhung (+), Senkung (-))\n\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\tWhich de\u0026shy;vel\u0026shy;op\u0026shy;ments have led you to change\n\t\t\t\t\t(relative to \u003ci\u003eMay 2025\u003c/i\u003e)\n\t\t\t\t\tyour assessment\n\t\t\t\t\tof the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tIf they made you change your assessment,\n\t\t\t\t\tdid they make you revise your assessment up (+) or down (-)?\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.1.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tAktien\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.1.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tStocks\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -5331,11 +5369,11 @@
  							}
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"label": {
- 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
- 								"en": "Eco\u0026shy;nom\u0026shy;ic de\u0026shy;vel\u0026shy;op\u0026shy;ment\u003cbr\u003eGer\u0026shy;ma\u0026shy;ny"
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5358,215 +5396,41 @@
  							}
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "chg_euro_stocks__ecb",
  							"type": "radio",
  							"label": {
- 								"de": "Ex\u0026shy;port\u0026shy;märkte",
- 								"en": "Export markets"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"label": {
- 								"de": "Wechsel\u0026shy;kurse",
- 								"en": "Exchange rates"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"label": {
- 								"de": "Int. Handels\u0026shy;konflikte",
- 								"en": "Intl. trade conflicts"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"label": {
- 								"de": "EZB-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
  								"en": "ECB monetary policy"
  							},
  							"col_span_label": 3.6,
@@ -5590,42 +5454,42 @@
  							}
  						},
  						{
- 							"name": "rev_mp_ecb",
+ 							"name": "chg_euro_stocks__ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_mp_ecb",
+ 							"name": "chg_euro_stocks__ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_mp_ecb",
+ 							"name": "chg_euro_stocks__ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_mp_ecb",
+ 							"name": "chg_euro_stocks__ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_mp_ecb",
+ 							"name": "chg_euro_stocks__ecb",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_mp_fed",
+ 							"name": "chg_euro_stocks__fed",
  							"type": "radio",
  							"label": {
- 								"de": "US-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "FED monetary policy"
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
+ 								"en": "US Federal Reserve monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5648,42 +5512,42 @@
  							}
  						},
  						{
- 							"name": "rev_mp_fed",
+ 							"name": "chg_euro_stocks__fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_mp_fed",
+ 							"name": "chg_euro_stocks__fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_mp_fed",
+ 							"name": "chg_euro_stocks__fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_mp_fed",
+ 							"name": "chg_euro_stocks__fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_mp_fed",
+ 							"name": "chg_euro_stocks__fed",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_supply_disrupt",
+ 							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"label": {
- 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
- 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply bottlenecks"
+ 								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5706,42 +5570,42 @@
  							}
  						},
  						{
- 							"name": "rev_supply_disrupt",
+ 							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_supply_disrupt",
+ 							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_supply_disrupt",
+ 							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_supply_disrupt",
+ 							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_supply_disrupt",
+ 							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_energy_prices",
+ 							"name": "chg_euro_stocks__politics",
  							"type": "radio",
  							"label": {
- 								"de": "Energiepreise",
- 								"en": "Energy prices"
+ 								"de": "Politische Rahmen\u0026shy;bedingungen",
+ 								"en": "Political si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5764,42 +5628,42 @@
  							}
  						},
  						{
- 							"name": "rev_energy_prices",
+ 							"name": "chg_euro_stocks__politics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_energy_prices",
+ 							"name": "chg_euro_stocks__politics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_energy_prices",
+ 							"name": "chg_euro_stocks__politics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_energy_prices",
+ 							"name": "chg_euro_stocks__politics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_energy_prices",
+ 							"name": "chg_euro_stocks__politics",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_shortages_raw_mat",
+ 							"name": "chg_euro_stocks__valuation",
  							"type": "radio",
  							"label": {
- 								"de": "Engpässe bei Rohstoffen",
- 								"en": "Raw material shortages"
+ 								"de": "Aktuelle Markt\u0026shy;bewertung",
+ 								"en": "Current market valuation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5822,42 +5686,42 @@
  							}
  						},
  						{
- 							"name": "rev_shortages_raw_mat",
+ 							"name": "chg_euro_stocks__valuation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_shortages_raw_mat",
+ 							"name": "chg_euro_stocks__valuation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_shortages_raw_mat",
+ 							"name": "chg_euro_stocks__valuation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_shortages_raw_mat",
+ 							"name": "chg_euro_stocks__valuation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_shortages_raw_mat",
+ 							"name": "chg_euro_stocks__valuation",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_inflation",
+ 							"name": "chg_euro_stocks__warukraine",
  							"type": "radio",
  							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on (ohne Energiepreise)",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on (excl. energy prices)"
+ 								"de": "Russ\u0026shy;land-Ukraine-Krieg",
+ 								"en": "Russia's war with Ukraine"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5880,42 +5744,42 @@
  							}
  						},
  						{
- 							"name": "rev_inflation",
+ 							"name": "chg_euro_stocks__warukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_inflation",
+ 							"name": "chg_euro_stocks__warukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_inflation",
+ 							"name": "chg_euro_stocks__warukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_inflation",
+ 							"name": "chg_euro_stocks__warukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_inflation",
+ 							"name": "chg_euro_stocks__warukraine",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_ukraine",
+ 							"name": "chg_euro_stocks__us_tariffs",
  							"type": "radio",
  							"label": {
- 								"de": "Krieg in der Ukraine",
- 								"en": "War in Ukraine"
+ 								"de": "Handels\u0026shy;protektionismus und Zölle seitens der USA",
+ 								"en": "US trade protectionism/\u0026shy;tariffs"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5938,42 +5802,42 @@
  							}
  						},
  						{
- 							"name": "rev_ukraine",
+ 							"name": "chg_euro_stocks__us_tariffs",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_ukraine",
+ 							"name": "chg_euro_stocks__us_tariffs",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_ukraine",
+ 							"name": "chg_euro_stocks__us_tariffs",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_ukraine",
+ 							"name": "chg_euro_stocks__us_tariffs",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_ukraine",
+ 							"name": "chg_euro_stocks__us_tariffs",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_us_tariffs",
+ 							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"label": {
- 								"de": "Handels\u0026shy;protektionismus und Zölle seitens USA",
- 								"en": "US trade protectionism/ tariffs"
+ 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"en": "Recent announcements on military and fiscal spending"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5996,42 +5860,421 @@
  							}
  						},
  						{
- 							"name": "rev_us_tariffs",
+ 							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_us_tariffs",
+ 							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_us_tariffs",
+ 							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_us_tariffs",
+ 							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_us_tariffs",
+ 							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"name": "chg_euro_stocks__other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
  						},
  						{
- 							"name": "rev_defence_spending",
+ 							"name": "chg_euro_stocks__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.2.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tStaats\u0026shy;anleihen\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tGovt. bonds\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "++",
+ 								"en": "++"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "+",
+ 								"en": "+"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "0",
+ 								"en": "0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "-",
+ 								"en": "-"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "--",
+ 								"en": "--"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__economy",
  							"type": "radio",
  							"label": {
- 								"de": "Ankündigungen der deutschen Bundesre\u0026shy;gie\u0026shy;rung zu Verteidigungs- und Staats\u0026shy;ausgaben",
- 								"en": "Announcements from the German government on military and fiscal spending"
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6054,31 +6297,2297 @@
  							}
  						},
  						{
- 							"name": "rev_defence_spending",
+ 							"name": "chg_euro_bonds_govt__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_defence_spending",
+ 							"name": "chg_euro_bonds_govt__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_defence_spending",
+ 							"name": "chg_euro_bonds_govt__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_defence_spending",
+ 							"name": "chg_euro_bonds_govt__economy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_defence_spending",
+ 							"name": "chg_euro_bonds_govt__economy",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__ecb",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
+ 								"en": "ECB monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__ecb",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
+ 								"en": "US Federal Reserve monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__inflation",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__inflation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Politische Rahmen\u0026shy;bedingungen",
+ 								"en": "Political si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__valuation",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Aktuelle Markt\u0026shy;bewertung",
+ 								"en": "Current market valuation"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__valuation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__warukraine",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Russ\u0026shy;land-Ukraine-Krieg",
+ 								"en": "Russia's war with Ukraine"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__warukraine",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__us_tariffs",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Handels\u0026shy;protektionismus und Zölle seitens der USA",
+ 								"en": "US trade protectionism/\u0026shy;tariffs"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__military_spending",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"en": "Recent announcements on military and fiscal spending"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__military_spending",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"name": "chg_euro_bonds_govt__other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.3.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tUn\u0026shy;ter\u0026shy;nehmens\u0026shy;anleihen\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.3.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tCorporate bonds\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "++",
+ 								"en": "++"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "+",
+ 								"en": "+"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "0",
+ 								"en": "0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "-",
+ 								"en": "-"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "--",
+ 								"en": "--"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__economy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__economy",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__ecb",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
+ 								"en": "ECB monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__ecb",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
+ 								"en": "US Federal Reserve monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__inflation",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__inflation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Politische Rahmen\u0026shy;bedingungen",
+ 								"en": "Political si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__valuation",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Aktuelle Markt\u0026shy;bewertung",
+ 								"en": "Current market valuation"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__valuation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__warukraine",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Russ\u0026shy;land-Ukraine-Krieg",
+ 								"en": "Russia's war with Ukraine"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__warukraine",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__us_tariffs",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Handels\u0026shy;protektionismus und Zölle seitens der USA",
+ 								"en": "US trade protectionism/\u0026shy;tariffs"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__military_spending",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"en": "Recent announcements on military and fiscal spending"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__military_spending",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"name": "chg_euro_bonds_corp__other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.4.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tImmobilien\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan  style='font-weight: bold' \u003e2.4.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tReal estate\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "++",
+ 								"en": "++"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "+",
+ 								"en": "+"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "0",
+ 								"en": "0"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "-",
+ 								"en": "-"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "--",
+ 								"en": "--"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__economy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__economy",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__economy",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__ecb",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
+ 								"en": "ECB monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__ecb",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__ecb",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
+ 								"en": "US Federal Reserve monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__inflation",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__inflation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__inflation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Politische Rahmen\u0026shy;bedingungen",
+ 								"en": "Political si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__valuation",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Aktuelle Markt\u0026shy;bewertung",
+ 								"en": "Current market valuation"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__valuation",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__valuation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__warukraine",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Russ\u0026shy;land-Ukraine-Krieg",
+ 								"en": "Russia's war with Ukraine"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__warukraine",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__warukraine",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__us_tariffs",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Handels\u0026shy;protektionismus und Zölle seitens der USA",
+ 								"en": "US trade protectionism/\u0026shy;tariffs"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__us_tariffs",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__military_spending",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"en": "Recent announcements on military and fiscal spending"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__military_spending",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__military_spending",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6110,9 +8619,9 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "rev_free_label",
+ 							"name": "chg_euro_re__other_label",
  							"type": "text",
- 							"max_chars": 15,
+ 							"max_chars": 17,
  							"label": {
  								"de": "Andere",
  								"en": "Other"
@@ -6122,42 +8631,42 @@
  							"col_span_control": 4
  						},
  						{
- 							"name": "rev_growth_free",
+ 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "rev_growth_free",
+ 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_growth_free",
+ 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_growth_free",
+ 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_growth_free",
+ 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_growth_free",
+ 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_label": 0.4,
@@ -6169,805 +8678,6 @@
  						"desktop": {
  							"grid_container_style": {
  								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "Sonderfrage: Bewertung des EU-US Handelsabkommens",
- 				"en": "Special question: New EU-USA trade agreement"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "EU-US.Handels-\u003cbr\u003eabkommen",
- 				"en": "EU-USA trade\u003cbr\u003eagreement"
- 			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "64rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\tDie Europäische Union und die Vereinigten Staaten haben am 27. Juli ein neues Handelsabkommen angekündigt. Wie erwarten Sie, dass sich dieses Abkommen in den kommenden 12 Monaten auf die folgenden Variablen auswirkt?\n\t\t\t",
- 								"en": "\n\t\t\t\tThe European Union and the United States announced a new trade agreement on July 27, 2025. How do you expect this agreement to affect the following variables over the next 12 months?\n\t\t\t"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Starker\u003cbr\u003eAnstieg ",
- 								"en": "Strong\u003cbr\u003ein\u0026shy;crease"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Leichter\u003cbr\u003eAnstieg",
- 								"en": "Slight\u003cbr\u003ein\u0026shy;crease"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Kei\u0026shy;ne\u003cbr\u003eAus\u0026shy;wir\u0026shy;kung",
- 								"en": "No effect"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Leichter\u003cbr\u003eRück\u0026shy;gang",
- 								"en": "Slight\u003cbr\u003ede\u0026shy;crease"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Starker\u003cbr\u003eRück\u0026shy;gang",
- 								"en": "Strong\u003cbr\u003ede\u0026shy;crease"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Kei\u0026shy;ne\u003cbr\u003eAnt\u0026shy;wort",
- 								"en": "No an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_w",
- 							"type": "radio",
- 							"label": {
- 								"de": "Reales BIP-Wachstum in Deutsch\u0026shy;land",
- 								"en": "German real GDP growth"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_w",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_pi",
- 							"type": "radio",
- 							"label": {
- 								"de": "Deutsche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate",
- 								"en": "German in\u0026shy;fla\u0026shy;ti\u0026shy;on rate"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ger_pi",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_w",
- 							"type": "radio",
- 							"label": {
- 								"de": "Reales BIP-Wachstum in der Eurozone",
- 								"en": "Euro area real GDP growth"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_w",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_pi",
- 							"type": "radio",
- 							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in der Eurozone",
- 								"en": "Euro area in\u0026shy;fla\u0026shy;ti\u0026shy;on rate"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ea_pi",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ecb_i",
- 							"type": "radio",
- 							"label": {
- 								"de": "EZB Leitzinsen",
- 								"en": "ECB monetary policy rates"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ecb_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ecb_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ecb_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ecb_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_ecb_i",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_w",
- 							"type": "radio",
- 							"label": {
- 								"de": "Reales BIP-Wachstum in den USA",
- 								"en": "US real GDP growth"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_w",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_w",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_pi",
- 							"type": "radio",
- 							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in den USA",
- 								"en": "US in\u0026shy;fla\u0026shy;ti\u0026shy;on rate"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_pi",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_us_pi",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_fed_i",
- 							"type": "radio",
- 							"label": {
- 								"de": "FED Leitzinsen",
- 								"en": "FED monetary policy rates"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_fed_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_fed_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_fed_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_fed_i",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "sq3_eu_us_agree_fed_i",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr    1.4fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -7111,7 +8821,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "8",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

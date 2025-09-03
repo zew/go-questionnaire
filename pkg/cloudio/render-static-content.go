@@ -122,7 +122,7 @@ func RenderStaticContent(w io.Writer, subPth, site, lang, packageDocPrefix strin
 	}
 	fmt.Fprint(w1, string(bts))
 
-	hp := trl.HyphenizeText(w1.String())
+	hp := trl.HyphenizeHTML(w1.String())
 
 	fmt.Fprint(w, hp)
 	fmt.Fprintf(w, "\n\t</div>  <!-- markdown  %2.4f kB -->\n", float32(len(hp))/1024)

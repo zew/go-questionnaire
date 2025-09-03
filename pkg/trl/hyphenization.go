@@ -1,9 +1,12 @@
 package trl
 
 import (
+	"bytes"
 	"log"
 	"sort"
 	"strings"
+
+	"golang.org/x/net/html"
 )
 
 // Hyphenization
@@ -395,17 +398,53 @@ func init() {
 // desa|cuer|do
 func HyphenizeText(s string) string {
 
-	// we have to prevent hyphenization inside URL paths
-	if false && strings.Contains(s, "/") {
-		return s
-	}
-
 	for _, k := range byLen {
 		v := hyphm[k]
 		s = strings.Replace(s, k, v, -1)
 	}
-	// if s1 == "Hochschulabschluss" {
-	// 	log.Printf("hyphenate\n%v\n%v", s1, s)
-	// }
+
 	return s
+}
+
+// Built on top of HyphenizeText - to hyphenize HTML documents
+// where src and href attributes are exempted
+func HyphenizeHTML(s string) string {
+
+	doc, err := html.Parse(strings.NewReader(s))
+	if err != nil {
+		return err.Error()
+	}
+
+	//
+	var walk func(n *html.Node)
+	walk = func(n *html.Node) {
+		if n.Type == html.TextNode {
+			n.Data = HyphenizeText(n.Data)
+		}
+		if n.Type == html.ElementNode {
+			for i := range n.Attr {
+				key := strings.ToLower(n.Attr[i].Key)
+				if key == "href" || key == "src" {
+					continue // do not touch URLs
+				}
+				// to hyphenize other attributes too, uncomment:
+				// n.Attr[i].Val = HyphenizeText(n.Attr[i].Val)
+			}
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			walk(c)
+		}
+	}
+
+	walk(doc)
+
+	var buf bytes.Buffer
+	if err := html.Render(&buf, doc); err != nil {
+		return err.Error()
+	}
+
+	out := buf.String()
+	out = strings.ReplaceAll(out, "&amp;", "&")
+
+	return out
 }

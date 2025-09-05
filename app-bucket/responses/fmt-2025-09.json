@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "725c33252648b9d761d313c6bd71b930b945066b494876f42a48321187f600eb",
+ 	"md_5": "48bd07ec3da1591223830420014830c69f4a702dcb8eb5a940b54fe8570b9386",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4888,7 +4888,7 @@
  							"name": "ass_euro_bonds_govt_infadj",
  							"type": "radio",
  							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;onsindexierte Staatsanleihen",
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;ons\u0026shy;indexierte Staatsanleihen",
  								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on-linked government bonds"
  							},
  							"col_span_label": 3,
@@ -5836,7 +5836,7 @@
  							"name": "chg_euro_stocks__military_spending",
  							"type": "radio",
  							"label": {
- 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"de": "Ankündigungen der deutschen Bundesre\u0026shy;gie\u0026shy;rung zu Verteidigungs- und Staatsausgaben",
  								"en": "Recent announcements on military and fiscal spending"
  							},
  							"col_span_label": 3.6,
@@ -6737,7 +6737,7 @@
  							"name": "chg_euro_bonds_govt__military_spending",
  							"type": "radio",
  							"label": {
- 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"de": "Ankündigungen der deutschen Bundesre\u0026shy;gie\u0026shy;rung zu Verteidigungs- und Staatsausgaben",
  								"en": "Recent announcements on military and fiscal spending"
  							},
  							"col_span_label": 3.6,
@@ -7638,7 +7638,7 @@
  							"name": "chg_euro_bonds_corp__military_spending",
  							"type": "radio",
  							"label": {
- 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"de": "Ankündigungen der deutschen Bundesre\u0026shy;gie\u0026shy;rung zu Verteidigungs- und Staatsausgaben",
  								"en": "Recent announcements on military and fiscal spending"
  							},
  							"col_span_label": 3.6,
@@ -8539,7 +8539,7 @@
  							"name": "chg_euro_re__military_spending",
  							"type": "radio",
  							"label": {
- 								"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+ 								"de": "Ankündigungen der deutschen Bundesre\u0026shy;gie\u0026shy;rung zu Verteidigungs- und Staatsausgaben",
  								"en": "Recent announcements on military and fiscal spending"
  							},
  							"col_span_label": 3.6,

@@ -60,7 +60,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			"en": "Govt. bonds",
 		},
 		{
-			"de": "Inflationsindexierte Staatsanleihen",
+			"de": "Inflations&shy;indexierte Staatsanleihen",
 			"en": "Inflation-linked government bonds",
 		},
 
@@ -207,7 +207,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			"en": "US trade protectionism/&shy;tariffs",
 		},
 		{
-			"de": "Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben",
+			"de": "Ankündigungen der deutschen Bundesregierung zu Verteidigungs- und Staatsausgaben",
 			"en": "Recent announcements on military and fiscal spending",
 		},
 		// {

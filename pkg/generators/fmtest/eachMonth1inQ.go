@@ -262,11 +262,13 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		for idx1, region := range pointForecastRegion {
 
 			rowLbl := pointForecastLabels[idx1]
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = rowLbl
-				inp.ColSpan = firstCol
+			if false {
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = rowLbl
+					inp.ColSpan = firstCol
+				}
 			}
 
 			for idx2 := range yearsEffective {

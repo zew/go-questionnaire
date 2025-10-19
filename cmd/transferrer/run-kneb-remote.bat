@@ -1,5 +1,8 @@
 @echo off
 
+@REM 2024-03-18: no more answers
+exit 
+
 REM check admin login at remote host
 REM transferrer-endpoint?survey_id=kneb1&wave_id=2021-03&fetch_all=1
 cls

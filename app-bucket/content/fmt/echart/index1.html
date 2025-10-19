@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+
+<input type='hidden'   name='simtool_instance'  id='simtool_instance'    value='inst01'    />
+
+<input type='hidden'   name='sparbetrag_bg_inst01'  id='sparbetrag_bg_inst01'    value=''    />
+
+<input type='hidden'   name='share_safe_bg_inst01'  id='share_safe_bg_inst01'    value=''    />
+<input type='hidden'   name='share_risky_bg_inst01' id='share_risky_bg_inst01'   value=''    />
+
+<input type='hidden'   name='sim_history_inst01' id='sim_history_inst01'   value=''    />
+ 
+<!-- 
+
+    inner-?.html are reduced versions of this  index1.html 
+    
+      * remove the outer HTML body tags;
+        but keep the CSS links from the HTML head
+
+      * prefix all js and css resources by /{{AppPrefix}}/
+
+      * also add two hidden inputs
+
+ -->
+
+ 
+<div id="chart_container" >chart container</div>
+ 
+Input Sparbetrag
+ <input 
+  type="number" name="sparbetrag" id="sparbetrag"
+  value="110"
+  min="0" max="300" step="10"  
+ >
+
+<br>
+
+ chart output
+ <input name="chart_output" type="text" value="0" />
+    
+
+<p>
+  share safe  <input type="number" size=3  disabled name="share_safe"  id="">
+  share risky <input type="number" size=3  disabled name="share_risky" id="">
+</p>
+  
+
+
+
+<!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+<script type="text/javascript" src="echarts.min.js"></script>
+
+
+<!-- 
+  loading as a module needs apache conf mime types file 
+      application/javascript				mjs
+  for local files, there is browser extension, which does not work
+-->
+<!-- <script type="module"          src="chart.mjs"></script> -->
+<script type="text/javascript" src="echart-config.mjs"></script>
+
+
+<script>
+
+
+    // sb, sbInp, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
+    // init
+    var sb = 100.0; // sparbetrag - defined in echart-config.mjs
+    var sbInp   = document.getElementById("sparbetrag");
+    var sbInpBG = document.getElementById("sparbetrag_bg_inst01");
+    if (sbInpBG && sbInpBG.value !== "") {
+        sb = parseInt(sbInpBG.value);
+    }
+    if (sbInp) {
+        sbInp.value = sb;
+    }
+    
+    var safeBG   = document.getElementById("share_safe_bg_inst01"); // defined in echart-config.mjs
+    var riskyBG  = document.getElementById("share_risky_bg_inst01");
+    if (safeBG && safeBG.value != "" ) {
+    } else if (safeBG && safeBG.value === "" ) {
+        safeBG.value = 50
+        riskyBG.value = 100 - safeBG.value
+    }
+    console.log(`init of safeBG ${safeBG.value} and riskyBG ${riskyBG.value}`)
+
+
+var myChart;
+
+
+
+
+let pageLoaded = (inst) => {
+
+    const evt = new Event("change");
+
+    let sbChange = (evt) => {
+        let src = evt.srcElement;
+
+        sb = src.value;
+
+        refresh(myChart, dataObject);
+
+        console.log(`sbChange ${sb}`)
+        
+        simHist.push( {"sb_ch": sb});
+        simHistBG.value = JSON.stringify(simHist);
+        // console.log(`simHistBG.value ${simHistBG.value}`)
+    }
+
+    sbInp.onchange = sbChange
+
+
+    // "Sparbetrag" increase and decrease - onclick event handler
+    let fcSpin = (evt,upOrDown) => {
+        // console.log(`upOrDown = ${upOrDown}`);
+        let inp = document.getElementById("sparbetrag")
+        if (inp) {
+            // console.log(`upOrDown = ${upOrDown}, val = ${inp.value}`)
+            if (upOrDown==='up') {
+                inp.value =  parseInt(inp.value) + 10;
+            } else if (upOrDown==='down') {
+                inp.value =  parseInt(inp.value) - 10;
+            }
+            console.log(`upOrDown = ${upOrDown}, val = ${inp.value}`)
+
+            evt.preventDefault();
+
+            sb = inp.value;
+            refresh(myChart, dataObject);
+
+            simHist.push( {"sb_ud": sb});
+            simHistBG.value = JSON.stringify(simHist);
+            console.log(`simHistBG.value ${simHistBG.value}`)
+     
+        }
+        // sbChange(evt)
+    }
+
+
+
+
+    //
+    let chartDom = document.getElementById('chart_container');
+    myChart = echarts.init(chartDom);
+
+    optEchart && myChart.setOption(optEchart);
+    console.log(`echart config and creation complete`)
+
+
+
+    console.log(`pageLoaded() complete`)
+}
+
+// init checkbox subgroups show/hide;
+window.addEventListener('load', pageLoaded, false);
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

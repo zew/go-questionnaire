@@ -1,67 +1,88 @@
 "strict mode";
 
+// sbInp, sbInpBG - declared and initialized in echart-config.mjs
+
+// the three fields for permanent storage of parameters in the database
+//   come in two distinct instances, separated by "_0" and "_1"
+const getBackgroundField = core => {
+
+    const inst = document.getElementById("simtool_instance");
+    if (!inst) {
+        throw `hidden input 'simtool_instance' required`;
+    }
+
+
+    const nameInstance = `${core}_${inst.value}`;
+    const el = document.getElementById(nameInstance);
+    if (!el) {
+        throw `hidden input ${core}_${inst.value} required`;
+    }
+    return el
+
+
+};
+
+
+
+var sb = 100.0; // sparbetrag - defined in echart-config.mjs
+var sbInp = document.getElementById("sparbetrag");
+var sbInpBG = getBackgroundField("sparbetrag_bg");
+
+if (sbInpBG && sbInpBG.value !== "") {
+    sb = parseInt(sbInpBG.value);  // restore from before
+}
+if (sbInp) {
+    sbInp.value = sb;
+}
+
+var safeBG = getBackgroundField("share_safe_bg"); // defined in echart-config.mjs
+var riskyBG = getBackgroundField("share_risky_bg");
+if (safeBG && safeBG.value != "") {
+    // nothing to copy/restore - we use safeBG.value directly in our computations  
+} else if (safeBG && safeBG.value === "") {
+    // init
+    safeBG.value = 50
+    riskyBG.value = 100 - safeBG.value
+}
+
 
 // already defined and initialized
 // var sb = 100.0; // sparbetrag
 // var safeBG  = document.getElementById("share_safe_bg");
 let yr = new Date().getFullYear()
-let az  = 20; // "Anlagehorizont"
+let az = 20; // "Anlagehorizont"
 let azV = 10; // "Vertical line"
 
-az  = 25;
+az = 25;
 azV = 20;
-
-
-// az = 50; // "Anlagehorizont"
-
-// riskless rate
-// bond fund - two percent real returns - quite optimistic
 let mnbd1 = 1 + 0.01
-
-
-
-// standardized normal distribution
 let mn = 0.0; // mean return
 let sd = 1.0; // standard deviation
-
-// normal distribution of stock asset
-// MSCI world for € investments since 1998 (25yrs)
 mn = 0.059
-
-// "… annualised standard deviation of 14.62%...""
 sd = 0.1462 // yearly annualized standard deviation of total returns MSCI world
-// sd = 0.18650 // standard deviation after   five years - found numerically with sim-04.py 
-// sd = 0.430   // standard deviation after twenty years - found numerically with sim-04.py
-
-
-// 
-// https://en.wikipedia.org/w/index.php?title=Normal_distribution&section=11#Quantile_function
-// quantile best or worst
 let quantile = 1.645 // 90 confidence interval - multiple of sd, best and worst five percent
-// quantile = 1.2815 // 80 confidence interval - multiple of sd, best and worst  ten percent
-
 let ci90 = quantile * sd  // ~ 0.25
 
 
 
 const stdDevReturnsOnly = 2;  // 0 - 
-let mnp1  = 1 + mn     // mean plus one          = 106.0%
+let mnpl1 = 1 + mn     // mean plus one          = 106.0%
 let p05p1 = 1 + 0.0;   // computed below - based on assumption
 let p95p1 = 1 + 0.0;   // computed below - based on assumption
 
 
 
 
+
+
+
 var slider01 = document.getElementById("sparbetrag");
 
-
-
-
 let initSlider01 = (inst) => {
-    slider01.value = 25; 
+    slider01.value = 25;
     // slider01.click();
     const evt = new Event("input");
-    slider01.dispatchEvent(evt);    
+    slider01.dispatchEvent(evt);
 }
 
 // init sliders;
@@ -78,175 +99,115 @@ slider01.oninput = function () {
 
 
 
-  function getChartTitle(yr, azV) {
-    return `Prognostizierte Entwicklung bis ${yr+azV}`;
+function getChartTitle(yr, azV) {
+    return `Prognostizierte Entwicklung bis ${yr + azV}`;
     // return `Prognostizierte Entwicklung der Ernte über das Jahr`;
-  }
+}
 
-  function getXAxisType() {
+function getXAxisType() {
     return 'value';
     // return 'category';
-  }
-  function getXAxisMin(yr,az) {
-    return yr+0;
+}
+function getXAxisMin(yr, az) {
+    return yr + 0;
     // return 'Okt';
-  }
-  function getXAxisMax(yr,az) {
-    return yr+az;
+}
+function getXAxisMax(yr, az) {
+    return yr + az;
     // return 'Juli';
-  }
+}
 
-  function getXAxisFormatter(vl,yr,az) {
-    return vl  + ' ';
-  }
+function getXAxisFormatter(vl, yr, az) {
+    return vl + ' ';
+}
 
-  function XXgetXAxisFormatter(vl,yr,az) {
-    let mapper = [
-       'Okt.' , 
-       'Nov.' , 
-       'Dez.' , 
-       'Jan.' , 
-       'Feb.' , 
-       'März' , 
-       'April', 
-       'Mai'  , 
-       'Juni' , 
-       'Juli' ,
-       ' ' ,
-      //  ' ' ,
-    ];
-    // map az to mapper.length
-    let factor = (mapper.length)/az;
-    let idxFl  = (vl-yr) * factor;  // index as float
-    // let idx = Math.round( idxFl );
-    let idx = Math.floor( idxFl );
 
-    if (typeof mapper[idx] === 'undefined') {
-      return ' ';
-    }
-    // if (Math.abs(idxFl - idx) > 0.7) {
-    //   return ' ';
-    // }
-    return mapper[idx]  + ' ';
-    // return vl  + ' ';
-  }
-  function getXInteerval(){
+
+
+let factor = 100 / az;
+let idxFl = (1) * factor;  // index as float
+// let idx = Math.round( idxFl );
+let idx = Math.floor(idxFl);
+
+
+
+
+function getXInteerval() {
     // return 2.285;
     return 2;
-  }
+}
 
 
 
-  function getYAxisTitle() {
+function getYAxisTitle() {
     return `Ertrag in Euro`;
-  }
-  function getVerticalMarkerTitle() {
+}
+function getVerticalMarkerTitle() {
     // return `Ernte`;
     return `Bäume werden\n gefällt`;
-  }
+}
 
 
-  function appendUnit(s) {
+function appendUnit(s) {
     return `${s} €`;
-  }
+}
 
 
-  function knebelFormat(dbl, nbsp=true){
-      dbl = Math.round(dbl/100)*100
-      dbl = `${dbl}`  // to string
-      dbl = `${dbl.substring(0,dbl.length-3)}.${dbl.substring(dbl.length-3)}`
-      if(nbsp){
+function knebelFormat(dbl, nbsp = true) {
+    dbl = Math.round(dbl / 100) * 100
+    dbl = `${dbl}`  // to string
+    dbl = `${dbl.substring(0, dbl.length - 3)}.${dbl.substring(dbl.length - 3)}`
+    if (nbsp) {
         dbl = `${dbl}&nbsp;€`
-      } else {
+    } else {
         dbl = `${dbl}€`
-      }
-      return dbl
-  }
-
-
-  // the three fields for permanent storage of parameters in the database
-  //   come in two distinct instances, separated by "_0" and "_1"
-  const getBackgroundField = core => {
-
-    const inst = document.getElementById("simtool_instance");
-    if (!inst) {
-       throw `hidden input 'simtool_instance' required`;
     }
+    return dbl
+}
 
 
-    const nameInstance = `${core}_${inst.value}`;
-    const el = document.getElementById(nameInstance);
-    if (!el) {
-      throw `hidden input ${core}_${inst.value} required`;
-    }
-    return el
 
 
-  };
 
-
-  // sb, sbInp, sbInpBG, safeBG, riskyBG - are all declared and initialized in echart-config.mjs
-  // init
-  var sb = 100.0; // sparbetrag - defined in echart-config.mjs
-  var sbInp   = document.getElementById("sparbetrag");
-  var sbInpBG = getBackgroundField("sparbetrag_bg");
-  
-  if (sbInpBG && sbInpBG.value !== "") {
-    sb = parseInt(sbInpBG.value);  // restore from before
-  }
-  if (sbInp) {
-    sbInp.value = sb;
-  }
-  
-  var safeBG   = getBackgroundField("share_safe_bg"); // defined in echart-config.mjs
-  var riskyBG  = getBackgroundField("share_risky_bg");
-  if (safeBG && safeBG.value != "" ) {
-    // nothing to copy/restore - we use safeBG.value directly in our computations  
-  } else if (safeBG && safeBG.value === "" ) {
-    // init
-    safeBG.value = 50
-    riskyBG.value = 100 - safeBG.value
-  }
-
-  var simHist = null;
-  var simHistBG = getBackgroundField("sim_history");
-  if (simHistBG && simHistBG.value !== "") {
+var simHist = null;
+var simHistBG = getBackgroundField("sim_history");
+if (simHistBG && simHistBG.value !== "") {
     simHist = JSON.parse(simHistBG.value);  // restore from before
-  } else {
+} else {
     simHist = [];
-    simHist.push({"init": 0});
-  }
+    simHist.push({ "init": 0 });
+}
 
-  console.log(`init sb ${sb}, safeBG ${safeBG.value}, riskyBG ${riskyBG.value}, simHist ${JSON.stringify(simHist)}`)
+console.log(`init sb ${sb}, safeBG ${safeBG.value}, riskyBG ${riskyBG.value}, simHist ${JSON.stringify(simHist)}`)
 
 
 
 
 if (stdDevReturnsOnly === 0) {
 
-    let p05 = mn * (1-ci90)  //  75% of 6%
-    let p95 = mn * (1+ci90)  // 125% of 6%    
+    let p05 = mn * (1 - ci90)  //  75% of 6%
+    let p95 = mn * (1 + ci90)  // 125% of 6%    
     // console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
     p05p1 = 1 + p05  // worst case plus one    = 104.5%
     p95p1 = 1 + p95  // worst case plus one    = 107.3%
-    
+
 } else if (stdDevReturnsOnly === 2) {
 
     sd = 0.430            // from sim-04.py
     ci90 = quantile * sd  // 0,707 = 1,645*0,43
 
     // =>  pct05+1, mn+1, pct95+1   [0.458, 1.059, 1.66]     
-    p05p1 = mnp1 * (1-ci90)  
-    p95p1 = mnp1 * (1+ci90)   
+    p05p1 = mnpl1 * (1 - ci90)
+    p95p1 = mnpl1 * (1 + ci90)
 
 }
-console.log(`mn=${mnp1} conf ivl 5...95% [${1-ci90}, ${1+ci90}] `) // 14% * 1.65 =  ~25%
+console.log(`mn=${mnpl1} conf ivl 5...95% [${1 - ci90}, ${1 + ci90}] `) // 14% * 1.65 =  ~25%
 
 p05p1 = Math.round(10000 * p05p1) / 10000;
 p95p1 = Math.round(10000 * p95p1) / 10000;
 
 // [0.3099, 1.059, 1.8081]
-console.log(`pct05+1, mn+1, pct95+1   [${p05p1}, ${mnp1}, ${p95p1}]`)
+console.log(`pct05+1, mn+1, pct95+1   [${p05p1}, ${mnpl1}, ${p95p1}]`)
 
 
 
@@ -255,9 +216,9 @@ console.log(`pct05+1, mn+1, pct95+1   [${p05p1}, ${mnp1}, ${p95p1}]`)
 
 // unused primitive series...
 let dataXPrimitive = []; // unused
-for (let i = yr; i <= yr+az; i++) { dataXPrimitive.push(i); }
+for (let i = yr; i <= yr + az; i++) { dataXPrimitive.push(i); }
 let dataReturns = []; // unused
-for (let i = 0; i <= az; i++) {     dataReturns.push(250+i*2000); }
+for (let i = 0; i <= az; i++) { dataReturns.push(250 + i * 2000); }
 
 
 // console.log(ds2.source);
@@ -313,10 +274,10 @@ var dataObjectCreate = (function () {
         try {
             //
             let idx2 = 2 // idx 0 => years, idx 1 => lower bound, idx 2 => mean returns
-            let fv05 = ds[idxHalfAZ][idx2-1]
-            let fv   = ds[idxHalfAZ][idx2-0]
-            let fv95 = ds[idxHalfAZ][idx2+1]
-            console.log( "fv05, fv, fv95", [fv05, fv, fv95])
+            let fv05 = ds[idxHalfAZ][idx2 - 1]
+            let fv = ds[idxHalfAZ][idx2 - 0]
+            let fv95 = ds[idxHalfAZ][idx2 + 1]
+            console.log("fv05, fv, fv95", [fv05, fv, fv95])
             return [fv05, fv, fv95]
         } catch (error) {
             return ["FV05 of ds failed", "FV of ds failed", "FV95 of ds failed"]
@@ -335,7 +296,7 @@ var dataObjectCreate = (function () {
 
         if (ds === undefined || ds.length == 0) {
             ds = []
-            let c0=0, c1=0, c2=0
+            let c0 = 0, c1 = 0, c2 = 0
 
             let ss; // safe share [0...1]
             try {
@@ -343,37 +304,37 @@ var dataObjectCreate = (function () {
             } catch (err) {
                 console.error(`cannot parse safeBG.value ${safeBG.value} - ${err}`)
             }
-            let rs = 1 - ss ;  // risky share [0...1]
+            let rs = 1 - ss;  // risky share [0...1]
             console.log(`safe - risky - ${ss} - ${rs}`)
 
 
-            let sby = 12* sb; // sparbetrag per year
+            let sby = 12 * sb; // sparbetrag per year
             for (let i = 0; i <= az; i++) {
 
                 // return on existing balance
-                let c1a = mnp1  * c1 * rs   +   mnbd1 * c1 * ss
+                let c1a = mnpl1 * c1 * rs + mnbd1 * c1 * ss
 
                 // change 2024-01 - we cannot use the std in p05p1 and p95p1
                 //   "geometrically" in every period => it's effect is powered by 20
                 // instead we have to use it _once_ - by applying it to the mean:
-                c0 = p05p1 * c1 * rs   +   mnbd1 * c1 * ss
-                c2 = p95p1 * c1 * rs   +   mnbd1 * c1 * ss
+                c0 = p05p1 * c1 * rs + mnbd1 * c1 * ss
+                c2 = p95p1 * c1 * rs + mnbd1 * c1 * ss
 
                 c1 = c1a;
 
-                if(rs === 0){
+                if (rs === 0) {
                     c0 = c1
                     c2 = c1
                 }
 
 
                 // additional yearly contribution
-                c0 += sby; c1 += sby; c2 +=sby;
+                c0 += sby; c1 += sby; c2 += sby;
 
-                let row = [yr+i, c0, c1, c2, `item${i}` ]
+                let row = [yr + i, c0, c1, c2, `item${i}`]
                 // console.log(i, i+yr, mnp1**i);
                 // console.log(row);
-                ds.push( row );
+                ds.push(row);
             }
 
             maxY = ds[az][2]
@@ -381,9 +342,9 @@ var dataObjectCreate = (function () {
 
             // make vertical height for the best 95%
             if (stdDevReturnsOnly === 0) {
-                maxY = (Math.round(maxY/40000) +0.20)*40000
+                maxY = (Math.round(maxY / 40000) + 0.20) * 40000
             } else {
-                maxY = (Math.round(maxY/40000) +0.60)*40000
+                maxY = (Math.round(maxY / 40000) + 0.60) * 40000
             }
 
             // console.log(ds);
@@ -403,28 +364,28 @@ var dataObjectCreate = (function () {
             //    see      https://echarts.apache.org/en/option.html#series-line
             //    search   'Relationship between "value" and axis.type'
             //
-            [2023,     950+a,    175+a , 'item-1'   ],
-            [2024,    2900+a,   2200+a , 'item-2'   ],
-            [2025,    4400+a,   4000+a , 'item-3'   ],
-            [2026,    5000+a,   4000+a , 'item-4'   ],
-            [2027,    6500+a,   4500+a , 'item-5'   ],
-            [2029,   13500+a,   4500+a , 'item-6'   ],
-            [2029.5, 13800+a,   7800+a , 'item-7'   ],
-            [2030,          ,   8000+a , 'item-8'   ],
-            [2031,   22000+a,  20000+a , 'item-9'   ],
-            [2034,   24000+a,  23000+a , 'item-10'  ],
-            [2036,   26000+a,  24000+a , 'item-11'  ],
-            [2037,   36000+a,  33000+a , 'item-12'  ],
-            [2043,   38000+a,  34000+a , 'item-12'  ],
+            [2023, 950 + a, 175 + a, 'item-1'],
+            [2024, 2900 + a, 2200 + a, 'item-2'],
+            [2025, 4400 + a, 4000 + a, 'item-3'],
+            [2026, 5000 + a, 4000 + a, 'item-4'],
+            [2027, 6500 + a, 4500 + a, 'item-5'],
+            [2029, 13500 + a, 4500 + a, 'item-6'],
+            [2029.5, 13800 + a, 7800 + a, 'item-7'],
+            [2030, , 8000 + a, 'item-8'],
+            [2031, 22000 + a, 20000 + a, 'item-9'],
+            [2034, 24000 + a, 23000 + a, 'item-10'],
+            [2036, 26000 + a, 24000 + a, 'item-11'],
+            [2037, 36000 + a, 33000 + a, 'item-12'],
+            [2043, 38000 + a, 34000 + a, 'item-12'],
         ];
 
     }
 
     // public interface
     return {
-        resetData:   pResetData,
-        FVs:          pFVs,
-        maxY:        pMaxY,
+        resetData: pResetData,
+        FVs: pFVs,
+        maxY: pMaxY,
         computeData: pComputeData,
     };
 
@@ -435,13 +396,13 @@ var dataObjectCreate = (function () {
 var dataObject = dataObjectCreate();
 
 
-getVerticalArea = function(argYryr, argAzV){
+getVerticalArea = function (argYryr, argAzV) {
 
     let vertMarkerYr = argYryr + argAzV;
     let vertMarker1 = [
         {
             name: getVerticalMarkerTitle(),
-            xAxis: 2029-0.3,
+            xAxis: 2029 - 0.3,
             xAxis: vertMarkerYr - 0.08,
         },
         {
@@ -462,12 +423,12 @@ getVerticalArea = function(argYryr, argAzV){
         label: {
             // show: false,
             color: 'rgba( 0,105,180,0.99)',
-          },
+        },
         // animation: true,
         // animationDurationUpdate: 200,
         itemStyle: {
-          color: 'rgba(255, 188, 188, 0.6)',
-          color: 'rgba( 0,105,180,0.299)',
+            color: 'rgba(255, 188, 188, 0.6)',
+            color: 'rgba( 0,105,180,0.299)',
 
         },
         data: [vertMarker1, vertMarker2],
@@ -494,7 +455,7 @@ var colorPalette = [
     '#22c',
     '#22d',
     // 'var(--clr-pri-hov);',
-    ];
+];
 
 
 
@@ -505,7 +466,7 @@ var optEchart = {
     title: {
         // text: 'ECharts Getting Started Example'
         text: 'Angespartes Vermögen',
-        text:  "getChartTitle(yr,azV)",
+        text: getChartTitle(yr, azV),
         left: '1%',
         textStyle: {
             fontSize: 18,
@@ -524,13 +485,13 @@ var optEchart = {
         }
     },
     grid: {
-        left:  '12%',
-        left:  '13%',
-        right:  '3%',
-        top:    '8.5%',
-        top:    '9.8%',
+        left: '12%',
+        left: '13%',
+        right: '3%',
+        top: '8.5%',
+        top: '9.8%',
         bottom: '7%',
-      },
+    },
     legend: {
         // data: ['sales']
     },
@@ -551,7 +512,7 @@ var optEchart = {
         axisLabel: {
             // compare  axisLabel. formatter
             formatter: function (vl, idx) {
-                return getXAxisFormatter(vl,yr,az);
+                return getXAxisFormatter(vl, yr, az);
             },
             textStyle: {
                 // color: function (vl, idx) {
@@ -567,10 +528,10 @@ var optEchart = {
         min: function (vl) {
             // this effectively returns dataReturns.min and max
             console.log(`x-axis min ${vl.min} max ${vl.max} `)
-            return vl.min-10;
+            return vl.min - 10;
         },
-        min: "getXAxisMin(yr,az)",
-        max: "getXAxisMax(yr,az)",
+        min: getXAxisMin(yr, az),
+        max: getXAxisMax(yr, az),
 
         // show label of the min/max tick
         //    seems ineffective, labels are shown anyway
@@ -624,7 +585,7 @@ var optEchart = {
                 // adjust grid.left
                 let vl1 = vl.toFixed(0)
                 vl1 = vl1 + ' €';
-                vl1 = vl1.replace("000 €", ".000 €", )
+                vl1 = vl1.replace("000 €", ".000 €",)
                 return vl1;
             },
         },
@@ -645,7 +606,7 @@ var optEchart = {
 
             animation: false,
             animation: true,
-            animationDelay:    seriesIdx * animDuration,
+            animationDelay: seriesIdx * animDuration,
             animationDuration: animDuration,
 
             // explanation for encode:
@@ -657,7 +618,7 @@ var optEchart = {
                 y: 1,
                 itemName: 4,
                 tooltip: [0, 1, 4],
-             },
+            },
             data: [
                 // [col1, col2, col3 ... ]
                 // [dimX, dimY, other dimensions ...
@@ -665,18 +626,18 @@ var optEchart = {
                 //    see      https://echarts.apache.org/en/option.html#series-line
                 //    search   'Relationship between "value" and axis.type'
                 //
-                [2023,     950,   175  , 'item-1'   ],
-                [2024,    2900,   2200 , 'item-2'   ],
-                [2025,    4400,   4000 , 'item-3'   ],
-                [2026,    5000,   4000 , 'item-4'   ],
-                [2027,    6500,   4500 , 'item-5'   ],
-                [2029,   13500,   4500 , 'item-6'   ],
-                [2029.5, 13800,   7800 , 'item-7'   ],
-                [2030,        ,   8000 , 'item-8'   ],
-                [2031,   22000,  20000 , 'item-9'   ],
-                [2034,   24000,  23000 , 'item-10'  ],
-                [2036,   26000,  24000 , 'item-11'  ],
-                [2037,   36000,  33000 , 'item-12'  ],
+                [2023, 950, 175, 'item-1'],
+                [2024, 2900, 2200, 'item-2'],
+                [2025, 4400, 4000, 'item-3'],
+                [2026, 5000, 4000, 'item-4'],
+                [2027, 6500, 4500, 'item-5'],
+                [2029, 13500, 4500, 'item-6'],
+                [2029.5, 13800, 7800, 'item-7'],
+                [2030, , 8000, 'item-8'],
+                [2031, 22000, 20000, 'item-9'],
+                [2034, 24000, 23000, 'item-10'],
+                [2036, 26000, 24000, 'item-11'],
+                [2037, 36000, 33000, 'item-12'],
             ],
             data: dataObject.computeData(),
         },
@@ -694,7 +655,7 @@ var optEchart = {
 
             animation: false,
             animation: true,
-            animationDelay:    seriesIdx * animDuration,
+            animationDelay: seriesIdx * animDuration,
             animationDuration: animDuration,
 
             // same data struct, but
@@ -704,12 +665,12 @@ var optEchart = {
                 y: 2,
                 itemName: 4,
                 tooltip: [0, 2, 4],
-             },
-             data: dataObject.computeData(),
+            },
+            data: dataObject.computeData(),
 
-             markArea: getVerticalArea(yr, azV),
+            markArea: getVerticalArea(yr, azV),
             //  markPoint: getMarkpointConfig( [30000, 33000, 34000] ),
-             markPoint: "getMarkpointConfig( dataObject.FVs() )",
+            //  markPoint: "getMarkpointConfig( dataObject.FVs() )",
 
 
         },
@@ -728,8 +689,8 @@ var optEchart = {
 
             animation: false,
             animation: true,
-            animationDelay:    seriesIdx * animDuration,
-            animationDelay:            0 * animDuration,
+            animationDelay: seriesIdx * animDuration,
+            animationDelay: 0 * animDuration,
             animationDuration: animDuration,
 
             // same data struct, but
@@ -739,8 +700,8 @@ var optEchart = {
                 y: 3,
                 itemName: 4,
                 tooltip: [0, 3, 4],
-             },
-             data: dataObject.computeData(),
+            },
+            data: dataObject.computeData(),
 
 
         },
@@ -762,7 +723,7 @@ function refresh(chartObj, dataObj) {
     if (true) {
         chartObj.setOption({
             'xAxis': {
-                max: yr+az,
+                max: yr + az,
             },
             'yAxis': {
                 max: dataObject.maxY(),
@@ -773,9 +734,9 @@ function refresh(chartObj, dataObj) {
                 },
                 {
                     data: dataObj.computeData(),
-                    markArea:  getVerticalArea(yr, azV),
+                    markArea: getVerticalArea(yr, azV),
                     // markPoint: getMarkpointConfig( [30000, 33000, 34000] ),
-                    markPoint: getMarkpointConfig( dataObj.FVs() ),
+                    // markPoint: getMarkpointConfig( dataObj.FVs() ),
                 },
                 {
                     data: dataObj.computeData(),
@@ -786,26 +747,6 @@ function refresh(chartObj, dataObj) {
 
     let arrayFVs = dataObj.FVs()
 
-    let elFV = document.getElementById('elFV');
-    if (elFV) {
-        elFV.innerHTML = knebelFormat(arrayFVs[1])
-    } else {
-        console.error(`did not find elFV`)
-    }
-
-    let elFV05 = document.getElementById('elFV05');
-    if (elFV05) {
-        elFV05.innerHTML = knebelFormat(arrayFVs[0])
-    } else {
-        console.error(`did not find elFV95`)
-    }
-
-    let elFV95 = document.getElementById('elFV95');
-    if (elFV95) {
-        elFV95.innerHTML = knebelFormat(arrayFVs[2])
-    } else {
-        console.error(`did not find elFV95`)
-    }
 
 
 }

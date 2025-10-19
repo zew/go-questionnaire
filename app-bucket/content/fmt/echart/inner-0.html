@@ -1,22 +1,40 @@
 
-sparbetrag 
-  <input
-    tabindex="1"
-    type="number" name="sparbetrag" id="sparbetrag"
-    value="110"
-    min="0" max="700" step="10"
-  > 
+
+  <!-- rendered by go-questionnaire
+    simtool_instance, sim_history_i1, sparbetrag_bg_i1, share_safe_bg_i1   
+  -->
+
+
+  <div id="chart_container" style="width: 90%; height: 200px;"
+    >chart container</div>
 
 
 
+  <p>
+    Sparbetrag
+    <input type="number" name="sparbetrag" id="sparbetrag" value="110" min="0" max="300" step="10">
+    <br>
+    Share safe
+    <input type='number' name='share_safe' id='share_safe' value='33' min="0" max="300" step="10" />
+    <br>
+
+
+  </p>
+
+
+  <br>
+
+
+  <!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+  <!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/echart/echarts.min.js"></script>
+
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/echart/01-echart-config.mjs"></script>
+
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/echart/02-echart-init.js"></script>
 
 
 
-
-<!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
-<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
-<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echarts.min.js"></script>
-<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echart-config.mjs?v=001"></script>
 
 
 

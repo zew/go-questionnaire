@@ -1,82 +1,46 @@
 "strict mode";
 
-// sbInp, sbInpBG - declared and initialized in echart-config.mjs
 
-// the three fields for permanent storage of parameters in the database
-//   come in two distinct instances, separated by "_0" and "_1"
+// the fields for permanent storage of response value in go-questionnaire 
+//   come in distinct instances, suffixed by  "_0"  and  "_1"
 const getBackgroundField = core => {
-
     const inst = document.getElementById("simtool_instance");
     if (!inst) {
         throw `hidden input 'simtool_instance' required`;
     }
-
-
     const nameInstance = `${core}_${inst.value}`;
     const el = document.getElementById(nameInstance);
     if (!el) {
         throw `hidden input ${core}_${inst.value} required`;
     }
     return el
-
-
 };
 
 
+// stuff declare using 'var xyz' is intentionally for usage across scopes 
 
-var sb = 100.0; // sparbetrag - defined in echart-config.mjs
-var sbInp = document.getElementById("sparbetrag");
-var sbInpBG = getBackgroundField("sparbetrag_bg");
+var simHist = [];
+var simHistInp   = getBackgroundField("sim_history");
 
-if (sbInpBG && sbInpBG.value !== "") {
-    sb = parseInt(sbInpBG.value);  // restore from before
-}
-if (sbInp) {
-    sbInp.value = sb;
-}
 
-var safeBG = getBackgroundField("share_safe_bg"); // defined in echart-config.mjs
-var riskyBG = getBackgroundField("share_risky_bg");
-if (safeBG && safeBG.value != "") {
-    // nothing to copy/restore - we use safeBG.value directly in our computations  
-} else if (safeBG && safeBG.value === "") {
-    // init
-    safeBG.value = 50
-    riskyBG.value = 100 - safeBG.value
+var param1Inp   = getBackgroundField("param1");
+var param1InpBG = getBackgroundField("param1_bg");
+if (param1InpBG && param1InpBG.value !== "") {
+    param1Inp.value = parseInt(param1InpBG.value);  // restore from before
 }
 
 
-// already defined and initialized
-// var sb = 100.0; // sparbetrag
-// var safeBG  = document.getElementById("share_safe_bg");
-let yr = new Date().getFullYear()
-let az = 20; // "Anlagehorizont"
-let azV = 10; // "Vertical line"
-
-az = 25;
-azV = 20;
-let mnbd1 = 1 + 0.01
-let mn = 0.0; // mean return
-let sd = 1.0; // standard deviation
-mn = 0.059
-sd = 0.1462 // yearly annualized standard deviation of total returns MSCI world
-let quantile = 1.645 // 90 confidence interval - multiple of sd, best and worst five percent
-let ci90 = quantile * sd  // ~ 0.25
+var param2Inp   = getBackgroundField("param2");
+var param2InpBG = getBackgroundField("param2_bg");
+if (param2InpBG && param2InpBG.value !== "") {
+    param2Inp.value = parseInt(param2InpBG.value);  // restore from before
+}
 
 
-
-const stdDevReturnsOnly = 2;  // 0 - 
-let mnpl1 = 1 + mn     // mean plus one          = 106.0%
-let p05p1 = 1 + 0.0;   // computed below - based on assumption
-let p95p1 = 1 + 0.0;   // computed below - based on assumption
+var az = 50;
 
 
-
-
-
-
-
-var slider01 = document.getElementById("sparbetrag");
+var slider01 = param1Inp;
 
 let initSlider01 = (inst) => {
     slider01.value = 25;
@@ -98,9 +62,10 @@ slider01.oninput = function () {
 
 
 
+const yr=2025;
 
-function getChartTitle(yr, azV) {
-    return `Prognostizierte Entwicklung bis ${yr + azV}`;
+function getChartTitle(yr) {
+    return `Prognostizierte Entwicklung bis ${yr}`;
     // return `Prognostizierte Entwicklung der Ernte über das Jahr`;
 }
 
@@ -108,26 +73,22 @@ function getXAxisType() {
     return 'value';
     // return 'category';
 }
-function getXAxisMin(yr, az) {
+function getXAxisMin(yr) {
     return yr + 0;
     // return 'Okt';
 }
-function getXAxisMax(yr, az) {
-    return yr + az;
+function getXAxisMax(yr) {
+    return yr + 0;
     // return 'Juli';
 }
 
-function getXAxisFormatter(vl, yr, az) {
+function getXAxisFormatter(vl, yr) {
     return vl + ' ';
 }
 
 
 
 
-let factor = 100 / az;
-let idxFl = (1) * factor;  // index as float
-// let idx = Math.round( idxFl );
-let idx = Math.floor(idxFl);
 
 
 
@@ -148,80 +109,16 @@ function getVerticalMarkerTitle() {
 }
 
 
-function appendUnit(s) {
-    return `${s} €`;
-}
-
-
-function knebelFormat(dbl, nbsp = true) {
-    dbl = Math.round(dbl / 100) * 100
-    dbl = `${dbl}`  // to string
-    dbl = `${dbl.substring(0, dbl.length - 3)}.${dbl.substring(dbl.length - 3)}`
-    if (nbsp) {
-        dbl = `${dbl}&nbsp;€`
-    } else {
-        dbl = `${dbl}€`
-    }
-    return dbl
-}
-
-
-
-
-
-var simHist = null;
-var simHistBG = getBackgroundField("sim_history");
-if (simHistBG && simHistBG.value !== "") {
-    simHist = JSON.parse(simHistBG.value);  // restore from before
-} else {
-    simHist = [];
-    simHist.push({ "init": 0 });
-}
-
-console.log(`init sb ${sb}, safeBG ${safeBG.value}, riskyBG ${riskyBG.value}, simHist ${JSON.stringify(simHist)}`)
-
-
-
-
-if (stdDevReturnsOnly === 0) {
-
-    let p05 = mn * (1 - ci90)  //  75% of 6%
-    let p95 = mn * (1 + ci90)  // 125% of 6%    
-    // console.log(`pct05 ${p05}  -- mn ${mn}   pct95 ${p95}`)
-    p05p1 = 1 + p05  // worst case plus one    = 104.5%
-    p95p1 = 1 + p95  // worst case plus one    = 107.3%
-
-} else if (stdDevReturnsOnly === 2) {
-
-    sd = 0.430            // from sim-04.py
-    ci90 = quantile * sd  // 0,707 = 1,645*0,43
-
-    // =>  pct05+1, mn+1, pct95+1   [0.458, 1.059, 1.66]     
-    p05p1 = mnpl1 * (1 - ci90)
-    p95p1 = mnpl1 * (1 + ci90)
-
-}
-console.log(`mn=${mnpl1} conf ivl 5...95% [${1 - ci90}, ${1 + ci90}] `) // 14% * 1.65 =  ~25%
-
-p05p1 = Math.round(10000 * p05p1) / 10000;
-p95p1 = Math.round(10000 * p95p1) / 10000;
-
-// [0.3099, 1.059, 1.8081]
-console.log(`pct05+1, mn+1, pct95+1   [${p05p1}, ${mnpl1}, ${p95p1}]`)
 
 
 
 
 
 
-// unused primitive series...
-let dataXPrimitive = []; // unused
-for (let i = yr; i <= yr + az; i++) { dataXPrimitive.push(i); }
-let dataReturns = []; // unused
-for (let i = 0; i <= az; i++) { dataReturns.push(250 + i * 2000); }
 
 
-// console.log(ds2.source);
+console.log(`init sb ${param1Inp.value}`)
+
 
 
 
@@ -263,26 +160,6 @@ var dataObjectCreate = (function () {
         return maxY
     }
 
-    // private method
-    // get the future value
-    var pFVs = () => {
-        // pComputeData()  // => FV is always defined...
-        if (ds === undefined || ds.length == 0) {
-            return 0
-        }
-        let idxHalfAZ = azV; // index half of "Anlagezeitraum"
-        try {
-            //
-            let idx2 = 2 // idx 0 => years, idx 1 => lower bound, idx 2 => mean returns
-            let fv05 = ds[idxHalfAZ][idx2 - 1]
-            let fv = ds[idxHalfAZ][idx2 - 0]
-            let fv95 = ds[idxHalfAZ][idx2 + 1]
-            console.log("fv05, fv, fv95", [fv05, fv, fv95])
-            return [fv05, fv, fv95]
-        } catch (error) {
-            return ["FV05 of ds failed", "FV of ds failed", "FV95 of ds failed"]
-        }
-    }
 
     // private method
     // computeDataPriv compiles data for eChart options object
@@ -291,72 +168,8 @@ var dataObjectCreate = (function () {
     //          dataset: dataObject.computeData(),
     //       });
     var pComputeData = () => {
-        //
-        // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
 
-        if (ds === undefined || ds.length == 0) {
-            ds = []
-            let c0 = 0, c1 = 0, c2 = 0
-
-            let ss; // safe share [0...1]
-            try {
-                ss = parseFloat(safeBG.value) / 100.0  // safe share [0...1]
-            } catch (err) {
-                console.error(`cannot parse safeBG.value ${safeBG.value} - ${err}`)
-            }
-            let rs = 1 - ss;  // risky share [0...1]
-            console.log(`safe - risky - ${ss} - ${rs}`)
-
-
-            let sby = 12 * sb; // sparbetrag per year
-            for (let i = 0; i <= az; i++) {
-
-                // return on existing balance
-                let c1a = mnpl1 * c1 * rs + mnbd1 * c1 * ss
-
-                // change 2024-01 - we cannot use the std in p05p1 and p95p1
-                //   "geometrically" in every period => it's effect is powered by 20
-                // instead we have to use it _once_ - by applying it to the mean:
-                c0 = p05p1 * c1 * rs + mnbd1 * c1 * ss
-                c2 = p95p1 * c1 * rs + mnbd1 * c1 * ss
-
-                c1 = c1a;
-
-                if (rs === 0) {
-                    c0 = c1
-                    c2 = c1
-                }
-
-
-                // additional yearly contribution
-                c0 += sby; c1 += sby; c2 += sby;
-
-                let row = [yr + i, c0, c1, c2, `item${i}`]
-                // console.log(i, i+yr, mnp1**i);
-                // console.log(row);
-                ds.push(row);
-            }
-
-            maxY = ds[az][2]
-
-
-            // make vertical height for the best 95%
-            if (stdDevReturnsOnly === 0) {
-                maxY = (Math.round(maxY / 40000) + 0.20) * 40000
-            } else {
-                maxY = (Math.round(maxY / 40000) + 0.60) * 40000
-            }
-
-            // console.log(ds);
-            console.log(`pComputeData - ds recomputed - length ${ds.length} - maxY = ${Math.round(maxY)}`);
-            // console.log(ds);
-
-        }
-
-        return ds
-
-
-
+        const a = 23;
         return [
             // [col1, col2, col3 ... ]
             // [dimX, dimY, other dimensions ...
@@ -364,7 +177,7 @@ var dataObjectCreate = (function () {
             //    see      https://echarts.apache.org/en/option.html#series-line
             //    search   'Relationship between "value" and axis.type'
             //
-            [2023, 950 + a, 175 + a, 'item-1'],
+            [2023,  950 + a, 175 + a, 'item-1'],
             [2024, 2900 + a, 2200 + a, 'item-2'],
             [2025, 4400 + a, 4000 + a, 'item-3'],
             [2026, 5000 + a, 4000 + a, 'item-4'],
@@ -384,7 +197,6 @@ var dataObjectCreate = (function () {
     // public interface
     return {
         resetData: pResetData,
-        FVs: pFVs,
         maxY: pMaxY,
         computeData: pComputeData,
     };
@@ -466,7 +278,7 @@ var optEchart = {
     title: {
         // text: 'ECharts Getting Started Example'
         text: 'Angespartes Vermögen',
-        text: getChartTitle(yr, azV),
+        text: getChartTitle(yr),
         left: '1%',
         textStyle: {
             fontSize: 18,
@@ -512,7 +324,7 @@ var optEchart = {
         axisLabel: {
             // compare  axisLabel. formatter
             formatter: function (vl, idx) {
-                return getXAxisFormatter(vl, yr, az);
+                return getXAxisFormatter(vl, yr);
             },
             textStyle: {
                 // color: function (vl, idx) {
@@ -530,8 +342,8 @@ var optEchart = {
             console.log(`x-axis min ${vl.min} max ${vl.max} `)
             return vl.min - 10;
         },
-        min: getXAxisMin(yr, az),
-        max: getXAxisMax(yr, az),
+        min: getXAxisMin(yr),
+        max: getXAxisMax(yr),
 
         // show label of the min/max tick
         //    seems ineffective, labels are shown anyway
@@ -668,7 +480,7 @@ var optEchart = {
             },
             data: dataObject.computeData(),
 
-            markArea: getVerticalArea(yr, azV),
+            markArea: getVerticalArea(yr, 50),
             //  markPoint: getMarkpointConfig( [30000, 33000, 34000] ),
             //  markPoint: "getMarkpointConfig( dataObject.FVs() )",
 
@@ -734,7 +546,7 @@ function refresh(chartObj, dataObj) {
                 },
                 {
                     data: dataObj.computeData(),
-                    markArea: getVerticalArea(yr, azV),
+                    markArea: getVerticalArea(yr, 50),
                     // markPoint: getMarkpointConfig( [30000, 33000, 34000] ),
                     // markPoint: getMarkpointConfig( dataObj.FVs() ),
                 },

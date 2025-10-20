@@ -1,24 +1,27 @@
-let chIDs = ['distanceChart', 'forecastChart', 'consensusChart'];
+const chartIDs  = ['distanceChart', 'forecastChart', 'consensusChart'];
+let   chartObjs = [];
 
-// === Functionality from share treatment v2 ===
+// parsedData - see data.js
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    const userShareInput      = document.getElementById('userShareInput');
-    const userShareSlider     = document.getElementById('userShareSlider');
     const shareComparisonText = document.getElementById('shareComparisonText');
+    shareComparisonText.innerHTML = `shareComparisonText content`;
 
+    chartIDs.forEach(function (id) {
+        let el = document.getElementById(id);
+        const ch = echarts.init(el) ;
+        chartObjs.push(ch);
+    });
 
-    const distanceCh = echarts.init(document.getElementById('distanceChart'));
-    const forecastCh = echarts.init(document.getElementById('forecastChart'));
-    const consenssCh = echarts.init(document.getElementById('consensusChart'));
-
-    let parsedData = [];
 
     function getSelectedQuarter() {
+        return 'Q4_2025';  // Q1_2026, Q2_2026
         return document.querySelector('input[name="quarter"]:checked').value;
     }
 
     function updateCharts() {
+
         function formatDE(value, digits = 2) {
             if (isNaN(value)) return '';
             return value.toLocaleString("de-DE", {
@@ -26,47 +29,76 @@ document.addEventListener('DOMContentLoaded', () => {
                 maximumFractionDigits: digits
             });
         }
-        const respondentIndex = parseInt(10, 10);
-        const selectedQuarter = getSelectedQuarter();
 
-        if (isNaN(respondentIndex) || !parsedData[respondentIndex]) {
-            distanceCh.clear();
-            forecastCh.clear();
-            consenssCh.clear();
-            if (shareComparisonText) shareComparisonText.textContent = '';
+        const participantIdx = parseInt(10, 10);
+        const quarter        = getSelectedQuarter();
+
+        // const dbg = JSON.stringify(parsedData[participantIdx], null, 2);
+        // console.log(` participantIdx ${participantIdx} - data ${dbg} `);
+
+        if (isNaN(participantIdx) || !parsedData[participantIdx]) {
+
+            console.log(` nothing found for participantIdx ${participantIdx} - cleaning out  `);
+
+            chartObjs.forEach(function (chartObj) {
+                chartObj.clear();
+            });
+
+            if (shareComparisonText) {
+                shareComparisonText.textContent = '';
+            } 
             return;
         }
 
-        const respondentData = parsedData[respondentIndex];
-        const userShare = parseFloat(userShareInput.value) || 0;
-        const actualShareRaw = respondentData[`grshare${selectedQuarter}`];
-        const actualShare = parseFloat(actualShareRaw) * 100;
-        const forecast = parseFloat(respondentData[`growth${selectedQuarter}`]);
-        const consensus = parseFloat(respondentData[`consensus${selectedQuarter}`]);
+        const participantDta = parsedData[participantIdx];
+
+        // 
+        let   userShare      = parseFloat(55);
+        if (false){
+            // todo retrieve from previous page
+            userShare      = parseFloat(userShareInput.value) || 0;
+        }
+
+        const actualShareRaw = participantDta[`grshare${quarter}`];
+        const actualShare    = parseFloat(actualShareRaw) * 100;
+        const forecast       = parseFloat(participantDta[`growth${quarter}`]);
+        const consensus      = parseFloat(participantDta[`consensus${quarter}`]);
+        
+        
+        console.log(`actual ${actualShare} - forecast ${forecast} - consensus ${consensus}   `);
+
 
         if (!isNaN(actualShare)) {
-            shareComparisonText.innerHTML = `Sie haben <strong>${formatDE(userShare)}%</strong> angegeben.<br> Tatsächlich lag der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u> Wachstum als Sie angegeben haben, bei <strong><span style="color:#EE6666">${formatDE(actualShare)}%</span></strong>.`;
+            shareComparisonText.innerHTML = `Sie haben   <strong>${formatDE(userShare,1)}%</strong> angegeben. <br> 
+                Tatsächlich lag der <b>Anteil unter allen Befragten</b>, 
+                die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben, 
+                bei <strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
         } else {
-            shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare)}%</strong> | Tatsächlicher Anteil: <strong>N/A</strong>`;
+            shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare,1)}%</strong> | 
+                Tatsächlicher Anteil: <strong>N/A</strong>`;
         }
+
 
         // Distance Chart
         const distance = Math.abs(userShare - actualShare);
         const distanceChartOption = {
-            grid: { top: 20, right: 40, bottom: 20, left: 40 },
-            xAxis: { type: 'value', min: 0, max: 100, axisLabel: { formatter: '{value}%' }, splitLine: { show: false } },
-            yAxis: { type: 'category', data: [''], show: false },
+            grid:    { top: 20, right: 40, bottom: 20, left: 40 },
+            xAxis:   { type: 'value', min: 0, max: 100, axisLabel: { formatter: '{value}%' }, 
+                        splitLine: { show: false } 
+                     },
+            yAxis:   { type: 'category', data: [''], show: false },
             series: [{
                 type: 'scatter',
                 symbolSize: 26,
                 data: [
                     {
                         name: 'Ihr Anteil',
-                        value: [userShare, 'Ihr Anteil'],
+                        value: [ userShare, 'Ihr Anteil'],
                         itemStyle: { color: '#546a7b' },
                         label: {
-                            show: true, position: 'top', distance: 8, fontWeight: 'bold', color: '#000000',
-                            formatter: (params) => formatDE(params.value[0]) + '%'
+                            show: true, position: 'top', 
+                            distance: 8, fontWeight: 'bold', color: '#000000',
+                            formatter: (params) => formatDE(params.value[0]) + '%',
                         }
                     },
                     {
@@ -74,69 +106,91 @@ document.addEventListener('DOMContentLoaded', () => {
                         value: [actualShare, ''],
                         itemStyle: { color: '#EE6666' },
                         label: {
-                            show: true, position: 'bottom', distance: 8, fontWeight: 'bold', color: '#EE6666',
-                            formatter: (params) => formatDE(params.value[0]) + '%'
+                            show: true, position: 'bottom', 
+                            distance: 8, fontWeight: 'bold', color: '#EE6666',
+                            formatter: (params) => formatDE(params.value[0]) + '%',
                         }
                     }
                 ],
                 markLine: !isNaN(actualShare) ? {
                     symbol: ['none', 'none'],
-                    label: { show: true, formatter: `Abstand: ${formatDE(distance)}%`, position: 'middle', fontWeight: 'bold', color: '#111' },
+                    label: { show: true, formatter: `Abstand: ${formatDE(distance)}%`, 
+                        position: 'middle', fontWeight: 'bold', color: '#111' 
+                    },
                     lineStyle: { type: 'solid', width: 3, color: '#6b7280' },
-                    data: [[{ coord: [userShare, ''] }, { coord: [actualShare, ''] }]]
+                    data: [[
+                        { coord: [userShare,   ''] }, 
+                        { coord: [actualShare, ''] },
+                    ]]
                 } : {}
             }]
         };
-        distanceCh.setOption(distanceChartOption);
+        chartObjs[0].setOption(distanceChartOption);
+        // console.log(`distance chart ${chartObjs[0]}  `);
+
+
 
         // Forecast Chart
         const forecastOption = {
-            grid: { top: 10, right: 60, bottom: 30, left: 100 },
-            xAxis: { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
-            yAxis: { type: 'category', data: [selectedQuarter] },
+            grid:    { top: 10, right: 60, bottom: 30, left: 100 },
+            xAxis:   { type: 'value', min: -3, max: 3, 
+                        interval: 0.5, axisLabel: { formatter: '{value}' },
+                     },
+            yAxis:   { type: 'category', data: [quarter] },
             series: [{
                 type: 'bar',
                 data: [forecast],
                 itemStyle: { color: '#62929e' },
-                label: { show: true, position: 'insideRight', color: '#000', backgroundColor: '#fff', borderRadius: 4, padding: [2, 6], formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) }
+                label: { show: true, position: 'insideRight', 
+                    color: '#000', backgroundColor: '#fff', borderRadius: 4, 
+                    padding: [2, 6], 
+                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) ,
+                }
             }]
         };
-        forecastCh.setOption(forecastOption);
+        chartObjs[1].setOption(forecastOption);
+
+
 
         // Consensus Chart
         const consensusOption = {
-            grid: { top: 10, right: 60, bottom: 30, left: 100 },
-            xAxis: { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
-            yAxis: { type: 'category', data: [selectedQuarter] },
+            grid:    { top: 10, right: 60, bottom: 30, left: 100 },
+            xAxis:   { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
+            yAxis:   { type: 'category', data: [quarter] },
             series: [{
                 type: 'bar',
                 data: [consensus],
                 itemStyle: { color: '#546a7b' },
-                label: { show: true, position: 'insideRight', color: '#000', backgroundColor: '#fff', borderRadius: 4, padding: [2, 6], formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) }
+                label: { show: true, position: 'insideRight', 
+                    color: '#000', backgroundColor: '#fff', borderRadius: 4, 
+                    padding: [2, 6], 
+                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)),
+                }
             }]
         };
-        consenssCh.setOption(consensusOption);
+        chartObjs[2].setOption(consensusOption);
     }
-    window.updateCharts = updateCharts;
 
 
+    chartObjs.forEach(function (chartObj) {
+        // chartObj.resize();
+    });
 
-    // Sync slider and input
-    userShareInput.addEventListener('input', () => {
-        userShareSlider.value = userShareInput.value;
+
+    console.log(`pageLoaded() pg3 complete`)
+
+
+    setTimeout(function() {
+
+        console.log(`updateCharts() start`)
         updateCharts();
-    });
-    userShareSlider.addEventListener('input', () => {
-        userShareInput.value = userShareSlider.value;
-        updateCharts();
-    });
+        chartObjs.forEach(function (chartObj) {
+            chartObj.resize();
+            // var inst = echarts.getInstanceByDom(el);
+        });
+        console.log(`updateCharts() stop`)
 
-
-    chIDs.forEach(function (id) {
-        let ch = document.getElementById(id);
-        ch.resize();
-    });
-
+    }, 10);
 
 
 });

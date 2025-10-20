@@ -8,132 +8,42 @@
       param1_bg_0, param2_bg_0   
   -->
 
+  <style>
+    #distanceChart, #forecastChart, #consensusChart {
+      height: 9rem;
+      width:  100%;
+      margin: 0;
+      padding: 0;
+      /* border: 1px solid red; */
+    }
 
-<script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/echarts.min.js"></script>
+  </style>
+
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/echarts.min.js"></script>
 
 
-
-<div class="section-title">
-  <b>3b.</b> Der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u>
-  Wachstum für Q4 2025 als Sie angegeben haben, lag bei...</div>
-
-<!-- input-group directly BELOW the 3.b statement (per request) -->
-<div class="input-group">
-  <div class="slider-container">
-    <input type="range" id="userShareSlider" value="0" min="0" max="100" step="1" list="tickmarks">
-    <datalist id="tickmarks">
-      <option value="0"></option>
-      <option value="10"></option>
-      <option value="20"></option>
-      <option value="30"></option>
-      <option value="40"></option>
-      <option value="50"></option>
-      <option value="60"></option>
-      <option value="70"></option>
-      <option value="80"></option>
-      <option value="90"></option>
-      <option value="100"></option>
-    </datalist>
-    <input type="number" id="userShareInput" value="0" min="0" max="100" step="1">
-  </div>
-</div>
-
-<div class="buttons">
-  <button class="next" data-next="2">Weiter</button>
-</div>
-</div>
-
-<!-- Section 2: Hintergrundtitel -->
-<div class="section" id="section2" data-section="2" style="display:none;">
-  <div class="section-title"><strong>Hintergrundinformationen: ZEW Finanzmarkttest August 2025</strong></div>
-  <br>
   <div class="section-title"><b>4a. NUR TREATMENT</b> </div>
-  <div id="shareComparisonText"></div>
-  <!-- distanceChart UNDER 4a (per request) -->
+
+  <div id="shareComparisonText" style="margin-top: 0.5rem;"></div>
+
+
   <div id="distanceChart" class="chart"></div>
-
   <br>
-  <div class="section-title"><b>4b.</b> <b>Ihre persönliche</b> Wirtschaftswachstumsprognose im August 2025 lag bei...
+  
+
+  <div class="section-title">
+      <b>4b.</b> <b>Ihre persönliche</b> Wirtschaftswachstumsprognose im August 2025 lag bei...
   </div>
-  <!-- forecastChart UNDER 4b (per request) -->
   <div id="forecastChart" class="chart"></div>
-
   <br>
-  <div class="section-title"><b>4c.</b> Die durchschnittliche Wirtschaftswachstumsprognose <strong>unter allen
+
+
+  <div class="section-title">
+    <b>4c.</b> Die durchschnittliche Wirtschaftswachstumsprognose <strong>unter allen
       Befragten</strong> im August 2025 lag bei...</div>
-  <!-- consensusChart UNDER 4c (per request) -->
   <div id="consensusChart" class="chart"></div>
 
-  <div class="buttons">
-    <button class="next" data-next="7">Weiter</button>
-  </div>
-</div>
 
-<!-- Section 6: Intro zu Meinungsteil -->
-<div class="section" id="section7" data-section="7" style="display:none;">
-  <div class="section-title"><strong>Ihre Meinung zu aktuellen Aussichten</strong></div>
-  <br>
-  <p>Denken Sie nun bitte erneut über das deutsche Wirtschaftswachstum nach und<br> geben Sie Ihre Einschätzung ab.</p>
-  <p>Bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben.</p>
 
-  <div class="section-title"><b>5a.</b> Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen?</div>
-  <br>
-  <div class="quarter-row">
-    <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal"
-        aria-label="Q4 2025 Wachstum"> %</label>
-    <label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal"
-        aria-label="Q1 2026 Wachstum"> %</label>
-    <label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal"
-        aria-label="Q2 2026 Wachstum"> %</label>
-  </div>
-  <div class="buttons">
-    <button class="next" data-next="8">Weiter</button>
-  </div>
-</div>
-
-<!-- Section 8: 5b -->
-<div class="section" id="section8" data-section="8" style="display:none;">
-  <div class="section-title"><b>5b.</b> Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose
-    <u>unter allen Befragten in der aktuellen Befragung</u>?</div>
-  <br>
-  <div class="quarter-row">
-    <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal"
-        aria-label="Q4 2025 Durchschnitt"> %</label>
-    <label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal"
-        aria-label="Q1 2026 Durchschnitt"> %</label>
-    <label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal"
-        aria-label="Q2 2026 Durchschnitt"> %</label>
-  </div>
-  <div class="buttons">
-    <button class="next" data-next="9">Weiter</button>
-  </div>
-</div>
-
-<!-- Section 9: 6 Checkboxes -->
-<div class="section" id="section9" data-section="9" style="display:none;">
-  <p><b>6.</b> Wie treffen Sie Ihre Vorhersagen am ehesten?</p>
-  <p>
-    <input type="checkbox" id="intuition" name="intuition" value="Bauchgefuehl">
-    <label for="intuition"> Bauchgefühl</label><br>
-    <input type="checkbox" id="model" name="model" value="Modelbasiert">
-    <label for="model"> Modelbasiert</label><br>
-    <input type="checkbox" id="other" name="other" value="anders">
-    <label for="other"> anders</label> <input type="text" placeholder="">
-  </p>
-  <div class="buttons">
-    <button class="next" data-next="10">Weiter</button>
-  </div>
-</div>
-
-<!-- Section 10: 7 Email + final Weiter -->
-<div class="section" id="section10" data-section="10" style="display:none;">
-  <p><b>7.</b> Möchten Sie über die Studienergebnisse mit Ihren Angaben zu den deutschen Wachstumschancen per Email
-    informiert werden: <input type="checkbox" aria-label="Email Zustimmung">&nbsp;&nbsp;Ja</p>
-  <div class="buttons">
-    <button onclick="go('seite9.html')">Weiter</button>
-  </div>
-</div>
-
-</main>
-
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/data.js"></script>
   <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/pg3.js"></script>

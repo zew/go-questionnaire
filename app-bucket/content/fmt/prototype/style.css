@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; background-color: #f9f6ee; margin: 0; padding: 0 2rem; }
+header { display: flex; justify-content: space-between; align-items: center; background-color: #f0eedd; padding: 1rem 0; }
+header h1 { margin: 0; font-size: 1.5rem; color: #005a9c; }
+nav span { margin-left: 1rem; color: #005a9c; cursor: pointer; }
+.step-indicator { display: flex; gap: 1rem; margin: 1rem 0; }
+.step { padding: 0.5rem 1rem; background-color: #e6e6e6; border-radius: 20px; }
+.step.active { background-color: #cce5ff; font-weight: bold; }
+main { max-width: 1000px; margin: auto; }
+.question { font-weight: bold; margin: 2rem 0 1rem; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+th, td { padding: 0.5rem; text-align: center; }
+th { background-color: #eee; }
+input[type=radio] { transform: scale(1.3); margin: 0 0.5rem; }
+input[type=text] { padding: 0.3rem; width: 80px; }
+.buttons { display: flex; justify-content: space-between; margin: 2rem 0; }
+button { background-color: #0072c6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }

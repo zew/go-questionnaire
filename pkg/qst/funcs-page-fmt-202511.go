@@ -1,107 +1,72 @@
 package qst
 
 import (
-	"fmt"
-
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func fmt202511_0(q *QuestionnaireT, page *pageT) error {
-	return fmt202511(q, page, 0)
-}
-func fmt202511_1(q *QuestionnaireT, page *pageT) error {
-	return fmt202511(q, page, 1)
-}
-
-func fmt202511(q *QuestionnaireT, page *pageT, instance int) error {
+func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
 
 	page.Label = trl.S{
-		"en": fmt.Sprintf("Experiment-Chart %v", instance),
-		"de": fmt.Sprintf("Experiment chart %v", instance),
-	}
-	page.Label = trl.S{
-		"en": "",
 		"de": "",
+		"en": "",
+	}
+	page.Short = trl.S{
+		"de": "Wachtsumschancen II",
+		"en": "todo %v",
 	}
 	// page.SuppressInProgressbar = true
 
 	page.WidthMax("58rem")
 
-	btmSpacers := 0
-
 	grIdx := q.Version() % 2
 
-	if instance < 10 {
-		gr := page.AddGroup()
-		gr.Cols = 3
-		gr.BottomVSpacers = btmSpacers
-
-		if grIdx == 0 {
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `intro text treatment A`,
-					"en": `todo`,
-				}.OutlineHid("C24.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-		} else {
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `intro text treatment B`,
-					"en": `todo`,
-				}.OutlineHid("C24.")
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-			}
-		}
-
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = fmt.Sprintf("param1_%v", instance)
-			inp.Min = 0
-			inp.Max = 100
-			inp.Step = 5
-			inp.MaxChars = 5
-			inp.Response = "55"
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = fmt.Sprintf("param2_%v", instance)
-			inp.Min = 0
-			inp.Max = 100
-			inp.Step = 5
-			inp.MaxChars = 5
-			inp.Response = "15"
-		}
-
-	}
-
-	// gr1 - hidden inputs saving the values from the echart
+	//
+	// gr1
+	// 	hidden inputs saving the values from the echart
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.BottomVSpacers = btmSpacers
+		gr.BottomVSpacers = 0
+		{
+			inp := gr.AddInput()
+			inp.Type = "hidden"
+			inp.Name = "change_history_pg2"
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "hidden"
+			inp.Name = "param1_pg2_bg"
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "hidden"
+			inp.Name = "param2_pg2_bg"
+		}
+	}
+
+	//
+	// gr2
+	// 	visible input fields - "foreground"
+	if grIdx == 0 || true {
+
+		gr := page.AddGroup()
+		gr.Cols = 3
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			// inp.Name = "simtool_instance"
-			// we render this as textblock, to circumvent the uniqueness of fieldnames.
-			// it only serves as read-only indicator for the embedded echart javascript
 			inp.Label = trl.S{
-				"de": fmt.Sprintf(`
-					<div style='visible: none; height: 0.1rem; font-size: 4px;'> 
-						<input type='hidden' value='%v'  name='simtool_instance' id='simtool_instance' />
-					</div> 
-				`, instance),
+				"de": `
+					
+					Zuletzt haben Sie im 
+						<u>August [May/Februar] 2025</u> 
+					eine Prognose 
+					für das Quartalswachstum in Q4 2025 angegeben.
+					<br><br>
+					Was denken Sie über Prognosen der anderen Teilnehmer in der damaligen Befragung?<br><br>
+										
+					`,
 				"en": `todo`,
 			}
 			inp.ColSpan = gr.Cols
@@ -109,38 +74,91 @@ func fmt202511(q *QuestionnaireT, page *pageT, instance int) error {
 		}
 		{
 			inp := gr.AddInput()
-			inp.Type = "hidden"
-			inp.Name = fmt.Sprintf("sim_history_%v", instance)
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "hidden"
-			inp.Name = fmt.Sprintf("param1_bg_%v", instance)
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "hidden"
-			inp.Name = fmt.Sprintf("param2_bg_%v", instance)
-		}
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"de": `
+					
+					Der Anteil unter allen Befragten, 
+					die im August 2025 ein niedrigeres Wachstum für Q4 2025 als Sie angegeben haben, 
+					lag bei...										
+					`,
 
+				"en": `todo`,
+			}.OutlineHid("3b.")
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+		}
+	} else {
 	}
 
 	//
-	// gr2 - embedding html with echart
+	// {
+	// 	inp := gr.AddInput()
+	// 	inp.Type = "number"
+	// 	inp.Name = fmt.Sprintf("param1_%v", instance)
+	// 	inp.Min = 0
+	// 	inp.Max = 100
+	// 	inp.Step = 5
+	// 	inp.MaxChars = 5
+	// 	inp.Response = "55"
+	// }
+	// {
+	// 	inp := gr.AddInput()
+	// 	inp.Type = "number"
+	// 	inp.Name = fmt.Sprintf("param2_%v", instance)
+	// 	inp.Min = 0
+	// 	inp.Max = 100
+	// 	inp.Step = 5
+	// 	inp.MaxChars = 5
+	// 	inp.Response = "15"
+	// }
+
+	//
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.BottomVSpacers = btmSpacers
 		{
 			inp := gr.AddInput()
 			inp.Type = "dyn-textblock"
 			inp.DynamicFunc = "RenderStaticContent"
-			// inp.DynamicFuncParamset = fmt.Sprintf("./experiment-1/inner-%d.html", grIdx)
-			inp.DynamicFuncParamset = fmt.Sprintf("./experiment-1/inner-%d.html", 0)
+			inp.DynamicFuncParamset = "./experiment-1/pg2.html"
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
 		}
+	}
 
+	return nil
+}
+
+func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
+
+	page.Groups = nil // dynamically recreate the groups
+
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.Short = trl.S{
+		"de": "Wachtsumschancen III",
+		"en": "todo %v",
+	}
+	// page.SuppressInProgressbar = true
+
+	page.WidthMax("58rem")
+
+	// grIdx := q.Version() % 2
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "dyn-textblock"
+			inp.DynamicFunc = "RenderStaticContent"
+			inp.DynamicFuncParamset = "./experiment-1/pg3.html"
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 1
+		}
 	}
 
 	return nil

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 2 – Inflation und Zinsen</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <header><h1>ZEW Index / Finanzmarkttest – 2025-11</h1><nav><span>Sprache/Language</span><span>Fragebogen</span><span>Benutzer</span><span>Über</span></nav></header>
+  <div class="step-indicator"><div class="step" onclick="go('seite1.html')">1 Konjunktur</div><div class="step active" onclick="go('seite2.html')">2 Inflation, Zinsen</div><div class="step" onclick="go('seite3.html')">3 Aktienmärkte</div><div class="step" onclick="go('seite4.html')">4 Währungen</div><div class="step" onclick="go('seite5.html')">5 Sektoren</div><div class="step" onclick="go('seite6.html')">6 Wirtschaftswachstum</div><div class="step" onclick="go('seite7.html')">7 Wachstumschancen I</div><div class="step" onclick="go('seite8.html')">8 Wachstumschancen II</div><div class="step" onclick="go('seite9.html')">9 Abschluss</div></div>
+  <main>
+  <div class="question">Inflation und Zinsen</div>
+
+   <div class="section-title"><b>3.</b>  Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (6 Mo.)</div><br>
+    <table>
+      <tr><th></th><th>steigen</th><th>gleich bleiben</th><th>sinken</th><th>keine Angabe</th></tr>
+      <tr><td>Euroraum</td><td><input type="radio" name="inf_eu" value="steigen"></td><td><input type="radio" name="inf_eu" value="gleich"></td><td><input type="radio" name="inf_eu" value="sinken"></td><td><input type="radio" name="inf_eu" value="none"></td></tr>
+      <tr><td>Deutschland</td><td><input type="radio" name="inf_de"></td><td><input type="radio" name="inf_de"></td><td><input type="radio" name="inf_de"></td><td><input type="radio" name="inf_de"></td></tr>
+      <tr><td>USA</td><td><input type="radio" name="inf_us"></td><td><input type="radio" name="inf_us"></td><td><input type="radio" name="inf_us"></td><td><input type="radio" name="inf_us"></td></tr>
+      <tr><td>China</td><td><input type="radio" name="inf_cn"></td><td><input type="radio" name="inf_cn"></td><td><input type="radio" name="inf_cn"></td><td><input type="radio" name="inf_cn"></td></tr>
+    </table>
+    <div class="section-title"><b>4.</b>  Die kurzfristigen Zinsen (3‑Mo.-Interbanksätze) werden mittelfristig (6 Mo.)</div><br>
+    <table>
+      <tr><th></th><th>steigen</th><th>gleich bleiben</th><th>sinken</th><th>keine Angabe</th></tr>
+      <tr><td>Euroraum</td><td><input type="radio" name="zin_eu" value="steigen"></td><td><input type="radio" name="zin_eu" value="gleich"></td><td><input type="radio" name="zin_eu" value="sinken"></td><td><input type="radio" name="zin_eu" value="none"></td></tr>
+      <tr><td>USA</td><td><input type="radio" name="zin_us"></td><td><input type="radio" name="zin_us"></td><td><input type="radio" name="zin_us"></td><td><input type="radio" name="zin_us"></td></tr>
+      <tr><td>China</td><td><input type="radio" name="zin_cn"></td><td><input type="radio" name="zin_cn"></td><td><input type="radio" name="zin_cn"></td><td><input type="radio" name="zin_cn"></td></tr>
+    </table>
+    <div class="section-title"><b>5.</b>  Die langfristigen Zinsen (Renditen zehnjähriger Staatsanleihen) werden mittelfristig (6 Mo.)</div><br>
+    <table>
+      <tr><th></th><th>steigen</th><th>gleich bleiben</th><th>sinken</th><th>keine Angabe</th></tr>
+      <tr><td>Deutschland</td><td><input type="radio" name="ltz_de" value="steigen"></td><td><input type="radio" name="ltz_de" value="gleich"></td><td><input type="radio" name="ltz_de" value="sinken"></td><td><input type="radio" name="ltz_de" value="none"></td></tr>
+      <tr><td>USA</td><td><input type="radio" name="ltz_us"></td><td><input type="radio" name="ltz_us"></td><td><input type="radio" name="ltz_us"></td><td><input type="radio" name="ltz_us"></td></tr>
+      <tr><td>China</td><td><input type="radio" name="ltz_cn"></td><td><input type="radio" name="ltz_cn"></td><td><input type="radio" name="ltz_cn"></td><td><input type="radio" name="ltz_cn"></td></tr>
+    </table>
+	
+	  <div class="buttons"><button onclick="go('seite1.html')">Zurück</button> <button onclick="go('seite3.html')">Weiter</button></div>
+  </main>
+</body>
+</html>

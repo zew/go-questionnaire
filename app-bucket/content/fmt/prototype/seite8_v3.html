@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 8 – Wachstumschancen II</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+  <!-- Libraries for charts and CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <style>
+    /* keep original spacing */
+    .section { margin: 1.25rem 0; }
+    .buttons { margin-top: .75rem; }
+
+    /* borrowed/adapted from share treatment v2 */
+    .controls {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 14px;
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
+    }
+    select, input[type="number"], input[type="file"], button {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ced4da;
+      font-size: 15px;
+      background-color: #fff;
+    }
+    button {
+      cursor: pointer;
+      background-color: #4f8bc9;
+      color: white;
+      border-color: #4f8bc9;
+    }
+    button:hover { background-color: #3f6fa5; }
+    #quarterSelect { display: flex; gap: 12px; }
+
+    .input-group { margin: 10px 0 6px; }
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 520px;
+    }
+    #userShareInput {
+      width: 80px;
+      text-align: center;
+    }
+    #userShareSlider { flex: 1; height: 6px; }
+
+    .chart { width: 100%; height: 180px; }
+    #forecastChart, #consensusChart { height: 190px; }
+
+    #shareComparisonText {
+      font-size: 15px;
+      font-weight: 500;
+      margin: 4px 0 10px;
+      min-height: 24px;
+    }
+
+    header h1 { margin-bottom: 0; }
+    nav span { margin-right: 12px; }
+    .quarter-row { margin: 6px 0; }
+    .section-title { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZEW Index / Finanzmarkttest – 2025-11</h1>
+    <nav>
+      <span>Sprache/Language</span>
+      <span>Fragebogen</span>
+      <span>Benutzer</span>
+      <span>Über</span>
+    </nav>
+  </header>
+
+  <div class="step-indicator">
+    <div class="step">1 Konjunktur</div>
+    <div class="step">2 Inflation, Zinsen</div>
+    <div class="step">3 Aktienmärkte</div>
+    <div class="step">4 Währungen</div>
+    <div class="step">5 Sektoren</div>
+    <div class="step">6 Wirtschaftswachstum</div>
+    <div class="step">7 Wachstumschancen I</div>
+    <div class="step active" onclick="go('seite8.html')">8 Wachstumschancen II</div>
+    <div class="step">9 Abschluss</div>
+  </div>
+
+  <main>
+    <!-- Section 1 -->
+    <div class="section" id="section1" data-section="1">
+
+      <!-- controls ABOVE the text line (per request) -->
+      <div class="controls">
+        <label for="csvFileInput">CSV hochladen:</label>
+        <input type="file" id="csvFileInput" accept=".csv">
+        <label for="respondentSelect">Befragte/r:</label>
+        <select id="respondentSelect"></select>
+        <div id="quarterSelect">
+          <label><input type="radio" name="quarter" value="Q4_2025" checked> Q4 2025</label>
+          <label><input type="radio" name="quarter" value="Q1_2026"> Q1 2026</label>
+          <label><input type="radio" name="quarter" value="Q2_2026"> Q2 2026</label>
+        </div>
+        <button id="downloadBtn" type="button">CSV herunterladen</button>
+      </div>
+
+      <!-- original text -->
+      Zuletzt haben sie im <u>August [May/Februar] 2025</u> eine Prognose für das Quartalswachstum in Q4 2025 angegeben.<br><br>
+	Was denken Sie über Prognosen der anderen Teilnehmer in der damaligen Befragung?<br><br>
+      <div class="section-title"><b>3b.</b> Der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u> Wachstum für Q4 2025 als Sie angegeben haben, lag bei...</div>
+
+      <!-- input-group directly BELOW the 3.b statement (per request) -->
+      <div class="input-group">
+        <div class="slider-container">
+          <input type="range" id="userShareSlider" value="0" min="0" max="100" step="1" list="tickmarks">
+          <datalist id="tickmarks">
+            <option value="0"></option><option value="10"></option><option value="20"></option>
+            <option value="30"></option><option value="40"></option><option value="50"></option>
+            <option value="60"></option><option value="70"></option><option value="80"></option>
+            <option value="90"></option><option value="100"></option>
+          </datalist>
+          <input type="number" id="userShareInput" value="0" min="0" max="100" step="1">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="next" data-next="2">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 2: Hintergrundtitel -->
+    <div class="section" id="section2" data-section="2" style="display:none;">
+      <div class="section-title"><strong>Hintergrundinformationen: ZEW Finanzmarkttest August 2025</strong></div>
+      <br>
+      <div class="section-title"><b>4a. NUR TREATMENT</b> </div>
+      <div id="shareComparisonText"></div>
+      <!-- distanceChart UNDER 4a (per request) -->
+      <div id="distanceChart" class="chart"></div>
+
+      <br>
+      <div class="section-title"><b>4b.</b> <b>Ihre persönliche</b> Wirtschaftswachstumsprognose im August 2025 lag bei...</div>
+      <!-- forecastChart UNDER 4b (per request) -->
+      <div id="forecastChart" class="chart"></div>
+
+      <br>
+      <div class="section-title"><b>4c.</b> Die durchschnittliche Wirtschaftswachstumsprognose <strong>unter allen Befragten</strong> im August 2025 lag bei...</div>
+      <!-- consensusChart UNDER 4c (per request) -->
+      <div id="consensusChart" class="chart"></div>
+
+      <div class="buttons">
+        <button class="next" data-next="7">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 6: Intro zu Meinungsteil -->
+    <div class="section" id="section7" data-section="7" style="display:none;">
+      <div class="section-title"><strong>Ihre Meinung zu aktuellen Aussichten</strong></div>
+      <br>
+      <p>Denken Sie nun bitte erneut über das deutsche Wirtschaftswachstum nach und<br> geben Sie Ihre Einschätzung ab.</p>
+      <p>Bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben.</p>
+
+      <div class="section-title"><b>5a.</b> Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen?</div>
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q4 2025 Wachstum"> %</label>
+        <label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q1 2026 Wachstum"> %</label>
+        <label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q2 2026 Wachstum"> %</label>
+      </div>
+      <div class="buttons">
+        <button class="next" data-next="8">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 8: 5b -->
+    <div class="section" id="section8" data-section="8" style="display:none;">
+      <div class="section-title"><b>5b.</b> Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose <u>unter allen Befragten in der aktuellen Befragung</u>?</div>
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q4 2025 Durchschnitt"> %</label>
+        <label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q1 2026 Durchschnitt"> %</label>
+        <label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q2 2026 Durchschnitt"> %</label>
+      </div>
+      <div class="buttons">
+        <button class="next" data-next="9">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 9: 6 Checkboxes -->
+    <div class="section" id="section9" data-section="9" style="display:none;">
+      <p><b>6.</b> Wie treffen Sie Ihre Vorhersagen am ehesten?</p>
+      <p>
+        <input type="checkbox" id="intuition" name="intuition" value="Bauchgefuehl">
+        <label for="intuition"> Bauchgefühl</label><br>
+        <input type="checkbox" id="model" name="model" value="Modelbasiert">
+        <label for="model"> Modelbasiert</label><br>
+        <input type="checkbox" id="other" name="other" value="anders">
+        <label for="other"> anders</label> <input type="text" placeholder="">
+      </p>
+      <div class="buttons">
+        <button class="next" data-next="10">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 10: 7 Email + final Weiter -->
+    <div class="section" id="section10" data-section="10" style="display:none;">
+      <p><b>7.</b> Möchten Sie über die Studienergebnisse mit Ihren Angaben zu den deutschen Wachstumschancen per Email informiert werden:  <input type="checkbox" aria-label="Email Zustimmung">&nbsp;&nbsp;Ja</p>
+      <div class="buttons">
+        <button onclick="go('seite9.html')">Weiter</button>
+      </div>
+    </div>
+
+
+  </main>
+
+  <!--       src="/{{AppPrefix}}/doc/fmt/prototype/seite8.js" -->
+    <script
+      type="text/javascript" 
+      src="seite8.js"
+    ></script>
+</body>
+</html>

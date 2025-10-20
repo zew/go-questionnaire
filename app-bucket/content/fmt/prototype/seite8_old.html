@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 8 – Wachstumschancen II</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+  <style>
+    /* optional: ensure sections have spacing */
+    .section { margin: 1.25rem 0; }
+    .buttons { margin-top: .75rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZEW Index / Finanzmarkttest – 2025-11</h1>
+    <nav>
+      <span>Sprache/Language</span>
+      <span>Fragebogen</span>
+      <span>Benutzer</span>
+      <span>Über</span>
+    </nav>
+  </header>
+
+  <div class="step-indicator">
+    <div class="step">1 Konjunktur</div>
+    <div class="step">2 Inflation, Zinsen</div>
+    <div class="step">3 Aktienmärkte</div>
+    <div class="step">4 Währungen</div>
+    <div class="step">5 Sektoren</div>
+    <div class="step">6 Wirtschaftswachstum</div>
+    <div class="step">7 Wachstumschancen I</div>
+    <div class="step active" onclick="go('seite8.html')">8 Wachstumschancen II</div>
+    <div class="step">9 Abschluss</div>
+  </div>
+
+  <main>
+    <!-- Section 1 -->
+    <div class="section" id="section1" data-section="1">
+      Wenn Sie nochmal über Ihre zuletzt abgegebenen Prognosen nachdenken...<br><br>
+      <div class="section-title"><b>3.b</b> Der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u> Wachstum für Q4 2025 als Sie angegeben haben, lag bei...</div>
+      <br>
+      <div class="quarter-row">
+        Q4 2025 <input type="text" name="q4_2025" placeholder="#.00" inputmode="decimal" aria-label="Q4 2025 Anteil"> %
+      </div>
+      <div class="buttons">
+        <button class="next" data-next="2">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 2: Hintergrundtitel -->
+    <div class="section" id="section2" data-section="2" style="display:none;">
+      <div class="section-title"><strong>Hintergrundinformationen: ZEW Finanzmarkttest August 2025</strong></div>
+      <br>
+      <div class="section-title"><b>4a. NUR TREATMENT</b> Der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u> Wachstum als Sie angegeben haben, lag bei...</div>
+	  Sie haben geantwortet, dass ${q://QID759/ChoiceNumericEntryValue/4}% allen Befragten ein <u>niedrigeres</u> Wachstum als Sie angegeben haben. Tatsächlich sind es ${e://Field/apmin}%.
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<b>#.00 %</b></label>
+      </div>
+
+
+      <br>
+      <div class="section-title"><b>4b.</b> <b>Ihre persönliche</b> Wirtschaftswachstumsprognose im August 2025 lag bei...</div>
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<b>#.00 %</b></label>
+      </div>
+      <br>
+      <div class="section-title"><b>4c.</b> Die durchschnittliche Wirtschaftswachstumsprognose unter allen Befragten im August 2025 lag bei...</div>
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<b>#.00 %</b></label>
+      </div>
+      <div class="buttons">
+        <button class="next" data-next="6">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 6: Intro zu Meinungsteil -->
+    <div class="section" id="section6" data-section="6" style="display:none;">
+      <div class="section-title"><strong>Ihre Meinung zu aktuellen Aussichten</strong></div>
+      <br>
+      <p>Denken Sie nun bitte erneut über das deutsche Wirtschaftswachstum nach und<br> geben Sie Ihre Einschätzung ab, auch wenn diese sich nicht verändert hat.</p>
+      <p>Bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben.</p>
+
+      <div class="section-title"><b>5a.</b> Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen?</div>
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q4 2025 Wachstum"> %</label>
+        <label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q1 2026 Wachstum"> %</label>
+        <label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q2 2026 Wachstum"> %</label>
+      </div>
+      <div class="buttons">
+        <button class="next" data-next="8">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 8: 5b -->
+    <div class="section" id="section8" data-section="8" style="display:none;">
+      <div class="section-title"><b>5b.</b> Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose unter allen Befragten <u>in der aktuellen Befragung</u>?</div>
+      <br>
+      <div class="quarter-row">
+        <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q4 2025 Durchschnitt"> %</label>
+        <label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q1 2026 Durchschnitt"> %</label>
+        <label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="#.00" inputmode="decimal" aria-label="Q2 2026 Durchschnitt"> %</label>
+      </div>
+      <div class="buttons">
+        <button class="next" data-next="9">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 9: 6 Checkboxes -->
+    <div class="section" id="section9" data-section="9" style="display:none;">
+      <p><b>6.</b> Wie treffen Sie Ihre Vorhersagen?</p>
+      <p>
+        <input type="checkbox" id="intuition" name="intuition" value="Bauchgefuehl">
+        <label for="intuition"> Bauchgefühl</label><br>
+        <input type="checkbox" id="model" name="model" value="Modelbasiert">
+        <label for="model"> Modelbasiert</label><br>
+        <input type="checkbox" id="other" name="other" value="anders">
+        <label for="other"> anders</label>
+      </p>
+      <div class="buttons">
+        <button class="next" data-next="10">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 10: 7 Email + final Weiter -->
+    <div class="section" id="section10" data-section="10" style="display:none;">
+      <p><b>7.</b> Möchten Sie über die Studienergebnisse mit Ihren Angaben zu den deutschen Wachstumschancen per Email informiert werden:  <input type="checkbox" aria-label="Email Zustimmung">&nbsp;&nbsp;Ja</p>
+      <div class="buttons">
+        <button onclick="go('seite9.html')">Weiter</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Progressive disclosure: each .next button reveals the next section
+    (function() {
+      function showSection(n) {
+        var current = document.querySelector('[data-section="' + n + '"]');
+        if (current) current.style.display = 'none';
+        var next = document.querySelector('[data-section="' + (n + 1) + '"]');
+        if (next) {
+          next.style.display = 'block';
+          var firstInput = next.querySelector('input[type="text"], input[type="number"]');
+          if (firstInput) firstInput.focus();
+        }
+      }
+
+      // Attach handlers to all .next buttons
+      document.querySelectorAll('.next').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var n = parseInt(this.getAttribute('data-next'), 10) - 1; // current section index
+          showSection(n);
+        });
+      });
+
+      // Optional: allow Enter to act like clicking Weiter if a single text input is in focus
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          var active = document.activeElement;
+          if (active && (active.tagName === 'INPUT' || active.tagName === 'SELECT')) {
+            var visibleSection = Array.from(document.querySelectorAll('[data-section]')).find(function(sec){
+              return sec.style.display !== 'none';
+            });
+            if (visibleSection) {
+              var nextBtn = visibleSection.querySelector('.next');
+              if (nextBtn) {
+                e.preventDefault();
+                nextBtn.click();
+              }
+            }
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

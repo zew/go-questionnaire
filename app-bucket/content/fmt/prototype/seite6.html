@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 6 – Wirtschaftswachstum</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <header><h1>ZEW Index / Finanzmarkttest – 2025-11</h1><nav><span>Sprache/Language</span><span>Fragebogen</span><span>Benutzer</span><span>Über</span></nav></header>
+  <div class="step-indicator"><div class="step" onclick="go('seite1.html')">1 Konjunktur</div><div class="step" onclick="go('seite2.html')">2 Inflation, Zinsen</div><div class="step" onclick="go('seite3.html')">3 Aktienmärkte</div><div class="step" onclick="go('seite4.html')">4 Währungen</div><div class="step">5 Sektoren</div><div class="step active" onclick="go('seite6.html')">6 Wirtschaftswachstum</div><div class="step" onclick="go('seite7.html')">7 Wachstumschancen I</div><div class="step" onclick="go('seite8.html')">8 Wachstumschancen II</div><div class="step" onclick="go('seite9.html')">9 Abschluss</div></div>
+  <main>
+     <div class="question">Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum</div>
+
+    <div class="section-title"><b>1.</b> Punktprognose der Wachstumsrate des deutschen BIP</div><br>
+    <div class="subtext">Bei den Quartalswerten bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben. Bei den Jahreswerten die Jahreswachstumsrate des realen BIP.</div>
+<br>    <div class="subtext">Prognose Quartal</div><br>
+    <div class="quarter-grid">
+      <label>Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"> %</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;<label>Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"> %</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;<label>Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"> %</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;<label>Q3 2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"> %</label>
+    </div>
+    <br><div class="subtext">Prognose Jahr</div><br>
+    <div class="quarter-grid">
+      <label>2025&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"></label>
+      &nbsp;&nbsp;&nbsp;&nbsp;<label>2026&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"> %</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;<label>2027&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="5" placeholder="#.00"> %</label>
+    </div>
+<br><br>
+    <div class="section-title"><b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision (ggü. Februar 2025) Ihrer Konjunkturprognosen für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung? (Erhöhung (++), Senkung (--))</div><br>
+    <table>
+      <tr><th></th><th>++</th><th>+</th><th>0</th><th>-</th><th>--</th><th>keine Angabe</th></tr>
+      <tr><td>Konjunkturdaten Deutschland</td><td><input type="radio" name="rev_konj_easy" value="++"></td><td><input type="radio" name="rev_konj_easy" value="+"></td><td><input type="radio" name="rev_konj_easy" value="0"></td><td><input type="radio" name="rev_konj_easy" value="-"></td><td><input type="radio" name="rev_konj_easy" value="--"></td><td><input type="radio" name="rev_konj_easy" value="na"></td></tr>
+      <tr><td>Exportmärkte</td><td><input type="radio" name="rev_export"></td><td><input type="radio" name="rev_export"></td><td><input type="radio" name="rev_export"></td><td><input type="radio" name="rev_export"></td><td><input type="radio" name="rev_export"></td><td><input type="radio" name="rev_export"></td></tr>
+      <tr><td>Wechselkurse</td><td><input type="radio" name="rev_fx"></td><td><input type="radio" name="rev_fx"></td><td><input type="radio" name="rev_fx"></td><td><input type="radio" name="rev_fx"></td><td><input type="radio" name="rev_fx"></td><td><input type="radio" name="rev_fx"></td></tr>
+      <tr><td>Int. Handelskonflikte</td><td><input type="radio" name="rev_conf"></td><td><input type="radio" name="rev_conf"></td><td><input type="radio" name="rev_conf"></td><td><input type="radio" name="rev_conf"></td><td><input type="radio" name="rev_conf"></td><td><input type="radio" name="rev_conf"></td></tr>
+      <tr><td>EZB-Geldpolitik</td><td><input type="radio" name="rev_ecb"></td><td><input type="radio" name="rev_ecb"></td><td><input type="radio" name="rev_ecb"></td><td><input type="radio" name="rev_ecb"></td><td><input type="radio" name="rev_ecb"></td><td><input type="radio" name="rev_ecb"></td></tr>
+      <tr><td>US-Geldpolitik</td><td><input type="radio" name="rev_fed"></td><td><input type="radio" name="rev_fed"></td><td><input type="radio" name="rev_fed"></td><td><input type="radio" name="rev_fed"></td><td><input type="radio" name="rev_fed"></td><td><input type="radio" name="rev_fed"></td></tr>
+      <tr><td>Internationale Lieferengpässe</td><td><input type="radio" name="rev_supply"></td><td><input type="radio" name="rev_supply"></td><td><input type="radio" name="rev_supply"></td><td><input type="radio" name="rev_supply"></td><td><input type="radio" name="rev_supply"></td><td><input type="radio" name="rev_supply"></td></tr>
+      <tr><td>Energiepreise</td><td><input type="radio" name="rev_energy"></td><td><input type="radio" name="rev_energy"></td><td><input type="radio" name="rev_energy"></td><td><input type="radio" name="rev_energy"></td><td><input type="radio" name="rev_energy"></td><td><input type="radio" name="rev_energy"></td></tr>
+      <tr><td>Engpässe bei Rohstoffen</td><td><input type="radio" name="rev_raw"></td><td><input type="radio" name="rev_raw"></td><td><input type="radio" name="rev_raw"></td><td><input type="radio" name="rev_raw"></td><td><input type="radio" name="rev_raw"></td><td><input type="radio" name="rev_raw"></td></tr>
+      <tr><td>Inflation (ohne Energiepreise)</td><td><input type="radio" name="rev_core"></td><td><input type="radio" name="rev_core"></td><td><input type="radio" name="rev_core"></td><td><input type="radio" name="rev_core"></td><td><input type="radio" name="rev_core"></td><td><input type="radio" name="rev_core"></td></tr>
+      <tr><td>Krieg in der Ukraine</td><td><input type="radio" name="rev_ukraine"></td><td><input type="radio" name="rev_ukraine"></td><td><input type="radio" name="rev_ukraine"></td><td><input type="radio" name="rev_ukraine"></td><td><input type="radio" name="rev_ukraine"></td><td><input type="radio" name="rev_ukraine"></td></tr>
+      <tr><td>Handelsprotektionismus und Zölle seitens USA</td><td><input type="radio" name="rev_tariff"></td><td><input type="radio" name="rev_tariff"></td><td><input type="radio" name="rev_tariff"></td><td><input type="radio" name="rev_tariff"></td><td><input type="radio" name="rev_tariff"></td><td><input type="radio" name="rev_tariff"></td></tr>
+      <tr><td>Jüngste Ankündigungen zu Verteidigungs- und Staatsausgaben</td><td><input type="radio" name="rev_defense"></td><td><input type="radio" name="rev_defense"></td><td><input type="radio" name="rev_defense"></td><td><input type="radio" name="rev_defense"></td><td><input type="radio" name="rev_defense"></td><td><input type="radio" name="rev_defense"></td></tr>
+      <tr><td>Andere&nbsp;&nbsp;<input type="text" placeholder=""></td><td><input type="radio" name="rev_other"></td><td><input type="radio" name="rev_other"></td><td><input type="radio" name="rev_other"></td><td><input type="radio" name="rev_other"></td><td><input type="radio" name="rev_other"></td><td><input type="radio" name="rev_other"></td></tr>
+    </table>
+    <div class="buttons"> <button onclick="go('seite7.html')">Weiter</button></div>
+  </main>
+</body>
+</html>

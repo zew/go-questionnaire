@@ -35,6 +35,9 @@ if (sbInp) {
     sbInp.value = sb;
 }
 
+console.log(`init sb ${sb}`)
+
+
 var safeBG  = getBackgroundField("share_safe_bg"); // defined in echart-config.mjs
 
 
@@ -146,7 +149,6 @@ function getVerticalMarkerTitle() {
 
 
 
-console.log(`init sb ${sb}`)
 
 
 

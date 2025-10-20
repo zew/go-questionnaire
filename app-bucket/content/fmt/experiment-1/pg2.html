@@ -1,0 +1,61 @@
+
+
+  <!-- 
+    rendered by go-questionnaire
+
+      simtool_instance, sim_history_0,   
+      param1_0,    param2_0   
+      param1_bg_0, param2_bg_0   
+  -->
+
+
+
+  <style>
+
+    .input-group { 
+      margin: 10px 0 6px; 
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 520px;
+      /* border: 2px solid red; */
+    }
+
+    #userShareInput {
+      width: 80px;
+      text-align: center;
+    }
+    #userShareSlider { 
+      flex: 1; height: 6px; 
+    }
+
+  </style>
+
+
+
+<div class="input-group">
+  <div class="slider-container">
+    <input type="range" id="userShareSlider" name="userShareSlider"  value="0" min="0" max="100" step="1" list="tickmarks">
+    <datalist id="tickmarks">
+      <option value="0"></option>
+      <option value="10"></option>
+      <option value="20"></option>
+      <option value="30"></option>
+      <option value="40"></option>
+      <option value="50"></option>
+      <option value="60"></option>
+      <option value="70"></option>
+      <option value="80"></option>
+      <option value="90"></option>
+      <option value="100"></option>
+    </datalist>
+    <input type="number" id="userShareInput" name="userShareInput" value="0" min="0" max="100" step="1">
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/pg2.js"></script>

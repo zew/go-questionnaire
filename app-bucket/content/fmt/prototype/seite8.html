@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 8 – Wachstumschancen II</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+  <!-- Libraries for charts and CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <style>
+    /* keep original spacing */
+    .section { margin: 1.25rem 0; }
+    .buttons { margin-top: .75rem; }
+
+    /* borrowed/adapted from share treatment v2 */
+    .controls {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 14px;
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
+    }
+    select, input[type="number"], input[type="file"], button {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ced4da;
+      font-size: 15px;
+      background-color: #fff;
+    }
+    button {
+      cursor: pointer;
+      background-color: #4f8bc9;
+      color: white;
+      border-color: #4f8bc9;
+    }
+    button:hover { background-color: #3f6fa5; }
+    #quarterSelect { display: flex; gap: 12px; }
+
+    .input-group { margin: 10px 0 6px; }
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 520px;
+    }
+    #userShareInput {
+      width: 80px;
+      text-align: center;
+    }
+    #userShareSlider { flex: 1; height: 6px; }
+
+    .chart { width: 100%; height: 180px; }
+    #forecastChart, #consensusChart { height: 190px; }
+
+    #shareComparisonText {
+      font-size: 15px;
+      font-weight: 500;
+      margin: 4px 0 10px;
+      min-height: 24px;
+    }
+
+    header h1 { margin-bottom: 0; }
+    nav span { margin-right: 12px; }
+    .quarter-row { margin: 6px 0; }
+    .section-title { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZEW Index / Finanzmarkttest – 2025-11</h1>
+    <nav>
+      <span>Sprache/Language</span>
+      <span>Fragebogen</span>
+      <span>Benutzer</span>
+      <span>Über</span>
+    </nav>
+  </header>
+
+  <div class="step-indicator">
+    <div class="step">1 Konjunktur</div>
+    <div class="step">2 Inflation, Zinsen</div>
+    <div class="step">3 Aktienmärkte</div>
+    <div class="step">4 Währungen</div>
+    <div class="step">5 Sektoren</div>
+    <div class="step">6 Wirtschaftswachstum</div>
+    <div class="step">7 Wachstumschancen I</div>
+    <div class="step active" onclick="go('seite8.html')">8 Wachstumschancen II</div>
+    <div class="step">9 Abschluss</div>
+  </div>
+
+  <main>
+    <!-- Section 1 -->
+    <div class="section" id="section1" data-section="1">
+
+      <!-- controls ABOVE the text line (per request) -->
+      <div class="controls">
+        <label for="csvFileInput">CSV hochladen:</label>
+        <input type="file" id="csvFileInput" accept=".csv">
+        <label for="respondentSelect">Befragte/r:</label>
+        <select id="respondentSelect"></select>
+        <div id="quarterSelect">
+          <label><input type="radio" name="quarter" value="Q4_2025" checked> Q4 2025</label>
+          <label><input type="radio" name="quarter" value="Q1_2026"> Q1 2026</label>
+          <label><input type="radio" name="quarter" value="Q2_2026"> Q2 2026</label>
+        </div>
+        <button id="downloadBtn" type="button">CSV herunterladen</button>
+      </div>
+
+      <!-- original text -->
+      Zuletzt haben sie im <u>August [May/Februar] 2025</u> eine Prognose für das Quartalswachstum in Q4 2025 angegeben.<br><br>
+	Was denken Sie über Prognosen der anderen Teilnehmer in der damaligen Befragung?<br><br>
+      <div class="section-title"><b>3b.</b> Der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u> Wachstum für Q4 2025 als Sie angegeben haben, lag bei...</div>
+
+      <!-- input-group directly BELOW the 3.b statement (per request) -->
+      <div class="input-group">
+        <div class="slider-container">
+          <input type="range" id="userShareSlider" value="0" min="0" max="100" step="1" list="tickmarks">
+          <datalist id="tickmarks">
+            <option value="0"></option><option value="10"></option><option value="20"></option>
+            <option value="30"></option><option value="40"></option><option value="50"></option>
+            <option value="60"></option><option value="70"></option><option value="80"></option>
+            <option value="90"></option><option value="100"></option>
+          </datalist>
+          <input type="number" id="userShareInput" value="0" min="0" max="100" step="1">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="next" data-next="2">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Section 2: Hintergrundtitel -->
+    <div class="section" id="section2" data-section="2" style="display:none;">
+      <div class="section-title"><strong>Hintergrundinformationen: ZEW Finanzmarkttest August 2025</strong></div>
+      <br>
+      <div class="section-title"><b>4a. NUR TREATMENT</b> </div>
+      <div id="shareComparisonText"></div>
+      <!-- distanceChart UNDER 4a (per request) -->
+      <div id="distanceChart" class="chart"></div>
+
+      <br>
+      <div class="section-title"><b>4b.</b> <b>Ihre persönliche</b> Wirtschaftswachstumsprognose im August 2025 lag bei...</div>
+      <!-- forecastChart UNDER 4b (per request) -->
+      <div id="forecastChart" class="chart"></div>
+
+      <br>
+      <div class="section-title"><b>4c.</b> Die durchschnittliche Wirtschaftswachstumsprognose <strong>unter allen Befragten</strong> im August 2025 lag bei...</div>
+      <!-- consensusChart UNDER 4c (per request) -->
+      <div id="consensusChart" class="chart"></div>
+
+      <div class="buttons">
+    <div class="buttons"><button onclick="go('seite9.html')">Weiter</button></div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Progressive disclosure: each .next button reveals the next section
+    (function() {
+      function showSection(n) {
+        var current = document.querySelector('[data-section="' + n + '"]');
+        if (current) current.style.display = 'none';
+        var next = document.querySelector('[data-section="' + (n + 1) + '"]');
+        if (next) {
+          next.style.display = 'block';
+          var firstInput = next.querySelector('input[type="text"], input[type="number"]');
+          if (firstInput) firstInput.focus();
+          // On showing section 2, (re)render charts so sizes are correct
+          if (next.id === 'section2') {
+            setTimeout(function() {
+              if (window.updateCharts) window.updateCharts();
+              ['distanceChart','forecastChart','consensusChart'].forEach(function(id){
+                var el = document.getElementById(id);
+                if (!el) return;
+                var inst = echarts.getInstanceByDom(el);
+                if (inst) inst.resize();
+              });
+            }, 0);
+          }
+        }
+      }
+
+	  // Attach handlers to all .next buttons
+	  document.querySelectorAll('.next').forEach(function(btn) {
+		btn.addEventListener('click', function() {
+		  var n = parseInt(this.getAttribute('data-next'), 10) - 1; // current section index
+		  showSection(n);
+
+		  // hide the Section-2 "Weiter" button after clicking
+		  if (this.getAttribute('data-next') === '7') {
+			// hide just the button:
+			this.style.display = 'none';
+			// (optional) hide the whole button row instead:
+			// const wrapper = this.closest('.buttons'); if (wrapper) wrapper.style.display = 'none';
+		  }
+		});
+	  });
+
+      // Optional: allow Enter to act like clicking Weiter if a single text input is in focus
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          var active = document.activeElement;
+          if (active && (active.tagName === 'INPUT' || active.tagName === 'SELECT')) {
+            var visibleSection = Array.from(document.querySelectorAll('[data-section]')).find(function(sec){
+              return sec.style.display !== 'none';
+            });
+            if (visibleSection) {
+              var nextBtn = visibleSection.querySelector('.next');
+              if (nextBtn) {
+                e.preventDefault();
+                nextBtn.click();
+              }
+            }
+          }
+        }
+      });
+    })();
+
+    // === Functionality from share treatment v2 ===
+    document.addEventListener('DOMContentLoaded', () => {
+      const respondentSelect = document.getElementById('respondentSelect');
+      const quarterSelectRadios = document.querySelectorAll('input[name="quarter"]');
+      const userShareInput = document.getElementById('userShareInput');
+      const userShareSlider = document.getElementById('userShareSlider');
+      const shareComparisonText = document.getElementById('shareComparisonText');
+      const csvFileInput = document.getElementById('csvFileInput');
+      const downloadBtn = document.getElementById('downloadBtn');
+
+      const distanceChart = echarts.init(document.getElementById('distanceChart'));
+      const forecastChart = echarts.init(document.getElementById('forecastChart'));
+      const consensusChart = echarts.init(document.getElementById('consensusChart'));
+
+      let parsedData = [];
+
+      function getSelectedQuarter() {
+        return document.querySelector('input[name="quarter"]:checked').value;
+      }
+
+      function updateCharts() {
+        function formatDE(value, digits = 2) {
+          if (isNaN(value)) return '';
+          return value.toLocaleString("de-DE", {
+            minimumFractionDigits: digits,
+            maximumFractionDigits: digits
+          });
+        }
+        const respondentIndex = parseInt(respondentSelect.value, 10);
+        const selectedQuarter = getSelectedQuarter();
+
+        if (isNaN(respondentIndex) || !parsedData[respondentIndex]) {
+          distanceChart.clear();
+          forecastChart.clear();
+          consensusChart.clear();
+          if (shareComparisonText) shareComparisonText.textContent = '';
+          return;
+        }
+
+        const respondentData = parsedData[respondentIndex];
+        const userShare = parseFloat(userShareInput.value) || 0;
+        const actualShareRaw = respondentData[`grshare${selectedQuarter}`];
+        const actualShare = parseFloat(actualShareRaw) * 100;
+        const forecast = parseFloat(respondentData[`growth${selectedQuarter}`]);
+        const consensus = parseFloat(respondentData[`consensus${selectedQuarter}`]);
+
+        if (!isNaN(actualShare)) {
+          shareComparisonText.innerHTML = `Sie haben <strong>${formatDE(userShare)}%</strong> angegeben.<br> Tatsächlich lag der <b>Anteil unter allen Befragten</b>, die im August 2025 ein <u>niedrigeres</u> Wachstum als Sie angegeben haben, bei <strong><span style="color:#EE6666">${formatDE(actualShare)}%</span></strong>.`;
+        } else {
+          shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare)}%</strong> | Tatsächlicher Anteil: <strong>N/A</strong>`;
+        }
+
+        // Distance Chart
+        const distance = Math.abs(userShare - actualShare);
+        const distanceChartOption = {
+          grid: { top: 20, right: 40, bottom: 20, left: 40 },
+          xAxis: { type: 'value', min: 0, max: 100, axisLabel: { formatter: '{value}%' }, splitLine: { show: false } },
+          yAxis: { type: 'category', data: [''], show: false },
+          series: [{
+            type: 'scatter',
+            symbolSize: 26,
+            data: [
+              {
+                name: 'Ihr Anteil',
+                value: [userShare, 'Ihr Anteil'],
+                itemStyle: { color: '#546a7b' },
+                label: {
+                  show: true, position: 'top', distance: 8, fontWeight: 'bold', color: '#000000',
+                  formatter: (params) => formatDE(params.value[0]) + '%'
+                }
+              },
+              {
+                name: 'Tatsächlicher Anteil',
+                value: [actualShare, ''],
+                itemStyle: { color: '#EE6666' },
+                label: {
+                  show: true, position: 'bottom', distance: 8, fontWeight: 'bold', color: '#EE6666',
+                  formatter: (params) => formatDE(params.value[0]) + '%'
+                }
+              }
+            ],
+            markLine: !isNaN(actualShare) ? {
+              symbol: ['none', 'none'],
+              label: { show: true, formatter: `Abstand: ${formatDE(distance)}%`, position: 'middle', fontWeight: 'bold', color: '#111' },
+              lineStyle: { type: 'solid', width: 3, color: '#6b7280' },
+              data: [[ { coord: [userShare, ''] }, { coord: [actualShare, ''] } ]]
+            } : {}
+          }]
+        };
+        distanceChart.setOption(distanceChartOption);
+
+        // Forecast Chart
+        const forecastOption = {
+          grid: { top: 10, right: 60, bottom: 30, left: 100 },
+          xAxis: { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
+          yAxis: { type: 'category', data: [selectedQuarter] },
+          series: [{
+            type: 'bar',
+            data: [forecast],
+            itemStyle: { color: '#62929e' },
+            label: { show: true, position: 'insideRight', color: '#000', backgroundColor: '#fff', borderRadius: 4, padding: [2, 6], formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) }
+          }]
+        };
+        forecastChart.setOption(forecastOption);
+
+        // Consensus Chart
+        const consensusOption = {
+          grid: { top: 10, right: 60, bottom: 30, left: 100 },
+          xAxis: { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
+          yAxis: { type: 'category', data: [selectedQuarter] },
+          series: [{
+            type: 'bar',
+            data: [consensus],
+            itemStyle: { color: '#546a7b' },
+            label: { show: true, position: 'insideRight', color: '#000', backgroundColor: '#fff', borderRadius: 4, padding: [2, 6], formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) }
+          }]
+        };
+        consensusChart.setOption(consensusOption);
+      }
+      window.updateCharts = updateCharts;
+
+      function handleFile(file) {
+        if (file) {
+          Papa.parse(file, {
+            header: true,
+            skipEmptyLines: true,
+            dynamicTyping: true,
+            complete: (results) => {
+              parsedData = results.data;
+              respondentSelect.innerHTML = '';
+              parsedData.forEach((_, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `Befragte/r ${index + 1}`;
+                respondentSelect.appendChild(option);
+              });
+              updateCharts();
+            }
+          });
+        }
+      }
+
+      function downloadData() {
+        const respondentIndex = parseInt(respondentSelect.value, 10);
+        const selectedQuarter = getSelectedQuarter();
+        if (isNaN(respondentIndex) || !parsedData[respondentIndex]) {
+          alert('Bitte zuerst eine/n Befragte/n auswählen.');
+          return;
+        }
+        const respondentData = parsedData[respondentIndex];
+        const filteredData = {
+          [`growth${selectedQuarter}`]: respondentData[`growth${selectedQuarter}`],
+          [`consensus${selectedQuarter}`]: respondentData[`consensus${selectedQuarter}`],
+          [`grshare${selectedQuarter}`]: respondentData[`grshare${selectedQuarter}`]
+        };
+
+        const csvContent = Papa.unparse([filteredData], { header: true });
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', `befragte_${respondentIndex + 1}_${selectedQuarter}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      // Sync slider and input
+      userShareInput.addEventListener('input', () => {
+        userShareSlider.value = userShareInput.value;
+        updateCharts();
+      });
+      userShareSlider.addEventListener('input', () => {
+        userShareInput.value = userShareSlider.value;
+        updateCharts();
+      });
+
+      csvFileInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+      respondentSelect.addEventListener('change', updateCharts);
+      quarterSelectRadios.forEach(radio => radio.addEventListener('change', updateCharts));
+      downloadBtn.addEventListener('click', downloadData);
+
+      window.addEventListener('resize', () => {
+        distanceChart.resize();
+        forecastChart.resize();
+        consensusChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 1 – Konjunktur</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <header><h1>ZEW Index / Finanzmarkttest – 2025-11</h1><nav><span>Sprache/Language</span><span>Fragebogen</span><span>Benutzer</span><span>Über</span></nav></header>
+  <div class="step-indicator"><div class="step active" onclick="go('seite1.html')">1 Konjunktur</div><div class="step" onclick="go('seite2.html')">2 Inflation, Zinsen</div><div class="step" onclick="go('seite3.html')">3 Aktienmärkte</div><div class="step" onclick="go('seite4.html')">4 Währungen</div><div class="step" onclick="go('seite5.html')">5 Sektoren</div><div class="step" onclick="go('seite6.html')">6 Wirtschaftswachstum</div><div class="step" onclick="go('seite7.html')">7 Wachstumschancen I</div><div class="step" onclick="go('seite8.html')">8 Wachstumschancen II</div><div class="step" onclick="go('seite9.html')">9 Abschluss</div></div>
+  <main>
+<div class="question">Konjunktur</div>
+      <div class="section-title"><b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir zurzeit als</div><br>
+      <table border="0">
+        <tr>
+          <th></th>
+          <th>gut</th>
+          <th>normal</th>
+          <th>schlecht</th>
+          <th>keine Angabe</th>
+        </tr>
+        <tr>
+          <td>Euroraum</td>
+          <td><input type="radio" name="eur1"></td>
+          <td><input type="radio" name="eur1"></td>
+          <td><input type="radio" name="eur1"></td>
+          <td><input type="radio" name="eur1"></td>
+        </tr>
+        <tr>
+          <td>Deutschland</td>
+          <td><input type="radio" name="ger1"></td>
+          <td><input type="radio" name="ger1"></td>
+          <td><input type="radio" name="ger1"></td>
+          <td><input type="radio" name="ger1"></td>
+        </tr>
+        <tr>
+          <td>USA</td>
+          <td><input type="radio" name="usa1"></td>
+          <td><input type="radio" name="usa1"></td>
+          <td><input type="radio" name="usa1"></td>
+          <td><input type="radio" name="usa1"></td>
+        </tr>
+        <tr>
+          <td>China</td>
+          <td><input type="radio" name="china1"></td>
+          <td><input type="radio" name="china1"></td>
+          <td><input type="radio" name="china1"></td>
+          <td><input type="radio" name="china1"></td>
+        </tr>
+      </table>
+
+      <div class="section-title"><b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (6 Mo.)</div><br>
+      <table border="0">
+        <tr>
+          <th></th>
+          <th>verbessern</th>
+          <th>nicht verändern</th>
+          <th>verschlechtern</th>
+          <th>keine Angabe</th>
+        </tr>
+        <tr>
+          <td>Euroraum</td>
+          <td><input type="radio" name="eur2"></td>
+          <td><input type="radio" name="eur2"></td>
+          <td><input type="radio" name="eur2"></td>
+          <td><input type="radio" name="eur2"></td>
+        </tr>
+        <tr>
+          <td>Deutschland</td>
+          <td><input type="radio" name="ger2"></td>
+          <td><input type="radio" name="ger2"></td>
+          <td><input type="radio" name="ger2"></td>
+          <td><input type="radio" name="ger2"></td>
+        </tr>
+        <tr>
+          <td>USA</td>
+          <td><input type="radio" name="usa2"></td>
+          <td><input type="radio" name="usa2"></td>
+          <td><input type="radio" name="usa2"></td>
+          <td><input type="radio" name="usa2"></td>
+        </tr>
+        <tr>
+          <td>China</td>
+          <td><input type="radio" name="china2"></td>
+          <td><input type="radio" name="china2"></td>
+          <td><input type="radio" name="china2"></td>
+          <td><input type="radio" name="china2"></td>
+        </tr>
+      </table>
+
+      <div class="section-title"><b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (6 Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?</div><br>
+      <table border="0">
+        <tr>
+          <th>Verbesserung</th>
+          <th>Gleich bleiben</th>
+          <th>Verschlechterung</th>
+          <th>&sum;</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="prob_up" size="3"> %</td>
+          <td><input type="text" name="prob_same" size="3"> %</td>
+          <td><input type="text" name="prob_down" size="3"> %</td>
+          <td>100%</td>
+        </tr>
+      </table>
+
+    <div class="buttons"><button onclick="go('seite2.html')">Weiter</button></div>
+  </main>
+</body>
+</html>

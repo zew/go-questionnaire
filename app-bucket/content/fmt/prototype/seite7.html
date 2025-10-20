@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 7 – Wachstumschancen I</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <header><h1>ZEW Index / Finanzmarkttest – 2025-11</h1><nav><span>Sprache/Language</span><span>Fragebogen</span><span>Benutzer</span><span>Über</span></nav></header>
+  <div class="step-indicator"><div class="step" onclick="go('seite1.html')">1 Konjunktur</div><div class="step" onclick="go('seite2.html')">2 Inflation, Zinsen</div><div class="step" onclick="go('seite3.html')">3 Aktienmärkte</div><div class="step" onclick="go('seite4.html')">4 Währungen</div><div class="step" onclick="go('seite5.html')">5 Sektoren</div><div class="step" onclick="go('seite6.html')">6 Wirtschaftswachstum</div><div class="step active" onclick="go('seite7.html')">7 Wachstumschancen I</div><div class="step" onclick="go('seite8.html')">8 Wachstumschancen II</div><div class="step" onclick="go('seite9.html')">9 Abschluss</div></div>
+  <main>
+ <div class="question">Ihre Sicht auf Wachstumschancen für Deutschland</div>
+    <p>Die deutsche Wirtschaft leidet seit Jahren unter niedrigem Wachstum.<br> Um die Aussichten für Deutschland besser zu verstehen, sind wir auf Ihre Expertise angewiesen.</p>
+    <p>Da Expertenprognosen über das Wirtschaftswachstum häufig variieren,<br> möchten wir zunächst Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.</p>
+<br>    <p><b>3a.</b> Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose <u>unter allen Befragten in der aktuellen Befragung</u>?</p>
+    <p>Bitte nicht-annualisiertes Quartalswachstum des realen & saisonbereinigten BIP angeben.</p><br>
+
+    <div class="quarter-row">
+      <label>
+        Q4 2025&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="q4_2025" placeholder="#.00"> %
+      </label>
+      <label>&nbsp;&nbsp;&nbsp;&nbsp;
+        Q1 2026&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="q1_2026" placeholder="#.00"> %
+      </label>
+      <label>&nbsp;&nbsp;&nbsp;&nbsp;
+        Q2 2026&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="q2_2026" placeholder="#.00"> %
+      </label>
+      <label>&nbsp;&nbsp;&nbsp;&nbsp;
+        Q3 2026&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="q3_2026" placeholder="#.00"> %
+      </label>
+    </div>
+    <div class="buttons"><button onclick="go('seite6.html')">Zurück</button> <button onclick="go('seite8.html')">Weiter</button></div>
+  </main>
+</body>
+</html>

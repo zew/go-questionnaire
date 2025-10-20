@@ -63,6 +63,7 @@ function getXAxisFormatter(vl, yr) {
 }
 
 function getXInteerval() {
+    // return 2.285;
     return 2;
 }
 
@@ -70,6 +71,7 @@ function getYAxisTitle() {
     return `Ertrag in Euro`;
 }
 function getVerticalMarkerTitle() {
+    // return `Ernte`;
     return `Bäume werden\n gefällt`;
 }
 

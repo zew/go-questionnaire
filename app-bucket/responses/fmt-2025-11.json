@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ed5608b8468f059d8a9a7972d072a93b87420a43a736e805b776afbd63487d03",
+ 	"md_5": "c719f49c523d07b3c28ec7f97898e73dd28fe6afaa7e37b64e4a334240acf92a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6185,15 +6185,298 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_8",
- 				"en": "PageLabel_8"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
+ 			"short": {
+ 				"de": "Wachstums\u0026shy;chancen I",
+ 				"en": "todo"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "56rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "fmt202511_0"
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003eIhre Sicht auf Wachstumschancen für Deutsch\u0026shy;land \u003c/p\u003e\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDie deutsche Wirt\u0026shy;schaft leidet seit Jahren un\u0026shy;ter nied\u0026shy;rigem Wachstum.\n\t\t\t\t\t\tUm die Aussichten für Deutsch\u0026shy;land besser zu verstehen, sind wir auf Ihre Expertise angewiesen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDa Expertenpro\u0026shy;gno\u0026shy;sen über das Wirt\u0026shy;schaftswachstum häufig variieren,\n\t\t\t\t\t\tmöchten wir zunächst Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWas glauben Sie: Wie hoch ist die durchschnittliche Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\u003ci\u003eun\u0026shy;ter allen Befragten in der aktuellen Befragung\u003c/i\u003e?\n\t\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\t\u003cbr\u003e  \n\t\t\t\t\t\t\tBitte nicht-annualisiertes Quartalswachstum des realen \u0026 saisonbereinigten BIP angeben.\n\t\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"en": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "sq_pp_all_1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.01,
+ 							"min": -20,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "Q4\u0026nbsp;2025",
+ 								"en": "Q4\u0026nbsp;2025"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 2.7rem 0 0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sq_pp_all_2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.01,
+ 							"min": -20,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "Q1\u0026nbsp;2026",
+ 								"en": "Q1\u0026nbsp;2026"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 2.7rem 0 0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sq_pp_all_3",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.01,
+ 							"min": -20,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "Q2\u0026nbsp;2026",
+ 								"en": "Q2\u0026nbsp;2026"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 2.7rem 0 0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sq_pp_all_4",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.01,
+ 							"min": -20,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "Q3\u0026nbsp;2026",
+ 								"en": "Q3\u0026nbsp;2026"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 2.7rem 0 0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
  		},
  		{
  			"label": {
@@ -6205,7 +6488,19 @@
  				"en": ""
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "fmt202511_1"
+ 			"generator_func_name": "fmt202511Pg2"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_10",
+ 				"en": "PageLabel_10"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "fmt202511Pg3"
  		},
  		{
  			"label": {
@@ -6333,7 +6628,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "10",
+ 							"response": "11",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

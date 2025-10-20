@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+
+
+
+  <!-- 
+
+    inner-?.html are reduced versions of this  index1.html 
+    
+      * remove the outer HTML body tags;
+        but keep the CSS links from the HTML head
+
+      * prefix all js and css resources by 
+          /{{AppPrefix}}/doc/fmt/echart/
+
+      * also add two hidden inputs
+
+ -->
+
+
+  <!-- rendered by go-questionnaire
+    simtool_instance, sim_history_0, sparbetrag_bg_0, share_safe_bg_0   
+  -->
+
+  <input type='hidden' name='simtool_instance' id='simtool_instance' value='0' />
+
+  <input type='hidden' name='sim_history_0' id='sim_history_0' value='' />
+
+  <input type='hidden' name='param1_bg_0'   id='param1_bg_0' value='60' />
+  <input type='hidden' name='param2_bg_0'   id='param2_bg_0' value='20' />
+
+
+  <div id="chart_container" style="width: 90%; height: 200px;"
+    >chart container</div>
+
+
+  <p>
+    Param 1
+    <input type="number" name="param1_0" id="param1_0" value="65" min="0" max="100" step="5" size=3  >
+    <br>
+
+    Param 2
+    <input type="number" name="param2_0" id="param2_0" value="25" min="0" max="100" step="5" size=3  >
+    <br>
+
+  </p>
+
+
+
+
+  <!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+  <!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+  <script type="text/javascript" src="echarts.min.js"></script>
+
+  <script type="text/javascript" src="01-echart-config.mjs"></script>
+
+  <script type="text/javascript" src="02-echart-init.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seite 3 – Aktienmärkte</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <header><h1>ZEW Index / Finanzmarkttest – 2025-11</h1><nav><span>Sprache/Language</span><span>Fragebogen</span><span>Benutzer</span><span>Über</span></nav></header>
+  <div class="step-indicator"><div class="step" onclick="go('seite1.html')">1 Konjunktur</div><div class="step" onclick="go('seite2.html')">2 Inflation, Zinsen</div><div class="step active" onclick="go('seite3.html')">3 Aktienmärkte</div><div class="step" onclick="go('seite4.html')">4 Währungen</div><div class="step" onclick="go('seite5.html')">5 Sektoren</div><div class="step" onclick="go('seite6.html')">6 Wirtschaftswachstum</div><div class="step" onclick="go('seite7.html')">7 Wachstumschancen I</div><div class="step" onclick="go('seite8.html')">8 Wachstumschancen II</div><div class="step" onclick="go('seite9.html')">9 Abschluss</div></div>
+  <main>
+  <div class="question">Aktienmärkte</div>
+
+<div class="section-title"><b>6a.</b>   Die folgenden Aktienindizes werden mittelfristig (6 Mo.)</div><br>
+      <table border="0">
+        <tr>
+          <th></th>
+          <th>steigen</th>
+          <th>gleich bleiben</th>
+          <th>sinken</th>
+          <th>keine Angabe</th>
+        </tr>
+        <tr>
+          <td>EURO STOXX 50</td>
+          <td><input type="radio" name="stoxx"></td>
+          <td><input type="radio" name="stoxx"></td>
+          <td><input type="radio" name="stoxx"></td>
+          <td><input type="radio" name="stoxx"></td>
+        </tr>
+        <tr>
+          <td>DAX</td>
+          <td><input type="radio" name="dax"></td>
+          <td><input type="radio" name="dax"></td>
+          <td><input type="radio" name="dax"></td>
+          <td><input type="radio" name="dax"></td>
+        </tr>
+        <tr>
+          <td>Dow Jones (USA)</td>
+          <td><input type="radio" name="dow"></td>
+          <td><input type="radio" name="dow"></td>
+          <td><input type="radio" name="dow"></td>
+          <td><input type="radio" name="dow"></td>
+        </tr>
+        <tr>
+          <td>SSE Composite (China)</td>
+          <td><input type="radio" name="sse"></td>
+          <td><input type="radio" name="sse"></td>
+          <td><input type="radio" name="sse"></td>
+          <td><input type="radio" name="sse"></td>
+        </tr>
+      </table>
+
+     <div class="section-title"><b>6b.</b>  Den DAX erwarte ich in 6 Monaten bei</div><br>
+      <input type="text" placeholder="00000"> Punkten
+
+      <p>Mit einer Wahrscheinlichkeit von 90 Prozent liegt der DAX dann zwischen</p>
+      <input type="text" placeholder="00000"> Punkten und <input type="text" placeholder="00000"> Punkten
+
+      <div class="question">6c. Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit</div><br>
+      <table border="0">
+        <tr>
+          <th>überbewertet</th>
+          <th>fair bewertet</th>
+          <th>unterbewertet</th>
+          <th>keine Angabe</th>
+        </tr>
+        <tr>
+          <td><input type="radio" name="dax_val"></td>
+          <td><input type="radio" name="dax_val"></td>
+          <td><input type="radio" name="dax_val"></td>
+          <td><input type="radio" name="dax_val"></td>
+        </tr>
+      </table>
+	  <div class="buttons"><button onclick="go('seite2.html')">Zurück</button> <button onclick="go('seite4.html')">Weiter</button></div>
+  </main>
+</body>
+</html>

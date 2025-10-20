@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Forecast vs Consensus — ECharts Prototype</title>
+ <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+ <style>
+   body { font-family: Inter, system-ui, -apple-system, Arial, sans-serif; margin: 18px; color: #111827; }
+   header { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+   h1 { font-size:20px; margin:0; }
+   .controls { margin-top:12px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+   .chart-row { display:flex; gap:16px; margin-top:18px; flex-wrap:wrap; }
+   .chart { flex:1 1 480px; min-width:300px; height:420px; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,0.06); padding:6px; background: #fff; }
+   .panel { padding:12px; border-radius:8px; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,0.04); margin-top:12px; }
+   label { font-weight:600; font-size:13px; }
+   select, input[type=file], button { padding:8px 10px; font-size:14px; border-radius:6px; border:1px solid #d1d5db; }
+   table { border-collapse:collapse; width:100%; }
+   td, th { padding:8px; border-bottom:1px solid #eee; }
+   .muted { color:#6b7280; font-size:13px; }
+   .sample-link { color:#0366d6; cursor:pointer; text-decoration:underline; background:none; border:none; padding:0; }
+   @media (max-width:900px){ .chart { min-width:100%; height:360px } }
+ </style>
+</head>
+<body>
+ <header>
+   <h1>ECharts: Forecast vs Consensus — Prototype</h1>
+   <div class="muted">Load your CSV (growth/consensus/grshare per quarter). Example: growthQ4_2025</div>
+ </header>
+
+ <div class="controls">
+   <label for="csvFile">Load CSV</label>
+   <input id="csvFile" type="file" accept=".csv" />
+   <button id="loadSample">Load sample CSV</button>
+   <label for="respondentSelect">Respondent</label>
+   <select id="respondentSelect"></select>
+   <button id="downloadData">Download current respondent CSV</button>
+ </div>
+
+ <div class="panel" id="metaPanel">
+   <div id="summary" class="muted">No data loaded yet.</div>
+ </div>
+
+ <div class="chart-row">
+   <div id="chart1" class="chart"></div>
+   <div id="chart2" class="chart"></div>
+ </div>showValuesTable
+
+ <div class="panel" id="tablePanel" style="display:none; margin-top:12px;">
+   <h3 style="margin-top:0">Raw values for selected respondent</h3>
+   <div id="valuesTable"></div>
+ </div>
+
+<script>
+// === Configuration ===
+const PREFIX_GROWTH = 'growth';      // respondent forecast column prefix
+const PREFIX_CONSENSUS = 'consensus';
+const PREFIX_GRSHARE = 'grshare';    // share of respondents with LOWER forecast (0-1)
+
+// ECharts instances
+const chart1 = echarts.init(document.getElementById('chart1'));
+const chart2 = echarts.init(document.getElementById('chart2'));
+
+let parsed = null;      // PapaParse result.data (array of rows as objects)
+let quarters = [];      // detected quarter suffixes (e.g., Q4_2025)
+
+// Utility: parse number safely
+function num(v){
+ if (v === null || v === undefined) return null;
+ const s = String(v).trim();
+ if (s === '' || s.toLowerCase() === 'na' || s.toLowerCase() === 'nan') return null;
+ const n = parseFloat(s.replace(/,/g, ''));
+ return isNaN(n) ? null : n;
+}
+
+function detectQuarters(headers){
+ const qset = [];
+ headers.forEach(h =>{
+   const hh = h.trim();
+   if (hh.toLowerCase().startsWith(PREFIX_GROWTH.toLowerCase())){
+     const suf = hh.slice(PREFIX_GROWTH.length);
+     if (suf) qset.push(suf);
+   }
+ });
+ // preserve order found
+ return qset;
+}
+
+function buildDataForRespondent(rowObj){
+ const arr = quarters.map(q => {
+   const g = rowObj[PREFIX_GROWTH + q];
+   const c = rowObj[PREFIX_CONSENSUS + q];
+   const gs = rowObj[PREFIX_GRSHARE + q];
+   return {
+     quarter: q,
+     forecast: num(g),
+     consensus: num(c),
+     shareLower: num(gs)
+   };
+ });
+ return arr;
+}
+
+function renderCharts(dataForRespondent){
+ const qlabels = dataForRespondent.map(d => d.quarter);
+ const forecastVals = dataForRespondent.map(d => d.forecast);
+ const consensusVals = dataForRespondent.map(d => d.consensus);
+ const shareLowerVals = dataForRespondent.map(d => (d.shareLower === null ? 0 : d.shareLower));
+ const shareHigherVals = shareLowerVals.map(v => 1 - v);
+
+ // Chart 1: Forecast vs Consensus
+ const option1 = {
+   title: { text: 'Forecast vs Consensus', left: 'center' },
+   tooltip: { trigger: 'axis' },
+   legend: { top: 30, data: ['Respondent Forecast', 'Consensus Forecast'] },
+   grid: { top: 70, left: 50, right: 30, bottom: 50 },
+   xAxis: { type: 'category', data: qlabels },
+   yAxis: { type: 'value' },
+   series: [
+     {
+       name: 'Respondent Forecast',
+       type: 'bar',
+       data: forecastVals,
+       label: { show: true, position: 'top', formatter: v => v.value === null ? '-' : v.value }
+     },
+     {
+       name: 'Consensus Forecast',
+       type: 'bar',
+       data: consensusVals,
+       label: { show: true, position: 'top', formatter: v => v.value === null ? '-' : v.value }
+     }
+   ]
+ };
+
+ // Chart 2: Position relative to peers (stacked)
+ const option2 = {
+   title: { text: 'Forecast Position Relative to Peers', left: 'center' },
+   tooltip: {
+     trigger: 'axis',
+     formatter: params => {
+       return params.map(p => `${p.seriesName}: ${ (p.value*100).toFixed(1) }%`).join('<br/>');
+     }
+   },
+   legend: { top: 30, data: ['Lower Forecasts', 'Higher Forecasts'] },
+   grid: { top: 70, left: 50, right: 30, bottom: 50 },
+   xAxis: { type: 'category', data: qlabels },
+   yAxis: { type: 'value', max: 1, axisLabel: { formatter: v => (v*100) + '%' } },
+   series: [
+     {
+       name: 'Lower Forecasts',
+       type: 'bar',
+       stack: 'total',
+       data: shareLowerVals,
+       label: { show: true, position: 'inside', formatter: v => (v.value*100).toFixed(0) + '%' }
+     },
+     {
+       name: 'Higher Forecasts',
+       type: 'bar',
+       stack: 'total',
+       data: shareHigherVals,
+       label: { show: true, position: 'inside', formatter: v => (v.value*100).toFixed(0) + '%' }
+     }
+   ]
+ };
+
+ chart1.setOption(option1);
+ chart2.setOption(option2);
+}
+
+function showValuesTable(dataForRespondent, rowIndex){
+ const container = document.getElementById('valuesTable');
+ container.innerHTML = '';
+ const tbl = document.createElement('table');
+ const thead = document.createElement('thead');
+ thead.innerHTML = '<tr><th>Quarter</th><th>Respondent Forecast</th><th>Consensus</th><th>Share Lower</th><th>Share Higher</th></tr>';
+ tbl.appendChild(thead);
+ const tbody = document.createElement('tbody');
+ dataForRespondent.forEach(d => {
+   const tr = document.createElement('tr');
+   tr.innerHTML = `<td>${d.quarter}</td><td>${d.forecast===null?'-':d.forecast}</td><td>${d.consensus===null?'-':d.consensus}</td><td>${d.shareLower===null?'-':(d.shareLower*100).toFixed(1)+'%'}</td><td>${d.shareLower===null?'-':((1-d.shareLower)*100).toFixed(1)+'%'}</td>`;
+   tbody.appendChild(tr);
+ });
+ tbl.appendChild(tbody);
+ container.appendChild(tbl);
+ document.getElementById('tablePanel').style.display = 'block';
+
+ document.getElementById('summary').innerHTML = `Showing respondent <strong>#${rowIndex+1}</strong> — ${dataForRespondent.length} quarters detected: <strong>${quarters.join(', ')}</strong>`;
+}
+
+function onRespondentChange(){
+ const sel = document.getElementById('respondentSelect');
+ const idx = parseInt(sel.value, 10);
+ if (!parsed || isNaN(idx)) return;
+ const row = parsed[idx];
+ const d = buildDataForRespondent(row);
+ renderCharts(d);
+ showValuesTable(d, idx);
+}
+
+function populateRespondentSelect(n){
+ const sel = document.getElementById('respondentSelect');
+ sel.innerHTML = '';
+ for (let i=0;i<n;i++){
+   const opt = document.createElement('option');
+   opt.value = i;
+   opt.text = 'Respondent #' + (i+1);
+   sel.appendChild(opt);
+ }
+ sel.addEventListener('change', onRespondentChange);
+}
+
+// Parse CSV (text or file)
+function handleParsedData(results){
+ parsed = results.data;
+ if (!parsed || parsed.length === 0){
+   document.getElementById('summary').textContent = 'CSV parsed but no rows found.';
+   return;
+ }
+ // detect quarters from headers
+ const headers = results.meta.fields;
+ quarters = detectQuarters(headers);
+ if (quarters.length === 0){
+   document.getElementById('summary').innerHTML = '<span style="color:#b91c1c">Could not detect quarter columns. Please ensure headers use the prefix: ' + PREFIX_GROWTH + '<em>&lt;Quarter&gt;</em></span>';
+   return;
+ }
+ populateRespondentSelect(parsed.length);
+ // auto-render first respondent
+ document.getElementById('respondentSelect').value = 0;
+ onRespondentChange();
+}
+
+// File input
+document.getElementById('csvFile').addEventListener('change', e => {
+ const f = e.target.files[0];
+ if (!f) return;
+ Papa.parse(f, { header:true, skipEmptyLines:true, complete: handleParsedData });
+});
+
+// Load sample CSV (built-in)
+document.getElementById('loadSample').addEventListener('click', ()=>{
+ const sample = `growthQ4_2025,growthQ1_2026,growthQ2_2026,consensusQ4_2025,consensusQ1_2026,consensusQ2_2026,grshareQ4_2025,grshareQ1_2026,grshareQ2_2026
+5.2,5.5,5.9,4.8,5.0,5.3,0.65,0.40,0.30
+4.9,5.0,5.2,4.8,4.9,5.1,0.55,0.45,0.35
+6.0,6.1,6.3,5.5,5.7,5.9,0.75,0.65,0.60`;
+ Papa.parse(sample, { header:true, skipEmptyLines:true, complete: handleParsedData });
+});
+
+// Download current respondent's values as CSV
+document.getElementById('downloadData').addEventListener('click', ()=>{
+ const sel = document.getElementById('respondentSelect');
+ const idx = parseInt(sel.value,10);
+ if (!parsed || isNaN(idx)) return alert('No respondent selected');
+ const row = parsed[idx];
+ // build rows for each quarter
+ const rows = [['quarter','forecast','consensus','shareLower','shareHigher']];
+ const dataForRespondent = buildDataForRespondent(row);
+ dataForRespondent.forEach(d => rows.push([d.quarter, d.forecast===null?'':d.forecast, d.consensus===null?'':d.consensus, d.shareLower===null?'':d.shareLower, d.shareLower===null?'':(1-d.shareLower)]));
+ const csv = rows.map(r => r.join(',')).join('\n');
+ const blob = new Blob([csv],{type:'text/csv'});
+ const url = URL.createObjectURL(blob);
+ const a = document.createElement('a');
+ a.href = url; a.download = `respondent_${idx+1}_values.csv`;
+ document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+});
+
+// resize charts on window resize
+window.addEventListener('resize', ()=>{ chart1.resize(); chart2.resize(); });
+
+</script>
+</body>
+</html>

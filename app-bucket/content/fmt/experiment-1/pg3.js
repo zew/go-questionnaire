@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (shareComparisonText) {
                 shareComparisonText.textContent = '';
-            } 
+            }
             return;
         }
 
         const participantDta = parsedData[participantIdx];
 
-        // 
+        //
         let   userShare      = parseFloat(55);
         if (true){
             // todo retrieve from previous page
@@ -67,28 +67,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const actualShare    = parseFloat(actualShareRaw) * 100;
         const forecast       = parseFloat(participantDta[`growth${quarter}`]);
         const consensus      = parseFloat(participantDta[`consensus${quarter}`]);
-        
-        
+
+
         console.log(`actual ${actualShare} - forecast ${forecast} - consensus ${consensus}   `);
 
 
         if (!isNaN(actualShare)) {
-            shareComparisonText.innerHTML = `Sie haben   <strong>${formatDE(userShare,1)}%</strong> angegeben. <br> 
-                Tatsächlich lag der <b>Anteil unter allen Befragten</b>, 
-                die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben, 
+            shareComparisonText.innerHTML = `Sie haben   <strong>${formatDE(userShare,0)}%</strong> angegeben. <br>
+                Tatsächlich lag der <b>Anteil unter allen Befragten</b>,
+                die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben,
                 bei&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
         } else {
-            shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare,1)}%</strong> | 
+            shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare,1)}%</strong> |
                 Tatsächlicher Anteil: <strong>N/A</strong>`;
         }
 
 
-        // Distance Chart
+        // chart #1 - distance
         const distance = Math.abs(userShare - actualShare);
         const distanceChartOption = {
             grid:    { top: 20, right: 40, bottom: 20, left: 40 },
-            xAxis:   { type: 'value', min: 0, max: 100, axisLabel: { formatter: '{value}%' }, 
-                        splitLine: { show: false } 
+            xAxis:   { type: 'value',
+                       min: 0, max: 100,
+                       axisLabel: { formatter: '{value}%' },
+                       splitLine: { show: false }
                      },
             yAxis:   { type: 'category', data: [''], show: false },
             series: [{
@@ -100,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         value: [ userShare, 'Ihr Anteil'],
                         itemStyle: { color: '#546a7b' },
                         label: {
-                            show: true, position: 'top', 
-                            distance: 18, 
+                            show: true, position: 'top',
+                            distance: 18,
                             fontWeight: 'bold', color: '#000000',
-                            formatter: (params) => formatDE(params.value[0]) + '%',
+                            formatter: (params) => formatDE(params.value[0],0) + '%',
                         }
                     },
                     {
@@ -111,25 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         value: [actualShare, ''],
                         itemStyle: { color: '#EE6666' },
                         label: {
-                            show: true, position: 'bottom', 
-                            distance: 8, 
+                            show: true, position: 'bottom',
+                            distance: 8,
+                            // padding: [-2,0,0,0],
                             fontWeight: 'bold', color: '#EE6666',
-                            formatter: (params) => formatDE(params.value[0]) + '%',
+                            formatter: (params) => ' ' + formatDE(params.value[0],1) + '%',
                         }
                     }
                 ],
                 markLine: !isNaN(actualShare) ? {
                     symbol: ['none', 'none'],
-                    label: { show: true, position: 'middle', 
-                        distance: 10, 
-                        afontWeight: 'bold', 
+                    label: { show: true, position: 'middle',
+                        distance: 13,
+                        afontWeight: 'bold',
                         color: '#111' ,
                         color: '#6b7280',
-                        formatter: `Abstand ~${formatDE(distance,0)}%`, 
+                        formatter: `Abstand ~${formatDE(distance,0)}%`,
                     },
                     lineStyle: { type: 'solid', width: 3, color: '#6b7280' },
                     data: [[
-                        { coord: [userShare,   ''] }, 
+                        { coord: [userShare,   ''] },
                         { coord: [actualShare, ''] },
                     ]]
                 } : {}
@@ -140,20 +143,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // Forecast Chart
+        // chart #2 - forecast
         const forecastOption = {
-            grid:    { top: 10, right: 60, bottom: 30, left: 100 },
-            xAxis:   { type: 'value', min: -3, max: 3, 
-                        interval: 0.5, axisLabel: { formatter: '{value}' },
+            grid:    { top: 10, right: 60, bottom: 30, left: 100 },  // y-axis outset
+            grid:    { top: 10, right: 20, bottom: 30, left:  20 },  // y-axis inset
+            xAxis:   { type: 'value',
+                       min: -3, max: 3,
+                       interval: 0.5,
                      },
-            yAxis:   { type: 'category', data: [quarter] },
+            yAxis:   {
+                       type: 'category',
+                       data: [quarter],
+                        axisLabel: {
+                            inside: true,     // label inside the grid area
+                            align: 'left',    // aligns text to the left edge of each tick position
+                            margin: -8,       // outdent
+                            verticalAlign: 'top',  // keeps the text box anchored by its top edge
+                            padding: [-33, 0, 0, 0],
+                            // top: 30,
+                        },
+                    },
             series: [{
                 type: 'bar',
                 data: [forecast],
                 itemStyle: { color: '#62929e' },
-                label: { show: true, position: 'insideRight', 
-                    color: '#000', backgroundColor: '#fff', borderRadius: 4, 
-                    padding: [2, 6], 
+                label: { show: true, position: 'insideRight',
+                    color: '#000', backgroundColor: '#fff', borderRadius: 4,
+                    padding: [2, 6],
                     formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) ,
                 }
             }]
@@ -162,18 +178,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // Consensus Chart
+        // chart #3 - consensus
         const consensusOption = {
-            grid:    { top: 10, right: 60, bottom: 30, left: 100 },
+            grid:    { top: 10, right: 60, bottom: 30, left: 100 },  // y-axis outset
+            grid:    { top: 10, right: 20, bottom: 30, left:  20 },  // y-axis inset
             xAxis:   { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
-            yAxis:   { type: 'category', data: [quarter] },
+            yAxis:   {
+                        type: 'category',
+                        data: [quarter],
+
+                        axisLabel: {
+                            inside: true,     // label inside the grid area
+                            align: 'left',    // aligns text to the left edge of each tick position
+                            margin: -8,       // outdent
+                        },
+
+                     },
             series: [{
                 type: 'bar',
                 data: [consensus],
                 itemStyle: { color: '#546a7b' },
-                label: { show: true, position: 'insideRight', 
-                    color: '#000', backgroundColor: '#fff', borderRadius: 4, 
-                    padding: [2, 6], 
+                label: { show: true, position: 'insideRight',
+                    color: '#000', backgroundColor: '#fff', borderRadius: 4,
+                    padding: [2, 6],
                     formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)),
                 }
             }]

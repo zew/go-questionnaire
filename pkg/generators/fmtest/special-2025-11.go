@@ -42,7 +42,9 @@ func special202511(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 12
 				inp.Label = trl.S{
 					"de": `
-						<p style='font-size:120%; font-weight:bold; margin-top: 0;'>Ihre Sicht auf Wachstumschancen für Deutschland </p>
+						<p style='font-size:120%; font-weight:bold; margin-top: 0;'>
+							Ihre Sicht auf Wachstumschancen für Deutschland 
+						</p>
 											
 						<p>
 						Die deutsche Wirtschaft leidet seit Jahren unter niedrigem Wachstum.
@@ -67,12 +69,12 @@ func special202511(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{
 					"de": `
 						Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose 
-							<br>
-							<i>unter allen Befragten in der aktuellen Befragung</i>?
-							<small>
-							<br>  
-							Bitte nicht-annualisiertes Quartalswachstum des realen & saisonbereinigten BIP angeben.
-							</small>
+						<br>
+						<i>unter allen Befragten in der aktuellen Befragung</i>?
+							
+						<small>
+						Bitte nicht-annualisiertes Quartalswachstum des realen & saisonbereinigten BIP angeben.
+						</small>
 
 				`,
 					"en": `
@@ -98,7 +100,7 @@ func special202511(q *qst.QuestionnaireT) error {
 				{
 					inp := gr.AddInput()
 					inp.Type = "number"
-					inp.Name = fmt.Sprintf("sq_pp_all_%v", i+1)
+					inp.Name = fmt.Sprintf("ssq3a_%v", i+1)
 					inp.ColSpan = 3
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 1
@@ -135,6 +137,18 @@ func special202511(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.GeneratorFuncName = "fmt202511Pg3"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "fmt202511Pg4"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "fmt202511Pg5"
+	}
+	{
+		page := q.AddPage()
+		page.GeneratorFuncName = "fmt202511Pg6"
 	}
 
 	return nil

@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -138,63 +139,361 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("58rem")
 
-	// grIdx := q.Version() % 2
+	addingThreeCharts(q, page)
 
-	//
-	// gr1
-	// 	hidden inputs - making previous data from previous page available as hidden field
+	return nil
+}
+
+func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
+
+	page.Groups = nil // dynamically recreate the groups
+
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.Short = trl.S{
+		"de": "Wachtsumschancen IV",
+		"en": "todo %v",
+	}
+	page.SuppressInProgressbar = true
+
+	page.WidthMax("58rem")
+
+	addingThreeCharts(q, page)
+
 	{
 		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 0
+		gr.Cols = 12
 
-		// prevRsp = strings.TrimSpace(prevRsp)
-		// log.Printf("%v value is     '%v'", prevInp.Name, prevRsp)
-
-		/*
-			We want to make an input from previous page available.
-				q.ByName("param1_pg2_bg")
-
-			This yields the correct number.
-			But the following fails:
-
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "user_share_prev"
-				inp.Response = rsp
-
-			inp.Response is overwritten later - when  dynamic page values are set.
-			Thus we
-		*/
-		prevInp := q.ByName("param1_pg2_bg")
-		prevRsp := prevInp.Response
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
+			inp.ColSpan = 12
 			inp.Label = trl.S{
-				"de": fmt.Sprintf(
-					`<input type='hidden' name='user_share_prev' id='user_share_prev'  value='%v' `,
-					prevRsp,
-				),
+				"de": `
+					<p style='font-size:120%; font-weight:bold; margin-top: 0;'>
+						Ihre Meinung zu aktuellen Aussichten
+					</p>
+											
+					<p>
+						Denken Sie nun bitte erneut über das deutsche Wirtschaftswachstum nach und
+						geben Sie Ihre Einschätzung ab.
+					</p>
+					
+					<small>
+						Bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben.
+					</small>
+
+
+
+
+				`,
+				"en": `
+					todo
+				`,
 			}
-			inp.Label["en"] = inp.Label["de"]
-			inp.ColSpan = gr.Cols
 		}
-
-	}
-
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
 		{
 			inp := gr.AddInput()
-			inp.Type = "dyn-textblock"
-			inp.DynamicFunc = "RenderStaticContent"
-			inp.DynamicFuncParamset = "./experiment-1/pg3.html"
-			inp.ColSpan = 1
-			inp.ColSpanLabel = 1
+			inp.Type = "textblock"
+			inp.ColSpan = 12
+			inp.Label = trl.S{
+				"de": `
+						Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen
+
+
+						<script>
+							document.addEventListener("DOMContentLoaded", () => {
+							const element = document.getElementById("ssq5a_1");
+
+							if (element) {
+								element.focus();
+								element.scrollIntoView({ behavior: "smooth", block: "center" });
+							}
+							});
+						</script>
+
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("5a.")
 		}
+
+		sLbl1 := css.NewStylesResponsive(nil)
+		sLbl1.Desktop.StyleGridItem.JustifySelf = "end"
+		sLbl1.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+		sLbl1.Mobile.StyleBox.Padding = " 0 2.7rem 0 0.2rem"
+
+		sLbl2 := *sLbl1
+		sLbl2.Mobile.StyleGridItem.JustifySelf = "start"
+		sLbl2.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+		sLbl2.Mobile.StyleBox.Padding = " 0 1.5rem 0 0.2rem"
+
+		// row 1 - four quarters - label
+		//   removed
+		// row 2 - four quarters - inputs
+		for i := 0; i < 3; i++ {
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("ssq5a_%v", i+1)
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+				inp.Min = -20
+				inp.Max = 20
+				inp.Step = 0.01
+				inp.MaxChars = 4
+				inp.Label = trl.S{
+					"de": q.Survey.Quarter(i),
+					"en": q.Survey.Quarter(i),
+				}
+
+				inp.Suffix = trl.S{
+					"de": "%",
+					"en": "pct",
+				}
+				inp.StyleLbl = sLbl1
+
+				inp.Style = css.MobileVertical(inp.Style)
+				inp.StyleLbl.Mobile.StyleGridItem.JustifySelf = "start"
+				// inp.StyleLbl.Mobile.StyleGridItem.AlignSelf = "end"
+			}
+		}
+
 	}
 
 	return nil
+}
+
+func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
+
+	page.Groups = nil // dynamically recreate the groups
+
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.Short = trl.S{
+		"de": "Wachtsumschancen V",
+		"en": "todo %v",
+	}
+	page.SuppressInProgressbar = true
+
+	page.WidthMax("58rem")
+
+	addingThreeCharts(q, page)
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 12
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 12
+			inp.Label = trl.S{
+				"de": `
+						Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose 
+						<br>
+						<i>unter allen Befragten in der aktuellen Befragung?</i>
+
+
+
+						<script>
+							document.addEventListener("DOMContentLoaded", () => {
+							const element = document.getElementById("ssq5b_1");
+
+							if (element) {
+								element.focus();
+								element.scrollIntoView({ behavior: "smooth", block: "center" });
+							}
+							});
+						</script>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("5b.")
+		}
+
+		sLbl1 := css.NewStylesResponsive(nil)
+		sLbl1.Desktop.StyleGridItem.JustifySelf = "end"
+		sLbl1.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+		sLbl1.Mobile.StyleBox.Padding = " 0 2.7rem 0 0.2rem"
+
+		sLbl2 := *sLbl1
+		sLbl2.Mobile.StyleGridItem.JustifySelf = "start"
+		sLbl2.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+		sLbl2.Mobile.StyleBox.Padding = " 0 1.5rem 0 0.2rem"
+
+		// row 1 - four quarters - label
+		//   removed
+		// row 2 - four quarters - inputs
+		for i := 0; i < 3; i++ {
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("ssq5b_%v", i+1)
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+				inp.Min = -20
+				inp.Max = 20
+				inp.Step = 0.01
+				inp.MaxChars = 4
+				inp.Label = trl.S{
+					"de": q.Survey.Quarter(i),
+					"en": q.Survey.Quarter(i),
+				}
+
+				inp.Suffix = trl.S{
+					"de": "%",
+					"en": "pct",
+				}
+				inp.StyleLbl = sLbl1
+
+				inp.Style = css.MobileVertical(inp.Style)
+				inp.StyleLbl.Mobile.StyleGridItem.JustifySelf = "start"
+				// inp.StyleLbl.Mobile.StyleGridItem.AlignSelf = "end"
+			}
+		}
+
+	}
+
+	return nil
+
+}
+
+func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
+
+	page.Groups = nil // dynamically recreate the groups
+
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.Short = trl.S{
+		"de": "Wachtsumschancen VI",
+		"en": "todo %v",
+	}
+	page.SuppressInProgressbar = true
+
+	page.WidthMax("58rem")
+
+	addingThreeCharts(q, page)
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 9
+		gr.BottomVSpacers = 2
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+						Wie treffen Sie Ihre Vorhersagen am ehesten?
+
+						<script>
+							document.addEventListener("DOMContentLoaded", () => {
+							const element = document.getElementById("ssq6_1");
+
+							if (element) {
+								element.focus();
+								element.scrollIntoView({ behavior: "smooth", block: "center" });
+							}
+							});
+						</script>
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("6.")
+		}
+
+		lbls := []trl.S{
+			{
+				"de": "Bauchgefühl",
+				"en": "todo",
+			},
+			{
+				"de": "modelbasiert",
+				"en": "todo",
+			},
+			{
+				"de": "anders",
+				"en": "todo",
+			},
+		}
+
+		for i := 0; i < 3; i++ {
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = fmt.Sprintf("ssq6_%v", i+1)
+				inp.ColSpan = 9
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 8
+				inp.Label = lbls[i]
+				inp.ControlFirst()
+				if i == 2 {
+					inp.ColSpan = 2
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 1
+				}
+			}
+
+			if i == 2 {
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.MaxChars = 20
+				inp.Name = "ssq6_other"
+				inp.ColSpan = 9
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+
+		}
+	}
+
+	//
+	{
+		gr := page.AddGroup()
+		gr.Cols = 9
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+					Möchten Sie über die Studienergebnisse mit 
+					Ihren Angaben zu den deutschen Wachstumschancen per Email informiert werden?
+				`,
+				"en": `
+					todo
+				`,
+			}.Outline("7.")
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "checkbox"
+			inp.Name = "ssq7"
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 8
+			inp.Label = trl.S{
+				"de": "Ja",
+				"en": "todo",
+			}
+			inp.ControlFirst()
+		}
+
+	}
+
+	return nil
+
 }

@@ -121,6 +121,23 @@ func (inp *inputT) ControlFirst() {
 	// inp.ColSpanControl, inp.ColSpanLabel = inp.ColSpanLabel, inp.ColSpanControl
 }
 
+// ControlRight aligns control to the right with some padding
+// -	NOT WORKING
+func (inp *inputT) ControlRight() {
+	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+	inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end" // no effect - browser says "center"
+	// inp.StyleCtl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
+	inp.StyleCtl.Desktop.StyleBox.Padding = "0 0 0 1.0rem"
+}
+
+// ControlCenter - input horizontally centered;
+// default is 'start';
+// vertical remains 'center'
+func (inp *inputT) ControlCenter() {
+	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+	inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "center"
+}
+
 // ControlTop puts the control vertically at top;
 // default would be vertically centered
 func (inp *inputT) ControlTop() {
@@ -172,14 +189,6 @@ func (inp *inputT) LabelBottom() {
 func (inp *inputT) LabelTop() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "start"
-}
-
-// ControlCenter - input horizontally centered;
-// default is 'start';
-// vertical remains 'center'
-func (inp *inputT) ControlCenter() {
-	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-	inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "center"
 }
 
 // LabelPadRight puts a padding right on the label

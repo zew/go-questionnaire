@@ -21,7 +21,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 	}
 	// page.SuppressInProgressbar = true
 
-	page.WidthMax("58rem")
+	page.WidthMax("62rem")
 
 	grIdx := q.Version() % 2
 
@@ -135,9 +135,9 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 		"de": "Wachtsumschancen III",
 		"en": "todo %v",
 	}
-	// page.SuppressInProgressbar = true
+	page.SuppressInProgressbar = true
 
-	page.WidthMax("58rem")
+	page.WidthMax("62rem")
 
 	addingThreeCharts(q, page)
 
@@ -158,14 +158,14 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 	}
 	page.SuppressInProgressbar = true
 
-	page.WidthMax("58rem")
+	page.WidthMax("62rem")
 
 	addingThreeCharts(q, page)
 
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
-
+		gr.BottomVSpacers = 2
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -282,14 +282,14 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 	}
 	page.SuppressInProgressbar = true
 
-	page.WidthMax("58rem")
+	page.WidthMax("62rem")
 
 	addingThreeCharts(q, page)
 
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
-
+		gr.BottomVSpacers = 2
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -381,15 +381,15 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 	}
 	page.SuppressInProgressbar = true
 
-	page.WidthMax("58rem")
+	page.WidthMax("62rem")
 
 	addingThreeCharts(q, page)
 
 	{
 		gr := page.AddGroup()
-		gr.Cols = 9
-		gr.BottomVSpacers = 2
-
+		gr.Cols = 12
+		gr.WidthMax("40rem")
+		gr.BottomVSpacers = 1
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -421,7 +421,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 				"en": "todo",
 			},
 			{
-				"de": "modelbasiert",
+				"de": "modellbasiert",
 				"en": "todo",
 			},
 			{
@@ -435,22 +435,23 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
 				inp.Name = fmt.Sprintf("ssq6_%v", i+1)
-				inp.ColSpan = 9
+				inp.ColSpan = 12
 				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 8
+				inp.ColSpanControl = 11
 				inp.Label = lbls[i]
 				inp.ControlFirst()
+				inp.ControlRight()
 				if i == 2 {
-					inp.ColSpan = 2
+					inp.ColSpan = 3
 					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 1
+					inp.ColSpanControl = 2
 				}
 			}
 
 			if i == 2 {
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.MaxChars = 20
+				inp.MaxChars = 36
 				inp.Name = "ssq6_other"
 				inp.ColSpan = 9
 				inp.ColSpanLabel = 0
@@ -463,7 +464,9 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 	//
 	{
 		gr := page.AddGroup()
-		gr.Cols = 9
+		gr.Cols = 12
+		gr.WidthMax("40rem")
+		gr.BottomVSpacers = 1
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -484,12 +487,13 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 			inp.Name = "ssq7"
 			inp.ColSpan = gr.Cols
 			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 8
+			inp.ColSpanControl = 11
 			inp.Label = trl.S{
 				"de": "Ja",
 				"en": "todo",
 			}
 			inp.ControlFirst()
+			inp.ControlRight()
 		}
 
 	}

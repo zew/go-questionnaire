@@ -158,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             inside: true,     // label inside the grid area
                             align: 'left',    // aligns text to the left edge of each tick position
                             margin: -8,       // outdent
-                            verticalAlign: 'top',  // keeps the text box anchored by its top edge
-                            padding: [-33, 0, 0, 0],
-                            // top: 30,
+
+                            verticalAlign: 'top',
+                            padding: [-3, 0, 0, 0],
                         },
                     },
             series: [{
@@ -191,6 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             inside: true,     // label inside the grid area
                             align: 'left',    // aligns text to the left edge of each tick position
                             margin: -8,       // outdent
+
+                            verticalAlign: 'top',
+                            padding: [-3, 0, 0, 0],
                         },
 
                      },

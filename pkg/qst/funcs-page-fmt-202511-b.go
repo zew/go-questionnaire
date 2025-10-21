@@ -56,7 +56,7 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT) error {
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.BottomVSpacers = 2
+		gr.BottomVSpacers = 1
 		{
 			inp := gr.AddInput()
 			inp.Type = "dyn-textblock"

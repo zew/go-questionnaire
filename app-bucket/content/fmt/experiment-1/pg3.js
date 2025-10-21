@@ -1,7 +1,9 @@
+// parsedData - see data.js
+
+
 const chartIDs  = ['distanceChart', 'forecastChart', 'consensusChart'];
 let   chartObjs = [];
 
-// parsedData - see data.js
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -54,9 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 
         let   userShare      = parseFloat(55);
-        if (false){
+        if (true){
             // todo retrieve from previous page
-            userShare      = parseFloat(userShareInput.value) || 0;
+            const userSharePrev = document.getElementById('user_share_prev');
+            userShare      = parseFloat(userSharePrev.value) || 0;
+            console.log(`userShare from prev page ${userShare} parsed from ${userSharePrev.value}`);
         }
 
         const actualShareRaw = participantDta[`grshare${quarter}`];
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shareComparisonText.innerHTML = `Sie haben   <strong>${formatDE(userShare,1)}%</strong> angegeben. <br> 
                 Tatsächlich lag der <b>Anteil unter allen Befragten</b>, 
                 die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben, 
-                bei <strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
+                bei&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
         } else {
             shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare,1)}%</strong> | 
                 Tatsächlicher Anteil: <strong>N/A</strong>`;
@@ -97,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         itemStyle: { color: '#546a7b' },
                         label: {
                             show: true, position: 'top', 
-                            distance: 8, fontWeight: 'bold', color: '#000000',
+                            distance: 18, 
+                            fontWeight: 'bold', color: '#000000',
                             formatter: (params) => formatDE(params.value[0]) + '%',
                         }
                     },
@@ -107,15 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         itemStyle: { color: '#EE6666' },
                         label: {
                             show: true, position: 'bottom', 
-                            distance: 8, fontWeight: 'bold', color: '#EE6666',
+                            distance: 8, 
+                            fontWeight: 'bold', color: '#EE6666',
                             formatter: (params) => formatDE(params.value[0]) + '%',
                         }
                     }
                 ],
                 markLine: !isNaN(actualShare) ? {
                     symbol: ['none', 'none'],
-                    label: { show: true, formatter: `Abstand: ${formatDE(distance)}%`, 
-                        position: 'middle', fontWeight: 'bold', color: '#111' 
+                    label: { show: true, position: 'middle', 
+                        distance: 10, 
+                        afontWeight: 'bold', 
+                        color: '#111' ,
+                        color: '#6b7280',
+                        formatter: `Abstand ~${formatDE(distance,0)}%`, 
                     },
                     lineStyle: { type: 'solid', width: 3, color: '#6b7280' },
                     data: [[

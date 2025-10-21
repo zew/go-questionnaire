@@ -1,6 +1,8 @@
 package qst
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -102,16 +104,6 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 	// 	inp.MaxChars = 5
 	// 	inp.Response = "55"
 	// }
-	// {
-	// 	inp := gr.AddInput()
-	// 	inp.Type = "number"
-	// 	inp.Name = fmt.Sprintf("param2_%v", instance)
-	// 	inp.Min = 0
-	// 	inp.Max = 100
-	// 	inp.Step = 5
-	// 	inp.MaxChars = 5
-	// 	inp.Response = "15"
-	// }
 
 	//
 	{
@@ -147,6 +139,49 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 	page.WidthMax("58rem")
 
 	// grIdx := q.Version() % 2
+
+	//
+	// gr1
+	// 	hidden inputs - making previous data from previous page available as hidden field
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 0
+
+		// prevRsp = strings.TrimSpace(prevRsp)
+		// log.Printf("%v value is     '%v'", prevInp.Name, prevRsp)
+
+		/*
+			We want to make an input from previous page available.
+				q.ByName("param1_pg2_bg")
+
+			This yields the correct number.
+			But the following fails:
+
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "user_share_prev"
+				inp.Response = rsp
+
+			inp.Response is overwritten later - when  dynamic page values are set.
+			Thus we
+		*/
+		prevInp := q.ByName("param1_pg2_bg")
+		prevRsp := prevInp.Response
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"de": fmt.Sprintf(
+					`<input type='hidden' name='user_share_prev' id='user_share_prev'  value='%v' `,
+					prevRsp,
+				),
+			}
+			inp.Label["en"] = inp.Label["de"]
+			inp.ColSpan = gr.Cols
+		}
+
+	}
 
 	{
 		gr := page.AddGroup()

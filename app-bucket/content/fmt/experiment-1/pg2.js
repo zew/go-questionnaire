@@ -8,42 +8,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const userShareInput      = document.getElementById('userShareInput');
-    const userShareSlider     = document.getElementById('userShareSlider');
-
-    // Sync slider and input
-    userShareInput.addEventListener('input', () => {
-        userShareSlider.value = userShareInput.value;
-        updateCharts();
-    });
+    // // Sync slider and input
+    // userShareInput.addEventListener('input', () => {
+    //     userShareSlider.value = userShareInput.value;
+    //     updateCharts();
+    // });
 
 
-    userShareSlider.addEventListener('input', () => {
-        userShareInput.value = userShareSlider.value;
-        updateCharts();
-    });
-    userShareSlider.addEventListener('change', () => {
-        userShareInput.value = userShareSlider.value;
-        updateCharts();
-    });
+    // userShareSlider.addEventListener('input', () => {
+    //     userShareInput.value = userShareSlider.value;
+    //     updateCharts();
+    // });
+    // userShareSlider.addEventListener('change', () => {
+    //     userShareInput.value = userShareSlider.value;
+    //     updateCharts();
+    // });
 
 
 
 
-    let  simHist     = {};
-    let  simHistInp  = document.getElementById("change_history_pg2");
+    const  simHist     = {};
+    const  simHistInp  = document.getElementById("change_history_pg2");
 
+    const  userShareSld   = document.getElementById('userShareSlider');
+    const  userShareInp   = document.getElementById('userShareInput');
 
-    let  param1Inp   = document.getElementById("userShareInput");
-    let  param1InpBG = document.getElementById("param1_pg2_bg");
-    if (param1InpBG && param1InpBG.value !== "") {
-        param1Inp.value = parseInt(param1InpBG.value);  // restore from before
-        userShareSlider.value = parseInt(param1InpBG.value);  // restore from before
+    const  userShareBG    = document.getElementById("param1_pg2_bg");
+
+    if (userShareBG && userShareBG.value !== "") {
+        userShareInp.value = parseInt(userShareBG.value);  // restore from before
+        userShareSld.value = parseInt(userShareBG.value);  
     }
 
-
-
-    console.log(`init param1 ${param1Inp.value}, bg ${param1InpBG.value} `)
+    console.log(`init param1 ${userShareInp.value}, bg ${userShareBG.value} `)
 
 
 
@@ -58,29 +55,38 @@ document.addEventListener('DOMContentLoaded', () => {
         let src = evt.srcElement;
         const chVal = src.value;
 
-        param1InpBG.value = chVal;
+        userShareBG.value = chVal;
 
         // refresh(myChart, dataObject);
 
         console.log(`   ${evt.srcElement.name} - new val  ${chVal}`)
 
+
+        if (evt.srcElement.name=="userShareSlider") {
+           userShareInp.value = userShareSld.value 
+        } else {
+           userShareSld.value = userShareInp.value  
+        }
+
+
         const nm = src.name.trim();
         const entry = {}
         entry[nm] = chVal
+        entry["userShare"] = chVal
 
         simHist[ getTimeFlooredBy10Seconds() ] = entry;
         simHistInp.value = JSON.stringify(simHist);
 
-        console.log(`simHistInp.value ${simHistInp.value}`)
+        // console.log(`simHistInp.value ${simHistInp.value}`)
     }
 
-    param1Inp.onchange = paramChange
-    userShareSlider.onchange = paramChange
+    userShareInp.onchange = paramChange
+    userShareSld.onchange = paramChange
 
 
 
 
-    userShareSlider.focus();
+    userShareSld.focus();
 
     console.log(`pageLoaded() pg2 complete`)
 

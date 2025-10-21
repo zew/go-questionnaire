@@ -59,7 +59,8 @@ func RenderStaticContent(w io.Writer, subPth, site, lang, packageDocPrefix strin
 			bts, lpErr = ReadFile(pth)
 			if lpErr == nil {
 				lenRaw := float64(len(bts)) / 1024
-				log.Printf("MarkdownH: found %v - size %4.3f kB - subPath %s", pth, lenRaw, subPth)
+				baseDirSurveyContent := path.Dir(path.Dir(pth))
+				log.Printf("MarkdownH: found %v - %4.2f kB - base %s", subPth, lenRaw, baseDirSurveyContent)
 				break
 			}
 			if errors.Is(lpErr, os.ErrNotExist) {

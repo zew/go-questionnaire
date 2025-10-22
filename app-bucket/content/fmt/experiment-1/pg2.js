@@ -1,38 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    function getTimeFlooredBy10Seconds() {
-        const nowMillis = Date.now();
-        const nowSeconds = Math.floor(nowMillis / 1000);
-        const floored10Sec = Math.floor(nowSeconds / 10) * 10;
-        return floored10Sec;
-    }
-
-
-    // // Sync slider and input
-    // userShareInput.addEventListener('input', () => {
-    //     userShareSlider.value = userShareInput.value;
-    //     updateCharts();
-    // });
-
-
-    // userShareSlider.addEventListener('input', () => {
-    //     userShareInput.value = userShareSlider.value;
-    //     updateCharts();
-    // });
-    // userShareSlider.addEventListener('change', () => {
-    //     userShareInput.value = userShareSlider.value;
-    //     updateCharts();
-    // });
-
-
-
-
-    const  simHist     = {};
-    const  simHistInp  = document.getElementById("change_history_pg2");
 
     const  userShareSld   = document.getElementById('userShareSlider');
     const  userShareInp   = document.getElementById('userShareInput');
-
     const  userShareBG    = document.getElementById("param1_pg2_bg");
 
     if (userShareBG && userShareBG.value !== "") {
@@ -70,14 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         const nm = src.name.trim();
-        const entry = {}
-        entry[nm] = chVal
-        entry["userShare"] = chVal
+        recordChange("userShare", chVal);
 
-        simHist[ getTimeFlooredBy10Seconds() ] = entry;
-        simHistInp.value = JSON.stringify(simHist);
-
-        // console.log(`simHistInp.value ${simHistInp.value}`)
     }
 
     userShareInp.onchange = paramChange

@@ -4,12 +4,15 @@
 
 * pbu: Testuser mapping
 
-* Who gets treatment
+* pbu: History funktion - Fields, Pages
+
+* Who gets treatment?
 
     * Dynamic numbering- Numbering anpassen 
         * 4a, 4b, 4c
         * --, 4a, 4b
-        * Aber dann folgt 5a, 5b, 6, 7
+        * Aber dann folgt 5a, 5b, 6, 7  
+          brauchen wir die "4x" überhaupt? Sind das denn "Fragen"
 
 * Participants without previous data
     * exclude

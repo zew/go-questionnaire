@@ -35,7 +35,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
-			inp.Name = "change_history_pg2"
+			inp.Name = "history_stack_pg2"
 		}
 		{
 			inp := gr.AddInput()
@@ -139,7 +139,7 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	addingThreeCharts(q, page)
+	addingThreeCharts(q, page, 3)
 
 	return nil
 }
@@ -160,7 +160,7 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	addingThreeCharts(q, page)
+	addingThreeCharts(q, page, 4)
 
 	{
 		gr := page.AddGroup()
@@ -284,7 +284,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	addingThreeCharts(q, page)
+	addingThreeCharts(q, page, 5)
 
 	{
 		gr := page.AddGroup()
@@ -383,7 +383,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	addingThreeCharts(q, page)
+	addingThreeCharts(q, page, 6)
 
 	{
 		gr := page.AddGroup()

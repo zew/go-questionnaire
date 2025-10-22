@@ -6,7 +6,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func addingThreeCharts(q *QuestionnaireT, page *pageT) error {
+func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) error {
 
 	// grIdx := q.Version() % 2
 
@@ -17,6 +17,12 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT) error {
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 0
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "hidden"
+			inp.Name = fmt.Sprintf("history_stack_pg%v", experimentPageNum)
+		}
 
 		// prevRsp = strings.TrimSpace(prevRsp)
 		// log.Printf("%v value is     '%v'", prevInp.Name, prevRsp)

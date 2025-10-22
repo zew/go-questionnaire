@@ -16,6 +16,7 @@ func special202511(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
+	// this is page I
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -32,6 +33,20 @@ func special202511(q *qst.QuestionnaireT) error {
 		}
 		page.WidthMax("56rem")
 
+		//
+		// 	hidden inputs saving the values from the echart
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "history_stack_pg1"
+			}
+		}
+
+		//
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12

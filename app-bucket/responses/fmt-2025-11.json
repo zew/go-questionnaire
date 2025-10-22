@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f1b923c43649760d1413527fe75791a9520eab99e8bc451d72527517b1c4ec08",
+ 	"md_5": "151ca41b188c28174e09401d66796810ce07aa0a31e44b7935a591785ea23400",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6216,6 +6216,15 @@
  			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "history_stack_pg1",
+ 							"type": "hidden"
+ 						}
+ 					]
+ 				},
  				{
  					"bottom_vspacers": 3,
  					"columns": 12,

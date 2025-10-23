@@ -1,5 +1,11 @@
 // parsedData - see data.js
+// const dbg = JSON.stringify(parsedData[participantIdx], null, 2);
+// console.log(` participantIdx ${participantIdx} - data ${dbg} `);
 
+// forecastData - inserted by server
+const dbg = JSON.stringify(forecastData, null, 2);
+console.log(` data ${dbg} `);
+console.log(` user ID  ${forecastData['user_id']} - grp ${forecastData['group']} `);
 
 const chartIDs  = ['distanceChart', 'forecastChart', 'consensusChart'];
 let   chartObjs = [];
@@ -17,10 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    function getSelectedQuarter() {
-        return 'Q4_2025';  // Q1_2026, Q2_2026
-        return document.querySelector('input[name="quarter"]:checked').value;
-    }
 
     function updateCharts() {
 
@@ -32,11 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        /*
+        function getSelectedQuarter() {
+            return 'Q4_2025';  // Q1_2026, Q2_2026
+            return document.querySelector('input[name="quarter"]:checked').value;
+        }
+
+
         const participantIdx = parseInt(10, 10);
         const quarter        = getSelectedQuarter();
-
-        // const dbg = JSON.stringify(parsedData[participantIdx], null, 2);
-        // console.log(` participantIdx ${participantIdx} - data ${dbg} `);
 
         if (isNaN(participantIdx) || !parsedData[participantIdx]) {
 
@@ -51,22 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return;
         }
-
+        
         const participantDta = parsedData[participantIdx];
+        */
+
+        const participantDta = forecastData;
 
         //
-        let   userShare      = parseFloat(55);
+        let   userShare      = 50.0;
         if (true){
-            // todo retrieve from previous page
             const userSharePrev = document.getElementById('user_share_prev');
             userShare      = parseFloat(userSharePrev.value) || 0;
             console.log(`userShare from prev page ${userShare} parsed from ${userSharePrev.value}`);
         }
 
-        const actualShareRaw = participantDta[`grshare${quarter}`];
+        // const actualShareRaw = participantDta[`grshare${quarter}`];
+        // const actualShare    = parseFloat(actualShareRaw) * 100;
+        // const forecast       = parseFloat(participantDta[`growth${quarter}`]);
+        // const consensus      = parseFloat(participantDta[`consensus${quarter}`]);
+
+        // chart 1  - userShare vs actualShare
+        const actualShareRaw = participantDta[`share_lower_Q42025`];
         const actualShare    = parseFloat(actualShareRaw) * 100;
-        const forecast       = parseFloat(participantDta[`growth${quarter}`]);
-        const consensus      = parseFloat(participantDta[`consensus${quarter}`]);
+
+
+        // chart 2+3
+        const quarter        = participantDta[`quarter`];
+
+        const forecast       = parseFloat(participantDta[`Q42025`]);
+        const consensus      = parseFloat(participantDta[`consensus`]);
 
 
         console.log(`actual ${actualShare} - forecast ${forecast} - consensus ${consensus}   `);
@@ -140,6 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         chartObjs[0].setOption(distanceChartOption);
         // console.log(`distance chart ${chartObjs[0]}  `);
+
+        if( forecastData['group'] !=="T" ){
+            const domEl = document.getElementById('distanceChart');
+            // domEl.style.visibility = "hidden";
+            domEl.style.display = "none";
+        }
 
 
 

@@ -25,6 +25,10 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 
 	grIdx := q.Version() % 2
 
+	ChangeHistoryJS(q, page, 2)
+	dta := addForecastData(q, page)
+	mnth := dta["month_de"]
+
 	//
 	// gr1
 	// 	hidden inputs saving the values from the echart
@@ -32,17 +36,6 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 0
-		{
-			inp := gr.AddInput()
-			inp.Type = "hidden"
-			inp.Name = "history_stack_pg2"
-		}
-		{
-			inp := gr.AddInput()
-			inp.ColSpanControl = 1
-			inp.Type = "javascript-block"
-			inp.Name = "changeHistory"
-		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "hidden"
@@ -67,10 +60,11 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 					
 					Zuletzt haben Sie im 
-						<u> [August|May|Februar] 2025</u> 
+						<!-- <u> [August|May|Februar] 2025</u> -->
+						<i> %v 2025</i> 
 					eine Prognose 
 					für das Quartalswachstum in Q4 2025 angegeben.
 					<br><br>
@@ -80,7 +74,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 					
 					<br><br>
 										
-					`,
+					`, mnth),
 				"en": `todo`,
 			}
 			inp.ColSpan = gr.Cols
@@ -150,6 +144,8 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
+	ChangeHistoryJS(q, page, 3)
+	addForecastData(q, page)
 	addingThreeCharts(q, page, 3)
 
 	return nil
@@ -171,6 +167,8 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
+	ChangeHistoryJS(q, page, 4)
+	addForecastData(q, page)
 	addingThreeCharts(q, page, 4)
 
 	{
@@ -295,6 +293,8 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
+	ChangeHistoryJS(q, page, 5)
+	addForecastData(q, page)
 	addingThreeCharts(q, page, 5)
 
 	{
@@ -394,6 +394,8 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
+	ChangeHistoryJS(q, page, 6)
+	addForecastData(q, page)
 	addingThreeCharts(q, page, 6)
 
 	{

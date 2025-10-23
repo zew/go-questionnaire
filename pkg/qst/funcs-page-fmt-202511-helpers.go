@@ -1,10 +1,146 @@
 package qst
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
+	"sort"
 
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
+
+// ForecastData returns previous user data by participant ID
+func ForecastData(userId int) map[string]interface{} {
+	/*
+		we have forecasts
+			pprwbipq1,
+			pprwbipq2,
+			pprwbipq3,
+			pprwbipq4,
+		from waves	202502, 202505, 202508
+
+		Field "Q42025" contains the most recent forecast for Q42025
+	*/
+
+	var record map[string]interface{} = nil
+	userIdStr := fmt.Sprint(userId)
+	record = forecastDta[userIdStr]
+
+	// fallback for test users
+	if record != nil {
+		record["user_id"] = userId
+	} else {
+
+		remainder := userId % 3
+		mp := map[int]int{
+			0: 202502,
+			1: 202505,
+			2: 202508,
+		}
+		searchFor := mp[remainder]
+
+		//
+		// iteration sorted by user id
+		keys := make([]string, 0, len(forecastDta))
+		for k := range forecastDta {
+			keys = append(keys, k)
+		}
+		sort.Strings(keys)
+		for _, key := range keys {
+			// fmt.Println(k, forecastDta[key])
+			rec := forecastDta[key]
+			if rec["survey_id"] == searchFor {
+				rec["user_id"] = key
+				record = rec
+				break
+			}
+		}
+
+	}
+
+	mpQuarter := map[int]string{
+		202502: "Q1 2025",
+		202505: "Q2 2025",
+		202508: "Q3 2025",
+	}
+
+	mpMonthDe := map[int]string{
+		202502: "Februar",
+		202505: "Mai",
+		202508: "August",
+	}
+
+	sid, ok := record["survey_id"].(int)
+	if !ok {
+		log.Printf("survey id - not an int %v", sid)
+	}
+
+	record["quarter"] = mpQuarter[sid]
+	record["month_de"] = mpMonthDe[sid]
+
+	record["group"] = record["gruppe"]
+
+	return record
+
+}
+
+func addForecastData(q *QuestionnaireT, page *pageT) map[string]interface{} {
+
+	dta := ForecastData(q.UserIDInt())
+
+	jsonBytes, err := json.Marshal(dta)
+	if err != nil {
+		jsonBytes = []byte(fmt.Sprintf(`{"error": %q}`, err.Error()))
+	}
+
+	js := fmt.Sprintf(`
+		<script>
+			const forecastData = %s;
+		</script>`,
+		string(jsonBytes),
+	)
+
+	gr := page.AddGroup()
+	gr.Cols = 1
+	gr.BottomVSpacers = 0
+
+	/*
+		inp.Response is overwritten later - when  dynamic page values are set.
+		Thus we render this directly as javascript block
+	*/
+	{
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.Label = trl.S{
+			"de": js,
+			"en": js,
+		}
+		inp.ColSpan = gr.Cols
+	}
+
+	return dta
+
+}
+
+func ChangeHistoryJS(q *QuestionnaireT, page *pageT, experimentPageNum int) {
+
+	gr := page.AddGroup()
+	gr.Cols = 1
+	gr.BottomVSpacers = 0
+
+	{
+		inp := gr.AddInput()
+		inp.Type = "hidden"
+		inp.Name = fmt.Sprintf("history_stack_pg%v", experimentPageNum)
+	}
+	{
+		inp := gr.AddInput()
+		inp.ColSpanControl = 1
+		inp.Type = "javascript-block"
+		inp.Name = "changeHistory"
+	}
+
+}
 
 func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) error {
 
@@ -17,21 +153,6 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) er
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 0
-
-		{
-			inp := gr.AddInput()
-			inp.Type = "hidden"
-			inp.Name = fmt.Sprintf("history_stack_pg%v", experimentPageNum)
-		}
-		{
-			inp := gr.AddInput()
-			inp.ColSpanControl = 1
-			inp.Type = "javascript-block"
-			inp.Name = "changeHistory"
-		}
-
-		// prevRsp = strings.TrimSpace(prevRsp)
-		// log.Printf("%v value is     '%v'", prevInp.Name, prevRsp)
 
 		/*
 			We want to make an input from previous page available.
@@ -46,7 +167,7 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) er
 				inp.Response = rsp
 
 			inp.Response is overwritten later - when  dynamic page values are set.
-			Thus we
+			Thus we render this directly as input field
 		*/
 		prevInp := q.ByName("param1_pg2_bg")
 		prevRsp := prevInp.Response
@@ -82,21 +203,7 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) er
 	return nil
 }
 
-func ForecastData(participantId string) map[string]interface{} {
-	/*
-		we have forecasts
-			pprwbipq1,
-			pprwbipq2,
-			pprwbipq3,
-			pprwbipq4,
-		from waves	202502, 202505, 202508
-
-		Field "Q42025" contains the most recent forecast for Q42025
-	*/
-	return forecastData[participantId]
-}
-
-var forecastData = map[string]map[string]interface{}{
+var forecastDta = map[string]map[string]interface{}{
 	"10103": {
 		"survey_id":             202508,
 		"Q42025":                -0.5,
@@ -1193,6 +1300,7 @@ var forecastData = map[string]map[string]interface{}{
 		"share_lower_Q42025":    0.7193,
 		"gruppe":                "C",
 	},
+
 	"10218": {
 		"survey_id":             202502,
 		"Q42025":                0.4,

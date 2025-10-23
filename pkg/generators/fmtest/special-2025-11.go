@@ -33,25 +33,7 @@ func special202511(q *qst.QuestionnaireT) error {
 		}
 		page.WidthMax("56rem")
 
-		//
-		// 	hidden inputs saving the values from the echart
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "history_stack_pg1"
-			}
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "changeHistory"
-			}
-
-		}
+		qst.ChangeHistoryJS(q, page, 1)
 
 		//
 		{
@@ -154,7 +136,6 @@ func special202511(q *qst.QuestionnaireT) error {
 
 	}
 
-	// page experiment chart 0
 	{
 		page := q.AddPage()
 		page.GeneratorFuncName = "fmt202511Pg2"

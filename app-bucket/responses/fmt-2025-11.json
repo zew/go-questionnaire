@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "151ca41b188c28174e09401d66796810ce07aa0a31e44b7935a591785ea23400",
+ 	"md_5": "1692080177456b0eaf0161928f1ab3604a6d7ab8d419662213c933071a814a6c",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6222,6 +6222,11 @@
  						{
  							"name": "history_stack_pg1",
  							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "changeHistory",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1
  						}
  					]
  				},
@@ -6232,7 +6237,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003e\n\t\t\t\t\t\t\tIhre Sicht auf Wachstumschancen für Deutsch\u0026shy;land \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDie deutsche Wirt\u0026shy;schaft leidet seit Jahren un\u0026shy;ter nied\u0026shy;rigem Wachstum.\n\t\t\t\t\t\tUm die Aussichten für Deutsch\u0026shy;land besser zu verstehen, sind wir auf Ihre Expertise angewiesen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDa Expertenpro\u0026shy;gno\u0026shy;sen über das Wirt\u0026shy;schaftswachstum häufig variieren,\n\t\t\t\t\t\tmöchten wir zunächst Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003e\n\t\t\t\t\t\t\tIhre Sicht auf Wachstumschancen für Deutsch\u0026shy;land \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDie deutsche Wirt\u0026shy;schaft leidet seit Jahren un\u0026shy;ter nied\u0026shy;rigem Wachstum.\n\t\t\t\t\t\tUm die Aussichten für Deutsch\u0026shy;land besser zu verstehen, sind wir auf Ihre Expertise angewiesen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDa Expertenpro\u0026shy;gno\u0026shy;sen über das Wirt\u0026shy;schaftswachstum häufig variieren,\n\t\t\t\t\t\tmöchten wir zunächst Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t",
  								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 12,

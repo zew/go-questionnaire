@@ -44,6 +44,13 @@ func special202511(q *qst.QuestionnaireT) error {
 				inp.Type = "hidden"
 				inp.Name = "history_stack_pg1"
 			}
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "changeHistory"
+			}
+
 		}
 
 		//
@@ -70,6 +77,9 @@ func special202511(q *qst.QuestionnaireT) error {
 						Da Expertenprognosen über das Wirtschaftswachstum häufig variieren,
 						möchten wir zunächst Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.					
 						</p>
+
+						<br>
+						<br>
 
 				`,
 					"en": `

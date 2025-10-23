@@ -1,3 +1,6 @@
+
+    const cutBack = 15;
+
     // const  historyStackInp  = document.getElementById("history_stack_pg2");
     let historyStackInp = null;
     for (let i = 0; i<20 ; i++) {
@@ -28,8 +31,8 @@
      * Record a change into historyStack.
      * - historyStack: plain object mapping timestamp (seconds) -> { src, newValue }
      * Behavior:
-     *   If the most recent existing change is < 20s old, delete ALL entries whose
-     *   timestamps are within (now - 20s, now], then insert the new change at now.
+     *   If the most recent existing change is < cutBack secs old, delete ALL entries whose
+     *   timestamps are within (now - cutBack secs, now], then insert the new change at now.
      *   Otherwise, just insert the new change at now.
      */
     function recordChange(src, newValue) {
@@ -48,12 +51,12 @@
             }
         }
 
-        // If the most recent change is within the last 20s,
-        // remove all entries in the last-20s window before appending this one.
+        // If the most recent change is within the last cutBack secs,
+        // remove all entries in the last-cutBack secs window before appending this one.
         if (lastTs !== null) {
             const age = nowSec - lastTs;
-            if (age < 20) {
-                const cutoff = nowSec - 20;
+            if (age < cutBack) {
+                const cutoff = nowSec - cutBack;
                 const keys2 = Object.keys(historyStack);
                 for (let i = 0; i < keys2.length; i++) {
                     const ts = Number(keys2[i]);

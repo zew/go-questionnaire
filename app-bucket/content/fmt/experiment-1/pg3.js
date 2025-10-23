@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isNaN(actualShare)) {
             shareComparisonText.innerHTML = `Sie haben   <strong>${formatDE(userShare,0)}%</strong> angegeben. <br>
-                Tatsächlich lag der <b>Anteil unter allen Befragten</b>,
+                Tatsächlich lag der <i>Anteil unter allen Befragten</i>,
                 die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben,
                 bei&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
         } else {

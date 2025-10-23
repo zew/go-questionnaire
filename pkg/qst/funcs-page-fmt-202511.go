@@ -39,6 +39,12 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 		}
 		{
 			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "changeHistory"
+		}
+		{
+			inp := gr.AddInput()
 			inp.Type = "hidden"
 			inp.Name = "param1_pg2_bg"
 		}
@@ -56,6 +62,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 
 		gr := page.AddGroup()
 		gr.Cols = 3
+		gr.BottomVSpacers = 1
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -63,11 +70,15 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 				"de": `
 					
 					Zuletzt haben Sie im 
-						<u>August [May/Februar] 2025</u> 
+						<u> [August|May|Februar] 2025</u> 
 					eine Prognose 
 					für das Quartalswachstum in Q4 2025 angegeben.
 					<br><br>
-					Was denken Sie über Prognosen der anderen Teilnehmer in der damaligen Befragung?<br><br>
+
+					Was denken Sie über Prognosen der anderen Teilnehmer 
+					in der damaligen Befragung?
+					
+					<br><br>
 										
 					`,
 				"en": `todo`,

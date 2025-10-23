@@ -82,49 +82,18 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) er
 	return nil
 }
 
-func GetForecastData(participantId string) map[string]interface{} {
-	return data1[participantId]
-}
+func ForecastData(participantId string) map[string]interface{} {
+	/*
+		we have forecasts
+			pprwbipq1,
+			pprwbipq2,
+			pprwbipq3,
+			pprwbipq4,
+		from waves	202502, 202505, 202508
 
-var data1 = map[string]map[string]interface{}{
-	"10103": {
-		"survey_id":             202508,
-		"abgabedatum":           "08.08.2025",
-		"finished":              "qst-finished",
-		"lang_code":             "de",
-		"pprwbipq1":             0,
-		"pprwbipq2":             -0.5,
-		"pprwbipq3":             -0.6,
-		"pprwbipq4":             0,
-		"Q42025":                -0.5,
-		"consensus":             0.18713,
-		"distance_to_consensus": -0.68713,
-		"n_lower_Q42025":        0,
-		"share_lower_Q42025":    0,
-		"Q42025_quartile":       "Q1 (lowest)",
-		"var":                   1,
-		"var2":                  "C",
-		"gruppe":                "C",
-	},
-	"11659": {
-		"survey_id":             202505,
-		"abgabedatum":           "05.05.2025",
-		"finished":              "qst-finished",
-		"lang_code":             "de",
-		"pprwbipq1":             -0.3,
-		"pprwbipq2":             0.1,
-		"pprwbipq3":             -0.2,
-		"pprwbipq4":             0.1,
-		"Q42025":                -0.2,
-		"consensus":             0.2743,
-		"distance_to_consensus": -0.4743,
-		"n_lower_Q42025":        1,
-		"share_lower_Q42025":    0.00704,
-		"Q42025_quartile":       "Q1 (lowest)",
-		"var":                   1,
-		"var2":                  "T",
-		"gruppe":                "T",
-	},
+		Field "Q42025" contains the most recent forecast for Q42025
+	*/
+	return forecastData[participantId]
 }
 
 var forecastData = map[string]map[string]interface{}{

@@ -11,6 +11,7 @@ const chartIDs  = ['distanceChart', 'forecastChart', 'consensusChart'];
 let   chartObjs = [];
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const shareComparisonText = document.getElementById('shareComparisonText');
@@ -102,6 +103,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
+
+
+        const lblCntr1 = document.getElementById('cou_nter1');
+        const lblCntr2 = document.getElementById('cou_nter2');
+        const lblCntr3 = document.getElementById('cou_nter3');
+        if( forecastData['group'] !=="T" ){
+            const domChart1 = document.getElementById('distanceChart');
+            domChart1.style.display = "none";
+            try {
+                lblCntr1.innerHTML = "";
+               
+                lblCntr1.parentNode.style.display = "none"
+
+                lblCntr2.innerHTML = "1";
+                lblCntr3.innerHTML = "2";
+            
+            } catch (error) {
+                console.error(error)                
+            }
+            
+
+
+
+        } else {
+            lblCntr1.innerHTML = "1";
+            lblCntr2.innerHTML = "2";
+            lblCntr3.innerHTML = "3";
+
+        }
+
+
         // chart #1 - distance
         const distance = Math.abs(userShare - actualShare);
         const distanceChartOption = {
@@ -160,11 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chartObjs[0].setOption(distanceChartOption);
         // console.log(`distance chart ${chartObjs[0]}  `);
 
-        if( forecastData['group'] !=="T" ){
-            const domEl = document.getElementById('distanceChart');
-            // domEl.style.visibility = "hidden";
-            domEl.style.display = "none";
-        }
 
 
 

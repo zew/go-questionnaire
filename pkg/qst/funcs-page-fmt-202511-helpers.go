@@ -5,12 +5,13 @@ import (
 	"fmt"
 	"log"
 	"sort"
+	"sync/atomic"
 
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
 // ForecastData returns previous user data by participant ID
-func ForecastData(userId int) map[string]interface{} {
+func ForecastData(userId int) (map[string]interface{}, bool) {
 	/*
 		we have forecasts
 			pprwbipq1,
@@ -27,11 +28,16 @@ func ForecastData(userId int) map[string]interface{} {
 	record = forecastDta[userIdStr]
 
 	// fallback for test users
+	found := false
 	if record != nil {
 		record["user_id"] = userId
+		found = true
 	} else {
 
 		remainder := userId % 3
+		if remainder <= 2 {
+			found = true
+		}
 		mp := map[int]int{
 			0: 202502,
 			1: 202505,
@@ -80,13 +86,13 @@ func ForecastData(userId int) map[string]interface{} {
 
 	record["group"] = record["gruppe"]
 
-	return record
+	return record, found
 
 }
 
 func addForecastData(q *QuestionnaireT, page *pageT) map[string]interface{} {
 
-	dta := ForecastData(q.UserIDInt())
+	dta, _ := ForecastData(q.UserIDInt())
 
 	jsonBytes, err := json.Marshal(dta)
 	if err != nil {
@@ -122,7 +128,12 @@ func addForecastData(q *QuestionnaireT, page *pageT) map[string]interface{} {
 
 }
 
-func ChangeHistoryJS(q *QuestionnaireT, page *pageT, experimentPageNum int) {
+var counterHist int64 = 1 // int64 for atomic counter
+
+func ChangeHistoryJS(q *QuestionnaireT, page *pageT) {
+
+	experimentPageNum := atomic.AddInt64(&counterHist, 1) - 1
+	counterHist++
 
 	gr := page.AddGroup()
 	gr.Cols = 1

@@ -7,9 +7,17 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+// func fmt202511Pages(q *QuestionnaireT, page *pageT) error {
+// 	return nil
+// }
+
 func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
+
+	_, found := ForecastData(q.UserIDInt())
+	page.SuppressInProgressbar = found
+	page.NoNavigation = !found
 
 	page.Label = trl.S{
 		"de": "",
@@ -19,13 +27,11 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 		"de": "Wachtsumschancen II",
 		"en": "todo %v",
 	}
-	// page.SuppressInProgressbar = true
 
 	page.WidthMax("62rem")
 
 	grIdx := q.Version() % 2
 
-	ChangeHistoryJS(q, page, 2)
 	dta := addForecastData(q, page)
 	mnth := dta["month_de"]
 
@@ -76,7 +82,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 										
 					`, mnth),
 				"en": `todo`,
-			}
+			}.Outline("4.")
 			inp.ColSpan = gr.Cols
 			inp.ColSpanLabel = 1
 		}
@@ -125,12 +131,18 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 		}
 	}
 
+	ChangeHistoryJS(q, page)
+
 	return nil
 }
 
 func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
+
+	_, found := ForecastData(q.UserIDInt())
+	page.SuppressInProgressbar = true
+	page.NoNavigation = !found
 
 	page.Label = trl.S{
 		"de": "",
@@ -140,13 +152,13 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 		"de": "Wachtsumschancen III",
 		"en": "todo %v",
 	}
-	page.SuppressInProgressbar = true
 
 	page.WidthMax("62rem")
 
-	ChangeHistoryJS(q, page, 3)
 	addForecastData(q, page)
 	addingThreeCharts(q, page, 3)
+
+	ChangeHistoryJS(q, page)
 
 	return nil
 }
@@ -154,6 +166,10 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
+
+	_, found := ForecastData(q.UserIDInt())
+	page.SuppressInProgressbar = found
+	page.NoNavigation = !found
 
 	page.Label = trl.S{
 		"de": "",
@@ -167,7 +183,6 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	ChangeHistoryJS(q, page, 4)
 	addForecastData(q, page)
 	addingThreeCharts(q, page, 4)
 
@@ -243,7 +258,7 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 		// row 1 - four quarters - label
 		//   removed
 		// row 2 - four quarters - inputs
-		for i := 0; i < 3; i++ {
+		for i := 0; i < 4; i++ {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -274,12 +289,18 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	}
 
+	ChangeHistoryJS(q, page)
+
 	return nil
 }
 
 func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
+
+	_, found := ForecastData(q.UserIDInt())
+	page.SuppressInProgressbar = found
+	page.NoNavigation = !found
 
 	page.Label = trl.S{
 		"de": "",
@@ -293,7 +314,6 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	ChangeHistoryJS(q, page, 5)
 	addForecastData(q, page)
 	addingThreeCharts(q, page, 5)
 
@@ -343,7 +363,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 		// row 1 - four quarters - label
 		//   removed
 		// row 2 - four quarters - inputs
-		for i := 0; i < 3; i++ {
+		for i := 0; i < 4; i++ {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -374,6 +394,8 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 	}
 
+	ChangeHistoryJS(q, page)
+
 	return nil
 
 }
@@ -381,6 +403,10 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
+
+	_, found := ForecastData(q.UserIDInt())
+	page.SuppressInProgressbar = found
+	page.NoNavigation = !found
 
 	page.Label = trl.S{
 		"de": "",
@@ -394,7 +420,6 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 
 	page.WidthMax("62rem")
 
-	ChangeHistoryJS(q, page, 6)
 	addForecastData(q, page)
 	addingThreeCharts(q, page, 6)
 
@@ -510,6 +535,8 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 		}
 
 	}
+
+	ChangeHistoryJS(q, page)
 
 	return nil
 

@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // chart 2+3
-        const quarter        = participantDta[`quarter`];
+        let  quarter         = participantDta[`quarter`];
+             quarter         = "Q42025";
 
         const forecast       = parseFloat(participantDta[`Q42025`]);
         const consensus      = parseFloat(participantDta[`consensus`]);
@@ -111,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if( forecastData['group'] !=="T" ){
             const domChart1 = document.getElementById('distanceChart');
             domChart1.style.display = "none";
+            const chart1Header = document.getElementById('distanceChartHeader');
+            chart1Header.style.display = "none";
             try {
                 lblCntr1.innerHTML = "";
                

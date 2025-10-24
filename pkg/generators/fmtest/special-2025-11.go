@@ -33,8 +33,6 @@ func special202511(q *qst.QuestionnaireT) error {
 		}
 		page.WidthMax("56rem")
 
-		qst.ChangeHistoryJS(q, page, 1)
-
 		//
 		{
 			gr := page.AddGroup()
@@ -57,7 +55,7 @@ func special202511(q *qst.QuestionnaireT) error {
 
 						<p>
 						Da Expertenprognosen über das Wirtschaftswachstum häufig variieren,
-						möchten wir zunächst Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.					
+						möchten wir <!-- zunächst --> Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.					
 						</p>
 
 						<br>
@@ -133,6 +131,8 @@ func special202511(q *qst.QuestionnaireT) error {
 			}
 
 		}
+
+		qst.ChangeHistoryJS(q, page)
 
 	}
 

@@ -472,7 +472,7 @@ type pageT struct {
 	// 		because navigation buttons are still shown in body
 	SuppressInProgressbar bool `json:"suppress_in_progressbar,omitempty"`
 
-	navigationSequenceNum int // page number in navigation order; dynamically computed in MainH()
+	navigationSequenceNum int // page number in navigation order; dynamically computed in MainH() - compare CounterProgress
 
 	Style *css.StylesResponsive `json:"style,omitempty"`
 

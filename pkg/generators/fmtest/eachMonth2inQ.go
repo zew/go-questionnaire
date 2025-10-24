@@ -452,6 +452,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	}
 
+	qst.ChangeHistoryJS(q, page)
+
 	return nil
 
 }

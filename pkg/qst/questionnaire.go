@@ -1372,6 +1372,16 @@ func (q *QuestionnaireT) EnumeratePages() {
 	}
 }
 
+// for dynamic pages - give me a deterministic unique index
+func (q *QuestionnaireT) IndexPosition(p *pageT) int {
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if q.Pages[i1] == p {
+			return i1
+		}
+	}
+	return -1
+}
+
 // next page to be shown in navigation
 func (q *QuestionnaireT) nextInNavi() (int, bool) {
 	// Find next page in navigation

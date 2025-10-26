@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // chart 2+3
         let  quarter         = participantDta[`quarter`];
-             quarter         = "Q42025";
+             quarter         = "Forecast\nfür Q4 2025\nin Prozent";
 
         const forecast       = parseFloat(participantDta[`Q42025`]);
         const consensus      = parseFloat(participantDta[`consensus`]);
@@ -94,7 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (!isNaN(actualShare)) {
-            shareComparisonText.innerHTML = `Sie haben   <strong>${formatDE(userShare,0)}%</strong> angegeben. <br>
+            shareComparisonText.innerHTML = `Sie haben   
+                    <strong>${formatDE(userShare,0)}%</strong> 
+                    als 
+                    <i style="color:#EE6666">Anteil mit niedrigerer Wachstumsprognose</i> angegeben. 
+                <br>
                 Tatsächlich lag der <i>Anteil unter allen Befragten</i>,
                 die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben,
                 bei&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
@@ -213,8 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             inside: true,     // label inside the grid area
                             align: 'left',    // aligns text to the left edge of each tick position
                             margin: -8,       // outdent
-
-                            verticalAlign: 'top',
+                            lineHeight: 16,
+                            verticalAlign: 'middle',
                             padding: [-3, 0, 0, 0],
                         },
                     },
@@ -223,9 +227,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 data: [forecast],
                 itemStyle: { color: '#62929e' },
                 label: { show: true, position: 'insideRight',
-                    color: '#000', backgroundColor: '#fff', borderRadius: 4,
-                    padding: [2, 6],
-                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)) ,
+                    color: '#000', 
+                    backgroundColor: 'rgba(255,255,255,0.8)', borderRadius: 4,
+
+                    // fix - adapted padding - but only effective, if we add the "rich" property
+                    padding: [3, 6, 1, 6],
+                    rich: {},                    
+
+                    // these did not help
+                    // offset:  [0, 0],
+                    // position: [0, '25%'],
+
+
+                    // fontWeight: 'bold',
+                    fontSize:   13,
+                    lineHeight: 20,
+                    
+
+                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value) ) ,
                 }
             }]
         };
@@ -247,7 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             align: 'left',    // aligns text to the left edge of each tick position
                             margin: -8,       // outdent
 
-                            verticalAlign: 'top',
+                            lineHeight: 16,
+                            verticalAlign: 'middle',
                             padding: [-3, 0, 0, 0],
                         },
 
@@ -257,9 +277,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 data: [consensus],
                 itemStyle: { color: '#546a7b' },
                 label: { show: true, position: 'insideRight',
-                    color: '#000', backgroundColor: '#fff', borderRadius: 4,
+                    color: '#000', 
+                    backgroundColor:  'rgba(255,255,255,0.8)' , borderRadius: 4, 
+
+                    // top padding smaller than bottom padding
                     padding: [2, 6],
-                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value)),
+
+                    // fix - adapted padding - but only effective, if we add the "rich" property
+                    padding: [3, 6, 1, 6],
+                    rich: {},                    
+
+                    // these did not help
+                    // offset:  [0, 0],
+                    // position: [0, '25%'],
+
+
+                    // fontWeight: 'bold',
+                    fontSize:   13,
+                    lineHeight: 20,
+                    
+                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value) ),
                 }
             }]
         };

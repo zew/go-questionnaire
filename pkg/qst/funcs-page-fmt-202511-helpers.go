@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"sort"
-	"sync/atomic"
 
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -128,12 +127,15 @@ func addForecastData(q *QuestionnaireT, page *pageT) map[string]interface{} {
 
 }
 
-var counterHist int64 = 1 // int64 for atomic counter
+// var counterHist int64 = 1 // int64 for atomic counter
 
 func ChangeHistoryJS(q *QuestionnaireT, page *pageT) {
 
-	experimentPageNum := atomic.AddInt64(&counterHist, 1) - 1
-	counterHist++
+	// experimentPageNum := atomic.AddInt64(&counterHist, 1) - 1
+	// experimentPageNum = experimentPageNum % 20
+	// counterHist++
+
+	experimentPageNum := q.IndexPosition(page)
 
 	gr := page.AddGroup()
 	gr.Cols = 1

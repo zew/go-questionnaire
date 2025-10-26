@@ -28,7 +28,8 @@ func special202511(q *qst.QuestionnaireT) error {
 			"en": "",
 		}
 		page.Short = trl.S{
-			"de": "Wachstums&shy;chancen I",
+			// "de": "Wachstums&shy;chancen I",
+			"de": "Wachstums-<br>chancen",
 			"en": "todo",
 		}
 		page.WidthMax("56rem")

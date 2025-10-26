@@ -75,7 +75,8 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 					für das Quartalswachstum in Q4 2025 angegeben.
 					<br><br>
 
-					Was denken Sie über Prognosen der anderen Teilnehmer 
+					Was denken Sie über Prognosen 
+					der anderen Teilnehmerinnen und Teilnehmer 
 					in der damaligen Befragung?
 					
 					<br><br>
@@ -92,8 +93,11 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 			inp.Label = trl.S{
 				"de": `
 					
-					Der Anteil unter allen Befragten, 
-					die im August 2025 ein niedrigeres Wachstum für Q4 2025 als Sie angegeben haben, 
+					Der 
+					<i>Anteil unter allen Befragten</i>, 
+					die im August 2025 ein 
+					<i>niedrigeres</i> 
+					Wachstum für Q4 2025 als Sie angegeben haben, 
 					lag bei...										
 					`,
 
@@ -184,12 +188,12 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 	page.WidthMax("62rem")
 
 	addForecastData(q, page)
-	addingThreeCharts(q, page, 4)
+	// addingThreeCharts(q, page, 4)
 
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
-		gr.BottomVSpacers = 2
+		gr.BottomVSpacers = 3
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -315,12 +319,12 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 	page.WidthMax("62rem")
 
 	addForecastData(q, page)
-	addingThreeCharts(q, page, 5)
+	// addingThreeCharts(q, page, 5)
 
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
-		gr.BottomVSpacers = 2
+		gr.BottomVSpacers = 3
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -421,7 +425,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 	page.WidthMax("62rem")
 
 	addForecastData(q, page)
-	addingThreeCharts(q, page, 6)
+	// addingThreeCharts(q, page, 6)
 
 	{
 		gr := page.AddGroup()
@@ -455,11 +459,13 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 
 		lbls := []trl.S{
 			{
-				"de": "Bauchgefühl",
+				// "de": "Bauchgefühl",
+				"de": "erfahrungsbasierte Beurteilung",
 				"en": "todo",
 			},
 			{
-				"de": "modellbasiert",
+				// "de": "modellbasiert",
+				"de": "modellbasierte Berechnung",
 				"en": "todo",
 			},
 			{
@@ -471,8 +477,10 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 		for i := 0; i < 3; i++ {
 			{
 				inp := gr.AddInput()
-				inp.Type = "checkbox"
-				inp.Name = fmt.Sprintf("ssq6_%v", i+1)
+				// inp.Type = "checkbox"
+				inp.Type = "radio"
+				inp.ValueRadio = fmt.Sprintf("%v", i+1)
+				inp.Name = "ssq6"
 				inp.ColSpan = 12
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 11
@@ -504,7 +512,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 		gr := page.AddGroup()
 		gr.Cols = 12
 		gr.WidthMax("40rem")
-		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 3
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"

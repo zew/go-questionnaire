@@ -13,6 +13,7 @@
 
 * Participants without previous data?
     * exclude; beschlossen
+    * pbu: glitch
 
 
 * Participants English (~4)
@@ -21,35 +22,21 @@
     * ab kommenden Mittwoch
 
 * History funktion - Fields, Pages
-    * Demo der History-Funktion
-    * Todo pbu: Einbau in Seiten pg1, pg3, pg4, pg5
-    * Davud: History auch für Seite 6 - Pro­gno­se Quartal
-        Q4 2025, Q1 2026, Q2 2026, Q3 2026
+    * überall eingebaut
  
  
 * Who gets treatment?
     * ForecastData(participantId)["group"] == "T"
-
-    * Todo pbu: Treatment - sieht auch den Text nicht
-    * Todo pbu: Chart2, 3 - Quarter ist natürlich das geschätzte Quarter - fix 2025-Q4
-
-
-* Rounding:  Coarser numbers - if percentage > 10
-
-* Changes to the Echarts b and c:  
-    * width maximized,  - label inset
-    * we need the unit somewhere (%) 
+    * corrected: Treatment - Text vor Chart 1 nicht sichtbar
+    * corrected: Chart2, 3 - Quarter ist immer fix 2025-Q4
 
 
 * Dynamic numbering the charts 
-    * Die Charts sind ja keine "Fragen" - 
-      zur Vermeidung von Irritationen: Eigener Nummerkreis "Abbildung 1-3"
-    * Dann auch keine Irritation, wenn nach 4a-c. dann folgt 5a, 5b, !6, !7  
-    * Todo pbu: 5a, 6, ... einen Zähler runter, besser Slider Frage: mit 4 nummerieren
+    * Corrected
 
 
 * Number of quarters ahead:  
-    Question 3a - four quarter, 5a/b - three quarters
+    Immer vier quarters
 
 
 

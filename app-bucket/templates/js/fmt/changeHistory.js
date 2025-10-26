@@ -1,4 +1,3 @@
-
 const cutBack = 8;
 
 // const  historyStackInp  = document.getElementById("history_stack_pg2");
@@ -38,21 +37,24 @@ function historyKey() {
 function recordChange(src, newValue) {
     const nowSec = historyKey();
 
-    // Find the most recent timestamp already in the stack (if any)
+    // Find the most recent timestamp already in the stack (if any) — BUT ONLY for this src
     let lastTs = null;
     const keys = Object.keys(historyStack);
 
     for (let i = 0; i < keys.length; i++) {
         const ts = Number(keys[i]);
         if (!Number.isNaN(ts)) {
-            if (lastTs === null || ts > lastTs) {
-                lastTs = ts;
+            const entry = historyStack[keys[i]];
+            if (entry && entry.src === src) {
+                if (lastTs === null || ts > lastTs) {
+                    lastTs = ts;
+                }
             }
         }
     }
 
-    // If the most recent change is within the last cutBack secs,
-    // remove all entries in the last-cutBack secs window before appending this one.
+    // If the most recent change FOR THIS src is within the last cutBack secs,
+    // remove entries in the last-cutBack secs window FOR THIS src before appending this one.
     if (lastTs !== null) {
         const age = nowSec - lastTs;
         if (age < cutBack) {
@@ -61,8 +63,11 @@ function recordChange(src, newValue) {
             for (let i = 0; i < keys2.length; i++) {
                 const ts = Number(keys2[i]);
                 if (!Number.isNaN(ts)) {
-                    if (ts > cutoff && ts <= nowSec) {
-                        delete historyStack[keys2[i]];
+                    const entry2 = historyStack[keys2[i]];
+                    if (entry2 && entry2.src === src) {
+                        if (ts > cutoff && ts <= nowSec) {
+                            delete historyStack[keys2[i]];
+                        }
                     }
                 }
             }
@@ -126,4 +131,4 @@ for (let i = 0; i < elementIds.length; i++) {
     console.log(`change history handler attached to  '${elementIds[i]}'.`);
 }
 
-console.log(`change history handlers attached`);
+// console.log(`change history handlers attached`);

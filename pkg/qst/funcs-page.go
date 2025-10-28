@@ -79,7 +79,6 @@ var funcPGs = map[string]funcPageGeneratorT{
 	"fmt202511Pg3": fmt202511Pg3,
 	"fmt202511Pg4": fmt202511Pg4,
 	"fmt202511Pg5": fmt202511Pg5,
-	"fmt202511Pg6": fmt202511Pg6,
 }
 
 func pageFuncExample(q *QuestionnaireT, page *pageT) error {

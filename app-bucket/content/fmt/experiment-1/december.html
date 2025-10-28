@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+
+
+
+  <!-- 
+
+    inner-?.html are reduced versions of this  index1.html 
+    
+      * remove the outer HTML body tags;
+        but keep the CSS links from the HTML head
+
+      * prefix all js and css resources by 
+          /{{AppPrefix}}/doc/fmt/echart/
+
+      * also add two hidden inputs
+
+ -->
+
+
+  <!-- rendered by go-questionnaire
+    change_history_bg  
+  -->
+
+  <input type='hidden' name='change_history' id='change_history' value='0' />
+
+
+  <style>
+#chart_container {
+  height: 7rem;
+  width: 60%;
+  width: 25rem;
+  margin: 0 auto;  
+  margin-top: 2rem;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+  </style>
+
+  <div id="chart_container" 
+    >chart container</div>
+
+
+<div id="control_panel" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+">
+  <label><input type="radio" name="flowRatio" value="0">0</label>
+  <label><input type="radio" name="flowRatio" value="1">1</label>
+  <label><input type="radio" name="flowRatio" value="2">2</label>
+  <label><input type="radio" name="flowRatio" value="3">3</label>
+  <!-- <label><input type="radio" name="flowRatio" value="3" checked>3</label> -->
+  <label><input type="radio" name="flowRatio" value="4" autofocus>4</label>
+  <label><input type="radio" name="flowRatio" value="5">5</label>
+  <label><input type="radio" name="flowRatio" value="6">6</label>
+  <label><input type="radio" name="flowRatio" value="7">7</label>
+</div>
+
+
+
+
+
+  <!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+  <!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+  <script type="text/javascript" src="echarts.min.js"></script>
+
+
+  <!-- <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/december.js"></script> -->
+  <!-- <script type="text/javascript" src="december-1.js"></script> -->
+
+  <!-- d3 + d3-sankey (CDN). If you prefer local, download these and replace the src. -->
+  <script src="https://unpkg.com/d3@7"></script>
+  <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+
+  <script type="text/javascript" src="december-2.js"></script>
+
+
+  </body>
+
+</html>

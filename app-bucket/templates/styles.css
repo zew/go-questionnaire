@@ -607,15 +607,23 @@ input[type="number"] {
 
 input[type=range] {
     /* unset the border for all input elements above */
-    border: none;
+    /* not good for firefox */
+    /* border: none; */
 
     /*  for suffix being vertically aligned in the middle;
         seems not necessary for other input types
     */
-    vertical-align: middle;
+
+    /* not good for firefox */
+    /* vertical-align: middle; */
 
     /* making room for the suffix */
     /* max-width: 82%; */
+
+    /* padding: 12px !important; */
+    padding-top:    12px !important;
+    padding-bottom: 12px !important;
+
 }
 
 /* 
@@ -685,13 +693,16 @@ input[type=range]::-webkit-slider-thumb {
 
 
 input[type=range]::-moz-range-thumb {
+
     height: 100%;
     /* not working in chrome */
     height: calc(var(--sliderHeight)/ 1);
 
-    background-color: transparent;
-    border: none;
-    border-radius: 0.0rem;
+    /* following three destroyed rendering in firefox */
+    /* background-color: transparent; */
+    /* border: none; */
+    /* border-radius: 0.0rem; */  
+
     cursor: pointer;
 
     /* background-image: var(--img-url-pointer);
@@ -1016,7 +1027,8 @@ input[type=range]:focus::-webkit-slider-thumb {
 }
 
 input[type=range]:focus::-moz-range-thumb {
-    background: var(--clr-inp-focus);
+    /* this destroyed rendering in firefox */
+    /* background: var(--clr-inp-focus); */
 }
 
 input[type=range]:focus::-ms-thumb {

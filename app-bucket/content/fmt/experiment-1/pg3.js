@@ -1,4 +1,4 @@
-// parsedData - see data.js
+
 // const dbg = JSON.stringify(parsedData[participantIdx], null, 2);
 // console.log(` participantIdx ${participantIdx} - data ${dbg} `);
 
@@ -15,7 +15,11 @@ let   chartObjs = [];
 document.addEventListener('DOMContentLoaded', () => {
 
     const shareComparisonText = document.getElementById('shareComparisonText');
-    shareComparisonText.innerHTML = `shareComparisonText content`;
+    shareComparisonText.innerHTML = ``;
+
+    const label2 = document.getElementById('label2');
+    const label3 = document.getElementById('label3');
+
 
     chartIDs.forEach(function (id) {
         let el = document.getElementById(id);
@@ -58,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return;
         }
-        
+
         const participantDta = parsedData[participantIdx];
         */
 
@@ -77,36 +81,50 @@ document.addEventListener('DOMContentLoaded', () => {
         // const forecast       = parseFloat(participantDta[`growth${quarter}`]);
         // const consensus      = parseFloat(participantDta[`consensus${quarter}`]);
 
+
         // chart 1  - userShare vs actualShare
         const actualShareRaw = participantDta[`share_lower_Q42025`];
         const actualShare    = parseFloat(actualShareRaw) * 100;
 
 
         // chart 2+3
-        let  quarter         = participantDta[`quarter`];
-             quarter         = "Forecast\nfür Q4 2025\nin Prozent";
+        let quarterLabel     = "Forecast\nfür Q4 2025\nin Prozent";
 
         const forecast       = parseFloat(participantDta[`Q42025`]);
         const consensus      = parseFloat(participantDta[`consensus`]);
 
+        const quarterForec     = participantDta[`quarter`];
+        const quarterTrl = {
+            "Q1 2025": "Februar 2025",
+            "Q2 2025": "April   2025",
+            "Q3 2025": "August  2025",
+            // "Q42025": ,
+        }
+
+        let   quarterForecLbl   = quarterTrl[quarterForec];
 
         console.log(`actual ${actualShare} - forecast ${forecast} - consensus ${consensus}   `);
 
 
         if (!isNaN(actualShare)) {
-            shareComparisonText.innerHTML = `Sie haben   
-                    <strong>${formatDE(userShare,0)}%</strong> 
-                    als 
-                    <i style="color:#EE6666">Anteil mit niedrigerer Wachstumsprognose</i> angegeben. 
+            shareComparisonText.innerHTML = `Sie haben
+                    <strong>${formatDE(userShare,1)}%</strong>
+
+                    als Anteil unter allen Befragten,
+                die im ${quarterForecLbl} ein niedrigeres Wirtschaftswachstum für Q4 2025 angegeben haben, genannt.
+
                 <br>
-                Tatsächlich lag der <i>Anteil unter allen Befragten</i>,
-                die im August 2025 ein <i>niedrigeres</i> Wachstum als Sie angegeben haben,
-                bei&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
+                Tatsächlich lag der Anteil
+                bei&nbsp;&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
+
+
         } else {
             shareComparisonText.innerHTML = `Ihr Anteil: <strong>${formatDE(userShare,1)}%</strong> |
                 Tatsächlicher Anteil: <strong>N/A</strong>`;
         }
 
+        label2.innerHTML = `Für Q4 2025 lag Ihre persönliche      Wirtschaftswachstumsprognose (in %) im ${quarterForecLbl} bei…`;
+        label3.innerHTML = `Für Q4 2025 lag die durchschnittliche Wirtschaftswachstumsprognose (in %) unter allen Befragten im ${quarterForecLbl}  bei…`;
 
 
 
@@ -120,16 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
             chart1Header.style.display = "none";
             try {
                 lblCntr1.innerHTML = "";
-               
+
                 lblCntr1.parentNode.style.display = "none"
 
                 lblCntr2.innerHTML = "1";
                 lblCntr3.innerHTML = "2";
-            
+
             } catch (error) {
-                console.error(error)                
+                console.error(error)
             }
-            
+
 
 
 
@@ -139,16 +157,21 @@ document.addEventListener('DOMContentLoaded', () => {
             lblCntr3.innerHTML = "3";
 
         }
+        lblCntr1.innerHTML = "3";
+        lblCntr2.innerHTML = "1";
+        lblCntr3.innerHTML = "2";
 
 
         // chart #1 - distance
         const distance = Math.abs(userShare - actualShare);
         const distanceChartOption = {
             grid:    { top: 20, right: 40, bottom: 20, left: 40 },
-            xAxis:   { type: 'value',
-                       min: 0, max: 100,
-                       axisLabel: { formatter: '{value}%' },
-                       splitLine: { show: false }
+            xAxis:   {
+                        type: 'value',
+                        min: 0,
+                        max: 100,
+                        axisLabel: { formatter: '{value}%' },
+                        splitLine: { show: false },
                      },
             yAxis:   { type: 'category', data: [''], show: false },
             series: [{
@@ -160,10 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         value: [ userShare, 'Ihr Anteil'],
                         itemStyle: { color: '#546a7b' },
                         label: {
-                            show: true, position: 'top',
+                            show: true,
+                            position: 'top',
                             distance: 18,
                             fontWeight: 'bold', color: '#000000',
-                            formatter: (params) => formatDE(params.value[0],0) + '%',
+                            formatter: (params) => formatDE(params.value[0],1) + '%',
                         }
                     },
                     {
@@ -171,7 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         value: [actualShare, ''],
                         itemStyle: { color: '#EE6666' },
                         label: {
-                            show: true, position: 'bottom',
+                            show: true,
+                            position: 'bottom',
                             distance: 8,
                             // padding: [-2,0,0,0],
                             fontWeight: 'bold', color: '#EE6666',
@@ -186,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         afontWeight: 'bold',
                         color: '#111' ,
                         color: '#6b7280',
-                        formatter: `Abstand ~${formatDE(distance,0)}%`,
+                        formatter: `Abstand ${formatDE(distance,1)}%`,
                     },
                     lineStyle: { type: 'solid', width: 3, color: '#6b7280' },
                     data: [[
@@ -206,13 +231,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const forecastOption = {
             grid:    { top: 10, right: 60, bottom: 30, left: 100 },  // y-axis outset
             grid:    { top: 10, right: 20, bottom: 30, left:  20 },  // y-axis inset
-            xAxis:   { type: 'value',
-                       min: -3, max: 3,
-                       interval: 0.5,
+            xAxis:   {
+                        type: 'value',
+                        min: -3,
+                        max: 3,
+                        interval: 0.5,
+                        axisLabel: { formatter: '{value}%' },
                      },
             yAxis:   {
-                       type: 'category',
-                       data: [quarter],
+                        type: 'category',
+                        // data: [quarterLabel],
+                        data: [""],
                         axisLabel: {
                             inside: true,     // label inside the grid area
                             align: 'left',    // aligns text to the left edge of each tick position
@@ -226,13 +255,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: 'bar',
                 data: [forecast],
                 itemStyle: { color: '#62929e' },
-                label: { show: true, position: 'insideRight',
-                    color: '#000', 
+                label: {
+                    show: true,
+                    position: 'insideRight',
+                    color: '#000',
                     backgroundColor: 'rgba(255,255,255,0.8)', borderRadius: 4,
 
                     // fix - adapted padding - but only effective, if we add the "rich" property
                     padding: [3, 6, 1, 6],
-                    rich: {},                    
+                    rich: {},
 
                     // these did not help
                     // offset:  [0, 0],
@@ -242,9 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     // fontWeight: 'bold',
                     fontSize:   13,
                     lineHeight: 20,
-                    
 
-                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value) ) ,
+
+                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value) + ' %' ) ,
                 }
             }]
         };
@@ -256,10 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const consensusOption = {
             grid:    { top: 10, right: 60, bottom: 30, left: 100 },  // y-axis outset
             grid:    { top: 10, right: 20, bottom: 30, left:  20 },  // y-axis inset
-            xAxis:   { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}' } },
+            xAxis:   { type: 'value', min: -3, max: 3, interval: 0.5, axisLabel: { formatter: '{value}%' } },
             yAxis:   {
                         type: 'category',
-                        data: [quarter],
+                        // data: [quarterLabel],
+                        data: [""],
 
                         axisLabel: {
                             inside: true,     // label inside the grid area
@@ -277,15 +309,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 data: [consensus],
                 itemStyle: { color: '#546a7b' },
                 label: { show: true, position: 'insideRight',
-                    color: '#000', 
-                    backgroundColor:  'rgba(255,255,255,0.8)' , borderRadius: 4, 
+                    color: '#000',
+                    backgroundColor:  'rgba(255,255,255,0.8)' , borderRadius: 4,
 
                     // top padding smaller than bottom padding
                     padding: [2, 6],
 
                     // fix - adapted padding - but only effective, if we add the "rich" property
                     padding: [3, 6, 1, 6],
-                    rich: {},                    
+                    rich: {},
 
                     // these did not help
                     // offset:  [0, 0],
@@ -295,8 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // fontWeight: 'bold',
                     fontSize:   13,
                     lineHeight: 20,
-                    
-                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value) ),
+
+                    formatter: (val) => (isNaN(val.value) ? '' : formatDE(val.value) + ' %' ),
                 }
             }]
         };

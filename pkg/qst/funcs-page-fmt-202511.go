@@ -17,7 +17,8 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 
 	_, found := ForecastData(q.UserIDInt())
 	page.SuppressInProgressbar = found
-	page.NoNavigation = !found
+	// page.NoNavigation = !found
+	page.NavigationCondition = "fmt202511Include"
 
 	page.Label = trl.S{
 		"de": "",
@@ -52,6 +53,11 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 			inp.Type = "hidden"
 			inp.Name = "param2_pg2_bg"
 		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "javascript-block"
+			inp.Name = "warnEmpty"
+		}
 	}
 
 	//
@@ -75,9 +81,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 					für das Quartalswachstum in Q4 2025 angegeben.
 					<br><br>
 
-					Was denken Sie über Prognosen 
-					der anderen Teilnehmerinnen und Teilnehmer 
-					in der damaligen Befragung?
+					Was denken Sie über die Prognosen der anderen Teilnehmenden in der damaligen Befragung?
 					
 					<br><br>
 										
@@ -91,15 +95,17 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 					
 					Der 
-					<i>Anteil unter allen Befragten</i>, 
-					die im August 2025 ein 
+					<i>Anteil unter allen Befragten,</i> 
+					die im %v 2025 ein 
 					<i>niedrigeres</i> 
 					Wachstum für Q4 2025 als Sie angegeben haben, 
 					lag bei...										
 					`,
+					mnth,
+				),
 
 				"en": `todo`,
 			}.OutlineHid("3b.")
@@ -145,8 +151,9 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 	page.Groups = nil // dynamically recreate the groups
 
 	_, found := ForecastData(q.UserIDInt())
-	page.SuppressInProgressbar = true
-	page.NoNavigation = !found
+	page.SuppressInProgressbar = found
+	// page.NoNavigation = !found
+	page.NavigationCondition = "fmt202511Include"
 
 	page.Label = trl.S{
 		"de": "",
@@ -173,7 +180,8 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	_, found := ForecastData(q.UserIDInt())
 	page.SuppressInProgressbar = found
-	page.NoNavigation = !found
+	// page.NoNavigation = !found
+	page.NavigationCondition = "fmt202511Include"
 
 	page.Label = trl.S{
 		"de": "",
@@ -183,7 +191,6 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 		"de": "Wachtsumschancen IV",
 		"en": "todo %v",
 	}
-	page.SuppressInProgressbar = true
 
 	page.WidthMax("62rem")
 
@@ -229,18 +236,6 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 			inp.Label = trl.S{
 				"de": `
 						Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen
-
-
-						<script>
-							document.addEventListener("DOMContentLoaded", () => {
-							const element = document.getElementById("ssq5a_1");
-
-							if (element) {
-								element.focus();
-								element.scrollIntoView({ behavior: "smooth", block: "center" });
-							}
-							});
-						</script>
 
 				`,
 				"en": `
@@ -293,34 +288,7 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 
 	}
 
-	ChangeHistoryJS(q, page)
-
-	return nil
-}
-
-func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
-
-	page.Groups = nil // dynamically recreate the groups
-
-	_, found := ForecastData(q.UserIDInt())
-	page.SuppressInProgressbar = found
-	page.NoNavigation = !found
-
-	page.Label = trl.S{
-		"de": "",
-		"en": "",
-	}
-	page.Short = trl.S{
-		"de": "Wachtsumschancen V",
-		"en": "todo %v",
-	}
-	page.SuppressInProgressbar = true
-
-	page.WidthMax("62rem")
-
-	addForecastData(q, page)
-	// addingThreeCharts(q, page, 5)
-
+	// 5b
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
@@ -333,21 +301,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 				"de": `
 						Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose 
 						<br>
-						<i>unter allen Befragten in der aktuellen Befragung?</i>
-
-
-
-						<script>
-							document.addEventListener("DOMContentLoaded", () => {
-							const element = document.getElementById("ssq5b_1");
-
-							if (element) {
-								element.focus();
-								element.scrollIntoView({ behavior: "smooth", block: "center" });
-							}
-							});
-						</script>
-				`,
+							<i>unter allen Befragten in der aktuellen Befragung?</i>`,
 				"en": `
 					todo
 				`,
@@ -404,23 +358,23 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 }
 
-func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
+func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 
 	page.Groups = nil // dynamically recreate the groups
 
 	_, found := ForecastData(q.UserIDInt())
 	page.SuppressInProgressbar = found
-	page.NoNavigation = !found
+	// page.NoNavigation = !found
+	page.NavigationCondition = "fmt202511Include"
 
 	page.Label = trl.S{
 		"de": "",
 		"en": "",
 	}
 	page.Short = trl.S{
-		"de": "Wachtsumschancen VI",
+		"de": "Wachtsumschancen V",
 		"en": "todo %v",
 	}
-	page.SuppressInProgressbar = true
 
 	page.WidthMax("62rem")
 
@@ -438,7 +392,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-						Wie treffen Sie Ihre Vorhersagen am ehesten?
+						Wie treffen Sie Ihre Prognosen am ehesten?
 
 						<script>
 							document.addEventListener("DOMContentLoaded", () => {
@@ -511,7 +465,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 	{
 		gr := page.AddGroup()
 		gr.Cols = 12
-		gr.WidthMax("40rem")
+		// gr.WidthMax("44rem")
 		gr.BottomVSpacers = 3
 		{
 			inp := gr.AddInput()
@@ -519,8 +473,7 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					Möchten Sie über die Studienergebnisse mit 
-					Ihren Angaben zu den deutschen Wachstumschancen per Email informiert werden?
+					Fanden Sie die graphisch bereitgestellten Informationen über die Wirtschaftswachstumsprognosen nützlich?
 				`,
 				"en": `
 					todo
@@ -535,8 +488,8 @@ func fmt202511Pg6(q *QuestionnaireT, page *pageT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 11
 			inp.Label = trl.S{
-				"de": "Ja",
-				"en": "todo",
+				"de": "ja",
+				"en": "yes",
 			}
 			inp.ControlFirst()
 			inp.ControlRight()

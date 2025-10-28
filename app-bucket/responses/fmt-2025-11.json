@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c6f00ead6c856e3bdefb78f6e1d2d2952afa75760469747e771b696ae59aa467",
+ 	"md_5": "7705c967a72a05ad1f1f05c6cb27aeeb08c7dfdbca14bb333b7bed2529a51e63",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6240,7 +6240,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003e\n\t\t\t\t\t\t\tIhre Sicht auf Wachstumschancen für Deutsch\u0026shy;land \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDie deutsche Wirt\u0026shy;schaft leidet seit Jahren un\u0026shy;ter nied\u0026shy;rigem Wachstum.\n\t\t\t\t\t\tUm die Aussichten für Deutsch\u0026shy;land besser zu verstehen, sind wir auf Ihre Expertise angewiesen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDa Expertenpro\u0026shy;gno\u0026shy;sen über das Wirt\u0026shy;schaftswachstum häufig variieren,\n\t\t\t\t\t\tmöchten wir \u003c!-- zunächst --\u003e Ihre Einschätzung hinsichtlich der anderen Umfrageteilnehmer erfahren.\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003e\n\t\t\t\t\t\t\tIhre Sicht auf Wachstumschancen für Deutsch\u0026shy;land \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDie deutsche Wirt\u0026shy;schaft leidet seit Jahren un\u0026shy;ter nied\u0026shy;rigem Wachstum.\n\t\t\t\t\t\tUm die Aussichten für Deutsch\u0026shy;land besser zu verstehen, sind wir auf Ihre Expertise angewiesen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDa Expertenpro\u0026shy;gno\u0026shy;sen über das Wirt\u0026shy;schaftswachstum häufig variieren,\n\t\t\t\t\t\tmöchten wir \u003c!-- zunächst --\u003e Ihre Einschätzung \n\t\t\t\t\t\thinsichtlich der anderen Teilnehmenden an der aktuellen Befragung erfahren.\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
  								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 12,
@@ -6249,7 +6249,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWas glauben Sie: Wie hoch ist die durchschnittliche Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003eun\u0026shy;ter allen Befragten in der aktuellen Befragung\u003c/i\u003e?\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tBitte nicht-annualisiertes Quartalswachstum des realen \u0026 saisonbereinigten BIP angeben.\n\t\t\t\t\t\t\u003c/small\u003e\n\n\t\t\t\t",
+ 								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWas glauben Sie: Wie hoch ist die \n\t\t\t\t\t\tdurchschnittliche Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se \n\t\t\t\t\t\t\u003ci\u003eun\u0026shy;ter allen Befragten in der aktuellen Befragung\u003c/i\u003e?\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tBitte nicht-annualisiertes Quartalswachstum des realen \u0026 saisonbereinigten BIP angeben.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t",
  								"en": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 12,
@@ -6559,18 +6559,6 @@
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_13",
- 				"en": "PageLabel_13"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "fmt202511Pg6"
- 		},
- 		{
- 			"label": {
  				"de": "Abschluss",
  				"en": "Finalization"
  			},
@@ -6695,7 +6683,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "14",
+ 							"response": "13",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

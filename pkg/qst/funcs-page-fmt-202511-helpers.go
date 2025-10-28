@@ -26,17 +26,22 @@ func ForecastData(userId int) (map[string]interface{}, bool) {
 	userIdStr := fmt.Sprint(userId)
 	record = forecastDta[userIdStr]
 
-	// fallback for test users
 	found := false
 	if record != nil {
-		record["user_id"] = userId
+
+		record["user_id"] = userId // key into map, for javascript
 		found = true
+
 	} else {
 
-		remainder := userId % 3
-		if remainder <= 2 {
+		// 9990, 9901, 9902 are mapped to valid user data
+		// 9993 to 9999 are treated as if no forecast data is available - exclusion from experiment
+		if (userId % 10) <= 2 {
 			found = true
 		}
+
+		// fallback for test users
+		remainder := userId % 3
 		mp := map[int]int{
 			0: 202502,
 			1: 202505,
@@ -203,6 +208,7 @@ func addingThreeCharts(q *QuestionnaireT, page *pageT, experimentPageNum int) er
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 0
 		{
 			inp := gr.AddInput()
 			inp.Type = "dyn-textblock"

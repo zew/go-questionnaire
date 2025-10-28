@@ -1,3 +1,5 @@
+// for special fmt202312
+
 const elSum = document.getElementById("sum");
 
 

@@ -2,10 +2,10 @@
 
   <!-- 
     rendered by go-questionnaire
+      history_stack_pg3
+      param1_pg3_bg
+      param2_pg3_bg
 
-      simtool_instance, sim_history_0,   
-      param1_0,    param2_0   
-      param1_bg_0, param2_bg_0   
   -->
 
   <style>
@@ -26,33 +26,37 @@
   <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/echarts.min.js"></script>
 
 
-  <div class="section-title" id="distanceChartHeader">
-    <!-- <b>4a. NUR TREATMENT</b> -->
-    <b>Abb. <span id="cou_nter1" ></span>. &nbsp; &nbsp; </b> 
-    <span id="shareComparisonText" style="margin-top: 0.5rem;"></span>
-  </div>
-
-
-  <div id="distanceChart" class="chart"></div>
-  <br>
   
-
   <div class="section-title">
     <!-- <b>4b.</b>  -->
-    <b>Abb. <span id="cou_nter2" ></span>. &nbsp; &nbsp; </b> 
-    <i>Ihre persönliche</i> Wirtschaftswachstumsprognose im August 2025 lag bei...
+    <b>Abb. <span id="cou_nter2"></span>. &nbsp; </b>
+    <span id="label2"></span>
+    <!-- <i>Ihre persönliche</i> Wirtschaftswachstumsprognose im August 2025 lag bei... -->
   </div>
   <div id="forecastChart" class="chart"></div>
+
   <br>
-
-
+  
+  
   <div class="section-title">
     <!-- <b>4c.</b>  -->
-    <b>Abb. <span id="cou_nter3" ></span>. &nbsp; &nbsp; </b> 
-    Die durchschnittliche Wirtschaftswachstumsprognose <i>unter allen
-    Befragten</i> im August 2025 lag bei...</div>
+    <b>Abb. <span id="cou_nter3"></span>. &nbsp; </b>
+    <span id="label3"></span>
+    <!-- Die durchschnittliche Wirtschaftswachstumsprognose <i>unter allen Befragten</i> im August 2025 lag bei...-->
+  </div>
   <div id="consensusChart" class="chart"></div>
+  
+  <br>
 
+  
+  <div class="section-title" id="distanceChartHeader">
+    <!-- <b>4a. NUR TREATMENT</b> -->
+    <b>Abb. <span id="cou_nter1"></span>. &nbsp; </b>
+    <span id="shareComparisonText" style="margin-top: 0.5rem;"></span>
+  </div>
+  <div id="distanceChart" class="chart"></div>
 
-  <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/data.js"></script>
+  <div style="height: 0.5rem;" ></div>
+  
+  
   <script type="text/javascript" src="/{{AppPrefix}}/doc/fmt/experiment-1/pg3.js"></script>

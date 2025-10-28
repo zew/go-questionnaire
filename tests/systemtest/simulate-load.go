@@ -217,6 +217,8 @@ var skipPages = map[string]map[int]interface{}{
 	},
 }
 
+// getPreset returns deterministic test input - for dynamic pages;
+// otherwise test inputs are counting from 1-9
 func getPreset(surv string, pageIdx int, inpName string) (string, bool) {
 	if _, ok1 := presets[surv]; ok1 {
 		if _, ok2 := presets[surv][pageIdx]; ok2 {

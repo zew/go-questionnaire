@@ -1565,7 +1565,8 @@ var germanUmlaute = strings.NewReplacer(
 	"ß", "ss",
 )
 
-var separators = strings.NewReplacer(
+// we use toPlaceholders since 2025-11
+var separatorsOld = strings.NewReplacer(
 	"\r\n", " -- ",
 	"\n", " -- ",
 	":", " - ",
@@ -1573,7 +1574,33 @@ var separators = strings.NewReplacer(
 	// ",", " - ",
 )
 
-// no comma, no colon, no semicolon - only dot or hyphen
+// cleanse, clean, sanitize input values
+var toPlaceholders = strings.NewReplacer(
+	"\r\n", "__J_NL__",
+	"\n", "__J_NL__",
+	"\r", "__J_NL__", // only from old MAC or terminal progress indicator
+	":", "__J_COL__",
+	";", "__J_SEMI__",
+	",", "__J_COM__",
+	"{", "__J_OB__",
+	"}", "__J_CB__",
+	"[", "__J_OSB__",
+	"]", "__J_CSB__",
+)
+
+// restore
+var fromPlaceholders = strings.NewReplacer(
+	"__J_NL__", "\n", // choose your preferred restoration newline
+	"__J_COL__", ":",
+	"__J_SEMI__", ";",
+	"__J_COM__", ",",
+	"__J_OB__", "{",
+	"__J_CB__", "}",
+	"__J_OSB__", "[",
+	"__J_CSB__", "]",
+)
+
+// no comma, no colon, no semicolon - only dot or underscore or hyphen or plus
 // no newline
 var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\-\+ ]+`)
 var severalSpaces = regexp.MustCompile(`[ ]+`)
@@ -1584,7 +1611,7 @@ func EnglishTextAndNumbersOnly(s string) string {
 	// sBefore := s
 
 	s = strings.TrimSpace(s)
-	s = separators.Replace(s)
+	s = toPlaceholders.Replace(s)
 
 	s = germanUmlaute.Replace(s)
 	s = englishTextAndNumbersOnly.ReplaceAllString(s, " ")
@@ -1848,6 +1875,7 @@ func (q *QuestionnaireT) KeysValues(cleanse bool, getRangeInfo bool) (keys, vals
 					if q.Pages[i1].Groups[i2].Inputs[i3].Type == "number" {
 						val = DelocalizeNumber(val)
 					}
+					// cleanse - clean - ascii only
 					val = EnglishTextAndNumbersOnly(val)
 				}
 				vals = append(vals, val)

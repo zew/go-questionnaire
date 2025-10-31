@@ -106,8 +106,10 @@ func addForecastData(q *QuestionnaireT, page *pageT) map[string]interface{} {
 	js := fmt.Sprintf(`
 		<script>
 			const forecastData = %s;
+			const langCode     = '%s';
 		</script>`,
 		string(jsonBytes),
+		q.LangCode,
 	)
 
 	gr := page.AddGroup()

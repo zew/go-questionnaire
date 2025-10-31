@@ -2,6 +2,7 @@ package qst
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -26,7 +27,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 	}
 	page.Short = trl.S{
 		"de": "Wachtsumschancen II",
-		"en": "todo %v",
+		"en": "Growth Prospects II",
 	}
 
 	page.WidthMax("62rem")
@@ -34,7 +35,11 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 	grIdx := q.Version() % 2
 
 	dta := addForecastData(q, page)
-	mnth := dta["month_de"]
+	mnth, _ := dta["month_de"].(string)
+	if q.LangCode == "en" {
+		mnth = strings.ReplaceAll(mnth, "Februar", "February")
+		mnth = strings.ReplaceAll(mnth, "Mai", "May")
+	}
 
 	//
 	// gr1
@@ -86,7 +91,19 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 					<br><br>
 										
 					`, mnth),
-				"en": `todo`,
+				"en": fmt.Sprintf(`
+					
+					Previously, 
+						in <i> %v 2025</i>, 
+					you provided a forecast for quarterly growth for Q4 2025.
+					<br><br>
+
+					What do you think about the forecasts of the other participants in that previous survey?
+					
+					<br><br>
+
+					
+					`, mnth),
 			}.Outline("4.")
 			inp.ColSpan = gr.Cols
 			inp.ColSpanLabel = 1
@@ -96,9 +113,9 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 			inp.Type = "textblock"
 			inp.Label = trl.S{
 				"de": fmt.Sprintf(`
-					
 					Der 
-					<i>Anteil unter allen Befragten,</i> 
+					<i>Anteil unter allen Befragten</i>
+					 (in %%),
 					die im %v 2025 ein 
 					<i>niedrigeres</i> 
 					Wachstum für Q4 2025 als Sie angegeben haben, 
@@ -107,7 +124,13 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 					mnth,
 				),
 
-				"en": `todo`,
+				"en": fmt.Sprintf(`
+					The 
+					<i>share of all respondents</i> 
+					who, in %v 2025, stated a 
+					<i>lower</i> 
+					growth rate for Q4 2025 than you, amounted to…
+				`, mnth),
 			}.OutlineHid("3b.")
 			inp.ColSpan = gr.Cols
 			inp.ColSpanLabel = 1
@@ -161,7 +184,7 @@ func fmt202511Pg3(q *QuestionnaireT, page *pageT) error {
 	}
 	page.Short = trl.S{
 		"de": "Wachtsumschancen III",
-		"en": "todo %v",
+		"en": "Growth Prospects III",
 	}
 
 	page.WidthMax("62rem")
@@ -189,7 +212,7 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 	}
 	page.Short = trl.S{
 		"de": "Wachtsumschancen IV",
-		"en": "todo %v",
+		"en": "Growth Prospects IV",
 	}
 
 	page.WidthMax("62rem")
@@ -219,13 +242,24 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 					<small>
 						Bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben.
 					</small>
-
-
-
+					<br>
 
 				`,
 				"en": `
-					todo
+					<p style='font-size:120%; font-weight:bold; margin-top: 0;'>
+						Your view on the current outlook
+					</p>
+											
+					<p>
+						Please think again about Germany's economic growth prospects and provide your assessment.
+					</p>
+					
+					<small>
+						Please indicate non-annualized quarterly real & seasonally adjusted GDP growth.
+					</small>
+					<br>
+
+
 				`,
 			}
 		}
@@ -235,11 +269,11 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 			inp.ColSpan = 12
 			inp.Label = trl.S{
 				"de": `
-						Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen
+					Was glauben Sie: Wie hoch wird das Wirtschaftswachstum ausfallen
 
 				`,
 				"en": `
-					todo
+					What do you think: What will the economic growth rate be?
 				`,
 			}.Outline("5a.")
 		}
@@ -299,11 +333,11 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 			inp.ColSpan = 12
 			inp.Label = trl.S{
 				"de": `
-						Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose 
-						<br>
-							<i>unter allen Befragten in der aktuellen Befragung?</i>`,
+					Was glauben Sie: Wie hoch ist die durchschnittliche Wirtschaftswachstumsprognose 
+					<i>unter allen Befragten in der aktuellen Befragung?</i>`,
 				"en": `
-					todo
+					What do you think: What is the average economic growth forecast 
+					<i>among all respondents</i> in the <i>current survey</i>?
 				`,
 			}.Outline("5b.")
 		}
@@ -373,7 +407,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 	}
 	page.Short = trl.S{
 		"de": "Wachtsumschancen V",
-		"en": "todo %v",
+		"en": "Growth Prospects V",
 	}
 
 	page.WidthMax("62rem")
@@ -406,7 +440,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 						</script>
 				`,
 				"en": `
-					todo
+					How do you usually make your forecast?
 				`,
 			}.Outline("6.")
 		}
@@ -415,16 +449,16 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 			{
 				// "de": "Bauchgefühl",
 				"de": "erfahrungsbasierte Beurteilung",
-				"en": "todo",
+				"en": "judgement-based",
 			},
 			{
 				// "de": "modellbasiert",
 				"de": "modellbasierte Berechnung",
-				"en": "todo",
+				"en": "model-based",
 			},
 			{
 				"de": "anders",
-				"en": "todo",
+				"en": "other",
 			},
 		}
 
@@ -476,7 +510,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 					Fanden Sie die graphisch bereitgestellten Informationen über die Wirtschaftswachstumsprognosen nützlich?
 				`,
 				"en": `
-					todo
+					Would you like to receive the study results including your responses on German growth prospects by email?
 				`,
 			}.Outline("7.")
 		}

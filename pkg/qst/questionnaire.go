@@ -1576,28 +1576,34 @@ var separatorsOld = strings.NewReplacer(
 
 // cleanse, clean, sanitize input values
 var toPlaceholders = strings.NewReplacer(
-	"\r\n", "__J_NL__",
-	"\n", "__J_NL__",
-	"\r", "__J_NL__", // only from old MAC or terminal progress indicator
-	":", "__J_COL__",
-	";", "__J_SEMI__",
-	",", "__J_COM__",
-	"{", "__J_OB__",
-	"}", "__J_CB__",
-	"[", "__J_OSB__",
-	"]", "__J_CSB__",
+	// HTML / JSON-ish quote entities
+	"&#34;", "__DQUOTE__",
+	"#34;", "__DQUOTE__",
+	"&quot;", "__DQUOTE__",
+
+	"\r\n", "__NL__",
+	"\n", "__NL__",
+	"\r", "__NL__", // only from old MAC or terminal progress indicator
+	":", "__COL__",
+	";", "__SEMI__",
+	",", "__COM__",
+	"{", "__OCB__",
+	"}", "__CCB__",
+	"[", "__OSB__",
+	"]", "__CSB__",
 )
 
 // restore
 var fromPlaceholders = strings.NewReplacer(
-	"__J_NL__", "\n", // choose your preferred restoration newline
-	"__J_COL__", ":",
-	"__J_SEMI__", ";",
-	"__J_COM__", ",",
-	"__J_OB__", "{",
-	"__J_CB__", "}",
-	"__J_OSB__", "[",
-	"__J_CSB__", "]",
+	"__NL__", "\n", // choose your preferred restoration newline
+	"__COL__", ":",
+	"__SEMI__", ";",
+	"__COM__", ",",
+	"__OCB__", "{",
+	"__CCB__", "}",
+	"__OSB__", "[",
+	"__CSB__", "]",
+	"__DQUOTE__", "\"",
 )
 
 // no comma, no colon, no semicolon - only dot or underscore or hyphen or plus

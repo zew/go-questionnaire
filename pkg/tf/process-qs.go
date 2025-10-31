@@ -36,7 +36,7 @@ func loadQBaseWithFullDynamic(cfgRem *RemoteConnConfigT) (*qst.QuestionnaireT, e
 }
 
 // ProcessQs iterates over qs
-// and extracts columns and values;
+// and extracts columns and values into CSV;
 // it is independent of the structure of the questionaires in qs
 func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesToDownloadDir bool) (string, error) {
 

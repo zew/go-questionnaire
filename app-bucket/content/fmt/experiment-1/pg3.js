@@ -5,7 +5,7 @@
 // forecastData - inserted by server
 const dbg = JSON.stringify(forecastData, null, 2);
 console.log(` data ${dbg} `);
-console.log(` user ID  ${forecastData['user_id']} - grp ${forecastData['group']} `);
+console.log(` user ID  ${forecastData['user_id']} - '${langCode}' - grp ${forecastData['group']} `);
 
 const chartIDs  = ['distanceChart', 'forecastChart', 'consensusChart'];
 let   chartObjs = [];
@@ -93,13 +93,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const forecast       = parseFloat(participantDta[`Q42025`]);
         const consensus      = parseFloat(participantDta[`consensus`]);
 
-        const quarterForec     = participantDta[`quarter`];
-        const quarterTrl = {
-            "Q1 2025": "Februar 2025",
-            "Q2 2025": "April   2025",
-            "Q3 2025": "August  2025",
-            // "Q42025": ,
+        let ch1Lbl = 'Abstand';
+        if (langCode==='en'){
+            ch1Lbl = 'Distance';
         }
+
+        const quarterForec     = participantDta[`quarter`];
+        let quarterTrl = {
+            "Q1 2025": "Februar 2025",
+            "Q2 2025": "Mai 2025",
+            "Q3 2025": "August  2025",
+        }
+        if (langCode==='en'){
+            quarterTrl = {
+                "Q1 2025": "February 2025",
+                "Q2 2025": "May 2025",
+                "Q3 2025": "August  2025",
+                // "Q42025": ,
+            }
+        }
+
 
         let   quarterForecLbl   = quarterTrl[quarterForec];
 
@@ -114,8 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 die im ${quarterForecLbl} ein niedrigeres Wirtschaftswachstum für Q4 2025 angegeben haben, genannt.
 
                 <br>
+                <br>
                 Tatsächlich lag der Anteil
-                bei&nbsp;&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.`;
+                bei&nbsp;&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.
+            `;
+
+
+            if (langCode==='en') {
+            shareComparisonText.innerHTML = `You stated
+                    <strong>${formatDE(userShare,1)}%</strong>
+
+                <br>
+                <br>
+                In fact, the share of all respondents who in ${quarterForecLbl} 
+                indicated a lower growth rate than you was
+                &nbsp;&nbsp;<strong><span style="color:#EE6666">${formatDE(actualShare,1)}%</span></strong>.
+            `;
+
+            }
 
 
         } else {
@@ -125,6 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         label2.innerHTML = `Für Q4 2025 lag Ihre persönliche      Wirtschaftswachstumsprognose (in %) im ${quarterForecLbl} bei…`;
         label3.innerHTML = `Für Q4 2025 lag die durchschnittliche Wirtschaftswachstumsprognose (in %) unter allen Befragten im ${quarterForecLbl}  bei…`;
+
+        if (langCode==='en'){
+            label2.innerHTML = `Your personal economic growth forecast in ${quarterForecLbl} was…`;
+            label3.innerHTML = `The average economic growth forecast among all respondents in ${quarterForecLbl} was…`;
+
+        }
 
 
 
@@ -211,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         afontWeight: 'bold',
                         color: '#111' ,
                         color: '#6b7280',
-                        formatter: `Abstand ${formatDE(distance,1)}%`,
+                        formatter: `${ch1Lbl} ${formatDE(distance,1)}`,
                     },
                     lineStyle: { type: 'solid', width: 3, color: '#6b7280' },
                     data: [[
@@ -346,13 +381,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(function() {
 
-        console.log(`updateCharts() start`)
+        // console.log(`updateCharts() start`)
         updateCharts();
         chartObjs.forEach(function (chartObj) {
             chartObj.resize();
             // var inst = echarts.getInstanceByDom(el);
         });
-        console.log(`updateCharts() stop`)
+        console.log(`updateCharts() and resize stop`)
 
     }, 10);
 

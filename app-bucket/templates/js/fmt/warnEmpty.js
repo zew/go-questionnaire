@@ -7,7 +7,12 @@ function emptyUserShareWarning(evt) {
         if(vl === ""){
             /** alert(" curly-brace-open curly-brace-open  .msg2 curly-brace-close curly-brace-close "); */
             // alert("Bitte geben Sie Ihre Einschätzung ab.");
-            let doContinue = window.confirm("Bitte geben Sie Ihre Einschätzung ab.");
+            let doContinue = window.confirm(
+                `Sie haben noch keine Einschätzung abgegeben. Um Ihre Einschätzung abzugeben, klicken Sie bitte auf "Abbrechen".
+
+You have not yet made an assessment. To give your assessment, please click on "Cancel".               
+                
+                `);
             if (doContinue) {
                 return true;
             }

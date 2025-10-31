@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7705c967a72a05ad1f1f05c6cb27aeeb08c7dfdbca14bb333b7bed2529a51e63",
+ 	"md_5": "53ee703b5d8a0f74550153ceacba9a3ff7d628d24d66bb47f471708bc4d23e3b",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6211,7 +6211,7 @@
  			},
  			"short": {
  				"de": "Wachstums-\u003cbr\u003echancen",
- 				"en": "todo"
+ 				"en": "Growth\u003cbr\u003eProspects II"
  			},
  			"style": {
  				"desktop": {
@@ -6241,7 +6241,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003e\n\t\t\t\t\t\t\tIhre Sicht auf Wachstumschancen für Deutsch\u0026shy;land \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDie deutsche Wirt\u0026shy;schaft leidet seit Jahren un\u0026shy;ter nied\u0026shy;rigem Wachstum.\n\t\t\t\t\t\tUm die Aussichten für Deutsch\u0026shy;land besser zu verstehen, sind wir auf Ihre Expertise angewiesen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tDa Expertenpro\u0026shy;gno\u0026shy;sen über das Wirt\u0026shy;schaftswachstum häufig variieren,\n\t\t\t\t\t\tmöchten wir \u003c!-- zunächst --\u003e Ihre Einschätzung \n\t\t\t\t\t\thinsichtlich der anderen Teilnehmenden an der aktuellen Befragung erfahren.\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"en": "\n\n\t\t\t\t\t\t\u003cp style='font-size:120%; font-weight:bold; margin-top: 0;'\u003e\n\t\t\t\t\t\t\tYour opinion on growth prospects for Ger\u0026shy;ma\u0026shy;ny\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\tThe German econ\u0026shy;o\u0026shy;my has been suffering from low growth for years. \n\t\t\t\t\t\t\tTo better understand the eco\u0026shy;nom\u0026shy;ic outlook for Ger\u0026shy;ma\u0026shy;ny, we rely on your expertise. \n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\tSince experts' forecasts of eco\u0026shy;nom\u0026shy;ic growth often vary, \n\t\t\t\t\t\t\twe would first like to learn your assessment about the other survey participants.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -6250,7 +6250,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWas glauben Sie: Wie hoch ist die \n\t\t\t\t\t\tdurchschnittliche Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se \n\t\t\t\t\t\t\u003ci\u003eun\u0026shy;ter allen Befragten in der aktuellen Befragung\u003c/i\u003e?\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\tBitte nicht-annualisiertes Quartalswachstum des realen \u0026 saisonbereinigten BIP angeben.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t",
- 								"en": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"en": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWhat do you think: What is the av\u0026shy;er\u0026shy;age eco\u0026shy;nom\u0026shy;ic growth forecast \n\t\t\t\t\t\t\t\u003ci\u003eamong all respondents in the current survey\u003c/i\u003e?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003csmall\u003e\n\t\t\t\t\t\t\tPlease indicate non-annualized quarterly real \u0026 seasonally adjusted GDP growth.\n\t\t\t\t\t\t\u003c/small\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1

@@ -30,7 +30,7 @@ func special202511(q *qst.QuestionnaireT) error {
 		page.Short = trl.S{
 			// "de": "Wachstums&shy;chancen I",
 			"de": "Wachstums-<br>chancen",
-			"en": "todo",
+			"en": "Growth<br>Prospects II",
 		}
 		page.WidthMax("56rem")
 
@@ -63,8 +63,24 @@ func special202511(q *qst.QuestionnaireT) error {
 
 				`,
 					"en": `
-					todo
-				`,
+
+						<p style='font-size:120%; font-weight:bold; margin-top: 0;'>
+							Your opinion on growth prospects for Germany					
+						</p>
+
+
+						<p>
+							The German economy has been suffering from low growth for years. 
+							To better understand the economic outlook for Germany, we rely on your expertise. 
+						</p>
+
+						<p>
+							Since experts' forecasts of economic growth often vary, 
+							we would first like to learn your assessment about the other survey participants.
+						</p>
+
+
+					`,
 				}
 			}
 			{
@@ -88,7 +104,18 @@ func special202511(q *qst.QuestionnaireT) error {
 
 				`,
 					"en": `
-					todo
+						What do you think: What is the average economic growth forecast 
+							<i>among all respondents in the current survey</i>?
+
+						<br>
+						<br>
+						
+						<small>
+							Please indicate non-annualized quarterly real & seasonally adjusted GDP growth.
+						</small>
+						<br>
+
+
 				`,
 				}.Outline("3a.")
 			}

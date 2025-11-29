@@ -29,11 +29,11 @@ transferrer.exe -rmt=transferrer/fmt-remote.json  >>%LOGFILE% 2>&1
 
 @REM exit /b
 
-COPY /Y  C:\goprojects\go-questionnaire\app-bucket\responses\downloaded\fmt-*.csv C:\xampp\htdocs\fmt\Mikrodaten-ger\
+@REM COPY /Y  C:\goprojects\go-questionnaire\app-bucket\responses\downloaded\fmt-*.csv C:\xampp\htdocs\fmt\Mikrodaten-ger\
 
 
-CD C:\xampp\htdocs\fmt\
-php import-fmt-from-csv.php  >>c:\goprojects\go-questionnaire\cmd\transferrer\%LOGFILE%
+@REM CD C:\xampp\htdocs\fmt\
+@REM php import-fmt-from-csv.php  >>c:\goprojects\go-questionnaire\cmd\transferrer\%LOGFILE%
 
 
 @REM no pause - dont stall scheduler

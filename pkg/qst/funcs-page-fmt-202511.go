@@ -127,6 +127,7 @@ func fmt202511Pg2(q *QuestionnaireT, page *pageT) error {
 				"en": fmt.Sprintf(`
 					The 
 					<i>share of all respondents</i> 
+					in %%
 					who, in %v 2025, stated a 
 					<i>lower</i> 
 					growth rate for Q4 2025 than you, amounted to…
@@ -243,6 +244,7 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 						Bitte nicht-annualisiertes Quartalswachstum des realen &amp; saisonbereinigten BIP angeben.
 					</small>
 					<br>
+					<br>
 
 				`,
 				"en": `
@@ -257,6 +259,7 @@ func fmt202511Pg4(q *QuestionnaireT, page *pageT) error {
 					<small>
 						Please indicate non-annualized quarterly real & seasonally adjusted GDP growth.
 					</small>
+					<br>
 					<br>
 
 
@@ -510,7 +513,7 @@ func fmt202511Pg5(q *QuestionnaireT, page *pageT) error {
 					Fanden Sie die graphisch bereitgestellten Informationen über die Wirtschaftswachstumsprognosen nützlich?
 				`,
 				"en": `
-					Would you like to receive the study results including your responses on German growth prospects by email?
+					Did you find the graphical information on the economic growth forecasts useful?
 				`,
 			}.Outline("7.")
 		}

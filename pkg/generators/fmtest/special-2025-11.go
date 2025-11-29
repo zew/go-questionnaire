@@ -30,7 +30,7 @@ func special202511(q *qst.QuestionnaireT) error {
 		page.Short = trl.S{
 			// "de": "Wachstums&shy;chancen I",
 			"de": "Wachstums-<br>chancen",
-			"en": "Growth<br>Prospects II",
+			"en": "Growth<br>Prospects",
 		}
 		page.WidthMax("56rem")
 
@@ -100,6 +100,7 @@ func special202511(q *qst.QuestionnaireT) error {
 						Bitte nicht-annualisiertes Quartalswachstum des realen & saisonbereinigten BIP angeben.
 						</small>
 						<br>
+						<br>
 
 
 				`,
@@ -113,6 +114,7 @@ func special202511(q *qst.QuestionnaireT) error {
 						<small>
 							Please indicate non-annualized quarterly real & seasonally adjusted GDP growth.
 						</small>
+						<br>
 						<br>
 
 

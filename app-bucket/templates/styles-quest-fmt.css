@@ -99,6 +99,11 @@ dummy
     top: 0.9rem;
 }
 
+/* 2025-12  */
+.grid-2025-12 label {
+    text-align: left;
+}
+
 /* kursive, italic */
 i {
     /* font-size: 110%; */

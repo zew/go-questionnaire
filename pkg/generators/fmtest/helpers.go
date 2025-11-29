@@ -914,3 +914,82 @@ func agree6() []trl.S {
 	return tm
 
 }
+
+var columnTemplate6b = []float32{
+	6, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0.4, 1,
+}
+
+func labelsUnlikely() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "Sehr un&shy;wahr&shy;schein&shy;lich",
+			"en": "Very unlikely",
+		},
+		{
+			"de": "Un&shy;wahr&shy;schein&shy;lich",
+			"en": "Unlikely",
+		},
+		{
+			"de": "Neutral",
+			"en": "Neutral",
+		},
+		{
+			"de": "Wahr&shy;schein&shy;lich",
+			"en": "Likely",
+		},
+		{
+			"de": "Sehr wahr&shy;schein&shy;lich",
+			"en": "Very likely",
+		},
+		{
+			"de": "Keine<br>Angabe",
+			"en": "No answer",
+		},
+	}
+
+	return tm
+
+}
+
+var columnTemplate5a = []float32{
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+}
+
+func labelsCertainty() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "Sehr unsicher",
+			"en": "Very uncertain",
+		},
+		{
+			"de": "Unsicher",
+			"en": "Uncertain",
+		},
+		{
+			"de": "Neutral",
+			"en": "Neutral",
+		},
+		{
+			"de": "Sicher",
+			"en": "Certain",
+		},
+		{
+			"de": "Sehr sicher",
+			"en": "Very certain",
+		},
+	}
+
+	return tm
+
+}

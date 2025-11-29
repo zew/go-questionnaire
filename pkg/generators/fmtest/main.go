@@ -821,6 +821,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("error adding special202511(): %v", err)
 	}
 
+	err = special202512(&q)
+	if err != nil {
+		return nil, fmt.Errorf("error adding special202512(): %v", err)
+	}
+
 	// 202405
 	{
 		// page := q.AddPage()

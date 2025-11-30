@@ -31,6 +31,7 @@ var dynFuncs = map[string]dynFuncT{
 	"knebSlightlyDistinctLabel":      knebSlightlyDistinctLabel,
 	"knebsDownloadURL":               knebDownloadURL,
 	"knebLinkBackToPanel":            knebLinkBackToPanel,
+	"previousPageAnswer":             previousPageAnswer,
 }
 
 func isOther(inpName string) bool {
@@ -457,4 +458,37 @@ func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (strin
 		`, mailLink),
 		nil
 
+}
+
+func previousPageAnswer(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+
+	lbl := trl.S{
+		"de": `
+			Ihre Erwartungen an die globalen klimapolitischen Maßnahmen könnten Ihre Einschätzung der Auswirkungen des Klimawandels in den nächsten Jahrzehnten beeinflussen.
+			<br>
+			<br>
+			Ihre Antwort auf die letzte Frage lautete: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zur aktuellen Situation… 
+			<!-- ANTWORT AUF FRAGE 5 IN FETT EINFÜGEN -->
+			<b>%v</b>  yy
+
+			<br>
+			`,
+		"en": `
+			Your expectations of global climate policies might influence your assessment of the impact of climate change over the next decades.
+			<br>
+			<br>
+			Your answer to the last question was: Over the next 10 years, compared to today, global climate policies will be… 
+			<!-- INSERT ANSWER TO QUESTION 5 IN BOLD -->
+			<b>%v</b> xx
+			<br>
+		`,
+	}
+
+	inpPrev := q.ByName("ssq5")
+	ret := fmt.Sprintf(lbl.Tr(q.LangCode), inpPrev.Response)
+
+	log.Printf("the user answered %v", inpPrev.Response)
+	log.Printf("\t\t  return val is  %v", ret)
+
+	return ret, nil
 }

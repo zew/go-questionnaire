@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "64da587e3865102e4d7f01114674f7cce3a1c325ade4adb637a2bea53980a44c",
+ 	"md_5": "d14a1e04b020adcfdaae7122742137e117a55500f70284bf16be30c546990849",
  	"lang_codes": [
  		"de",
  		"en"
@@ -11167,13 +11167,10 @@
  					"columns": 12,
  					"inputs": [
  						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\t\tIhre Erwartungen an die globalen klimapolitischen Maßnahmen könnten Ihre Einschätzung der Aus\u0026shy;wir\u0026shy;kungen des Klimawandels in den nächsten Jahrzehnten beein\u0026shy;flussen.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tIhre Ant\u0026shy;wort auf die letzte Frage lautete: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zur aktuellen Si\u0026shy;tu\u0026shy;a\u0026shy;ti\u0026shy;on… ANTWORT AUF FRAGE 5 IN FETT EINFÜGEN\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\tYour expectations of global climate policies might in\u0026shy;flu\u0026shy;ence your assessment of the impact of climate change over the next decades.\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tYour an\u0026shy;swer to the last question was: Over the next 10 years, compared to today, global climate policies will be… INSERT ANSWER TO QUESTION 5 IN BOLD\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t"
- 							},
+ 							"type": "dyn-textblock",
  							"col_span": 12,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"dynamic_func": "previousPageAnswer"
  						}
  					]
  				},
@@ -12909,7 +12906,23 @@
  							},
  							"col_span": 6,
  							"col_span_label": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "ssq8b",
@@ -12927,7 +12940,23 @@
  							},
  							"col_span": 6,
  							"col_span_label": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "ssq8c",
@@ -12938,14 +12967,32 @@
  							},
  							"col_span": 6,
  							"col_span_label": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.0rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "55rem"
+ 								"width_max": "51rem"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -12993,9 +13040,7 @@
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 1.0rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "center"
  									},
@@ -13029,9 +13074,7 @@
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 1.0rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "center"
  									},
@@ -13079,7 +13122,7 @@
  						"desktop": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "55rem"
+ 								"width_max": "51rem"
  							},
  							"grid_item_style": {},
  							"text_style": {}

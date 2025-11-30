@@ -376,26 +376,13 @@ func special202512(q *qst.QuestionnaireT) error {
 			gr := page.AddGroup()
 			gr.Cols = 12
 			gr.BottomVSpacers = 1
+
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 12
-				inp.Label = trl.S{
-					"de": `
-						Ihre Erwartungen an die globalen klimapolitischen Maßnahmen könnten Ihre Einschätzung der Auswirkungen des Klimawandels in den nächsten Jahrzehnten beeinflussen.
-						<br>
-						<br>
-						Ihre Antwort auf die letzte Frage lautete: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zur aktuellen Situation… ANTWORT AUF FRAGE 5 IN FETT EINFÜGEN
-						<br>
-				`,
-					"en": `
-						Your expectations of global climate policies might influence your assessment of the impact of climate change over the next decades.
-						<br>
-						<br>
-						Your answer to the last question was: Over the next 10 years, compared to today, global climate policies will be… INSERT ANSWER TO QUESTION 5 IN BOLD
-						<br>
-					`,
-				}
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "previousPageAnswer"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
 			}
 
 			{
@@ -511,7 +498,7 @@ func special202512(q *qst.QuestionnaireT) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
-			gr.WidthMax("51rem")
+			gr.WidthMax("48rem")
 			gr.BottomVSpacers = 2
 
 			{
@@ -589,7 +576,7 @@ func special202512(q *qst.QuestionnaireT) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
-			gr.WidthMax("51rem")
+			gr.WidthMax("48rem")
 			gr.BottomVSpacers = 2
 
 			{
@@ -660,6 +647,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.ColSpanControl = 1
 				inp.Label = lbls[2]
 				inp.ControlRight()
+				inp.ControlCenter()
 			}
 
 		}

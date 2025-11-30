@@ -915,6 +915,15 @@ func agree6() []trl.S {
 
 }
 
+var columnTemplate6a = []float32{
+	2.2, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0.4, 1,
+}
+
 var columnTemplate6b = []float32{
 	6, 1,
 	0, 1,
@@ -987,6 +996,105 @@ func labelsCertainty() []trl.S {
 		{
 			"de": "Sehr sicher",
 			"en": "Very certain",
+		},
+	}
+
+	return tm
+
+}
+
+func labelsImpact() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "Stark negative Auswirkung",
+			"en": "Strong negative impact",
+		},
+		{
+			"de": "Moderate negative Auswirkung",
+			"en": "Moderate negative impact",
+		},
+		{
+			"de": "Keine Auswirkung",
+			"en": "No impact",
+		},
+		{
+			"de": "Moderate positive Auswirkung",
+			"en": "Moderate positive impact",
+		},
+		{
+			"de": "Stark positive Auswirkung",
+			"en": "Strong positive impact",
+		},
+		{
+			"de": "Keine<br>Angabe",
+			"en": "No answer",
+		},
+	}
+
+	return tm
+
+}
+
+func labelsStringency() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "deutlich weniger streng sein.",
+			"en": "much less stringent.",
+		},
+		{
+			"de": "etwas weniger streng sein.",
+			"en": "somewhat less stringent.",
+		},
+		{
+			"de": "in etwa gleich bleiben.",
+			"en": "about the same.",
+		},
+		{
+			"de": "etwas strenger sein.",
+			"en": "somewhat more stringent..",
+		},
+		{
+			"de": "deutlich strenger sein.",
+			"en": "much more stringent.",
+		},
+		// {
+		// 	"de": "Keine<br>Angabe",
+		// 	"en": "No answer",
+		// },
+	}
+
+	return tm
+
+}
+
+func labelsAgree() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "Stimme überhaupt nicht zu",
+			"en": "Strongly disagree",
+		},
+		{
+			"de": "Stimme nicht zu",
+			"en": "Disagree",
+		},
+		{
+			"de": "Weder noch",
+			"en": "Undecided",
+		},
+		{
+			"de": "Stimme zu",
+			"en": "Agree",
+		},
+		{
+			"de": "Stimme voll und ganz zu",
+			"en": "Strongly agree",
+		},
+		{
+			"de": "Keine<br>Angabe",
+			"en": "No answer",
 		},
 	}
 

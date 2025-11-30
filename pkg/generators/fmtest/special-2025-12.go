@@ -16,6 +16,8 @@ func special202512(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
+	q.ShufflingVariations = 6
+
 	// page 1
 	{
 		page := q.AddPage()
@@ -239,6 +241,426 @@ func special202512(q *qst.QuestionnaireT) error {
 			}.Outline("3.")
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 2
+
+		}
+
+	}
+
+	// page 3
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.Short = trl.S{
+			"de": "Klima-<br>erwartungen",
+			"en": "Climate<br>Expectations",
+		}
+		page.WidthMax("56rem")
+		page.SuppressInProgressbar = true
+		// page.NoNavigation = true
+
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6a,
+				labelsImpact(),
+				[]string{"ssq4a", "ssq4b"},
+				[]string{"strong_neg", "neg", "neutral", "pos", "strong_pos", "no_answer"},
+				[]trl.S{
+					{
+						"de": "In den nächsten 5 Jahren",
+						"en": "In the next 5 years ",
+					},
+					{
+						"de": "In den nächsten 25 Jahren",
+						"en": "In the next 25 years",
+					},
+				},
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+					Angenommen, die globale Klimapolitik bleibt so, wie sie heute ist, und es werden keine zusätzlichen Maßnahmen zur Bekämpfung des Klimawandels ergriffen:
+					<br>
+					<br>
+					Wie wird sich der Klimawandel unter diesen Bedingungen Ihrer Meinung nach auf das Wirtschaftswachstum in der EU auswirken?
+					<br>
+				`,
+				"en": `
+					Assuming that global climate policies stay the way they are today and no additional measures are taken to tackle climate change:
+					<br>
+					<br>
+					How do you think climate change will impact economic growth in the EU under these conditions?
+					<br>
+				`,
+			}.Outline("4.")
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 2
+
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.9rem"
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+			gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+
+			// gr.Class = "grid-2025-12-ssq1"
+			//
+			// rad.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
+		}
+
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5a,
+				labelsStringency(),
+				[]string{"ssq5"},
+				[]string{"much_less_s", "less_s", "neutral", "more_s", "much_more_s", "no_answer"},
+				nil,
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					Was erwarten Sie: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zu heute…
+				`,
+				"en": `
+					Over the next 10 years, compared to today, global climate policies will be…
+				`,
+			}.Outline("5.")
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 2
+
+		}
+
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5a,
+				labelsCertainty(),
+				[]string{"ssq6"},
+				[]string{"very_uncertain", "uncertain", "neutral", "certain", "very_certain", "no_answer"},
+				nil,
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+					Auf einer Skala von 1 (überhaupt nicht sicher) bis 5 (sehr sicher), wie sicher sind Sie sich hinsichtlich Ihrer Einschätzung in der vorherigen Frage?
+				`,
+				"en": `
+					On a scale from 1 (not at all confident) to 5 (very confident), how confident are you about your assessment in the previous question?
+				`,
+			}.Outline("6.")
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 2
+
+		}
+
+	}
+
+	// page 4
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.Short = trl.S{
+			"de": "Klima-<br>erwartungen",
+			"en": "Climate<br>Expectations",
+		}
+		page.WidthMax("56rem")
+		page.SuppressInProgressbar = true
+		// page.NoNavigation = true
+		page.NavigationCondition = "fmt202512Include"
+
+		{
+
+			gr := page.AddGroup()
+			gr.Cols = 12
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 12
+				inp.Label = trl.S{
+					"de": `
+						Ihre Erwartungen an die globalen klimapolitischen Maßnahmen könnten Ihre Einschätzung der Auswirkungen des Klimawandels in den nächsten Jahrzehnten beeinflussen.
+						<br>
+						<br>
+						Ihre Antwort auf die letzte Frage lautete: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zur aktuellen Situation… ANTWORT AUF FRAGE 5 IN FETT EINFÜGEN
+						<br>
+				`,
+					"en": `
+						Your expectations of global climate policies might influence your assessment of the impact of climate change over the next decades.
+						<br>
+						<br>
+						Your answer to the last question was: Over the next 10 years, compared to today, global climate policies will be… INSERT ANSWER TO QUESTION 5 IN BOLD
+						<br>
+					`,
+				}
+			}
+
+			{
+
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate6a,
+					labelsImpact(),
+					[]string{"ssq6aa", "ssq6ab"},
+					[]string{"strong_neg", "neg", "neutral", "pos", "strong_pos", "no_answer"},
+					[]trl.S{
+						{
+							"de": "In den nächsten 5 Jahren",
+							"en": "In the next 5 years ",
+						},
+						{
+							"de": "In den nächsten 25 Jahren",
+							"en": "In the next 25 years",
+						},
+					},
+				)
+
+				gb.MainLabel = trl.S{
+					"de": `
+					Wie wird sich der Klimawandel unter Berücksichtigung Ihrer Erwartungen an die künftige Klimapolitik Ihrer Meinung nach auf das Wirtschaftswachstum in der EU auswirken?
+				`,
+					"en": `
+					Considering your expectations of future climate policies, how do you think climate change will impact economic growth in the EU?
+				`,
+				}.Outline("6a.")
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 2
+
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapRow = "0.9rem"
+				gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+				gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+
+				// gr.Class = "grid-2025-12-ssq1"
+				//
+				// rad.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
+			}
+		}
+
+	}
+
+	// page 5
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.Short = trl.S{
+			"de": "Klima-<br>erwartungen",
+			"en": "Climate<br>Expectations",
+		}
+		page.WidthMax("56rem")
+		page.SuppressInProgressbar = true
+		// page.NoNavigation = true
+
+		{
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6b,
+				labelsAgree(),
+				[]string{"ssq7a", "ssq7b", "ssq7c", "ssq7d", "ssq7e", "ssq7f", "ssq7g"},
+				[]string{"strong_disa", "disa", "neutral", "agr", "strong_agr", "no_answer"},
+				[]trl.S{
+					{
+						"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirtschaften und Finanzmärkte dar.",
+						"en": "Climate change represents a significant issue for economies and financial markets.",
+					},
+					{
+						"de": "Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneutrale Wirtschaft zu erreichen.",
+						"en": "With the right measures, it is possible to achieve a climate-neutral economy by 2050.",
+					},
+					{
+						"de": "Die Wirtschaft kann klimaneutral werden und dabei weiterwachsen.",
+						"en": "The economy can become climate-neutral while growing at the same time.",
+					},
+					{
+						"de": "Solange keine geeignete Ersatztechnologie verfügbar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen.",
+						"en": "As long as there is no suitable replacement technology, investment should still flow into emissions-intensive industries.",
+					},
+					{
+						"de": "Die Bewältigung des Klimawandels erfordert, dass emissionsintensive Unternehmen über die nötigen Finanzmittel verfügen, um auf emissionsarme Technologien umzustellen.",
+						"en": "Responding to climate change requires that emissions-intensive companies have the funding to transition to low-emission technologies.",
+					},
+					{
+						"de": "Die Bewältigung des Klimawandels erfordert den Rückbau emissionsintensiver Sektoren und den Ausbau emissionsarmer Sektoren.",
+						"en": "Responding to climate change requires shrinking emissions-intensive industries and growing low-emissions industries.",
+					},
+					{
+						"de": "Technologische Innovation wird der entscheidende Faktor für das Erreichen einer klimaneutralen Wirtschaft sein.",
+						"en": "Technological innovation will be the decisive determinant of achieving a climate-neutral economy. ",
+					},
+				},
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+					Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen.
+				`,
+				"en": `
+					Please indicate to what extent you agree with the following statements.
+				`,
+			}.Outline("7.")
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 2
+			gr.RandomizationGroup = 1
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			gr.WidthMax("51rem")
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.Label = trl.S{
+					"de": `
+						Für jeden Euro, der im Kontext des Klimawandels investiert wird: Wie viel sollte in Klimaschutz und wie viel in Klimaanpassung investiert werden?
+					`,
+					"en": `
+						For every euro invested in the context of climate change, how much should be invested in climate mitigation versus climate adaptation?
+					`,
+				}.Outline("8.")
+			}
+
+			lbls := []trl.S{
+				{
+					"de": "Klimaschutz (d. h. Vermeidung oder Minderung von Treibhausgasemissionen)",
+					"en": "Climate mitigation (i.e., preventing or reducing greenhouse gas emissions)",
+				},
+				{
+					"de": "Klimaanpassung (d. h. Anpassung an die Auswirkungen des Klimawandels)",
+					"en": "Climate adaptation (i.e., adjusting to the effects of climate change)",
+				},
+				{
+					"de": "Es sollte kein Geld im Kontext des Klimawandels investiert werden.",
+					"en": "No money should be invested in the context of climate change",
+				},
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "ssq8a"
+				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1
+				inp.MaxChars = 4
+				inp.Label = lbls[0]
+				inp.ControlCenter()
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "ssq8b"
+				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1
+				inp.MaxChars = 4
+				inp.Label = lbls[1]
+				inp.ControlCenter()
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "ssq8c"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				inp.Label = lbls[2]
+				inp.ControlRight()
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			gr.WidthMax("51rem")
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.Label = trl.S{
+					"de": `
+						Für jeden Euro, der in grüne Technologien investiert wird: Wie viel sollte in neue grüne Technologien und wie viel in die Skalierung bestehender grüner Technologien investiert werden?
+					`,
+					"en": `
+						For every euro invested in green technologies, how much should be invested in new green technologies versus scaling up existing green technologies?
+					`,
+				}.Outline("9.")
+			}
+
+			lbls := []trl.S{
+				{
+					"de": "Neue grüne Technologien",
+					"en": "New green technologies",
+				},
+				{
+					"de": "Skalierung bestehender grüner Technologien",
+					"en": "Scaling up existing green technologies",
+				},
+				{
+					"de": "Es sollte kein Geld in grüne Technologien investiert werden.",
+					"en": "No money should be invested in green technologies",
+				},
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "ssq9a"
+				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1
+				inp.MaxChars = 4
+				inp.Label = lbls[0]
+				inp.ControlCenter()
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "ssq9b"
+				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1
+				inp.MaxChars = 4
+				inp.Label = lbls[1]
+				inp.ControlCenter()
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "ssq9c"
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				inp.Label = lbls[2]
+				inp.ControlRight()
+			}
 
 		}
 

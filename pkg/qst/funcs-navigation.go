@@ -37,6 +37,7 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"kneb_h1_who_responsibe": knebH1WhoIsResponsible,
 
 	"fmt202511Include": fmt202511Include,
+	"fmt202512Include": fmt202512Include,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -210,4 +211,15 @@ func knebH1WhoIsResponsible(q *QuestionnaireT, pageIdx int) bool {
 func fmt202511Include(q *QuestionnaireT, pageIdx int) bool {
 	_, found := ForecastData(q.UserIDInt())
 	return found
+}
+
+func fmt202512Include(q *QuestionnaireT, pageIdx int) bool {
+	inp := q.ByName("ssq5")
+	if inp.Response == "" {
+		return false
+	}
+	if inp.Response != "neutral" {
+		return true
+	}
+	return false
 }

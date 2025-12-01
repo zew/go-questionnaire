@@ -48,8 +48,13 @@ func init() {
 	}
 
 	sessionManager.Lifetime = 24 * time.Hour
-	sessionManager.IdleTimeout = 2 * time.Hour
-
+	sessionManager.IdleTimeout = 3 * time.Hour
+	sessionManager.Cookie.Secure = true   // only send over HTTPS
+	sessionManager.Cookie.HttpOnly = true // not accessible to JS
+	// sessionManager.Cookie.SameSite = http.SameSiteLaxMode
+	sessionManager.Cookie.SameSite = http.SameSiteStrictMode
+	sessionManager.Cookie.Persist = true // survive browser restarts
+	sessionManager.Cookie.Name = "go-quest"
 }
 
 // Mgr exposes the session manager
@@ -82,7 +87,6 @@ func New(w io.Writer, r *http.Request) *SessT {
 // RequestParamIsSet returns the param value as string.
 // But EffectiveIsSet refers to different types in session:
 // integers, floats or objects.
-//
 //
 // If ParamPersisterMiddleWare is in action,
 // then a few designated session params are always set.
@@ -212,9 +216,6 @@ func (sess *SessT) PutObject(key string, val interface{}) {
 	sess.SessionManager.Put(sess.ctx, key, val)
 }
 
-//
-//
-//
 type testObject struct {
 	Name  string
 	Birth time.Time

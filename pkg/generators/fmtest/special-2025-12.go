@@ -16,8 +16,6 @@ func special202512(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
-	q.ShufflingVariations = 6
-
 	// page 1
 	{
 		page := q.AddPage()
@@ -226,7 +224,7 @@ func special202512(q *qst.QuestionnaireT) error {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate5a,
 				labelsCertainty(),
-				[]string{"ssq2"},
+				[]string{"ssq3"},
 				[]string{"very_uncertain", "uncertain", "neutral", "certain", "very_certain", "no_answer"},
 				nil,
 			)
@@ -444,11 +442,40 @@ func special202512(q *qst.QuestionnaireT) error {
 		// page.NoNavigation = true
 
 		{
-
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.Label = trl.S{
+					"de": `
+					Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen.
+				`,
+					"en": `
+					Please indicate to what extent you agree with the following statements.
+				`,
+				}.Outline("7.")
+			}
+		}
+		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate6b,
 				labelsAgree(),
-				[]string{"ssq7a", "ssq7b", "ssq7c", "ssq7d", "ssq7e", "ssq7f", "ssq7g"},
+				[]string{},
+				[]string{},
+				[]trl.S{},
+			)
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 0
+		}
+
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6b,
+				labelsAgree(),
+				[]string{"ssq7a", "ssq7b", "ssq7c"},
 				[]string{"strong_disa", "disa", "neutral", "agr", "strong_agr", "no_answer"},
 				[]trl.S{
 					{
@@ -463,6 +490,20 @@ func special202512(q *qst.QuestionnaireT) error {
 						"de": "Die Wirtschaft kann klimaneutral werden und dabei weiterwachsen.",
 						"en": "The economy can become climate-neutral while growing at the same time.",
 					},
+				},
+			)
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 0
+			gr.RandomizationGroup = 1
+		}
+
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6b,
+				labelsAgree(),
+				[]string{"ssq7d", "ssq7e", "ssq7f", "ssq7g"},
+				[]string{"strong_disa", "disa", "neutral", "agr", "strong_agr", "no_answer"},
+				[]trl.S{
 					{
 						"de": "Solange keine geeignete Ersatztechnologie verfügbar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen.",
 						"en": "As long as there is no suitable replacement technology, investment should still flow into emissions-intensive industries.",
@@ -482,16 +523,8 @@ func special202512(q *qst.QuestionnaireT) error {
 				},
 			)
 
-			gb.MainLabel = trl.S{
-				"de": `
-					Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen.
-				`,
-				"en": `
-					Please indicate to what extent you agree with the following statements.
-				`,
-			}.Outline("7.")
 			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 0
 			gr.RandomizationGroup = 1
 		}
 
@@ -507,9 +540,13 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.ColSpan = gr.Cols
 				inp.Label = trl.S{
 					"de": `
+						<br>
+						<br>
 						Für jeden Euro, der im Kontext des Klimawandels investiert wird: Wie viel sollte in Klimaschutz und wie viel in Klimaanpassung investiert werden?
 					`,
 					"en": `
+						<br>
+						<br>
 						For every euro invested in the context of climate change, how much should be invested in climate mitigation versus climate adaptation?
 					`,
 				}.Outline("8.")

@@ -46,9 +46,9 @@ func init() {
 			sessionManager.Store = memstore.New() // fallback to memory
 		}
 	}
-
 	sessionManager.Lifetime = 24 * time.Hour
 	sessionManager.IdleTimeout = 3 * time.Hour
+	// added 2025-12
 	sessionManager.Cookie.HttpOnly = true // not accessible to JS
 	// sessionManager.Cookie.SameSite = http.SameSiteLaxMode
 	sessionManager.Cookie.SameSite = http.SameSiteStrictMode

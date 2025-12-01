@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/http/httptest"
 	"os"
 	"path"
 	"runtime"
@@ -229,13 +230,18 @@ func main() {
 			pthKey := path.Join("static", "certs", "server.key")
 			log.Fatal(srv.ListenAndServeTLS(pthPem, pthKey))
 		}
+	} else if false {
+		/*
+			main_test.go uses the http server in the else branch. And then
+			client := util.HttpClient()
+			Alternatively
+		*/
+		ts := httptest.NewTLSServer(mux4)
+		defer ts.Close()
+		client := ts.Client() // trusts the test server’s self-signed cert
+		_ = client
 	} else {
-		// also for main_test.go
 		log.Fatal(http.ListenAndServe(IPPort, mux4))
-		// instead of client := util.HttpClient()  in simulate_load
-		// ts := httptest.NewTLSServer(mux4)
-		// defer ts.Close()
-		// client := ts.Client() // trusts the test server’s self-signed cert
 	}
 
 }

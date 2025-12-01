@@ -459,18 +459,48 @@ func special202512(q *qst.QuestionnaireT) error {
 				}.Outline("7.")
 			}
 		}
+
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate6b,
-				labelsAgree(),
-				[]string{},
-				[]string{},
-				[]trl.S{},
-			)
-			gr := page.AddGrid(gb)
+			gr := page.AddGroup()
+			gr.Cols = 7
 			gr.BottomVSpacers = 0
+
+			// equal to below
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.Display = "grid"
+			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "7fr 1fr 1fr 1fr 1fr 1fr 1.4fr"
+			gr.Style.Mobile.StyleGridContainer.TemplateColumns = "7fr 1fr 1fr 1fr 1fr 1fr 1.4fr"
+
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+			gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+
+			gr.Style.Desktop.StyleText.FontSize = 90
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+				inp.Label = trl.S{
+					"de": "&nbsp;",
+					"en": "&nbsp;",
+				}
+			}
+			for i := 0; i < len(labelsAgree()); i++ {
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 0
+				inp.Label = labelsAgree()[i]
+				inp.LabelCenter()
+				inp.LabelBottom()
+			}
 		}
 
+		//
+		//
 		lblsRandomized := []trl.S{
 			{
 				"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirtschaften und Finanzmärkte dar.",
@@ -503,20 +533,36 @@ func special202512(q *qst.QuestionnaireT) error {
 		}
 		for i1 := 0; i1 < len(lblsRandomized); i1++ {
 			gr := page.AddGroup()
-			firstCol := float32(6)
+			firstCol := float32(1)
 			gr.Cols = firstCol + 6
-			gr.BottomVSpacers = 2
 			gr.RandomizationGroup = 2
+			gr.BottomVSpacers = 0
+			if i1 == (len(lblsRandomized) - 1) {
+				gr.BottomVSpacers = 2 // bad, because of shuffling
+				gr.BottomVSpacers = 0
+			}
+
+			// equal to above
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.Display = "grid"
+			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "7fr 1fr 1fr 1fr 1fr 1fr 1.4fr"
+			gr.Style.Mobile.StyleGridContainer.TemplateColumns = "7fr 1fr 1fr 1fr 1fr 1fr 1.4fr"
+
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
+			gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+
+			// distinct
+			gr.Style.Desktop.StyleBox.Margin = "0 0 0.6rem" // bottom margin
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Name = fmt.Sprintf("ssq7%v", i1+1)
 				inp.ColSpan = firstCol
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 0
 				inp.Label = lblsRandomized[i1]
 			}
-			for i2 := 1; i2 < 7; i2++ {
+			for i2 := 0; i2 < 6; i2++ {
 				{
 					inp := gr.AddInput()
 					inp.Type = "radio"
@@ -530,11 +576,16 @@ func special202512(q *qst.QuestionnaireT) error {
 		}
 
 		//
+		placeHolder := trl.S{"de": "00", "en": "00"}
+
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
 			gr.WidthMax("48rem")
 			gr.BottomVSpacers = 2
+
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleBox.Margin = "3rem 0 0" // top margin - because randomized previous block...
 
 			{
 				inp := gr.AddInput()
@@ -577,6 +628,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Max = 100
 				inp.Step = 1
 				inp.MaxChars = 4
+				inp.Placeholder = placeHolder
 				inp.Label = lbls[0]
 				inp.ControlCenter()
 			}
@@ -592,6 +644,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Max = 100
 				inp.Step = 1
 				inp.MaxChars = 4
+				inp.Placeholder = placeHolder
 				inp.Label = lbls[1]
 				inp.ControlCenter()
 			}
@@ -655,6 +708,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Max = 100
 				inp.Step = 1
 				inp.MaxChars = 4
+				inp.Placeholder = placeHolder
 				inp.Label = lbls[0]
 				inp.ControlCenter()
 			}
@@ -670,6 +724,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Max = 100
 				inp.Step = 1
 				inp.MaxChars = 4
+				inp.Placeholder = placeHolder
 				inp.Label = lbls[1]
 				inp.ControlCenter()
 			}
@@ -683,6 +738,8 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Label = lbls[2]
 				inp.ControlRight()
 				inp.ControlCenter()
+				inp.StyleCtl.Desktop.StyleBox.Margin = "2rem 0 0 0"
+				inp.StyleCtl.Mobile.StyleBox.Margin = "0"
 			}
 
 		}

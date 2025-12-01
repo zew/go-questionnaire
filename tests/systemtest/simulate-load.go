@@ -481,7 +481,15 @@ func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) 
 			t.Errorf("error creating request for %v: %v", urlReq, err)
 		}
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
 		client := util.HttpClient()
+
+		if false {
+			// ts := httptest.NewTLSServer(handler) // or your mux wrapped in LoadAndSave
+			// defer ts.Close()
+			// client := ts.Client() // trusts the test server’s self-signed cert
+		}
+
 		resp, err := client.Do(req)
 		if err != nil {
 			t.Errorf("error requesting cookie from %v: %v; %v", urlReq, err, resp)

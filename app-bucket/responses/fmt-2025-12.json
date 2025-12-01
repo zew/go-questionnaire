@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "801d52c6695ee66915600b948ab29c8a9b5baa7641ccaf761955a646448206d5",
+ 	"md_5": "1ece87523a20978e2713efa495a81521035efbc5c1307383f962c0f31f60dcce",
  	"lang_codes": [
  		"de",
  		"en"
@@ -10051,31 +10051,31 @@
  							}
  						},
  						{
- 							"name": "ssq2",
+ 							"name": "ssq3",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "very_uncertain"
  						},
  						{
- 							"name": "ssq2",
+ 							"name": "ssq3",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "uncertain"
  						},
  						{
- 							"name": "ssq2",
+ 							"name": "ssq3",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "neutral"
  						},
  						{
- 							"name": "ssq2",
+ 							"name": "ssq3",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "certain"
  						},
  						{
- 							"name": "ssq2",
+ 							"name": "ssq3",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "very_certain"
@@ -11645,7 +11645,6 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 2,
  					"columns": 6,
  					"inputs": [
  						{
@@ -11913,291 +11912,8 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "ssq7a",
- 							"type": "radio",
- 							"label": {
- 								"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirt\u0026shy;schaften und Finanzmärkte dar.",
- 								"en": "Climate change represents a sig\u0026shy;nif\u0026shy;i\u0026shy;cant issue for economies and financial markets."
- 							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7a",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "disa"
- 						},
- 						{
- 							"name": "ssq7a",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "neutral"
- 						},
- 						{
- 							"name": "ssq7a",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "agr"
- 						},
- 						{
- 							"name": "ssq7a",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "strong_agr"
- 						},
- 						{
- 							"name": "ssq7a",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "no_answer"
- 						},
- 						{
- 							"name": "ssq7b",
- 							"type": "radio",
- 							"label": {
- 								"de": "Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneu\u0026shy;trale Wirt\u0026shy;schaft zu erreichen.",
- 								"en": "With the right measures, it is possible to achieve a climate-neu\u0026shy;tral econ\u0026shy;o\u0026shy;my by 2050."
- 							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7b",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "disa",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7b",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "neutral",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7b",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7b",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "strong_agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7b",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "no_answer",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7c",
- 							"type": "radio",
- 							"label": {
- 								"de": "Die Wirt\u0026shy;schaft kann klimaneu\u0026shy;tral werden und dabei weiterwachsen.",
- 								"en": "The econ\u0026shy;o\u0026shy;my can become climate-neu\u0026shy;tral while growing at the same time."
- 							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7c",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "disa"
- 						},
- 						{
- 							"name": "ssq7c",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "neutral"
- 						},
- 						{
- 							"name": "ssq7c",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "agr"
- 						},
- 						{
- 							"name": "ssq7c",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "strong_agr"
- 						},
- 						{
- 							"name": "ssq7c",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "no_answer"
  						}
  					],
- 					"randomization_group": 1,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -12220,959 +11936,367 @@
  				},
  				{
  					"bottom_vspacers": 2,
- 					"columns": 6,
+ 					"columns": 11,
  					"inputs": [
  						{
- 							"type": "label-as-input",
+ 							"type": "textblock",
  							"label": {
- 								"de": "Stim\u0026shy;me über\u0026shy;haupt nicht zu",
- 								"en": "Strong\u0026shy;ly dis\u0026shy;agree"
+ 								"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirt\u0026shy;schaften und Finanzmärkte dar.",
+ 								"en": "Climate change represents a sig\u0026shy;nif\u0026shy;i\u0026shy;cant issue for economies and financial markets."
  							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 5,
+ 							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Stim\u0026shy;me nicht zu",
- 								"en": "Dis\u0026shy;agree"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Weder noch",
- 								"en": "Un\u0026shy;de\u0026shy;cid\u0026shy;ed"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Stim\u0026shy;me zu",
- 								"en": "Agree"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Stim\u0026shy;me voll und ganz zu",
- 								"en": "Strong\u0026shy;ly agree"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "No an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq7d",
+ 							"name": "ssq71",
  							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq71",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq71",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq71",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq71",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "ssq71",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneu\u0026shy;trale Wirt\u0026shy;schaft zu erreichen.",
+ 								"en": "With the right measures, it is possible to achieve a climate-neu\u0026shy;tral econ\u0026shy;o\u0026shy;my by 2050."
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq72",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq72",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq72",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq72",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq72",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "ssq72",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Die Wirt\u0026shy;schaft kann klimaneu\u0026shy;tral werden und dabei weiterwachsen.",
+ 								"en": "The econ\u0026shy;o\u0026shy;my can become climate-neu\u0026shy;tral while growing at the same time."
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq73",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq73",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq73",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq73",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq73",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "ssq73",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"type": "textblock",
  							"label": {
  								"de": "Solange kei\u0026shy;ne ge\u0026shy;eig\u0026shy;nete Ersatztechnologie ver\u0026shy;füg\u0026shy;bar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen.",
  								"en": "As long as there is no suitable replacement tech\u0026shy;nol\u0026shy;o\u0026shy;gy, in\u0026shy;vest\u0026shy;ment should still flow into emissions-intensive industries."
  							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 5,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "ssq7d",
+ 							"name": "ssq74",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "disa",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
- 							"name": "ssq7d",
+ 							"name": "ssq74",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "neutral",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
- 							"name": "ssq7d",
+ 							"name": "ssq74",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
- 							"name": "ssq7d",
+ 							"name": "ssq74",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "strong_agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "5"
  						},
  						{
- 							"name": "ssq7d",
+ 							"name": "ssq74",
  							"type": "radio",
- 							"col_span_label": 0.4,
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "no_answer",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "6"
  						},
  						{
- 							"name": "ssq7e",
+ 							"name": "ssq74",
  							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"type": "textblock",
  							"label": {
  								"de": "Die Bewältigung des Klimawandels erfordert, dass emissionsintensive Un\u0026shy;ter\u0026shy;neh\u0026shy;men über die nötigen Finanzmittel verfügen, um auf emissionsarme Technologien umzustellen.",
  								"en": "Responding to climate change requires that emissions-intensive companies have the funding to transition to low-emission technologies."
  							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 5,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "ssq7e",
+ 							"name": "ssq75",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "disa",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
- 							"name": "ssq7e",
+ 							"name": "ssq75",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "neutral",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
- 							"name": "ssq7e",
+ 							"name": "ssq75",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
- 							"name": "ssq7e",
+ 							"name": "ssq75",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "strong_agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "5"
  						},
  						{
- 							"name": "ssq7e",
+ 							"name": "ssq75",
  							"type": "radio",
- 							"col_span_label": 0.4,
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "no_answer",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "6"
  						},
  						{
- 							"name": "ssq7f",
+ 							"name": "ssq75",
  							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"type": "textblock",
  							"label": {
  								"de": "Die Bewältigung des Klimawandels erfordert den Rückbau emissionsintensiver Sektoren und den Ausbau emissionsarmer Sektoren.",
  								"en": "Responding to climate change requires shrinking emissions-intensive industries and growing low-emissions industries."
  							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 5,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "ssq7f",
+ 							"name": "ssq76",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "disa",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
- 							"name": "ssq7f",
+ 							"name": "ssq76",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "neutral",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
- 							"name": "ssq7f",
+ 							"name": "ssq76",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
- 							"name": "ssq7f",
+ 							"name": "ssq76",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "strong_agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "5"
  						},
  						{
- 							"name": "ssq7f",
+ 							"name": "ssq76",
  							"type": "radio",
- 							"col_span_label": 0.4,
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "no_answer",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "6"
  						},
  						{
- 							"name": "ssq7g",
+ 							"name": "ssq76",
  							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"type": "textblock",
  							"label": {
  								"de": "Technologische Innovation wird der entscheidende Faktor für das Erreichen einer klimaneu\u0026shy;tralen Wirt\u0026shy;schaft sein.",
  								"en": "Technological innovation will be the decisive determinant of achieving a climate-neu\u0026shy;tral econ\u0026shy;o\u0026shy;my. "
  							},
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "strong_disa",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 5,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "ssq7g",
+ 							"name": "ssq77",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "disa",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
- 							"name": "ssq7g",
+ 							"name": "ssq77",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "neutral",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
- 							"name": "ssq7g",
+ 							"name": "ssq77",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
- 							"name": "ssq7g",
+ 							"name": "ssq77",
  							"type": "radio",
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "strong_agr",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "5"
  						},
  						{
- 							"name": "ssq7g",
+ 							"name": "ssq77",
  							"type": "radio",
- 							"col_span_label": 0.4,
+ 							"col_span": 1,
  							"col_span_control": 1,
- 							"value_radio": "no_answer",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "ssq77",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
  						}
  					],
- 					"randomization_group": 1,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   7fr    1fr    1fr    1fr    1fr    1.4fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 2,

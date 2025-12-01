@@ -472,60 +472,65 @@ func special202512(q *qst.QuestionnaireT) error {
 		}
 
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate6b,
-				labelsAgree(),
-				[]string{"ssq7a", "ssq7b", "ssq7c"},
-				[]string{"strong_disa", "disa", "neutral", "agr", "strong_agr", "no_answer"},
-				[]trl.S{
-					{
-						"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirtschaften und Finanzmärkte dar.",
-						"en": "Climate change represents a significant issue for economies and financial markets.",
-					},
-					{
-						"de": "Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneutrale Wirtschaft zu erreichen.",
-						"en": "With the right measures, it is possible to achieve a climate-neutral economy by 2050.",
-					},
-					{
-						"de": "Die Wirtschaft kann klimaneutral werden und dabei weiterwachsen.",
-						"en": "The economy can become climate-neutral while growing at the same time.",
-					},
-				},
-			)
-			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 0
-			gr.RandomizationGroup = 1
-		}
+			gr := page.AddGroup()
+			firstCol := float32(6)
+			gr.Cols = firstCol + 6
+			gr.BottomVSpacers = 2
+			gr.RandomizationGroup = 2
 
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate6b,
-				labelsAgree(),
-				[]string{"ssq7d", "ssq7e", "ssq7f", "ssq7g"},
-				[]string{"strong_disa", "disa", "neutral", "agr", "strong_agr", "no_answer"},
-				[]trl.S{
-					{
-						"de": "Solange keine geeignete Ersatztechnologie verfügbar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen.",
-						"en": "As long as there is no suitable replacement technology, investment should still flow into emissions-intensive industries.",
-					},
-					{
-						"de": "Die Bewältigung des Klimawandels erfordert, dass emissionsintensive Unternehmen über die nötigen Finanzmittel verfügen, um auf emissionsarme Technologien umzustellen.",
-						"en": "Responding to climate change requires that emissions-intensive companies have the funding to transition to low-emission technologies.",
-					},
-					{
-						"de": "Die Bewältigung des Klimawandels erfordert den Rückbau emissionsintensiver Sektoren und den Ausbau emissionsarmer Sektoren.",
-						"en": "Responding to climate change requires shrinking emissions-intensive industries and growing low-emissions industries.",
-					},
-					{
-						"de": "Technologische Innovation wird der entscheidende Faktor für das Erreichen einer klimaneutralen Wirtschaft sein.",
-						"en": "Technological innovation will be the decisive determinant of achieving a climate-neutral economy. ",
-					},
+			lbls := []trl.S{
+				{
+					"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirtschaften und Finanzmärkte dar.",
+					"en": "Climate change represents a significant issue for economies and financial markets.",
 				},
-			)
+				{
+					"de": "Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneutrale Wirtschaft zu erreichen.",
+					"en": "With the right measures, it is possible to achieve a climate-neutral economy by 2050.",
+				},
+				{
+					"de": "Die Wirtschaft kann klimaneutral werden und dabei weiterwachsen.",
+					"en": "The economy can become climate-neutral while growing at the same time.",
+				},
+				{
+					"de": "Solange keine geeignete Ersatztechnologie verfügbar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen.",
+					"en": "As long as there is no suitable replacement technology, investment should still flow into emissions-intensive industries.",
+				},
+				{
+					"de": "Die Bewältigung des Klimawandels erfordert, dass emissionsintensive Unternehmen über die nötigen Finanzmittel verfügen, um auf emissionsarme Technologien umzustellen.",
+					"en": "Responding to climate change requires that emissions-intensive companies have the funding to transition to low-emission technologies.",
+				},
+				{
+					"de": "Die Bewältigung des Klimawandels erfordert den Rückbau emissionsintensiver Sektoren und den Ausbau emissionsarmer Sektoren.",
+					"en": "Responding to climate change requires shrinking emissions-intensive industries and growing low-emissions industries.",
+				},
+				{
+					"de": "Technologische Innovation wird der entscheidende Faktor für das Erreichen einer klimaneutralen Wirtschaft sein.",
+					"en": "Technological innovation will be the decisive determinant of achieving a climate-neutral economy. ",
+				},
+			}
+			for i1 := 0; i1 < len(lbls); i1++ {
 
-			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 0
-			gr.RandomizationGroup = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					// inp.Name = fmt.Sprintf("ssq7%v", i1+1)
+					inp.ColSpan = firstCol
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 0
+					inp.Label = lbls[i1]
+				}
+				for i2 := 1; i2 < 7; i2++ {
+					{
+						inp := gr.AddInput()
+						inp.Type = "radio"
+						inp.Name = fmt.Sprintf("ssq7%v", i1+1)
+						inp.ValueRadio = fmt.Sprintf("%v", i2+1)
+						inp.ColSpan = 1
+						inp.ColSpanLabel = 0
+						inp.ColSpanControl = 1
+					}
+				}
+			}
 		}
 
 		{
@@ -540,13 +545,9 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.ColSpan = gr.Cols
 				inp.Label = trl.S{
 					"de": `
-						<br>
-						<br>
 						Für jeden Euro, der im Kontext des Klimawandels investiert wird: Wie viel sollte in Klimaschutz und wie viel in Klimaanpassung investiert werden?
 					`,
 					"en": `
-						<br>
-						<br>
 						For every euro invested in the context of climate change, how much should be invested in climate mitigation versus climate adaptation?
 					`,
 				}.Outline("8.")

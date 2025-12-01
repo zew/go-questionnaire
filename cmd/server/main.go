@@ -4,7 +4,6 @@ import (
 	"crypto/tls"
 	"fmt"
 	"log"
-	"math/rand"
 	"net/http"
 	"os"
 	"path"
@@ -22,7 +21,6 @@ import (
 
 func main() {
 
-	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 	log.SetFlags(log.Lshortfile | log.Ltime)
 
@@ -233,6 +231,11 @@ func main() {
 		}
 	} else {
 		log.Fatal(http.ListenAndServe(IPPort, mux4))
+
+		// ts := httptest.NewTLSServer(mux4)
+		// defer ts.Close()
+		// client := ts.Client() // trusts the test server’s self-signed cert
+		// _ = client
 	}
 
 }

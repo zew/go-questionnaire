@@ -340,8 +340,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 5
 				inp.ColSpanLabel = 5
 				inp.Label = trl.S{
-					"de": fmt.Sprint("<b>2c.</b> &nbsp; Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-					"en": fmt.Sprint("<b>2c.</b> &nbsp; The probability of a negative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"),                         // nextQ()
+					"de": "<b>2c.</b> &nbsp; Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei", //nextQ()
+					"en": "<b>2c.</b> &nbsp; The probability of a negative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be",                         // nextQ()
 				}
 			}
 		}

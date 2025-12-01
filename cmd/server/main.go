@@ -18,7 +18,6 @@ import (
 	"github.com/zew/go-questionnaire/pkg/tpl"
 	"github.com/zew/go-questionnaire/pkg/wrap"
 	"golang.org/x/crypto/acme/autocert"
-
 )
 
 func main() {
@@ -183,6 +182,33 @@ func main() {
 			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_128_GCM_SHA256)
 		}
 
+		// add HSTS header middleware
+		hstsMiddleware := func(next http.Handler) http.Handler {
+			return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+				// preventing downgrade of protocol, 2025-12
+				w.Header().Set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload")
+
+				w.Header().Set("X-Frame-Options", "DENY")
+				w.Header().Set("X-Content-Type-Options", "nosniff")
+				w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
+
+				w.Header().Set("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
+
+				// 2025-12 - we cannot get away from inline javascript
+				w.Header().Set("Content-Security-Policy",
+					"default-src 'self'; "+
+						"script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; "+
+						"style-src 'self' 'unsafe-inline'; "+
+						"img-src 'self' data:; "+
+						"object-src 'none'; "+
+						"frame-ancestors 'none';",
+				)
+
+				next.ServeHTTP(w, r)
+			})
+		}
+
 		// err = http.ListenAndServeTLS(IPPort, "server.pem", "server.key", mux4)
 		srv := &http.Server{
 			// upper limits for individual request timeouts - see wrap.LogAndRecover()
@@ -193,7 +219,7 @@ func main() {
 			Addr:              IPPort,
 			TLSConfig:         tlsCfg,
 			TLSNextProto:      make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
-			Handler:           mux4,
+			Handler:           hstsMiddleware(mux4),
 		}
 		if cfg.Get().LetsEncrypt {
 			tlsCfg.GetCertificate = certManager.GetCertificate

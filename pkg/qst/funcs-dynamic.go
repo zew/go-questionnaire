@@ -462,14 +462,37 @@ func knebLinkBackToPanel(q *QuestionnaireT, inp *inputT, paramSet string) (strin
 
 func previousPageAnswer(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
+	tm := map[string]trl.S{
+		"much_less_s": {
+			"de": "deutlich weniger streng sein.",
+			"en": "much less stringent.",
+		},
+		"less_s": {
+			"de": "etwas weniger streng sein.",
+			"en": "somewhat less stringent.",
+		},
+		"neutral": {
+			"de": "in etwa gleich bleiben.",
+			"en": "about the same.",
+		},
+		"more_s": {
+			"de": "etwas strenger sein.",
+			"en": "somewhat more stringent..",
+		},
+		"much_more_s": {
+			"de": "deutlich strenger sein.",
+			"en": "much more stringent.",
+		},
+	}
+
 	lbl := trl.S{
 		"de": `
 			Ihre Erwartungen an die globalen klimapolitischen Maßnahmen könnten Ihre Einschätzung der Auswirkungen des Klimawandels in den nächsten Jahrzehnten beeinflussen.
 			<br>
 			<br>
-			Ihre Antwort auf die letzte Frage lautete: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zur aktuellen Situation… 
-			<!-- ANTWORT AUF FRAGE 5 IN FETT EINFÜGEN -->
-			<b>%v</b>  yy
+			Ihre Antwort auf die letzte Frage lautete: Die globalen klimapolitischen Maßnahmen werden in den nächsten 10 Jahren im Vergleich zur aktuellen Situation  
+			<!-- … ANTWORT AUF FRAGE 5 IN FETT EINFÜGEN -->
+			<i>"%v"</i>  
 
 			<br>
 			`,
@@ -477,18 +500,19 @@ func previousPageAnswer(q *QuestionnaireT, inp *inputT, paramSet string) (string
 			Your expectations of global climate policies might influence your assessment of the impact of climate change over the next decades.
 			<br>
 			<br>
-			Your answer to the last question was: Over the next 10 years, compared to today, global climate policies will be… 
-			<!-- INSERT ANSWER TO QUESTION 5 IN BOLD -->
-			<b>%v</b> xx
+			Your answer to the last question was: Over the next 10 years, compared to today, global climate policies will be 
+			<!-- …  INSERT ANSWER TO QUESTION 5 IN BOLD -->
+			<i>"%v"</i> 
 			<br>
 		`,
 	}
-
 	inpPrev := q.ByName("ssq5")
-	ret := fmt.Sprintf(lbl.Tr(q.LangCode), inpPrev.Response)
+	prevAnswer := tm[inpPrev.Response].Tr(q.LangCode)
+	// ret := fmt.Sprintf(lbl.Tr(q.LangCode), inpPrev.Response)
+	ret := fmt.Sprintf(lbl.Tr(q.LangCode), prevAnswer)
 
-	log.Printf("the user answered %v", inpPrev.Response)
-	log.Printf("\t\t  return val is  %v", ret)
+	// log.Printf("the user answered %v", inpPrev.Response)
+	// log.Printf("\t\t  return val is  %v", ret)
 
 	return ret, nil
 }

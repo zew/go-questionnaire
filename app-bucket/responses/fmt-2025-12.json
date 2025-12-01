@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d14a1e04b020adcfdaae7122742137e117a55500f70284bf16be30c546990849",
+ 	"md_5": "fcf86090202a45369018260b24cf0f7b44114f20a9340e41f3152f1b765eaf13",
  	"lang_codes": [
  		"de",
  		"en"
@@ -12992,7 +12992,7 @@
  						"desktop": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "51rem"
+ 								"width_max": "48rem"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -13105,7 +13105,7 @@
  										"padding": "0 0 0 1.0rem"
  									},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"justify_self": "center"
  									},
  									"text_style": {}
  								},
@@ -13122,7 +13122,7 @@
  						"desktop": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "51rem"
+ 								"width_max": "48rem"
  							},
  							"grid_item_style": {},
  							"text_style": {}

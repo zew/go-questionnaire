@@ -484,19 +484,14 @@ func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) 
 
 		client := util.HttpClient()
 
-		if false {
-			// ts := httptest.NewTLSServer(handler) // or your mux wrapped in LoadAndSave
-			// defer ts.Close()
-			// client := ts.Client() // trusts the test server’s self-signed cert
-		}
-
 		resp, err := client.Do(req)
 		if err != nil {
 			t.Errorf("error requesting cookie from %v: %v; %v", urlReq, err, resp)
 		}
 		defer resp.Body.Close()
 		for _, v := range resp.Cookies() {
-			if v.Name == "session" {
+			// if v.Name == "session" {
+			if v.Name == "go-quest-session" {
 				sessCook = v
 			}
 		}

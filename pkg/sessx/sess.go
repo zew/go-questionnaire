@@ -49,16 +49,11 @@ func init() {
 
 	sessionManager.Lifetime = 24 * time.Hour
 	sessionManager.IdleTimeout = 3 * time.Hour
-
-	if os.Getenv("GO_TEST_MODE") != "true" {
-		sessionManager.Cookie.Secure = true // only send over HTTPS
-	}
-
 	sessionManager.Cookie.HttpOnly = true // not accessible to JS
 	// sessionManager.Cookie.SameSite = http.SameSiteLaxMode
 	sessionManager.Cookie.SameSite = http.SameSiteStrictMode
-	sessionManager.Cookie.Persist = true // survive browser restarts
-	sessionManager.Cookie.Name = "go-quest"
+	sessionManager.Cookie.Persist = true            // survive browser restarts
+	sessionManager.Cookie.Name = "go-quest-session" // also change in simulate_load resp.Cookies()
 }
 
 // Mgr exposes the session manager

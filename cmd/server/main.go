@@ -230,12 +230,12 @@ func main() {
 			log.Fatal(srv.ListenAndServeTLS(pthPem, pthKey))
 		}
 	} else {
+		// also for main_test.go
 		log.Fatal(http.ListenAndServe(IPPort, mux4))
-
+		// instead of client := util.HttpClient()  in simulate_load
 		// ts := httptest.NewTLSServer(mux4)
 		// defer ts.Close()
 		// client := ts.Client() // trusts the test server’s self-signed cert
-		// _ = client
 	}
 
 }

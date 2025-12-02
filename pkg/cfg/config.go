@@ -123,6 +123,10 @@ func Get() *ConfigT {
 func SwitchToTestConfig() {
 	cfgS.BindSocket = cfgS.BindSocketTests
 	cfgS.TLS = false // certificate not valid for localhost
+
+	// 2025-12 - not needed for tests to run
+	// sessx.Mgr().Cookie.Secure = false
+
 	log.Printf("Testing config: Port %v, TLS %v", cfgS.BindSocket, cfgS.TLS)
 }
 

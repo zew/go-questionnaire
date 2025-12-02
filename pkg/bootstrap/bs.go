@@ -112,12 +112,5 @@ func Config() {
 	if cfg.Get().SessionTimeout > 0 {
 		sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
 	}
-	// true breaks session persistence in excel-db -
-	// but not in go-count?down;
-	// it also leads to session breakdown on iphone safari mobile,
-	// maybe because appengine is pbberlin outside
-	sessx.Mgr().Cookie.Secure = false // default is false
-
-	// struc--2frm.S2F.Indent = 90
 
 }

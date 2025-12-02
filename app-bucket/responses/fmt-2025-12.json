@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d3d1ba53670979e3038ef1a01ceebd71ddef879446ae975f5fc29af8675798f3",
+ 	"md_5": "d223e29a27e58e84931534cdd80aac9a6c85cf1bb3fa1b81fd21bcfc9563ec20",
  	"lang_codes": [
  		"de",
  		"en"
@@ -9545,20 +9545,6 @@
  						}
  					},
  					"class": "grid-2025-12-ssq1"
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "history_stack_pg7",
- 							"type": "hidden"
- 						},
- 						{
- 							"name": "changeHistory",
- 							"type": "javascript-block",
- 							"col_span_control": 1
- 						}
- 					]
  				}
  			]
  		},
@@ -10079,6 +10065,15 @@
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "very_certain"
+ 						},
+ 						{
+ 							"name": "conditional-visibility",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inpDst": "pg08-grp02",
+ 								"inpSrc": "ssq2"
+ 							}
  						}
  					],
  					"style": {
@@ -10088,7 +10083,7 @@
  								"template_columns": "   1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
- 								"display": "grid"
+ 								"display": "none"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -11103,6 +11098,15 @@
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "very_certain"
+ 						},
+ 						{
+ 							"name": "conditional-visibility",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inpDst": "pg09-grp02",
+ 								"inpSrc": "ssq5"
+ 							}
  						}
  					],
  					"style": {
@@ -11112,7 +11116,7 @@
  								"template_columns": "   1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
- 								"display": "grid"
+ 								"display": "none"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -12467,6 +12471,7 @@
  							"max_chars": 4,
  							"step": 1,
  							"max": 100,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "00",
  								"en": "00"
@@ -12513,16 +12518,18 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0 0 1.0rem"
+ 										"margin": "0 2rem 0 0"
  									},
  									"grid_item_style": {
- 										"justify_self": "end"
+ 										"justify_self": "center"
  									},
  									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -12606,6 +12613,7 @@
  							"max_chars": 4,
  							"step": 1,
  							"max": 100,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "00",
  								"en": "00"
@@ -12652,8 +12660,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "2rem 0 0 0",
- 										"padding": "0 0 0 1.0rem"
+ 										"margin": "0 2rem 0 0"
  									},
  									"grid_item_style": {
  										"justify_self": "center"
@@ -12668,6 +12675,16 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inputs-complement-100",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq9a",
+ 								"inp2": "ssq9b",
+ 								"inp3": "ssq9c"
  							}
  						}
  					],

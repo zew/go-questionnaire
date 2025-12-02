@@ -108,7 +108,7 @@ func special202512(q *qst.QuestionnaireT) error {
 
 		}
 
-		qst.ChangeHistoryJS(q, page)
+		// qst.ChangeHistoryJS(q, page)
 
 	}
 
@@ -239,6 +239,21 @@ func special202512(q *qst.QuestionnaireT) error {
 			}.Outline("3.")
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 2
+			gr.Style.Desktop.StyleBox.Display = "none"
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "conditional-visibility"
+				// inp.JSBlockTrls = map[string]trl.S{
+				// 	"msg": s1,
+				// }
+				inp.JSBlockStrings = map[string]string{
+					"inpSrc": "ssq2",
+					"inpDst": "pg08-grp02",
+				}
+			}
 
 		}
 
@@ -347,6 +362,21 @@ func special202512(q *qst.QuestionnaireT) error {
 			}.Outline("6.")
 			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 2
+			gr.Style.Desktop.StyleBox.Display = "none"
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "conditional-visibility"
+				// inp.JSBlockTrls = map[string]trl.S{
+				// 	"msg": s1,
+				// }
+				inp.JSBlockStrings = map[string]string{
+					"inpSrc": "ssq5",
+					"inpDst": "pg09-grp02",
+				}
+			}
 
 		}
 
@@ -645,6 +675,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Step = 1
 				inp.MaxChars = 4
 				inp.Placeholder = placeHolder
+				inp.Disabled = true
 				inp.Label = lbls[1]
 				inp.ControlCenter()
 			}
@@ -656,7 +687,9 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 1
 				inp.Label = lbls[2]
-				inp.ControlRight()
+				inp.ControlCenter()
+				inp.StyleCtl.Desktop.StyleBox.Margin = "0 2rem 0 0"
+				inp.StyleCtl.Mobile.StyleBox.Margin = "0"
 			}
 
 		}
@@ -725,6 +758,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.Step = 1
 				inp.MaxChars = 4
 				inp.Placeholder = placeHolder
+				inp.Disabled = true
 				inp.Label = lbls[1]
 				inp.ControlCenter()
 			}
@@ -736,10 +770,23 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 1
 				inp.Label = lbls[2]
-				inp.ControlRight()
 				inp.ControlCenter()
-				inp.StyleCtl.Desktop.StyleBox.Margin = "2rem 0 0 0"
+				inp.StyleCtl.Desktop.StyleBox.Margin = "0 2rem 0 0"
 				inp.StyleCtl.Mobile.StyleBox.Margin = "0"
+			}
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "inputs-complement-100"
+				// inp.JSBlockTrls = map[string]trl.S{
+				// 	"msg": s1,
+				// }
+				inp.JSBlockStrings = map[string]string{
+					"inp1": "ssq9a",
+					"inp2": "ssq9b",
+					"inp3": "ssq9c",
+				}
 			}
 
 		}

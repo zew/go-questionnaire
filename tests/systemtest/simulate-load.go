@@ -491,7 +491,7 @@ func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) 
 		defer resp.Body.Close()
 		for _, v := range resp.Cookies() {
 			// if v.Name == "session" {
-			if v.Name == "go-quest-session" {
+			if v.Name == "__Secure-go-quest-session" {
 				sessCook = v
 			}
 		}

@@ -82,14 +82,12 @@ func special202512(q *qst.QuestionnaireT) error {
 						<br>
 						Wie wahrscheinlich schätzen Sie unter diesen Bedingungen die folgenden Szenarien ein?
 						<br>
-						<br>
 				`,
 					"en": `
 						Assuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change:
 						<br>
 						<br>
 						How likely do you find the following scenarios under these conditions?
-						<br>
 						<br>
 				`,
 				}.Outline("1.")

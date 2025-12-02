@@ -58,8 +58,8 @@ func init() {
 
 	// sessionManager.Cookie.SameSite = http.SameSiteLaxMode
 	sessionManager.Cookie.SameSite = http.SameSiteStrictMode
-	sessionManager.Cookie.Persist = true            // survive browser restarts
-	sessionManager.Cookie.Name = "go-quest-session" // also change in simulate_load resp.Cookies()
+	sessionManager.Cookie.Persist = true                     // survive browser restarts
+	sessionManager.Cookie.Name = "__Secure-go-quest-session" // also change in simulate_load resp.Cookies()
 }
 
 // Mgr exposes the session manager

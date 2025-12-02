@@ -179,28 +179,28 @@ func special202512(q *qst.QuestionnaireT) error {
 
 			lbls := []trl.S{
 				{
-					"de": "Kein signifikanter Anstieg ",
-					"en": "No significant rise",
+					"de": "kein signifikanter Anstieg",
+					"en": "no significant rise",
 				},
 				{
-					"de": "Etwa 1,5 °C",
-					"en": "About 1.5 °C",
+					"de": "etwa 1,5 °c",
+					"en": "about 1.5 °c",
 				},
 				{
-					"de": "Etwa 2 °C",
-					"en": "About 2 °C",
+					"de": "etwa 2 °c",
+					"en": "about 2 °c",
 				},
 				{
-					"de": "Etwa 3 °C",
-					"en": "About 3 °C",
+					"de": "etwa 3 °c",
+					"en": "about 3 °c",
 				},
 				{
-					"de": "Etwa 4 °C",
-					"en": "About 4 °C",
+					"de": "etwa 4 °c",
+					"en": "about 4 °c",
 				},
 				{
-					"de": "Mehr als 4 °C",
-					"en": "More than 4 °C",
+					"de": "mehr als 4 °c",
+					"en": "more than 4 °c",
 				},
 			}
 
@@ -251,7 +251,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				// }
 				inp.JSBlockStrings = map[string]string{
 					"inpSrc": "ssq2",
-					"inpDst": "pg08-grp02",
+					"inpDst": "pg07-grp02",
 				}
 			}
 
@@ -374,7 +374,7 @@ func special202512(q *qst.QuestionnaireT) error {
 				// }
 				inp.JSBlockStrings = map[string]string{
 					"inpSrc": "ssq5",
-					"inpDst": "pg09-grp02",
+					"inpDst": "pg08-grp02",
 				}
 			}
 
@@ -690,6 +690,21 @@ func special202512(q *qst.QuestionnaireT) error {
 				inp.ControlCenter()
 				inp.StyleCtl.Desktop.StyleBox.Margin = "0 2rem 0 0"
 				inp.StyleCtl.Mobile.StyleBox.Margin = "0"
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "inputs-complement-100"
+				// inp.JSBlockTrls = map[string]trl.S{
+				// 	"msg": s1,
+				// }
+				inp.JSBlockStrings = map[string]string{
+					"inp1": "ssq8a",
+					"inp2": "ssq8b",
+					"inp3": "ssq8c",
+				}
 			}
 
 		}

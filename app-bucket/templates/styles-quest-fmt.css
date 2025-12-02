@@ -100,9 +100,20 @@ dummy
 }
 
 /* 2025-12  */
-.grid-2025-12 label {
+.grid-2025-12-ssq1 label {
     text-align: left;
 }
+
+
+.grid-2025-12-ssq1 .pg07-grp01-inp07 label,
+.grid-2025-12-ssq1 .pg07-grp01-inp13 label,
+.grid-2025-12-ssq1 .pg07-grp01-inp19 label,
+dummy
+ {
+    /* background-color: red; */
+    padding-right: 1.5rem;
+}
+
 
 /* kursive, italic */
 i {

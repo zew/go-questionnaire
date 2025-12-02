@@ -937,28 +937,28 @@ func labelsUnlikely() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "Sehr un&shy;wahr&shy;schein&shy;lich",
-			"en": "Very unlikely",
+			"de": "sehr un&shy;wahr&shy;schein&shy;lich",
+			"en": "very unlikely",
 		},
 		{
-			"de": "Un&shy;wahr&shy;schein&shy;lich",
-			"en": "Unlikely",
+			"de": "un&shy;wahr&shy;schein&shy;lich",
+			"en": "unlikely",
 		},
 		{
-			"de": "Neutral",
-			"en": "Neutral",
+			"de": "neutral",
+			"en": "neutral",
 		},
 		{
-			"de": "Wahr&shy;schein&shy;lich",
-			"en": "Likely",
+			"de": "wahr&shy;schein&shy;lich",
+			"en": "likely",
 		},
 		{
-			"de": "Sehr wahr&shy;schein&shy;lich",
-			"en": "Very likely",
+			"de": "sehr wahr&shy;schein&shy;lich",
+			"en": "very likely",
 		},
 		{
-			"de": "Keine<br>Angabe",
-			"en": "No answer",
+			"de": "keine<br>Angabe",
+			"en": "no answer",
 		},
 	}
 
@@ -978,24 +978,24 @@ func labelsCertainty() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "Sehr unsicher",
-			"en": "Very uncertain",
+			"de": "überhaupt nicht sicher",
+			"en": "not at all confident",
 		},
 		{
-			"de": "Unsicher",
-			"en": "Uncertain",
+			"de": "unsicher",
+			"en": "not confident",
 		},
 		{
-			"de": "Neutral",
-			"en": "Neutral",
+			"de": "neutral",
+			"en": "neutral",
 		},
 		{
-			"de": "Sicher",
-			"en": "Certain",
+			"de": "sicher",
+			"en": "confident",
 		},
 		{
-			"de": "Sehr sicher",
-			"en": "Very certain",
+			"de": "sehr sicher",
+			"en": "very confident",
 		},
 	}
 
@@ -1007,28 +1007,28 @@ func labelsImpact() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "Stark negative Auswirkung",
-			"en": "Strong negative impact",
+			"de": "stark negative Auswirkung",
+			"en": "strong negative impact",
 		},
 		{
-			"de": "Moderate negative Auswirkung",
-			"en": "Moderate negative impact",
+			"de": "moderate negative Auswirkung",
+			"en": "moderate negative impact",
 		},
 		{
-			"de": "Keine Auswirkung",
-			"en": "No impact",
+			"de": "keine Auswirkung",
+			"en": "no impact",
 		},
 		{
-			"de": "Moderate positive Auswirkung",
-			"en": "Moderate positive impact",
+			"de": "moderate positive Auswirkung",
+			"en": "moderate positive impact",
 		},
 		{
-			"de": "Stark positive Auswirkung",
-			"en": "Strong positive impact",
+			"de": "stark positive Auswirkung",
+			"en": "strong positive impact",
 		},
 		{
-			"de": "Keine<br>Angabe",
-			"en": "No answer",
+			"de": "keine<br>Angabe",
+			"en": "no answer",
 		},
 	}
 
@@ -1059,10 +1059,6 @@ func labelsStringency() []trl.S {
 			"de": "deutlich strenger sein.",
 			"en": "much more stringent.",
 		},
-		// {
-		// 	"de": "Keine<br>Angabe",
-		// 	"en": "No answer",
-		// },
 	}
 
 	return tm
@@ -1073,28 +1069,28 @@ func labelsAgree() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "Stimme überhaupt nicht zu",
-			"en": "Strongly disagree",
+			"de": "stimme überhaupt nicht zu",
+			"en": "strongly disagree",
 		},
 		{
-			"de": "Stimme nicht zu",
-			"en": "Disagree",
+			"de": "stimme nicht zu",
+			"en": "disagree",
 		},
 		{
-			"de": "Weder noch",
-			"en": "Undecided",
+			"de": "weder noch",
+			"en": "undecided",
 		},
 		{
-			"de": "Stimme zu",
-			"en": "Agree",
+			"de": "stimme zu",
+			"en": "agree",
 		},
 		{
-			"de": "Stimme voll und ganz zu",
-			"en": "Strongly agree",
+			"de": "stimme voll und ganz zu",
+			"en": "strongly agree",
 		},
 		{
-			"de": "Keine<br>Angabe",
-			"en": "No answer",
+			"de": "keine<br>Angabe",
+			"en": "no answer",
 		},
 	}
 

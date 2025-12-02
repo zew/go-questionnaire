@@ -50,6 +50,7 @@ func init() {
 	sessionManager.IdleTimeout = 3 * time.Hour
 	// added 2025-12
 	sessionManager.Cookie.HttpOnly = true // not accessible to JS
+	sessionManager.Cookie.Secure = true   // not accessible to http
 	// sessionManager.Cookie.SameSite = http.SameSiteLaxMode
 	sessionManager.Cookie.SameSite = http.SameSiteStrictMode
 	sessionManager.Cookie.Persist = true            // survive browser restarts

@@ -34,9 +34,13 @@
         if (evt.target.checked){
             inp1.value = "";
             inp2.value = "";
+            inp1.placeholder = "";
+            inp2.placeholder = "";
             inp1.disabled = true;
         } else {
             inp1.disabled = false;
+            inp1.placeholder = "0";
+            // inp2.placeholder = "0";
         }
     }
 
@@ -44,12 +48,17 @@
     // addEventListener is cumulative
     window.addEventListener("load", function (evt) {
 
-        inp1.addEventListener('change', funcOnChange);
-
-
+        // inp1.addEventListener('change', funcOnChange);
+        inp1.addEventListener('input', funcOnChange);
         inp3.addEventListener('change', funcOnChecked);
 
+        inp1.placeholder = "0";
+        inp2.placeholder = "";
 
+        if (inp3.checked) {
+            const evtInit = new Event("change");
+            inp3.dispatchEvent(evtInit);         
+        }
 
     });
 

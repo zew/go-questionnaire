@@ -925,6 +925,14 @@ var columnTemplate6a = []float32{
 }
 
 var columnTemplate6b = []float32{
+	5, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0.4, 1,
+}
+var columnTemplate6c = []float32{
 	6, 1,
 	0, 1,
 	0, 1,
@@ -976,26 +984,49 @@ var columnTemplate5a = []float32{
 
 func labelsCertainty() []trl.S {
 
+	// tm := []trl.S{
+	// 	{
+	// 		"de": "überhaupt nicht sicher",
+	// 		"en": "not at all confident",
+	// 	},
+	// 	{
+	// 		"de": "unsicher",
+	// 		"en": "not confident",
+	// 	},
+	// 	{
+	// 		"de": "neutral",
+	// 		"en": "neutral",
+	// 	},
+	// 	{
+	// 		"de": "sicher",
+	// 		"en": "confident",
+	// 	},
+	// 	{
+	// 		"de": "sehr sicher",
+	// 		"en": "very confident",
+	// 	},
+	// }
+
 	tm := []trl.S{
 		{
-			"de": "überhaupt nicht sicher",
-			"en": "not at all confident",
+			"de": "überhaupt nicht sicher  <br>   1",
+			"en": "not at all confident    <br>   1",
 		},
 		{
-			"de": "unsicher",
-			"en": "not confident",
+			"de": "&nbsp;   <br>   2",
+			"en": "&nbsp;   <br>   2",
 		},
 		{
-			"de": "neutral",
-			"en": "neutral",
+			"de": "&nbsp;   <br>   3",
+			"en": "&nbsp;   <br>   3",
 		},
 		{
-			"de": "sicher",
-			"en": "confident",
+			"de": "&nbsp;   <br>   4",
+			"en": "&nbsp;   <br>   4",
 		},
 		{
-			"de": "sehr sicher",
-			"en": "very confident",
+			"de": "sehr sicher     <br>   5",
+			"en": "very confident  <br>   5",
 		},
 	}
 
@@ -1007,24 +1038,24 @@ func labelsImpact() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "stark negative Auswirkung",
-			"en": "strong negative impact",
+			"de": "stark    negativ",
+			"en": "strongly negative",
 		},
 		{
-			"de": "moderate negative Auswirkung",
-			"en": "moderate negative impact",
+			"de": "moderat    negativ",
+			"en": "moderately negative",
 		},
 		{
 			"de": "keine Auswirkung",
 			"en": "no impact",
 		},
 		{
-			"de": "moderate positive Auswirkung",
-			"en": "moderate positive impact",
+			"de": "moderat    positiv",
+			"en": "moderately positive ",
 		},
 		{
-			"de": "stark positive Auswirkung",
-			"en": "strong positive impact",
+			"de": "stark    positiv",
+			"en": "strongly positive ",
 		},
 		{
 			"de": "keine<br>Angabe",
@@ -1040,24 +1071,24 @@ func labelsStringency() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "deutlich weniger streng sein.",
-			"en": "much less stringent.",
+			"de": "deutlich weniger streng sein",
+			"en": "much less stringent",
 		},
 		{
-			"de": "etwas weniger streng sein.",
-			"en": "somewhat less stringent.",
+			"de": "etwas weniger streng sein",
+			"en": "somewhat less stringent",
 		},
 		{
-			"de": "in etwa gleich bleiben.",
-			"en": "about the same.",
+			"de": "in etwa gleich bleiben",
+			"en": "about the same",
 		},
 		{
-			"de": "etwas strenger sein.",
-			"en": "somewhat more stringent..",
+			"de": "etwas strenger sein",
+			"en": "somewhat more stringent.",
 		},
 		{
-			"de": "deutlich strenger sein.",
-			"en": "much more stringent.",
+			"de": "deutlich strenger sein",
+			"en": "much more stringent",
 		},
 	}
 

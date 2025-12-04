@@ -32,6 +32,7 @@ func special202512(q *qst.QuestionnaireT) error {
 			"en": "Climate<br>Expectations",
 		}
 		page.WidthMax("56rem")
+		page.WidthMax("72rem")
 
 		//
 		{
@@ -55,21 +56,21 @@ func special202512(q *qst.QuestionnaireT) error {
 
 			{
 				gb := qst.NewGridBuilderRadios(
-					columnTemplate6b,
+					columnTemplate6c,
 					labelsUnlikely(),
 					[]string{"ssq1a", "ssq1b", "ssq1c"},
 					[]string{"very_unlikely", "unlikely", "neutral", "likely", "very_likely", "no_answer"},
 					[]trl.S{
 						{
-							"de": "In den nächsten 25&nbsp;Jahren wird sich der Lebens&shy;standard vieler Menschen <i>weltweit</i> aufgrund des Klimawandels verschlechtern.",
-							"en": "Over the next 25&nbsp;years, the standard of living for many people around the world will decline due to climate change.",
-						},
-						{
 							"de": "In den nächsten 25&nbsp;Jahren wird sich der Lebens&shy;standard vieler Menschen <i>in Deutschland</i> aufgrund des Klimawandels verschlechtern.",
-							"en": "Over the next 25&nbsp;years, the standard of living for many people in Germany will decline due to climate change.",
+							"en": "Over the next 25&nbsp;years, the standard of living for many people <i>in Germany</i> will decline due to climate change.",
 						},
 						{
-							"de": "Bis zum Ende dieses Jahrhunderts wird das Erdsystem einen kritischen Kipppunkt erreichen, der zu irreversiblen Umweltveränderungen führen wird. ",
+							"de": "In den nächsten 25&nbsp;Jahren wird sich der Lebens&shy;standard vieler Menschen <i>weltweit</i> aufgrund des Klimawandels verschlechtern.",
+							"en": "Over the next 25&nbsp;years, the standard of living for many people <i>around the world</i> will decline due to climate change.",
+						},
+						{
+							"de": "Bis zum Ende dieses Jahrhunderts wird das Erdsystem einen kritischen Kipppunkt erreichen, der zu irreversiblen Umwelt&shy;ver&shy;änderungen führen wird. ",
 							"en": "By the end of this century, the Earth system is going to reach a critical tipping point leading to irreversible environmental changes.",
 						},
 					},
@@ -181,24 +182,24 @@ func special202512(q *qst.QuestionnaireT) error {
 					"en": "no significant rise",
 				},
 				{
-					"de": "etwa 1,5 °c",
-					"en": "about 1.5 °c",
+					"de": "etwa 1,5 °C",
+					"en": "about 1.5 °C",
 				},
 				{
-					"de": "etwa 2 °c",
-					"en": "about 2 °c",
+					"de": "etwa 2 °C",
+					"en": "about 2 °C",
 				},
 				{
-					"de": "etwa 3 °c",
-					"en": "about 3 °c",
+					"de": "etwa 3 °C",
+					"en": "about 3 °C",
 				},
 				{
-					"de": "etwa 4 °c",
-					"en": "about 4 °c",
+					"de": "etwa 4 °C",
+					"en": "about 4 °C",
 				},
 				{
-					"de": "mehr als 4 °c",
-					"en": "more than 4 °c",
+					"de": "mehr als 4 °C",
+					"en": "more than 4 °C",
 				},
 			}
 
@@ -430,14 +431,14 @@ func special202512(q *qst.QuestionnaireT) error {
 					},
 				)
 
-				gb.MainLabel = trl.S{
-					"de": `
-					Wie wird sich der Klimawandel unter Berücksichtigung Ihrer Erwartungen an die künftige Klimapolitik Ihrer Meinung nach auf das Wirtschaftswachstum in der EU auswirken?
-				`,
-					"en": `
-					Considering your expectations of future climate policies, how do you think climate change will impact economic growth in the EU?
-				`,
-				}.Outline("6a.")
+				// gb.MainLabel = trl.S{
+				// 	"de": `
+				// 	Wie wird sich der Klimawandel unter Berücksichtigung Ihrer Erwartungen an die künftige Klimapolitik Ihrer Meinung nach auf das Wirtschaftswachstum in der EU auswirken?
+				// `,
+				// 	"en": `
+				// 	Considering your expectations of future climate policies, how do you think climate change will impact economic growth in the EU?
+				// `,
+				// }.Outline("6a.")
 				gr := page.AddGrid(gb)
 				gr.BottomVSpacers = 2
 
@@ -604,7 +605,7 @@ func special202512(q *qst.QuestionnaireT) error {
 		}
 
 		//
-		placeHolder := trl.S{"de": "00", "en": "00"}
+		placeHolder := trl.S{"de": "0", "en": "0"}
 
 		{
 			gr := page.AddGroup()

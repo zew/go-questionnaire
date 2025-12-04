@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4ecc4d0dce5d618973bbd4644c826a44ce46b67181f5bcf91ca30db236ab58f6",
+ 	"md_5": "7f150ef6f849bdb4e7f33c7167e55eb1ea3198a608c196532b6a385dc0a4bc0d",
  	"lang_codes": [
  		"de",
  		"en"
@@ -259,7 +259,7 @@
  		{
  			"label": {
  				"de": "Konjunktur",
- 				"en": "Business cycle"
+ 				"en": "Business Cycle"
  			},
  			"description": {
  				"de": "",
@@ -267,7 +267,7 @@
  			},
  			"short": {
  				"de": "Konjunktur",
- 				"en": "Business cycle"
+ 				"en": "Business Cycle"
  			},
  			"style": {
  				"desktop": {
@@ -4529,7 +4529,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "56rem"
+ 						"width_max": "72rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4567,8 +4567,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAngenommen, die globale Klimapo\u0026shy;li\u0026shy;tik bleibt so, wie sie heute ist, und es werden kei\u0026shy;ne zusätzlichen Maßnahmen zur Bekämpfung des Klimawandels ergriffen:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tWie wahrscheinlich schätzen Sie un\u0026shy;ter diesen Bedingungen die folgenden Szenarien ein?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAssuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tHow likely do you find the following scenarios under these conditions?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAngenommen, die globale Klimapo\u0026shy;li\u0026shy;tik bleibt so, wie sie heute ist, und es werden kei\u0026shy;ne zusätzlichen Maßnahmen zur Bekämpfung des Klimawandels ergriffen:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tWie wahrscheinlich schätzen Sie un\u0026shy;ter diesen Bedingungen die folgenden Szenarien ein?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAssuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tHow likely do you find the following scenarios under these conditions?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -4843,8 +4843,8 @@
  							"name": "ssq1a",
  							"type": "radio",
  							"label": {
- 								"de": "In den nächsten 25\u0026nbsp;Jahren wird sich der Lebens\u0026shy;standard vieler Menschen \u003ci\u003eweltweit\u003c/i\u003e aufgrund des Klimawandels ver\u0026shy;schlech\u0026shy;tern.",
- 								"en": "Over the next 25\u0026nbsp;years, the standard of living for many people around the world will de\u0026shy;cline due to climate change."
+ 								"de": "In den nächsten 25\u0026nbsp;Jahren wird sich der Lebens\u0026shy;standard vieler Menschen \u003ci\u003ein Deutsch\u0026shy;land\u003c/i\u003e aufgrund des Klimawandels ver\u0026shy;schlech\u0026shy;tern.",
+ 								"en": "Over the next 25\u0026nbsp;years, the standard of living for many people \u003ci\u003ein Ger\u0026shy;ma\u0026shy;ny\u003c/i\u003e will de\u0026shy;cline due to climate change."
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -5009,8 +5009,8 @@
  							"name": "ssq1b",
  							"type": "radio",
  							"label": {
- 								"de": "In den nächsten 25\u0026nbsp;Jahren wird sich der Lebens\u0026shy;standard vieler Menschen \u003ci\u003ein Deutsch\u0026shy;land\u003c/i\u003e aufgrund des Klimawandels ver\u0026shy;schlech\u0026shy;tern.",
- 								"en": "Over the next 25\u0026nbsp;years, the standard of living for many people in Ger\u0026shy;ma\u0026shy;ny will de\u0026shy;cline due to climate change."
+ 								"de": "In den nächsten 25\u0026nbsp;Jahren wird sich der Lebens\u0026shy;standard vieler Menschen \u003ci\u003eweltweit\u003c/i\u003e aufgrund des Klimawandels ver\u0026shy;schlech\u0026shy;tern.",
+ 								"en": "Over the next 25\u0026nbsp;years, the standard of living for many people \u003ci\u003earound the world\u003c/i\u003e will de\u0026shy;cline due to climate change."
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -5175,7 +5175,7 @@
  							"name": "ssq1c",
  							"type": "radio",
  							"label": {
- 								"de": "Bis zum Ende dieses Jahrhunderts wird das Erdsystem einen kritischen Kipppunkt erreichen, der zu irreversiblen Umweltveränderungen führen wird. ",
+ 								"de": "Bis zum Ende dieses Jahrhunderts wird das Erdsystem einen kritischen Kipppunkt erreichen, der zu irreversiblen Umwelt\u0026shy;ver\u0026shy;änderungen führen wird. ",
  								"en": "By the end of this century, the Earth system is going to reach a critical tipping point leading to irreversible en\u0026shy;vi\u0026shy;ron\u0026shy;mental changes."
  							},
  							"col_span_label": 6,
@@ -5459,8 +5459,8 @@
  							"name": "ssq2",
  							"type": "radio",
  							"label": {
- 								"de": "etwa 1,5 °c",
- 								"en": "about 1.5 °c"
+ 								"de": "etwa 1,5 °C",
+ 								"en": "about 1.5 °C"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -5488,8 +5488,8 @@
  							"name": "ssq2",
  							"type": "radio",
  							"label": {
- 								"de": "etwa 2 °c",
- 								"en": "about 2 °c"
+ 								"de": "etwa 2 °C",
+ 								"en": "about 2 °C"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -5517,8 +5517,8 @@
  							"name": "ssq2",
  							"type": "radio",
  							"label": {
- 								"de": "etwa 3 °c",
- 								"en": "about 3 °c"
+ 								"de": "etwa 3 °C",
+ 								"en": "about 3 °C"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -5546,8 +5546,8 @@
  							"name": "ssq2",
  							"type": "radio",
  							"label": {
- 								"de": "etwa 4 °c",
- 								"en": "about 4 °c"
+ 								"de": "etwa 4 °C",
+ 								"en": "about 4 °C"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -5575,8 +5575,8 @@
  							"name": "ssq2",
  							"type": "radio",
  							"label": {
- 								"de": "mehr als 4 °c",
- 								"en": "more than 4 °c"
+ 								"de": "mehr als 4 °C",
+ 								"en": "more than 4 °C"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -5636,8 +5636,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "über\u0026shy;haupt nicht si\u0026shy;cher",
- 								"en": "not at all confident"
+ 								"de": "über\u0026shy;haupt nicht si\u0026shy;cher  \u003cbr\u003e   1",
+ 								"en": "not at all confident  \u003cbr\u003e   1"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5680,8 +5680,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "unsi\u0026shy;cher",
- 								"en": "not confident"
+ 								"de": "\u0026nbsp;   \u003cbr\u003e   2",
+ 								"en": "\u0026nbsp;   \u003cbr\u003e   2"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5724,8 +5724,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "neu\u0026shy;tral",
- 								"en": "neu\u0026shy;tral"
+ 								"de": "\u0026nbsp;   \u003cbr\u003e   3",
+ 								"en": "\u0026nbsp;   \u003cbr\u003e   3"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5768,8 +5768,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "si\u0026shy;cher",
- 								"en": "confident"
+ 								"de": "\u0026nbsp;   \u003cbr\u003e   4",
+ 								"en": "\u0026nbsp;   \u003cbr\u003e   4"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5812,8 +5812,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "sehr si\u0026shy;cher",
- 								"en": "very confident"
+ 								"de": "sehr si\u0026shy;cher  \u003cbr\u003e   5",
+ 								"en": "very confident  \u003cbr\u003e   5"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5965,8 +5965,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stark neg\u0026shy;ative Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "strong neg\u0026shy;ative impact"
+ 								"de": "stark    ne\u0026shy;ga\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
  							"col_span_label": 2.2,
  							"col_span_control": 1,
@@ -6010,8 +6010,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "moderate neg\u0026shy;ative Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "moderate neg\u0026shy;ative impact"
+ 								"de": "moderat    ne\u0026shy;ga\u0026shy;tiv",
+ 								"en": "moderately neg\u0026shy;ative"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6098,8 +6098,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "moderate pos\u0026shy;itive Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "moderate pos\u0026shy;itive impact"
+ 								"de": "moderat    po\u0026shy;si\u0026shy;tiv",
+ 								"en": "moderately pos\u0026shy;itive "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6142,8 +6142,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stark pos\u0026shy;itive Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "strong pos\u0026shy;itive impact"
+ 								"de": "stark    po\u0026shy;si\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly pos\u0026shy;itive "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6385,8 +6385,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "deut\u0026shy;lich weniger streng sein.",
- 								"en": "much less stringent."
+ 								"de": "deut\u0026shy;lich weniger streng sein",
+ 								"en": "much less stringent"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6429,8 +6429,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "etwas weniger streng sein.",
- 								"en": "somewhat less stringent."
+ 								"de": "etwas weniger streng sein",
+ 								"en": "somewhat less stringent"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6473,8 +6473,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "in etwa gleich blei\u0026shy;ben.",
- 								"en": "about the same."
+ 								"de": "in etwa gleich blei\u0026shy;ben",
+ 								"en": "about the same"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6517,8 +6517,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "etwas strenger sein.",
- 								"en": "somewhat more stringent.."
+ 								"de": "etwas strenger sein",
+ 								"en": "somewhat more stringent."
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6561,8 +6561,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "deut\u0026shy;lich strenger sein.",
- 								"en": "much more stringent."
+ 								"de": "deut\u0026shy;lich strenger sein",
+ 								"en": "much more stringent"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6669,8 +6669,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "über\u0026shy;haupt nicht si\u0026shy;cher",
- 								"en": "not at all confident"
+ 								"de": "über\u0026shy;haupt nicht si\u0026shy;cher  \u003cbr\u003e   1",
+ 								"en": "not at all confident  \u003cbr\u003e   1"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6713,8 +6713,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "unsi\u0026shy;cher",
- 								"en": "not confident"
+ 								"de": "\u0026nbsp;   \u003cbr\u003e   2",
+ 								"en": "\u0026nbsp;   \u003cbr\u003e   2"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6757,8 +6757,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "neu\u0026shy;tral",
- 								"en": "neu\u0026shy;tral"
+ 								"de": "\u0026nbsp;   \u003cbr\u003e   3",
+ 								"en": "\u0026nbsp;   \u003cbr\u003e   3"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6801,8 +6801,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "si\u0026shy;cher",
- 								"en": "confident"
+ 								"de": "\u0026nbsp;   \u003cbr\u003e   4",
+ 								"en": "\u0026nbsp;   \u003cbr\u003e   4"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6845,8 +6845,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "sehr si\u0026shy;cher",
- 								"en": "very confident"
+ 								"de": "sehr si\u0026shy;cher  \u003cbr\u003e   5",
+ 								"en": "very confident  \u003cbr\u003e   5"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7000,19 +7000,10 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e6a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie wird sich der Klimawandel un\u0026shy;ter Berücksichtigung Ihrer Erwartungen an die künftige Klimapo\u0026shy;li\u0026shy;tik Ihrer Meinung nach auf das Wirt\u0026shy;schaftswachstum in der EU auswirken?\n\t\t\t\t",
- 								"en": "\u003cb\u003e6a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tConsidering your expectations of future climate policies, how do you think climate change will impact eco\u0026shy;nom\u0026shy;ic growth in the EU?\n\t\t\t\t"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stark neg\u0026shy;ative Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "strong neg\u0026shy;ative impact"
+ 								"de": "stark    ne\u0026shy;ga\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
  							"col_span_label": 2.2,
  							"col_span_control": 1,
@@ -7056,8 +7047,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "moderate neg\u0026shy;ative Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "moderate neg\u0026shy;ative impact"
+ 								"de": "moderat    ne\u0026shy;ga\u0026shy;tiv",
+ 								"en": "moderately neg\u0026shy;ative"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7144,8 +7135,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "moderate pos\u0026shy;itive Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "moderate pos\u0026shy;itive impact"
+ 								"de": "moderat    po\u0026shy;si\u0026shy;tiv",
+ 								"en": "moderately pos\u0026shy;itive "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7188,8 +7179,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stark pos\u0026shy;itive Aus\u0026shy;wir\u0026shy;kung",
- 								"en": "strong pos\u0026shy;itive impact"
+ 								"de": "stark    po\u0026shy;si\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly pos\u0026shy;itive "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -8251,8 +8242,8 @@
  							"step": 1,
  							"max": 100,
  							"placeholder": {
- 								"de": "00",
- 								"en": "00"
+ 								"de": "0",
+ 								"en": "0"
  							},
  							"label": {
  								"de": "Klimaschutz (d. h. Vermeidung oder Minderung von Treibhausgasemissionen)",
@@ -8290,8 +8281,8 @@
  							"max": 100,
  							"disabled": true,
  							"placeholder": {
- 								"de": "00",
- 								"en": "00"
+ 								"de": "0",
+ 								"en": "0"
  							},
  							"label": {
  								"de": "Klimaanpassung (d. h. Anpassung an die Aus\u0026shy;wir\u0026shy;kungen des Klimawandels)",
@@ -8403,8 +8394,8 @@
  							"step": 1,
  							"max": 100,
  							"placeholder": {
- 								"de": "00",
- 								"en": "00"
+ 								"de": "0",
+ 								"en": "0"
  							},
  							"label": {
  								"de": "Neue grüne Technologien",
@@ -8442,8 +8433,8 @@
  							"max": 100,
  							"disabled": true,
  							"placeholder": {
- 								"de": "00",
- 								"en": "00"
+ 								"de": "0",
+ 								"en": "0"
  							},
  							"label": {
  								"de": "Skalierung bestehender grüner Technologien",

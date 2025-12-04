@@ -164,9 +164,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		// pge.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
-		page.Label = trl.S{"de": "Konjunktur", "en": "Business cycle"}
-		page.Short = trl.S{"de": "Konjunktur", "en": "Business cycle"}
+		// pge.Section = trl.S{"de": "Konjunktur", "en": "Business Cycle"}
+		page.Label = trl.S{"de": "Konjunktur", "en": "Business Cycle"}
+		page.Short = trl.S{"de": "Konjunktur", "en": "Business Cycle"}
 		page.WidthMax("34rem") // 55
 
 		page.ValidationFuncName = "fmtPage1"

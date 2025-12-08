@@ -1084,7 +1084,7 @@ func labelsStringency() []trl.S {
 		},
 		{
 			"de": "etwas strenger sein",
-			"en": "somewhat more stringent.",
+			"en": "somewhat more stringent",
 		},
 		{
 			"de": "deutlich strenger sein",

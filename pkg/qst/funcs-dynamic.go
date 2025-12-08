@@ -492,7 +492,7 @@ func previousPageAnswer(q *QuestionnaireT, inp *inputT, paramSet string) (string
 			<br>
 			<b>6a.</b>&nbsp; Angesichts Ihrer Erwartung, dass die künftige Klimapolitik 
 			<i>"%v"</i>  
-			sein wird, wie wird sich Ihrer Meinung nach der Klimawandel auf das Wirtschaftswachstum in der EU auswirken?
+			wird, wie wird sich Ihrer Meinung nach der Klimawandel auf das Wirtschaftswachstum in der EU auswirken?
 			<br>
 			`,
 		"en": `

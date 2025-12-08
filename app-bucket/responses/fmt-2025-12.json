@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7f150ef6f849bdb4e7f33c7167e55eb1ea3198a608c196532b6a385dc0a4bc0d",
+ 	"md_5": "936a9b5b0519ca4a02828d91d51d260f35f9c6bbad80eb658dc7e0cf14696361",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5415,7 +5415,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAngenommen, die globale Klimapo\u0026shy;li\u0026shy;tik bleibt so, wie sie heute ist, und es werden kei\u0026shy;ne zusätzlichen Maßnahmen zur Bekämpfung des Klimawandels ergriffen:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tWie hoch schätzen Sie un\u0026shy;ter diesen Bedingungen den Anstieg der durchschnittlichen Erdtemperatur bis zum Ende dieses Jahrhunderts ein?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAssuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tWhat would be your expectations for the global av\u0026shy;er\u0026shy;age temperature rise by the end of this century under these conditions? \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tAssuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change:\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tWhat is your expectation for the global av\u0026shy;er\u0026shy;age temperature rise \n\t\t\t\t\t\tby the end of this century under these conditions?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5637,7 +5637,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "über\u0026shy;haupt nicht si\u0026shy;cher  \u003cbr\u003e   1",
- 								"en": "not at all confident  \u003cbr\u003e   1"
+ 								"en": "not at all confident    \u003cbr\u003e   1"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5812,7 +5812,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "sehr si\u0026shy;cher  \u003cbr\u003e   5",
+ 								"de": "sehr si\u0026shy;cher     \u003cbr\u003e   5",
  								"en": "very confident  \u003cbr\u003e   5"
  							},
  							"col_span_control": 1,
@@ -6518,7 +6518,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "etwas strenger sein",
- 								"en": "somewhat more stringent."
+ 								"en": "somewhat more stringent"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6670,7 +6670,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "über\u0026shy;haupt nicht si\u0026shy;cher  \u003cbr\u003e   1",
- 								"en": "not at all confident  \u003cbr\u003e   1"
+ 								"en": "not at all confident    \u003cbr\u003e   1"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6845,7 +6845,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "sehr si\u0026shy;cher  \u003cbr\u003e   5",
+ 								"de": "sehr si\u0026shy;cher     \u003cbr\u003e   5",
  								"en": "very confident  \u003cbr\u003e   5"
  							},
  							"col_span_control": 1,

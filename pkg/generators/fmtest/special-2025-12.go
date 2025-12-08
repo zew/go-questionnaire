@@ -163,7 +163,8 @@ func special202512(q *qst.QuestionnaireT) error {
 						Assuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change:
 						<br>
 						<br>
-						What would be your expectations for the global average temperature rise by the end of this century under these conditions? 
+						What is your expectation for the global average temperature rise 
+						by the end of this century under these conditions?
 						<br>
 						<br>
 				`,

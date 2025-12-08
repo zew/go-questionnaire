@@ -108,6 +108,23 @@ dummy
     /* background-color: red; */
     padding-right: 1.5rem;
 }
+
+.pg07-grp02-inp01 ,
+.pg07-grp02-inp02 ,
+.pg07-grp02-inp03 ,
+.pg07-grp02-inp04 ,
+.pg07-grp02-inp05 ,
+.pg08-grp02-inp01 ,
+.pg08-grp02-inp02 ,
+.pg08-grp02-inp03 ,
+.pg08-grp02-inp04 ,
+.pg08-grp02-inp05 ,
+
+dummy {
+    position: relative;
+    top: 0.28rem;
+}
+
 #ssq8a, #ssq9a,
 #ssq8b, #ssq9b,
 dummy

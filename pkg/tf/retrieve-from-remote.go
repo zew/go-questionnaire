@@ -79,7 +79,8 @@ func RetrieveFromRemote(cfgRem *RemoteConnConfigT) (
 		defer resp.Body.Close()
 
 		for _, v := range resp.Cookies() {
-			if v.Name == "session" {
+			// if v.Name == "session" {
+			if v.Name == "__Secure-go-quest-session" {
 				sessCook = v
 			}
 		}

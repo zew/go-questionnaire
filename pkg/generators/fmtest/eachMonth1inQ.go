@@ -598,7 +598,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		}
 
 		//
-		if q.Survey.Year == 2025 && (q.Survey.Month == 4 || q.Survey.Month == 7) {
+		if q.Survey.Year == 2025 && (q.Survey.Month == 4 || q.Survey.Month == 7) || (q.Survey.Year == 2026 && q.Survey.Month == 1) {
 			moreInps := []string{
 				"rev_tariffs",
 				"rev_fiscal_spending",
@@ -611,8 +611,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 					"en": "US trade protectionism/ tariffs",
 				},
 				{
-					"de": "Ankündigungen der deutschen Bundesregierung zu Verteidigungs- und Staatsausgaben",
-					"en": "Announcements from the German government on military and fiscal spending",
+					"de": "Fiskalpolitik der deutschen Bundesregierung (Verteidigungs- und Staatsausgaben)",
+					"en": "Spending by the German government (military and fiscal)",
 				},
 			}
 

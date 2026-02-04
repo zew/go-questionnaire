@@ -109,20 +109,15 @@ dummy
     padding-right: 1.5rem;
 }
 
-.pg07-grp02-inp01 ,
-.pg07-grp02-inp02 ,
-.pg07-grp02-inp03 ,
-.pg07-grp02-inp04 ,
-.pg07-grp02-inp05 ,
-.pg08-grp02-inp01 ,
-.pg08-grp02-inp02 ,
-.pg08-grp02-inp03 ,
-.pg08-grp02-inp04 ,
-.pg08-grp02-inp05 ,
 
-dummy {
+
+/* 2026-02 */
+.pg08-grp01-inp06,
+.pg08-grp03-inp06,
+dummy
+{
     position: relative;
-    top: 0.28rem;
+    left: -2.18rem;
 }
 
 #ssq8a, #ssq9a,
@@ -141,6 +136,7 @@ i {
     padding-left:  0.2em;
     padding-right: 0.2em;    
 }
+
 
 /* 
     =========================================

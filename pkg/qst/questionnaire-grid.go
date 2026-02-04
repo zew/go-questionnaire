@@ -108,6 +108,7 @@ func (inp *inputT) shortSuffix(ctrl string, langCode string) string {
 // ControlFirst puts label behind input element;
 // for radio and checkbox inputs;
 // using CSS grid styles
+// compare LabelRight()
 func (inp *inputT) ControlFirst() {
 
 	inp.StyleLbl = css.ItemEndMA(inp.StyleLbl)

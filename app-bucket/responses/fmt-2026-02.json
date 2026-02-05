@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7a01f6bbdbe7a1aaaa2eb96f19592a6c51b26daf904fa2e3f412e52e10ff4f73",
+ 	"md_5": "86d91c17940143514af2300b0b2d2083b371cc921cc7521c9f264b5c808136f9",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6202,16 +6202,16 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - 2",
- 				"en": "Special: Short- and Medium-Term Economic Growth - 2"
+ 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
+ 				"en": "Special: Short- and Medium-Term Economic Growth - extra"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wirtschafts-\u003cbr\u003ewachstum - 2",
- 				"en": "Economic\u003cbr\u003eGrowth - 2"
+ 				"de": "Wirtschafts-\u003cbr\u003ewachstum - extra",
+ 				"en": "Economic\u003cbr\u003eGrowth - extra"
  			},
  			"style": {
  				"desktop": {
@@ -6793,7 +6793,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "ssq3_rev_free_label",
+ 							"name": "ssq3_free",
  							"type": "text",
  							"max_chars": 25,
  							"label": {
@@ -7495,7 +7495,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "ssq4_rev_free_label",
+ 							"name": "ssq4_free",
  							"type": "text",
  							"max_chars": 25,
  							"label": {
@@ -7576,17 +7576,18 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - 3",
- 				"en": "Special: Short- and Medium-Term Economic Growth - 3"
+ 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
+ 				"en": "Special: Short- and Medium-Term Economic Growth - extra"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wirtschafts-\u003cbr\u003ewachstum - 3",
- 				"en": "Economic\u003cbr\u003eGrowth - 3"
+ 				"de": "Wirtschafts-\u003cbr\u003ewachstum - extra",
+ 				"en": "Economic\u003cbr\u003eGrowth - extra"
  			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -7802,7 +7803,7 @@
  						{
  							"name": "ssq5_pfc",
  							"type": "number",
- 							"max_chars": 5,
+ 							"max_chars": 4,
  							"step": 0.01,
  							"max": 1000,
  							"suffix": {
@@ -7838,6 +7839,22 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "radio-xor-number",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq5",
+ 								"inp2": "ssq5_pfc",
+ 								"radioOn": "ssq56"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
  								}
  							}
  						}
@@ -8038,7 +8055,7 @@
  						{
  							"name": "ssq6_pfc",
  							"type": "number",
- 							"max_chars": 5,
+ 							"max_chars": 4,
  							"step": 0.01,
  							"max": 1000,
  							"suffix": {
@@ -8103,6 +8120,22 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "radio-xor-number",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq6",
+ 								"inp2": "ssq6_pfc",
+ 								"radioOn": "ssq66"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
  								}
  							}
  						}

@@ -127,7 +127,7 @@ func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem st
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.Name = fmt.Sprintf("%v_rev_free_label", inputStem)
+			inp.Name = fmt.Sprintf("%v_free", inputStem)
 			// inp.MaxChars = 17
 			inp.MaxChars = 25
 			inp.ColSpan = 1
@@ -190,6 +190,7 @@ func special202602QType2(page *qst.WrappedPageT, inputStem string, rowLbls []trl
 				inp2.Name = inputStem + "_pfc"
 				inp2.Min = 0
 				inp2.Max = 1000
+				inp2.Step = 0.1
 				inp2.Step = 0.01
 				inp2.MaxChars = 4
 
@@ -207,6 +208,25 @@ func special202602QType2(page *qst.WrappedPageT, inputStem string, rowLbls []trl
 
 			}
 
+		}
+
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "radio-xor-number"
+			s1 := trl.S{
+				"de": "unused",
+				"en": "unused",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+			inp.JSBlockStrings = map[string]string{
+				"inp1":    inputStem,
+				"inp2":    inputStem + "_pfc",
+				"radioOn": inputStem + "6",
+			}
 		}
 
 	}
@@ -227,12 +247,12 @@ func special202602(q *qst.QuestionnaireT) error {
 	page.WidthMax("64rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - 2",
-		"en": "Special: Short- and Medium-Term Economic Growth - 2",
+		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
+		"en": "Special: Short- and Medium-Term Economic Growth - extra",
 	}
 	page.Short = trl.S{
-		"de": "Wirtschafts-<br>wachstum - 2",
-		"en": "Economic<br>Growth - 2",
+		"de": "Wirtschafts-<br>wachstum - extra",
+		"en": "Economic<br>Growth - extra",
 	}
 	// page.WidthMax("42rem")
 
@@ -402,13 +422,14 @@ func special202602(q *qst.QuestionnaireT) error {
 	page.WidthMax("44rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - 3",
-		"en": "Special: Short- and Medium-Term Economic Growth - 3",
+		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
+		"en": "Special: Short- and Medium-Term Economic Growth - extra",
 	}
 	page.Short = trl.S{
-		"de": "Wirtschafts-<br>wachstum - 3",
-		"en": "Economic<br>Growth - 3",
+		"de": "Wirtschafts-<br>wachstum - extra",
+		"en": "Economic<br>Growth - extra",
 	}
+	page.SuppressInProgressbar = true
 	// page.WidthMax("42rem")
 
 	{

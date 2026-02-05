@@ -119,6 +119,19 @@ dummy
     position: relative;
     left: -2.18rem;
 }
+.pg07-grp09 {
+    margin-bottom: 0.7rem;
+}
+.pg07-grp09 .grid-item-lvl-2 {
+    line-height: 135%;
+}
+.pg08-grp00,
+.pg08-grp02,
+dummy {
+    margin-bottom: 0.7rem;
+}
+
+
 
 #ssq8a, #ssq9a,
 #ssq8b, #ssq9b,
@@ -188,6 +201,14 @@ i {
     #sq7_other_free {
         max-width: 6rem;
     }
+
+    /* 2026-02  */
+    #ssq3_free,
+    #ssq4_free,
+    dummy {
+        max-width: 8rem;
+    }
+
 
 
 }

@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem string, rowLblsRandomized []trl.S) {
+func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem string, rowLblsRandomized []trl.S, randGroup int) {
 
 	// colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
 
@@ -24,13 +24,11 @@ func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem st
 		// equal to below
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.Display = "grid"
-		// gr.Style.Desktop.StyleGridContainer.TemplateColumns = "7fr 1fr 1fr 1fr 1fr 1fr 1.4fr"
-		// gr.Style.Mobile.StyleGridContainer.TemplateColumns = "7fr 1fr 1fr 1fr 1fr 1fr 1.4fr"
 		gr.Style.Desktop.StyleGridContainer.TemplateColumns = colTemplateStr
 		gr.Style.Mobile.StyleGridContainer.TemplateColumns = colTemplateStr
 
 		gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
-		gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+		gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
 
 		gr.Style.Desktop.StyleText.FontSize = 90
 
@@ -63,7 +61,7 @@ func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem st
 		gr := page.AddGroup()
 		firstCol := float32(1)
 		gr.Cols = firstCol + 6
-		gr.RandomizationGroup = 2
+		gr.RandomizationGroup = randGroup
 		gr.BottomVSpacers = 0
 		if i1 == (len(rowLblsRandomized) - 1) {
 			gr.BottomVSpacers = 2 // bad, because of shuffling
@@ -79,7 +77,7 @@ func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem st
 		gr.Style.Mobile.StyleGridContainer.TemplateColumns = colTemplateStr
 
 		gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
-		gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+		gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
 
 		// distinct
 		gr.Style.Desktop.StyleBox.Margin = "0 0 0.6rem" // bottom margin
@@ -120,7 +118,7 @@ func special202602QType1(page *qst.WrappedPageT, colLabels []trl.S, inputStem st
 		gr.Style.Desktop.StyleGridContainer.TemplateColumns = styleRowFree
 		gr.Style.Mobile.StyleGridContainer.TemplateColumns = styleRowFree
 		gr.Style.Desktop.StyleGridContainer.GapColumn = "0.8rem"
-		gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
+		gr.Style.Mobile.StyleGridContainer.GapColumn = "0.2rem"
 
 		gr.BottomVSpacers = 4
 
@@ -201,7 +199,7 @@ func special202602QType2(page *qst.WrappedPageT, inputStem string, rowLbls []trl
 				// inp2.
 				inp2.Suffix = trl.S{
 					"de": "Prozentpunkte",
-					"en": "todo",
+					"en": "Percentage points",
 				}
 				// inp.LabelRight()
 				// inp2.ControlFirst()
@@ -247,12 +245,12 @@ func special202602(q *qst.QuestionnaireT) error {
 	page.WidthMax("64rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
-		"en": "Special: Short- and Medium-Term Economic Growth - extra",
+		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - Prognoserevisionen",
+		"en": "Special: Short- and Medium-Term Economic Growth - Revisions",
 	}
 	page.Short = trl.S{
-		"de": "Wirtschafts-<br>wachstum - extra",
-		"en": "Economic<br>Growth - extra",
+		"de": "Wirtschafts-<br>wachstum - Revisionen",
+		"en": "Economic<br>Growth - Revisions",
 	}
 	// page.WidthMax("42rem")
 
@@ -269,7 +267,7 @@ func special202602(q *qst.QuestionnaireT) error {
 					Für ein Quartal (z.B. 3. Quartal 2026) geben Teilnehmende ihre Einschätzung zum Wirtschaftswachstum in mehreren FMT-Befragungswellen ab. Dabei sind nicht nur die Prognosen, sondern auch deren Revisionen von großer Bedeutung. Wir sprechen dabei von einer Revision, wenn die Wirtschaftswachstumsprognose für ein gegebenes Quartal von der Prognose aus der vorhergehenden Umfragewelle abweicht.
 				`,
 				"en": `
-					todo
+					For some quarter (e.g., Q3 2026), participants submit their assessment of economic growth across several FMS survey waves. In this context, not only the forecasts but also their revisions are of great importance. We refer to a revision when the economic growth forecast for a given quarter deviates from the forecast in the preceding survey wave.
 				`,
 			}
 		}
@@ -288,7 +286,7 @@ func special202602(q *qst.QuestionnaireT) error {
 				Wenn Sie Ihre Wirtschaftswachstumsprognose für ein gegebenes Quartal revidieren: Wie wichtig sind <i>typischerweise</i> die folgenden Faktoren für Ihre Revision?
 			`,
 				"en": `
-				todo
+				When you revise your economic growth forecast for a given quarter: How important are the following factors <i>typically</i> for your revision?
 			`,
 			}.Outline("3.")
 		}
@@ -303,7 +301,7 @@ func special202602(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "eher wichtig",
-			"en": "important",
+			"en": "somewhat important",
 		},
 		{
 			"de": "weder noch",
@@ -311,7 +309,7 @@ func special202602(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "eher unwichtig",
-			"en": "rather unimportant",
+			"en": "somewhat unimportant",
 		},
 		{
 			"de": "sehr unwichtig",
@@ -325,22 +323,22 @@ func special202602(q *qst.QuestionnaireT) error {
 	lblsSsq3 := []trl.S{
 		{
 			"de": `Neue öffentliche Wirtschaftsdaten (z.B. die Inflationsrate oder Industrieproduktion)`,
-			"en": "todo",
+			"en": "New public economic data (e.g., the inflation rate or industrial production",
 		},
 		{
 			"de": `Neue nichtöffentliche Daten (z.B. Verkaufszahlen Ihres Unternehmens oder andere Interna)`,
-			"en": "todo",
+			"en": "New non-public data (e.g., sales of your company or other internal information)",
 		},
 		{
 			"de": `Neue wirtschaftspolitische Maßnahmen (z.B. eine Leitzinsänderung)`,
-			"en": "todo",
+			"en": "New economic policy measures (e.g., a change of the monetary policy interest rate)",
 		},
 		{
 			"de": `Änderungen der durchschnittlichen Prognose aller Befragten (der Konsensusprognose)`,
-			"en": "todo",
+			"en": "Changes of the average forecast among all participants (the consensus forecast)",
 		},
 	}
-	special202602QType1(qst.WrapPageT(page), colLabelsSsq3, "ssq3", lblsSsq3)
+	special202602QType1(qst.WrapPageT(page), colLabelsSsq3, "ssq3", lblsSsq3, 2)
 
 	//
 	//
@@ -357,7 +355,7 @@ func special202602(q *qst.QuestionnaireT) error {
 				Wenn Sie Ihre Wirtschaftswachstumsprognose für ein gegebenes Quartal nicht revidieren: Welche der folgenden Gründe für Ihre Entscheidung, keine Revision vorzunehmen, treffen <i>typischerweise</i> zu?
 			`,
 				"en": `
-				todo
+				When you do not revise your economic growth forecast for a given quarter: Which of the following reasons for your decision not to make a revision <i>typically</i> apply?
 			`,
 			}.Outline("4.")
 		}
@@ -369,7 +367,7 @@ func special202602(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "trifft eher zu",
-			"en": "rather applies",
+			"en": "tends to apply",
 		},
 		{
 			"de": "weder noch",
@@ -377,11 +375,11 @@ func special202602(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "trifft eher nicht zu",
-			"en": "rather not applies",
+			"en": "tends not to apply",
 		},
 		{
 			"de": "trifft nicht zu",
-			"en": "not applies",
+			"en": "does not apply",
 		},
 		{
 			"de": "keine<br>Angabe",
@@ -391,26 +389,26 @@ func special202602(q *qst.QuestionnaireT) error {
 	lblsSsq4 := []trl.S{
 		{
 			"de": `Der Zeitaufwand bzw. die Kosten der Prognoseanpassung sind zu hoch, wenn es nur geringfügige Änderungen in den Wirtschaftsaussichten gibt`,
-			"en": "todo",
+			"en": "The workload or the costs of the forecast adjustment are too high if there are only minor changes in the economic outlook",
 		},
 		{
 			"de": `Es gibt keine neuen Informationen, die eine Änderung der Wirtschaftsaussichten nahelegen`,
-			"en": "todo",
+			"en": "There is no new information that suggests a change in the economic outlook",
 		},
 		{
 			"de": `Meine Prognose passe ich nur dann an, wenn sie entscheidungsrelevant ist`,
-			"en": "todo",
+			"en": "I change my forecast only if it is decision-relevant",
 		},
 		{
 			"de": `Meine Prognose ist glaubwürdiger, wenn sie seltener angepasst wird`,
-			"en": "todo",
+			"en": "My forecast is more credible if it is adjusted less frequently",
 		},
 		{
 			"de": `Es gibt keine Änderung der durchschnittlichen Prognose aller Befragten (der Konsensusprognose)`,
-			"en": "todo",
+			"en": "There is no change in the average forecast among all participants (the consensus forecast)",
 		},
 	}
-	special202602QType1(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4)
+	special202602QType1(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4, 3)
 
 	//
 	//
@@ -422,11 +420,11 @@ func special202602(q *qst.QuestionnaireT) error {
 	page.WidthMax("44rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
-		"en": "Special: Short- and Medium-Term Economic Growth - extra",
+		"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - Prognoserevisionen",
+		"en": "Special: Short- and Medium-Term Economic Growth - Revisions",
 	}
 	page.Short = trl.S{
-		"de": "Wirtschafts-<br>wachstum - extra",
+		"de": "Wirtschafts-<br>wachstum - Prognose",
 		"en": "Economic<br>Growth - extra",
 	}
 	page.SuppressInProgressbar = true
@@ -449,7 +447,9 @@ func special202602(q *qst.QuestionnaireT) error {
 
 			`,
 				"en": `
-				todo
+				How large must the change in the economic outlook be for you to typically adjust your forecast in the survey?
+				<br>
+				The change in the economic outlook should be so large that my forecast changes at least by:
 			`,
 			}.Outline("5.")
 		}
@@ -458,31 +458,31 @@ func special202602(q *qst.QuestionnaireT) error {
 	lblsSsq5 := []trl.S{
 		{
 			"de": `±0,10 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,10 Percentage points",
 		},
 		{
 			"de": `±0,20 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,20 Percentage points",
 		},
 		{
 			"de": `±0,30 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,30 Percentage points",
 		},
 		{
 			"de": `±0,40 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,40 Percentage points",
 		},
 		{
 			"de": `±0,50 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,50 Percentage points",
 		},
 		{
 			"de": `±`,
-			"en": "todo",
+			"en": "±",
 		},
 		{
 			"de": `Ich passe meine Prognose immer an, wenn sich die Wirtschaftsaussichten ändern`,
-			"en": "todo",
+			"en": "I always adjust my forecast when the economic outlook changes",
 		},
 	}
 	special202602QType2(qst.WrapPageT(page), "ssq5", lblsSsq5)
@@ -504,7 +504,9 @@ func special202602(q *qst.QuestionnaireT) error {
 
 			`,
 				"en": `
-				todo
+				How large must the change in the consensus forecast be for you to typically adjust your forecast in the survey?
+				<br>
+				The consensus should change by at least how many percentage points:
 			`,
 			}.Outline("6.")
 		}
@@ -512,35 +514,35 @@ func special202602(q *qst.QuestionnaireT) error {
 	lblsSsq6 := []trl.S{
 		{
 			"de": `±0,10 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,10 Percentage points",
 		},
 		{
 			"de": `±0,20 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,20 Percentage points",
 		},
 		{
 			"de": `±0,30 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,30 Percentage points",
 		},
 		{
 			"de": `±0,40 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,40 Percentage points",
 		},
 		{
 			"de": `±0,50 Prozentpunkte `,
-			"en": "todo",
+			"en": "±0,50 Percentage points",
 		},
 		{
-			"de": `± `,
-			"en": "todo",
+			"de": `±`,
+			"en": "±",
 		},
 		{
 			"de": `Ich passe meine Prognose immer an, wenn sich der Konsensus ändert `,
-			"en": "todo",
+			"en": "I always adjust my forecast when the consensus changes",
 		},
 		{
 			"de": `Der Konsensus ist für meine Prognose irrelevant`,
-			"en": "todo",
+			"en": "The consensus is not relevant for my own forecast",
 		},
 	}
 	special202602QType2(qst.WrapPageT(page), "ssq6", lblsSsq6)

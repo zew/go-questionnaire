@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "86d91c17940143514af2300b0b2d2083b371cc921cc7521c9f264b5c808136f9",
+ 	"md_5": "93c33e55e5e81ad104aad2b23fcf6f4b41e757baff5cb4ab81182525fa1b1a68",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6202,16 +6202,16 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
- 				"en": "Special: Short- and Medium-Term Economic Growth - extra"
+ 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - Prognoserevisionen",
+ 				"en": "Special: Short- and Medium-Term Economic Growth - Revisions"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wirtschafts-\u003cbr\u003ewachstum - extra",
- 				"en": "Economic\u003cbr\u003eGrowth - extra"
+ 				"de": "Wirtschafts-\u003cbr\u003ewachstum - Revisionen",
+ 				"en": "Economic\u003cbr\u003eGrowth - Revisions"
  			},
  			"style": {
  				"desktop": {
@@ -6241,7 +6241,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\tFür ein Quartal (z.B. 3. Quartal 2026) geben Teilnehmende ihre Einschätzung zum Wirt\u0026shy;schaftswachstum in mehreren FMT-Befragungswellen ab. Dabei sind nicht nur die Pro\u0026shy;gno\u0026shy;sen, sondern auch deren Revisionen von großer Bedeutung. Wir sprechen dabei von einer Revision, wenn die Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se für ein gegebenes Quartal von der Pro\u0026shy;gno\u0026shy;se aus der vorhergehenden Umfragewelle abweicht.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\tFor some quarter (e.g., Q3 2026), participants submit their assessment of eco\u0026shy;nom\u0026shy;ic growth across several FMS survey waves. In this context, not only the forecasts but also their revisions are of great importance. We refer to a revision when the eco\u0026shy;nom\u0026shy;ic growth forecast for a given quarter deviates from the forecast in the preceding survey wave.\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6255,7 +6255,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWenn Sie Ihre Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se für ein gegebenes Quartal revidieren: Wie wich\u0026shy;tig sind \u003ci\u003etypischerweise\u003c/i\u003e die folgenden Faktoren für Ihre Revision?\n\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWhen you revise your eco\u0026shy;nom\u0026shy;ic growth forecast for a given quarter: How im\u0026shy;por\u0026shy;tant are the following factors \u003ci\u003etypically\u003c/i\u003e for your revision?\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6278,7 +6278,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "sehr wich\u0026shy;tig",
- 								"en": "very important"
+ 								"en": "very im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6306,7 +6306,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "eher wich\u0026shy;tig",
- 								"en": "important"
+ 								"en": "some\u0026shy;what im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6362,7 +6362,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "eher un\u0026shy;wich\u0026shy;tig",
- 								"en": "rather unimportant"
+ 								"en": "some\u0026shy;what un\u0026shy;im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6390,7 +6390,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "sehr un\u0026shy;wich\u0026shy;tig",
- 								"en": "very unimportant"
+ 								"en": "very un\u0026shy;im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6460,7 +6460,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -6475,7 +6475,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Neue öffentliche Wirt\u0026shy;schaftsda\u0026shy;ten (z.B. die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate oder Industrieproduktion)",
- 								"en": "todo"
+ 								"en": "New public eco\u0026shy;nom\u0026shy;ic data (e.g., the in\u0026shy;fla\u0026shy;ti\u0026shy;on rate or in\u0026shy;dus\u0026shy;tri\u0026shy;al production"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6540,7 +6540,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -6555,7 +6555,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Neue nichtöffentliche Da\u0026shy;ten (z.B. Verkaufszahlen Ihres Un\u0026shy;ter\u0026shy;neh\u0026shy;mens oder andere Interna)",
- 								"en": "todo"
+ 								"en": "New non-public data (e.g., sales of your company or other internal in\u0026shy;for\u0026shy;ma\u0026shy;tion)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6620,7 +6620,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -6635,7 +6635,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Neue wirt\u0026shy;schaftspolitische Maßnahmen (z.B. eine Leitzinsänderung)",
- 								"en": "todo"
+ 								"en": "New eco\u0026shy;nom\u0026shy;ic policy measures (e.g., a change of the monetary policy interest rate)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6700,7 +6700,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -6715,7 +6715,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Änderungen der durchschnittlichen Pro\u0026shy;gno\u0026shy;se aller Befragten (der Konsensuspro\u0026shy;gno\u0026shy;se)",
- 								"en": "todo"
+ 								"en": "Changes of the av\u0026shy;er\u0026shy;age forecast among all participants (the consensus forecast)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6780,7 +6780,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -6862,7 +6862,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "  7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -6877,7 +6877,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWenn Sie Ihre Wirt\u0026shy;schaftswachstumspro\u0026shy;gno\u0026shy;se für ein gegebenes Quartal nicht revidieren: Welche der folgenden Gründe für Ihre Entscheidung, kei\u0026shy;ne Revision vorzunehmen, treffen \u003ci\u003etypischerweise\u003c/i\u003e zu?\n\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWhen you do not revise your eco\u0026shy;nom\u0026shy;ic growth forecast for a given quarter: Which of the following reasons for your decision not to make a revision \u003ci\u003etypically\u003c/i\u003e apply?\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6900,7 +6900,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "trifft zu",
- 								"en": "applies"
+ 								"en": "ap\u0026shy;plies"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6928,7 +6928,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "trifft eher zu",
- 								"en": "rather applies"
+ 								"en": "tends to apply"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6984,7 +6984,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "trifft eher nicht zu",
- 								"en": "rather not applies"
+ 								"en": "tends not to apply"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7012,7 +7012,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "trifft nicht zu",
- 								"en": "not applies"
+ 								"en": "does not apply"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7082,7 +7082,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7097,7 +7097,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Der Zeitaufwand bzw. die Kosten der Pro\u0026shy;gno\u0026shy;seanpassung sind zu hoch, wenn es nur geringfügige Änderungen in den Wirt\u0026shy;schaftsaussichten gibt",
- 								"en": "todo"
+ 								"en": "The workload or the costs of the forecast adjustment are too high if there are only minor changes in the eco\u0026shy;nom\u0026shy;ic outlook"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7145,7 +7145,7 @@
  							"value_radio": "6"
  						}
  					],
- 					"randomization_group": 2,
+ 					"randomization_group": 3,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -7162,7 +7162,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7177,7 +7177,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Es gibt kei\u0026shy;ne neuen In\u0026shy;for\u0026shy;ma\u0026shy;tionen, die eine Änderung der Wirt\u0026shy;schaftsaussichten nahelegen",
- 								"en": "todo"
+ 								"en": "There is no new in\u0026shy;for\u0026shy;ma\u0026shy;tion that suggests a change in the eco\u0026shy;nom\u0026shy;ic outlook"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7225,7 +7225,7 @@
  							"value_radio": "6"
  						}
  					],
- 					"randomization_group": 2,
+ 					"randomization_group": 3,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -7242,7 +7242,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7257,7 +7257,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Meine Pro\u0026shy;gno\u0026shy;se passe ich nur dann an, wenn sie entscheidungsre\u0026shy;le\u0026shy;vant ist",
- 								"en": "todo"
+ 								"en": "I change my forecast only if it is decision-re\u0026shy;le\u0026shy;vant"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7305,7 +7305,7 @@
  							"value_radio": "6"
  						}
  					],
- 					"randomization_group": 2,
+ 					"randomization_group": 3,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -7322,7 +7322,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7337,7 +7337,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Meine Pro\u0026shy;gno\u0026shy;se ist glaubwürdiger, wenn sie seltener angepasst wird",
- 								"en": "todo"
+ 								"en": "My forecast is more credible if it is adjusted less frequently"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7385,7 +7385,7 @@
  							"value_radio": "6"
  						}
  					],
- 					"randomization_group": 2,
+ 					"randomization_group": 3,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -7402,7 +7402,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7417,7 +7417,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Es gibt kei\u0026shy;ne Änderung der durchschnittlichen Pro\u0026shy;gno\u0026shy;se aller Befragten (der Konsensuspro\u0026shy;gno\u0026shy;se)",
- 								"en": "todo"
+ 								"en": "There is no change in the av\u0026shy;er\u0026shy;age forecast among all participants (the consensus forecast)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7465,7 +7465,7 @@
  							"value_radio": "6"
  						}
  					],
- 					"randomization_group": 2,
+ 					"randomization_group": 3,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -7482,7 +7482,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7564,7 +7564,7 @@
  						"mobile": {
  							"grid_container_style": {
  								"template_columns": "  7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0"
+ 								"column_gap": "0.2rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -7576,15 +7576,15 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - extra",
- 				"en": "Special: Short- and Medium-Term Economic Growth - extra"
+ 				"de": "Sonderfragen: Kurz- und mittelfristiges Wirtschaftswachstum - Prognoserevisionen",
+ 				"en": "Special: Short- and Medium-Term Economic Growth - Revisions"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wirtschafts-\u003cbr\u003ewachstum - extra",
+ 				"de": "Wirtschafts-\u003cbr\u003ewachstum - Prognose",
  				"en": "Economic\u003cbr\u003eGrowth - extra"
  			},
  			"suppress_in_progressbar": true,
@@ -7615,7 +7615,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWie groß muss typischerweise die Änderung der Wirt\u0026shy;schaftsaussichten für ein Quartal sein, damit Sie Ihre Pro\u0026shy;gno\u0026shy;se in der Befragung tatsächlich anpassen?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tDie Änderung der Wirt\u0026shy;schaftsaussichten sollte so groß sein, dass sich meine Pro\u0026shy;gno\u0026shy;se mindestens ändert um:\n\n\t\t\t",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHow large must the change in the eco\u0026shy;nom\u0026shy;ic outlook be for you to typically adjust your forecast in the survey?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tThe change in the eco\u0026shy;nom\u0026shy;ic outlook should be so large that my forecast changes at least by:\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7631,7 +7631,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,10 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,10 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7660,7 +7660,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,20 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,20 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7689,7 +7689,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,30 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,30 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7718,7 +7718,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,40 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,40 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7747,7 +7747,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,50 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,50 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7776,7 +7776,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±",
- 								"en": "todo"
+ 								"en": "±"
  							},
  							"col_span": 1,
  							"col_span_label": 4,
@@ -7808,7 +7808,7 @@
  							"max": 1000,
  							"suffix": {
  								"de": "Pro\u0026shy;zent\u0026shy;punkte",
- 								"en": "todo"
+ 								"en": "Per\u0026shy;centage points"
  							},
  							"col_span": 5,
  							"col_span_control": 1
@@ -7818,7 +7818,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ich passe meine Pro\u0026shy;gno\u0026shy;se immer an, wenn sich die Wirt\u0026shy;schaftsaussichten ändern",
- 								"en": "todo"
+ 								"en": "I always adjust my forecast when the eco\u0026shy;nom\u0026shy;ic outlook changes"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7867,7 +7867,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWie groß muss die Änderung des Konsensus (der durchschnittlichen Pro\u0026shy;gno\u0026shy;se aller Befragten) sein, damit Sie Ihre Pro\u0026shy;gno\u0026shy;se in der Befragung typischerweise anpassen?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tDer Konsensus sollte sich mindestens ändern um:\n\n\t\t\t",
- 								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\ttodo\n\t\t\t"
+ 								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHow large must the change in the consensus forecast be for you to typically adjust your forecast in the survey?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tThe consensus should change by at least how many per\u0026shy;centage points:\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7883,7 +7883,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,10 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,10 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7912,7 +7912,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,20 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,20 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7941,7 +7941,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,30 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,30 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7970,7 +7970,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,40 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,40 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7999,7 +7999,7 @@
  							"type": "radio",
  							"label": {
  								"de": "±0,50 Pro\u0026shy;zent\u0026shy;punkte ",
- 								"en": "todo"
+ 								"en": "±0,50 Per\u0026shy;centage points"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8027,8 +8027,8 @@
  							"name": "ssq6",
  							"type": "radio",
  							"label": {
- 								"de": "± ",
- 								"en": "todo"
+ 								"de": "±",
+ 								"en": "±"
  							},
  							"col_span": 1,
  							"col_span_label": 4,
@@ -8060,7 +8060,7 @@
  							"max": 1000,
  							"suffix": {
  								"de": "Pro\u0026shy;zent\u0026shy;punkte",
- 								"en": "todo"
+ 								"en": "Per\u0026shy;centage points"
  							},
  							"col_span": 5,
  							"col_span_control": 1
@@ -8070,7 +8070,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ich passe meine Pro\u0026shy;gno\u0026shy;se immer an, wenn sich der Konsensus ändert ",
- 								"en": "todo"
+ 								"en": "I always adjust my forecast when the consensus changes"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8099,7 +8099,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Der Konsensus ist für meine Pro\u0026shy;gno\u0026shy;se ir\u0026shy;re\u0026shy;le\u0026shy;vant",
- 								"en": "todo"
+ 								"en": "The consensus is not re\u0026shy;le\u0026shy;vant for my own forecast"
  							},
  							"col_span": 6,
  							"col_span_label": 1,

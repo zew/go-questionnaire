@@ -209,6 +209,7 @@ var hyph = []string{
 
 	// https://www.merriam-webster.com/dictionary/estimate
 	// english
+	"ap|plies",
 	"ac|counts",
 	"ad|min|is|tra|tion",
 	"an|swer",
@@ -250,6 +251,8 @@ var hyph = []string{
 	"im|prove",
 	"Ger|ma|ny",
 	"im|prove|ment",
+	"im|por|tant",
+	"un|im|por|tant",
 	"in|crease",
 	"in|dif|fer|ent",
 	"in|dus|tri|al",
@@ -287,6 +290,7 @@ var hyph = []string{
 	"sig|nif|i|cant|ly",
 	"slight|ly",
 	"Small+|medium",
+	"some|what",
 	"strong|ly",
 	"strong|ly",
 	"sub|or|di|nat|ed",

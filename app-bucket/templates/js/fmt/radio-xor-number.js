@@ -1,7 +1,7 @@
-// inpSrcId - radio input CSS class name
-// inpDstId - group div
-//  any radio checking triggers the group to become visible (display: grid)
-//  initial invisibility set with 			gr.Style.Desktop.StyleBox.Display = "none"
+// inp1Id - radio input name
+// inp2Id - number input - assigned to radio 6
+//    any radio checking triggers the disabling of the number input - except radio 6
+//    initial disabling NOT set 			...gr.Style.Desktop....
 
 
 // function block isolates multiple instances
@@ -14,8 +14,8 @@
 
     console.log( `names for inp1-2 -${inp1Id}- -${inp2Id}-  radioOn -${radioOn}- `);
 
-    var inp1 = document.getElementById(inp1Id);
-    var inp2 = document.getElementById(inp2Id);
+    var inp2   = document.getElementById(inp2Id);
+    var radio6 = document.getElementById(radioOn);
 
     function checkHandler(evt) {
         // console.log("selected:", evt.target.value);
@@ -29,6 +29,8 @@
             }
         }
     }
+
+
 
 
     // addEventListener is cumulative
@@ -49,11 +51,19 @@
             // console.log(`change listener assigned to ${inpSrcRadio.id} - ${inpSrcRadio.type}`);
         }
 
+
+        function numberInput(evt) {
+            radio6.checked = true;
+        }
+        inp2.addEventListener('input', numberInput);
+
+
         // init
         if (anyChecked) {
             const evtInit = new Event("change");
             anyChecked.dispatchEvent(evtInit);         
         }    
+
 
         
     });

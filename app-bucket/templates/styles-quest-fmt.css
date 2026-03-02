@@ -112,6 +112,8 @@ dummy
 
 
 /* 2026-02 */
+
+/* 
 .pg08-grp01-inp06,
 .pg08-grp03-inp06,
 dummy
@@ -130,7 +132,28 @@ dummy
 dummy {
     margin-bottom: 0.7rem;
 }
+ */
 
+
+/* 2026-02 */
+#ssq1_free,
+dummy {
+    max-width: 60ch;
+    margin-left: -6rem;
+}
+
+.pg07-grp01,
+.pg08-grp01,
+dummy  {
+    margin-top:    0.5rem ;
+    margin-bottom: 0.2rem ;
+}
+.pg07-grp01 .grid-item-lvl-2 ,
+.pg08-grp01 .grid-item-lvl-2 ,
+dummy  {
+    font-size:     90% ;
+    line-height:  115% ;
+}
 
 
 #ssq8a, #ssq9a,
@@ -209,6 +232,18 @@ i {
         max-width: 8rem;
     }
 
+
+    /* 2026-03  */
+    #ssq1_free,
+    dummy {
+        max-width: 20ch;
+        margin-left: 0;
+    }
+    #ssq5_free,
+    dummy {
+        max-width: 12ch;
+        margin-left: 0;
+    }
 
 
 }

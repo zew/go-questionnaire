@@ -53,6 +53,7 @@ var hyph = []string{
 
 	//
 	// german
+	"äu|ßerst",
 	"ab|wer|ten",
 	"Ab|wei|chung",
 	"Ana|ly|se",

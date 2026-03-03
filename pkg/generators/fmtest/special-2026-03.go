@@ -245,12 +245,12 @@ func special202603(q *qst.QuestionnaireT) error {
 	page.WidthMax("48rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: todo",
-		"en": "Special: todo",
+		"de": "",
+		"en": "",
 	}
 	page.Short = trl.S{
-		"de": "todo",
-		"en": "todo",
+		"de": "Klima-<br>erwartungen",
+		"en": "Climate<br>Expectations",
 	}
 	// page.WidthMax("42rem")
 
@@ -358,8 +358,8 @@ func special202603(q *qst.QuestionnaireT) error {
 	page.WidthMax("64rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: todo",
-		"en": "Special: todo",
+		"de": "",
+		"en": "",
 	}
 	page.SuppressInProgressbar = true
 
@@ -384,28 +384,28 @@ func special202603(q *qst.QuestionnaireT) error {
 
 	colLabelsSsq3and5 := []trl.S{
 		{
-			"de": "überhaupt nicht wichtig   <br>1",
-			"en": "not at all important      <br>1",
+			"de": "überhaupt nicht wichtig   <br>  <span class='ordinal-numbers'> 1 </span> ",
+			"en": "not at all important      <br>  <span class='ordinal-numbers'> 1 </span> ",
 		},
 		{
-			"de": "<br>2",
-			"en": "<br>2",
+			"de": "<br>  <span class='ordinal-numbers'> 2 </span> ",
+			"en": "<br>  <span class='ordinal-numbers'> 2 </span> ",
 		},
 		{
-			"de": "<br>3",
-			"en": "<br>3",
+			"de": "<br>  <span class='ordinal-numbers'> 3 </span> ",
+			"en": "<br>  <span class='ordinal-numbers'> 3 </span> ",
 		},
 		{
-			"de": "<br>4",
-			"en": "<br>4",
+			"de": "<br>  <span class='ordinal-numbers'> 4 </span> ",
+			"en": "<br>  <span class='ordinal-numbers'> 4 </span> ",
 		},
 		{
-			"de": "äußerst wichtig           <br>5 ",
-			"en": "extremely important       <br>5 ",
+			"de": "äußerst wichtig           <br>  <span class='ordinal-numbers'> 5  </span> ",
+			"en": "extremely important       <br>  <span class='ordinal-numbers'> 5  </span> ",
 		},
 		{
-			"de": "keine<br>Angabe    <br>&nbsp;",
-			"en": "no answer          <br>&nbsp;",
+			"de": "keine<br>Angabe    <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
+			"en": "no answer          <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
 		},
 	}
 	lblsSsq3 := []trl.S{
@@ -452,6 +452,64 @@ func special202603(q *qst.QuestionnaireT) error {
 	}
 	special202603B(qst.WrapPageT(page), colLabelsSsq3and5, "ssq3", lblsSsq3, 3, false)
 
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 0
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+					Inwieweit sollte der Finanzsektor über seine Rolle als Intermediär hinaus eine proaktive Rolle bei der Finanzierung der grünen Transformation übernehmen? 
+					
+					<!-  (Überhaupt nicht 1 - In sehr hohem Maße 5)  -->
+				`,
+				"en": `
+					Beyond being an intermediary, to what extent should the financial sector play a proactive role in financing the green transition? 
+					
+					<!-- (Not at all 1 - To a great extent 5). -->
+				`,
+			}.Outline("4.")
+		}
+	}
+	//
+	//
+	colLabelsSsq4 := []trl.S{
+		{
+			"de": "überhaupt nicht     <br>  <span class='ordinal-numbers'> 1 </span> ",
+			"en": "not at all          <br>  <span class='ordinal-numbers'> 1 </span> ",
+		},
+		{
+			"de": "<br>  <span class='ordinal-numbers'> 2 </span> ",
+			"en": "<br>  <span class='ordinal-numbers'> 2 </span> ",
+		},
+		{
+			"de": "<br>  <span class='ordinal-numbers'> 3 </span> ",
+			"en": "<br>  <span class='ordinal-numbers'> 3 </span> ",
+		},
+		{
+			"de": "<br>  <span class='ordinal-numbers'> 4 </span> ",
+			"en": "<br>  <span class='ordinal-numbers'> 4 </span> ",
+		},
+		{
+			"de": "in sehr hohem Maße       <br>  <span class='ordinal-numbers'> 5  </span> ",
+			"en": "to a great extent        <br>  <span class='ordinal-numbers'> 5  </span> ",
+		},
+		{
+			"de": "keine<br>Angabe    <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
+			"en": "no answer          <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
+		},
+	}
+	lblsSsq4 := []trl.S{
+		{
+			"de": ` &nbsp; `,
+			"en": ` &nbsp; `,
+		},
+	}
+	special202603B(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4, 0, false)
+
 	//
 	//
 	//
@@ -463,8 +521,8 @@ func special202603(q *qst.QuestionnaireT) error {
 	page.WidthMax("64rem")
 
 	page.Label = trl.S{
-		"de": "Sonderfragen: todo",
-		"en": "Special: todo",
+		"de": "",
+		"en": "",
 	}
 	page.SuppressInProgressbar = true
 

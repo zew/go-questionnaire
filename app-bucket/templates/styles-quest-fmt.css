@@ -142,13 +142,26 @@ dummy {
     margin-left: -6rem;
 }
 
+
+.ordinal-numbers {
+    font-size: 120%;
+}
+
+
+.pg06-grp01,
+dummy  {
+    margin-bottom: 0.4rem ;
+}
+
 .pg07-grp01,
+.pg07-grp14,
 .pg08-grp01,
 dummy  {
     margin-top:    0.5rem ;
     margin-bottom: 0.2rem ;
 }
 .pg07-grp01 .grid-item-lvl-2 ,
+.pg07-grp14 .grid-item-lvl-2 ,
 .pg08-grp01 .grid-item-lvl-2 ,
 dummy  {
     font-size:     90% ;

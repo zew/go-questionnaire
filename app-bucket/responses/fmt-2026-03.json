@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a59c931bd510cb093256df91eaa6ffa1d33287c753000bcb8d2c8e0b844afdad",
+ 	"md_5": "a3759438707da3cc2648f1496194c214462d850a05438f68c857b9a459b7bb83",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4514,16 +4514,16 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: todo",
- 				"en": "Special: todo"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "todo",
- 				"en": "todo"
+ 				"de": "Klima-\u003cbr\u003eerwartungen",
+ 				"en": "Climate\u003cbr\u003eExpectations"
  			},
  			"style": {
  				"desktop": {
@@ -4822,8 +4822,8 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: todo",
- 				"en": "Special: todo"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -4879,8 +4879,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "über\u0026shy;haupt nicht wich\u0026shy;tig   \u003cbr\u003e1",
- 								"en": "not at all im\u0026shy;por\u0026shy;tant      \u003cbr\u003e1"
+ 								"de": "über\u0026shy;haupt nicht wich\u0026shy;tig   \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
+ 								"en": "not at all im\u0026shy;por\u0026shy;tant      \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4907,8 +4907,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e2",
- 								"en": "\u003cbr\u003e2"
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4935,8 +4935,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e3",
- 								"en": "\u003cbr\u003e3"
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4963,8 +4963,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e4",
- 								"en": "\u003cbr\u003e4"
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4991,8 +4991,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "äu\u0026shy;ßerst wich\u0026shy;tig           \u003cbr\u003e5 ",
- 								"en": "extremely im\u0026shy;por\u0026shy;tant       \u003cbr\u003e5 "
+ 								"de": "äu\u0026shy;ßerst wich\u0026shy;tig           \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
+ 								"en": "extremely im\u0026shy;por\u0026shy;tant       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5873,13 +5873,316 @@
  				{
  					"bottom_vspacers": 3,
  					"columns": 1
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInwieweit sollte der Finanzsektor über seine Rolle als Intermediär hinaus eine proaktive Rolle bei der Finanzierung der grünen Trans\u0026shy;for\u0026shy;ma\u0026shy;ti\u0026shy;on übernehmen? \n\t\t\t\t\t\n\t\t\t\t\t\u003c!-  (Über\u0026shy;haupt nicht 1 - In sehr hohem Maße 5)  --\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBeyond being an intermediary, to what extent should the financial sector play a proactive role in financing the green transition? \n\t\t\t\t\t\n\t\t\t\t\t\u003c!-- (Not at all 1 - To a great extent 5). --\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "über\u0026shy;haupt nicht     \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
+ 								"en": "not at all          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "in sehr hohem Maße       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
+ 								"en": "to a great extent        \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e\u0026nbsp;",
+ 								"en": "no an\u0026shy;swer          \u003cbr\u003e\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {
+ 								"font_size": 90
+ 							}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1
  				}
  			]
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen: todo",
- 				"en": "Special: todo"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -5935,8 +6238,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "über\u0026shy;haupt nicht wich\u0026shy;tig   \u003cbr\u003e1",
- 								"en": "not at all im\u0026shy;por\u0026shy;tant      \u003cbr\u003e1"
+ 								"de": "über\u0026shy;haupt nicht wich\u0026shy;tig   \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
+ 								"en": "not at all im\u0026shy;por\u0026shy;tant      \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5963,8 +6266,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e2",
- 								"en": "\u003cbr\u003e2"
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5991,8 +6294,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e3",
- 								"en": "\u003cbr\u003e3"
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6019,8 +6322,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e4",
- 								"en": "\u003cbr\u003e4"
+ 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
+ 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6047,8 +6350,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "äu\u0026shy;ßerst wich\u0026shy;tig           \u003cbr\u003e5 ",
- 								"en": "extremely im\u0026shy;por\u0026shy;tant       \u003cbr\u003e5 "
+ 								"de": "äu\u0026shy;ßerst wich\u0026shy;tig           \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
+ 								"en": "extremely im\u0026shy;por\u0026shy;tant       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,

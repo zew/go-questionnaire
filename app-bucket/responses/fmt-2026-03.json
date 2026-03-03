@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a3759438707da3cc2648f1496194c214462d850a05438f68c857b9a459b7bb83",
+ 	"md_5": "e0c2739cee33bc5dc59304ff980b7f823eca53fccd98f7f3ba25ffa1566f6067",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4606,6 +4606,22 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "radio-xor-text",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1",
+ 								"inp2": "ssq1_free",
+ 								"radioOn": "ssq16"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
+ 								}
+ 							}
  						}
  					],
  					"randomization_group": 2
@@ -4640,6 +4656,22 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "radio-xor-text",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1",
+ 								"inp2": "ssq1_free",
+ 								"radioOn": "ssq16"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
  								}
  							}
  						}
@@ -4678,6 +4710,22 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "radio-xor-text",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1",
+ 								"inp2": "ssq1_free",
+ 								"radioOn": "ssq16"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
+ 								}
+ 							}
  						}
  					],
  					"randomization_group": 2
@@ -4714,6 +4762,22 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "radio-xor-text",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1",
+ 								"inp2": "ssq1_free",
+ 								"radioOn": "ssq16"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
+ 								}
+ 							}
  						}
  					],
  					"randomization_group": 2
@@ -4748,6 +4812,22 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "radio-xor-text",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1",
+ 								"inp2": "ssq1_free",
+ 								"radioOn": "ssq16"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
  								}
  							}
  						}
@@ -4793,6 +4873,22 @@
  							"max_chars": 100,
  							"col_span": 4,
  							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "radio-xor-text",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1",
+ 								"inp2": "ssq1_free",
+ 								"radioOn": "ssq16"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "unused",
+ 									"en": "unused"
+ 								}
+ 							}
  						}
  					]
  				},
@@ -5019,8 +5115,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e\u0026nbsp;",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e\u0026nbsp;"
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
+ 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6043,8 +6139,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e\u0026nbsp;",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e\u0026nbsp;"
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
+ 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6378,8 +6474,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e\u0026nbsp;",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e\u0026nbsp;"
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
+ 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

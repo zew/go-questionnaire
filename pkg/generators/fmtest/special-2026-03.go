@@ -53,24 +53,24 @@ func special202603tpA(page *qst.WrappedPageT, inputStem string, rowLbls []trl.S)
 
 		}
 
-		// {
-		// 	inp := gr.AddInput()
-		// 	inp.ColSpanControl = 1
-		// 	inp.Type = "javascript-block"
-		// 	inp.Name = "radio-xor-number"
-		// 	s1 := trl.S{
-		// 		"de": "unused",
-		// 		"en": "unused",
-		// 	}
-		// 	inp.JSBlockTrls = map[string]trl.S{
-		// 		"msg": s1,
-		// 	}
-		// 	inp.JSBlockStrings = map[string]string{
-		// 		"inp1":    inputStem,
-		// 		"inp2":    inputStem + "_pfc",
-		// 		"radioOn": inputStem + "6",
-		// 	}
-		// }
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "radio-xor-text"
+			s1 := trl.S{
+				"de": "unused",
+				"en": "unused",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+			inp.JSBlockStrings = map[string]string{
+				"inp1":    inputStem,
+				"inp2":    inputStem + "_free",
+				"radioOn": inputStem + "6",
+			}
+		}
 
 	}
 }

@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func special202603tpA(page *qst.WrappedPageT, inputStem string, rowLbls []trl.S) {
+func special202603ClimateTpA(page *qst.WrappedPageT, inputStem string, rowLbls []trl.S) {
 
 	for i := 0; i < len(rowLbls); i++ {
 
@@ -75,7 +75,15 @@ func special202603tpA(page *qst.WrappedPageT, inputStem string, rowLbls []trl.S)
 	}
 }
 
-func special202603B(page *qst.WrappedPageT, colLabels []trl.S, inputStem string, rowLblsRandomized []trl.S, randGroup int, showFree bool) {
+func special202603ClimateTpB(
+	page *qst.WrappedPageT,
+	colLabels []trl.S,
+	inputStem string,
+	rowLbls []trl.S,
+	randGroup int,
+	// showFree bool,
+	lblFree trl.S,
+) {
 
 	// colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
 
@@ -124,13 +132,13 @@ func special202603B(page *qst.WrappedPageT, colLabels []trl.S, inputStem string,
 
 	//
 	//
-	for i1 := 0; i1 < len(rowLblsRandomized); i1++ {
+	for i1 := 0; i1 < len(rowLbls); i1++ {
 		gr := page.AddGroup()
 		firstCol := float32(1)
 		gr.Cols = firstCol + 6
 		gr.RandomizationGroup = randGroup
 		gr.BottomVSpacers = 0
-		if i1 == (len(rowLblsRandomized) - 1) {
+		if i1 == (len(rowLbls) - 1) {
 			gr.BottomVSpacers = 2 // bad, because of shuffling
 			gr.BottomVSpacers = 0
 		}
@@ -155,7 +163,7 @@ func special202603B(page *qst.WrappedPageT, colLabels []trl.S, inputStem string,
 			inp.ColSpan = firstCol
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
-			inp.Label = rowLblsRandomized[i1]
+			inp.Label = rowLbls[i1]
 		}
 		for i2 := 0; i2 < 6; i2++ {
 			{
@@ -175,7 +183,7 @@ func special202603B(page *qst.WrappedPageT, colLabels []trl.S, inputStem string,
 	//
 	//
 	// row free input
-	if !showFree {
+	if lblFree == nil {
 
 		gr := page.AddGroup()
 		gr.Cols = 1
@@ -205,10 +213,7 @@ func special202603B(page *qst.WrappedPageT, colLabels []trl.S, inputStem string,
 			inp.ColSpanLabel = 2.4
 			inp.ColSpanLabel = 0.9
 			inp.ColSpanControl = 4
-			inp.Label = trl.S{
-				"de": "Sonstiges:",
-				"en": "Other, namely …",
-			}
+			inp.Label = lblFree
 		}
 
 		//
@@ -229,7 +234,7 @@ func special202603B(page *qst.WrappedPageT, colLabels []trl.S, inputStem string,
 
 // main
 // func
-func special202603(q *qst.QuestionnaireT) error {
+func special202603Climate(q *qst.QuestionnaireT) error {
 
 	cond := false
 	cond = cond || q.Survey.Year == 2026 && q.Survey.Month == 3
@@ -318,7 +323,7 @@ func special202603(q *qst.QuestionnaireT) error {
 			"en": "other, namely...",
 		},
 	}
-	special202603tpA(qst.WrapPageT(page), "ssq1", lblsSsq1)
+	special202603ClimateTpA(qst.WrapPageT(page), "ssq1", lblsSsq1)
 
 	//
 	{
@@ -450,7 +455,7 @@ func special202603(q *qst.QuestionnaireT) error {
 			"en": `Investor preferences for sustainable investments`,
 		},
 	}
-	special202603B(qst.WrapPageT(page), colLabelsSsq3and5, "ssq3", lblsSsq3, 3, false)
+	special202603ClimateTpB(qst.WrapPageT(page), colLabelsSsq3and5, "ssq3", lblsSsq3, 3, nil)
 
 	{
 		gr := page.AddGroup()
@@ -508,7 +513,7 @@ func special202603(q *qst.QuestionnaireT) error {
 			"en": ` &nbsp; `,
 		},
 	}
-	special202603B(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4, 0, false)
+	special202603ClimateTpB(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4, 0, nil)
 
 	//
 	//
@@ -607,7 +612,13 @@ func special202603(q *qst.QuestionnaireT) error {
 			"en": `Higher compliance requirements for green financing`,
 		},
 	}
-	special202603B(qst.WrapPageT(page), colLabelsSsq3and5, "ssq5", lblsSsq5, 4, true)
+
+	lblFree := trl.S{
+		"de": "Sonstiges:",
+		"en": "Other, namely …",
+	}
+
+	special202603ClimateTpB(qst.WrapPageT(page), colLabelsSsq3and5, "ssq5", lblsSsq5, 4, lblFree)
 
 	return nil
 

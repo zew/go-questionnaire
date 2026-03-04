@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e0c2739cee33bc5dc59304ff980b7f823eca53fccd98f7f3ba25ffa1566f6067",
+ 	"md_5": "84b72f20a5131cb34177e4d151d32a60c71ad0f210720e8c105ee2f768f89054",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1420,7 +1420,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche In\u0026shy;fla\u0026shy;ti\u0026shy;ons\u0026shy;rate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
  								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate will"
  							},
  							"col_span": 4,
@@ -4514,16 +4514,16 @@
  		},
  		{
  			"label": {
- 				"de": "",
- 				"en": ""
+ 				"de": "Sonderfragen zur Eskalation im Nahost-Konflikt",
+ 				"en": "Special questions: Near East conflict"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Klima-\u003cbr\u003eerwartungen",
- 				"en": "Climate\u003cbr\u003eExpectations"
+ 				"de": "Nahost",
+ 				"en": "Near\u003cbr\u003eEast"
  			},
  			"style": {
  				"desktop": {
@@ -4546,414 +4546,366 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\tIm Dezember 2025 wurden Sie gebeten, mehrere Fragen zu Ihren Überzeugungen zum Klimawandel zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten. Diese Fragen sowie die nachfolgenden sind Teil eines laufenden For\u0026shy;schungspro\u0026shy;jekts. Eine weitere Erhebungswelle zu diesem Thema wird im Juni durchgeführt.\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\tIn December 2025, you were asked to respond to several questions regarding your beliefs about climate change. These questions, together with those that follow, are part of an ongoing re\u0026shy;search project. A subsequent survey wave on this topic will be conducted in June.\n\t\t\t\t"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie wich\u0026shy;tig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumspro\u0026shy;gno\u0026shy;se für das Jahr 2026 infolge der Eskalation im Nahen Osten?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
  					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWer sollte primär vorangehen, um Un\u0026shy;ter\u0026shy;neh\u0026shy;men dazu zu bewegen, ihre Treibhausgasemissionen zu re\u0026shy;du\u0026shy;zie\u0026shy;ren?\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWho should take the lead in encouraging companies to re\u0026shy;duce their greenhouse gas emissions?\n\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"name": "ssq1",
- 							"type": "radio",
- 							"label": {
- 								"de": "Re\u0026shy;gie\u0026shy;rungen / Aufsichtsbehörden",
- 								"en": "governments / regulators"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"name": "ssq1",
- 							"type": "radio",
- 							"label": {
- 								"de": "Konsumenten",
- 								"en": "cons\u0026shy;umers"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"value_radio": "2",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"name": "ssq1",
- 							"type": "radio",
- 							"label": {
- 								"de": "Institutionelle Investoren (z. B. Pensionsfonds, In\u0026shy;vest\u0026shy;mentfonds, Versi\u0026shy;cherungsgesellschaften)",
- 								"en": "institutional investors (e.g., pension funds, in\u0026shy;vest\u0026shy;ment funds, insurance companies)"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"value_radio": "3",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"name": "ssq1",
- 							"type": "radio",
- 							"label": {
- 								"de": "Banken",
- 								"en": "banks"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"value_radio": "4",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 6,
- 					"inputs": [
- 						{
- 							"name": "ssq1",
- 							"type": "radio",
- 							"label": {
- 								"de": "Privatanleger",
- 								"en": "private investors"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"value_radio": "5",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 3,
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "ssq1",
- 							"type": "radio",
+ 							"type": "textblock",
  							"label": {
- 								"de": "Sonstiges",
- 								"en": "other, namely..."
+ 								"de": "Szenario",
+ 								"en": "Scenario"
  							},
- 							"col_span": 2,
- 							"col_span_label": 2.4,
- 							"col_span_control": 7.7,
- 							"value_radio": "6",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ssq1_free",
- 							"type": "text",
- 							"max_chars": 100,
  							"col_span": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
  								}
  							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 1,
- 					"inputs": [
+ 						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; Skizzieren Sie, wenn Sie möchten, stichpunktartig, welche Ansätze Sie für besonders vielversprechend halten, um eine klimaneu\u0026shy;trale Wirt\u0026shy;schaft zu erreichen.",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; Please feel free to outline, in bullet points, which approaches you consider particularly promising for achieving a climate-neu\u0026shy;tral econ\u0026shy;o\u0026shy;my."
+ 								"de": "reale BIP Wachs\u0026shy;tums\u0026shy;rate 2026",
+ 								"en": "real GDP growth rate 2026"
  							},
  							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;ons\u0026shy;rate 2026",
+ 								"en": "in\u0026shy;fla\u0026shy;ti\u0026shy;on rate 2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e a) \u003c/b\u003e   Kurzfristiger und begrenzter militärischer \n\t\t\t\tKonflikt ohne wesentliche Beeinträchtigung \n\t\t\t\tder Energieversorgung\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 4,
  							"col_span_label": 1
  						},
  						{
- 							"name": "ssq2",
- 							"type": "textarea",
- 							"max_chars": 1000,
+ 							"name": "ssq3_1_1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.1,
+ 							"min": -10,
+ 							"max": 40,
+ 							"placeholder": {
+ 								"de": "0.0",
+ 								"en": "0.0"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq3_1_2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.1,
+ 							"min": -10,
+ 							"max": 40,
+ 							"placeholder": {
+ 								"de": "0.0",
+ 								"en": "0.0"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e b) \u003c/b\u003e Anhaltender militärischer Konflikt mit\n\t\t\tspürbarer Belastung der Energieversorgung\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq3_2_1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.1,
+ 							"min": -10,
+ 							"max": 40,
+ 							"placeholder": {
+ 								"de": "0.0",
+ 								"en": "0.0"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq3_2_2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.1,
+ 							"min": -10,
+ 							"max": 40,
+ 							"placeholder": {
+ 								"de": "0.0",
+ 								"en": "0.0"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e c) \u003c/b\u003e Länger anhaltender militärischer Konflikt\n\t\t\t\tmit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq3_3_1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.1,
+ 							"min": -10,
+ 							"max": 40,
+ 							"placeholder": {
+ 								"de": "0.0",
+ 								"en": "0.0"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq3_3_2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.1,
+ 							"min": -10,
+ 							"max": 40,
+ 							"placeholder": {
+ 								"de": "0.0",
+ 								"en": "0.0"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					]
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "64rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
  				{
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tNun möchten wir den Fokus auf die Rolle des Finanzsektors legen. Bitte be\u0026shy;wer\u0026shy;ten Sie die allgemeine Bedeutung der folgenden Mechanismen, um Un\u0026shy;ter\u0026shy;neh\u0026shy;men zur Reduzierung ihrer Treibhausgasemissionen zu bewegen.\n\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWe now want to focus on the role of the financial sector. Please rate the general importance of the following financial-sector mechanisms in moving corporations to re\u0026shy;duce their greenhouse gas emissions.\n\t\t\t\t"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie wich\u0026shy;tig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumspro\u0026shy;gno\u0026shy;se für das Jahr 2026 infolge der Eskalation im Nahen Osten?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4975,8 +4927,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "über\u0026shy;haupt nicht wich\u0026shy;tig   \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
- 								"en": "not at all im\u0026shy;por\u0026shy;tant      \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
+ 								"de": "sehr wich\u0026shy;tig",
+ 								"en": "very im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5003,8 +4955,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
+ 								"de": "eher   wich\u0026shy;tig",
+ 								"en": "rather im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5031,8 +4983,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
+ 								"de": "weder/ noch",
+ 								"en": "nei\u0026shy;ther nor"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5059,8 +5011,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
+ 								"de": "eher   un\u0026shy;wich\u0026shy;tig",
+ 								"en": "rather un\u0026shy;im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5087,8 +5039,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "äu\u0026shy;ßerst wich\u0026shy;tig           \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
- 								"en": "extremely im\u0026shy;por\u0026shy;tant       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
+ 								"de": "sehr un\u0026shy;wich\u0026shy;tig",
+ 								"en": "very un\u0026shy;im\u0026shy;por\u0026shy;tant"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5115,8 +5067,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be  ",
+ 								"en": "no an\u0026shy;swer        "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5172,1032 +5124,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Anpassung des Kreditvolumens durch Banken",
- 								"en": "Adjustment of bank lending volumes "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Anpassung der Kreditzinsen durch Banken",
- 								"en": "Adjustment of bank lending rates "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Marktbasierte Bepreisung von Klimarisiken",
- 								"en": "Market pricing of climate risk "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Nachhaltigkeitsgebundene (“sustainability-linked”) Finanzierungsinstrumente",
- 								"en": "Sustainability-linked financial instruments"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Man\u0026shy;age\u0026shy;mentfokus auf Nachhaltigkeit durch grüne Finanzierung",
- 								"en": "Green financing elevating executive attention"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Dialog (Engagement) institutioneller Investoren mit Un\u0026shy;ter\u0026shy;neh\u0026shy;men",
- 								"en": "Bilateral engagement by institutional investors"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Aktionärsanträge und Ausübung von Stimmrechten",
- 								"en": "Shareholder proposals and voting"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Divestment durch institutionelle Investoren",
- 								"en": "Divestment by institutional investors"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Verweigerung von Versi\u0026shy;cherungsschutz aufgrund von Klimarisiken",
- 								"en": "Denying insurance due to climate risk"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Investorenpräferenzen für nachhaltige Finanzanlagen",
- 								"en": "Investor preferences for sustainable in\u0026shy;vest\u0026shy;ments"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq3_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq3_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq3_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq3_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq3_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq3_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 3,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 1
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInwieweit sollte der Finanzsektor über seine Rolle als Intermediär hinaus eine proaktive Rolle bei der Finanzierung der grünen Trans\u0026shy;for\u0026shy;ma\u0026shy;ti\u0026shy;on übernehmen? \n\t\t\t\t\t\n\t\t\t\t\t\u003c!-  (Über\u0026shy;haupt nicht 1 - In sehr hohem Maße 5)  --\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBeyond being an intermediary, to what extent should the financial sector play a proactive role in financing the green transition? \n\t\t\t\t\t\n\t\t\t\t\t\u003c!-- (Not at all 1 - To a great extent 5). --\u003e\n\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "über\u0026shy;haupt nicht     \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
- 								"en": "not at all          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "in sehr hohem Maße       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
- 								"en": "to a great extent        \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {
- 								"font_size": 90
- 							}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"de": "Hö\u0026shy;here Energiepreise für Un\u0026shy;ter\u0026shy;neh\u0026shy;men",
+ 								"en": "todo"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6239,6 +5167,322 @@
  						},
  						{
  							"name": "ssq4_1",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Hö\u0026shy;here Energiepreise für Haushalte (z. B. Benzin, Heizkosten)",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq4_2",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq4_2",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq4_2",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq4_2",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq4_2",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq4_2",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Nied\u0026shy;rigere globale Nachfrage nach deutschen Exporten",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq4_3",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq4_3",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq4_3",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq4_3",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq4_3",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq4_3",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Investitionszurückhaltung aufgrund hö\u0026shy;herer Unsi\u0026shy;cherheit",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq4_4",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq4_4",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq4_4",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq4_4",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq4_4",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq4_4",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Störungen von Lieferketten oder Transportwegen",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq4_5",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq4_5",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq4_5",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq4_5",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq4_5",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq4_5",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
@@ -6271,1513 +5515,57 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "64rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte be\u0026shy;wer\u0026shy;ten Sie die Bedeutung der folgenden Hindernisse für grüne Investitionen.\n\t\t\t\t",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPlease rate the importance of the following barriers for green in\u0026shy;vest\u0026shy;ments.\n\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
  					"columns": 7,
  					"inputs": [
  						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "über\u0026shy;haupt nicht wich\u0026shy;tig   \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
- 								"en": "not at all im\u0026shy;por\u0026shy;tant      \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
- 								"en": "\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "äu\u0026shy;ßerst wich\u0026shy;tig           \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
- 								"en": "extremely im\u0026shy;por\u0026shy;tant       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {
- 								"font_size": 90
- 							}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "In\u0026shy;for\u0026shy;ma\u0026shy;tionsfriktionen bei der Klassifizierung (z. B. welche wirt\u0026shy;schaft\u0026shy;lichen Aktivitäten als „grün“ gelten)",
- 								"en": "In\u0026shy;for\u0026shy;ma\u0026shy;tion frictions in classification (e.g. which eco\u0026shy;nom\u0026shy;ic activities qualify as green)"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_1",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "In\u0026shy;for\u0026shy;ma\u0026shy;tionsfriktionen bei der Überprüfung (z. B. ob Un\u0026shy;ter\u0026shy;neh\u0026shy;men grüne Standards einhalten oder Greenwashing betreiben)",
- 								"en": "In\u0026shy;for\u0026shy;ma\u0026shy;tion frictions in verification (e.g. whether firms maintain green standards; greenwashing)"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_2",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Fehlende materielle Si\u0026shy;cherheiten",
- 								"en": "Lack of tangible collateral"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_3",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Lange Amortisationszeiten",
- 								"en": "Long payoff horizons"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_4",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Renditeunsi\u0026shy;cherheit aufgrund künftiger klimapolitischer Maßnahmen",
- 								"en": "Payoffs depending on future climate policies"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_5",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Renditeunsi\u0026shy;cherheit aufgrund künftiger technologischer Entwicklungen",
- 								"en": "Payoffs depending on future technological de\u0026shy;vel\u0026shy;op\u0026shy;ments"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_6",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Renditeunsi\u0026shy;cherheit aufgrund künftiger technologischer Entwicklungen",
- 								"en": "Payoffs depending on physical climate risks"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_7",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Unattraktive Ri\u0026shy;si\u0026shy;ko-Rendite-Profile",
- 								"en": "Unattractive risk-return profiles"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_8",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Illiquide oder fragmentierte Kapitalmärkte",
- 								"en": "Shallow or fragmented capital markets"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_9",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Begrenzte Ver\u0026shy;füg\u0026shy;barkeit investierbarer grüner Pro\u0026shy;jekte",
- 								"en": "Limited availability of investable green projects"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_10",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Koordinationsprobleme zwi\u0026shy;schen verschiedenen Interessengrup\u0026shy;pen",
- 								"en": "Coordination challenges across multiple stakeholders"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_11",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_11",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_11",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_11",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_11",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_11",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Kleine und fragmentierte Pro\u0026shy;jekte",
- 								"en": "Small-scale and fragmented projects"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_12",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_12",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_12",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_12",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_12",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_12",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Regulatorische Investitionsbeschränkungen",
- 								"en": "Regulatory in\u0026shy;vest\u0026shy;ment constraints"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_13",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_13",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_13",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_13",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_13",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_13",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Investitionsbeschränkungen durch Kunden- und Treuhandmandate",
- 								"en": "Client and fiduciary mandate constraints"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_14",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_14",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_14",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_14",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_14",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_14",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Hö\u0026shy;here Compliance-Anforderungen bei grünen Finanzierungen",
- 								"en": "Higher compliance requirements for green financing"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "ssq5_15",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "ssq5_15",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ssq5_15",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ssq5_15",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ssq5_15",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ssq5_15",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"randomization_group": 4,
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.8rem"
- 							},
- 							"box_style": {
- 								"display": "grid",
- 								"margin": "0 0 0.6rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {
- 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
- 								"column_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"name": "ssq5_free",
+ 							"name": "ssq4_free",
  							"type": "text",
  							"max_chars": 25,
  							"label": {
- 								"de": "Sonstiges:",
- 								"en": "Other, namely …"
+ 								"de": "Andere",
+ 								"en": "Other"
  							},
  							"col_span": 1,
  							"col_span_label": 0.9,
  							"col_span_control": 4
  						},
  						{
- 							"name": "ssq5_free_val",
+ 							"name": "ssq4_free_val",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "ssq5_free_val",
+ 							"name": "ssq4_free_val",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ssq5_free_val",
+ 							"name": "ssq4_free_val",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ssq5_free_val",
+ 							"name": "ssq4_free_val",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ssq5_free_val",
+ 							"name": "ssq4_free_val",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ssq5_free_val",
+ 							"name": "ssq4_free_val",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
@@ -7806,6 +5594,248 @@
  							"text_style": {}
  						}
  					}
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWelche wirt\u0026shy;schaftspolitischen Reaktionen erwarten Sie bei einem anhaltenden militärischen Konflikt mit spürbarer Belastung der Energieversorgung (1-3 Monate)? Mehrfachauswahl möglich. \n\t\t\t\t",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo?\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_1",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Kei\u0026shy;ne wesentliche wirt\u0026shy;schaftspolitische Reaktion",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1,
+ 							"col_span_control": 11,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Lockerung der Geld\u0026shy;po\u0026shy;li\u0026shy;tik im Euro\u0026shy;raum",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1,
+ 							"col_span_control": 11,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_3",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Restriktivere Geld\u0026shy;po\u0026shy;li\u0026shy;tik im Euro\u0026shy;raum",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1,
+ 							"col_span_control": 11,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_4",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Fiskalische Stützungsmaßnahmen (z. B. Entlastungen, Transfers)",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1,
+ 							"col_span_control": 11,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Maßnahmen zur Stabilisierung der Energieversorgung",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1,
+ 							"col_span_control": 11,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_6",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Ausweitung verteidigungsbezogener Staatsausgaben",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1,
+ 							"col_span_control": 11,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq5_7",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "ssq5_free",
+ 							"type": "text",
+ 							"max_chars": 100,
+ 							"label": {
+ 								"de": "Sonstige",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 11,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6
+ 						}
+ 					]
  				}
  			]
  		},
@@ -7935,7 +5965,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "10",
+ 							"response": "8",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

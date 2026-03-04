@@ -135,7 +135,16 @@ dummy {
  */
 
 
-/* 2026-02 */
+/* 2026-03 iran */
+#ssq5_free,
+dummy {
+    max-width: 60ch;
+    margin-left: -1.2rem;
+}
+
+
+/* 2026-03 climate */
+/*
 #ssq1_free,
 dummy {
     max-width: 60ch;
@@ -175,6 +184,8 @@ dummy
 {
     background-image: none;
 }
+*/
+
 
 /* kursive, italic */
 i {

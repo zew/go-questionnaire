@@ -136,19 +136,34 @@ dummy {
 
 
 /* 2026-03 iran */
-#ssq5_free,
-dummy {
-    max-width: 60ch;
-    margin-left: -1.2rem;
-}
 
 
-.pg06-grp03-inp00-lbl,
-.pg06-grp05-inp00-lbl,
-dummy {
-    font-size:   110%;
-    font-weight: 600;
+
+.pg06-grp01-inp06,
+.pg06-grp01-inp07,
+dummy
+  {
+    /* sum */
+    margin-top:     0;
+    padding-top:    0;
+
+    position: relative;
+    top: -0.4ch;
 }
+
+.pg06-grp01-inp07,
+dummy
+  {
+    top: -1.4ch;
+    /* border-top:    1px solid lightgray; */
+    /* border-bottom: 1px double lightgray; */
+}
+
+.pg06-grp01-inp06-lbl  {
+    /* sum */
+    font-size:     115% ;
+}
+
 
 .pg06-grp03-inp00-lbl,
 .pg06-grp03-inp01-lbl,
@@ -160,17 +175,28 @@ dummy {
 .pg06-grp05-inp02-lbl,
 .pg06-grp05-inp03-lbl,
 dummy {
+    margin-top: 0.8ch;
     position: relative;
-    top: 0.8ch;
+    top: 0.9ch;
     /* border: 1px solid red; */
 }
 
 
 
-.pg06-grp01-inp06-lbl  {
-    /* sum */
-    font-size:     115% ;
+
+
+
+/* scenario */
+.pg06-grp03-inp00-lbl,
+.pg06-grp05-inp00-lbl,
+dummy {
+    font-size:   110%;
+    font-weight: 600;
+    line-height: 95%;
+    /* justify-self: start  !important; */
+    /* margin-left: 4ch; */
 }
+
 
 .pg07-grp01 {
     position: relative;
@@ -179,13 +205,20 @@ dummy {
 
 .pg07-grp01 .grid-item-lvl-2 ,
 dummy  {
-    font-size:     95% ;
     font-size:     98% ;
     line-height:  115% ;
 }
 .pg07-grp08 {
     margin-bottom: 0.6ch;
 }
+
+
+#ssq5_free,
+dummy {
+    max-width: 60ch;
+    margin-left: -1.2rem;
+}
+
 
 
 /* 2026-03 climate */

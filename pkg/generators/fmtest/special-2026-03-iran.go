@@ -82,8 +82,8 @@ func special202603IranSsq1(
 		inp.Type = "javascript-block"
 		inp.Name = "inputs-adding-up-100-iran"
 		s1 := trl.S{
-			"de": "Ihre Antworten  addieren sich nicht zu 100%. Wirklich weiter?",
-			"en": "Your answers    dont add up to 100%.         Continue anyway?",
+			"de": "Ihre Antworten addieren sich nicht zu 100%. Wirklich weiter?",
+			"en": "Your answers dont add up to 100%. Continue anyway?",
 		}
 		inp.JSBlockTrls = map[string]trl.S{
 			"msg": s1,
@@ -427,21 +427,27 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 		lblsSsq2and3 := []trl.S{
 			{
 				"de": `<b> a</b>.)  &nbsp;    			
+				Konflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt.
+				`,
+				"en": `<b> a</b>.)  &nbsp;    			
 				Short-term and limited military conflict without significant impact on energy supply
-			`,
-				"en": `todo`,
+				`,
 			},
 			{
 				"de": `<b> b</b>.)  &nbsp;  
+				Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung
+				`,
+				"en": `<b> b</b>.)  &nbsp;  
 				Prolonged military conflict with noticeable strain on energy supply
-			`,
-				"en": `todo`,
+				`,
 			},
 			{
 				"de": `<b> c</b>.)  &nbsp;  
+				Länger anhaltender militärischer Konflikt mit erheblichen Versorgungsstörungen
+				`,
+				"en": `<b> c</b>.)  &nbsp;  
 				Long-lasting military conflict with substantial supply disruptions
-			`,
-				"en": `todo`,
+				`,
 			},
 		}
 

@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "28eec6d9ce70fa3f172454df308a00516df72ac905ef83e339e59cb102260c4f",
+ 	"md_5": "b0ccabc49fa9ca5ef1f6a762d68934041f6630b1d922a15b68af3044052c756a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4515,7 +4515,7 @@
  		{
  			"label": {
  				"de": "Sonderfragen zur Eskalation im Nahost-Konflikt",
- 				"en": "Special questions: Near East conflict"
+ 				"en": "Special questions on the escalation of the Middle East conflict"
  			},
  			"description": {
  				"de": "",
@@ -4552,8 +4552,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür wie wahrscheinlich halten Sie die folgenden Szenarien im Zusammenhang mit der aktuellen Eskalation im Nahen Osten?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003eBitte stellen Sie si\u0026shy;cher, dass die Summe der Wahrscheinlichkeiten in den Zeilen jeweils 100% ergeben\u003c/i\u003e\n\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür wie wahrscheinlich halten Sie die folgenden Szenarien im Zusammenhang mit der aktuellen Eskalation im Nahen Osten?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003eBitte stellen Sie si\u0026shy;cher, dass die Summe der Wahrscheinlichkeiten jeweils 100% ergibt.\u003c/i\u003e\n\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow likely do you consider the following scenarios in the context of the current escalation in the Middle East?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003ePlease ensure that the probabilities add up to 100%.\u003c/i\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4568,7 +4568,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t\t(\u003c\u0026nbsp;1\u0026nbsp;Monat): \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt. \n\t\t\t",
- 								"en": "todo"
+ 								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Short-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t (\u003c\u0026nbsp;1\u0026nbsp;month): \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tThe conflict re\u0026shy;mains temporally limited; global energy supply is not sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly affected.\n\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -4624,7 +4624,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t \u003cspan style='font-size: 110%'\u003e Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t\t(1\u0026#8209;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tKonflikt hält an; es kommt zu wiederholten oder anhaltenden Beeinträchtigungen der Öl- und Gasinfrastruktur; die globale Energieversorgung ist eingeschränkt, bleibt jedoch funktionsfähig.\n\t\t\t",
- 								"en": "todo"
+ 								"en": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t \u003cspan style='font-size: 110%'\u003e Prolonged military conflict with noticeable strain on energy supply \n\t\t\t\t(1\u0026#8209;3\u0026nbsp;months):  \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tThe conflict continues; there are repeated or sustained disruptions to oil and gas infrastructure; global energy supply is constrained but re\u0026shy;mains functional.\n\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -4680,7 +4680,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Länger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t\t (\u003e\u0026nbsp;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t \u003cxxbr\u003e\n\t\t\t\t Stark ausgeprägter und länger andauernder Konflikt; zentrale Öl- und Gasinfrastruktur wird massiv gestört; die globale Energieversorgung wird substanziell beeinträchtigt.\n\t\t\t",
- 								"en": "todo"
+ 								"en": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Long-lasting military conflict with substantial supply disruptions\n\t\t\t\t (\u003e\u0026nbsp;3\u0026nbsp;months):  \u003c/span\u003e\n\t\t\t\t \u003cxxbr\u003e\n\t\t\t\t A severe and protracted conflict; critical oil and gas infrastructure suffers major disruptions; global energy supply is substantially impaired.\n\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -4834,8 +4834,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWas ist Ihre Pro\u0026shy;gno\u0026shy;se für den durchschnittlichen Brent Rohölpreis (USD pro Barrel) für die folgenden Perioden in jedem Szenario?\n\t\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWas ist Ihre Pro\u0026shy;gno\u0026shy;se für den \u003ci\u003edurchschnittlichen Brent Rohölpreis (USD pro Barrel)\u003c/i\u003e für die folgenden Perioden in jedem Szenario?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhat is your forecast for the \u003ci\u003eav\u0026shy;er\u0026shy;age Brent crude oil price (USD per barrel)\u003c/i\u003e for the following periods under each scenario?\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4961,8 +4961,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t",
- 								"en": "todo"
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt.\n\t\t\t\t",
+ 								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tShort-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -5075,8 +5075,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tAnhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t",
- 								"en": "todo"
+ 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tAnhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t\t",
+ 								"en": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tProlonged military conflict with noticeable strain on energy supply\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -5189,8 +5189,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLänger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t",
- 								"en": "todo"
+ 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLänger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t\t",
+ 								"en": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLong-lasting military conflict with substantial supply disruptions\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -5327,7 +5327,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie wich\u0026shy;tig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumspro\u0026shy;gno\u0026shy;se für das Jahr 2026 infolge der Eskalation im Nahen Osten?\n\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tNow we are interested in the macroeco\u0026shy;nom\u0026shy;ic impacts on \u003ci\u003eGer\u0026shy;ma\u0026shy;ny\u003c/i\u003e. What are your expectations for the annual real GDP growth rate and the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate (as measured by the annual av\u0026shy;er\u0026shy;age change of the HICP) under each scenario?\n\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5453,8 +5453,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t",
- 								"en": "todo"
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt.\n\t\t\t\t",
+ 								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tShort-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -5557,8 +5557,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tAnhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t",
- 								"en": "todo"
+ 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tAnhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t\t",
+ 								"en": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tProlonged military conflict with noticeable strain on energy supply\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -5661,8 +5661,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLänger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t",
- 								"en": "todo"
+ 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLänger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t\t",
+ 								"en": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLong-lasting military conflict with substantial supply disruptions\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
@@ -5825,7 +5825,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie wich\u0026shy;tig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumspro\u0026shy;gno\u0026shy;se für das Jahr 2026 infolge der Eskalation im Nahen Osten?\n\t\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow im\u0026shy;por\u0026shy;tant are the following transmission channels for changes in your 2026 growth forecast as a result of the escalation in the Middle East?\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6046,7 +6046,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Hö\u0026shy;here Energiepreise für Un\u0026shy;ter\u0026shy;neh\u0026shy;men",
- 								"en": "todo"
+ 								"en": "Higher energy prices for busi\u0026shy;nesses"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6125,7 +6125,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Hö\u0026shy;here Energiepreise für Haushalte (z. B. Benzin, Heizkosten)",
- 								"en": "todo"
+ 								"en": "Higher energy prices for households (e.g., gasoline, heating costs)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6204,7 +6204,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Nied\u0026shy;rigere globale Nachfrage nach deutschen Exporten",
- 								"en": "todo"
+ 								"en": "Lower global demand for German exports"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6283,7 +6283,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Investitionszurückhaltung aufgrund hö\u0026shy;herer Unsi\u0026shy;cherheit",
- 								"en": "todo"
+ 								"en": "Re\u0026shy;duced in\u0026shy;vest\u0026shy;ment due to in\u0026shy;creased uncertainty"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6362,7 +6362,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Störungen von Lieferketten oder Transportwegen",
- 								"en": "todo"
+ 								"en": "Disruptions to supply chains or transportation routes"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6523,7 +6523,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWelche wirt\u0026shy;schaftspolitischen Reaktionen erwarten Sie bei einem anhaltenden militärischen Konflikt mit spürbarer Belastung der Energieversorgung (1-3 Monate)? Mehrfachauswahl möglich. \n\t\t\t\t",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo?\n\t\t\t\t"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhat eco\u0026shy;nom\u0026shy;ic policy responses do you expect in the case of a prolonged military conflict with noticeable strain on energy supply (1-3 months)? Multiple an\u0026shy;swers are possible.\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6539,7 +6539,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Kei\u0026shy;ne wesentliche wirt\u0026shy;schaftspolitische Reaktion",
- 								"en": "todo"
+ 								"en": "No sig\u0026shy;nif\u0026shy;i\u0026shy;cant eco\u0026shy;nom\u0026shy;ic policy response"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -6573,7 +6573,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Lockerung der Geld\u0026shy;po\u0026shy;li\u0026shy;tik im Euro\u0026shy;raum",
- 								"en": "todo"
+ 								"en": "Monetary policy easing in the euro area"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -6607,7 +6607,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Restriktivere Geld\u0026shy;po\u0026shy;li\u0026shy;tik im Euro\u0026shy;raum",
- 								"en": "todo"
+ 								"en": "Monetary policy tightening in the euro area"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -6641,7 +6641,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Fiskalische Stützungsmaßnahmen (z. B. Entlastungen, Transfers)",
- 								"en": "todo"
+ 								"en": "Fiscal support measures (e.g., relief packages, transfers)"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -6675,7 +6675,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Maßnahmen zur Stabilisierung der Energieversorgung",
- 								"en": "todo"
+ 								"en": "Measures to stabilize energy supply"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -6709,7 +6709,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Ausweitung verteidigungsbezogener Staatsausgaben",
- 								"en": "todo"
+ 								"en": "In\u0026shy;crease in defense-related government spending"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -6749,8 +6749,8 @@
  							"type": "text",
  							"max_chars": 100,
  							"label": {
- 								"de": "Sonstige",
- 								"en": "todo"
+ 								"de": "Andere",
+ 								"en": "Other"
  							},
  							"col_span": 11,
  							"col_span_label": 1,

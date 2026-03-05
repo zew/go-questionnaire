@@ -366,8 +366,9 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 
 		page.Label = trl.S{
 			"de": "Sonderfragen zur Eskalation im Nahost-Konflikt",
-			"en": "Special questions: Near East conflict",
+			"en": "Special questions on the escalation of the Middle East conflict",
 		}
+
 		page.Short = trl.S{
 			"de": "Nahost",
 			"en": "Near<br>East",
@@ -382,7 +383,12 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 				<xxbr>
 				Konflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt. 
 			`,
-				"en": `todo`,
+				"en": `<b> a</b>.)  &nbsp;    			
+				 <span style='font-size: 110%'> Short-term and limited military conflict without significant impact on energy supply
+				 (<&nbsp;1&nbsp;month): </span>
+				<xxbr>
+				The conflict remains temporally limited; global energy supply is not significantly affected.
+			`,
 			},
 			{
 				"de": `<b> b</b>.)  &nbsp;  
@@ -391,7 +397,12 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 				<xxbr>
 				Konflikt hält an; es kommt zu wiederholten oder anhaltenden Beeinträchtigungen der Öl- und Gasinfrastruktur; die globale Energieversorgung ist eingeschränkt, bleibt jedoch funktionsfähig.
 			`,
-				"en": `todo`,
+				"en": `<b> b</b>.)  &nbsp;  
+ 				 <span style='font-size: 110%'> Prolonged military conflict with noticeable strain on energy supply 
+				(1&#8209;3&nbsp;months):  </span>
+				<xxbr>
+				The conflict continues; there are repeated or sustained disruptions to oil and gas infrastructure; global energy supply is constrained but remains functional.
+			`,
 			},
 			{
 				"de": `<b> c</b>.)  &nbsp;  
@@ -400,7 +411,12 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 				 <xxbr>
 				 Stark ausgeprägter und länger andauernder Konflikt; zentrale Öl- und Gasinfrastruktur wird massiv gestört; die globale Energieversorgung wird substanziell beeinträchtigt.
 			`,
-				"en": `todo`,
+				"en": `<b> c</b>.)  &nbsp;  
+				 <span style='font-size: 110%'> Long-lasting military conflict with substantial supply disruptions
+				 (>&nbsp;3&nbsp;months):  </span>
+				 <xxbr>
+				 A severe and protracted conflict; critical oil and gas infrastructure suffers major disruptions; global energy supply is substantially impaired.
+			`,
 			},
 			{
 				"de": `Summe`,
@@ -411,19 +427,19 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 		lblsSsq2and3 := []trl.S{
 			{
 				"de": `<b> a</b>.)  &nbsp;    			
-				Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung
+				Short-term and limited military conflict without significant impact on energy supply
 			`,
 				"en": `todo`,
 			},
 			{
 				"de": `<b> b</b>.)  &nbsp;  
-				Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung
+				Prolonged military conflict with noticeable strain on energy supply
 			`,
 				"en": `todo`,
 			},
 			{
 				"de": `<b> c</b>.)  &nbsp;  
-				Länger anhaltender militärischer Konflikt mit erheblichen Versorgungsstörungen
+				Long-lasting military conflict with substantial supply disruptions
 			`,
 				"en": `todo`,
 			},
@@ -446,12 +462,17 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 
 					<br>
 
-					<i>Bitte stellen Sie sicher, dass die Summe der Wahrscheinlichkeiten in den Zeilen jeweils 100% ergeben</i>
+					<i>Bitte stellen Sie sicher, dass die Summe der Wahrscheinlichkeiten jeweils 100% ergibt.</i>
 
 				`,
 					"en": `
-					todo
-				`,
+					How likely do you consider the following scenarios in the context of the current escalation in the Middle East?
+
+					<br>
+
+					<i>Please ensure that the probabilities add up to 100%.</i>
+
+					`,
 				}.Outline("1.")
 			}
 		}
@@ -470,10 +491,10 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 				inp.ColSpan = gr.Cols
 				inp.Label = trl.S{
 					"de": `
-					Was ist Ihre Prognose für den durchschnittlichen Brent Rohölpreis (USD pro Barrel) für die folgenden Perioden in jedem Szenario?
+					Was ist Ihre Prognose für den <i>durchschnittlichen Brent Rohölpreis (USD pro Barrel)</i> für die folgenden Perioden in jedem Szenario?
 				`,
 					"en": `
-					todo
+					What is your forecast for the <i>average Brent crude oil price (USD per barrel)</i> for the following periods under each scenario?
 				`,
 				}.Outline("2.")
 			}
@@ -515,7 +536,8 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 					Wie wichtig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumsprognose für das Jahr 2026 infolge der Eskalation im Nahen Osten?
 				`,
 					"en": `
-					todo
+					Now we are interested in the macroeconomic impacts on <i>Germany</i>. What are your expectations for the annual real GDP growth rate and the annual inflation rate (as measured by the annual average change of the HICP) under each scenario?
+
 				`,
 				}.Outline("3.")
 			}
@@ -578,7 +600,7 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 					Wie wichtig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumsprognose für das Jahr 2026 infolge der Eskalation im Nahen Osten?
 				`,
 					"en": `
-					todo
+					How important are the following transmission channels for changes in your 2026 growth forecast as a result of the escalation in the Middle East?
 				`,
 				}.Outline("4.")
 			}
@@ -613,23 +635,23 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 		lblsSsq4 := []trl.S{
 			{
 				"de": `Höhere Energiepreise für Unternehmen`,
-				"en": `todo`,
+				"en": `Higher energy prices for businesses`,
 			},
 			{
 				"de": `Höhere Energiepreise für Haushalte (z. B. Benzin, Heizkosten)`,
-				"en": `todo`,
+				"en": `Higher energy prices for households (e.g., gasoline, heating costs)`,
 			},
 			{
 				"de": `Niedrigere globale Nachfrage nach deutschen Exporten`,
-				"en": `todo`,
+				"en": `Lower global demand for German exports`,
 			},
 			{
 				"de": `Investitionszurückhaltung aufgrund höherer Unsicherheit`,
-				"en": `todo`,
+				"en": `Reduced investment due to increased uncertainty`,
 			},
 			{
 				"de": `Störungen von Lieferketten oder Transportwegen`,
-				"en": `todo`,
+				"en": `Disruptions to supply chains or transportation routes`,
 			},
 		}
 		lblFree := trl.S{
@@ -652,7 +674,7 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 					Welche wirtschaftspolitischen Reaktionen erwarten Sie bei einem anhaltenden militärischen Konflikt mit spürbarer Belastung der Energieversorgung (1-3 Monate)? Mehrfachauswahl möglich. 
 				`,
 					"en": `
-					todo?
+					What economic policy responses do you expect in the case of a prolonged military conflict with noticeable strain on energy supply (1-3 months)? Multiple answers are possible.
 				`,
 				}.Outline("5.")
 			}
@@ -661,31 +683,31 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 		lblsSsq5 := []trl.S{
 			{
 				"de": `Keine wesentliche wirtschaftspolitische Reaktion`,
-				"en": `todo`,
+				"en": `No significant economic policy response`,
 			},
 			{
 				"de": `Lockerung der Geldpolitik im Euroraum`,
-				"en": `todo`,
+				"en": `Monetary policy easing in the euro area`,
 			},
 			{
 				"de": `Restriktivere Geldpolitik im Euroraum`,
-				"en": `todo`,
+				"en": `Monetary policy tightening in the euro area`,
 			},
 			{
 				"de": `Fiskalische Stützungsmaßnahmen (z. B. Entlastungen, Transfers)`,
-				"en": `todo`,
+				"en": `Fiscal support measures (e.g., relief packages, transfers)`,
 			},
 			{
 				"de": `Maßnahmen zur Stabilisierung der Energieversorgung`,
-				"en": `todo`,
+				"en": `Measures to stabilize energy supply`,
 			},
 			{
 				"de": `Ausweitung verteidigungsbezogener Staatsausgaben`,
-				"en": `todo`,
+				"en": `Increase in defense-related government spending`,
 			},
 			{
-				"de": `Sonstige`,
-				"en": `todo`,
+				"de": `Andere`,
+				"en": `Other`,
 			},
 		}
 		special202603IranSsq5(qst.WrapPageT(page), "ssq5", lblsSsq5)

@@ -166,18 +166,25 @@ dummy {
 }
 
 
-.pg07-grp08 {
-    margin-bottom: 0.6ch;
-}
 
 .pg06-grp01-inp06-lbl  {
+    /* sum */
     font-size:     115% ;
+}
+
+.pg07-grp01 {
+    position: relative;
+    top: -0.2ch;
 }
 
 .pg07-grp01 .grid-item-lvl-2 ,
 dummy  {
     font-size:     95% ;
+    font-size:     98% ;
     line-height:  115% ;
+}
+.pg07-grp08 {
+    margin-bottom: 0.6ch;
 }
 
 

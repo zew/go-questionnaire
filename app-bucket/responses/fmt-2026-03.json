@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "84b72f20a5131cb34177e4d151d32a60c71ad0f210720e8c105ee2f768f89054",
+ 	"md_5": "28eec6d9ce70fa3f172454df308a00516df72ac905ef83e339e59cb102260c4f",
  	"lang_codes": [
  		"de",
  		"en"
@@ -29,7 +29,7 @@
  	"shuffling_variations": 12,
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 18,
+ 	"max_groups": 16,
  	"pages": [
  		{
  			"label": {
@@ -4529,7 +4529,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "48rem"
+ 						"width_max": "58rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4546,6 +4546,781 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür wie wahrscheinlich halten Sie die folgenden Szenarien im Zusammenhang mit der aktuellen Eskalation im Nahen Osten?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003eBitte stellen Sie si\u0026shy;cher, dass die Summe der Wahrscheinlichkeiten in den Zeilen jeweils 100% ergeben\u003c/i\u003e\n\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t\t(\u003c\u0026nbsp;1\u0026nbsp;Monat): \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt. \n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq1_1",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t \u003cspan style='font-size: 110%'\u003e Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t\t(1\u0026#8209;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tKonflikt hält an; es kommt zu wiederholten oder anhaltenden Beeinträchtigungen der Öl- und Gasinfrastruktur; die globale Energieversorgung ist eingeschränkt, bleibt jedoch funktionsfähig.\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq1_2",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Länger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t\t (\u003e\u0026nbsp;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t \u003cxxbr\u003e\n\t\t\t\t Stark ausgeprägter und länger andauernder Konflikt; zentrale Öl- und Gasinfrastruktur wird massiv gestört; die globale Energieversorgung wird substanziell beeinträchtigt.\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq1_3",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Summe",
+ 								"en": "Sum"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq1_4",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 100,
+ 							"disabled": true,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"disabled": true
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inputs-adding-up-100-iran",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp1": "ssq1_1",
+ 								"inp2": "ssq1_2",
+ 								"inp3": "ssq1_3",
+ 								"inp4": "ssq1_4"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Ihre Antworten  addieren sich nicht zu 100%. Wirklich weiter?",
+ 									"en": "Your answers    dont add up to 100%.         Continue anyway?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWas ist Ihre Pro\u0026shy;gno\u0026shy;se für den durchschnittlichen Brent Rohölpreis (USD pro Barrel) für die folgenden Perioden in jedem Szenario?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Szenario",
+ 								"en": "Scenario"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Q2 2026 \u0026nbsp; \u0026nbsp; \u0026nbsp; ",
+ 								"en": "Q2 2026 \u0026nbsp; \u0026nbsp; \u0026nbsp; "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Q3 2026 \u0026nbsp; \u0026nbsp; \u0026nbsp; ",
+ 								"en": "Q3 2026 \u0026nbsp; \u0026nbsp; \u0026nbsp; "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Q4 2026 \u0026nbsp; \u0026nbsp; \u0026nbsp; ",
+ 								"en": "Q4 2026 \u0026nbsp; \u0026nbsp; \u0026nbsp; "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_1_1",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_1_2",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_1_3",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tAnhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_2_1",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_2_2",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_2_3",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLänger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_3_1",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_3_2",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq2_3_3",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"max": 1000,
+ 							"suffix": {
+ 								"de": "USD",
+ 								"en": "USD"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
  					"columns": 1,
  					"inputs": [
  						{
@@ -4561,7 +5336,7 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 6,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -4570,6 +5345,34 @@
  								"en": "Scenario"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -4650,10 +5453,37 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e a) \u003c/b\u003e   Kurzfristiger und begrenzter militärischer \n\t\t\t\tKonflikt ohne wesentliche Beeinträchtigung \n\t\t\t\tder Energieversorgung\n\t\t\t",
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t",
  								"en": "todo"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
  							"col_span_label": 1
  						},
  						{
@@ -4727,10 +5557,37 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e b) \u003c/b\u003e Anhaltender militärischer Konflikt mit\n\t\t\tspürbarer Belastung der Energieversorgung\n\t\t\t",
+ 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tAnhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t",
  								"en": "todo"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
  							"col_span_label": 1
  						},
  						{
@@ -4804,10 +5661,37 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e c) \u003c/b\u003e Länger anhaltender militärischer Konflikt\n\t\t\t\tmit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t",
+ 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\tLänger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t",
  								"en": "todo"
  							},
  							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1.2ch"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"left": "0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;",
+ 								"en": "\u0026nbsp;"
+ 							},
+ 							"col_span": 1,
  							"col_span_label": 1
  						},
  						{
@@ -4897,7 +5781,43 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Nahost",
+ 				"en": "Near\u003cbr\u003eEast"
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"columns": 1,
  					"inputs": [
@@ -5100,7 +6020,8 @@
  								"column_gap": "0.8rem"
  							},
  							"box_style": {
- 								"display": "grid"
+ 								"display": "grid",
+ 								"margin": "0 0 0.5ch 0 "
  							},
  							"grid_item_style": {},
  							"text_style": {
@@ -5965,7 +6886,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "8",
+ 							"response": "9",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

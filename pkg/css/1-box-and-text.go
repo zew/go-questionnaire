@@ -29,6 +29,8 @@ type StyleBox struct {
 
 	BackgroundColor string `json:"background_color,omitempty"`
 	BorderRadius    string `json:"border_radius,omitempty"`
+
+	Disabled bool `json:"disabled,omitempty"` /*  *only* to disable interaction on divs - for disabling *input* - use inputT.disabled */
 }
 
 func boxStyleExample1() StyleBox {
@@ -126,6 +128,10 @@ func (bs StyleBox) CSS() string {
 	}
 	if bs.BorderRadius != "" {
 		fmt.Fprintf(s, "\tborder-radius: %v;\n", bs.BorderRadius)
+	}
+
+	if bs.Disabled {
+		fmt.Fprintf(s, "\tpointer-events: none; \n")
 	}
 
 	return s.String()

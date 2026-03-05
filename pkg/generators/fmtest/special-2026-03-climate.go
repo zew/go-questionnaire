@@ -107,6 +107,9 @@ func special202603ClimateTpB(
 
 		gr.Style.Desktop.StyleText.FontSize = 90
 
+		// col labels slightly upwards
+		gr.Style.Desktop.StyleBox.Margin = "0 0 0.5ch 0 "
+
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"

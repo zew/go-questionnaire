@@ -169,6 +169,13 @@ func (inp *inputT) LabelRight() {
 	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
 }
 
+// LabelPadRight puts a padding right on the label
+// to prevent touching of the control
+func (inp *inputT) LabelPadRight() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
+}
+
 // LabelCenter - label *and* text horizontally centered;
 // default is 'start/left';
 // vertical remains 'center'
@@ -190,13 +197,6 @@ func (inp *inputT) LabelBottom() {
 func (inp *inputT) LabelTop() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "start"
-}
-
-// LabelPadRight puts a padding right on the label
-// to prevent touching of the control
-func (inp *inputT) LabelPadRight() {
-	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-	inp.StyleLbl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
 }
 
 // LabelVerticallyCentered - label box and text horizontally centered - vertically bottomed

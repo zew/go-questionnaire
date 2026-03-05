@@ -143,6 +143,44 @@ dummy {
 }
 
 
+.pg06-grp03-inp00-lbl,
+.pg06-grp05-inp00-lbl,
+dummy {
+    font-size:   110%;
+    font-weight: 600;
+}
+
+.pg06-grp03-inp00-lbl,
+.pg06-grp03-inp01-lbl,
+.pg06-grp03-inp02-lbl,
+.pg06-grp03-inp03-lbl,
+
+.pg06-grp05-inp00-lbl,
+.pg06-grp05-inp01-lbl,
+.pg06-grp05-inp02-lbl,
+.pg06-grp05-inp03-lbl,
+dummy {
+    position: relative;
+    top: 0.8ch;
+    /* border: 1px solid red; */
+}
+
+
+.pg07-grp08 {
+    margin-bottom: 0.6ch;
+}
+
+.pg06-grp01-inp06-lbl  {
+    font-size:     115% ;
+}
+
+.pg07-grp01 .grid-item-lvl-2 ,
+dummy  {
+    font-size:     95% ;
+    line-height:  115% ;
+}
+
+
 /* 2026-03 climate */
 /*
 #ssq1_free,

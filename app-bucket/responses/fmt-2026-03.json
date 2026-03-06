@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b0ccabc49fa9ca5ef1f6a762d68934041f6630b1d922a15b68af3044052c756a",
+ 	"md_5": "a64ddf39e17c2f4cf8a011b9229e176bb0bc9923581879d110e8bcf59e8fc7a6",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4552,7 +4552,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür wie wahrscheinlich halten Sie die folgenden Szenarien im Zusammenhang mit der aktuellen Eskalation im Nahen Osten?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003eBitte stellen Sie si\u0026shy;cher, dass die Summe der Wahrscheinlichkeiten jeweils 100% ergibt.\u003c/i\u003e\n\n\t\t\t\t",
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür wie wahrscheinlich halten Sie die folgenden Szenarien im Zusammenhang mit der aktuellen Eskalation im Nahen Osten?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003eBitte stellen Sie si\u0026shy;cher, dass die Summe der Wahrscheinlichkeiten 100% ergibt.\u003c/i\u003e\n\n\t\t\t\t",
  								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow likely do you consider the following scenarios in the context of the current escalation in the Middle East?\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003ci\u003ePlease ensure that the probabilities add up to 100%.\u003c/i\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -4567,8 +4567,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t\t(\u003c\u0026nbsp;1\u0026nbsp;Monat): \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt. \n\t\t\t",
- 								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Short-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t (\u003c\u0026nbsp;1\u0026nbsp;month): \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tThe conflict re\u0026shy;mains temporally limited; global energy supply is not sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly affected.\n\t\t\t"
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t  Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung\n\t\t\t\t\u003cspan style='font-weight: 500'\u003e(\u003c\u0026nbsp;1\u0026nbsp;Monat): \u003c/span\u003e\n\t\t\t\t \u0026nbsp; \n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt. \n\t\t\t",
+ 								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\t  Short-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t\u003cspan style='font-weight: 500'\u003e\u003cxxbr\u003e (\u003c\u0026nbsp;1\u0026nbsp;month): \u003c/span\u003e\n\t\t\t\t \u0026nbsp; \t\t\t\t\n\t\t\t\tThe\u0026nbsp;conflict re\u0026shy;mains temporally limited; global energy supply is not sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly affected.\n\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -4623,8 +4623,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t \u003cspan style='font-size: 110%'\u003e Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t\t(1\u0026#8209;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tKonflikt hält an; es kommt zu wiederholten oder anhaltenden Beeinträchtigungen der Öl- und Gasinfrastruktur; die globale Energieversorgung ist eingeschränkt, bleibt jedoch funktionsfähig.\n\t\t\t",
- 								"en": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t \u003cspan style='font-size: 110%'\u003e Prolonged military conflict with noticeable strain on energy supply \n\t\t\t\t(1\u0026#8209;3\u0026nbsp;months):  \u003c/span\u003e\n\t\t\t\t\u003cxxbr\u003e\n\t\t\t\tThe conflict continues; there are repeated or sustained disruptions to oil and gas infrastructure; global energy supply is constrained but re\u0026shy;mains functional.\n\t\t\t"
+ 								"de": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t  Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung\n\t\t\t\t\u003cspan style='font-weight: 500'\u003e\u003cxxbr\u003e(1\u0026#8209;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t \u0026nbsp; \n\t\t\t\tKonflikt hält an; es kommt zu wiederholten oder anhaltenden Beeinträchtigungen der Öl- und Gasinfrastruktur; die globale Energieversorgung ist eingeschränkt, bleibt jedoch funktionsfähig.\n\t\t\t",
+ 								"en": "\u003cb\u003e b\u003c/b\u003e.)  \u0026nbsp;  \n \t\t\t\t  Prolonged military conflict with noticeable strain on energy supply \n\t\t\t\t\u003cspan style='font-weight: 500'\u003e\u003cxxbr\u003e(1\u0026#8209;3\u0026nbsp;months):  \u003c/span\u003e\n\t\t\t\t \u0026nbsp; \n\t\t\t\tThe\u0026nbsp;conflict continues; there are repeated or sustained disruptions to oil and gas infrastructure; global energy supply is constrained but re\u0026shy;mains functional.\n\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -4679,8 +4679,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Länger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t\t (\u003e\u0026nbsp;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t \u003cxxbr\u003e\n\t\t\t\t Stark ausgeprägter und länger andauernder Konflikt; zentrale Öl- und Gasinfrastruktur wird massiv gestört; die globale Energieversorgung wird substanziell beeinträchtigt.\n\t\t\t",
- 								"en": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t \u003cspan style='font-size: 110%'\u003e Long-lasting military conflict with substantial supply disruptions\n\t\t\t\t (\u003e\u0026nbsp;3\u0026nbsp;months):  \u003c/span\u003e\n\t\t\t\t \u003cxxbr\u003e\n\t\t\t\t A severe and protracted conflict; critical oil and gas infrastructure suffers major disruptions; global energy supply is substantially impaired.\n\t\t\t"
+ 								"de": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t  Länger anhaltender militärischer Konflikt mit er\u0026shy;heb\u0026shy;lichen Versorgungsstörungen\n\t\t\t\t\u003cspan style='font-weight: 500'\u003e (\u003e\u0026nbsp;3\u0026nbsp;Monate):  \u003c/span\u003e\n\t\t\t\t \u0026nbsp; \n\t\t\t\t Stark\u0026nbsp;ausgeprägter und länger andauernder Konflikt; zentrale Öl- und Gasinfrastruktur wird massiv gestört; die globale Energieversorgung wird substanziell beeinträchtigt.\n\t\t\t",
+ 								"en": "\u003cb\u003e c\u003c/b\u003e.)  \u0026nbsp;  \n\t\t\t\t  Long-lasting military conflict with substantial supply disruptions\n\t\t\t\t\u003cspan style='font-weight: 500'\u003e (\u003e\u0026nbsp;3\u0026nbsp;months):  \u003c/span\u003e\n\t\t\t\t \u0026nbsp; \n\t\t\t\t A severe and protracted conflict; critical oil and gas infrastructure suffers major disruptions; global energy supply is substantially impaired.\n\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -4803,8 +4803,8 @@
  							},
  							"js_block_translations": {
  								"msg": {
- 									"de": "Ihre Antworten  addieren sich nicht zu 100%. Wirklich weiter?",
- 									"en": "Your answers    dont add up to 100%.         Continue anyway?"
+ 									"de": "Ihre Antworten addieren sich nicht zu 100%. Wirklich weiter?",
+ 									"en": "Your answers dont add up to 100%. Continue anyway?"
  								}
  							}
  						}
@@ -4961,7 +4961,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt.\n\t\t\t\t",
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt\n\t\t\t\t",
  								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tShort-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t"
  							},
  							"col_span": 4,
@@ -4990,7 +4990,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5019,7 +5019,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5048,7 +5048,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5104,7 +5104,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5133,7 +5133,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5162,7 +5162,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5218,7 +5218,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5247,7 +5247,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5276,7 +5276,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 1,
- 							"max": 1000,
+ 							"max": 200,
  							"suffix": {
  								"de": "USD",
  								"en": "USD"
@@ -5326,8 +5326,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie wich\u0026shy;tig sind folgende Wirkungskanäle für die Veränderung Ihrer Wachstumspro\u0026shy;gno\u0026shy;se für das Jahr 2026 infolge der Eskalation im Nahen Osten?\n\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tNow we are interested in the macroeco\u0026shy;nom\u0026shy;ic impacts on \u003ci\u003eGer\u0026shy;ma\u0026shy;ny\u003c/i\u003e. What are your expectations for the annual real GDP growth rate and the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate (as measured by the annual av\u0026shy;er\u0026shy;age change of the HICP) under each scenario?\n\n\t\t\t\t"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tNun interessieren wir uns für die makroökonomischen Aus\u0026shy;wir\u0026shy;kungen auf \u003ci\u003eDeutsch\u0026shy;land\u003c/i\u003e.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\tWas glauben Sie, wie wird sich die Jahreswachs\u0026shy;tums\u0026shy;rate des realen BIP und die jährliche In\u0026shy;fla\u0026shy;ti\u0026shy;ons\u0026shy;rate (gemessen an der durchschnittlichen jährlichen Veränderung des HVPI) in jedem Szenario entwickeln?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tNow we are interested in the macroeco\u0026shy;nom\u0026shy;ic impacts on \u003ci\u003eGer\u0026shy;ma\u0026shy;ny\u003c/i\u003e. \n\t\t\t\t\t\n\t\t\t\t\tWhat are your expectations for the annual real GDP growth rate and the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate (as measured by the annual av\u0026shy;er\u0026shy;age change of the HICP) under each scenario?\n\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5453,7 +5453,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt.\n\t\t\t\t",
+ 								"de": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tKonflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt\n\t\t\t\t",
  								"en": "\u003cb\u003e a\u003c/b\u003e.)  \u0026nbsp;    \t\t\t\n\t\t\t\tShort-term and limited military conflict without sig\u0026shy;nif\u0026shy;i\u0026shy;cant impact on energy supply\n\t\t\t\t"
  							},
  							"col_span": 4,

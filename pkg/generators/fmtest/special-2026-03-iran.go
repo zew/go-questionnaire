@@ -268,7 +268,7 @@ func special202603IranSsq3(
 			inp.Name = fmt.Sprintf("%v_%v_%v", inputStem, i1+1, i2+1)
 			inp.Min = -10
 			inp.Max = 40
-			inp.Step = 0.1
+			inp.Step = 0.01
 			inp.MaxChars = 4
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -379,13 +379,13 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 			{
 				"de": `<b> a</b>.)  &nbsp;    			
 				  Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung
-				<span style='font-weight: 500'>(<&nbsp;1&nbsp;Monat): </span>
+				<span style='font-weight: 400'>(<&nbsp;1&nbsp;Monat): </span>
 				 &nbsp; 
 				Konflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt. 
 			`,
 				"en": `<b> a</b>.)  &nbsp;    			
 				  Short-term and limited military conflict without significant impact on energy supply
-				<span style='font-weight: 500'><xxbr> (<&nbsp;1&nbsp;month): </span>
+				<span style='font-weight: 400'><xxbr> (<&nbsp;1&nbsp;month): </span>
 				 &nbsp; 				
 				The&nbsp;conflict remains temporally limited; global energy supply is not significantly affected.
 			`,
@@ -393,13 +393,13 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 			{
 				"de": `<b> b</b>.)  &nbsp;  
  				  Anhaltender militärischer Konflikt mit spürbarer Belastung der Energieversorgung
-				<span style='font-weight: 500'><xxbr>(1&#8209;3&nbsp;Monate):  </span>
+				<span style='font-weight: 400'><xxbr>(1&#8209;3&nbsp;Monate):  </span>
 				 &nbsp; 
 				Konflikt hält an; es kommt zu wiederholten oder anhaltenden Beeinträchtigungen der Öl- und Gasinfrastruktur; die globale Energieversorgung ist eingeschränkt, bleibt jedoch funktionsfähig.
 			`,
 				"en": `<b> b</b>.)  &nbsp;  
  				  Prolonged military conflict with noticeable strain on energy supply 
-				<span style='font-weight: 500'><xxbr>(1&#8209;3&nbsp;months):  </span>
+				<span style='font-weight: 400'><xxbr>(1&#8209;3&nbsp;months):  </span>
 				 &nbsp; 
 				The&nbsp;conflict continues; there are repeated or sustained disruptions to oil and gas infrastructure; global energy supply is constrained but remains functional.
 			`,
@@ -407,13 +407,13 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 			{
 				"de": `<b> c</b>.)  &nbsp;  
 				  Länger anhaltender militärischer Konflikt mit erheblichen Versorgungsstörungen
-				<span style='font-weight: 500'> (>&nbsp;3&nbsp;Monate):  </span>
+				<span style='font-weight: 400'> (>&nbsp;3&nbsp;Monate):  </span>
 				 &nbsp; 
 				 Stark&nbsp;ausgeprägter und länger andauernder Konflikt; zentrale Öl- und Gasinfrastruktur wird massiv gestört; die globale Energieversorgung wird substanziell beeinträchtigt.
 			`,
 				"en": `<b> c</b>.)  &nbsp;  
 				  Long-lasting military conflict with substantial supply disruptions
-				<span style='font-weight: 500'> (>&nbsp;3&nbsp;months):  </span>
+				<span style='font-weight: 400'> (>&nbsp;3&nbsp;months):  </span>
 				 &nbsp; 
 				 A severe and protracted conflict; critical oil and gas infrastructure suffers major disruptions; global energy supply is substantially impaired.
 			`,
@@ -427,7 +427,7 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 		lblsSsq2and3 := []trl.S{
 			{
 				"de": `<b> a</b>.)  &nbsp;    			
-				Konflikt bleibt zeitlich begrenzt; die globale Energieversorgung wird nicht wesentlich beeinträchtigt
+				Kurzfristiger und begrenzter militärischer Konflikt ohne wesentliche Beeinträchtigung der Energieversorgung
 				`,
 				"en": `<b> a</b>.)  &nbsp;    			
 				Short-term and limited military conflict without significant impact on energy supply

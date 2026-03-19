@@ -9,13 +9,16 @@
 // config-[survey].json     contains the full blown settings for a main server app
 // logins-remote-salt.json  is needed for form tokens;
 // remote-fmt.json or remote-fmt-localhost.json contain
-// 			data to make the https POST
-// 			destination survey
-// 			remote login
+//
+//	data to make the https POST
+//	destination survey
+//	remote login
 //
 // 2. For direct download; as extension to [remote-host]/transferrer-endpoint;
 // directly returning the CSV extract; we simply have to login as an admin
-// 	who has a role [survey_id]-downloader != "";
+//
+//	who has a role [survey_id]-downloader != "";
+//
 // then we have to append format=CSV to the usual URL parameters;
 // for instance
 // https://survey2.zew.de:443/transferrer-endpoint?fetch_all=1&survey_id=fmt&wave_id=2022-04&format=CSV

@@ -275,8 +275,8 @@ func special202603IranSsq3(
 				"en": "%",
 			}
 			inp.Placeholder = trl.S{
-				"de": "0.0",
-				"en": "0.0",
+				"de": "#.00",
+				"en": "#.00",
 			}
 
 			inp.ColSpan = 1
@@ -371,8 +371,9 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 
 		page.Short = trl.S{
 			"de": "Nahost",
-			"en": "Near<br>East",
+			"en": "Middle<br>East",
 		}
+
 		// page.WidthMax("42rem")
 
 		lblsSsq1 := []trl.S{
@@ -593,7 +594,7 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 		}
 		page.Short = trl.S{
 			"de": "Nahost",
-			"en": "Near<br>East",
+			"en": "Middle<br>East",
 		}
 		page.SuppressInProgressbar = true
 		// page.WidthMax("42rem")

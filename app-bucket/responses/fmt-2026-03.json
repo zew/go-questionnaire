@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9eb9e195fa4dffb9ccee067af98cd1e5c414f5b25d147afca50f9fefd74c9cce",
+ 	"md_5": "d09d6b4df14937ed105edbae85e523c66f287f37df26ee37061cfb0eda7f5227",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4523,7 +4523,7 @@
  			},
  			"short": {
  				"de": "Nahost",
- 				"en": "Near\u003cbr\u003eEast"
+ 				"en": "Middle\u003cbr\u003eEast"
  			},
  			"style": {
  				"desktop": {
@@ -5494,8 +5494,8 @@
  							"min": -10,
  							"max": 40,
  							"placeholder": {
- 								"de": "0.0",
- 								"en": "0.0"
+ 								"de": "#.00",
+ 								"en": "#.00"
  							},
  							"suffix": {
  								"de": "%",
@@ -5528,8 +5528,8 @@
  							"min": -10,
  							"max": 40,
  							"placeholder": {
- 								"de": "0.0",
- 								"en": "0.0"
+ 								"de": "#.00",
+ 								"en": "#.00"
  							},
  							"suffix": {
  								"de": "%",
@@ -5598,8 +5598,8 @@
  							"min": -10,
  							"max": 40,
  							"placeholder": {
- 								"de": "0.0",
- 								"en": "0.0"
+ 								"de": "#.00",
+ 								"en": "#.00"
  							},
  							"suffix": {
  								"de": "%",
@@ -5632,8 +5632,8 @@
  							"min": -10,
  							"max": 40,
  							"placeholder": {
- 								"de": "0.0",
- 								"en": "0.0"
+ 								"de": "#.00",
+ 								"en": "#.00"
  							},
  							"suffix": {
  								"de": "%",
@@ -5702,8 +5702,8 @@
  							"min": -10,
  							"max": 40,
  							"placeholder": {
- 								"de": "0.0",
- 								"en": "0.0"
+ 								"de": "#.00",
+ 								"en": "#.00"
  							},
  							"suffix": {
  								"de": "%",
@@ -5736,8 +5736,8 @@
  							"min": -10,
  							"max": 40,
  							"placeholder": {
- 								"de": "0.0",
- 								"en": "0.0"
+ 								"de": "#.00",
+ 								"en": "#.00"
  							},
  							"suffix": {
  								"de": "%",
@@ -5795,7 +5795,7 @@
  			},
  			"short": {
  				"de": "Nahost",
- 				"en": "Near\u003cbr\u003eEast"
+ 				"en": "Middle\u003cbr\u003eEast"
  			},
  			"suppress_in_progressbar": true,
  			"style": {

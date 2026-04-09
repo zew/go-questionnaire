@@ -91,6 +91,10 @@ func special202604(q *qst.QuestionnaireT) error {
 		"de": "Zinserwartungen",
 		"en": "Interest rate expectations",
 	}
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
 	page.Short = trl.S{
 		"de": "Sonderfragen:<br>Zinserwartungen",
 		"en": "Special questions:<br>Interest rates",
@@ -119,7 +123,7 @@ func special202604(q *qst.QuestionnaireT) error {
 				<br>
 				<br>
 				Bitte geben Sie für jedes der unten aufgeführten Treffen des EZB-Rats an, 
-				um wie viele Basispunkte sich der Einlagezinssatz gegenüber der jeweils vorherigen Sitzung Ihrer Einschätzung nach ändern wird.
+				um wie viele Basispunkte sich der <b>Einlagezinssatz</b> gegenüber der jeweils vorherigen Sitzung Ihrer Einschätzung nach ändern wird.
 				<br>
 				<br>
 				<small>
@@ -134,7 +138,7 @@ func special202604(q *qst.QuestionnaireT) error {
 				The current deposit facility rate is 2.00%.
 				<br>
 				<br>
-				Please indicate for each of the ECB Governing Council meetings listed below, by how many basis points you expect the deposit facility rate to change relative to the previous meeting.
+				Please indicate for each of the ECB Governing Council meetings listed below, by how many basis points you expect the <b>deposit facility rate</b> to change relative to the previous meeting.
 				<br>
 				<br>
 				<small>

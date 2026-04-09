@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "dbfa29e67831958e72420d519e2a484bac8805bd8ee42c01147b20df98f3a552",
+ 	"md_5": "2eefa79791e5d3f2a7252fa2fc4b63cdb7763ea34c13c9eb830cf5b4096c2e6f",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6659,7 +6659,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 2,15%) erwarte ich\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 2,15%) to be\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing operations rate\u003c/b\u003e of the ECB (currently at 2,15%) to be\n\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -7085,8 +7085,8 @@
  		},
  		{
  			"label": {
- 				"de": "Zinserwartungen",
- 				"en": "Interest rate expectations"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -7124,8 +7124,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWir möchten Sie zu Ihren Erwartungen bezüglich zukünftiger Zinsentscheidungen der Europäischen Zentralbank (EZB) befragen. \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tDerzeit beträgt der Einlagezinssatz 2,00%.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tBitte geben Sie für jedes der unten aufgeführten Treffen des EZB-Rats an, \n\t\t\t\tum wie viele Basis\u0026shy;punkte sich der Einlagezinssatz gegenüber der jeweils vorherigen Sitzung Ihrer Einschätzung nach ändern wird.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tHinweis: Bitte verwenden Sie pos\u0026shy;itive Werte für Zinserhöhungen und neg\u0026shy;ative Werte für Zinssenkungen. Wenn Sie kei\u0026shy;ne Änderung erwarten, tragen Sie bitte „0“ ein.\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWe would like to ask about your expectations regarding future interest rate decisions of the European Central Bank (ECB).\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tThe current deposit facility rate is 2.00%.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tPlease indicate for each of the ECB Governing Council meetings listed be\u0026shy;low, by how many basis points you expect the deposit facility rate to change relative to the previous meeting.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\tNote: Please use pos\u0026shy;itive values for rate in\u0026shy;creases and neg\u0026shy;ative values for rate cuts. If you expect no change, please enter “0”.\n\t\t\t\t\u003c/small\u003e\n\t\t\t\n\t\t\t"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWir möchten Sie zu Ihren Erwartungen bezüglich zukünftiger Zinsentscheidungen der Europäischen Zentralbank (EZB) befragen. \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tDerzeit beträgt der Einlagezinssatz 2,00%.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tBitte geben Sie für jedes der unten aufgeführten Treffen des EZB-Rats an, \n\t\t\t\tum wie viele Basis\u0026shy;punkte sich der \u003cb\u003eEinlagezinssatz\u003c/b\u003e gegenüber der jeweils vorherigen Sitzung Ihrer Einschätzung nach ändern wird.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tHinweis: Bitte verwenden Sie pos\u0026shy;itive Werte für Zinserhöhungen und neg\u0026shy;ative Werte für Zinssenkungen. Wenn Sie kei\u0026shy;ne Änderung erwarten, tragen Sie bitte „0“ ein.\n\t\t\t\t\u003c/small\u003e\n\n\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWe would like to ask about your expectations regarding future interest rate decisions of the European Central Bank (ECB).\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tThe current deposit facility rate is 2.00%.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tPlease indicate for each of the ECB Governing Council meetings listed be\u0026shy;low, by how many basis points you expect the \u003cb\u003edeposit facility rate\u003c/b\u003e to change relative to the previous meeting.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\tNote: Please use pos\u0026shy;itive values for rate in\u0026shy;creases and neg\u0026shy;ative values for rate cuts. If you expect no change, please enter “0”.\n\t\t\t\t\u003c/small\u003e\n\t\t\t\n\t\t\t"
  							},
  							"col_span": 2,
  							"col_span_label": 1

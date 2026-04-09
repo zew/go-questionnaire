@@ -778,7 +778,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				),
 				"en": fmt.Sprintf(
 					`
-					I expect the <b>main refinancing facility rate</b> of the ECB (currently at %v) to be
+					I expect the <b>main refinancing operations rate</b> of the ECB (currently at %v) to be
 					`, latestECBRate,
 				),
 			}

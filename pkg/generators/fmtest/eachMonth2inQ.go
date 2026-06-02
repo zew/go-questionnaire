@@ -313,6 +313,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			"de": "Krieg in der Ukraine",
 			"en": "War in Ukraine",
 		},
+		{
+			"de": "Nahost-Konflikt",
+			"en": "Middle east conflict",
+		},
 		// 2025-05
 		{
 			"de": "Handels&shy;protektionismus und Zölle seitens USA",
@@ -320,8 +324,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			// "de": "Ankündigungen zu Verteidigungs- und Staats&shy;ausgaben",
-			"de": "Ankündigungen der deutschen Bundesregierung zu Verteidigungs- und Staats&shy;ausgaben",
-			"en": "Announcements from the German government on military and fiscal spending",
+			"de": "Verteidigungs- und Investitionsausgaben der deutschen Bundesregierung",
+			"en": "Defense and investment spending by the German government",
 		},
 		// {
 		// 	"de": "Spannungen im Bankensystem",
@@ -354,6 +358,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"rev_shortages_raw_mat",
 				"rev_inflation",
 				"rev_ukraine",
+				"rev_middleast",
 				"rev_us_tariffs",
 				"rev_defence_spending",
 				// "rev_banking_strain",

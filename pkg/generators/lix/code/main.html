@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standortfaktoren – Unternehmensbefragung</title>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"  rel="stylesheet"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="texts.js"></script>
+</head>
+
+
+
+<body>
+
+  <div class="shell">
+
+    <div class="masthead">
+      <div class="masthead-label">Unternehmensbefragung</div>
+      <h1>Bewertung von Standortfaktoren</h1>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span id="step-label">Einleitung</span>
+        <span id="step-count">0 / 7</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+
+    <div id="steps-container"></div>
+
+  </div>
+
+  <script src="logic.js"></script>
+
+  
+</body>
+
+</html>

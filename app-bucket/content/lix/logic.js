@@ -1,3 +1,15 @@
+const dbg = true;
+
+// handling exceptions globally for storage operations
+function handleExc(exc, optionalMsg) {
+    if (optionalMsg) {
+        console.error( `${optionalMsg} fail:` );
+    }
+    console.error(exc);
+    if (dbg) {
+        alert(`${optionalMsg} fail - see console`)
+    }
+}
 
 let currentStep = 0;
 // six sub categories
@@ -22,47 +34,43 @@ function clampSet(arr, idx, val) {
 
 
 function submitResults(data) {
-    const rows = [];
-    const headers = [
-        'Zeitstempel',
-        ...CATS.map(    c => 'HK_' + c.id),
-        ...CATS.flatMap(c => c.subs.map(s => 'UK_' + c.id + '_' + s.id))
-    ];
-    rows.push(headers.join(';'));
-    const vals = [
-        new Date().toLocaleString('de-DE'),
-        ...data.main,
-        ...data.subs.flat()
-    ];
-    rows.push(
-        vals.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')
-    );
+    try {
+        const rows = [];
+        const headers = [
+            'Zeitstempel',
+            ...CATS.map(    c => 'HK_' + c.id),
+            ...CATS.flatMap(c => c.subs.map(s => 'UK_' + c.id + '_' + s.id))
+        ];
+        rows.push(headers.join(';'));
+        const vals = [
+            new Date().toLocaleString('de-DE'),
+            ...data.main,
+            ...data.subs.flat()
+        ];
+        
+        // escaping quotes to prevent CSV injection or formatting breaks
+        rows.push(
+            vals.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')
+        );
 
-    // console.log(`submitting results`)
-    // console.log(rows)
+        // console.log(`submitting results`)
+        // console.log(rows)
 
-    const blob = new Blob(['\uFEFF' + rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'standortfaktoren_' + Date.now() + '.csv';
-    a.click();
+        // prepending BOM (\uFEFF) ensuring Excel reads UTF-8 correctly
+        const blob = new Blob(['\uFEFF' + rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'standortfaktoren_' + Date.now() + '.csv';
+        a.click();
 
-    URL.revokeObjectURL(url);
+        // releasing memory allocated for object URL
+        URL.revokeObjectURL(url);
+    } catch (exc) {
+        handleExc(exc, 'submitResults()');
+    }
 }
 
-
-function updateProgress() {
-    const fill  = document.getElementById('progress-fill');
-    const label = document.getElementById('step-label');
-    const count = document.getElementById('step-count');
-    const pct = Math.round((currentStep / (TOTAL_STEPS - 1)) * 100);
-    fill.style.width = pct + '%';
-    count.textContent = currentStep + ' / ' + (TOTAL_STEPS - 1);
-    const labels = ['Einleitung', 'Hauptkategorien',
-        ...CATS.map(c => c.label)];
-    label.textContent = labels[currentStep] || '';
-}
 
 function buildBudgetBadge(arr) {
     const rem = remaining(arr);
@@ -217,15 +225,16 @@ function buildChartData(vals, isSub, catIdx) {
 }
 
 
-// but also refresh
-function initChart(stepIdx, vals, isSub, catIdx) {
+function renderChart(stepIdx, vals, isSub, catIdx) {
     const chartKey = 'chart-' + stepIdx;
     const el = document.getElementById('echarts-' + stepIdx);
     if (!el) return;
     const chart = echarts.init(el);
     charts[chartKey] = chart;
     chart.setOption({
-        tooltip: { trigger: 'item', formatter: p => p.name === 'Noch zu vergeben' ? `<b>${p.value} Punkte</b> noch zu vergeben` : `${p.name}<br/><b>${p.value} Punkte</b>` },
+        tooltip: { 
+            trigger: 'item', 
+            formatter: p => p.name === 'Noch zu vergeben' ? `<b>${p.value} Punkte</b> noch zu vergeben` : `${p.name}<br/><b>${p.value} Punkte</b>` },
         series: [{
             type: 'pie', radius: ['38%', '68%'],
             avoidLabelOverlap: false,
@@ -360,28 +369,6 @@ function buildResultsStep() {
 
 
 
-function goTo(idx) {
-    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    const el = document.getElementById('step-' + idx);
-    if (el) { 
-        el.classList.add('active'); 
-        currentStep = idx; 
-    }
-    updateProgress();
-    if (idx === 1) setTimeout(() => { initChart(1, mainVals, false, null); }, 50);
-    if (idx >= 2 && idx <= 7) { 
-        const catIdx = idx - 2; 
-        setTimeout(
-            () => { initChart(idx, subVals[catIdx], true, catIdx); }, 50
-        ); 
-    }
-    // xxxx
-    console.log(mainVals);
-    console.log(subVals);
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
 
 
 function goBackFromResults() {
@@ -453,6 +440,55 @@ function showResults() {
 }
 
 
+
+function updateProgress() {
+    const fill  = document.getElementById('progress-fill');
+    const label = document.getElementById('step-label');
+    const count = document.getElementById('step-count');
+    const pct = Math.round((currentStep / (TOTAL_STEPS - 1)) * 100);
+    fill.style.width = pct + '%';
+    count.textContent = currentStep + ' / ' + (TOTAL_STEPS - 1);
+    const labels = ['Einleitung', 'Hauptkategorien',
+        ...CATS.map(c => c.label)];
+    label.textContent = labels[currentStep] || '';
+}
+
+
+function goTo(idx) {
+    try{
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        const el = document.getElementById('step-' + idx);
+        if (el) { 
+            el.classList.add('active'); 
+            currentStep = idx; 
+        }
+        updateProgress();
+        if (idx === 1) {
+            setTimeout(
+                () => { renderChart(  1, mainVals       , false, null); }, 50
+            );
+        }
+        if (idx >= 2 && idx <= 7) { 
+            const catIdx = idx - 2; 
+            setTimeout(
+                () => { renderChart(idx, subVals[catIdx], true,  catIdx); }, 50
+            ); 
+        }
+        
+        // xxxx
+        console.log(mainVals);
+        console.log(subVals);
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    } catch (exc) {
+        handleExc(exc, `goTo(${idx})  - `);
+    }
+
+}
+
+
+
 function init() {
     const container = document.getElementById('steps-container');
     let html = '';
@@ -460,7 +496,7 @@ function init() {
     html += buildStep2();
     CATS.forEach((_, i) => { 
         html += buildSubStep(i); 
-        console.log(`sub step ${i}`)
+        console.log(`  sub step ${i}`)
     });
     html += buildResultsStep();
     container.innerHTML = html;
@@ -468,3 +504,5 @@ function init() {
 }
 
 init();
+
+console.info("texts.js loaded")

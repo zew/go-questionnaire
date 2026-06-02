@@ -20,11 +20,11 @@ import (
 	"github.com/go-playground/form/v4"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
-	"github.com/zew/go-questionnaire/pkg/generators/biii"
 	"github.com/zew/go-questionnaire/pkg/generators/example"
 	"github.com/zew/go-questionnaire/pkg/generators/flit"
 	"github.com/zew/go-questionnaire/pkg/generators/fmtest"
 	"github.com/zew/go-questionnaire/pkg/generators/kneb1"
+	"github.com/zew/go-questionnaire/pkg/generators/lix"
 	"github.com/zew/go-questionnaire/pkg/generators/pat"
 	"github.com/zew/go-questionnaire/pkg/generators/pat1"
 	"github.com/zew/go-questionnaire/pkg/generators/pat2"
@@ -41,7 +41,10 @@ var gens = map[string]genT{
 
 	"example": example.Create,
 	"flit":    flit.Create,
-	"biii":    biii.Create,
+
+	"lix": lix.Create,
+
+	// "biii":    biii.Create,
 
 	"kneb1": kneb1.Create,
 

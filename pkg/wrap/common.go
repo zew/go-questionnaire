@@ -1,7 +1,6 @@
 package wrap
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -39,8 +38,8 @@ func paramPersister(r *http.Request, sess *sessx.SessT) {
 func microErrorPage(w http.ResponseWriter, r *http.Request, msg string) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	wr := func(s string, args ...interface{}) {
-		_, err := w.Write([]byte(fmt.Sprintf(s, args...)))
+	wr := func(s string) {
+		_, err := w.Write([]byte(s))
 		if err != nil {
 			util.BubbleUp(err)
 		}

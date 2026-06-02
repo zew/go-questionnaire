@@ -75,3 +75,5 @@ const CATS2 = [
     }
 ];
 
+
+console.info("texts.js loaded")

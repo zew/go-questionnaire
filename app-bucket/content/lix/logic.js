@@ -1,5 +1,12 @@
 const dbg = true;
 
+/**
+ * By default, any button rendered inside an HTML `<form>` acts as a submit button. 
+ * Explicitly defining <button> with type as "button" overrides this default browser behavior, 
+ * allowing the JavaScript `onclick` handlers to execute without submitting the form.
+ */
+
+
 // handling exceptions globally for storage operations
 function handleExc(exc, optionalMsg) {
     if (optionalMsg) {
@@ -24,6 +31,8 @@ function budget(arr) { return arr.length * 10; }
 function remaining(arr) { return budget(arr) - arr.reduce((a, b) => a + b, 0); }
 
 
+
+// limit allocation of points
 function clampSet(arr, idx, val) {
     const max = budget(arr);
     val = Math.max(0, Math.min(max, val));
@@ -33,44 +42,6 @@ function clampSet(arr, idx, val) {
 }
 
 
-function submitResults(data) {
-    try {
-        const rows = [];
-        const headers = [
-            'Zeitstempel',
-            ...CATS.map(    c => 'HK_' + c.id),
-            ...CATS.flatMap(c => c.subs.map(s => 'UK_' + c.id + '_' + s.id))
-        ];
-        rows.push(headers.join(';'));
-        const vals = [
-            new Date().toLocaleString('de-DE'),
-            ...data.main,
-            ...data.subs.flat()
-        ];
-        
-        // escaping quotes to prevent CSV injection or formatting breaks
-        rows.push(
-            vals.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')
-        );
-
-        // console.log(`submitting results`)
-        // console.log(rows)
-
-        // prepending BOM (\uFEFF) ensuring Excel reads UTF-8 correctly
-        const blob = new Blob(['\uFEFF' + rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'standortfaktoren_' + Date.now() + '.csv';
-        a.click();
-
-        // releasing memory allocated for object URL
-        URL.revokeObjectURL(url);
-    } catch (exc) {
-        handleExc(exc, 'submitResults()');
-    }
-}
-
 
 function buildBudgetBadge(arr) {
     const rem = remaining(arr);
@@ -79,6 +50,7 @@ function buildBudgetBadge(arr) {
     let msg = rem === 0 ? 'Alle ' + tot + ' Punkte vergeben' : rem > 0 ? rem + ' von ' + tot + ' Punkten noch verfügbar' : Math.abs(rem) + ' Punkte zu viel';
     return `<div class="budget-badge ${cls}"><span class="dot"></span>${msg}</div>`;
 }
+
 
 function buildSliders(vals, catIdx, isSub) {
     const items = isSub !== undefined ? CATS[catIdx].subs : CATS;
@@ -98,7 +70,7 @@ function buildSliders(vals, catIdx, isSub) {
             <div class="slider-header">
             <div>
                 <div class="slider-name">${item.label}${item.tooltip ? `<span class="info-wrap">
-                    <button class="info-btn" aria-label="Info">i</button>
+                    <button type="button" class="info-btn" aria-label="Info">i</button>
                     <span class="info-tooltip">${item.tooltip}</span></span>` : ''}
                 </div>
                 ${item.hint ? `<div class="slider-hint">${item.hint}</div>` : ''}
@@ -148,6 +120,7 @@ function handleNumInput(el) {
     else clampSet(subVals[cat], idx, val);
     refreshStep(type === 'main' ? 1 : 2 + cat);
 }
+
 
 function refreshStep(stepIdx) {
     const container = document.getElementById('step-' + stepIdx);
@@ -275,7 +248,7 @@ function buildStep0() {
             </div>
 
             <div class="btn-row">
-                <button  accesskey="2" class="btn primary" onclick="goTo(1)">Weiter →</button>
+                <button type="button" accesskey="2" class="btn primary" onclick="goTo(1)">Weiter →</button>
             </div>
         </div>
     `;
@@ -293,7 +266,8 @@ function buildStep2() {
                 </div>
                 <p class="card-desc">Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget 
                     von <strong>60 Punkten</strong> entsprechend aufteilen. 
-                        <span class="info-wrap"><button class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr 
+                        <span class="info-wrap">
+                        <button type="button" class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr 
                         Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
                         die für Ihre Entscheidung weniger ausschlaggebend sind. 
                         10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
@@ -308,18 +282,18 @@ function buildStep2() {
                 </div>
             </div>
             <div class="btn-row">
-                <button  accesskey="p" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
-                <button  accesskey="2" class="btn primary"  onclick="goTo(2)" ${remaining(mainVals) !== 0 ? 'disabled' : ''}>Weiter →</button>
+                <button type="button" accesskey="p" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
+                <button type="button" accesskey="2" class="btn primary"  onclick="goTo(2)" ${remaining(mainVals) !== 0 ? 'disabled' : ''}>Weiter →</button>
             </div>
         </div>
     `;
 }
 
 function buildSubStep(catIdx) {
-    const cat = CATS[catIdx];
+    const cat     = CATS[catIdx];
     const stepIdx = 2 + catIdx;
-    const vals = subVals[catIdx];
-    const isLast = catIdx === CATS.length - 1;
+    const vals    = subVals[catIdx];
+    const isLast  = catIdx === CATS.length - 1;
     return `
         <div class="step" id="step-${stepIdx}">
             <div class="card">
@@ -328,7 +302,18 @@ function buildSubStep(catIdx) {
                     Aktivitäten in Deutschland fortzuführen und auszubauen oder aber zurückzufahren und gegebenenfalls 
                     in andere Länder zu verlagern?
                 </div>
-                <p class="card-desc">Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget von <strong>${cat.subs.length * 10} Punkten</strong> entsprechend aufteilen. <span class="info-wrap"><button class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, die für Ihre Entscheidung weniger ausschlaggebend sind. 10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.</span></span></p>
+                <p class="card-desc">
+                    Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget von 
+                    <strong>${cat.subs.length * 10} Punkten</strong> entsprechend aufteilen. 
+                    
+                    <span class="info-wrap">
+                    <button type="button" class="info-btn" aria-label="Info">i</button><span class="info-tooltip"
+                    >Vergeben Sie mehr Punkte 
+                    an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
+                    die für Ihre Entscheidung weniger ausschlaggebend sind. 
+                    10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
+                    </span></span>
+                </p>
             </div>
             <div class="card">
                 ${buildBudgetBadge(vals)}
@@ -338,9 +323,12 @@ function buildSubStep(catIdx) {
                 </div>
             </div>
             <div class="btn-row">
-                <button accesskey="p" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
-                <button accesskey="2" class="btn primary"  onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}" ${remaining(vals) !== 0 ? 'disabled' : ''}>
-                ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
+                <button type="button" accesskey="p" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
+                
+                <button type="button" accesskey="2" class="btn primary"  
+                    onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}" 
+                    ${remaining(vals) !== 0 ? 'disabled' : ''} >
+                    ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
                 </button>
             </div>
         </div>
@@ -361,7 +349,7 @@ function buildResultsStep() {
                 <div id="results-content"></div>
             </div>
             <div class="btn-row">
-                <button class="btn btn-back" onclick="goBackFromResults()">← Zurück</button>
+                <button type="button" class="btn btn-back" onclick="goBackFromResults()">← Zurück</button>
             </div>
         </div>
     `;
@@ -370,74 +358,12 @@ function buildResultsStep() {
 
 
 
-
+// seems unused
 function goBackFromResults() {
     goTo(2 + CATS.length - 1);
 }
 
 
-function showResults() {
-    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    const el = document.getElementById('step-results');
-    if (el) { el.classList.add('active'); currentStep = TOTAL_STEPS - 1; }
-    updateProgress();
-    submitResults({ main: mainVals, subs: subVals });
-
-    let html = '<div class="results-summary">';
-    html += '<div class="res-group-title">Hauptkategorien</div>';
-    html += '<div id="res-main-pie" style="width:100%;height:320px;margin-bottom:1.5rem"></div>';
-    html += '<div class="res-group-title">Unterkategorien</div>';
-    html += '<div class="res-pie-grid">';
-    CATS.forEach((cat, i) => {
-        html += `
-        <div class="res-pie-card">
-            <div class="res-pie-card-title">
-            <span style="width:10px;height:10px;border-radius:2px;background:${cat.color};display:inline-block;flex-shrink:0"></span>${cat.label}</div>
-            <div class="res-pie-container" id="res-sub-pie-${i}"></div>
-        </div>`;
-    });
-    html += '</div></div>';
-    document.getElementById('results-content').innerHTML = html;
-
-    setTimeout(() => {
-        const mainChart = echarts.init(document.getElementById('res-main-pie'));
-        mainChart.setOption({
-            tooltip: { trigger: 'item', formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>` },
-            legend: { bottom: 0, left: 'center', textStyle: { fontSize: 12, fontFamily: 'DM Sans' }, itemWidth: 12, itemHeight: 12 },
-            series: [{
-                type: 'pie', radius: ['32%', '56%'], center: ['50%', '40%'], avoidLabelOverlap: true,
-                itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 3 },
-                label:     { show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '', fontSize: 12, fontFamily: 'DM Sans', color: '#2C2A26' },
-                labelLine: { show: true, showAbove: false, length: 8, length2: 6 },
-                data: CATS.map((cat, i) => ({
-                    value: mainVals[i], name: cat.label, itemStyle: { color: cat.color },
-                    label: { show: mainVals[i] > 0 }, labelLine: { show: mainVals[i] > 0 }
-                }))
-            }]
-        });
-        CATS.forEach((cat, i) => {
-            const subColors = generateSubColors(cat.color, cat.subs.length);
-            const el = document.getElementById('res-sub-pie-' + i);
-            if (!el) return;
-            const chart = echarts.init(el);
-            chart.setOption({
-                tooltip: { trigger: 'item', formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>` },
-                series: [{
-                    type: 'pie', radius: ['30%', '58%'], avoidLabelOverlap: false,
-                    itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 2 },
-                    label: { show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '', fontSize: 11, fontFamily: 'DM Sans', color: '#2C2A26' },
-                    labelLine: { show: true, length: 6, length2: 4 },
-                    data: cat.subs.map((sub, j) => ({
-                        value: subVals[i][j], name: sub.label, itemStyle: { color: subColors[j] },
-                        label: { show: subVals[i][j] > 0 }, labelLine: { show: subVals[i][j] > 0 }
-                    }))
-                }]
-            });
-        });
-    }, 80);
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 
 

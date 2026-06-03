@@ -1,3 +1,33 @@
+nav {
+    display: none;
+}
+
+
+.survey-wave-id {
+    display: none;
+}
+.survey-org {
+    display: none;
+}
+
+nav .logo {
+    display: none !important;
+}
+
+
+#loginlogout {
+    display: none;
+}
+#quest-pages {
+    display: none;
+}
+
+
+input[type=range] {
+  padding: inherit;
+  padding: 0 !important;
+}
+
 :root {
   --bg: #F7F5F0;
   --surface: #FDFCFA;
@@ -40,9 +70,9 @@ body {
 }
 
 .masthead {
-  margin-bottom: 2rem;
+  margin-bottom:  2rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom:  1px solid var(--border);
 }
 
 .masthead-label {
@@ -60,6 +90,8 @@ body {
   color: var(--text);
   line-height: 1.3;
 }
+
+
 
 .progress-wrap {
   margin-bottom: 2rem;
@@ -328,7 +360,7 @@ body {
 }
 
 .snap-tick {
-  width: 1.5px;
+  width:   2.5px;
   height: 10px;
   background: #C8C4BC;
   border-radius: 1px;
@@ -666,4 +698,22 @@ button.btn.primary:disabled {
     border-color: #cccccc !important;
     cursor: not-allowed;
     opacity: 0.8;
+}
+
+button.btn.primary:focus {
+}
+
+input[type=range]:focus {
+  outline: 3px solid red;
+}
+
+/* only on activation by keyboard  */
+button.btn.primary:focus-visible {
+  outline: 3px solid lightgrey;
+}
+
+
+/* allowing clicks to pass through snap marker to underlying range input */
+.snap-wrap {
+    /* pointer-events: none; */
 }

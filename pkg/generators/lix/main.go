@@ -39,9 +39,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 
 		page.Label = trl.S{
-			"en": "Dear Madam / Sir,",
-			"de": "Sehr geehrter Damen und Herren",
+			"en": "",
+			"de": "",
 		}
+		// page.Label = trl.S{
+		// 	"en": "Dear Madam / Sir,",
+		// 	"de": "Sehr geehrter Damen und Herren",
+		// }
 		// page.Short = trl.S{
 		// 	"en": "Greeting",
 		// 	"de": "Begrüßung",

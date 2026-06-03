@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d13917f7f3d5d85bde5b2124c109939ddc6eca550ab8113bd2f555870de67069",
+ 	"md_5": "dfcfe62b69b6d2a6be93b75dae8a90dd418925ca452caf5420e10fa2f711ca5b",
  	"lang_codes": [
  		"de"
  	],
@@ -28,8 +28,8 @@
  	"pages": [
  		{
  			"label": {
- 				"de": "Sehr geehrter Damen und Herren",
- 				"en": "Dear Madam / Sir,"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",

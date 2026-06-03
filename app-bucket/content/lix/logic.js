@@ -37,7 +37,10 @@ function clampSet(arr, idx, val) {
     const max = budget(arr);
     val = Math.max(0, Math.min(max, val));
     const others = arr.reduce((a, b, i) => i === idx ? a : a + b, 0);
-    if (val + others > max) val = max - others;
+    if (val + others > max) {
+        val = max - others;
+        console.info(`clamped to ${val}`)
+    }
     arr[idx] = val;
 }
 
@@ -65,12 +68,12 @@ function buildSliders(vals, catIdx, isSub) {
         const trackBg = `linear-gradient(to right, ${color} calc(${pct}% - ${thumbOffset.toFixed(2)}px), #E2DED6 calc(${pct}% - ${thumbOffset.toFixed(2)}px))`;
         const snapFrac = 10 / (vals.length * 10);
         const snapPct = snapFrac * 100;
-        const snapPos = `calc(${snapPct.toFixed(4)}% - ${(snapFrac * 16).toFixed(4)}px + 8px)`;
+        const snapPos = `calc(${snapPct.toFixed(4)}% - ${(snapFrac * 16).toFixed(4)}px + 6.25px)`;
         html += `<div class="slider-item">
             <div class="slider-header">
             <div>
                 <div class="slider-name">${item.label}${item.tooltip ? `<span class="info-wrap">
-                    <button type="button" class="info-btn" aria-label="Info">i</button>
+                    <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button>
                     <span class="info-tooltip">${item.tooltip}</span></span>` : ''}
                 </div>
                 ${item.hint ? `<div class="slider-hint">${item.hint}</div>` : ''}
@@ -82,8 +85,8 @@ function buildSliders(vals, catIdx, isSub) {
                 oninput="handleNumInput(this)">
             <div class="slider-track-wrap">
                 <span class="snap-wrap" style="left:${snapPos}">
-                <span class="snap-tick"></span>
-                <span class="snap-tip">Gleichbewertung (10 Pkt.)</span>
+                    <span class="snap-tick"></span>
+                    <span class="snap-tip">Gleichbewertung (10 Pkt.)</span>
                 </span>
                 <input type="range" min="0" max="${budget(vals)}" step="1" value="${val}"
                 style="background:${trackBg};width:100%"
@@ -99,9 +102,9 @@ function buildSliders(vals, catIdx, isSub) {
 
 
 function handleSlider(el) {
-    const idx = +el.dataset.idx;
+    const idx  = +el.dataset.idx;
     const type = el.dataset.type;
-    const cat = +el.dataset.cat;
+    const cat  = +el.dataset.cat;
     let val = +el.value;
     const snap = +el.dataset.snap;
     if (Math.abs(val - snap) <= 2) { val = snap; el.value = snap; }
@@ -248,7 +251,7 @@ function buildStep0() {
             </div>
 
             <div class="btn-row">
-                <button type="button" accesskey="2" class="btn primary" onclick="goTo(1)">Weiter →</button>
+                <button type="button" accesskey="2" class="btn primary" onclick="goTo(1)"  autofocus>Weiter →</button>
             </div>
         </div>
     `;
@@ -267,7 +270,7 @@ function buildStep2() {
                 <p class="card-desc">Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget 
                     von <strong>60 Punkten</strong> entsprechend aufteilen. 
                         <span class="info-wrap">
-                        <button type="button" class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr 
+                        <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr 
                         Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
                         die für Ihre Entscheidung weniger ausschlaggebend sind. 
                         10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
@@ -282,7 +285,7 @@ function buildStep2() {
                 </div>
             </div>
             <div class="btn-row">
-                <button type="button" accesskey="p" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
+                <button type="button" accesskey="b"  tabindex="99" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
                 <button type="button" accesskey="2" class="btn primary"  onclick="goTo(2)" ${remaining(mainVals) !== 0 ? 'disabled' : ''}>Weiter →</button>
             </div>
         </div>
@@ -307,7 +310,7 @@ function buildSubStep(catIdx) {
                     <strong>${cat.subs.length * 10} Punkten</strong> entsprechend aufteilen. 
                     
                     <span class="info-wrap">
-                    <button type="button" class="info-btn" aria-label="Info">i</button><span class="info-tooltip"
+                    <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip"
                     >Vergeben Sie mehr Punkte 
                     an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
                     die für Ihre Entscheidung weniger ausschlaggebend sind. 
@@ -323,7 +326,7 @@ function buildSubStep(catIdx) {
                 </div>
             </div>
             <div class="btn-row">
-                <button type="button" accesskey="p" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
+                <button type="button" accesskey="b"  tabindex="99" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
                 
                 <button type="button" accesskey="2" class="btn primary"  
                     onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}" 

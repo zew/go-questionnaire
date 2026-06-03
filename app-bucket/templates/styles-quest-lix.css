@@ -356,15 +356,18 @@ body {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:    center;
 }
 
 .snap-tick {
   width:   2.5px;
   height: 10px;
+  transform: translateX(0.5px);
+
   background: #C8C4BC;
   border-radius: 1px;
   cursor: default;
+  cursor: pointer;
 }
 
 .snap-tip {
@@ -704,7 +707,7 @@ button.btn.primary:focus {
 }
 
 input[type=range]:focus {
-  outline: 3px solid red;
+  outline: 1px solid lightgrey;
 }
 
 /* only on activation by keyboard  */

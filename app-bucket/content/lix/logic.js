@@ -1,8 +1,8 @@
 const dbg = true;
 
 /**
- * By default, any button rendered inside an HTML `<form>` acts as a submit button. 
- * Explicitly defining <button> with type as "button" overrides this default browser behavior, 
+ * By default, any button rendered inside an HTML `<form>` acts as a submit button.
+ * Explicitly defining <button> with type as "button" overrides this default browser behavior,
  * allowing the JavaScript `onclick` handlers to execute without submitting the form.
  */
 
@@ -85,13 +85,21 @@ function buildSliders(vals, catIdx, isSub) {
                 oninput="handleNumInput(this)">
             <div class="slider-track-wrap">
                 <span class="snap-wrap" style="left:${snapPos}">
-                    <span class="snap-tick"></span>
+                    <span class="snap-tick" onclick="handleSnapClick(this)"></span>
                     <span class="snap-tip">Gleichbewertung (10 Pkt.)</span>
                 </span>
                 <input type="range" min="0" max="${budget(vals)}" step="1" value="${val}"
-                style="background:${trackBg};width:100%"
-                data-idx="${i}" data-type="${dtype}" data-cat="${catIdx}" data-snap="${snapPt}"
-                oninput="handleSlider(this)">
+                    style="background:${trackBg};width:100%"
+                    data-idx="${i}"
+                    data-type="${dtype}"
+                    data-cat="${catIdx}"
+                    data-snap="${snapPt}"
+
+                    onpointerdown="this.dataset.inputMode = event.pointerType"
+                    onkeydown="this.dataset.inputMode = 'keyboard'"
+
+                    oninput="handleSlider(event, this)"
+                >
             </div>
             </div>
         </div>`;
@@ -101,15 +109,42 @@ function buildSliders(vals, catIdx, isSub) {
 }
 
 
-function handleSlider(el) {
+function handleSnapClick(el) {
+    // the tick represents the exact snap value, avoiding coordinate math entirely.
+    // we find the sibling range input, set its value, and dispatch a standard input event.
+    const container = el.closest('.slider-track-wrap');
+    const rangeInput = container.querySelector('input[type="range"]');
+    if (rangeInput) {
+        rangeInput.value = rangeInput.dataset.snap;
+        rangeInput.dataset.inputMode = 'mouse';
+        rangeInput.dispatchEvent(new Event('input'));
+    }
+}
+
+
+function handleSlider(evt, el) {
+
     const idx  = +el.dataset.idx;
     const type = el.dataset.type;
     const cat  = +el.dataset.cat;
     let val = +el.value;
     const snap = +el.dataset.snap;
-    if (Math.abs(val - snap) <= 2) { val = snap; el.value = snap; }
-    if (type === 'main') clampSet(mainVals, idx, val);
-    else clampSet(subVals[cat], idx, val);
+
+    const inputMode = el.dataset.inputMode || 'unknown';  // mouse, touch, pen, keyboard - first three provided by event.pointerType
+    const eventType = evt.type; // always 'input'
+    console.log(`inp mode ${inputMode}`)
+
+
+    if (inputMode !== "keyboard") {
+        if (Math.abs(val - snap) <= 2) {
+            val = snap; el.value = snap;
+        }
+    }
+    if (type === 'main') {
+        clampSet(mainVals, idx, val);
+    } else {
+        clampSet(subVals[cat], idx, val);
+    }
     refreshStep(type === 'main' ? 1 : 2 + cat);
 }
 
@@ -146,12 +181,12 @@ function refreshStep(stepIdx) {
         const color  = isSub ? CATS[catIdx].color : CATS[i].color;
         const range  = container.querySelector(`input[type=range][data-idx="${i}"]`);
         const numBox = container.querySelector(`input.num-box[data-idx="${i}"]`);
-        if (range) { 
-            range.max   = budget(vals); 
-            range.value = val; 
+        if (range) {
+            range.max   = budget(vals);
+            range.value = val;
             const pct   = budget(vals) > 0 ? (val / budget(vals) * 100) : 0;
-            const tOff  = budget(vals) > 0 ? (val / budget(vals) * 16 - 8) : -8; 
-            range.style.background = `linear-gradient(to right, ${color} calc(${pct}% - ${tOff.toFixed(2)}px), #E2DED6 calc(${pct}% - ${tOff.toFixed(2)}px))`; 
+            const tOff  = budget(vals) > 0 ? (val / budget(vals) * 16 - 8) : -8;
+            range.style.background = `linear-gradient(to right, ${color} calc(${pct}% - ${tOff.toFixed(2)}px), #E2DED6 calc(${pct}% - ${tOff.toFixed(2)}px))`;
         }
         if (numBox) numBox.value = val;
     });
@@ -208,8 +243,8 @@ function renderChart(stepIdx, vals, isSub, catIdx) {
     const chart = echarts.init(el);
     charts[chartKey] = chart;
     chart.setOption({
-        tooltip: { 
-            trigger: 'item', 
+        tooltip: {
+            trigger: 'item',
             formatter: p => p.name === 'Noch zu vergeben' ? `<b>${p.value} Punkte</b> noch zu vergeben` : `${p.name}<br/><b>${p.value} Punkte</b>` },
         series: [{
             type: 'pie', radius: ['38%', '68%'],
@@ -229,23 +264,23 @@ function buildStep0() {
         <div class="step active" id="step-0">
             <div class="card">
                 <div class="card-title">Über diese Befragung</div>
-                <p class="card-desc" style="margin-top:0.5rem">Im Rahmen des jährlichen Länderindex Familienunternehmen werden Standortfaktoren 
-                für Unternehmen im internationalen Vergleich systematisch bewertet. 
-                Diese Befragung erfasst, welche der bewerteten Faktoren Sie für Ihr Unternehmen bei strategischen Standortüberlegungen 
+                <p class="card-desc" style="margin-top:0.5rem">Im Rahmen des jährlichen Länderindex Familienunternehmen werden Standortfaktoren
+                für Unternehmen im internationalen Vergleich systematisch bewertet.
+                Diese Befragung erfasst, welche der bewerteten Faktoren Sie für Ihr Unternehmen bei strategischen Standortüberlegungen
                 als besonders relevant einschätzen.</p>
             </div>
             <div class="card">
                 <div class="card-title">So funktioniert die Bewertung</div>
                 <div class="intro-feature" style="margin-top:12px">
-                <strong>Punktevergabe</strong>Ihnen steht bei jeder Frage ein Budget an Punkten zur Gewichtung der Standortfaktoren zur Verfügung. 
-                Vergeben Sie mehr Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
-                die für Ihre Entscheidung weniger ausschlaggebend sind. 10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz. 
+                <strong>Punktevergabe</strong>Ihnen steht bei jeder Frage ein Budget an Punkten zur Gewichtung der Standortfaktoren zur Verfügung.
+                Vergeben Sie mehr Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren,
+                die für Ihre Entscheidung weniger ausschlaggebend sind. 10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
                 Die Schaltfläche "Weiter" wird erst aktiv, wenn alle Punkte vergeben sind.
                 </div>
                 <div class="intro-grid">
-                <div class="intro-feature"><strong>Schritt 1 – Hauptkategorien</strong>Verteilen Sie Punkte auf 
+                <div class="intro-feature"><strong>Schritt 1 – Hauptkategorien</strong>Verteilen Sie Punkte auf
                         die Standortfaktoren Steuern, Arbeitskräfte, Finanzierung, Regulierung, Infrastruktur und Energie.</div>
-                <div class="intro-feature"><strong>Schritt 2 – Unterkategorien</strong>Verteilen Sie innerhalb jedes Standortfaktors 
+                <div class="intro-feature"><strong>Schritt 2 – Unterkategorien</strong>Verteilen Sie innerhalb jedes Standortfaktors
                     Punkte auf die 2–3 Unterkategorien.</div>
                 </div>
             </div>
@@ -263,16 +298,16 @@ function buildStep2() {
     return `
         <div class="step" id="step-1">
             <div class="card">
-                <div class="card-title">Wie wichtig sind die folgenden Standortfaktoren für Ihr Unternehmen, 
-                wenn Sie darüber nachdenken, Aktivitäten in Deutschland fortzuführen und auszubauen oder aber 
+                <div class="card-title">Wie wichtig sind die folgenden Standortfaktoren für Ihr Unternehmen,
+                wenn Sie darüber nachdenken, Aktivitäten in Deutschland fortzuführen und auszubauen oder aber
                 zurückzufahren und gegebenenfalls in andere Länder zu verlagern?
                 </div>
-                <p class="card-desc">Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget 
-                    von <strong>60 Punkten</strong> entsprechend aufteilen. 
+                <p class="card-desc">Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget
+                    von <strong>60 Punkten</strong> entsprechend aufteilen.
                         <span class="info-wrap">
-                        <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr 
-                        Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
-                        die für Ihre Entscheidung weniger ausschlaggebend sind. 
+                        <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr
+                        Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren,
+                        die für Ihre Entscheidung weniger ausschlaggebend sind.
                         10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
                         </span></span>
                 </p>
@@ -300,20 +335,20 @@ function buildSubStep(catIdx) {
     return `
         <div class="step" id="step-${stepIdx}">
             <div class="card">
-                <div class="card-title"> Innerhalb des Standortfaktors <b>${cat.label}</b>, 
-                    wie wichtig sind die folgenden Faktoren für Ihr Unternehmen, wenn Sie darüber nachdenken, 
-                    Aktivitäten in Deutschland fortzuführen und auszubauen oder aber zurückzufahren und gegebenenfalls 
+                <div class="card-title"> Innerhalb des Standortfaktors <b>${cat.label}</b>,
+                    wie wichtig sind die folgenden Faktoren für Ihr Unternehmen, wenn Sie darüber nachdenken,
+                    Aktivitäten in Deutschland fortzuführen und auszubauen oder aber zurückzufahren und gegebenenfalls
                     in andere Länder zu verlagern?
                 </div>
                 <p class="card-desc">
-                    Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget von 
-                    <strong>${cat.subs.length * 10} Punkten</strong> entsprechend aufteilen. 
-                    
+                    Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget von
+                    <strong>${cat.subs.length * 10} Punkten</strong> entsprechend aufteilen.
+
                     <span class="info-wrap">
                     <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip"
-                    >Vergeben Sie mehr Punkte 
-                    an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren, 
-                    die für Ihre Entscheidung weniger ausschlaggebend sind. 
+                    >Vergeben Sie mehr Punkte
+                    an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren,
+                    die für Ihre Entscheidung weniger ausschlaggebend sind.
                     10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
                     </span></span>
                 </p>
@@ -327,9 +362,9 @@ function buildSubStep(catIdx) {
             </div>
             <div class="btn-row">
                 <button type="button" accesskey="b"  tabindex="99" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
-                
-                <button type="button" accesskey="2" class="btn primary"  
-                    onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}" 
+
+                <button type="button" accesskey="2" class="btn primary"
+                    onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}"
                     ${remaining(vals) !== 0 ? 'disabled' : ''} >
                     ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
                 </button>
@@ -347,7 +382,7 @@ function buildResultsStep() {
                 <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
                 <div class="card-title">Vielen Dank für Ihre Teilnahme</div>
-                <p class="card-desc" style="margin-bottom:1.5rem">Ihre Angaben wurden erfasst. 
+                <p class="card-desc" style="margin-bottom:1.5rem">Ihre Angaben wurden erfasst.
                 Unten sehen Sie eine Zusammenfassung Ihrer Gewichtungen.</p>
                 <div id="results-content"></div>
             </div>
@@ -387,9 +422,9 @@ function goTo(idx) {
     try{
         document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
         const el = document.getElementById('step-' + idx);
-        if (el) { 
-            el.classList.add('active'); 
-            currentStep = idx; 
+        if (el) {
+            el.classList.add('active');
+            currentStep = idx;
         }
         updateProgress();
         if (idx === 1) {
@@ -397,13 +432,13 @@ function goTo(idx) {
                 () => { renderChart(  1, mainVals       , false, null); }, 50
             );
         }
-        if (idx >= 2 && idx <= 7) { 
-            const catIdx = idx - 2; 
+        if (idx >= 2 && idx <= 7) {
+            const catIdx = idx - 2;
             setTimeout(
                 () => { renderChart(idx, subVals[catIdx], true,  catIdx); }, 50
-            ); 
+            );
         }
-        
+
         // xxxx
         console.log(mainVals);
         console.log(subVals);
@@ -423,8 +458,8 @@ function init() {
     let html = '';
     html += buildStep0();
     html += buildStep2();
-    CATS.forEach((_, i) => { 
-        html += buildSubStep(i); 
+    CATS.forEach((_, i) => {
+        html += buildSubStep(i);
         console.log(`  sub step ${i}`)
     });
     html += buildResultsStep();

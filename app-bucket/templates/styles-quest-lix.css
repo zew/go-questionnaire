@@ -1,6 +1,9 @@
 nav {
     display: none;
 }
+a {
+   text-decoration: underline;
+}
 
 
 .survey-wave-id {
@@ -99,6 +102,8 @@ body {
   min-width: 0;
   font-size: 60% !important;
   overflow-wrap: anywhere;
+  text-align: right;
+  margin-right: 0.4rem;
 }
 
 

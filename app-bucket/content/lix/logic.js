@@ -7,6 +7,7 @@ const dbg = true;
  */
 
 
+
 // handling exceptions globally for storage operations
 function handleExc(exc, optionalMsg) {
     if (optionalMsg) {
@@ -18,6 +19,8 @@ function handleExc(exc, optionalMsg) {
     }
 }
 
+
+// global stuff
 let currentStep = 0;
 // six sub categories
 // const TOTAL_STEPS = 8;
@@ -28,9 +31,75 @@ let companyData = {};
 let mainVals = CATS.map(() => 0);
 let subVals  = CATS.map( c => c.subs.map(() => 0));
 
+
 let charts   = {};
 
-function budget(arr) { return arr.length * 10; }
+
+
+// loading values from hidden inputs into memory structures
+function loadFromHiddenInputs() {
+    for (let i = 0; i < CATS.length; i++) {
+
+        let cat = CATS[i];
+
+        let mainName = "hk_" + cat.id;
+        // console.log(`loading main ${mainName}`);
+        let mainInput = document.querySelector('input[name="' + mainName + '"]');
+        if (mainInput) {
+            // parsing integer to ensure numeric type, defaulting to 0
+            mainVals[i] = parseInt(mainInput.value, 10) || 0;
+            console.log(`  loaded ${mainName} - ${mainVals[i]}`);
+        }
+
+        for (let j = 0; j < cat.subs.length; j++) {
+            let sub = cat.subs[j];
+            let subName = "uk_" + cat.id + "_" + sub.id;
+            // console.log(`\t  loading sub ${subName}`);
+            let subInput = document.querySelector('input[name="' + subName + '"]');
+            if (subInput) {
+                subVals[i][j] = parseInt(subInput.value, 10) || 0;
+                console.log(`\t\t loaded ${subName} ${subVals[i][j]}`);
+            }
+        }
+    }
+}
+
+
+
+// storing memory structures into hidden inputs
+function saveToHiddenInputs() {
+    for (let i = 0; i < CATS.length; i++) {
+        let cat = CATS[i];
+
+        let mainName = "hk_" + cat.id;
+        console.log(`saving main ${mainName}`);
+        let mainInput = document.querySelector('input[name="' + mainName + '"]');
+
+        // updating hidden input for main category
+        if (mainInput) {
+            mainInput.value = mainVals[i];
+            console.log(`\t ${mainVals[i]}`);
+        }
+
+        // updating hidden input for sub category
+        for (let j = 0; j < cat.subs.length; j++) {
+            let sub = cat.subs[j];
+            let subName = "uk_" + cat.id + "_" + sub.id;
+            console.log(`\t saving sub ${subName}`);
+            let subInput = document.querySelector('input[name="' + subName + '"]');
+            if (subInput) {
+                subInput.value = subVals[i][j];
+                console.log(`\t\t ${subVals[i][j]}`);
+            }
+        }
+    }
+}
+
+
+
+
+
+function budget(arr)    { return arr.length * 10; }
 function remaining(arr) { return budget(arr) - arr.reduce((a, b) => a + b, 0); }
 
 
@@ -452,6 +521,7 @@ function goTo(idx) {
         // xxxx
         console.log(mainVals);
         console.log(subVals);
+        saveToHiddenInputs();
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -464,6 +534,8 @@ function goTo(idx) {
 
 
 function init() {
+
+    loadFromHiddenInputs()
     const container = document.getElementById('steps-container');
     let html = '';
     html += buildStep0();

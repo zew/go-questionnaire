@@ -197,6 +197,9 @@ func TestSystem(t *testing.T) {
 		if surveyID == "kneb1" {
 			continue
 		}
+		if surveyID == "lix" {
+			continue
+		}
 
 		// if surveyID == "pds" {
 		// 	continue

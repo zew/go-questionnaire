@@ -36,6 +36,33 @@ let charts   = {};
 
 
 
+async function submitFrmMainNoReload() {
+    try{
+        const frm = document.forms["frmMain"];
+        if (!frm) {
+            console.error("form frmMain not found");
+            return;
+        }
+        const url    = frm.action;
+        const method = (frm.method || "POST").toUpperCase();
+        const data   = new FormData(frm);
+        // fetch prevents browser navigation/page reload
+        const rsp = await fetch(url, {
+            method:       method,
+            body:         data,
+        });
+        if (!rsp.ok) {
+            console.error("form submit failed", rsp.status);
+            return;
+        }
+        const txt = await rsp.text();
+        console.log("values uploaded");
+    } catch (exc) {
+        handleExc(exc, `submitFrmMainNoReload() `);
+    }
+}
+
+
 // loading values from hidden inputs into memory structures
 function loadFromHiddenInputs() {
     for (let i = 0; i < CATS.length; i++) {
@@ -92,6 +119,7 @@ function saveToHiddenInputs() {
             }
         }
     }
+    submitFrmMainNoReload();
 }
 
 
@@ -269,7 +297,11 @@ function refreshStep(stepIdx) {
 function updateChart(stepIdx, vals, isSub, catIdx) {
     const chartKey = 'chart-' + stepIdx;
     if (!charts[chartKey]) return;
-    charts[chartKey].setOption({ series: [{ data: buildChartData(vals, isSub, catIdx) }] });
+    charts[chartKey].setOption({ 
+        series: [
+            { data: buildChartData(vals, isSub, catIdx) }
+        ] 
+    });
 }
 
 function generateSubColors(hex, n) {
@@ -320,7 +352,11 @@ function renderChart(stepIdx, vals, isSub, catIdx) {
         series: [{
             type: 'pie', radius: ['38%', '68%'],
             avoidLabelOverlap: false,
-            itemStyle: { borderRadius: 8, borderColor: '#FDFCFA', borderWidth: 3 },
+            itemStyle: { 
+                    borderRadius: 8, 
+                    borderColor: '#FDFCFA', 
+                    borderWidth: 3,
+            },
             label:     { show: false },
             emphasis:  { scale: true, scaleSize: 6 },
             labelLine: { show: false },
@@ -450,25 +486,28 @@ function buildResultsStep() {
     return `
         <div class="step" id="step-results">
             <div class="card">
-                <div class="thank-you-icon">
-                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div class="horizontally">
+                    <div class="thank-you-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="card-title">Vielen Dank für Ihre Teilnahme</div>
                 </div>
-                <div class="card-title">Vielen Dank für Ihre Teilnahme</div>
-                <p class="card-desc" style="margin-bottom:1.5rem">Ihre Angaben wurden erfasst.
+
+                <p class="card-desc" style="margin-bottom:0.5rem">Ihre Angaben wurden erfasst.
                 Unten sehen Sie eine Zusammenfassung Ihrer Gewichtungen.</p>
                 <div id="results-content"></div>
             </div>
             <div class="btn-row">
                 <button type="button" class="btn btn-back" onclick="goBackFromResults()">← Zurück</button>
+                <button type="submit" 
+                        name="submitBtn" 
+                        value="next" 
+                        class="btn primary"
+                    >
+                    <b>&nbsp;&nbsp;Werte speichern und Umfrage beenden&nbsp;&nbsp;</b>
+                </button>
             </div>
 
-            <button type="submit" 
-                    name="submitBtn" 
-                    value="next" 
-                    class="btn primary"
-                >
-                <b>&nbsp;&nbsp;Werte speichern und Umfrage beenden&nbsp;&nbsp;</b>
-            </button>
 
 
         </div>

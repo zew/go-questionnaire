@@ -12,7 +12,7 @@ function createCsvAutodownload(data) {
             ...data.main,
             ...data.subs.flat()
         ];
-        
+
         // escaping quotes to prevent CSV injection or formatting breaks
         rows.push(
             vals.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')
@@ -48,7 +48,7 @@ function showResults() {
     const el = document.getElementById('step-results');
     if (el) { el.classList.add('active'); currentStep = TOTAL_STEPS - 1; }
     updateProgress();
-    
+
     if (false) {
         createCsvAutodownload({ main: mainVals, subs: subVals });
     }
@@ -72,13 +72,36 @@ function showResults() {
     setTimeout(() => {
         const mainChart = echarts.init(document.getElementById('res-main-pie'));
         mainChart.setOption({
-            tooltip: { trigger: 'item', formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>` },
-            legend: { bottom: 0, left: 'center', textStyle: { fontSize: 12, fontFamily: 'DM Sans' }, itemWidth: 12, itemHeight: 12 },
+            tooltip: {
+                trigger: 'item',
+                formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`,
+            },
+            legend:  {
+                bottom:    0,
+                left:      'center',
+                textStyle: { fontSize: 12, fontFamily: 'DM Sans' },
+                itemWidth:  12,
+                itemHeight: 12,
+            },
             series: [{
-                type: 'pie', radius: ['32%', '56%'], center: ['50%', '40%'], avoidLabelOverlap: true,
+                type: 'pie',
+                // radius: ['32%', '56%'],
+                radius: ['55%', '88%'],
+                center: ['50%', '45%'],
+                avoidLabelOverlap: true,
                 itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 3 },
-                label:     { show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '', fontSize: 12, fontFamily: 'DM Sans', color: '#2C2A26' },
-                labelLine: { show: true, showAbove: false, length: 8, length2: 6 },
+                label:     {
+                    show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
+                    fontSize: 12,
+                    fontFamily: 'DM Sans',
+                    color: '#2C2A26',
+                },
+                labelLine: {
+                    show:      true,
+                    showAbove: false,
+                    length:  8,
+                    length2: 6,
+                 },
                 data: CATS.map((cat, i) => ({
                     value: mainVals[i], name: cat.label, itemStyle: { color: cat.color },
                     label: { show: mainVals[i] > 0 }, labelLine: { show: mainVals[i] > 0 }
@@ -91,15 +114,44 @@ function showResults() {
             if (!el) return;
             const chart = echarts.init(el);
             chart.setOption({
-                tooltip: { trigger: 'item', formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>` },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`
+                },
                 series: [{
-                    type: 'pie', radius: ['30%', '58%'], avoidLabelOverlap: false,
-                    itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 2 },
-                    label: { show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '', fontSize: 11, fontFamily: 'DM Sans', color: '#2C2A26' },
-                    labelLine: { show: true, length: 6, length2: 4 },
+                    type: 'pie',
+                    // radius: ['35%', '58%'],
+                    radius: ['45%', '72%'],
+                    center: ['50%', '51%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 6,
+                        borderColor: '#FDFCFA',
+                        borderWidth: 2,
+                    },
+                    label: {
+                        show: true,
+                        formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
+                        fontSize: 11,
+                        fontFamily: 'DM Sans',
+                        color: '#2C2A26',
+                    },
+                    labelLine: {
+                        show: true,
+                        length:  8,
+                        length2: 6,
+                    },
                     data: cat.subs.map((sub, j) => ({
-                        value: subVals[i][j], name: sub.label, itemStyle: { color: subColors[j] },
-                        label: { show: subVals[i][j] > 0 }, labelLine: { show: subVals[i][j] > 0 }
+                        value: subVals[i][j], name: sub.label,
+                        itemStyle: {
+                            color: subColors[j],
+                        },
+                        label: {
+                            show: subVals[i][j] > 0,
+                        },
+                        labelLine: {
+                            show: subVals[i][j] > 0,
+                        }
                     }))
                 }]
             });

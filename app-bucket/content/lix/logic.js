@@ -72,24 +72,23 @@ function saveToHiddenInputs() {
         let cat = CATS[i];
 
         let mainName = "hk_" + cat.id;
-        console.log(`saving main ${mainName}`);
         let mainInput = document.querySelector('input[name="' + mainName + '"]');
 
         // updating hidden input for main category
         if (mainInput) {
             mainInput.value = mainVals[i];
-            console.log(`\t ${mainVals[i]}`);
+            console.log(`  saved ${mainName} - ${mainVals[i]}`);
         }
 
         // updating hidden input for sub category
         for (let j = 0; j < cat.subs.length; j++) {
             let sub = cat.subs[j];
             let subName = "uk_" + cat.id + "_" + sub.id;
-            console.log(`\t saving sub ${subName}`);
+            // console.log(`\t saving sub ${subName}`);
             let subInput = document.querySelector('input[name="' + subName + '"]');
             if (subInput) {
                 subInput.value = subVals[i][j];
-                console.log(`\t\t ${subVals[i][j]}`);
+                console.log(`\t\t saved ${subName} ${subVals[i][j]}`);
             }
         }
     }
@@ -358,7 +357,7 @@ function buildStep0() {
             </div>
 
             <div class="btn-row">
-                <button type="button" accesskey="2" class="btn primary" onclick="goTo(1)"  autofocus>Weiter →</button>
+                <button type="button"  class="btn primary" onclick="goTo(1)"  autofocus>Weiter →</button>
             </div>
         </div>
     `;
@@ -392,8 +391,8 @@ function buildStep2() {
                 </div>
             </div>
             <div class="btn-row">
-                <button type="button" accesskey="b"  tabindex="99" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
-                <button type="button" accesskey="2" class="btn primary"  onclick="goTo(2)" ${remaining(mainVals) !== 0 ? 'disabled' : ''}>Weiter →</button>
+                <button type="button"  tabindex="99" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
+                <button type="button"  class="btn primary"  onclick="goTo(2)" ${remaining(mainVals) !== 0 ? 'disabled' : ''}>Weiter →</button>
             </div>
         </div>
     `;
@@ -433,11 +432,12 @@ function buildSubStep(catIdx) {
                 </div>
             </div>
             <div class="btn-row">
-                <button type="button" accesskey="b"  tabindex="99" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
+                <button type="button"  tabindex="99" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
 
-                <button type="button" accesskey="2" class="btn primary"
+                <button type="button"  class="btn primary"
                     onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}"
-                    ${remaining(vals) !== 0 ? 'disabled' : ''} >
+                    ${remaining(vals) !== 0 ? 'disabled' : ''} 
+                >
                     ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
                 </button>
             </div>
@@ -462,7 +462,10 @@ function buildResultsStep() {
                 <button type="button" class="btn btn-back" onclick="goBackFromResults()">← Zurück</button>
             </div>
 
-            <button type="submit" name="submitBtn" value="next" accesskey="n"
+            <button type="submit" 
+                    name="submitBtn" 
+                    value="next" 
+                    class="btn primary"
                 >
                 <b>&nbsp;&nbsp;Werte speichern und Umfrage beenden&nbsp;&nbsp;</b>
             </button>
@@ -475,7 +478,6 @@ function buildResultsStep() {
 
 
 
-// seems unused
 function goBackFromResults() {
     goTo(2 + CATS.length - 1);
 }
@@ -488,7 +490,7 @@ function updateProgress() {
     const fill  = document.getElementById('progress-fill');
     const label = document.getElementById('step-label');
     const count = document.getElementById('step-count');
-    const pct = Math.round((currentStep / (TOTAL_STEPS - 1)) * 100);
+    const pct   = Math.round((currentStep / (TOTAL_STEPS - 1)) * 100);
     fill.style.width = pct + '%';
     count.textContent = currentStep + ' / ' + (TOTAL_STEPS - 1);
     const labels = ['Einleitung', 'Hauptkategorien',
@@ -518,6 +520,22 @@ function goTo(idx) {
             );
         }
 
+
+        document.querySelectorAll('.btn.primary').forEach(btn => {
+            btn.removeAttribute('accesskey');
+        });
+        el.querySelectorAll('.btn.primary').forEach(btn => {
+            btn.setAttribute('accesskey', "n");
+        });
+
+        document.querySelectorAll('.btn.btn-back').forEach(btn => {
+            btn.removeAttribute('accesskey');
+        });
+        el.querySelectorAll('.btn.btn-back').forEach(btn => {
+            btn.setAttribute('accesskey', "p");
+        });
+
+
         // xxxx
         console.log(mainVals);
         console.log(subVals);
@@ -542,7 +560,7 @@ function init() {
     html += buildStep2();
     CATS.forEach((_, i) => {
         html += buildSubStep(i);
-        console.log(`  sub step ${i}`)
+        // console.log(`  sub step ${i}`)
     });
     html += buildResultsStep();
     container.innerHTML = html;

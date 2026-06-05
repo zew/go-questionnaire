@@ -1,4 +1,4 @@
-function submitResults(data) {
+function createCsvAutodownload(data) {
     try {
         const rows = [];
         const headers = [
@@ -39,11 +39,19 @@ function submitResults(data) {
 
 
 function showResults() {
+
+    saveToHiddenInputs();
+
+
+
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('step-results');
     if (el) { el.classList.add('active'); currentStep = TOTAL_STEPS - 1; }
     updateProgress();
-    submitResults({ main: mainVals, subs: subVals });
+    
+    if (false) {
+        createCsvAutodownload({ main: mainVals, subs: subVals });
+    }
 
     let html = '<div class="results-summary">';
     html += '<div class="res-group-title">Hauptkategorien</div>';

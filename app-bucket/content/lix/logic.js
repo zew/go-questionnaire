@@ -23,8 +23,11 @@ let currentStep = 0;
 // const TOTAL_STEPS = 8;
 const TOTAL_STEPS = 4;
 let companyData = {};
+
+// init to zero
 let mainVals = CATS.map(() => 0);
 let subVals  = CATS.map( c => c.subs.map(() => 0));
+
 let charts   = {};
 
 function budget(arr) { return arr.length * 10; }

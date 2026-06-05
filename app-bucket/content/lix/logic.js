@@ -389,6 +389,13 @@ function buildResultsStep() {
             <div class="btn-row">
                 <button type="button" class="btn btn-back" onclick="goBackFromResults()">← Zurück</button>
             </div>
+
+            <button type="submit" name="submitBtn" value="next" accesskey="n"
+                >
+                <b>&nbsp;&nbsp;Werte speichern und Umfrage beenden&nbsp;&nbsp;</b>
+            </button>
+
+
         </div>
     `;
 }

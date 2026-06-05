@@ -1,10 +1,6 @@
 package lix
 
 import (
-	"fmt"
-
-	"github.com/zew/go-questionnaire/pkg/cfg"
-	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -37,6 +33,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page.SuppressInProgressbar = true
 		page.SuppressProgressbar = true
+		page.NoNavigation = true
 
 		page.Label = trl.S{
 			"en": "",
@@ -53,11 +50,42 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page.WidthMax("42rem")
 
+		inps := []string{
+			"hk_steuern",
+			"hk_arbeit",
+			"hk_fin",
+			"hk_reg",
+			"hk_inf",
+			"hk_ene",
+			"uk_steuern_biz",
+			"uk_steuern_erb",
+			"uk_steuern_kpl",
+			"uk_arbeit_kos",
+			"uk_arbeit_pro",
+			"uk_fin_krd",
+			"uk_fin_vrs",
+			"uk_reg_ins",
+			"uk_reg_vor",
+			"uk_reg_mit",
+			"uk_inf_tra",
+			"uk_inf_rec",
+			"uk_ene_pre",
+			"uk_ene_sic",
+			"uk_ene_kli",
+		}
+
 		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 3
+
+			for _, inpName := range inps {
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = inpName
+			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
@@ -67,84 +95,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 			}
 		}
-
-	}
-
-	// page6 - finish
-	{
-		page := q.AddPage()
-		page.Label = trl.S{
-			"en": "Consent",
-			"de": "Abschluss<br><br>",
-		}
-		page.Short = trl.S{
-			"en": "Finish",
-			"de": "DSGVO",
-		}
-		page.SuppressInProgressbar = true
-		page.SuppressProgressbar = true
-		page.WidthMax("40rem")
-
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 2
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "Kommentar zur Umfrage: ", "en": "Comment on the survey: "}
-				inp.Label = trl.S{
-					"de": "Wollen Sie uns noch etwas mitteilen?",
-					"en": "Any remarks or advice for us?",
-				}
-				inp.ColSpanLabel = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "q63_comment"
-				inp.MaxChars = 300
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-		}
-
-		// gr3
-		{
-			gr := page.AddGroup()
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Cols = 2
-			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"
-			// gr.Width = 80
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = cfg.Get().Mp["finish_save_questionnaire"]
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "submitBtn"
-				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
-				inp.Label = cfg.Get().Mp["end"]
-				inp.Label = cfg.Get().Mp["finish_questionnaire"]
-				inp.ColSpan = 1
-				inp.ColSpanControl = 1
-				inp.AccessKey = "n"
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
-				// inp.StyleCtl.Desktop.StyleBox.WidthMin = "8rem" // does not help with button
-			}
-		}
-
-		// pge.ExampleSixColumnsLabelRight()
 
 	}
 

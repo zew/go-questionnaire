@@ -3,8 +3,8 @@ function submitResults(data) {
         const rows = [];
         const headers = [
             'Zeitstempel',
-            ...CATS.map(    c => 'HK_' + c.id),
-            ...CATS.flatMap(c => c.subs.map(s => 'UK_' + c.id + '_' + s.id))
+            ...CATS.map(    c => 'hk_' + c.id),
+            ...CATS.flatMap(c => c.subs.map(s => 'uk_' + c.id + '_' + s.id))
         ];
         rows.push(headers.join(';'));
         const vals = [

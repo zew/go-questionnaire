@@ -18,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "dfcfe62b69b6d2a6be93b75dae8a90dd418925ca452caf5420e10fa2f711ca5b",
+ 	"md_5": "733448645e85e29d9a8e72de00be6e6fad3db72221943525ef62ecbedeaca7e9",
  	"lang_codes": [
  		"de"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 2,
+ 	"max_groups": 1,
  	"pages": [
  		{
  			"label": {
@@ -36,6 +36,7 @@
  				"en": ""
  			},
  			"suppress_progressbar": true,
+ 			"no_navigation": true,
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -62,6 +63,90 @@
  					"columns": 1,
  					"inputs": [
  						{
+ 							"name": "hk_steuern",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "hk_arbeit",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "hk_fin",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "hk_reg",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "hk_inf",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "hk_ene",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_steuern_biz",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_steuern_erb",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_steuern_kpl",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_arbeit_kos",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_arbeit_pro",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_fin_krd",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_fin_vrs",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_reg_ins",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_reg_vor",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_reg_mit",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_inf_tra",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_inf_rec",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_ene_pre",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_ene_sic",
+ 							"type": "hidden"
+ 						},
+ 						{
+ 							"name": "uk_ene_kli",
+ 							"type": "hidden"
+ 						},
+ 						{
  							"type": "dyn-textblock",
  							"col_span": 1,
  							"col_span_label": 1,
@@ -69,142 +154,6 @@
  							"dynamic_func_paramset": "./main.html"
  						}
  					]
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "Abschluss\u003cbr\u003e\u003cbr\u003e",
- 				"en": "Consent"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "DSGVO",
- 				"en": "Finish"
- 			},
- 			"suppress_progressbar": true,
- 			"suppress_in_progressbar": true,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "40rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Wollen Sie uns noch etwas mitteilen?",
- 								"en": "Any remarks or advice for us?"
- 							},
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "q63_comment",
- 							"type": "textarea",
- 							"max_chars": 300,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"row_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Fragebogen abschließen um die Da\u0026shy;ten final zu speichern.",
- 								"en": "Finish this survey and finalize your an\u0026shy;swers."
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "submitBtn",
- 							"type": "button",
- 							"label": {
- 								"de": "Fragebogen abschließen",
- 								"en": "Finish this survey",
- 								"es": "Terminé esta encuesta",
- 								"fr": "Terminer ce sondage",
- 								"it": "Finire questo sondaggio",
- 								"pl": "Zakończyłem tę ankietę"
- 							},
- 							"accesskey": "n",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"response": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "3fr 1fr"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
  				}
  			]
  		},

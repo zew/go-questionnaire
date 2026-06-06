@@ -1,12 +1,8 @@
-const dbg = true;
-
 /**
  * By default, any button rendered inside an HTML `<form>` acts as a submit button.
  * Explicitly defining <button> with type as "button" overrides this default browser behavior,
  * allowing the JavaScript `onclick` handlers to execute without submitting the form.
  */
-
-
 
 // handling exceptions globally for storage operations
 function handleExc(exc, optionalMsg) {
@@ -19,22 +15,40 @@ function handleExc(exc, optionalMsg) {
     }
 }
 
+function budget(arr)    { return arr.length * 10; }
+function remaining(arr) { return budget(arr) - arr.reduce((a, b) => a + b, 0); }
 
-// global stuff
-let currentStep = 0;
-// six sub categories
-// const TOTAL_STEPS = 8;
-const TOTAL_STEPS = 4;
-let companyData = {};
+function generateSubColors(hex, n) {
+    const colors = [];
+    const start = 0.95;
+    const step = n > 1 ? (0.5 / (n - 1)) : 0;
+    for (let i = 0; i < n; i++) {
+        colors.push(blendWithWhite(hex, start - i * step));
+    }
+    return colors;
+}
 
-// init to zero
-let mainVals = CATS.map(() => 0);
-let subVals  = CATS.map( c => c.subs.map(() => 0));
+function blendWithWhite(hex, ratio) {
+    const r  = parseInt(hex.slice(1, 3), 16);
+    const g  = parseInt(hex.slice(3, 5), 16);
+    const b  = parseInt(hex.slice(5, 7), 16);
+    const nr = Math.round(r + (255 - r) * (1 - ratio));
+    const ng = Math.round(g + (255 - g) * (1 - ratio));
+    const nb = Math.round(b + (255 - b) * (1 - ratio));
+    return '#' + [nr, ng, nb].map(x => x.toString(16).padStart(2, '0')).join('');
+}
 
-
-let charts   = {};
-
-
+// limit allocation of points
+function clampSet(arr, idx, val) {
+    const max = budget(arr);
+    val = Math.max(0, Math.min(max, val));
+    const others = arr.reduce((a, b, i) => i === idx ? a : a + b, 0);
+    if (val + others > max) {
+        val = max - others;
+        console.info(`clamped to ${val}`)
+    }
+    arr[idx] = val;
+}
 
 async function submitFrmMainNoReload() {
     try{
@@ -61,7 +75,6 @@ async function submitFrmMainNoReload() {
         handleExc(exc, `submitFrmMainNoReload() `);
     }
 }
-
 
 // loading values from hidden inputs into memory structures
 function loadFromHiddenInputs() {
@@ -90,8 +103,6 @@ function loadFromHiddenInputs() {
         }
     }
 }
-
-
 
 // storing memory structures into hidden inputs
 function saveToHiddenInputs() {
@@ -122,29 +133,6 @@ function saveToHiddenInputs() {
     submitFrmMainNoReload();
 }
 
-
-
-
-
-function budget(arr)    { return arr.length * 10; }
-function remaining(arr) { return budget(arr) - arr.reduce((a, b) => a + b, 0); }
-
-
-
-// limit allocation of points
-function clampSet(arr, idx, val) {
-    const max = budget(arr);
-    val = Math.max(0, Math.min(max, val));
-    const others = arr.reduce((a, b, i) => i === idx ? a : a + b, 0);
-    if (val + others > max) {
-        val = max - others;
-        console.info(`clamped to ${val}`)
-    }
-    arr[idx] = val;
-}
-
-
-
 function buildBudgetBadge(arr) {
     const rem = remaining(arr);
     const tot = budget(arr);
@@ -152,7 +140,6 @@ function buildBudgetBadge(arr) {
     let msg = rem === 0 ? 'Alle ' + tot + ' Punkte vergeben' : rem > 0 ? rem + ' von ' + tot + ' Punkten noch verfügbar' : Math.abs(rem) + ' Punkte zu viel';
     return `<div class="budget-badge ${cls}"><span class="dot"></span>${msg}</div>`;
 }
-
 
 function buildSliders(vals, catIdx, isSub) {
     const items = isSub !== undefined ? CATS[catIdx].subs : CATS;
@@ -207,123 +194,6 @@ function buildSliders(vals, catIdx, isSub) {
     return html;
 }
 
-
-function handleSnapClick(el) {
-    // the tick represents the exact snap value, avoiding coordinate math entirely.
-    // we find the sibling range input, set its value, and dispatch a standard input event.
-    const container = el.closest('.slider-track-wrap');
-    const rangeInput = container.querySelector('input[type="range"]');
-    if (rangeInput) {
-        rangeInput.value = rangeInput.dataset.snap;
-        rangeInput.dataset.inputMode = 'mouse';
-        rangeInput.dispatchEvent(new Event('input'));
-    }
-}
-
-
-function handleSlider(evt, el) {
-
-    const idx  = +el.dataset.idx;
-    const type = el.dataset.type;
-    const cat  = +el.dataset.cat;
-    let val = +el.value;
-    const snap = +el.dataset.snap;
-
-    const inputMode = el.dataset.inputMode || 'unknown';  // mouse, touch, pen, keyboard - first three provided by event.pointerType
-    const eventType = evt.type; // always 'input'
-    console.log(`inp mode ${inputMode}`)
-
-
-    if (inputMode !== "keyboard") {
-        if (Math.abs(val - snap) <= 2) {
-            val = snap; el.value = snap;
-        }
-    }
-    if (type === 'main') {
-        clampSet(mainVals, idx, val);
-    } else {
-        clampSet(subVals[cat], idx, val);
-    }
-    refreshStep(type === 'main' ? 1 : 2 + cat);
-}
-
-
-function handleNumInput(el) {
-    const idx = +el.dataset.idx;
-    const type = el.dataset.type;
-    const cat = +el.dataset.cat;
-    let val = parseInt(el.value) || 0;
-    if (type === 'main') clampSet(mainVals, idx, val);
-    else clampSet(subVals[cat], idx, val);
-    refreshStep(type === 'main' ? 1 : 2 + cat);
-}
-
-
-function refreshStep(stepIdx) {
-    const container = document.getElementById('step-' + stepIdx);
-    if (!container) return;
-    const isSub = stepIdx >= 2;
-    const catIdx = isSub ? stepIdx - 2 : null;
-    const vals   = isSub ? subVals[catIdx] : mainVals;
-    const badge  = container.querySelector('.budget-badge');
-    if (badge) {
-        const rem = remaining(vals);
-        badge.className = 'budget-badge ' + (rem === 0 ? 'ok' : rem > 0 ? 'warn' : 'over');
-        badge.querySelector('.dot').className = 'dot';
-        const tot2 = budget(vals);
-        const msg = rem === 0 ? 'Alle ' + tot2 + ' Punkte vergeben' : rem > 0 ? rem + ' von ' + tot2 + ' Punkten noch verfügbar' : Math.abs(rem) + ' Punkte zu viel';
-        badge.lastChild.textContent = msg;
-    }
-    const items = isSub ? CATS[catIdx].subs : CATS;
-    items.forEach((item, i) => {
-        const val = vals[i];
-        const color  = isSub ? CATS[catIdx].color : CATS[i].color;
-        const range  = container.querySelector(`input[type=range][data-idx="${i}"]`);
-        const numBox = container.querySelector(`input.num-box[data-idx="${i}"]`);
-        if (range) {
-            range.max   = budget(vals);
-            range.value = val;
-            const pct   = budget(vals) > 0 ? (val / budget(vals) * 100) : 0;
-            const tOff  = budget(vals) > 0 ? (val / budget(vals) * 16 - 8) : -8;
-            range.style.background = `linear-gradient(to right, ${color} calc(${pct}% - ${tOff.toFixed(2)}px), #E2DED6 calc(${pct}% - ${tOff.toFixed(2)}px))`;
-        }
-        if (numBox) numBox.value = val;
-    });
-    const nextBtn = container.querySelector('.btn.primary');
-    if (nextBtn) nextBtn.disabled = remaining(vals) !== 0;
-    updateChart(stepIdx, vals, isSub, catIdx);
-}
-
-function updateChart(stepIdx, vals, isSub, catIdx) {
-    const chartKey = 'chart-' + stepIdx;
-    if (!charts[chartKey]) return;
-    charts[chartKey].setOption({ 
-        series: [
-            { data: buildChartData(vals, isSub, catIdx) }
-        ] 
-    });
-}
-
-function generateSubColors(hex, n) {
-    const colors = [];
-    const start = 0.95;
-    const step = n > 1 ? (0.5 / (n - 1)) : 0;
-    for (let i = 0; i < n; i++) {
-        colors.push(blendWithWhite(hex, start - i * step));
-    }
-    return colors;
-}
-
-function blendWithWhite(hex, ratio) {
-    const r  = parseInt(hex.slice(1, 3), 16);
-    const g  = parseInt(hex.slice(3, 5), 16);
-    const b  = parseInt(hex.slice(5, 7), 16);
-    const nr = Math.round(r + (255 - r) * (1 - ratio));
-    const ng = Math.round(g + (255 - g) * (1 - ratio));
-    const nb = Math.round(b + (255 - b) * (1 - ratio));
-    return '#' + [nr, ng, nb].map(x => x.toString(16).padStart(2, '0')).join('');
-}
-
 function buildChartData(vals, isSub, catIdx) {
     const items = isSub ? CATS[catIdx].subs : CATS;
     const colorList = isSub ? generateSubColors(CATS[catIdx].color, items.length) : CATS.map(c => c.color);
@@ -337,34 +207,6 @@ function buildChartData(vals, isSub, catIdx) {
     }
     return data;
 }
-
-
-function renderChart(stepIdx, vals, isSub, catIdx) {
-    const chartKey = 'chart-' + stepIdx;
-    const el = document.getElementById('echarts-' + stepIdx);
-    if (!el) return;
-    const chart = echarts.init(el);
-    charts[chartKey] = chart;
-    chart.setOption({
-        tooltip: {
-            trigger: 'item',
-            formatter: p => p.name === 'Noch zu vergeben' ? `<b>${p.value} Punkte</b> noch zu vergeben` : `${p.name}<br/><b>${p.value} Punkte</b>` },
-        series: [{
-            type: 'pie', radius: ['38%', '68%'],
-            avoidLabelOverlap: false,
-            itemStyle: { 
-                    borderRadius: 8, 
-                    borderColor: '#FDFCFA', 
-                    borderWidth: 3,
-            },
-            label:     { show: false },
-            emphasis:  { scale: true, scaleSize: 6 },
-            labelLine: { show: false },
-            data: buildChartData(vals, isSub, catIdx)
-        }]
-    });
-}
-
 
 function buildStep0() {
     return `
@@ -398,8 +240,6 @@ function buildStep0() {
         </div>
     `;
 }
-
-
 
 function buildStep2() {
     return `
@@ -472,7 +312,7 @@ function buildSubStep(catIdx) {
 
                 <button type="button"  class="btn primary"
                     onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}"
-                    ${remaining(vals) !== 0 ? 'disabled' : ''} 
+                    ${remaining(vals) !== 0 ? 'disabled' : ''}
                 >
                     ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
                 </button>
@@ -480,7 +320,6 @@ function buildSubStep(catIdx) {
         </div>
     `;
 }
-
 
 function buildResultsStep() {
     return `
@@ -499,9 +338,9 @@ function buildResultsStep() {
             </div>
             <div class="btn-row">
                 <button type="button" class="btn btn-back" onclick="goBackFromResults()">← Zurück</button>
-                <button type="submit" 
-                        name="submitBtn" 
-                        value="next" 
+                <button type="submit"
+                        name="submitBtn"
+                        value="next"
                         class="btn primary"
                     >
                     <b>&nbsp;&nbsp;Werte speichern und Umfrage beenden&nbsp;&nbsp;</b>
@@ -514,16 +353,128 @@ function buildResultsStep() {
     `;
 }
 
+function handleSnapClick(el) {
+    // the tick represents the exact snap value, avoiding coordinate math entirely.
+    // we find the sibling range input, set its value, and dispatch a standard input event.
+    const container = el.closest('.slider-track-wrap');
+    const rangeInput = container.querySelector('input[type="range"]');
+    if (rangeInput) {
+        rangeInput.value = rangeInput.dataset.snap;
+        rangeInput.dataset.inputMode = 'mouse';
+        rangeInput.dispatchEvent(new Event('input'));
+    }
+}
+
+function handleSlider(evt, el) {
+
+    const idx  = +el.dataset.idx;
+    const type = el.dataset.type;
+    const cat  = +el.dataset.cat;
+    let val = +el.value;
+    const snap = +el.dataset.snap;
+
+    const inputMode = el.dataset.inputMode || 'unknown';  // mouse, touch, pen, keyboard - first three provided by event.pointerType
+    const eventType = evt.type; // always 'input'
+    console.log(`inp mode ${inputMode}`)
 
 
+    if (inputMode !== "keyboard") {
+        if (Math.abs(val - snap) <= 2) {
+            val = snap; el.value = snap;
+        }
+    }
+    if (type === 'main') {
+        clampSet(mainVals, idx, val);
+    } else {
+        clampSet(subVals[cat], idx, val);
+    }
+    refreshStep(type === 'main' ? 1 : 2 + cat);
+}
+
+function handleNumInput(el) {
+    const idx = +el.dataset.idx;
+    const type = el.dataset.type;
+    const cat = +el.dataset.cat;
+    let val = parseInt(el.value) || 0;
+    if (type === 'main') clampSet(mainVals, idx, val);
+    else clampSet(subVals[cat], idx, val);
+    refreshStep(type === 'main' ? 1 : 2 + cat);
+}
+
+function refreshStep(stepIdx) {
+    const container = document.getElementById('step-' + stepIdx);
+    if (!container) return;
+    const isSub = stepIdx >= 2;
+    const catIdx = isSub ? stepIdx - 2 : null;
+    const vals   = isSub ? subVals[catIdx] : mainVals;
+    const badge  = container.querySelector('.budget-badge');
+    if (badge) {
+        const rem = remaining(vals);
+        badge.className = 'budget-badge ' + (rem === 0 ? 'ok' : rem > 0 ? 'warn' : 'over');
+        badge.querySelector('.dot').className = 'dot';
+        const tot2 = budget(vals);
+        const msg = rem === 0 ? 'Alle ' + tot2 + ' Punkte vergeben' : rem > 0 ? rem + ' von ' + tot2 + ' Punkten noch verfügbar' : Math.abs(rem) + ' Punkte zu viel';
+        badge.lastChild.textContent = msg;
+    }
+    const items = isSub ? CATS[catIdx].subs : CATS;
+    items.forEach((item, i) => {
+        const val = vals[i];
+        const color  = isSub ? CATS[catIdx].color : CATS[i].color;
+        const range  = container.querySelector(`input[type=range][data-idx="${i}"]`);
+        const numBox = container.querySelector(`input.num-box[data-idx="${i}"]`);
+        if (range) {
+            range.max   = budget(vals);
+            range.value = val;
+            const pct   = budget(vals) > 0 ? (val / budget(vals) * 100) : 0;
+            const tOff  = budget(vals) > 0 ? (val / budget(vals) * 16 - 8) : -8;
+            range.style.background = `linear-gradient(to right, ${color} calc(${pct}% - ${tOff.toFixed(2)}px), #E2DED6 calc(${pct}% - ${tOff.toFixed(2)}px))`;
+        }
+        if (numBox) numBox.value = val;
+    });
+    const nextBtn = container.querySelector('.btn.primary');
+    if (nextBtn) nextBtn.disabled = remaining(vals) !== 0;
+    updateChart(stepIdx, vals, isSub, catIdx);
+}
+
+function updateChart(stepIdx, vals, isSub, catIdx) {
+    const chartKey = 'chart-' + stepIdx;
+    if (!charts[chartKey]) return;
+    charts[chartKey].setOption({
+        series: [
+            { data: buildChartData(vals, isSub, catIdx) }
+        ]
+    });
+}
+
+function renderChart(stepIdx, vals, isSub, catIdx) {
+    const chartKey = 'chart-' + stepIdx;
+    const el = document.getElementById('echarts-' + stepIdx);
+    if (!el) return;
+    const chart = echarts.init(el);
+    charts[chartKey] = chart;
+    chart.setOption({
+        tooltip: {
+            trigger: 'item',
+            formatter: p => p.name === 'Noch zu vergeben' ? `<b>${p.value} Punkte</b> noch zu vergeben` : `${p.name}<br/><b>${p.value} Punkte</b>` },
+        series: [{
+            type: 'pie', radius: ['38%', '68%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+                    borderRadius: 8,
+                    borderColor: '#FDFCFA',
+                    borderWidth: 3,
+            },
+            label:     { show: false },
+            emphasis:  { scale: true, scaleSize: 6 },
+            labelLine: { show: false },
+            data: buildChartData(vals, isSub, catIdx)
+        }]
+    });
+}
 
 function goBackFromResults() {
     goTo(2 + CATS.length - 1);
 }
-
-
-
-
 
 function updateProgress() {
     const fill  = document.getElementById('progress-fill');
@@ -536,7 +487,6 @@ function updateProgress() {
         ...CATS.map(c => c.label)];
     label.textContent = labels[currentStep] || '';
 }
-
 
 function goTo(idx) {
     try{
@@ -596,8 +546,6 @@ function goTo(idx) {
 
 }
 
-
-
 function init() {
 
     loadFromHiddenInputs()
@@ -613,6 +561,20 @@ function init() {
     container.innerHTML = html;
     updateProgress();
 }
+
+// global stuff
+const dbg = true;
+let currentStep = 0;
+// six sub categories
+// const TOTAL_STEPS = 8;
+const TOTAL_STEPS = 4;
+let companyData = {};
+
+// init to zero
+let mainVals = CATS.map(() => 0);
+let subVals  = CATS.map( c => c.subs.map(() => 0));
+
+let charts   = {};
 
 init();
 

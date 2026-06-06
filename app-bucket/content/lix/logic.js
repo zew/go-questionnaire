@@ -548,15 +548,23 @@ function goTo(idx) {
         }
         updateProgress();
         if (idx === 1) {
-            setTimeout(
-                () => { renderChart(  1, mainVals       , false, null); }, 50
-            );
+            // nesting requestAnimationFrame twice ensures the browser has fully completed
+            // the layout and paint cycle, guaranteeing container dimensions are available for ECharts
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    renderChart(  1, mainVals       , false, null);
+                });
+            });
         }
         if (idx >= 2 && idx <= 7) {
             const catIdx = idx - 2;
-            setTimeout(
-                () => { renderChart(idx, subVals[catIdx], true,  catIdx); }, 50
-            );
+            // nesting requestAnimationFrame twice ensures the browser has fully completed
+            // the layout and paint cycle, guaranteeing container dimensions are available for ECharts
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    renderChart(idx, subVals[catIdx], true,  catIdx);
+                });
+            });
         }
 
 

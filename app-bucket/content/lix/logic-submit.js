@@ -69,94 +69,98 @@ function showResults() {
     html += '</div></div>';
     document.getElementById('results-content').innerHTML = html;
 
-    setTimeout(() => {
-        const mainChart = echarts.init(document.getElementById('res-main-pie'));
-        mainChart.setOption({
-            tooltip: {
-                trigger: 'item',
-                formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`,
-            },
-            legend:  {
-                bottom:    0,
-                left:      'center',
-                textStyle: { fontSize: 12, fontFamily: 'DM Sans' },
-                itemWidth:  12,
-                itemHeight: 12,
-            },
-            series: [{
-                type: 'pie',
-                // radius: ['32%', '56%'],
-                radius: ['55%', '88%'],
-                center: ['50%', '45%'],
-                avoidLabelOverlap: true,
-                itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 3 },
-                label:     {
-                    show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
-                    fontSize: 12,
-                    fontFamily: 'DM Sans',
-                    color: '#2C2A26',
-                },
-                labelLine: {
-                    show:      true,
-                    showAbove: false,
-                    length:  8,
-                    length2: 6,
-                 },
-                data: CATS.map((cat, i) => ({
-                    value: mainVals[i], name: cat.label, itemStyle: { color: cat.color },
-                    label: { show: mainVals[i] > 0 }, labelLine: { show: mainVals[i] > 0 }
-                }))
-            }]
-        });
-        CATS.forEach((cat, i) => {
-            const subColors = generateSubColors(cat.color, cat.subs.length);
-            const el = document.getElementById('res-sub-pie-' + i);
-            if (!el) return;
-            const chart = echarts.init(el);
-            chart.setOption({
+    // nesting requestAnimationFrame twice ensures the browser has fully completed
+    // the layout and paint cycle, guaranteeing container dimensions are available for ECharts
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            const mainChart = echarts.init(document.getElementById('res-main-pie'));
+            mainChart.setOption({
                 tooltip: {
                     trigger: 'item',
-                    formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`
+                    formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`,
+                },
+                legend:  {
+                    bottom:    0,
+                    left:      'center',
+                    textStyle: { fontSize: 12, fontFamily: 'DM Sans' },
+                    itemWidth:  12,
+                    itemHeight: 12,
                 },
                 series: [{
                     type: 'pie',
-                    // radius: ['35%', '58%'],
-                    radius: ['45%', '72%'],
-                    center: ['50%', '51%'],
-                    avoidLabelOverlap: false,
-                    itemStyle: {
-                        borderRadius: 6,
-                        borderColor: '#FDFCFA',
-                        borderWidth: 2,
-                    },
-                    label: {
-                        show: true,
-                        formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
-                        fontSize: 11,
+                    // radius: ['32%', '56%'],
+                    radius: ['55%', '88%'],
+                    center: ['50%', '45%'],
+                    avoidLabelOverlap: true,
+                    itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 3 },
+                    label:     {
+                        show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
+                        fontSize: 12,
                         fontFamily: 'DM Sans',
                         color: '#2C2A26',
                     },
                     labelLine: {
-                        show: true,
+                        show:      true,
+                        showAbove: false,
                         length:  8,
                         length2: 6,
-                    },
-                    data: cat.subs.map((sub, j) => ({
-                        value: subVals[i][j], name: sub.label,
-                        itemStyle: {
-                            color: subColors[j],
-                        },
-                        label: {
-                            show: subVals[i][j] > 0,
-                        },
-                        labelLine: {
-                            show: subVals[i][j] > 0,
-                        }
+                     },
+                    data: CATS.map((cat, i) => ({
+                        value: mainVals[i], name: cat.label, itemStyle: { color: cat.color },
+                        label: { show: mainVals[i] > 0 }, labelLine: { show: mainVals[i] > 0 }
                     }))
                 }]
             });
+            CATS.forEach((cat, i) => {
+                const subColors = generateSubColors(cat.color, cat.subs.length);
+                const el = document.getElementById('res-sub-pie-' + i);
+                if (!el) return;
+                const chart = echarts.init(el);
+                chart.setOption({
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`
+                    },
+                    series: [{
+                        type: 'pie',
+                        // radius: ['35%', '58%'],
+                        radius: ['45%', '72%'],
+                        center: ['50%', '51%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 6,
+                            borderColor: '#FDFCFA',
+                            borderWidth: 2,
+                        },
+                        label: {
+                            show: true,
+                            formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
+                            fontSize: 11,
+                            fontFamily: 'DM Sans',
+                            color: '#2C2A26',
+                        },
+                        labelLine: {
+                            show: true,
+                            length:  8,
+                            length2: 6,
+                        },
+                        data: cat.subs.map((sub, j) => ({
+                            value: subVals[i][j], name: sub.label,
+                            itemStyle: {
+                                color: subColors[j],
+                            },
+                            label: {
+                                show: subVals[i][j] > 0,
+                            },
+                            labelLine: {
+                                show: subVals[i][j] > 0,
+                            }
+                        }))
+                    }]
+                });
+            });
         });
-    }, 80);
+    });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }

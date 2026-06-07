@@ -343,7 +343,7 @@ function buildResultsStep() {
                         value="next"
                         class="btn primary"
                     >
-                    <b>&nbsp;&nbsp;Werte speichern und Umfrage beenden&nbsp;&nbsp;</b>
+                    <b>&nbsp;&nbsp;Umfrage beenden&nbsp;&nbsp;</b>
                 </button>
             </div>
 
@@ -483,8 +483,12 @@ function updateProgress() {
     const pct   = Math.round((currentStep / (TOTAL_STEPS - 1)) * 100);
     fill.style.width = pct + '%';
     count.textContent = currentStep + ' / ' + (TOTAL_STEPS - 1);
-    const labels = ['Einleitung', 'Hauptkategorien',
-        ...CATS.map(c => c.label)];
+    const labels = [
+        'Einleitung', 
+        'Hauptkategorien',
+        ...CATS.map(c => c.label),
+        'Zusammenfassung'
+    ];
     label.textContent = labels[currentStep] || '';
 }
 
@@ -565,10 +569,9 @@ function init() {
 // global stuff
 const dbg = true;
 let currentStep = 0;
-// one intro - one major cat - six sub categories
-// const TOTAL_STEPS = 2 + CATS.length;
-const TOTAL_STEPS = 8;
 
+// one intro - one major cat - six sub categories - one results step
+const TOTAL_STEPS = 2 + CATS.length + 1;
 let companyData = {};
 
 // init to zero

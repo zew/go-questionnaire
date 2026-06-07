@@ -11,14 +11,14 @@
  		},
  		"year": 2026,
  		"month": 6,
- 		"deadline": "2026-06-28T23:59:00+02:00",
+ 		"deadline": "2030-01-01T00:00:00+01:00",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "733448645e85e29d9a8e72de00be6e6fad3db72221943525ef62ecbedeaca7e9",
+ 	"md_5": "d4f48e8a65f3efb3fd1bced948796f5ad574a4aac16a62c403f42386cc1a577e",
  	"lang_codes": [
  		"de"
  	],

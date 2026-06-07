@@ -95,7 +95,7 @@ function showResults() {
 
                 series: [{
                     type: 'pie',
-                    radius: ['50%', '80%'],
+                    radius: ['50%', '78%'],
                     center: ['50%', '41%'],
                     avoidLabelOverlap: true,
                     itemStyle: { 

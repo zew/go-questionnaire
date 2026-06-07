@@ -1,4 +1,4 @@
-const CATS = [
+const CATS_min = [
     {
         id: 'steuern', label: 'Steuern', color: '#9D8FBF',
         tooltip: 'Laufende Besteuerung des Unternehmens, Besteuerung des Unternehmens im Erbschaftsfall, Komplexität des Steuersystems',
@@ -21,7 +21,7 @@ const CATS = [
 
 
 
-const CATS2 = [
+const CATS = [
     {
         id: 'steuern', label: 'Steuern', color: '#9D8FBF',
         tooltip: 'Laufende Besteuerung des Unternehmens, Besteuerung des Unternehmens im Erbschaftsfall, Komplexität des Steuersystems',

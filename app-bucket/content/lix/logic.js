@@ -565,9 +565,10 @@ function init() {
 // global stuff
 const dbg = true;
 let currentStep = 0;
-// six sub categories
-// const TOTAL_STEPS = 8;
-const TOTAL_STEPS = 4;
+// one intro - one major cat - six sub categories
+// const TOTAL_STEPS = 2 + CATS.length;
+const TOTAL_STEPS = 8;
+
 let companyData = {};
 
 // init to zero

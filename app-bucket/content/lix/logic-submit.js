@@ -55,7 +55,7 @@ function showResults() {
 
     let html = '<div class="results-summary">';
     html += '<div class="res-group-title">Hauptkategorien</div>';
-    html += '<div id="res-main-pie" style="width:100%;height:320px;margin-bottom:1.5rem"></div>';
+    html += '<div id="res-main-pie" style="width:100%;height:420px;margin-bottom:0.4rem"></div>';
     html += '<div class="res-group-title">Unterkategorien</div>';
     html += '<div class="res-pie-grid">';
     CATS.forEach((cat, i) => {
@@ -79,24 +79,34 @@ function showResults() {
                     trigger: 'item',
                     formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`,
                 },
+                
                 legend:  {
                     bottom:    0,
                     left:      'center',
-                    textStyle: { fontSize: 12, fontFamily: 'DM Sans' },
-                    itemWidth:  12,
-                    itemHeight: 12,
+                    textStyle: { 
+                        fontSize:   10, 
+                        lineHeight: 14, 
+                        fontFamily: 'Arial, Helvetica, sans-serif',
+                    },
+                    itemWidth:  10,
+                    itemHeight: 10,
+                    itemGap:     4,
                 },
+
                 series: [{
                     type: 'pie',
-                    // radius: ['32%', '56%'],
-                    radius: ['55%', '88%'],
-                    center: ['50%', '45%'],
+                    radius: ['50%', '80%'],
+                    center: ['50%', '41%'],
                     avoidLabelOverlap: true,
-                    itemStyle: { borderRadius: 6, borderColor: '#FDFCFA', borderWidth: 3 },
+                    itemStyle: { 
+                        borderRadius: 6, 
+                        borderColor: '#FDFCFA', 
+                        borderWidth: 3,
+                    },
                     label:     {
                         show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
                         fontSize: 12,
-                        fontFamily: 'DM Sans',
+                        fontFamily: 'Arial, Helvetica, sans-serif',
                         color: '#2C2A26',
                     },
                     labelLine: {
@@ -107,7 +117,11 @@ function showResults() {
                      },
                     data: CATS.map((cat, i) => ({
                         value: mainVals[i], name: cat.label, itemStyle: { color: cat.color },
-                        label: { show: mainVals[i] > 0 }, labelLine: { show: mainVals[i] > 0 }
+                        label: { 
+                            show: mainVals[i] > 0 }, 
+                            labelLine: { 
+                                show: mainVals[i] > 0 
+                            }
                     }))
                 }]
             });
@@ -123,7 +137,6 @@ function showResults() {
                     },
                     series: [{
                         type: 'pie',
-                        // radius: ['35%', '58%'],
                         radius: ['45%', '72%'],
                         center: ['50%', '51%'],
                         avoidLabelOverlap: false,
@@ -136,7 +149,7 @@ function showResults() {
                             show: true,
                             formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
                             fontSize: 11,
-                            fontFamily: 'DM Sans',
+                            fontFamily: 'Arial, Helvetica, sans-serif',
                             color: '#2C2A26',
                         },
                         labelLine: {

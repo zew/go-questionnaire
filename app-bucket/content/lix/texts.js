@@ -2,7 +2,7 @@ const CATS = [
     {
         id:    'steuern',
         label: 'Steuern',
-        lblsh: 'Steuern',
+        lblsh: 'Steuern   ',
         color: '#9D8FBF',
         tooltip: 'Laufende Besteuerung des Unternehmens, Besteuerung des Unternehmens im Erbschaftsfall, Komplexität des Steuersystems',
         subs: [
@@ -14,7 +14,7 @@ const CATS = [
     {
         id:    'arbeit',
         label: 'Arbeitskräfte (Kosten & Produktivität)',
-        lblsh: 'Arbeitskräfte',
+        lblsh: 'Arbeitskosten & -produktivität',
         color: '#7EAFA3',
         tooltip: 'Arbeitskosten (Löhne und Lohnnebenkosten pro Stunde), Produktivität und Bildungsstand der Arbeitskräfte',
         subs: [
@@ -25,7 +25,7 @@ const CATS = [
     {
         id:    'fin',
         label: 'Finanzierungsbedingungen für Unternehmen und Zustand der öffentlichen Finanzen',
-        lblsh: 'Finanzierungsbedingungen & öffentlichen Finanzen',
+        lblsh: 'Finanzierungsbedingungen & öffentl. Finanzen',
         color: '#8FAD7E',
         tooltip: 'Verfügbarkeit von Unternehmenskrediten, Durchsetzbarkeit von Kreditforderungen, Zustand der öffentlichen Finanzen und private Verschuldungssituation',
         subs: [
@@ -36,7 +36,7 @@ const CATS = [
     {
         id:    'reg',
         label: 'Bürokratie und Regulierung',
-        lblsh: 'Bürokratie & Regulierung',
+        lblsh: 'Bürokratie & Regulierung  ',
         color: '#C4A265',
         tooltip: 'Vorschriften in den Bereichen Arbeitsverträge und Außenhandel (z.B. Kündigungsschutz; Tarifverträge; Zollvorschriften); Allgemeine laufende Berichtspflichten und Vorschriften bei Unternehmensgründung; Betriebliche Mitbestimmung',
         subs: [
@@ -48,7 +48,7 @@ const CATS = [
     {
         id:    'inf',
         label: 'Qualität von Infrastruktur und politischen Institutionen',
-        lblsh: 'Infrastruktur & Institutionen',
+        lblsh: 'Infrastruktur & Institutionen  ',
         color: '#6E9BBF',
         tooltip: 'Transportinfrastruktur und digitale Infrastruktur; Rechtlich-institutionelle Rahmenbedingungen',
         subs: [

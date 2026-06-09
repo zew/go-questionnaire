@@ -116,12 +116,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 1
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": `&nbsp;`,
-					"de": `&nbsp;`,
-				}
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./site-imprint.md"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
 			}
+
 			// {
 			// 	inp := gr.AddInput()
 			// 	inp.Type = "dyn-textblock"

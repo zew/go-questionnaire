@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d4f48e8a65f3efb3fd1bced948796f5ad574a4aac16a62c403f42386cc1a577e",
+ 	"md_5": "3b712997c27b2983cbc492c2123457bd6039cc7844d7e2492d90c895aad63f1b",
  	"lang_codes": [
  		"de"
  	],
@@ -193,12 +193,11 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span_label": 1
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "./site-imprint.md"
  						}
  					]
  				}

@@ -26,7 +26,12 @@ jobs:
           go tool
 
       - name: Run coverage
+        env:
+          # Force Go to use the workspace volume for temporary files
+          # otherwise problems with renaming temporary files in go test code
+          TMPDIR: ${{ github.workspace }}/tmp
         run: |
+          mkdir -p $TMPDIR
           mv app-bucket/config-example.json app-bucket/config.json
           mv app-bucket/logins-example.json app-bucket/logins.json
           go test -race -coverprofile=coverage.out -covermode=atomic ./...

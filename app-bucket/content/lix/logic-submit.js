@@ -60,10 +60,15 @@ function showResults() {
     html += '<div class="res-pie-grid">';
     CATS.forEach((cat, i) => {
         html += `
-        <div class="res-pie-card">
-            <div class="res-pie-card-title">
-            <span style="width:10px;height:10px;border-radius:2px;background:${cat.color};display:inline-block;flex-shrink:0"></span>${cat.label}</div>
+        <div class="res-pie-card" style="position: relative;">
+            <div class="res-pie-card-title" style="min-height: 30px;">
+                <span style="width:10px;min-height:10px;border-radius:2px;background:${cat.color};
+                    display:inline-block;flex-shrink:0">
+                </span>${cat.label}
+            </div>
             <div class="res-pie-container" id="res-sub-pie-${i}"></div>
+            <button type="button" class="btn" 
+                style="position: absolute; bottom: 4px; right: 6px; padding: 4px 10px; font-size: 11px;" onclick="goTo(${i + 2})">Ändern</button>
         </div>`;
     });
     html += '</div></div>';
@@ -84,18 +89,22 @@ function showResults() {
                     bottom:    0,
                     left:      'center',
                     textStyle: {
-                        fontSize:   10,
-                        lineHeight: 14,
+                        fontSize:   13,
+                        lineHeight: 16,
                         fontFamily: 'Arial, Helvetica, sans-serif',
                     },
-                    itemWidth:  10,
-                    itemHeight: 10,
-                    itemGap:     4,
+                    itemWidth:  14,
+                    itemHeight: 14,
+                    itemGap:     2,
+                    padding:     0,
+
+                    // moving legend upward
+                    bottom:      26,
                 },
 
                 series: [{
                     type: 'pie',
-                    radius: ['50%', '78%'],
+                    radius: ['48%', '70%'],
                     center: ['50%', '41%'],
                     avoidLabelOverlap: true,
                     itemStyle: {
@@ -104,16 +113,24 @@ function showResults() {
                         borderWidth: 3,
                     },
                     label:     {
-                        show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
+                        // show: true, formatter: p => p.value > 0 ? p.value + ' Pkt.' : '',
+                        show: true, formatter: p => p.value > 0 ? p.value : '',
                         fontSize: 12,
                         fontFamily: 'Arial, Helvetica, sans-serif',
                         color: '#2C2A26',
+
+                        // aligning labels to canvas edge instead of placing them near pie
+                        alignTo: 'edge',
+                        // reducing reserved distance from left/right canvas edge
+                        edgeDistance: 2,
+                        // reducing text clipping safety margin
+                        bleedMargin: 0,
                     },
                     labelLine: {
                         show:      true,
                         showAbove: false,
                         length:  8,
-                        length2: 6,
+                        length2: 4,
                      },
                     data: CATS.map((cat, i) => ({
                         value: mainVals[i],
@@ -144,6 +161,7 @@ function showResults() {
                         type: 'pie',
                         radius: ['45%', '72%'],
                         center: ['50%', '51%'],
+                        center: ['45%', '45%'],
                         avoidLabelOverlap: false,
                         itemStyle: {
                             borderRadius: 6,
@@ -182,4 +200,3 @@ function showResults() {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-

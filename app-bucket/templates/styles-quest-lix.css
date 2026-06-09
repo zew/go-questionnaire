@@ -323,6 +323,7 @@ body {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 1.5rem;
+  gap: 0.15rem;
   align-items: center;
 }
 
@@ -640,14 +641,6 @@ body {
   stroke-linejoin: round;
 }
 
-.info-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  margin-left: 6px;
-  vertical-align: middle;
-}
-
 .info-btn {
   width: 16px;
   height: 16px;
@@ -665,6 +658,8 @@ body {
   padding: 0;
   font-family: 'DM Sans', sans-serif;
   transition: border-color 0.15s, color 0.15s;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 .info-btn:hover {
@@ -673,37 +668,56 @@ body {
 }
 
 .info-tooltip {
-  display: none;
-  position: absolute;
-  left: 22px;
-  top: 50%;
-  transform: translateY(-50%);
+  /* resetting native popover styles */
+  border: none;
+  margin: 0;
+  inset: auto; /* crucial: removes default browser centering for top-layer elements */
+
   background: var(--text);
   color: #FDFCFA;
   font-size: 12px;
   line-height: 1.55;
   padding: 10px 13px;
   border-radius: var(--radius-sm);
-  width: 240px;
-  z-index: 100;
-  pointer-events: none;
+
+  /* preventing horizontal overflow */
+  max-width: 100vw;
+  overflow-wrap: break-word;
+}
+
+.info-tooltip::backdrop {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .info-tooltip::before {
   content: '';
   position: absolute;
+  border: 5px solid transparent;
+}
+
+/* aligning the arrow based on the calculated position data attribute */
+.info-tooltip[data-pos="right"]::before {
   left: -5px;
   top: 50%;
   transform: translateY(-50%);
-  border: 5px solid transparent;
   border-left: 0;
   border-right-color: var(--text);
 }
 
-.info-wrap:hover .info-tooltip,
-.info-wrap:focus-within .info-tooltip {
-  display: block;
+.info-tooltip[data-pos="bottom"]::before {
+  left: var(--arrow-x, 50%);
+  top: -5px;
+  border-top: 0;
+  border-bottom-color: var(--text);
 }
+
+.info-tooltip[data-pos="top"]::before {
+  left: var(--arrow-x, 50%);
+  bottom: -5px;
+  border-bottom: 0;
+  border-top-color: var(--text);
+}
+
 
 .res-pie-grid {
   display: grid;
@@ -771,4 +785,32 @@ button.btn.primary:focus-visible {
 /* allowing clicks to pass through snap marker to underlying range input */
 .snap-wrap {
     /* pointer-events: none; */
+}
+
+
+/* overriding transparent or white selection backgrounds */
+input.num-box::selection {
+    background-color: #0078D7;
+    color:            #FFFFFF;
+}
+
+
+
+
+/* wrapper classes to ensure native tooltips trigger reliably on disabled buttons */
+.btn-wrap {
+  display: flex;
+  flex: 1;
+}
+
+.btn-wrap .btn {
+  width: 100%;
+}
+
+.btn-wrap.disabled-wrap {
+  cursor: not-allowed;
+}
+
+.btn-wrap.disabled-wrap .btn {
+  pointer-events: none; /* allowing the wrapper to capture hover events for the title attribute */
 }

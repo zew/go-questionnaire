@@ -15,6 +15,56 @@ function handleExc(exc, optionalMsg) {
     }
 }
 
+// generating unified attributes for disabled state of next buttons
+function getNextBtnAttrs(arr) {
+    return remaining(arr) !== 0 ? `disabled` : '';
+}
+
+// generating wrapper attributes to catch click events when button is disabled
+function getNextBtnWrapAttrs(arr) {
+    return remaining(arr) !== 0 ? `class="btn-wrap disabled-wrap"` : `class="btn-wrap"`;
+}
+
+// updating disabled state for next buttons dynamically
+function applyNextBtnState(btn, arr) {
+    if (!btn) return;
+    const isDis = remaining(arr) !== 0;
+    btn.disabled = isDis;
+
+    // updating the wrapper to ensure click events pass through the disabled button
+    const wrap = btn.closest('.btn-wrap');
+    if (wrap) {
+        if (isDis) {
+            wrap.classList.add('disabled-wrap');
+        } else {
+            wrap.classList.remove('disabled-wrap');
+        }
+    }
+}
+
+// intercepting next button clicks to validate budget allocation before proceeding
+function handleNextClick(targetIdx, type, catIdx, isSubmit) {
+    try {
+        // resolving the correct array based on the current step type
+        const arr = type === 'main' ? mainVals : subVals[catIdx];
+
+        // preventing navigation if the budget is not fully allocated
+        if (remaining(arr) !== 0) {
+            alert(DISABLED_NEXT_TITLE);
+            return;
+        }
+
+        // routing to the appropriate next action
+        if (isSubmit) {
+            showResults();
+        } else {
+            goTo(targetIdx);
+        }
+    } catch (exc) {
+        handleExc(exc, 'handleNextClick()');
+    }
+}
+
 function budget(arr)    { return arr.length * 10; }
 function remaining(arr) { return budget(arr) - arr.reduce((a, b) => a + b, 0); }
 
@@ -141,6 +191,46 @@ function buildBudgetBadge(arr) {
     return `<div class="budget-badge ${cls}"><span class="dot"></span>${msg}</div>`;
 }
 
+// calculating exact coordinates for top-layer popovers since CSS Anchor API lacks cross-browser support
+function posPop(btn, popId) {
+    try {
+        const pop = document.getElementById(popId);
+        if (!pop) return;
+        const rect = btn.getBoundingClientRect();
+
+        if (window.innerWidth <= 500) {
+            // mobile: horizontally relative to screen, vertically relative to anchor
+            pop.style.left = '5px';
+            pop.style.width = 'calc(100vw - 10px)';
+            pop.style.transform = 'none';
+
+            // checking available space below to prevent clipping
+            const spaceBelow = window.innerHeight - rect.bottom;
+            if (spaceBelow < 120) {
+                pop.style.top = 'auto';
+                pop.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
+                pop.dataset.pos = 'top';
+            } else {
+                pop.style.bottom = 'auto';
+                pop.style.top = (rect.bottom + 8) + 'px';
+                pop.dataset.pos = 'bottom';
+            }
+            // aligning the arrow exactly with the center of the button
+            pop.style.setProperty('--arrow-x', (rect.left + rect.width / 2 - 5) + 'px');
+        } else {
+            // desktop: horizontally to the right, vertically centered to anchor
+            pop.style.left = (rect.right + 10) + 'px';
+            pop.style.width = '240px';
+            pop.style.bottom = 'auto';
+            pop.style.top = (rect.top + rect.height / 2) + 'px';
+            pop.style.transform = 'translateY(-50%)';
+            pop.dataset.pos = 'right';
+        }
+    } catch (exc) {
+        handleExc(exc, 'posPop()');
+    }
+}
+
 function buildSliders(vals, catIdx, isSub) {
     const items = isSub !== undefined ? CATS[catIdx].subs : CATS;
     const snapPt = 10;
@@ -155,20 +245,27 @@ function buildSliders(vals, catIdx, isSub) {
         const snapFrac = 10 / (vals.length * 10);
         const snapPct = snapFrac * 100;
         const snapPos = `calc(${snapPct.toFixed(4)}% - ${(snapFrac * 16).toFixed(4)}px + 6.25px)`;
+
+        const popId = `pop-${dtype}-${catIdx !== null ? catIdx : 'main'}-${i}`;
+
+        // selecting input text on focus allows users to immediately overwrite existing values
+        // without needing to manually delete the previous number first
         html += `<div class="slider-item">
             <div class="slider-header">
             <div>
-                <div class="slider-name">${item.label}${item.tooltip ? `<span class="info-wrap">
-                    <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button>
-                    <span class="info-tooltip">${item.tooltip}</span></span>` : ''}
+                <div class="slider-name">${item.label}${item.tooltip ? `
+                    <button type="button" tabindex="-1" class="info-btn" aria-label="Info" popovertarget="${popId}" onclick="posPop(this, '${popId}')">i</button>
+                    <div id="${popId}" popover class="info-tooltip">${item.tooltip}</div>` : ''}
                 </div>
                 ${item.hint ? `<div class="slider-hint">${item.hint}</div>` : ''}
             </div>
             </div>
             <div class="slider-controls">
-            <input type="number" class="num-box" min="0" max="${budget(vals)}" step="1" value="${val}"
-                data-idx="${i}" data-type="${dtype}" data-cat="${catIdx}"
-                oninput="handleNumInput(this)">
+                <input type="number" class="num-box" min="0" max="${budget(vals)}" step="1" value="${val}"
+                    data-idx="${i}" data-type="${dtype}" data-cat="${catIdx}"
+                    onfocus="this.select()"
+                    oninput="handleNumInput(this)"
+                >
             <div class="slider-track-wrap">
                 <span class="snap-wrap" style="left:${snapPos}">
                     <span class="snap-tick" onclick="handleSnapClick(this)"></span>
@@ -203,7 +300,16 @@ function buildChartData(vals, isSub, catIdx) {
         .map((item, i) => vals[i] > 0 ? { value: vals[i], name: item.label, itemStyle: { color: colorList[i] } } : null)
         .filter(Boolean);
     if (rem > 0) {
-        data.push({ value: rem, name: 'Noch zu vergeben', itemStyle: { color: '#E8E5DF' }, emphasis: { disabled: true } });
+        data.push({
+            value: rem,
+            name: 'Noch zu vergeben',
+            itemStyle: {
+                color: '#E8E5DF',
+            },
+            emphasis: {
+                disabled: true,
+            },
+        });
     }
     return data;
 }
@@ -251,12 +357,12 @@ function buildStep2() {
                 </div>
                 <p class="card-desc">Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget
                     von <strong>60 Punkten</strong> entsprechend aufteilen.
-                        <span class="info-wrap">
-                        <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip">Vergeben Sie mehr
+                        <button type="button" tabindex="-1" class="info-btn" aria-label="Info" popovertarget="pop-main-desc" onclick="posPop(this, 'pop-main-desc')">i</button>
+                        <div id="pop-main-desc" popover class="info-tooltip">Vergeben Sie mehr
                         Punkte an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren,
                         die für Ihre Entscheidung weniger ausschlaggebend sind.
                         10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
-                        </span></span>
+                        </div>
                 </p>
             </div>
             <div class="card">
@@ -268,7 +374,13 @@ function buildStep2() {
             </div>
             <div class="btn-row">
                 <button type="button"  tabindex="99" class="btn btn-back" onclick="goTo(0)">← Zurück</button>
-                <button type="button"  class="btn primary"  onclick="goTo(2)" ${remaining(mainVals) !== 0 ? 'disabled' : ''}>Weiter →</button>
+                <span ${getNextBtnWrapAttrs(mainVals)} onclick="handleNextClick(2, 'main', null, false)">
+                    <button type="button"
+                        class="btn primary"
+                        ${getNextBtnAttrs(mainVals)}
+                    >
+                        Weiter →</button>
+                </span>
             </div>
         </div>
     `;
@@ -291,13 +403,13 @@ function buildSubStep(catIdx) {
                     Gewichten Sie die Relevanz folgender Standortfaktoren, indem Sie das Budget von
                     <strong>${cat.subs.length * 10} Punkten</strong> entsprechend aufteilen.
 
-                    <span class="info-wrap">
-                    <button type="button" tabindex="-1" class="info-btn" aria-label="Info">i</button><span class="info-tooltip"
+                    <button type="button" tabindex="-1" class="info-btn" aria-label="Info" popovertarget="pop-sub-desc-${catIdx}" onclick="posPop(this, 'pop-sub-desc-${catIdx}')">i</button>
+                    <div id="pop-sub-desc-${catIdx}" popover class="info-tooltip"
                     >Vergeben Sie mehr Punkte
                     an Faktoren, die Ihre Standortentscheidung stärker beeinflussen und weniger Punkte an Faktoren,
                     die für Ihre Entscheidung weniger ausschlaggebend sind.
                     10 Punkte pro Kategorie entsprechen einer Gleichgewichtung der Entscheidungsrelevanz.
-                    </span></span>
+                    </div>
                 </p>
             </div>
             <div class="card">
@@ -310,12 +422,13 @@ function buildSubStep(catIdx) {
             <div class="btn-row">
                 <button type="button"  tabindex="99" class="btn btn-back" onclick="goTo(${stepIdx - 1})"  >← Zurück</button>
 
-                <button type="button"  class="btn primary"
-                    onclick="${isLast ? 'showResults()' : 'goTo(' + (stepIdx + 1) + ')'}"
-                    ${remaining(vals) !== 0 ? 'disabled' : ''}
-                >
-                    ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
-                </button>
+                <span ${getNextBtnWrapAttrs(vals)} onclick="handleNextClick(${isLast ? 'null' : stepIdx + 1}, 'sub', ${catIdx}, ${isLast})">
+                    <button type="button"  class="btn primary"
+                        ${getNextBtnAttrs(vals)}
+                    >
+                        ${isLast ? 'Ergebnisse ansehen →' : 'Weiter → '}
+                    </button>
+                </span>
             </div>
         </div>
     `;
@@ -343,7 +456,7 @@ function buildResultsStep() {
                         value="next"
                         class="btn primary"
                     >
-                    <b>&nbsp;&nbsp;Umfrage beenden&nbsp;&nbsp;</b>
+                        <b>&nbsp;&nbsp;Umfrage beenden&nbsp;&nbsp;</b>
                 </button>
             </div>
 
@@ -431,8 +544,10 @@ function refreshStep(stepIdx) {
         }
         if (numBox) numBox.value = val;
     });
+
     const nextBtn = container.querySelector('.btn.primary');
-    if (nextBtn) nextBtn.disabled = remaining(vals) !== 0;
+    applyNextBtnState(nextBtn, vals);
+
     updateChart(stepIdx, vals, isSub, catIdx);
 }
 
@@ -450,6 +565,14 @@ function renderChart(stepIdx, vals, isSub, catIdx) {
     const chartKey = 'chart-' + stepIdx;
     const el = document.getElementById('echarts-' + stepIdx);
     if (!el) return;
+
+    let rads = ['38%', '68%'];
+    rads = ['40%', '70%'];
+    rads = ['51%', '81%'];
+    if (isSub){
+        rads = ['38%', '68%'];
+    }
+
     const chart = echarts.init(el);
     charts[chartKey] = chart;
     chart.setOption({
@@ -457,7 +580,8 @@ function renderChart(stepIdx, vals, isSub, catIdx) {
             trigger: 'item',
             formatter: p => p.name === 'Noch zu vergeben' ? `<b>${p.value} Punkte</b> noch zu vergeben` : `${p.name}<br/><b>${p.value} Punkte</b>` },
         series: [{
-            type: 'pie', radius: ['38%', '68%'],
+            type: 'pie',
+            radius: rads,
             avoidLabelOverlap: false,
             itemStyle: {
                     borderRadius: 8,
@@ -568,6 +692,7 @@ function init() {
 
 // global stuff
 const dbg = true;
+const DISABLED_NEXT_TITLE = '"Weiter" kann erst betätigt werden, wenn alle Punkte des Budgets verteilt sind';
 let currentStep = 0;
 
 // one intro - one major cat - six sub categories - one results step

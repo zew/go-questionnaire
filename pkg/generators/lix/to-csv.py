@@ -1,14 +1,7 @@
 # pip install pandas pyreadstat
-
-
 from   pathlib import Path
 import pandas as pd
 import pyreadstat
-
-
-def stackTrace(e):
-    print(e)
-
 
 
 
@@ -21,7 +14,8 @@ def main():
 
         df1, meta = pyreadstat.read_dta(str(srcPth), encoding="utf-8")
 
-        if False:
+        # if False:
+        if True:
             # print(meta)
             # print(df.head)
             df1 = pd.DataFrame(df1)
@@ -39,13 +33,14 @@ def main():
 
 
         # limiting both inputs
-        cntLimit = 5000
+        cntLimit = 16166
+        cntLimit = 31867
         df1      = df1.head(cntLimit).copy()
         df2      = df2.head(cntLimit).copy()
         ln1      = len(df1)
         ln2      = len(df2)
         if ln1 != ln2:
-            raise(f"row count mismatch: dta={ln1}, mixin={ln2}")
+            raise ValueError(f"row count mismatch: dta={ln1}, mixin={ln2}")
 
 
         # inserting mixin values as second and third CSV columns
@@ -55,9 +50,12 @@ def main():
         df1.to_csv(dstPth, index=False, encoding="utf-8", sep=";")
 
 
+
     except Exception as exc:
-        stackTrace(exc)
+        print(exc)
         print("convertStataToCsv")
+
+
 
 
 if __name__ == "__main__":

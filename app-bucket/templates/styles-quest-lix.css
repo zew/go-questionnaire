@@ -31,6 +31,7 @@ input[type=range] {
   padding: 0 !important;
 }
 
+
 :root {
   --bg: #F7F5F0;
   --surface: #FDFCFA;
@@ -437,7 +438,7 @@ body {
 .slider-controls input[type=range] {
   flex: 1;
   -webkit-appearance: none;
-  height: 3px;
+  height:        3px;
   border-radius: 2px;
   outline: none;
   cursor: pointer;
@@ -445,8 +446,8 @@ body {
 
 .slider-controls input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
+  width:         16px;
+  height:        16px;
   border-radius: 50%;
   background: var(--accent);
   cursor: pointer;
@@ -455,13 +456,22 @@ body {
 }
 
 .slider-controls input[type=range]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width:         16px;
+  height:        16px;
   border-radius: 50%;
   background: var(--accent);
   cursor: pointer;
   border: 2px solid var(--surface);
 }
+
+
+@media (max-width: 768px) {
+    .slider-track-wrap {
+        min-height: 28px;        /* allowing larger mobile touch target */
+    }
+}
+
+
 
 .num-box {
   width: 50px;

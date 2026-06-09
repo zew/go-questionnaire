@@ -79,13 +79,13 @@ function showResults() {
                     trigger: 'item',
                     formatter: p => `${p.name}<br/><b>${p.value} Punkte</b>`,
                 },
-                
+
                 legend:  {
                     bottom:    0,
                     left:      'center',
-                    textStyle: { 
-                        fontSize:   10, 
-                        lineHeight: 14, 
+                    textStyle: {
+                        fontSize:   10,
+                        lineHeight: 14,
                         fontFamily: 'Arial, Helvetica, sans-serif',
                     },
                     itemWidth:  10,
@@ -98,9 +98,9 @@ function showResults() {
                     radius: ['50%', '78%'],
                     center: ['50%', '41%'],
                     avoidLabelOverlap: true,
-                    itemStyle: { 
-                        borderRadius: 6, 
-                        borderColor: '#FDFCFA', 
+                    itemStyle: {
+                        borderRadius: 6,
+                        borderColor: '#FDFCFA',
                         borderWidth: 3,
                     },
                     label:     {
@@ -116,11 +116,16 @@ function showResults() {
                         length2: 6,
                      },
                     data: CATS.map((cat, i) => ({
-                        value: mainVals[i], name: cat.label, itemStyle: { color: cat.color },
-                        label: { 
-                            show: mainVals[i] > 0 }, 
-                            labelLine: { 
-                                show: mainVals[i] > 0 
+                        value: mainVals[i],
+                        // name: cat.label,
+                        name: cat.lblsh,
+                        itemStyle: {
+                            color: cat.color,
+                        },
+                        label: {
+                            show: mainVals[i] > 0 },
+                            labelLine: {
+                                show: mainVals[i] > 0
                             }
                     }))
                 }]

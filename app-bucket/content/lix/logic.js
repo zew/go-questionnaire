@@ -484,7 +484,7 @@ function updateProgress() {
     fill.style.width = pct + '%';
     count.textContent = currentStep + ' / ' + (TOTAL_STEPS - 1);
     const labels = [
-        'Einleitung', 
+        'Einleitung',
         'Hauptkategorien',
         ...CATS.map(c => c.label),
         'Zusammenfassung'

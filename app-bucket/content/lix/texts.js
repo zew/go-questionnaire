@@ -1,29 +1,9 @@
-const CATS_min = [
-    {
-        id: 'steuern', label: 'Steuern', color: '#9D8FBF',
-        tooltip: 'Laufende Besteuerung des Unternehmens, Besteuerung des Unternehmens im Erbschaftsfall, Komplexität des Steuersystems',
-        subs: [
-            { id: 'biz', label: 'Laufende Besteuerung des Unternehmens', hint: 'Einkommen-, Körperschafts- und Gewerbesteuer', tooltip: 'Besteuerung nationaler und grenzüberschreitender Geschäftstätigkeit, etwa durch Einkommen- und Körperschaftssteuer sowie Grundsteuer.' },
-            { id: 'erb', label: 'Besteuerung des Unternehmens im Erbschaftsfall', hint: 'Höhe und Vergünstigungen für Unternehmen, Administration', tooltip: 'Höhe der Erbschaftssteuer, Vergünstigungen für Unternehmen und administrative Regelungen bei der Unternehmensübertragung.' },
-            { id: 'kpl', label: 'Komplexität des Steuersystems', hint: 'Aufwand zur Erfüllung der Steuerpflichten und Sozialabgaben', tooltip: 'Benötigter Arbeitsaufwand zur Erfüllung aller steuerlichen Pflichten und Sozialabgaben.' }
-        ]
-    },
-    {
-        id: 'arbeit', label: 'Arbeitskräfte (Kosten & Produktivität)', color: '#7EAFA3',
-        tooltip: 'Arbeitskosten (Löhne und Lohnnebenkosten pro Stunde), Produktivität und Bildungsstand der Arbeitskräfte',
-        subs: [
-            { id: 'kos', label: 'Arbeitskosten', hint: 'Löhne und Lohnnebenkosten pro Stunde', tooltip: 'Alle aus Arbeitgebersicht anfallenden Arbeitskosten pro Stunde.' },
-            { id: 'pro', label: 'Produktivität und Bildungsstand der Arbeitskräfte', hint: 'BIP je Arbeitsstunde, Bildungsausgaben, Bildungsniveau', tooltip: 'BIP je gearbeitete Arbeitsstunde, öffentliche und private Bildungsausgaben, Bildungsniveau der erwerbsfähigen Bevölkerung.' }
-        ]
-    },
-];
-
-
-
-
 const CATS = [
     {
-        id: 'steuern', label: 'Steuern', color: '#9D8FBF',
+        id:    'steuern',
+        label: 'Steuern',
+        lblsh: 'Steuern',
+        color: '#9D8FBF',
         tooltip: 'Laufende Besteuerung des Unternehmens, Besteuerung des Unternehmens im Erbschaftsfall, Komplexität des Steuersystems',
         subs: [
             { id: 'biz', label: 'Laufende Besteuerung des Unternehmens', hint: 'Einkommen-, Körperschafts- und Gewerbesteuer', tooltip: 'Besteuerung nationaler und grenzüberschreitender Geschäftstätigkeit, etwa durch Einkommen- und Körperschaftssteuer sowie Grundsteuer.' },
@@ -32,7 +12,10 @@ const CATS = [
         ]
     },
     {
-        id: 'arbeit', label: 'Arbeitskräfte (Kosten & Produktivität)', color: '#7EAFA3',
+        id:    'arbeit',
+        label: 'Arbeitskräfte (Kosten & Produktivität)',
+        lblsh: 'Arbeitskräfte',
+        color: '#7EAFA3',
         tooltip: 'Arbeitskosten (Löhne und Lohnnebenkosten pro Stunde), Produktivität und Bildungsstand der Arbeitskräfte',
         subs: [
             { id: 'kos', label: 'Arbeitskosten', hint: 'Löhne und Lohnnebenkosten pro Stunde', tooltip: 'Alle aus Arbeitgebersicht anfallenden Arbeitskosten pro Stunde.' },
@@ -40,7 +23,10 @@ const CATS = [
         ]
     },
     {
-        id: 'fin', label: 'Finanzierungsbedingungen für Unternehmen und Zustand der öffentlichen Finanzen', color: '#8FAD7E',
+        id:    'fin',
+        label: 'Finanzierungsbedingungen für Unternehmen und Zustand der öffentlichen Finanzen',
+        lblsh: 'Finanzierungsbedingungen & öffentlichen Finanzen',
+        color: '#8FAD7E',
         tooltip: 'Verfügbarkeit von Unternehmenskrediten, Durchsetzbarkeit von Kreditforderungen, Zustand der öffentlichen Finanzen und private Verschuldungssituation',
         subs: [
             { id: 'krd', label: 'Verfügbarkeit von Unternehmenskrediten, Durchsetzbarkeit von Kreditforderungen', hint: 'Kreditmarkt, Gläubigerschutz, Kreditinformation', tooltip: 'Größe des Marktes für Unternehmenskredite, Risikoanfälligkeit, Zugangsmöglichkeiten, rechtliche Stellung von Gläubigern und Schuldnern, Umfang und Qualität von Kreditinformationen' },
@@ -48,7 +34,10 @@ const CATS = [
         ]
     },
     {
-        id: 'reg', label: 'Bürokratie und Regulierung', color: '#C4A265',
+        id:    'reg',
+        label: 'Bürokratie und Regulierung',
+        lblsh: 'Bürokratie & Regulierung',
+        color: '#C4A265',
         tooltip: 'Vorschriften in den Bereichen Arbeitsverträge und Außenhandel (z.B. Kündigungsschutz; Tarifverträge; Zollvorschriften); Allgemeine laufende Berichtspflichten und Vorschriften bei Unternehmensgründung; Betriebliche Mitbestimmung',
         subs: [
             { id: 'ins', label: 'Vorschriften in den Bereichen Arbeitsverträge und Außenhandel', hint: 'z.B. Kündigungsschutz; Tarifverträge; Zollvorschriften', tooltip: 'Arbeitsrechtliche Vorgaben, welche die Vertragsfreiheit begrenzen, z.B. bei Kündigungen und Arbeitszeiten; Regularien bei grenzüberschreitendem Handel.' },
@@ -57,7 +46,10 @@ const CATS = [
         ]
     },
     {
-        id: 'inf', label: 'Qualität von Infrastruktur und politischen Institutionen', color: '#6E9BBF',
+        id:    'inf',
+        label: 'Qualität von Infrastruktur und politischen Institutionen',
+        lblsh: 'Infrastruktur & Institutionen',
+        color: '#6E9BBF',
         tooltip: 'Transportinfrastruktur und digitale Infrastruktur; Rechtlich-institutionelle Rahmenbedingungen',
         subs: [
             { id: 'tra', label: 'Transport- und digitale Infrastruktur', hint: 'Transportinfrastruktur (Straße, Schiene, Luft), Informations- und Kommunikationsinfrastruktur', tooltip: 'Straßen-, Schienen-, Flugverkehr; Cybersicherheit, Leistungsfähigkeit Breitbandnetze und Mobilfunknetze.' },
@@ -65,7 +57,10 @@ const CATS = [
         ]
     },
     {
-        id: 'ene', label: 'Energiesystem und Energiepolitik', color: '#BF7E85',
+        id:    'ene',
+        label: 'Energiesystem und Energiepolitik',
+        lblsh: 'Energie',
+        color: '#BF7E85',
         tooltip: 'Energiepreis, Energiesicherheit, Klimapolitische Ambitionen',
         subs: [
             { id: 'pre', label: 'Energiepreise', hint: 'Strom-, Gas- und Kraftstoffpreise', tooltip: 'Höhe der Strom-, Gas- und Kraftstoffpreise als direkte Kostenkomponente für Unternehmen.' },

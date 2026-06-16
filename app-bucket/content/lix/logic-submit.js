@@ -53,11 +53,27 @@ function showResults() {
         createCsvAutodownload({ main: mainVals, subs: subVals });
     }
 
-    let html = '<div class="results-summary">';
-    html += '<div class="res-group-title">Hauptkategorien</div>';
-    html += '<div id="res-main-pie" style="width:100%;height:420px;margin-bottom:0.4rem"></div>';
-    html += '<div class="res-group-title">Unterkategorien</div>';
-    html += '<div class="res-pie-grid">';
+    let html = '';
+    html += `<style>
+                :root {
+                    --height-b: 346px;
+                    --right-b:   12px;
+                }
+
+                @media (max-width: 500px) {
+                    :root {
+                        --height-b: 312px;
+                        --right-b:    2px;
+                    }
+                }
+             </style>`;
+
+    html += '<div class="results-summary" style="position: relative;" >';
+    html += '  <div class="res-group-title" style="height: 14px;" >Hauptkategorien</div>';
+    html += '  <div id="res-main-pie" style="width:100%;height:420px;margin-bottom:0.14rem; "></div>';
+    html += '  <button type="button" class="btn"   style="position: absolute; top: var(--height-b); right: var(--right-b); padding: 4px 10px; font-size: 11px; " onclick="goTo(1)">Ändern</button>';
+    html += '  <div class="res-group-title">Unterkategorien</div>';
+    html += '  <div class="res-pie-grid">';
     CATS.forEach((cat, i) => {
         html += `
         <div class="res-pie-card" style="position: relative;">

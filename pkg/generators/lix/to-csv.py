@@ -23,7 +23,14 @@ def main():
             # 1.443.172 Mio rows
 
         # renaming
-        df1 = df1.rename(columns={"email_firma": "email"})
+        df1 = df1.rename(columns={"email_firma": "email"})  
+
+        # converting ID to int - avoiding  6434.0
+        df1["ID"] = pd.to_numeric(df1["ID"], errors="raise").astype("Int64").astype(str)
+
+        # fixing known email typo without regex interpretation
+        df1["email"] = df1["email"].where(df1["email"].notna(), "").astype(str).str.replace("uestarchitekten,de", "uestarchitekten.de", regex=False)
+        df1["email"] = df1["email"].where(df1["email"].notna(), "").astype(str).str.replace("info@.hs-umspannwerke.de", "info@hs-umspannwerke.de", regex=False)
 
         df2 = pd.read_csv(mixinPth, sep="\t", dtype=str, encoding="utf-8", keep_default_na=False)
         if "userid" not in df2.columns:

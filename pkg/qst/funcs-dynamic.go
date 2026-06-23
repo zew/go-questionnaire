@@ -69,7 +69,9 @@ var skipInputNames = map[string]map[string]bool{
 // Statistics returns the percentage of
 // answers responded to.
 // It is helper to ResponseStatistics().
-func (q *QuestionnaireT) Statistics() (int, int, float64) {
+// Used in transferrer to check for empty.
+// * Param countHidden - so that questionnaires who have only hidden inputs are not counted empty
+func (q *QuestionnaireT) Statistics(countHidden bool) (int, int, float64) {
 
 	responses := 0
 	counter := 0
@@ -86,8 +88,11 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 				if i.IsLayout() {
 					continue
 				}
+
 				if i.Type == "hidden" {
-					continue
+					if !countHidden {
+						continue
+					}
 				}
 
 				if isOther(i.Name) {
@@ -130,7 +135,7 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 // ResponseStatistics returns the percentage of
 // answers responded to.
 func ResponseStatistics(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
-	responses, inputs, pct := q.Statistics()
+	responses, inputs, pct := q.Statistics(false)
 	ret := fmt.Sprintf(cfg.Get().Mp["percentage_answered"].Tr(q.LangCode), responses, inputs, pct)
 	// log.Print("ResponseStatistics(): " + ret)
 	return ret, nil

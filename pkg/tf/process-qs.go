@@ -116,7 +116,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 		//
 		//
 		// current run: move empty to dir empty
-		realEntries, _, _ := q.Statistics()
+		realEntries, _, _ := q.Statistics(true)
 
 		if realEntries > 0 {
 

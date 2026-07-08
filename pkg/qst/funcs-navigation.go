@@ -38,6 +38,8 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 
 	"fmt202511Include": fmt202511Include,
 	"fmt202512Include": fmt202512Include,
+
+	"fmtAgreeTerms": fmtAgreeTerms,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -222,4 +224,26 @@ func fmt202512Include(q *QuestionnaireT, pageIdx int) bool {
 		return true
 	}
 	return false
+}
+
+// fmtAgreeTerms - which users get to see the "agree to terms and conditions" page
+func fmtAgreeTerms(q *QuestionnaireT, pageIdx int) bool {
+
+	haveAgreed := map[int]bool{
+		9990: true,
+		9991: true,
+		9992: false, // already agreed, do not include
+		9993: false, // already agreed, do not include
+	}
+
+	userId := q.UserIDInt()
+
+	val, ok := haveAgreed[userId]
+
+	if !ok {
+		// not in list - not agreed - include
+		return true
+	}
+
+	return val
 }

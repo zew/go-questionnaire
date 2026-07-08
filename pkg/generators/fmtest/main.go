@@ -39,8 +39,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
-		page.NoNavigation = true
+
+		// page.NoNavigation = true
+
 		page.SuppressProgressbar = true
+		page.SuppressInProgressbar = true
 		page.WidthMax("36rem")
 
 		// gr0
@@ -143,19 +146,86 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr3
+		// // gr3
+		// {
+		// 	gr := page.AddGroup()
+		// 	gr.Cols = 1
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "button"
+		// 		inp.Name = "submitBtn"
+		// 		inp.Response = "1"
+		// 		inp.Label = cfg.Get().Mp["next"].Pad(3)
+		// 		inp.AccessKey = "n"
+		// 		inp.ColSpanControl = 1
+		// 		inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
+		// 	}
+		// }
+
+	}
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Datenschutz-Grundverordnung - Bedingungen",
+			"en": "General Data Protection Regulation - Terms",
+		}
+		page.Short = trl.S{
+			"de": "DSGVO",
+			"en": "Data Protection",
+		}
+
+		page.NavigationCondition = "fmtAgreeTerms"
+
+		page.SuppressProgressbar = true
+		page.SuppressInProgressbar = true
+
+		page.WidthMax("62rem")
+
+		mnth := 9
+
+		//
 		{
+
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 3
+			gr.BottomVSpacers = 1
+
 			{
 				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "submitBtn"
-				inp.Response = "1"
-				inp.Label = cfg.Get().Mp["next"].Pad(3)
-				inp.AccessKey = "n"
-				inp.ColSpanControl = 1
-				inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
+				inp.Type = "hidden"
+				inp.Name = "gdp_agreement"
+				inp.Response = "I agree"
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`
+						Zuletzt haben Sie im <i> %v 2025</i> eine Prognose
+						für das Quartalswachstum in Q4 2025 angegeben.
+						Was denken Sie über die Prognosen der anderen Teilnehmenden in der damaligen Befragung?
+					`,
+						mnth,
+					),
+					"en": fmt.Sprintf(`
+						Previously, in <i> %v 2025</i>,
+						you provided a forecast for quarterly growth for Q4 2025.
+						What do you think about the forecasts of the other participants in that previous survey?
+					`,
+						mnth,
+					),
+				}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "agree_gdpr_terms"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
 			}
 		}
 

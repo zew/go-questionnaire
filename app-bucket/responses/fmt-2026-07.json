@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "af7dda426bd2693a520d9b03bb72e3102d804e0fb57f843e7c1419c2845a70f3",
+ 	"md_5": "7fb6f1e1d4719d3028040f7b4ff4054eacdcfba4eef8897b3dbc8c75c68f6282",
  	"lang_codes": [
  		"de",
  		"en"
@@ -41,7 +41,7 @@
  				"en": ""
  			},
  			"suppress_progressbar": true,
- 			"no_navigation": true,
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -216,41 +216,69 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Datenschutz-Grundverordnung - Bedingungen",
+ 				"en": "General Data Protection Regulation - Terms"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "DSGVO",
+ 				"en": "Data Protection"
+ 			},
+ 			"suppress_progressbar": true,
+ 			"navigation_condition": "fmtTermsInclude",
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "62rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
  				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"bottom_vspacers": 1,
+ 					"columns": 3,
  					"inputs": [
  						{
- 							"name": "submitBtn",
- 							"type": "button",
+ 							"name": "gdp_agreement",
+ 							"type": "hidden",
+ 							"response": "I agree"
+ 						},
+ 						{
+ 							"type": "textblock",
  							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Weiter\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Next\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"es": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuar\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"fr": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuer\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"it": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuare\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"pl": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Kontynuować\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "\n\t\t\t\t\t\tZuletzt haben Sie im \u003ci\u003e 9 2025\u003c/i\u003e eine Pro\u0026shy;gno\u0026shy;se\n\t\t\t\t\t\tfür das Quartalswachstum in Q4 2025 angegeben.\n\t\t\t\t\t\tWas denken Sie über die Pro\u0026shy;gno\u0026shy;sen der anderen Teilnehmenden in der damaligen Befragung?\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\tPreviously, in \u003ci\u003e 9 2025\u003c/i\u003e,\n\t\t\t\t\t\tyou provided a forecast for quarterly growth for Q4 2025.\n\t\t\t\t\t\tWhat do you think about the forecasts of the other participants in that previous survey?\n\t\t\t\t\t"
  							},
- 							"accesskey": "n",
- 							"col_span_control": 1,
- 							"response": "1",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "agree_gdpr_terms",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -7636,7 +7664,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "10",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

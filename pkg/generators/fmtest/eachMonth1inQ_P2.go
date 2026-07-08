@@ -78,12 +78,91 @@ func rowsBasisPoints(
 
 }
 
-func special202604(q *qst.QuestionnaireT) error {
+func eachMonth1inQ_P2(q *qst.QuestionnaireT) error {
 
 	cond := false
 	cond = cond || q.Survey.Year == 2026 && q.Survey.Month == 4
+	cond = cond || q.Survey.Year == 2026 && q.Survey.Month == 7
 	if !cond {
 		return nil
+	}
+
+	depoRateDe := "2,00%"
+	depoRateEn := "2.00%"
+	inps := []string{
+		"26_04",
+		"26_06",
+		"26_07",
+		"26_09",
+		"26_10",
+		"26_12",
+	}
+	rowLbls := []trl.S{
+		{
+			"de": "30.&nbsp;April&nbsp;2026",
+			"en": "30&nbsp;April&nbsp;2026",
+		},
+		{
+			"de": "11.&nbsp;Juni&nbsp;2026",
+			"en": "11&nbsp;June&nbsp;2026",
+		},
+		{
+			"de": "23.&nbsp;Juli&nbsp;2026",
+			"en": "23&nbsp;July&nbsp;2026",
+		},
+		{
+			"de": "10.&nbsp;September&nbsp;2026",
+			"en": "10&nbsp;September&nbsp;2026",
+		},
+		{
+			"de": "29.&nbsp;Oktober&nbsp;2026",
+			"en": "29&nbsp;October&nbsp;2026",
+		},
+		{
+			"de": "17.&nbsp;Dezember&nbsp;2026",
+			"en": "17&nbsp;December&nbsp;2026",
+		},
+	}
+
+	if q.Survey.Year == 2026 && q.Survey.Month == 7 {
+		depoRateDe = "2,25%"
+		depoRateEn = "2.25%"
+		inps = []string{
+			"26_07",
+			"26_09",
+			"26_10",
+			"26_12",
+			"27_02",
+			"27_03",
+		}
+		rowLbls = []trl.S{
+			{
+				"de": "23.&nbsp;Juli&nbsp;2026",
+				"en": "23&nbsp;July&nbsp;2026",
+			},
+			{
+				"de": "10.&nbsp;September&nbsp;2026",
+				"en": "10&nbsp;September&nbsp;2026",
+			},
+			{
+				"de": "29.&nbsp;Oktober&nbsp;2026",
+				"en": "29&nbsp;October&nbsp;2026",
+			},
+			{
+				"de": "17.&nbsp;Dezember&nbsp;2026",
+				"en": "17&nbsp;December&nbsp;2026",
+			},
+
+			{
+				"de": "4.&nbsp;Februar&nbsp;2027",
+				"en": "4&nbsp;February&nbsp;2027",
+			},
+			{
+				"de": "18.&nbsp;März&nbsp;2027",
+				"en": "18&nbsp;March&nbsp;2027",
+			},
+		}
+
 	}
 
 	page := q.AddPage()
@@ -105,21 +184,12 @@ func special202604(q *qst.QuestionnaireT) error {
 
 	{
 
-		inps := []string{
-			"26_04",
-			"26_06",
-			"26_07",
-			"26_09",
-			"26_10",
-			"26_12",
-		}
-
 		lblMain := trl.S{
-			"de": `
+			"de": fmt.Sprintf(`
 				Wir möchten Sie zu Ihren Erwartungen bezüglich zukünftiger Zinsentscheidungen der Europäischen Zentralbank (EZB) befragen. 
 				<br>
 				<br>
-				Derzeit beträgt der Einlagezinssatz 2,00%.
+				Derzeit beträgt der Einlagezinssatz %v.
 				<br>
 				<br>
 				Bitte geben Sie für jedes der unten aufgeführten Treffen des EZB-Rats an, 
@@ -129,56 +199,30 @@ func special202604(q *qst.QuestionnaireT) error {
 				<small>
 					Hinweis: Bitte verwenden Sie positive Werte für Zinserhöhungen und negative Werte für Zinssenkungen. Wenn Sie keine Änderung erwarten, tragen Sie bitte „0“ ein.
 				</small>
-
-			`,
-			"en": `
+				`,
+				depoRateDe),
+			"en": fmt.Sprintf(`
 				We would like to ask about your expectations regarding future interest rate decisions of the European Central Bank (ECB).
 				<br>
 				<br>
-				The current deposit facility rate is 2.00%.
+				The current deposit facility rate is %v.
 				<br>
 				<br>
 				Please indicate for each of the ECB Governing Council meetings listed below, by how many basis points you expect the <b>deposit facility rate</b> to change relative to the previous meeting.
 				<br>
 				<br>
 				<small>
-				Note: Please use positive values for rate increases and negative values for rate cuts. If you expect no change, please enter “0”.
+					Note: Please use positive values for rate increases and negative values for rate cuts. If you expect no change, please enter “0”.
 				</small>
-			
-			`,
+				`,
+				depoRateEn,
+			),
 		}.Outline("4.")
 
 		headers := []trl.S{
 			{
 				"de": `Änderung des Einlagezinssatzes`,
 				"en": `Change in the deposit facility rate`,
-			},
-		}
-
-		rowLbls := []trl.S{
-			{
-				"de": "30.&nbsp;April&nbsp;2026",
-				"en": "30&nbsp;April&nbsp;2026",
-			},
-			{
-				"de": "11.&nbsp;Juni&nbsp;2026",
-				"en": "11&nbsp;June&nbsp;2026",
-			},
-			{
-				"de": "23.&nbsp;Juli&nbsp;2026",
-				"en": "23&nbsp;July&nbsp;2026",
-			},
-			{
-				"de": "10.&nbsp;September&nbsp;2026",
-				"en": "10&nbsp;September&nbsp;2026",
-			},
-			{
-				"de": "29.&nbsp;Oktober&nbsp;2026",
-				"en": "29&nbsp;October&nbsp;2026",
-			},
-			{
-				"de": "17.&nbsp;Dezember&nbsp;2026",
-				"en": "17&nbsp;December&nbsp;2026",
 			},
 		}
 

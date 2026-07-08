@@ -19,7 +19,7 @@ Special question for Month 1 of quarter.
 	  => *Can* contain some randomization of inflation brackets.
 	  => Question 2. may have three or *four* rows
 */
-func eachMonth1inQ(q *qst.QuestionnaireT) error {
+func eachMonth1inQ_P1(q *qst.QuestionnaireT) error {
 
 	if q.Survey.MonthOfQuarter() != 1 {
 		return nil

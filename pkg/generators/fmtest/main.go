@@ -792,10 +792,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = eachMonth1inQ(&q)
+	err = eachMonth1inQ_P1(&q)
 	if err != nil {
-		return nil, fmt.Errorf("error adding month 1 per quarter: %v", err)
+		return nil, fmt.Errorf("error adding month 1 p1 per quarter: %v", err)
 	}
+	err = eachMonth1inQ_P2(&q)
+	if err != nil {
+		return nil, fmt.Errorf("error adding month 1 p2 per quarter: %v", err)
+	}
+
 	err = eachMonth2inQ(&q)
 	if err != nil {
 		return nil, fmt.Errorf("error adding month 2 per quarter: %v", err)
@@ -838,11 +843,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	err = special202603Iran(&q)
 	if err != nil {
 		return nil, fmt.Errorf("error adding special202603Iran(): %v", err)
-	}
-
-	err = special202604(&q)
-	if err != nil {
-		return nil, fmt.Errorf("error adding special202604(): %v", err)
 	}
 
 	// 202405

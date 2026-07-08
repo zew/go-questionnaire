@@ -15,13 +15,13 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "2,4"
+ 				"val": "2,4%"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "5c356965c282166c9683a5d48ded59b3013c6c923d1d6ce81c1964d7ab6aa57b",
+ 	"md_5": "af7dda426bd2693a520d9b03bb72e3102d804e0fb57f843e7c1419c2845a70f3",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6658,8 +6658,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 2,4) erwarte ich\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing operations rate\u003c/b\u003e of the ECB (currently at 2,4) to be\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 2,4%) erwarte ich\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing operations rate\u003c/b\u003e of the ECB (currently at 2,4%) to be\n\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -7085,6 +7085,433 @@
  		},
  		{
  			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Sonderfragen:\u003cbr\u003eZinserwartungen",
+ 				"en": "Special questions:\u003cbr\u003eInterest rates"
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "55rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWir möchten Sie zu Ihren Erwartungen bezüglich zukünftiger Zinsentscheidungen der Europäischen Zentralbank (EZB) befragen. \n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tDerzeit beträgt der Einlagezinssatz 2,25%.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tBitte geben Sie für jedes der unten aufgeführten Treffen des EZB-Rats an, \n\t\t\t\tum wie viele Basis\u0026shy;punkte sich der \u003cb\u003eEinlagezinssatz\u003c/b\u003e gegenüber der jeweils vorherigen Sitzung Ihrer Einschätzung nach ändern wird.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tHinweis: Bitte verwenden Sie pos\u0026shy;itive Werte für Zinserhöhungen und neg\u0026shy;ative Werte für Zinssenkungen. Wenn Sie kei\u0026shy;ne Änderung erwarten, tragen Sie bitte „0“ ein.\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWe would like to ask about your expectations regarding future interest rate decisions of the European Central Bank (ECB).\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tThe current deposit facility rate is 2.25%.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tPlease indicate for each of the ECB Governing Council meetings listed be\u0026shy;low, by how many basis points you expect the \u003cb\u003edeposit facility rate\u003c/b\u003e to change relative to the previous meeting.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003csmall\u003e\n\t\t\t\t\tNote: Please use pos\u0026shy;itive values for rate in\u0026shy;creases and neg\u0026shy;ative values for rate cuts. If you expect no change, please enter “0”.\n\t\t\t\t\u003c/small\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eÄnderung des Einlagezinssatzes\u003c/b\u003e",
+ 								"en": "\u003cb\u003eChange in the deposit facility rate\u003c/b\u003e"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "1.5ch 0 0 10rem "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "1ch  0    0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "23.\u0026nbsp;Juli\u0026nbsp;2026",
+ 								"en": "23\u0026nbsp;July\u0026nbsp;2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rexp_ecb_26_07",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": -200,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Basis\u0026shy;punkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "10.\u0026nbsp;September\u0026nbsp;2026",
+ 								"en": "10\u0026nbsp;September\u0026nbsp;2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rexp_ecb_26_09",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": -200,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Basis\u0026shy;punkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "29.\u0026nbsp;Oktober\u0026nbsp;2026",
+ 								"en": "29\u0026nbsp;October\u0026nbsp;2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rexp_ecb_26_10",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": -200,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Basis\u0026shy;punkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "17.\u0026nbsp;Dezember\u0026nbsp;2026",
+ 								"en": "17\u0026nbsp;December\u0026nbsp;2026"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rexp_ecb_26_12",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": -200,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Basis\u0026shy;punkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "4.\u0026nbsp;Februar\u0026nbsp;2027",
+ 								"en": "4\u0026nbsp;February\u0026nbsp;2027"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rexp_ecb_27_02",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": -200,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Basis\u0026shy;punkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "18.\u0026nbsp;März\u0026nbsp;2027",
+ 								"en": "18\u0026nbsp;March\u0026nbsp;2027"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rexp_ecb_27_03",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": -200,
+ 							"max": 200,
+ 							"suffix": {
+ 								"de": "Basis\u0026shy;punkte",
+ 								"en": "basis points"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "2.1fr  4.9fr"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
  				"de": "Abschluss",
  				"en": "Finalization"
  			},
@@ -7209,7 +7636,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "8",
+ 							"response": "9",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

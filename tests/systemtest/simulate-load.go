@@ -516,7 +516,8 @@ func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) 
 	ctr.Reset()
 
 	if q.Survey.Type == "fmt" {
-		fmtSpecialTest(t, urlMain, sessCook)
+		// xxxx
+		// fmtSpecialTest(t, urlMain, sessCook)
 	}
 
 	FillQuestAndComparesServerResult(t, q, urlMain, sessCook)

@@ -62,7 +62,14 @@ div.progress-line-bar{
 }
 
 
+label[for=agree_gdpr_terms] {
+    font-size: 105%;
+    line-height: 145%;
+}
 
+label[for=agree_gdpr_terms] i {
+    font-size: 110%;
+}
 
 #ssq5_free,
 dummy {
@@ -136,7 +143,9 @@ i {
 
 /* second month of quarter - inflation  */
 @media screen and (max-width: 800px) {
-    .pg06-grp01 {
+
+    /* 2026-07: incremented due to consent page */
+    .pg07-grp01 {
         overflow-x: scroll;
     }
     .mobile-brkr {

@@ -146,6 +146,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// custom "next" button, for having a custom label
+		//    impossible, as long as we have conditional consent page
+
 		// // gr3
 		// {
 		// 	gr := page.AddGroup()
@@ -167,12 +170,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Datenschutz-Grundverordnung - Bedingungen",
-			"en": "General Data Protection Regulation - Terms",
+			"de": "<br>Neue Regelung zur Datenschutz-Grundverordnung",
+			"en": "<br>Updated Terms - General Data Protection Regulation",
 		}
 		page.Short = trl.S{
 			"de": "DSGVO",
-			"en": "Data Protection",
+			"en": "GDPR Update",
 		}
 
 		page.NavigationCondition = "fmtAgreeTerms"
@@ -180,57 +183,86 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 		page.SuppressInProgressbar = true
 
-		page.WidthMax("62rem")
+		page.WidthMax("38rem")
 
-		mnth := 9
+		agreement_de := `
+				<br>
+				Mit der  <i>Teilnahme an der Befragung</i> <br>
+				willige ich in die Verarbeitung meiner Umfragedaten 
+				gemäß den aktualisierten Datenschutzhinweisen ein, 
+				einschließlich der wissenschaftlichen Auswertung meiner Antworten. 
+				Ich kann meine Einwilligung jederzeit 
+				mit Wirkung für die Zukunft widerrufen.
+			`
 
+		agreement_en := `
+				<br>
+				By  <i>taking part in this survey</i>, <br>
+				I consent to the processing of my survey data, 
+				including the academic analysis of my responses, 
+				in accordance with the updated data privacy statement. 
+				I may withdraw my consent at any time with future effect.
+			`
 		//
 		{
 
 			gr := page.AddGroup()
 			gr.Cols = 3
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 3
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "hidden"
-				inp.Name = "gdp_agreement"
-				inp.Response = "I agree"
+				inp.Name = "gdp_agreement_de"
+				inp.Response = agreement_de
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "gdp_agreement_en"
+				inp.Response = agreement_en
 			}
 
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": fmt.Sprintf(`
-						Zuletzt haben Sie im <i> %v 2025</i> eine Prognose
-						für das Quartalswachstum in Q4 2025 angegeben.
-						Was denken Sie über die Prognosen der anderen Teilnehmenden in der damaligen Befragung?
-					`,
-						mnth,
-					),
-					"en": fmt.Sprintf(`
-						Previously, in <i> %v 2025</i>,
-						you provided a forecast for quarterly growth for Q4 2025.
-						What do you think about the forecasts of the other participants in that previous survey?
-					`,
-						mnth,
-					),
-				}
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "consent-gdpr.md"
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 1
 			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
 				inp.Name = "agree_gdpr_terms"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
+
+				inp.ColSpan = gr.Cols
+
+				// inp.ColSpanLabel = 1
+				// inp.ColSpanLabel = 0
+
+				inp.Validator = "must"
+				// inp.ErrMsg = trl.S{
+				// 	"de": ``,
+				// 	"en": ``,
+				// }
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.Margin = "2ch 0 0 0"
+
+				inp.ControlFirst()
+				inp.ControlTop()
+
+				inp.Label = trl.S{
+					"de": agreement_de,
+					"en": agreement_en,
+				}
 			}
 		}
 
 	}
 
+	//
 	// page 1
 	{
 		page := q.AddPage()
@@ -670,11 +702,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{
 					"de": `
-					   <b>6b.</b> &nbsp;  
-					   Den DAX erwarte ich in 6&nbsp;Monaten&nbsp;bei 
+					   <b>6b.</b> &nbsp;
+					   Den DAX erwarte ich in 6&nbsp;Monaten&nbsp;bei
 					`,
 					"en": `
-					   <b>6b.</b> &nbsp; 
+					   <b>6b.</b> &nbsp;
 					   Six&nbsp;months ahead, I expect the DAX to stand&nbsp;at
 					`,
 				}

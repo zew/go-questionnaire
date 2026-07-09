@@ -39,7 +39,7 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"fmt202511Include": fmt202511Include,
 	"fmt202512Include": fmt202512Include,
 
-	"fmtAgreeTerms": fmtAgreeTerms,
+	"fmtAgreeTerms": fmtAskConsent_GDPR,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -226,19 +226,27 @@ func fmt202512Include(q *QuestionnaireT, pageIdx int) bool {
 	return false
 }
 
-// fmtAgreeTerms - which users get to see the "agree to terms and conditions" page
-func fmtAgreeTerms(q *QuestionnaireT, pageIdx int) bool {
+// fmtAskConsent_GDPR - which users get to see the "agree to terms and conditions" page
+func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 
-	haveAgreed := map[int]bool{
+	askForConsent := map[int]bool{
 		9990: true,
-		9991: true,
-		9992: false, // already agreed, do not include
+		9991: false,
+		9992: true,  // already agreed, do not include
 		9993: false, // already agreed, do not include
+	}
+
+	for i := 9970; i < 10000; i++ {
+		if i%2 == 0 {
+			askForConsent[i] = true
+		} else {
+			askForConsent[i] = false
+		}
 	}
 
 	userId := q.UserIDInt()
 
-	val, ok := haveAgreed[userId]
+	val, ok := askForConsent[userId]
 
 	if !ok {
 		// not in list - not agreed - include

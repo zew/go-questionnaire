@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "35658410c0bc762414f673d917ba41e2c7e19c163a737650006050c44ff3c027",
+ 	"md_5": "8d0fc7fd9eb9f3da5efca2d3f6e0914acc2bd1b12c8b7f5acbf4d22a378d7b9d",
  	"lang_codes": [
  		"de",
  		"en"
@@ -182,7 +182,7 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 2,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
@@ -198,6 +198,50 @@
  							"type": "textarea",
  							"max_chars": 150,
  							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "leave_survey",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Ich möchte an der Umfrage nicht mehr teilnehmen",
+ 								"en": "I no longer wish to participate in the survey"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "3ch 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -221,7 +265,7 @@
  		},
  		{
  			"label": {
- 				"de": "\u003cbr\u003eNeue Regelung zur Datenschutz-Grundverordnung",
+ 				"de": "\u003cbr\u003eAktualisierte Datenschutzhinweise",
  				"en": "\u003cbr\u003eUpdated Terms - General Data Protection Regulation"
  			},
  			"description": {
@@ -260,14 +304,13 @@
  					"columns": 3,
  					"inputs": [
  						{
- 							"name": "gdp_agreement_de",
- 							"type": "hidden",
- 							"response": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003ci\u003eMit der Teilnahme an der Befragung\u003c/i\u003e \u003cbr\u003e\n\t\t\t\twillige ich in die Verarbeitung meiner Umfragedaten \n\t\t\t\tgemäß den aktualisierten Datenschutzhinweisen ein, \n\t\t\t\teinschließlich der wissenschaftlichen Auswertung meiner Antworten. \n\t\t\t\tIch kann meine Einwilligung jederzeit \n\t\t\t\tmit Wirkung für die Zukunft widerrufen.\n\t\t\t"
- 						},
- 						{
- 							"name": "gdp_agreement_en",
- 							"type": "hidden",
- 							"response": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003ci\u003eBy taking part in this survey\u003c/i\u003e, \u003cbr\u003e\n\t\t\t\tI consent to the processing of my survey data, \n\t\t\t\tincluding the academic analysis of my responses, \n\t\t\t\tin accordance with the updated data privacy statement. \n\t\t\t\tI may withdraw my consent at any time with future effect.\n\t\t\t"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Wir haben unsere Da\u0026shy;tenschutzhinweise aktualisiert. \n\t\t\t\t\tBitte nehmen Sie diese zur Kenntnis, \n\t\t\t\t\tbevor Sie mit der Umfrage fortfahren.",
+ 								"en": "We have updated our data protection terms.\n\t\t\t\t\tPlease read and acknowledge it before continuing with the survey.\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "dyn-textblock",
@@ -280,13 +323,13 @@
  							"name": "agree_gdpr_terms",
  							"type": "checkbox",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003ci\u003eMit der Teilnahme an der Befragung\u003c/i\u003e \u003cbr\u003e\n\t\t\t\twillige ich in die Verarbeitung meiner Umfrageda\u0026shy;ten \n\t\t\t\tgemäß den aktualisierten Da\u0026shy;tenschutzhinweisen ein, \n\t\t\t\teinschließlich der wissenschaftlichen Auswertung meiner Ant\u0026shy;worten. \n\t\t\t\tIch kann meine Einwilligung jederzeit \n\t\t\t\tmit Wirkung für die Zukunft widerrufen.\n\t\t\t",
- 								"en": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003ci\u003eBy taking part in this survey\u003c/i\u003e, \u003cbr\u003e\n\t\t\t\tI consent to the processing of my survey data, \n\t\t\t\tincluding the academic analysis of my responses, \n\t\t\t\tin acc\u0026shy;ordance with the updated data privacy statement. \n\t\t\t\tI may withdraw my consent at any time with future effect.\n\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tMit der  \u003ci\u003eTeilnahme an der Befragung\u003c/i\u003e \u003cbr\u003e\n\t\t\t\twillige ich in die Verarbeitung meiner Umfrageda\u0026shy;ten \n\t\t\t\tgemäß den aktualisierten Da\u0026shy;tenschutzhinweisen ein, \n\t\t\t\teinschließlich der wissenschaftlichen Auswertung meiner Ant\u0026shy;worten. \n\t\t\t\tIch kann meine Einwilligung jederzeit \n\t\t\t\tmit Wirkung für die Zukunft widerrufen.\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tBy  \u003ci\u003etaking part in this survey\u003c/i\u003e, \u003cbr\u003e\n\t\t\t\tI consent to the processing of my survey data, \n\t\t\t\tincluding the academic analysis of my responses, \n\t\t\t\tin acc\u0026shy;ordance with the updated data privacy statement. \n\t\t\t\tI may withdraw my consent at any time with future effect.\n\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "must",
+ 							"validator": "must_gdpr",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -308,7 +351,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "2ch 0 0 0"
+ 										"margin": "3ch 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -322,6 +365,16 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "gdpr_agreement_de",
+ 							"type": "hidden",
+ 							"response": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tMit der  \u003ci\u003eTeilnahme an der Befragung\u003c/i\u003e \u003cbr\u003e\n\t\t\t\twillige ich in die Verarbeitung meiner Umfragedaten \n\t\t\t\tgemäß den aktualisierten Datenschutzhinweisen ein, \n\t\t\t\teinschließlich der wissenschaftlichen Auswertung meiner Antworten. \n\t\t\t\tIch kann meine Einwilligung jederzeit \n\t\t\t\tmit Wirkung für die Zukunft widerrufen.\n\t\t\t"
+ 						},
+ 						{
+ 							"name": "gdpr_agreement_en",
+ 							"type": "hidden",
+ 							"response": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tBy  \u003ci\u003etaking part in this survey\u003c/i\u003e, \u003cbr\u003e\n\t\t\t\tI consent to the processing of my survey data, \n\t\t\t\tincluding the academic analysis of my responses, \n\t\t\t\tin accordance with the updated data privacy statement. \n\t\t\t\tI may withdraw my consent at any time with future effect.\n\t\t\t"
  						}
  					]
  				}

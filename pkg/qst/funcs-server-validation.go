@@ -86,6 +86,17 @@ func init() {
 		return nil
 	}
 
+	validators["must_gdpr"] = func(q *QuestionnaireT, inp *inputT) error {
+		arg := strings.TrimSpace(inp.Response)
+		if arg == "" {
+			return fmt.Errorf("%s", cfg.Get().Mp["must_gdpr"].Tr(q.LangCode))
+		}
+		if inp.Type == "checkbox" && arg == "0" {
+			return fmt.Errorf("%s", cfg.Get().Mp["must_gdpr"].Tr(q.LangCode))
+		}
+		return nil
+	}
+
 	//
 	validators["mustRadioGroup"] = func(q *QuestionnaireT, inp *inputT) error {
 		arg := strings.TrimSpace(inp.Response)

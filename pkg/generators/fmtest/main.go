@@ -126,7 +126,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 3
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 			{
@@ -144,6 +144,28 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 150
 				inp.ColSpanControl = 1
 			}
+
+			//
+			//
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "leave_survey"
+
+				inp.ColSpan = gr.Cols
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.Margin = "3ch 0 0 0"
+
+				inp.ControlFirst()
+				// inp.ControlTop()
+
+				inp.Label = trl.S{
+					"de": `Ich möchte an der Umfrage nicht mehr teilnehmen`,
+					"en": `I no longer wish to participate in the survey`,
+				}
+			}
+
 		}
 
 		// custom "next" button, for having a custom label
@@ -170,7 +192,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "<br>Neue Regelung zur Datenschutz-Grundverordnung",
+			"de": "<br>Aktualisierte Datenschutzhinweise",
 			"en": "<br>Updated Terms - General Data Protection Regulation",
 		}
 		page.Short = trl.S{
@@ -212,15 +234,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			{
 				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "gdp_agreement_de"
-				inp.Response = agreement_de
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "hidden"
-				inp.Name = "gdp_agreement_en"
-				inp.Response = agreement_en
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.Label = trl.S{
+					"de": `Wir haben unsere Datenschutzhinweise aktualisiert. 
+					Bitte nehmen Sie diese zur Kenntnis, 
+					bevor Sie mit der Umfrage fortfahren.`,
+
+					"en": `We have updated our data protection terms.
+					Please read and acknowledge it before continuing with the survey.
+					`,
+				}
 			}
 
 			{
@@ -242,13 +266,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				// inp.ColSpanLabel = 1
 				// inp.ColSpanLabel = 0
 
-				inp.Validator = "must"
+				inp.Validator = "must_gdpr"
 				// inp.ErrMsg = trl.S{
 				// 	"de": ``,
 				// 	"en": ``,
 				// }
 				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleCtl.Desktop.Margin = "2ch 0 0 0"
+				inp.StyleCtl.Desktop.Margin = "3ch 0 0 0"
 
 				inp.ControlFirst()
 				inp.ControlTop()
@@ -258,6 +282,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": agreement_en,
 				}
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "gdpr_agreement_de"
+				inp.Response = agreement_de
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "gdpr_agreement_en"
+				inp.Response = agreement_en
+			}
+
 		}
 
 	}

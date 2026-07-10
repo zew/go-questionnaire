@@ -260,6 +260,14 @@ var coreTranslations = Map{
 		"it": "Ingresso necessario",
 		"pl": "Wejście jest konieczne",
 	},
+	"must_gdpr": {
+		"de": "Bitte erteilen Sie Ihre Einwilligung durch Anklicken des Kästchens, wenn Sie mit dem Fragebogen fortfahren möchten.",
+		"en": "Please provide your consent by ticking the box if you would like to continue to the questionnaire.",
+		"es": "Por favor, otorgue su consentimiento marcando la casilla si desea continuar con el cuestionario.",
+		"fr": "Veuillez donner votre consentement en cochant la case si vous souhaitez poursuivre le questionnaire.",
+		"it": "Si prega di fornire il proprio consenso selezionando la casella se si desidera continuare con il questionario.",
+		"pl": "Prosimy o wyrażenie zgody poprzez zaznaczenie pola wyboru, jeśli chcą Państwo kontynuować wypełnianie kwestionariusza.",
+	},
 	// system messages
 	"login_by_hash_failed": {
 		"de": "Anmeldung via Link gescheitert oder Sitzung verfallen.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
@@ -351,17 +359,17 @@ var coreTranslations = Map{
 		<ul class="review-by-permalink>
 			<li class="review-by-permalink>
 				Sie können den Fragebogen bis Ende der Umfrage
-				über folgenden Link erneut aufrufen: 
+				über folgenden Link erneut aufrufen:
 				<a href='%v'>%v</a>
 			</li>
-		</ul>			
+		</ul>
 		`,
 		"en": `
 		<ul class="review-by-permalink>
 			<li class="review-by-permalink>
 				Until the end of the survey,
 				you can change your entries
-				using following link: 
+				using following link:
 				<a href='%v'>%v</a>
 			</li>
 		</ul>

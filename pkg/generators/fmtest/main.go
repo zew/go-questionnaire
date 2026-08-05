@@ -166,6 +166,24 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "leave-survey"
+
+				s1 := trl.S{
+					"de": "Möchten Sie die Umfrage wirklich verlassen? \nKlicken Sie OK, um die Umfrage zu beenden - Sie können das Browserfenster anschließend schließen. \nKlicken Sie Abbrechen, um die Umfrage weiter auszufüllen.",
+					"en": "Are you sure you want to exit the survey?   \nClick OK to exit the survey - you can then close the browser window. \nClick Cancel to continue filling out the survey. ",
+				}
+				inp.JSBlockTrls = map[string]trl.S{
+					"msg": s1,
+				}
+				inp.JSBlockStrings = map[string]string{
+					"xxx1": "yyy1",
+				}
+			}
+
 		}
 
 		// custom "next" button, for having a custom label

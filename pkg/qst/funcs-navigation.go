@@ -427,9 +427,46 @@ func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 	}
 
 	askAgain := map[int]bool{
+		// aaa testuser
+		11246: true,
+
 		11653: true,
 		11709: true,
 	}
+
+	/*
+
+		SELECT *
+		FROM `sonderfragen_ger`
+		WHERE               1
+					AND   frage_kurz = 'agree_gdpr_terms'
+					-- AND   antwort != "1"
+
+					AND person_id IN (
+						11246,
+						11653,
+						11709
+					)
+		ORDER BY    `survey_id`  DESC
+
+
+		https://survey2.zew.de/?u=11246&sid=fmt&wid=2026-08&p=1&h=u5M6SZlPnMSG9Jfs89IdoMuQ8U0DkYcG4QQGYO_i6iQ
+
+		https://survey2.zew.de/?u=11653&sid=fmt&wid=2026-08&p=1&h=pgDN47ditQL-Tc5c8UZ1eV_xPEkSOkkLyeWQ-lp9bcQ
+		https://survey2.zew.de/?u=11709&sid=fmt&wid=2026-08&p=1&h=JXTrwJmdQfU_skd_EAjpk2jIVcmlbDIK83GnGdBdTcc
+
+		SELECT *
+			FROM `panel_ger`
+			WHERE	1
+				AND
+					person_id IN (
+						11246,
+						11653,
+						11709
+					)
+				AND survey_id > 202604
+			ORDER BY `survey_id`  DESC
+	*/
 
 	//
 	//

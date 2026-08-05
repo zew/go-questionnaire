@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b0ac606607ef4268335a9c3b811f1323645a9a5b928b0ab9945fe3718af57d9e",
+ 	"md_5": "1b622624b04d48232aa5d1002d9bc179f9db4b8a8a13bd8022cb63d811afb2eb",
  	"lang_codes": [
  		"de",
  		"en"
@@ -240,6 +240,20 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "leave-survey",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"xxx1": "yyy1"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Möchten Sie die Umfrage wirklich verlassen? \nKlicken Sie OK, um die Umfrage zu beenden - Sie können das Browserfenster anschließend schließen. \nKlicken Sie Abbrechen, um die Umfrage weiter auszufüllen.",
+ 									"en": "Are you sure you want to exit the survey?   \nClick OK to exit the survey - you can then close the browser window. \nClick Cancel to continue filling out the survey. "
  								}
  							}
  						}

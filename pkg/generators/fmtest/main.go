@@ -295,6 +295,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Name = "gdpr_agreement_en"
 				inp.Response = agreement_en
 			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "gdpr_terms_version"
+				inp.Response = "1.1"
+			}
 
 		}
 

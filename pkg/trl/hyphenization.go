@@ -34,6 +34,7 @@ var hyph = []string{
 	"Entschädigungs|fall ",
 	"Hoch|schul|abschluss",
 	"Konjunktur|entwicklung",
+	"Koalitions|ausschusses",
 	"Kredit|geber",
 	"Kredit|nehmer",
 	"Punkt|pro|gno|se",

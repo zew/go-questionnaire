@@ -671,7 +671,7 @@ func special202603Iran(q *qst.QuestionnaireT) error {
 			"en": "Other",
 		}
 
-		special202603ClimateTpB(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4, 0, lblFree)
+		randomizedMatrixWithFree(qst.WrapPageT(page), colLabelsSsq4, "ssq4", lblsSsq4, 0, lblFree)
 
 		{
 			gr := page.AddGroup()

@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e271c7a382d6739bee3365e52b82797ed0c501c09f9db55b69e2f9f18422e602",
+ 	"md_5": "3c8fff4ffe86c80e0af1b7ced0275156bbd8fb7a2adf5c4629d7ac4d757c5b0f",
  	"lang_codes": [
  		"de",
  		"en"
@@ -7080,7 +7080,7 @@
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "Yes — a mandatory obligation (e.g., CSRD reporting or SFDR product disclosure)"
+ 								"en": "yes - a mandatory obligation (e.g., CSRD reporting or SFDR product disclosure)"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7131,7 +7131,7 @@
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "No mandatory requirement - but we report or disclose voluntarily or in response to client or investor demand"
+ 								"en": "no mandatory requirement - but we report or disclose voluntarily or in response to client or investor demand"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7182,7 +7182,7 @@
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "No"
+ 								"en": "no"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7233,7 +7233,7 @@
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "Don't know"
+ 								"en": "don't know"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -7578,6 +7578,1338 @@
  		},
  		{
  			"label": {
+ 				"de": "todo",
+ 				"en": "Usage of the Taxonomy"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "64rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich of the following best describes your involvement with the EU Taxonomy in your current role?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq8_1",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I ana\u0026shy;ly\u0026shy;se Taxonomy-related in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I prepare Taxonomy-related analysis, reports, or disclosures. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_3",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I review or supervise Taxonomy-related work. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_4",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I communicate or explain the Taxonomy to others."
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I make decisions that use Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_6",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I rarely encoun\u0026shy;ter the Taxonomy in my work. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_7",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 7.7,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq8_free",
+ 							"type": "text",
+ 							"max_chars": 100,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFor what purpose have you used the EU Taxonomy?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq9_1",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "reporting or disclosure"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "in\u0026shy;vest\u0026shy;ment, lending or related analysis "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_3",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "risk assessment "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_4",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "corporate strategy or planning"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "product de\u0026shy;vel\u0026shy;op\u0026shy;ment or classification"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_6",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "policy or eco\u0026shy;nom\u0026shy;ic analysis "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_7",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "client advice "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_8",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 7.7,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq9_free",
+ 							"type": "text",
+ 							"max_chars": 100,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "todo",
+ 				"en": "Where the information comes from"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "64rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow do you nor\u0026shy;mally obtain EU Taxonomy-related in\u0026shy;for\u0026shy;ma\u0026shy;tion?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq10_1",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I assess eco\u0026shy;nom\u0026shy;ic activities directly against the EU Taxonomy criteria. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I calculate Taxonomy indicators myself. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_3",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I use Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion reported by companies or coun\u0026shy;terparties. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_4",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I use Taxonomy es\u0026shy;ti\u0026shy;mates or classifications from external data providers. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I use Taxonomy ana\u0026shy;ly\u0026shy;ses prepared by colleagues. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_6",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I use in\u0026shy;vest\u0026shy;ment products, scores, or ratings that incorporate Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_7",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I use the EU Taxonomy mainly as general background or reference in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_8",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 7.7,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq10_free",
+ 							"type": "text",
+ 							"max_chars": 100,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "todo",
+ 				"en": "Intermediation / transmission"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "64rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn which of the following ways have you communicated, shared, \n\t\t\t\t\tor incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\t(e.g., its criteria, alignment figures, or decisions based on it) \n\t\t\t\t\tduring the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq11_1",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders.  "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_3",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have prepared or contributed to Taxonomy-related disclosures, reports, or other published in\u0026shy;for\u0026shy;ma\u0026shy;tion.  "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_4",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have used the EU Taxonomy when advising clients or assessing their sustainability preferences.  "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have incorporated the EU Taxonomy into advice or recommendations provided to colleagues. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_6",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have designed, labeled, or marketed financial products that incorporate the EU Taxonomy.  "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_7",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have made or contributed to in\u0026shy;vest\u0026shy;ment, lending or financing decisions on behalf of clients or my organisation using the EU Taxonomy. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_8",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 7.7,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11_free",
+ 							"type": "text",
+ 							"max_chars": 100,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "ssq11_9",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "todo",
+ 				"en": "Intermediation / transmission"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "64rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e12.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e12.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "ssq12_1",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq12_2",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq12_3",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have referred to the EU Taxonomy in presentations, publications, teaching, or other professional com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq12_4",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have used the EU Taxonomy as an example or point of reference in professional discussions. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq12_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 7.7,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq12_free",
+ 							"type": "text",
+ 							"max_chars": 100,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "ssq12_6",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
  				"de": "Abschluss",
  				"en": "Finalization"
  			},
@@ -7702,7 +9034,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "14",
+ 							"response": "18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

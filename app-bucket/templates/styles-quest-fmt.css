@@ -94,9 +94,22 @@ dummy {
 }
 
 #ssq4_free,
+#ssq8_free,
+#ssq9_free,
+#ssq10_free,
+#ssq11_free,
+#ssq12_free,
 dummy {
     max-width: 60ch;
     margin-left: -6rem;
+}
+#ssq8_free,
+#ssq9_free,
+#ssq10_free,
+#ssq11_free,
+#ssq12_free,
+dummy {
+    margin-left: -8rem;
 }
 
 

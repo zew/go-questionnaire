@@ -417,36 +417,39 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": `none of the above`,
 		},
 	}
-	gr := page.AddGroup()
-	gr.Cols = 6
-	gr.BottomVSpacers = 2
-	for i := 0; i < len(lblsSsq4); i++ {
 
-		secondToLast := i == len(lblsSsq4)-2
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.BottomVSpacers = 2
+		for i := 0; i < len(lblsSsq4); i++ {
 
-		inp1 := gr.AddInput()
-		inp1.Type = "checkbox"
-		inp1.Name = fmt.Sprintf("ssq4_%v", i+1)
-		inp1.ColSpan = gr.Cols
-		inp1.ColSpanLabel = 1
-		inp1.ColSpanControl = 12
-		inp1.Label = lblsSsq4[i]
-		inp1.ControlFirst()
+			secondToLast := i == len(lblsSsq4)-2
 
-		if secondToLast {
-			inp1.ColSpan = 2
-			inp1.ColSpanLabel = 2.4
-			inp1.ColSpanControl = 7.7
-			//
-			inp2 := gr.AddInput()
-			inp2.Type = "text"
-			inp2.Name = "ssq4_free"
-			inp2.MaxChars = 100
+			inp1 := gr.AddInput()
+			inp1.Type = "checkbox"
+			inp1.Name = fmt.Sprintf("ssq4_%v", i+1)
+			inp1.ColSpan = gr.Cols
+			inp1.ColSpanLabel = 1
+			inp1.ColSpanControl = 12
+			inp1.Label = lblsSsq4[i]
+			inp1.ControlFirst()
 
-			inp2.ColSpan = gr.Cols - inp1.ColSpan
-			inp2.ColSpanLabel = 0
-			inp2.ColSpanControl = 1
+			if secondToLast {
+				inp1.ColSpan = 2
+				inp1.ColSpanLabel = 2.4
+				inp1.ColSpanControl = 7.7
+				//
+				inp2 := gr.AddInput()
+				inp2.Type = "text"
+				inp2.Name = "ssq4_free"
+				inp2.MaxChars = 100
 
+				inp2.ColSpan = gr.Cols - inp1.ColSpan
+				inp2.ColSpanLabel = 0
+				inp2.ColSpanControl = 1
+
+			}
 		}
 	}
 
@@ -619,6 +622,529 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		},
 	}
 	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq7", lblsSsq7, 0, false)
+
+	//
+	//
+	//
+	//
+	//
+	page = q.AddPage()
+	page.WidthMax("64rem")
+	page.Label = trl.S{
+		"en": "&nbsp;",
+		"de": "&nbsp;",
+	}
+	page.Label = trl.S{
+		"de": "todo",
+		"en": "Usage of the Taxonomy",
+	}
+	page.SuppressInProgressbar = true
+	page.WidthMax("64rem")
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 0
+			inp.Label = trl.S{
+				"de": `todo`,
+				"en": `
+					Which of the following best describes your involvement with the EU Taxonomy in your current role?
+					<br>
+					<small>Select all that apply.</small>
+					`,
+			}.Outline("8.")
+		}
+	}
+	lblsSsq8 := []trl.S{
+		{
+			"de": `todo`,
+			"en": `I analyse Taxonomy-related information. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I prepare Taxonomy-related analysis, reports, or disclosures. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I review or supervise Taxonomy-related work. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I communicate or explain the Taxonomy to others.`,
+		},
+		{
+			"de": `todo`,
+			"en": `I make decisions that use Taxonomy information. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I rarely encounter the Taxonomy in my work. `,
+		},
+		{
+			"de": `todo`,
+			"en": `other`,
+		},
+	}
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.BottomVSpacers = 3
+		for i := 0; i < len(lblsSsq8); i++ {
+
+			reallyLast := i == len(lblsSsq8)-1
+
+			inp1 := gr.AddInput()
+			inp1.Type = "checkbox"
+			inp1.Name = fmt.Sprintf("ssq8_%v", i+1)
+			inp1.ColSpan = gr.Cols
+			inp1.ColSpanLabel = 1
+			inp1.ColSpanControl = 12
+			inp1.Label = lblsSsq8[i]
+			inp1.ControlFirst()
+
+			if reallyLast {
+				inp1.ColSpan = 2
+				inp1.ColSpanLabel = 2.4
+				inp1.ColSpanControl = 7.7
+				//
+				inp2 := gr.AddInput()
+				inp2.Type = "text"
+				inp2.Name = "ssq8_free"
+				inp2.MaxChars = 100
+
+				inp2.ColSpan = gr.Cols - inp1.ColSpan
+				inp2.ColSpanLabel = 0
+				inp2.ColSpanControl = 1
+
+			}
+		}
+	}
+
+	//
+	//
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 0
+			inp.Label = trl.S{
+				"de": `todo`,
+				"en": `
+					For what purpose have you used the EU Taxonomy?
+					<br>
+					<small>Select all that apply.</small>
+					`,
+			}.Outline("9.")
+		}
+	}
+	lblsSsq9 := []trl.S{
+		{
+			"de": `todo`,
+			"en": `reporting or disclosure`,
+		},
+		{
+			"de": `todo`,
+			"en": `investment, lending or related analysis `,
+		},
+		{
+			"de": `todo`,
+			"en": `risk assessment `,
+		},
+		{
+			"de": `todo`,
+			"en": `corporate strategy or planning`,
+		},
+		{
+			"de": `todo`,
+			"en": `product development or classification`,
+		},
+		{
+			"de": `todo`,
+			"en": `policy or economic analysis `,
+		},
+		{
+			"de": `todo`,
+			"en": `client advice `,
+		},
+
+		{
+			"de": `todo`,
+			"en": `other`,
+		},
+	}
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.BottomVSpacers = 3
+		for i := 0; i < len(lblsSsq9); i++ {
+
+			reallyLast := i == len(lblsSsq9)-1
+
+			inp1 := gr.AddInput()
+			inp1.Type = "checkbox"
+			inp1.Name = fmt.Sprintf("ssq9_%v", i+1)
+			inp1.ColSpan = gr.Cols
+			inp1.ColSpanLabel = 1
+			inp1.ColSpanControl = 12
+			inp1.Label = lblsSsq9[i]
+			inp1.ControlFirst()
+
+			if reallyLast {
+				inp1.ColSpan = 2
+				inp1.ColSpanLabel = 2.4
+				inp1.ColSpanControl = 7.7
+				//
+				inp2 := gr.AddInput()
+				inp2.Type = "text"
+				inp2.Name = "ssq9_free"
+				inp2.MaxChars = 100
+
+				inp2.ColSpan = gr.Cols - inp1.ColSpan
+				inp2.ColSpanLabel = 0
+				inp2.ColSpanControl = 1
+
+			}
+		}
+	}
+
+	//
+	//
+	//
+	//
+	//
+	page = q.AddPage()
+	page.WidthMax("64rem")
+	page.Label = trl.S{
+		"en": "&nbsp;",
+		"de": "&nbsp;",
+	}
+	page.Label = trl.S{
+		"de": "todo",
+		"en": "Where the information comes from",
+	}
+	page.SuppressInProgressbar = true
+	page.WidthMax("64rem")
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 0
+			inp.Label = trl.S{
+				"de": `todo`,
+				"en": `
+					How do you normally obtain EU Taxonomy-related information?
+					<br>
+					<small>Select all that apply.</small>
+					`,
+			}.Outline("10.")
+		}
+	}
+	lblsSsq10 := []trl.S{
+		{
+			"de": `todo`,
+			"en": `I assess economic activities directly against the EU Taxonomy criteria. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I calculate Taxonomy indicators myself. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I use Taxonomy information reported by companies or counterparties. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I use Taxonomy estimates or classifications from external data providers. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I use Taxonomy analyses prepared by colleagues. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I use investment products, scores, or ratings that incorporate Taxonomy information. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I use the EU Taxonomy mainly as general background or reference information. `,
+		},
+
+		{
+			"de": `todo`,
+			"en": `other`,
+		},
+	}
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.BottomVSpacers = 3
+		for i := 0; i < len(lblsSsq10); i++ {
+
+			reallyLast := i == len(lblsSsq10)-1
+
+			inp1 := gr.AddInput()
+			inp1.Type = "checkbox"
+			inp1.Name = fmt.Sprintf("ssq10_%v", i+1)
+			inp1.ColSpan = gr.Cols
+			inp1.ColSpanLabel = 1
+			inp1.ColSpanControl = 12
+			inp1.Label = lblsSsq10[i]
+			inp1.ControlFirst()
+
+			if reallyLast {
+				inp1.ColSpan = 2
+				inp1.ColSpanLabel = 2.4
+				inp1.ColSpanControl = 7.7
+				//
+				inp2 := gr.AddInput()
+				inp2.Type = "text"
+				inp2.Name = "ssq10_free"
+				inp2.MaxChars = 100
+
+				inp2.ColSpan = gr.Cols - inp1.ColSpan
+				inp2.ColSpanLabel = 0
+				inp2.ColSpanControl = 1
+
+			}
+		}
+	}
+
+	//
+	//
+	//
+	//
+	//
+	page = q.AddPage()
+	page.WidthMax("64rem")
+	page.Label = trl.S{
+		"en": "&nbsp;",
+		"de": "&nbsp;",
+	}
+	page.Label = trl.S{
+		"de": "todo",
+		"en": "Intermediation / transmission",
+	}
+	page.SuppressInProgressbar = true
+	page.WidthMax("64rem")
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 0
+			inp.Label = trl.S{
+				"de": `todo`,
+				"en": `
+					In which of the following ways have you communicated, shared, 
+					or incorporated EU Taxonomy information 
+					(e.g., its criteria, alignment figures, or decisions based on it) 
+					during the past 12 months?
+					<br>
+					<small>Select all that apply.</small>
+					`,
+			}.Outline("11.")
+		}
+	}
+	lblsSsq11 := []trl.S{
+		{
+			"de": `todo`,
+			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have explained or discussed the EU Taxonomy with clients or other external stakeholders.  `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have prepared or contributed to Taxonomy-related disclosures, reports, or other published information.  `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have used the EU Taxonomy when advising clients or assessing their sustainability preferences.  `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have incorporated the EU Taxonomy into advice or recommendations provided to colleagues. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have designed, labeled, or marketed financial products that incorporate the EU Taxonomy.  `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have made or contributed to investment, lending or financing decisions on behalf of clients or my organisation using the EU Taxonomy. `,
+		},
+
+		{
+			"de": `todo`,
+			"en": `other`,
+		},
+
+		{
+			"de": `todo`,
+			"en": `I have not communicated or shared information about the EU Taxonomy. `,
+		},
+	}
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.BottomVSpacers = 3
+		for i := 0; i < len(lblsSsq11); i++ {
+
+			secondLast := i == len(lblsSsq11)-2
+
+			inp1 := gr.AddInput()
+			inp1.Type = "checkbox"
+			inp1.Name = fmt.Sprintf("ssq11_%v", i+1)
+			inp1.ColSpan = gr.Cols
+			inp1.ColSpanLabel = 1
+			inp1.ColSpanControl = 12
+			inp1.Label = lblsSsq11[i]
+			inp1.ControlFirst()
+
+			if secondLast {
+				inp1.ColSpan = 2
+				inp1.ColSpanLabel = 2.4
+				inp1.ColSpanControl = 7.7
+				//
+				inp2 := gr.AddInput()
+				inp2.Type = "text"
+				inp2.Name = "ssq11_free"
+				inp2.MaxChars = 100
+
+				inp2.ColSpan = gr.Cols - inp1.ColSpan
+				inp2.ColSpanLabel = 0
+				inp2.ColSpanControl = 1
+
+			}
+		}
+	}
+
+	//
+	//
+	//
+	//
+	//
+	page = q.AddPage()
+	page.WidthMax("64rem")
+	page.Label = trl.S{
+		"en": "&nbsp;",
+		"de": "&nbsp;",
+	}
+	page.Label = trl.S{
+		"de": "todo",
+		"en": "Intermediation / transmission",
+	}
+	page.SuppressInProgressbar = true
+	page.WidthMax("64rem")
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 0
+			inp.Label = trl.S{
+				"de": `todo`,
+				"en": `
+					Even though the EU Taxonomy is not relevant to your current role, 
+					you may still encounter or discuss it professionally. 
+					Have you communicated, shared, or incorporated EU Taxonomy information 
+					in any of the following ways during the past 12 months?
+					<br>
+					<small>Select all that apply.</small>
+					`,
+			}.Outline("12.")
+		}
+	}
+	lblsSsq12 := []trl.S{
+		{
+			"de": `todo`,
+			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have explained or discussed the EU Taxonomy with clients or other external stakeholders. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have referred to the EU Taxonomy in presentations, publications, teaching, or other professional communication. `,
+		},
+		{
+			"de": `todo`,
+			"en": `I have used the EU Taxonomy as an example or point of reference in professional discussions. `,
+		},
+
+		{
+			"de": `todo`,
+			"en": `other`,
+		},
+
+		{
+			"de": `todo`,
+			"en": `I have not communicated or shared information about the EU Taxonomy. `,
+		},
+	}
+	{
+		gr := page.AddGroup()
+		gr.Cols = 6
+		gr.BottomVSpacers = 3
+		for i := 0; i < len(lblsSsq12); i++ {
+
+			secondLast := i == len(lblsSsq12)-2
+
+			inp1 := gr.AddInput()
+			inp1.Type = "checkbox"
+			inp1.Name = fmt.Sprintf("ssq12_%v", i+1)
+			inp1.ColSpan = gr.Cols
+			inp1.ColSpanLabel = 1
+			inp1.ColSpanControl = 12
+			inp1.Label = lblsSsq12[i]
+			inp1.ControlFirst()
+
+			if secondLast {
+				inp1.ColSpan = 2
+				inp1.ColSpanLabel = 2.4
+				inp1.ColSpanControl = 7.7
+				//
+				inp2 := gr.AddInput()
+				inp2.Type = "text"
+				inp2.Name = "ssq12_free"
+				inp2.MaxChars = 100
+
+				inp2.ColSpan = gr.Cols - inp1.ColSpan
+				inp2.ColSpanLabel = 0
+				inp2.ColSpanControl = 1
+
+			}
+		}
+	}
 
 	return nil
 

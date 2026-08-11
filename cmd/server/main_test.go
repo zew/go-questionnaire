@@ -209,7 +209,7 @@ func TestSystem(t *testing.T) {
 		// 	continue
 		// }
 
-		if !(surveyID == "fmt" && (waveID == "2026-09")) {
+		if surveyID == "fmt" && (waveID == "2026-09") {
 			continue
 		}
 

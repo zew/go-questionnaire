@@ -533,6 +533,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.SuppressInProgressbar = true
+	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
 
 	{
@@ -629,16 +630,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	//
 	//
 	page = q.AddPage()
-	page.WidthMax("64rem")
 	page.Label = trl.S{
 		"en": "&nbsp;",
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
 		"de": "todo",
-		"en": "Usage of the Taxonomy",
+		"en": "Usage of the Taxonomy <!-- taxonomy exposure follow up -->",
 	}
 	page.SuppressInProgressbar = true
+	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
 
 	{
@@ -824,16 +825,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	//
 	//
 	page = q.AddPage()
-	page.WidthMax("64rem")
 	page.Label = trl.S{
 		"en": "&nbsp;",
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
 		"de": "todo",
-		"en": "Where the information comes from",
+		"en": "Where the information comes from <!-- taxonomy exposure follow up -->",
 	}
 	page.SuppressInProgressbar = true
+	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
 
 	{
@@ -932,16 +933,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	//
 	//
 	page = q.AddPage()
-	page.WidthMax("64rem")
 	page.Label = trl.S{
 		"en": "&nbsp;",
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
 		"de": "todo",
-		"en": "Intermediation / transmission",
+		"en": "Intermediation / transmission   <!-- question 11 relevant -->",
 	}
 	page.SuppressInProgressbar = true
+	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
 
 	{
@@ -967,7 +968,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			}.Outline("11.")
 		}
 	}
-	lblsSsq11 := []trl.S{
+	lblsSsq11a := []trl.S{
 		{
 			"de": `todo`,
 			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
@@ -1011,17 +1012,17 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		gr := page.AddGroup()
 		gr.Cols = 6
 		gr.BottomVSpacers = 3
-		for i := 0; i < len(lblsSsq11); i++ {
+		for i := 0; i < len(lblsSsq11a); i++ {
 
-			secondLast := i == len(lblsSsq11)-2
+			secondLast := i == len(lblsSsq11a)-2
 
 			inp1 := gr.AddInput()
 			inp1.Type = "checkbox"
-			inp1.Name = fmt.Sprintf("ssq11_%v", i+1)
+			inp1.Name = fmt.Sprintf("ssq11a_%v", i+1)
 			inp1.ColSpan = gr.Cols
 			inp1.ColSpanLabel = 1
 			inp1.ColSpanControl = 12
-			inp1.Label = lblsSsq11[i]
+			inp1.Label = lblsSsq11a[i]
 			inp1.ControlFirst()
 
 			if secondLast {
@@ -1031,7 +1032,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 				//
 				inp2 := gr.AddInput()
 				inp2.Type = "text"
-				inp2.Name = "ssq11_free"
+				inp2.Name = "ssq11a_free"
 				inp2.MaxChars = 100
 
 				inp2.ColSpan = gr.Cols - inp1.ColSpan
@@ -1048,16 +1049,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	//
 	//
 	page = q.AddPage()
-	page.WidthMax("64rem")
 	page.Label = trl.S{
 		"en": "&nbsp;",
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
 		"de": "todo",
-		"en": "Intermediation / transmission",
+		"en": "Intermediation / transmission   <!-- question 11 irrelevant -->",
 	}
 	page.SuppressInProgressbar = true
+	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
 
 	{
@@ -1080,10 +1081,10 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 					<br>
 					<small>Select all that apply.</small>
 					`,
-			}.Outline("12.")
+			}.Outline("11.")
 		}
 	}
-	lblsSsq12 := []trl.S{
+	lblsSsq11b := []trl.S{
 		{
 			"de": `todo`,
 			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
@@ -1115,17 +1116,17 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		gr := page.AddGroup()
 		gr.Cols = 6
 		gr.BottomVSpacers = 3
-		for i := 0; i < len(lblsSsq12); i++ {
+		for i := 0; i < len(lblsSsq11b); i++ {
 
-			secondLast := i == len(lblsSsq12)-2
+			secondLast := i == len(lblsSsq11b)-2
 
 			inp1 := gr.AddInput()
 			inp1.Type = "checkbox"
-			inp1.Name = fmt.Sprintf("ssq12_%v", i+1)
+			inp1.Name = fmt.Sprintf("ssq11b_%v", i+1)
 			inp1.ColSpan = gr.Cols
 			inp1.ColSpanLabel = 1
 			inp1.ColSpanControl = 12
-			inp1.Label = lblsSsq12[i]
+			inp1.Label = lblsSsq11b[i]
 			inp1.ControlFirst()
 
 			if secondLast {
@@ -1135,7 +1136,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 				//
 				inp2 := gr.AddInput()
 				inp2.Type = "text"
-				inp2.Name = "ssq12_free"
+				inp2.Name = "ssq11b_free"
 				inp2.MaxChars = 100
 
 				inp2.ColSpan = gr.Cols - inp1.ColSpan

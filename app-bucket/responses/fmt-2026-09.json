@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3c8fff4ffe86c80e0af1b7ced0275156bbd8fb7a2adf5c4629d7ac4d757c5b0f",
+ 	"md_5": "bd05f92860a4ce67b62c24f21de475adc092ddb90fd4fc97d4e3bbd7491a2096",
  	"lang_codes": [
  		"de",
  		"en"
@@ -7036,6 +7036,7 @@
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "fmt202609Droput",
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -7579,12 +7580,13 @@
  		{
  			"label": {
  				"de": "todo",
- 				"en": "Usage of the Taxonomy"
+ 				"en": "Usage of the Taxonomy \u003c!-- taxonomy exposure follow up --\u003e"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "fmt202609Droput",
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -8087,12 +8089,13 @@
  		{
  			"label": {
  				"de": "todo",
- 				"en": "Where the information comes from"
+ 				"en": "Where the information comes from \u003c!-- taxonomy exposure follow up --\u003e"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "fmt202609Droput",
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -8371,12 +8374,13 @@
  		{
  			"label": {
  				"de": "todo",
- 				"en": "Intermediation / transmission"
+ 				"en": "Intermediation / transmission   \u003c!-- question 11 relevant --\u003e"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "fmt202609Droput",
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -8418,7 +8422,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "ssq11_1",
+ 							"name": "ssq11a_1",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8446,7 +8450,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_2",
+ 							"name": "ssq11a_2",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8474,7 +8478,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_3",
+ 							"name": "ssq11a_3",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8502,7 +8506,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_4",
+ 							"name": "ssq11a_4",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8530,7 +8534,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_5",
+ 							"name": "ssq11a_5",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8558,7 +8562,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_6",
+ 							"name": "ssq11a_6",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8586,7 +8590,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_7",
+ 							"name": "ssq11a_7",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8614,7 +8618,7 @@
  							}
  						},
  						{
- 							"name": "ssq11_8",
+ 							"name": "ssq11a_8",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8642,14 +8646,14 @@
  							}
  						},
  						{
- 							"name": "ssq11_free",
+ 							"name": "ssq11a_free",
  							"type": "text",
  							"max_chars": 100,
  							"col_span": 4,
  							"col_span_control": 1
  						},
  						{
- 							"name": "ssq11_9",
+ 							"name": "ssq11a_9",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8683,12 +8687,13 @@
  		{
  			"label": {
  				"de": "todo",
- 				"en": "Intermediation / transmission"
+ 				"en": "Intermediation / transmission   \u003c!-- question 11 irrelevant --\u003e"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
+ 			"navigation_condition": "fmt202609Droput",
  			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
@@ -8717,8 +8722,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e12.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e12.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8730,7 +8735,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "ssq12_1",
+ 							"name": "ssq11b_1",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8758,7 +8763,7 @@
  							}
  						},
  						{
- 							"name": "ssq12_2",
+ 							"name": "ssq11b_2",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8786,7 +8791,7 @@
  							}
  						},
  						{
- 							"name": "ssq12_3",
+ 							"name": "ssq11b_3",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8814,7 +8819,7 @@
  							}
  						},
  						{
- 							"name": "ssq12_4",
+ 							"name": "ssq11b_4",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8842,7 +8847,7 @@
  							}
  						},
  						{
- 							"name": "ssq12_5",
+ 							"name": "ssq11b_5",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8870,14 +8875,14 @@
  							}
  						},
  						{
- 							"name": "ssq12_free",
+ 							"name": "ssq11b_free",
  							"type": "text",
  							"max_chars": 100,
  							"col_span": 4,
  							"col_span_control": 1
  						},
  						{
- 							"name": "ssq12_6",
+ 							"name": "ssq11b_6",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",

@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -40,6 +41,8 @@ var naviFuncs = map[string]func(*QuestionnaireT, int) bool{
 	"fmt202512Include": fmt202512Include,
 
 	"fmtAgreeTerms": fmtAskConsent_GDPR,
+
+	"fmt202609Droput": fmt202609Droput,
 }
 
 func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
@@ -485,4 +488,48 @@ func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 	}
 	return val
 
+}
+
+func fmt202609Droput(q *QuestionnaireT, pageIdx int) bool {
+
+	inp1 := q.ByName("ssq5")
+	if inp1.Response != "" {
+		if inp1.Response == "1" {
+			return false
+		}
+	}
+
+	page := q.Pages[pageIdx]
+	inp2 := q.ByName("ssq7")
+	if strings.Contains(page.Label.String(), "<!-- taxonomy exposure follow up -->") {
+		if inp2.Response != "" {
+			if inp2.Response == "5" {
+				return false
+			}
+		}
+	}
+
+	if strings.Contains(page.Label.String(), "<!-- question 11 relevant -->") {
+		inp2 := q.ByName("ssq7")
+		if inp2.Response != "" {
+			if inp2.Response == "5" {
+				return false
+			} else {
+				return true
+			}
+		}
+	}
+
+	if strings.Contains(page.Label.String(), "<!-- question 11 irrelevant -->") {
+		inp2 := q.ByName("ssq7")
+		if inp2.Response != "" {
+			if inp2.Response == "5" {
+				return true
+			} else {
+				return false
+			}
+		}
+	}
+
+	return true
 }

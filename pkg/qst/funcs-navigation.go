@@ -492,6 +492,7 @@ func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 
 func fmt202609Droput(q *QuestionnaireT, pageIdx int) bool {
 
+	// "I have never heard of it --  jump to end"
 	inp1 := q.ByName("ssq5")
 	if inp1.Response != "" {
 		if inp1.Response == "1" {
@@ -499,6 +500,7 @@ func fmt202609Droput(q *QuestionnaireT, pageIdx int) bool {
 		}
 	}
 
+	// not re­le­vant to my role
 	page := q.Pages[pageIdx]
 	inp2 := q.ByName("ssq7")
 	if strings.Contains(page.Label.String(), "<!-- taxonomy exposure follow up -->") {
@@ -509,6 +511,7 @@ func fmt202609Droput(q *QuestionnaireT, pageIdx int) bool {
 		}
 	}
 
+	//
 	if strings.Contains(page.Label.String(), "<!-- question 11 relevant -->") {
 		inp2 := q.ByName("ssq7")
 		if inp2.Response != "" {
@@ -520,8 +523,12 @@ func fmt202609Droput(q *QuestionnaireT, pageIdx int) bool {
 		}
 	}
 
+	//
 	if strings.Contains(page.Label.String(), "<!-- question 11 irrelevant -->") {
 		inp2 := q.ByName("ssq7")
+		if inp2.Response == "" {
+			return false
+		}
 		if inp2.Response != "" {
 			if inp2.Response == "5" {
 				return true

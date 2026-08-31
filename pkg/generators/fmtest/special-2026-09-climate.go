@@ -25,8 +25,12 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"en": "Climate<br>Expectations",
 	}
 	page.Label = trl.S{
-		"de": "todo",
+		"de": "",
 		"en": "Beliefs",
+	}
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
 	}
 	page.WidthMax("48rem")
 
@@ -40,7 +44,12 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					todo
+					Das Pariser Klimaabkommen zielt darauf ab, den „Anstieg der durchschnittlichen Erdtemperatur deutlich unter 2 °C über dem vorindustriellen Niveau“ zu halten.  
+
+					<br>
+					<br>
+
+					Angenommen, die globale Klimapolitik bleibt so, wie sie heute ist, und es werden keine zusätzlichen Maßnahmen zur Bekämpfung des Klimawandels ergriffen: 
 				`,
 				"en": `
 					The Paris Agreement aims to hold “the increase in the global average temperature to well below 2&nbsp;°C above pre-industrial levels”.  
@@ -64,7 +73,9 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					todo
+					Wie hoch schätzen Sie unter diesen Bedingungen den Anstieg der durchschnittlichen Erdtemperatur bis zum Ende dieses Jahrhunderts ein? 
+					<br>
+					<br>
 				`,
 				"en": `
 					What is your expectation for the global average temperature rise by the end of this century under these conditions? 
@@ -77,32 +88,32 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 	lblsSsq1 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `kein signifikanter Anstieg`,
 			"en": "no significant rise",
 		},
 		{
-			"de": `todo`,
+			"de": `etwa  1.5&nbsp;°C`,
 			"en": "about 1.5&nbsp;°C",
 		},
 		{
-			"de": `todo`,
+			"de": `etwa  2&nbsp;°C`,
 			"en": "about 2&nbsp;°C",
 		},
 
 		{
-			"de": `todo`,
-			"en": "about 2&nbsp;°C",
+			"de": `etwa  3&nbsp;°C`,
+			"en": "about 3&nbsp;°C",
 		},
 		{
-			"de": `todo`,
+			"de": `etwa  4&nbsp;°C`,
 			"en": "about 4&nbsp;°C",
 		},
 		{
-			"de": `todo`,
+			"de": `mehr als  4&nbsp;°C`,
 			"en": "more than 4&nbsp;°C",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 0, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 0, false, false)
 
 	//
 	//
@@ -132,7 +143,9 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Auf einer Skala von 1 (überhaupt nicht sicher) bis 5 (sehr sicher), wie sicher sind Sie sich hinsichtlich Ihrer Einschätzung in der vorherigen Frage? 
+				`,
 				"en": `
 					On a scale from 1 (not at all confident) to 5 (very confident), how confident are you about your assessment in the previous question?`,
 			}.Outline("2.")
@@ -151,7 +164,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			},
 			[]trl.S{
 				{
-					"de": "todo",
+					"de": "überhaupt nicht sicher",
 					"en": "not at all confident",
 				},
 				{
@@ -167,7 +180,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 					"en": "&nbsp;",
 				},
 				{
-					"de": "todo",
+					"de": "sehr sicher",
 					"en": "very confident",
 				},
 			},
@@ -206,7 +219,9 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen. 
+				`,
 				"en": `
 					Please indicate to what extent you agree with the following statements.`,
 			}.Outline("3.")
@@ -215,58 +230,66 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 	colLabelsSsq3and5 := []trl.S{
 		{
-			"de": "todo   <br>  <span class='ordinal-numbers'> 1 </span> ",
-			"en": "strongly disagree      <br>  <span class='ordinal-numbers'> 1 </span> ",
+			"de": "stimme überhaupt nicht zu <br>  <span class='ordinal-numbers'> 1 </span> ",
+			"en": "strongly disagree         <br>  <span class='ordinal-numbers'> 1 </span> ",
 		},
 		{
-			"de": "todo<br>      <span class='ordinal-numbers'> 2 </span> ",
-			"en": "disagree<br>  <span class='ordinal-numbers'> 2 </span> ",
+			"de": "stimme nicht zu           <br>  <span class='ordinal-numbers'> 2 </span> ",
+			"en": "disagree                  <br>  <span class='ordinal-numbers'> 2 </span> ",
 		},
 		{
-			"de": "todo<br>       <span class='ordinal-numbers'> 3 </span> ",
-			"en": "undecided<br>  <span class='ordinal-numbers'> 3 </span> ",
+			"de": "weder noch                <br>  <span class='ordinal-numbers'> 3 </span> ",
+			"en": "undecided                 <br>  <span class='ordinal-numbers'> 3 </span> ",
 		},
 		{
-			"de": "todo<br>   <span class='ordinal-numbers'> 4 </span> ",
-			"en": "agree<br>  <span class='ordinal-numbers'> 4 </span> ",
+			"de": "stimme zu                 <br>  <span class='ordinal-numbers'> 4 </span> ",
+			"en": "agree                     <br>  <span class='ordinal-numbers'> 4 </span> ",
 		},
 		{
-			"de": "todo                 <br>  <span class='ordinal-numbers'> 5  </span> ",
-			"en": "strongly agree       <br>  <span class='ordinal-numbers'> 5  </span> ",
+			"de": "stimme voll und ganz zu   <br>  <span class='ordinal-numbers'> 5  </span> ",
+			"en": "strongly agree            <br>  <span class='ordinal-numbers'> 5  </span> ",
 		},
 		{
-			"de": "keine<br>Angabe    <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
-			"en": "no answer          <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
+			"de": "keine<br>Angabe           <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
+			"en": "no answer                 <br>  <span class='ordinal-numbers'> &nbsp;  </span>",
 		},
 	}
 	lblsSsq3 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Der Klimawandel stellt ein bedeutendes Problem für Volkswirtschaften und Finanzmärkte dar. `,
 			"en": `Climate change represents a significant issue for economies and financial markets.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneutrale Wirtschaft zu erreichen. `,
 			"en": `With the right measures, it is possible to achieve a climate-neutral economy by 2050.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Die Wirtschaft kann klimaneutral werden und dabei weiterwachsen. `,
 			"en": `The economy can become climate-neutral while growing at the same time.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Solange keine geeignete Ersatztechnologie verfügbar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen. `,
 			"en": `As long as there is no suitable replacement technology, investment should still flow into emissions-intensive industries.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Die Bewältigung des Klimawandels erfordert, dass emissionsintensive Unternehmen über die nötigen Finanzmittel verfügen, um auf emissionsarme Technologien umzustellen. `,
 			"en": `Responding to climate change requires that emissions-intensive companies have the funding to transition to low-emission technologies.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Die Bewältigung des Klimawandels erfordert den Rückbau emissionsintensiver Sektoren und den Ausbau emissionsarmer Sektoren. `,
 			"en": `Responding to climate change requires shrinking emissions-intensive industries and growing low-emissions industries.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Technologische Innovation wird der entscheidende Faktor für das Erreichen einer klimaneutralen Wirtschaft sein. `,
 			"en": `Technological innovation will be the decisive determinant of achieving a climate-neutral economy.`,
+		},
+		{
+			"de": `Klimaanpassung (d. h. Anpassung an die Auswirkungen des Klimawandels) ist wichtiger als Klimaschutz (d. h. Vermeidung oder Minderung von Treibhausgasemissionen).`,
+			"en": `Climate adaptation (i.e., adapting to the effects of climate change) is more important than climate mitigation (i.e., preventing or reducing greenhouse gas emissions).`,
+		},
+		{
+			"de": `Dem Umweltschutz sollte Vorrang eingeräumt werden, selbst dann, wenn dies zu einem langsameren Wirtschaftswachstum und zu Arbeitsplatzverlusten führen würde.`,
+			"en": `Protecting the environment should be given priority, even if this were to result in slower economic growth and job losses.`,
 		},
 	}
 	randomizedMatrixWithFree(qst.WrapPageT(page), colLabelsSsq3and5, "ssq3", lblsSsq3, 3, nil)
@@ -328,9 +351,14 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
-		"de": "todo",
+		"de": "",
 		"en": "Professional role",
 	}
+	page.Label = trl.S{
+		"en": "",
+		"de": "",
+	}
+
 	page.SuppressInProgressbar = true
 	page.WidthMax("64rem")
 
@@ -345,11 +373,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
-				"en": `
-					In your current role, which of the following activities do you personally contribute to?					
+				"de": `
+					Mit welchen der folgenden Tätigkeiten sind Sie in Ihrer derzeitigen Funktion befasst?
 					<br>
-					<small>Select all that apply.</small>
+					<small>Bitte wählen Sie alle zutreffenden Optionen aus.</small>
+
+				`,
+				"en": `
+					In your current role, which of the following activities do you contribute to?					
+					<br>
+					<small>Please select all that apply.</small>
 					`,
 			}.Outline("4.")
 		}
@@ -357,65 +390,65 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 	lblsSsq4 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Investitions- oder Portfolioentscheidungen`,
 			"en": `investment or portfolio decision-making`,
 		},
 		{
-			"de": `todo`,
+			"de": `Kreditvergabe oder Kreditentscheidungen`,
 			"en": `lending or credit decision-making`,
 		},
 		{
-			"de": `todo`,
+			"de": `Versicherungsunderwriting`,
 			"en": `insurance underwriting`,
 		},
 		{
-			"de": `todo`,
+			"de": `Risikobewertung`,
 			"en": `risk assessment`,
 		},
 		{
-			"de": `todo`,
+			"de": `Unternehmensstrategie oder Entscheidungen über Investitionsausgaben`,
 			"en": `corporate strategy or capital expenditure decisions`,
 		},
 		{
-			"de": `todo`,
+			"de": `Aufsichtsrechtliche Berichterstattung`,
 			"en": `regulatory reporting`,
 		},
 		{
-			"de": `todo`,
+			"de": `Nachhaltigkeitsberichterstattung`,
 			"en": `sustainability reporting`,
 		},
 		{
-			"de": `todo`,
+			"de": `Produktgestaltung oder -klassifizierung`,
 			"en": `product design or classification`,
 		},
 		{
-			"de": `todo`,
+			"de": `Kundenberatung oder -kommunikation`,
 			"en": `client advice or communication`,
 		},
 		{
-			"de": `todo`,
+			"de": `Wirtschafts-, Markt- oder Branchenanalysen`,
 			"en": `economic, market, or sector analysis`,
 		},
 		{
-			"de": `todo`,
+			"de": `Politikanalyse oder Politikberatung`,
 			"en": `policy analysis or advice`,
 		},
 		{
-			"de": `todo`,
+			"de": `Stewardship oder Engagement`,
 			"en": `stewardship or engagement`,
 		},
 		{
-			"de": `todo`,
+			"de": `Handel`,
 			"en": `trading`,
 		},
 		{
-			"de": `todo`,
+			"de": `sonstiges`,
 			"en": `other`,
 		},
-		{
-			"de": `todo`,
-			"en": `none of the above`,
-		},
+		// {
+		// 	"de": `todo`,
+		// 	"en": `none of the above`,
+		// },
 	}
 
 	{
@@ -425,6 +458,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		for i := 0; i < len(lblsSsq4); i++ {
 
 			secondToLast := i == len(lblsSsq4)-2
+			secondToLast = i == len(lblsSsq4)-1
 
 			inp1 := gr.AddInput()
 			inp1.Type = "checkbox"
@@ -465,9 +499,14 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
-		"de": "todo",
+		"de": "",
 		"en": "Taxonomy exposure and knowledge",
 	}
+	page.Label = trl.S{
+		"en": "&nbsp;",
+		"de": "&nbsp;",
+	}
+
 	page.SuppressInProgressbar = true
 	page.WidthMax("64rem")
 
@@ -481,10 +520,12 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					todo
+					Wie vertraut sind Sie mit der EU-Taxonomie für nachhaltige Wirtschaftstätigkeiten?
+					<br>
+					<br>
 				`,
 				"en": `
-					How familiar are you with the EU Taxonomy?
+					How familiar are you with the EU Taxonomy for sustainable activities?
 					<br>
 					<br>
 				`,
@@ -519,7 +560,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "I have expert-level knowledge of it.",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq5", lblsSsq5, 0, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq5", lblsSsq5, 0, false, false)
 
 	//
 	//
@@ -576,7 +617,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "don't know",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq6", lblsSsq6, 0, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq6", lblsSsq6, 0, false, false)
 
 	{
 		gr := page.AddGroup()
@@ -622,7 +663,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "not relevant to my role",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq7", lblsSsq7, 0, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq7", lblsSsq7, 0, false, false)
 
 	//
 	//
@@ -635,9 +676,14 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
-		"de": "todo",
 		"en": "Usage of the Taxonomy <!-- taxonomy exposure follow up -->",
+		"de": "todo",
 	}
+	page.Label = trl.S{
+		"en": " <!-- taxonomy exposure follow up --> ",
+		"de": "&nbsp;",
+	}
+
 	page.SuppressInProgressbar = true
 	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
@@ -657,7 +703,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 				"en": `
 					Which of the following best describes your involvement with the EU Taxonomy in your current role?
 					<br>
-					<small>Select all that apply.</small>
+					<small>Please select all that apply.</small>
 					`,
 			}.Outline("8.")
 		}
@@ -744,7 +790,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 				"en": `
 					For what purpose have you used the EU Taxonomy?
 					<br>
-					<small>Select all that apply.</small>
+					<small>Please select all that apply.</small>
 					`,
 			}.Outline("9.")
 		}
@@ -830,8 +876,12 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
-		"de": "todo",
 		"en": "Where the information comes from <!-- taxonomy exposure follow up -->",
+		"de": "todo",
+	}
+	page.Label = trl.S{
+		"en": "<!-- taxonomy exposure follow up -->",
+		"de": "&nbsp;",
 	}
 	page.SuppressInProgressbar = true
 	page.NavigationCondition = "fmt202609Droput"
@@ -852,7 +902,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 				"en": `
 					How do you normally obtain EU Taxonomy-related information?
 					<br>
-					<small>Select all that apply.</small>
+					<small>Please select all that apply.</small>
 					`,
 			}.Outline("10.")
 		}
@@ -938,9 +988,14 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
-		"de": "todo",
 		"en": "Intermediation / transmission   <!-- question 11 relevant -->",
+		"de": "todo",
 	}
+	page.Label = trl.S{
+		"en": " <!-- question 11 relevant --> ",
+		"de": "&nbsp;",
+	}
+
 	page.SuppressInProgressbar = true
 	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
@@ -963,12 +1018,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 					(e.g., its criteria, alignment figures, or decisions based on it) 
 					during the past 12 months?
 					<br>
-					<small>Select all that apply.</small>
+					<small>Please select all that apply.</small>
 					`,
 			}.Outline("11.")
 		}
 	}
 	lblsSsq11a := []trl.S{
+		{
+			"de": `todo`,
+			"en": `I have not communicated or shared information about the EU Taxonomy.`,
+		},
 		{
 			"de": `todo`,
 			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
@@ -1002,11 +1061,6 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"de": `todo`,
 			"en": `other`,
 		},
-
-		{
-			"de": `todo`,
-			"en": `I have not communicated or shared information about the EU Taxonomy. `,
-		},
 	}
 	{
 		gr := page.AddGroup()
@@ -1015,6 +1069,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		for i := 0; i < len(lblsSsq11a); i++ {
 
 			secondLast := i == len(lblsSsq11a)-2
+			secondLast = i == len(lblsSsq11a)-1
 
 			inp1 := gr.AddInput()
 			inp1.Type = "checkbox"
@@ -1041,6 +1096,25 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 			}
 		}
+
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "grey-out-other-checkboxes"
+
+			s1 := trl.S{
+				"de": "",
+				"en": "",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+			inp.JSBlockStrings = map[string]string{
+				"core_id": "ssq11a_",
+			}
+		}
+
 	}
 
 	//
@@ -1054,9 +1128,14 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		"de": "&nbsp;",
 	}
 	page.Label = trl.S{
-		"de": "todo",
 		"en": "Intermediation / transmission   <!-- question 11 irrelevant -->",
+		"de": "todo",
 	}
+	page.Label = trl.S{
+		"en": " <!-- question 11 irrelevant --> ",
+		"de": "&nbsp;",
+	}
+
 	page.SuppressInProgressbar = true
 	page.NavigationCondition = "fmt202609Droput"
 	page.WidthMax("64rem")
@@ -1079,12 +1158,16 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 					Have you communicated, shared, or incorporated EU Taxonomy information 
 					in any of the following ways during the past 12 months?
 					<br>
-					<small>Select all that apply.</small>
+					<small>Please select all that apply.</small>
 					`,
-			}.Outline("11.")
+			}.Outline("11.").Outline("8.")
 		}
 	}
 	lblsSsq11b := []trl.S{
+		{
+			"de": `todo`,
+			"en": `I have not communicated or shared information about the EU Taxonomy. `,
+		},
 		{
 			"de": `todo`,
 			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
@@ -1106,11 +1189,6 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"de": `todo`,
 			"en": `other`,
 		},
-
-		{
-			"de": `todo`,
-			"en": `I have not communicated or shared information about the EU Taxonomy. `,
-		},
 	}
 	{
 		gr := page.AddGroup()
@@ -1119,6 +1197,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 		for i := 0; i < len(lblsSsq11b); i++ {
 
 			secondLast := i == len(lblsSsq11b)-2
+			secondLast = i == len(lblsSsq11b)-1
 
 			inp1 := gr.AddInput()
 			inp1.Type = "checkbox"
@@ -1145,6 +1224,25 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 			}
 		}
+
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "grey-out-other-checkboxes"
+
+			s1 := trl.S{
+				"de": "",
+				"en": "",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+			inp.JSBlockStrings = map[string]string{
+				"core_id": "ssq11b_",
+			}
+		}
+
 	}
 
 	return nil

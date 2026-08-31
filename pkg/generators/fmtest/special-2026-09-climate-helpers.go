@@ -14,6 +14,7 @@ func randomizedVerticalRadiosWithFree(
 	rowLbls []trl.S,
 	randomGroup int,
 	lastWithFree bool,
+	strangeJavasScript bool,
 ) {
 
 	for i := 0; i < len(rowLbls); i++ {
@@ -63,7 +64,7 @@ func randomizedVerticalRadiosWithFree(
 
 		}
 
-		{
+		if strangeJavasScript {
 			inp := gr.AddInput()
 			inp.ColSpanControl = 1
 			inp.Type = "javascript-block"

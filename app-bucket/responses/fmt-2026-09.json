@@ -11,7 +11,7 @@
  		},
  		"year": 2026,
  		"month": 9,
- 		"deadline": "2026-09-17T17:15:00+02:00",
+ 		"deadline": "2026-09-14T17:15:00+02:00",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bd05f92860a4ce67b62c24f21de475adc092ddb90fd4fc97d4e3bbd7491a2096",
+ 	"md_5": "65a6a7fe2097e9cea8b749d01af765bcf5f20b52947dcc505645388466ad8a46",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4657,8 +4657,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Beliefs"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -4695,7 +4695,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\ttodo\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\tDas Pariser Klimaabkommen zielt darauf ab, den „Anstieg der durchschnittlichen Erdtemperatur deut\u0026shy;lich un\u0026shy;ter 2 °C über dem vorindustriellen Niveau“ zu halten.  \n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tAngenommen, die globale Klimapo\u0026shy;li\u0026shy;tik bleibt so, wie sie heute ist, und es werden kei\u0026shy;ne zusätzlichen Maßnahmen zur Bekämpfung des Klimawandels ergriffen: \n\t\t\t\t",
  								"en": "\n\t\t\t\t\tThe Paris Agreement aims to hold “the in\u0026shy;crease in the global av\u0026shy;er\u0026shy;age temperature to well be\u0026shy;low 2\u0026nbsp;°C above pre-in\u0026shy;dus\u0026shy;tri\u0026shy;al levels”.  \n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tAssuming that global climate policies stay the way they are today, and no additional measures are taken to tackle climate change: \n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -4709,7 +4709,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t",
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie hoch schätzen Sie un\u0026shy;ter diesen Bedingungen den Anstieg der durchschnittlichen Erdtemperatur bis zum Ende dieses Jahrhunderts ein? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhat is your expectation for the global av\u0026shy;er\u0026shy;age temperature rise by the end of this century under these conditions? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -4725,7 +4725,7 @@
  							"name": "ssq1",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "kein signifikanter Anstieg",
  								"en": "no sig\u0026shy;nif\u0026shy;i\u0026shy;cant rise"
  							},
  							"col_span": 6,
@@ -4749,22 +4749,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -4776,7 +4760,7 @@
  							"name": "ssq1",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "etwa  1.5\u0026nbsp;°C",
  								"en": "about 1.5\u0026nbsp;°C"
  							},
  							"col_span": 6,
@@ -4800,22 +4784,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -4827,7 +4795,7 @@
  							"name": "ssq1",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "etwa  2\u0026nbsp;°C",
  								"en": "about 2\u0026nbsp;°C"
  							},
  							"col_span": 6,
@@ -4851,22 +4819,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -4878,8 +4830,8 @@
  							"name": "ssq1",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
- 								"en": "about 2\u0026nbsp;°C"
+ 								"de": "etwa  3\u0026nbsp;°C",
+ 								"en": "about 3\u0026nbsp;°C"
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -4902,22 +4854,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -4929,7 +4865,7 @@
  							"name": "ssq1",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "etwa  4\u0026nbsp;°C",
  								"en": "about 4\u0026nbsp;°C"
  							},
  							"col_span": 6,
@@ -4953,22 +4889,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -4980,7 +4900,7 @@
  							"name": "ssq1",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "mehr als  4\u0026nbsp;°C",
  								"en": "more than 4\u0026nbsp;°C"
  							},
  							"col_span": 6,
@@ -5002,22 +4922,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq1",
- 								"inp2": "ssq1_free",
- 								"radioOn": "ssq16"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -5077,7 +4981,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; todo",
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAuf einer Skala von 1 (über\u0026shy;haupt nicht si\u0026shy;cher) bis 5 (sehr si\u0026shy;cher), wie si\u0026shy;cher sind Sie sich hinsichtlich Ihrer Einschätzung in der vorherigen Frage? \n\t\t\t\t",
  								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tOn a scale from 1 (not at all confident) to 5 (very confident), how confident are you about your assessment in the previous question?"
  							},
  							"col_span": 1,
@@ -5092,7 +4996,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "todo",
+ 								"de": "über\u0026shy;haupt nichtd si\u0026shy;cher",
  								"en": "not at all confident"
  							},
  							"col_span_control": 1,
@@ -5268,7 +5172,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "todo",
+ 								"de": "sehr si\u0026shy;cher",
  								"en": "very confident"
  							},
  							"col_span_control": 1,
@@ -5399,7 +5303,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; todo",
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBitte geben Sie an, inwieweit Sie den folgenden Aussagen zustim\u0026shy;men. \n\t\t\t\t",
  								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPlease indicate to what extent you agree with the following statements."
  							},
  							"col_span": 1,
@@ -5422,8 +5326,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo   \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
- 								"en": "strong\u0026shy;ly dis\u0026shy;agree      \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
+ 								"de": "stim\u0026shy;me über\u0026shy;haupt nicht zu \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e ",
+ 								"en": "strong\u0026shy;ly dis\u0026shy;agree         \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 1 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5450,8 +5354,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo\u003cbr\u003e      \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
- 								"en": "dis\u0026shy;agree\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
+ 								"de": "stim\u0026shy;me nicht zu           \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e ",
+ 								"en": "dis\u0026shy;agree                  \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 2 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5478,8 +5382,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo\u003cbr\u003e       \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
- 								"en": "un\u0026shy;de\u0026shy;cid\u0026shy;ed\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
+ 								"de": "weder noch                \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e ",
+ 								"en": "un\u0026shy;de\u0026shy;cid\u0026shy;ed                 \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 3 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5506,8 +5410,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo\u003cbr\u003e   \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
- 								"en": "agree\u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
+ 								"de": "stim\u0026shy;me zu                 \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e ",
+ 								"en": "agree                     \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 4 \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5534,8 +5438,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo                 \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
- 								"en": "strong\u0026shy;ly agree       \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
+ 								"de": "stim\u0026shy;me voll und ganz zu   \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e ",
+ 								"en": "strong\u0026shy;ly agree            \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e 5  \u003c/span\u003e "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5562,8 +5466,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be    \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
- 								"en": "no an\u0026shy;swer          \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
+ 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be           \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e",
+ 								"en": "no an\u0026shy;swer                 \u003cbr\u003e  \u003cspan class='ordinal-numbers'\u003e \u0026nbsp;  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5620,7 +5524,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Der Klimawandel stellt ein bedeutendes Problem für Volkswirt\u0026shy;schaften und Finanzmärkte dar. ",
  								"en": "Climate change represents a sig\u0026shy;nif\u0026shy;i\u0026shy;cant issue for economies and financial markets."
  							},
  							"col_span": 1,
@@ -5700,7 +5604,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Mit den richtigen Maßnahmen ist es möglich, bis 2050 eine klimaneu\u0026shy;trale Wirt\u0026shy;schaft zu erreichen. ",
  								"en": "With the right measures, it is possible to achieve a climate-neu\u0026shy;tral econ\u0026shy;o\u0026shy;my by 2050."
  							},
  							"col_span": 1,
@@ -5780,7 +5684,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Die Wirt\u0026shy;schaft kann klimaneu\u0026shy;tral werden und dabei weiterwachsen. ",
  								"en": "The econ\u0026shy;o\u0026shy;my can become climate-neu\u0026shy;tral while growing at the same time."
  							},
  							"col_span": 1,
@@ -5860,7 +5764,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Solange kei\u0026shy;ne ge\u0026shy;eig\u0026shy;nete Ersatztechnologie ver\u0026shy;füg\u0026shy;bar ist, sollten weiterhin Investitionen in emissionsintensive Sektoren fließen. ",
  								"en": "As long as there is no suitable replacement tech\u0026shy;nol\u0026shy;o\u0026shy;gy, in\u0026shy;vest\u0026shy;ment should still flow into emissions-intensive industries."
  							},
  							"col_span": 1,
@@ -5940,7 +5844,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Die Bewältigung des Klimawandels erfordert, dass emissionsintensive Un\u0026shy;ter\u0026shy;neh\u0026shy;men über die nötigen Finanzmittel verfügen, um auf emissionsarme Technologien umzustellen. ",
  								"en": "Responding to climate change requires that emissions-intensive companies have the funding to transition to low-emission technologies."
  							},
  							"col_span": 1,
@@ -6020,7 +5924,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Die Bewältigung des Klimawandels erfordert den Rückbau emissionsintensiver Sektoren und den Ausbau emissionsarmer Sektoren. ",
  								"en": "Responding to climate change requires shrinking emissions-intensive industries and growing low-emissions industries."
  							},
  							"col_span": 1,
@@ -6100,7 +6004,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "todo",
+ 								"de": "Technologische Innovation wird der entscheidende Faktor für das Erreichen einer klimaneu\u0026shy;tralen Wirt\u0026shy;schaft sein. ",
  								"en": "Technological innovation will be the decisive determinant of achieving a climate-neu\u0026shy;tral econ\u0026shy;o\u0026shy;my."
  							},
  							"col_span": 1,
@@ -6175,6 +6079,166 @@
  					}
  				},
  				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Klimaanpassung (d. h. Anpassung an die Aus\u0026shy;wir\u0026shy;kungen des Klimawandels) ist wich\u0026shy;tiger als Klimaschutz (d. h. Vermeidung oder Minderung von Treibhausgasemissionen).",
+ 								"en": "Climate adaptation (i.e., adapting to the effects of climate change) is more im\u0026shy;por\u0026shy;tant than climate mitigation (i.e., preventing or reducing greenhouse gas emissions)."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq3_8",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq3_8",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq3_8",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq3_8",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq3_8",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq3_8",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"randomization_group": 3,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Dem Umweltschutz sollte Vorrang eingeräumt werden, selbst dann, wenn dies zu einem langsameren Wirt\u0026shy;schaftswachstum und zu Arbeitsplatzverlusten führen würde.",
+ 								"en": "Protecting the environ\u0026shy;ment should be given priority, even if this were to result in slower eco\u0026shy;nom\u0026shy;ic growth and job losses."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "ssq3_9",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "ssq3_9",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "ssq3_9",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "ssq3_9",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "ssq3_9",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "ssq3_9",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"randomization_group": 3,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.8rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0.6rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {
+ 								"template_columns": "7fr       1fr 1fr 1fr 1fr 1fr   1.4fr",
+ 								"column_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 1
  				}
@@ -6182,8 +6246,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Professional role"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -6218,7 +6282,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn your current role, which of the following activities do you personally contribute to?\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn your current role, which of the following activities do you contribute to?\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6627,34 +6691,6 @@
  							"max_chars": 100,
  							"col_span": 4,
  							"col_span_control": 1
- 						},
- 						{
- 							"name": "ssq4_15",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "todo",
- 								"en": "none of the above"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						}
  					]
  				}
@@ -6662,8 +6698,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Taxonomy exposure and knowledge"
+ 				"de": "\u0026nbsp;",
+ 				"en": "\u0026nbsp;"
  			},
  			"description": {
  				"de": "",
@@ -6697,7 +6733,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow familiar are you with the EU Taxonomy?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow familiar are you with the EU Taxonomy for sustainable activities?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6736,22 +6772,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq5",
- 								"inp2": "ssq5_free",
- 								"radioOn": "ssq56"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -6785,22 +6805,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq5",
- 								"inp2": "ssq5_free",
- 								"radioOn": "ssq56"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -6838,22 +6842,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq5",
- 								"inp2": "ssq5_free",
- 								"radioOn": "ssq56"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -6887,22 +6875,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq5",
- 								"inp2": "ssq5_free",
- 								"radioOn": "ssq56"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -6940,22 +6912,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq5",
- 								"inp2": "ssq5_free",
- 								"radioOn": "ssq56"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -6989,22 +6945,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq5",
- 								"inp2": "ssq5_free",
- 								"radioOn": "ssq56"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -7104,22 +7044,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq6",
- 								"inp2": "ssq6_free",
- 								"radioOn": "ssq66"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -7153,22 +7077,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq6",
- 								"inp2": "ssq6_free",
- 								"radioOn": "ssq66"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -7206,22 +7114,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq6",
- 								"inp2": "ssq6_free",
- 								"radioOn": "ssq66"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -7255,22 +7147,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq6",
- 								"inp2": "ssq6_free",
- 								"radioOn": "ssq66"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -7337,22 +7213,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq7",
- 								"inp2": "ssq7_free",
- 								"radioOn": "ssq76"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -7386,22 +7246,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq7",
- 								"inp2": "ssq7_free",
- 								"radioOn": "ssq76"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -7439,22 +7283,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq7",
- 								"inp2": "ssq7_free",
- 								"radioOn": "ssq76"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -7488,22 +7316,6 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq7",
- 								"inp2": "ssq7_free",
- 								"radioOn": "ssq76"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
  								}
  							}
  						}
@@ -7541,22 +7353,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "radio-xor-text",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp1": "ssq7",
- 								"inp2": "ssq7_free",
- 								"radioOn": "ssq76"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "unused",
- 									"en": "unused"
- 								}
- 							}
  						}
  					]
  				},
@@ -7579,8 +7375,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Usage of the Taxonomy \u003c!-- taxonomy exposure follow up --\u003e"
+ 				"de": "\u0026nbsp;",
+ 				"en": " \u003c!-- taxonomy exposure follow up --\u003e "
  			},
  			"description": {
  				"de": "",
@@ -7616,7 +7412,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich of the following best describes your involvement with the EU Taxonomy in your current role?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich of the following best describes your involvement with the EU Taxonomy in your current role?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7840,7 +7636,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFor what purpose have you used the EU Taxonomy?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFor what purpose have you used the EU Taxonomy?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8088,8 +7884,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Where the information comes from \u003c!-- taxonomy exposure follow up --\u003e"
+ 				"de": "\u0026nbsp;",
+ 				"en": "\u003c!-- taxonomy exposure follow up --\u003e"
  			},
  			"description": {
  				"de": "",
@@ -8125,7 +7921,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow do you nor\u0026shy;mally obtain EU Taxonomy-related in\u0026shy;for\u0026shy;ma\u0026shy;tion?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow do you nor\u0026shy;mally obtain EU Taxonomy-related in\u0026shy;for\u0026shy;ma\u0026shy;tion?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8373,8 +8169,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Intermediation / transmission   \u003c!-- question 11 relevant --\u003e"
+ 				"de": "\u0026nbsp;",
+ 				"en": " \u003c!-- question 11 relevant --\u003e "
  			},
  			"description": {
  				"de": "",
@@ -8410,7 +8206,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn which of the following ways have you communicated, shared, \n\t\t\t\t\tor incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\t(e.g., its criteria, alignment figures, or decisions based on it) \n\t\t\t\t\tduring the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn which of the following ways have you communicated, shared, \n\t\t\t\t\tor incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\t(e.g., its criteria, alignment figures, or decisions based on it) \n\t\t\t\t\tduring the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8426,7 +8222,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
+ 								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy."
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8454,7 +8250,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders.  "
+ 								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8482,7 +8278,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have prepared or contributed to Taxonomy-related disclosures, reports, or other published in\u0026shy;for\u0026shy;ma\u0026shy;tion.  "
+ 								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders.  "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8510,7 +8306,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have used the EU Taxonomy when advising clients or assessing their sustainability preferences.  "
+ 								"en": "I have prepared or contributed to Taxonomy-related disclosures, reports, or other published in\u0026shy;for\u0026shy;ma\u0026shy;tion.  "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8538,7 +8334,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have incorporated the EU Taxonomy into advice or recommendations provided to colleagues. "
+ 								"en": "I have used the EU Taxonomy when advising clients or assessing their sustainability preferences.  "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8566,7 +8362,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have designed, labeled, or marketed financial products that incorporate the EU Taxonomy.  "
+ 								"en": "I have incorporated the EU Taxonomy into advice or recommendations provided to colleagues. "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8594,7 +8390,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have made or contributed to in\u0026shy;vest\u0026shy;ment, lending or financing decisions on behalf of clients or my organisation using the EU Taxonomy. "
+ 								"en": "I have designed, labeled, or marketed financial products that incorporate the EU Taxonomy.  "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8619,6 +8415,34 @@
  						},
  						{
  							"name": "ssq11a_8",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have made or contributed to in\u0026shy;vest\u0026shy;ment, lending or financing decisions on behalf of clients or my organisation using the EU Taxonomy. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11a_9",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8653,30 +8477,16 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "ssq11a_9",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "todo",
- 								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy. "
+ 							"name": "grey-out-other-checkboxes",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"core_id": "ssq11a_"
  							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "",
+ 									"en": ""
  								}
  							}
  						}
@@ -8686,8 +8496,8 @@
  		},
  		{
  			"label": {
- 				"de": "todo",
- 				"en": "Intermediation / transmission   \u003c!-- question 11 irrelevant --\u003e"
+ 				"de": "\u0026nbsp;",
+ 				"en": " \u003c!-- question 11 irrelevant --\u003e "
  			},
  			"description": {
  				"de": "",
@@ -8722,8 +8532,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eSelect all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8739,7 +8549,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
+ 								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy. "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8767,7 +8577,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders. "
+ 								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8795,7 +8605,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have referred to the EU Taxonomy in presentations, publications, teaching, or other professional com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion. "
+ 								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders. "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8823,7 +8633,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
- 								"en": "I have used the EU Taxonomy as an example or point of reference in professional discussions. "
+ 								"en": "I have referred to the EU Taxonomy in presentations, publications, teaching, or other professional com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion. "
  							},
  							"col_span": 6,
  							"col_span_label": 1,
@@ -8848,6 +8658,34 @@
  						},
  						{
  							"name": "ssq11b_5",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "I have used the EU Taxonomy as an example or point of reference in professional discussions. "
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 12,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "ssq11b_6",
  							"type": "checkbox",
  							"label": {
  								"de": "todo",
@@ -8882,30 +8720,16 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "ssq11b_6",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "todo",
- 								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy. "
+ 							"name": "grey-out-other-checkboxes",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"core_id": "ssq11b_"
  							},
- 							"col_span": 6,
- 							"col_span_label": 1,
- 							"col_span_control": 12,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "",
+ 									"en": ""
  								}
  							}
  						}

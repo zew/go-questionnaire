@@ -535,28 +535,28 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 	lblsSsq5 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Ich habe noch nie davon gehört.`,
 			"en": "I have never heard of it.",
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe davon gehört, weiß aber nur sehr wenig darüber.`,
 			"en": "I have heard of it but know very little about it.",
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe ein allgemeines Verständnis davon.`,
 			"en": "I have a general understanding of it.",
 		},
 
 		{
-			"de": `todo`,
+			"de": `Ich verstehe die für meine Arbeit relevanten Aspekte.`,
 			"en": "I understand the aspects relevant to my work.",
 		},
 		{
-			"de": `todo`,
+			"de": `Ich verfüge über detaillierte praktische Kenntnisse.`,
 			"en": "I have detailed working knowledge of it.",
 		},
 		{
-			"de": `todo`,
+			"de": `Ich verfüge über Expertenwissen.`,
 			"en": "I have expert-level knowledge of it.",
 		},
 	}
@@ -587,7 +587,9 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					todo
+					Bestehen für Ihre Organisation oder deren Produkte aufgrund der EU-Taxonomie Berichtspflichten oder Offenlegungspflichten?
+					<br>
+					<br>
 				`,
 				"en": `
 					Does the EU Taxonomy create any reporting or disclosure obligation for your organisation or its products?
@@ -600,20 +602,20 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 	lblsSsq6 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `ja – eine verpflichtende Vorgabe (z. B. CSRD-Berichterstattung oder SFDR-Produktoffenlegung)`,
 			"en": "yes - a mandatory obligation (e.g., CSRD reporting or SFDR product disclosure)",
 		},
 		{
-			"de": `todo`,
+			"de": `keine verpflichtende Vorgabe – wir berichten bzw. legen Informationen jedoch freiwillig oder auf Nachfrage von Kunden oder Investoren offen`,
 			"en": "no mandatory requirement - but we report or disclose voluntarily or in response to client or investor demand",
 		},
 		{
-			"de": `todo`,
+			"de": `nein`,
 			"en": "no",
 		},
 
 		{
-			"de": `todo`,
+			"de": `weiß nicht`,
 			"en": "don't know",
 		},
 	}
@@ -629,7 +631,9 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					todo
+					In meiner beruflichen Funktion ist die Anwendung der EU-Taxonomie in erster Linie
+					<br>
+					<br>
 				`,
 				"en": `
 					In my professional role, using the EU Taxonomy is primarily
@@ -642,24 +646,24 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 
 	lblsSsq7 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `vorgeschrieben`,
 			"en": "required ",
 		},
 		{
-			"de": `todo`,
+			"de": `erwartet`,
 			"en": "expected ",
 		},
 		{
-			"de": `todo`,
+			"de": `erwünscht`,
 			"en": "encouraged",
 		},
 		{
-			"de": `todo`,
+			"de": `optional`,
 			"en": "optional ",
 		},
 
 		{
-			"de": `todo`,
+			"de": `für meine Funktion nicht relevant`,
 			"en": "not relevant to my role",
 		},
 	}
@@ -699,42 +703,46 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Welche der folgenden Aussagen beschreibt am besten, wie Sie in Ihrer derzeitigen Funktion mit der EU-Taxonomie befasst sind?
+					<br>
+					<small>Bitte wählen Sie alle zutreffenden Antworten aus.</small>
+				`,
 				"en": `
 					Which of the following best describes your involvement with the EU Taxonomy in your current role?
 					<br>
 					<small>Please select all that apply.</small>
-					`,
+				`,
 			}.Outline("8.")
 		}
 	}
 	lblsSsq8 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Ich analysiere Informationen mit Bezug zur EU-Taxonomie.`,
 			"en": `I analyse Taxonomy-related information. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich erstelle Analysen, Berichte oder Offenlegungen mit Bezug zur EU-Taxonomie.`,
 			"en": `I prepare Taxonomy-related analysis, reports, or disclosures. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich prüfe oder beaufsichtige Arbeiten mit Taxonomiebezug.`,
 			"en": `I review or supervise Taxonomy-related work. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich vermittle oder erläutere anderen Informationen zur EU-Taxonomie.`,
 			"en": `I communicate or explain the Taxonomy to others.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich treffe Entscheidungen, in die Taxonomie-Informationen einfließen.`,
 			"en": `I make decisions that use Taxonomy information. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe in meiner Arbeit selten mit der EU-Taxonomie zu tun.`,
 			"en": `I rarely encounter the Taxonomy in my work. `,
 		},
 		{
-			"de": `todo`,
+			"de": `sonstiges`,
 			"en": `other`,
 		},
 	}
@@ -786,7 +794,11 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Für welche Zwecke haben Sie die EU-Taxonomie genutzt?
+					<br>
+					<small>Bitte wählen Sie alle zutreffenden Antworten aus.</small>				
+				`,
 				"en": `
 					For what purpose have you used the EU Taxonomy?
 					<br>
@@ -797,36 +809,36 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	lblsSsq9 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Berichterstattung oder Offenlegung`,
 			"en": `reporting or disclosure`,
 		},
 		{
-			"de": `todo`,
+			"de": `Investitionen, Kreditvergabe oder damit zusammenhängende Analysen`,
 			"en": `investment, lending or related analysis `,
 		},
 		{
-			"de": `todo`,
+			"de": `Risikobewertung`,
 			"en": `risk assessment `,
 		},
 		{
-			"de": `todo`,
+			"de": `Unternehmensstrategie oder -planung`,
 			"en": `corporate strategy or planning`,
 		},
 		{
-			"de": `todo`,
+			"de": `Produktentwicklung oder -klassifizierung`,
 			"en": `product development or classification`,
 		},
 		{
-			"de": `todo`,
+			"de": `Politik- oder Wirtschaftsanalysen`,
 			"en": `policy or economic analysis `,
 		},
 		{
-			"de": `todo`,
+			"de": `Kundenberatung`,
 			"en": `client advice `,
 		},
 
 		{
-			"de": `todo`,
+			"de": `sonstiges`,
 			"en": `other`,
 		},
 	}
@@ -877,7 +889,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	page.Label = trl.S{
 		"en": "Where the information comes from <!-- taxonomy exposure follow up -->",
-		"de": "todo",
+		"de": "",
 	}
 	page.Label = trl.S{
 		"en": "<!-- taxonomy exposure follow up -->",
@@ -898,7 +910,12 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Wie kommen Sie normalerweise an Informationen zur EU-Taxonomie?
+					<br>
+					<small>Bitte wählen Sie alle zutreffenden Antworten aus.</small>
+				
+				`,
 				"en": `
 					How do you normally obtain EU Taxonomy-related information?
 					<br>
@@ -909,36 +926,36 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	lblsSsq10 := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Ich bewerte wirtschaftliche Aktivitäten direkt anhand der Kriterien der EU-Taxonomie.`,
 			"en": `I assess economic activities directly against the EU Taxonomy criteria. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich berechne Taxonomieindikatoren selbst.`,
 			"en": `I calculate Taxonomy indicators myself. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich nutze Taxonomieinformationen, die von Unternehmen oder Gegenparteien gemeldet werden.`,
 			"en": `I use Taxonomy information reported by companies or counterparties. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich nutze Taxonomieschätzungen oder -klassifizierungen von externen Datenanbietern.`,
 			"en": `I use Taxonomy estimates or classifications from external data providers. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich nutze Taxonomieanalysen von Kollegen.`,
 			"en": `I use Taxonomy analyses prepared by colleagues. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich nutze Anlageprodukte, Scores oder Ratings, in die Taxonomie-Informationen einfließen.`,
 			"en": `I use investment products, scores, or ratings that incorporate Taxonomy information. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich nutze die EU-Taxonomie hauptsächlich als allgemeine Hintergrundinformation oder Referenz.`,
 			"en": `I use the EU Taxonomy mainly as general background or reference information. `,
 		},
 
 		{
-			"de": `todo`,
+			"de": `sonstiges`,
 			"en": `other`,
 		},
 	}
@@ -989,7 +1006,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	page.Label = trl.S{
 		"en": "Intermediation / transmission   <!-- question 11 relevant -->",
-		"de": "todo",
+		"de": "",
 	}
 	page.Label = trl.S{
 		"en": " <!-- question 11 relevant --> ",
@@ -1011,7 +1028,11 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Auf welche der folgenden Arten haben Sie in den letzten 12 Monaten Informationen zur EU-Taxonomie (z. B. Taxonomiekriterien, Angaben zur Taxonomiekonformität oder darauf basierende Entscheidungen) verwendet, kommuniziert oder, weitergegeben?
+					<br>
+					<small>Bitte wählen Sie alle zutreffenden Antworten aus.</small>				
+				`,
 				"en": `
 					In which of the following ways have you communicated, shared, 
 					or incorporated EU Taxonomy information 
@@ -1025,40 +1046,40 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	lblsSsq11a := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Ich habe keine Informationen zur EU-Taxonomie verwendet, kommuniziert oder weitergegeben.`,
 			"en": `I have not communicated or shared information about the EU Taxonomy.`,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie Kollegen erläutert oder mit ihnen besprochen.`,
 			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie Kunden oder anderen externen Interessengruppen erläutert oder mit ihnen besprochen.`,
 			"en": `I have explained or discussed the EU Taxonomy with clients or other external stakeholders.  `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe taxonomiebezogene Offenlegungen, Berichte oder andere veröffentlichte Informationen erstellt oder daran mitgewirkt.`,
 			"en": `I have prepared or contributed to Taxonomy-related disclosures, reports, or other published information.  `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie bei der Beratung von Kunden oder bei der Bewertung ihrer Nachhaltigkeitspräferenzen herangezogen.`,
 			"en": `I have used the EU Taxonomy when advising clients or assessing their sustainability preferences.  `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie bei Empfehlungen an Kollegen berücksichtigt.`,
 			"en": `I have incorporated the EU Taxonomy into advice or recommendations provided to colleagues. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe Finanzprodukte konzipiert, gekennzeichnet oder vermarktet, die die EU-Taxonomie berücksichtigen.`,
 			"en": `I have designed, labeled, or marketed financial products that incorporate the EU Taxonomy.  `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe im Namen von Kunden oder meiner Organisation Investitions-, Kredit- oder Finanzierungsentscheidungen unter Verwendung der EU-Taxonomie getroffen oder daran mitgewirkt.`,
 			"en": `I have made or contributed to investment, lending or financing decisions on behalf of clients or my organisation using the EU Taxonomy. `,
 		},
 
 		{
-			"de": `todo`,
+			"de": `sonstiges`,
 			"en": `other`,
 		},
 	}
@@ -1129,7 +1150,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	page.Label = trl.S{
 		"en": "Intermediation / transmission   <!-- question 11 irrelevant -->",
-		"de": "todo",
+		"de": "",
 	}
 	page.Label = trl.S{
 		"en": " <!-- question 11 irrelevant --> ",
@@ -1151,7 +1172,11 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 0
 			inp.Label = trl.S{
-				"de": `todo`,
+				"de": `
+					Auch wenn die EU-Taxonomie für Ihre derzeitige Funktion nicht relevant ist, kann es dennoch vorkommen, dass Sie beruflich damit in Berührung kommen oder darüber diskutieren. Haben Sie in den letzten 12 Monaten auf eine der folgenden Arten Informationen zur EU-Taxonomie verwendet, kommuniziert oder weitergegeben?
+					<br>
+					<small>Bitte wählen Sie alle zutreffenden Antworten aus.</small>
+				`,
 				"en": `
 					Even though the EU Taxonomy is not relevant to your current role, 
 					you may still encounter or discuss it professionally. 
@@ -1160,33 +1185,34 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 					<br>
 					<small>Please select all that apply.</small>
 					`,
-			}.Outline("11.").Outline("8.")
+			}.Outline("8.")
+			// .Outline("11.")
 		}
 	}
 	lblsSsq11b := []trl.S{
 		{
-			"de": `todo`,
+			"de": `Ich habe keine Informationen zur EU-Taxonomie verwendet, kommuniziert oder weitergegeben.`,
 			"en": `I have not communicated or shared information about the EU Taxonomy. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie Kollegen erläutert oder mit ihnen besprochen.`,
 			"en": `I have explained or discussed the EU Taxonomy with colleagues. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie Kunden oder anderen externen Interessengruppen erläutert oder mit ihnen besprochen.`,
 			"en": `I have explained or discussed the EU Taxonomy with clients or other external stakeholders. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe in Präsentationen, Veröffentlichungen, im Unterricht oder in anderer beruflicher Kommunikation auf die EU-Taxonomie Bezug genommen.`,
 			"en": `I have referred to the EU Taxonomy in presentations, publications, teaching, or other professional communication. `,
 		},
 		{
-			"de": `todo`,
+			"de": `Ich habe die EU-Taxonomie in beruflichen Diskussionen als Beispiel oder Bezugspunkt verwendet.`,
 			"en": `I have used the EU Taxonomy as an example or point of reference in professional discussions. `,
 		},
 
 		{
-			"de": `todo`,
+			"de": `sonstiges`,
 			"en": `other`,
 		},
 	}

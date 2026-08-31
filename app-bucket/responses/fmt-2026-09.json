@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "65a6a7fe2097e9cea8b749d01af765bcf5f20b52947dcc505645388466ad8a46",
+ 	"md_5": "058bf7661d59b57ac8cf80a38b01086c980b109009c3a0a121da15797c1ff045",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4996,7 +4996,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "über\u0026shy;haupt nichtd si\u0026shy;cher",
+ 								"de": "über\u0026shy;haupt nicht si\u0026shy;cher",
  								"en": "not at all confident"
  							},
  							"col_span_control": 1,
@@ -6281,7 +6281,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; todo",
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit welchen der folgenden Tätigkeiten sind Sie in Ihrer derzeitigen Funktion befasst?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eBitte wählen Sie alle zu\u0026shy;tref\u0026shy;fenden Optionen aus.\u003c/small\u003e\n\n\t\t\t\t",
  								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn your current role, which of the following activities do you contribute to?\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -6297,7 +6297,7 @@
  							"name": "ssq4_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Investitions- oder Portfolioentscheidungen",
  								"en": "in\u0026shy;vest\u0026shy;ment or portfolio decision-making"
  							},
  							"col_span": 6,
@@ -6325,7 +6325,7 @@
  							"name": "ssq4_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Kreditvergabe oder Kreditentscheidungen",
  								"en": "lending or credit decision-making"
  							},
  							"col_span": 6,
@@ -6353,7 +6353,7 @@
  							"name": "ssq4_3",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Versi\u0026shy;cherungsunderwriting",
  								"en": "insurance underwriting"
  							},
  							"col_span": 6,
@@ -6381,7 +6381,7 @@
  							"name": "ssq4_4",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ri\u0026shy;si\u0026shy;kobewertung",
  								"en": "risk assessment"
  							},
  							"col_span": 6,
@@ -6409,7 +6409,7 @@
  							"name": "ssq4_5",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Un\u0026shy;ter\u0026shy;neh\u0026shy;mensstrategie oder Entscheidungen über Investitionsausgaben",
  								"en": "corporate strategy or capital expenditure decisions"
  							},
  							"col_span": 6,
@@ -6437,7 +6437,7 @@
  							"name": "ssq4_6",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Aufsichtsrechtliche Berichterstattung",
  								"en": "regulatory reporting"
  							},
  							"col_span": 6,
@@ -6465,7 +6465,7 @@
  							"name": "ssq4_7",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Nachhaltigkeitsberichterstattung",
  								"en": "sustainability reporting"
  							},
  							"col_span": 6,
@@ -6493,7 +6493,7 @@
  							"name": "ssq4_8",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Produktgestaltung oder -klassifizierung",
  								"en": "product design or classification"
  							},
  							"col_span": 6,
@@ -6521,7 +6521,7 @@
  							"name": "ssq4_9",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Kundenberatung oder -kommunikation",
  								"en": "client advice or com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion"
  							},
  							"col_span": 6,
@@ -6549,7 +6549,7 @@
  							"name": "ssq4_10",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Wirt\u0026shy;schafts-, Markt- oder Branchenana\u0026shy;ly\u0026shy;sen",
  								"en": "eco\u0026shy;nom\u0026shy;ic, market, or sector analysis"
  							},
  							"col_span": 6,
@@ -6577,7 +6577,7 @@
  							"name": "ssq4_11",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Po\u0026shy;li\u0026shy;tikana\u0026shy;ly\u0026shy;se oder Po\u0026shy;li\u0026shy;tikberatung",
  								"en": "policy analysis or advice"
  							},
  							"col_span": 6,
@@ -6605,7 +6605,7 @@
  							"name": "ssq4_12",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Stewardship oder Engagement",
  								"en": "stewardship or engagement"
  							},
  							"col_span": 6,
@@ -6633,7 +6633,7 @@
  							"name": "ssq4_13",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Handel",
  								"en": "trading"
  							},
  							"col_span": 6,
@@ -6661,7 +6661,7 @@
  							"name": "ssq4_14",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "sonstiges",
  								"en": "other"
  							},
  							"col_span": 2,
@@ -6732,7 +6732,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t",
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie vertraut sind Sie mit der EU-Taxonomie für nachhaltige Wirt\u0026shy;schaftstätigkeiten?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow familiar are you with the EU Taxonomy for sustainable activities?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -6748,7 +6748,7 @@
  							"name": "ssq5",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe noch nie davon gehört.",
  								"en": "I have never heard of it."
  							},
  							"col_span": 6,
@@ -6783,7 +6783,7 @@
  							"name": "ssq5",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe davon gehört, weiß aber nur sehr wenig darüber.",
  								"en": "I have heard of it but know very little about it."
  							},
  							"col_span": 6,
@@ -6818,7 +6818,7 @@
  							"name": "ssq5",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe ein allgemeines Verständnis davon.",
  								"en": "I have a general understanding of it."
  							},
  							"col_span": 6,
@@ -6853,7 +6853,7 @@
  							"name": "ssq5",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich verstehe die für meine Arbeit re\u0026shy;le\u0026shy;vanten Aspekte.",
  								"en": "I understand the aspects re\u0026shy;le\u0026shy;vant to my work."
  							},
  							"col_span": 6,
@@ -6888,7 +6888,7 @@
  							"name": "ssq5",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich verfüge über detaillierte praktische Kenntnisse.",
  								"en": "I have detailed working knowledge of it."
  							},
  							"col_span": 6,
@@ -6923,7 +6923,7 @@
  							"name": "ssq5",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich verfüge über Expertenwissen.",
  								"en": "I have expert-level knowledge of it."
  							},
  							"col_span": 6,
@@ -7004,7 +7004,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t",
+ 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBestehen für Ihre Organisation oder deren Produkte aufgrund der EU-Taxonomie Berichtspflichten oder Offenlegungspflichten?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDoes the EU Taxonomy create any reporting or disclosure obligation for your organisation or its products?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -7020,7 +7020,7 @@
  							"name": "ssq6",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "ja – eine verpflichtende Vorgabe (z. B. CSRD-Berichterstattung oder SFDR-Produktoffenlegung)",
  								"en": "yes - a mandatory obligation (e.g., CSRD reporting or SFDR product disclosure)"
  							},
  							"col_span": 6,
@@ -7055,7 +7055,7 @@
  							"name": "ssq6",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "kei\u0026shy;ne verpflichtende Vorgabe – wir berichten bzw. legen In\u0026shy;for\u0026shy;ma\u0026shy;tionen jedoch freiwillig oder auf Nachfrage von Kunden oder Investoren offen",
  								"en": "no mandatory requirement - but we report or disclose voluntarily or in response to client or investor demand"
  							},
  							"col_span": 6,
@@ -7090,7 +7090,7 @@
  							"name": "ssq6",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "nein",
  								"en": "no"
  							},
  							"col_span": 6,
@@ -7125,7 +7125,7 @@
  							"name": "ssq6",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "weiß nicht",
  								"en": "don't know"
  							},
  							"col_span": 6,
@@ -7173,7 +7173,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t",
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn meiner beruflichen Funktion ist die Anwendung der EU-Taxonomie in erster Linie\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t",
  								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn my professional role, using the EU Taxonomy is primarily\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
@@ -7189,7 +7189,7 @@
  							"name": "ssq7",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "vorgeschrieben",
  								"en": "required "
  							},
  							"col_span": 6,
@@ -7224,7 +7224,7 @@
  							"name": "ssq7",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "erwartet",
  								"en": "expected "
  							},
  							"col_span": 6,
@@ -7259,7 +7259,7 @@
  							"name": "ssq7",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "erwünscht",
  								"en": "encouraged"
  							},
  							"col_span": 6,
@@ -7294,7 +7294,7 @@
  							"name": "ssq7",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "optional",
  								"en": "optional "
  							},
  							"col_span": 6,
@@ -7329,7 +7329,7 @@
  							"name": "ssq7",
  							"type": "radio",
  							"label": {
- 								"de": "todo",
+ 								"de": "für meine Funktion nicht re\u0026shy;le\u0026shy;vant",
  								"en": "not re\u0026shy;le\u0026shy;vant to my role"
  							},
  							"col_span": 6,
@@ -7411,8 +7411,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich of the following best describes your involvement with the EU Taxonomy in your current role?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWelche der folgenden Aussagen beschreibt am besten, wie Sie in Ihrer derzeitigen Funktion mit der EU-Taxonomie befasst sind?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eBitte wählen Sie alle zu\u0026shy;tref\u0026shy;fenden Ant\u0026shy;worten aus.\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWhich of the following best describes your involvement with the EU Taxonomy in your current role?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7427,7 +7427,7 @@
  							"name": "ssq8_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich analysiere In\u0026shy;for\u0026shy;ma\u0026shy;tionen mit Bezug zur EU-Taxonomie.",
  								"en": "I ana\u0026shy;ly\u0026shy;se Taxonomy-related in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
  							},
  							"col_span": 6,
@@ -7455,7 +7455,7 @@
  							"name": "ssq8_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "• Ich erstelle Ana\u0026shy;ly\u0026shy;sen, Berichte oder Offenlegungen mit Bezug zur EU-Taxonomie.",
  								"en": "I prepare Taxonomy-related analysis, reports, or disclosures. "
  							},
  							"col_span": 6,
@@ -7483,7 +7483,7 @@
  							"name": "ssq8_3",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich prüfe oder beaufsichtige Arbeiten mit Taxonomiebezug.",
  								"en": "I review or supervise Taxonomy-related work. "
  							},
  							"col_span": 6,
@@ -7511,7 +7511,7 @@
  							"name": "ssq8_4",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich vermittle oder erläutere anderen In\u0026shy;for\u0026shy;ma\u0026shy;tionen zur EU-Taxonomie.",
  								"en": "I communicate or explain the Taxonomy to others."
  							},
  							"col_span": 6,
@@ -7539,7 +7539,7 @@
  							"name": "ssq8_5",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich treffe Entscheidungen, in die Taxonomie-In\u0026shy;for\u0026shy;ma\u0026shy;tionen einfließen.",
  								"en": "I make decisions that use Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
  							},
  							"col_span": 6,
@@ -7567,7 +7567,7 @@
  							"name": "ssq8_6",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe in meiner Arbeit selten mit der EU-Taxonomie zu tun.",
  								"en": "I rarely encoun\u0026shy;ter the Taxonomy in my work. "
  							},
  							"col_span": 6,
@@ -7595,7 +7595,7 @@
  							"name": "ssq8_7",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "sonstiges",
  								"en": "other"
  							},
  							"col_span": 2,
@@ -7635,7 +7635,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; todo",
+ 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFür welche Zwecke haben Sie die EU-Taxonomie genutzt?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eBitte wählen Sie alle zu\u0026shy;tref\u0026shy;fenden Ant\u0026shy;worten aus.\u003c/small\u003e\t\t\t\t\n\t\t\t\t",
  								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFor what purpose have you used the EU Taxonomy?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -7651,7 +7651,7 @@
  							"name": "ssq9_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Berichterstattung oder Offenlegung",
  								"en": "reporting or disclosure"
  							},
  							"col_span": 6,
@@ -7679,7 +7679,7 @@
  							"name": "ssq9_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Investitionen, Kreditvergabe oder damit zusammenhängende Ana\u0026shy;ly\u0026shy;sen",
  								"en": "in\u0026shy;vest\u0026shy;ment, lending or related analysis "
  							},
  							"col_span": 6,
@@ -7707,7 +7707,7 @@
  							"name": "ssq9_3",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ri\u0026shy;si\u0026shy;kobewertung",
  								"en": "risk assessment "
  							},
  							"col_span": 6,
@@ -7735,7 +7735,7 @@
  							"name": "ssq9_4",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Un\u0026shy;ter\u0026shy;neh\u0026shy;mensstrategie oder -planung",
  								"en": "corporate strategy or planning"
  							},
  							"col_span": 6,
@@ -7763,7 +7763,7 @@
  							"name": "ssq9_5",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Produktentwicklung oder -klassifizierung",
  								"en": "product de\u0026shy;vel\u0026shy;op\u0026shy;ment or classification"
  							},
  							"col_span": 6,
@@ -7791,7 +7791,7 @@
  							"name": "ssq9_6",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Po\u0026shy;li\u0026shy;tik- oder Wirt\u0026shy;schaftsana\u0026shy;ly\u0026shy;sen",
  								"en": "policy or eco\u0026shy;nom\u0026shy;ic analysis "
  							},
  							"col_span": 6,
@@ -7819,7 +7819,7 @@
  							"name": "ssq9_7",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Kundenberatung",
  								"en": "client advice "
  							},
  							"col_span": 6,
@@ -7847,7 +7847,7 @@
  							"name": "ssq9_8",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "sonstiges",
  								"en": "other"
  							},
  							"col_span": 2,
@@ -7920,7 +7920,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; todo",
+ 								"de": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWie kommen Sie nor\u0026shy;malerweise an In\u0026shy;for\u0026shy;ma\u0026shy;tionen zur EU-Taxonomie?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eBitte wählen Sie alle zu\u0026shy;tref\u0026shy;fenden Ant\u0026shy;worten aus.\u003c/small\u003e\n\t\t\t\t\n\t\t\t\t",
  								"en": "\u003cb\u003e10.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow do you nor\u0026shy;mally obtain EU Taxonomy-related in\u0026shy;for\u0026shy;ma\u0026shy;tion?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -7936,7 +7936,7 @@
  							"name": "ssq10_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich bewerte wirt\u0026shy;schaft\u0026shy;liche Aktivitäten direkt anhand der Kriterien der EU-Taxonomie.",
  								"en": "I assess eco\u0026shy;nom\u0026shy;ic activities directly against the EU Taxonomy criteria. "
  							},
  							"col_span": 6,
@@ -7964,7 +7964,7 @@
  							"name": "ssq10_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich berechne Taxonomieindikatoren selbst.",
  								"en": "I calculate Taxonomy indicators myself. "
  							},
  							"col_span": 6,
@@ -7992,7 +7992,7 @@
  							"name": "ssq10_3",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich nutze Taxonomiein\u0026shy;for\u0026shy;ma\u0026shy;tionen, die von Un\u0026shy;ter\u0026shy;neh\u0026shy;men oder Gegenparteien gemeldet werden.",
  								"en": "I use Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion reported by companies or coun\u0026shy;terparties. "
  							},
  							"col_span": 6,
@@ -8020,7 +8020,7 @@
  							"name": "ssq10_4",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich nutze Taxonomieschätzungen oder -klassifizierungen von externen Da\u0026shy;tenanbietern.",
  								"en": "I use Taxonomy es\u0026shy;ti\u0026shy;mates or classifications from external data providers. "
  							},
  							"col_span": 6,
@@ -8048,7 +8048,7 @@
  							"name": "ssq10_5",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich nutze Taxonomieana\u0026shy;ly\u0026shy;sen von Kollegen.",
  								"en": "I use Taxonomy ana\u0026shy;ly\u0026shy;ses prepared by colleagues. "
  							},
  							"col_span": 6,
@@ -8076,7 +8076,7 @@
  							"name": "ssq10_6",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich nutze Anlageprodukte, Scores oder Ratings, in die Taxonomie-In\u0026shy;for\u0026shy;ma\u0026shy;tionen einfließen.",
  								"en": "I use in\u0026shy;vest\u0026shy;ment products, scores, or ratings that incorporate Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
  							},
  							"col_span": 6,
@@ -8104,7 +8104,7 @@
  							"name": "ssq10_7",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich nutze die EU-Taxonomie hauptsächlich als allgemeine Hintergrundin\u0026shy;for\u0026shy;ma\u0026shy;tion oder Referenz.",
  								"en": "I use the EU Taxonomy mainly as general background or reference in\u0026shy;for\u0026shy;ma\u0026shy;tion. "
  							},
  							"col_span": 6,
@@ -8132,7 +8132,7 @@
  							"name": "ssq10_8",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "sonstiges",
  								"en": "other"
  							},
  							"col_span": 2,
@@ -8205,7 +8205,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
+ 								"de": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAuf welche der folgenden Arten haben Sie in den letzten 12 Monaten In\u0026shy;for\u0026shy;ma\u0026shy;tionen zur EU-Taxonomie (z. B. Taxonomiekriterien, An\u0026shy;ga\u0026shy;ben zur Taxonomiekonformität oder darauf basierende Entscheidungen) verwendet, kommuniziert oder, weitergegeben?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eBitte wählen Sie alle zu\u0026shy;tref\u0026shy;fenden Ant\u0026shy;worten aus.\u003c/small\u003e\t\t\t\t\n\t\t\t\t",
  								"en": "\u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tIn which of the following ways have you communicated, shared, \n\t\t\t\t\tor incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\t(e.g., its criteria, alignment figures, or decisions based on it) \n\t\t\t\t\tduring the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
@@ -8221,7 +8221,7 @@
  							"name": "ssq11a_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe kei\u0026shy;ne In\u0026shy;for\u0026shy;ma\u0026shy;tionen zur EU-Taxonomie verwendet, kommuniziert oder weitergegeben.",
  								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy."
  							},
  							"col_span": 6,
@@ -8249,7 +8249,7 @@
  							"name": "ssq11a_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie Kollegen erläutert oder mit ihnen besprochen.",
  								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
  							},
  							"col_span": 6,
@@ -8277,7 +8277,7 @@
  							"name": "ssq11a_3",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie Kunden oder anderen externen Interessengrup\u0026shy;pen erläutert oder mit ihnen besprochen.",
  								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders.  "
  							},
  							"col_span": 6,
@@ -8305,7 +8305,7 @@
  							"name": "ssq11a_4",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe taxonomiebezogene Offenlegungen, Berichte oder andere veröffentlichte In\u0026shy;for\u0026shy;ma\u0026shy;tionen erstellt oder daran mitgewirkt.",
  								"en": "I have prepared or contributed to Taxonomy-related disclosures, reports, or other published in\u0026shy;for\u0026shy;ma\u0026shy;tion.  "
  							},
  							"col_span": 6,
@@ -8333,7 +8333,7 @@
  							"name": "ssq11a_5",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie bei der Beratung von Kunden oder bei der Bewertung ihrer Nachhaltigkeitspräferenzen herangezogen.",
  								"en": "I have used the EU Taxonomy when advising clients or assessing their sustainability preferences.  "
  							},
  							"col_span": 6,
@@ -8361,7 +8361,7 @@
  							"name": "ssq11a_6",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie bei Empfehlungen an Kollegen berücksichtigt.",
  								"en": "I have incorporated the EU Taxonomy into advice or recommendations provided to colleagues. "
  							},
  							"col_span": 6,
@@ -8389,7 +8389,7 @@
  							"name": "ssq11a_7",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe Finanzprodukte konzipiert, gekennzeichnet oder vermarktet, die die EU-Taxonomie berücksichtigen.",
  								"en": "I have designed, labeled, or marketed financial products that incorporate the EU Taxonomy.  "
  							},
  							"col_span": 6,
@@ -8417,7 +8417,7 @@
  							"name": "ssq11a_8",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe im Namen von Kunden oder meiner Organisation Investitions-, Kredit- oder Finanzierungsentscheidungen un\u0026shy;ter Verwendung der EU-Taxonomie getroffen oder daran mitgewirkt.",
  								"en": "I have made or contributed to in\u0026shy;vest\u0026shy;ment, lending or financing decisions on behalf of clients or my organisation using the EU Taxonomy. "
  							},
  							"col_span": 6,
@@ -8445,7 +8445,7 @@
  							"name": "ssq11a_9",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "sonstiges",
  								"en": "other"
  							},
  							"col_span": 2,
@@ -8532,8 +8532,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \u003cb\u003e11.\u003c/b\u003e \u0026nbsp; todo",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \u003cb\u003e11.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAuch wenn die EU-Taxonomie für Ihre derzeitige Funktion nicht re\u0026shy;le\u0026shy;vant ist, kann es dennoch vorkommen, dass Sie beruflich damit in Berührung kommen oder darüber diskutieren. Haben Sie in den letzten 12 Monaten auf eine der folgenden Arten In\u0026shy;for\u0026shy;ma\u0026shy;tionen zur EU-Taxonomie verwendet, kommuniziert oder weitergegeben?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003eBitte wählen Sie alle zu\u0026shy;tref\u0026shy;fenden Ant\u0026shy;worten aus.\u003c/small\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tEven though the EU Taxonomy is not re\u0026shy;le\u0026shy;vant to your current role, \n\t\t\t\t\tyou may still encoun\u0026shy;ter or discuss it professionally. \n\t\t\t\t\tHave you communicated, shared, or incorporated EU Taxonomy in\u0026shy;for\u0026shy;ma\u0026shy;tion \n\t\t\t\t\tin any of the following ways during the past 12 months?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003csmall\u003ePlease select all that apply.\u003c/small\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8548,7 +8548,7 @@
  							"name": "ssq11b_1",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe kei\u0026shy;ne In\u0026shy;for\u0026shy;ma\u0026shy;tionen zur EU-Taxonomie verwendet, kommuniziert oder weitergegeben.",
  								"en": "I have not communicated or shared in\u0026shy;for\u0026shy;ma\u0026shy;tion about the EU Taxonomy. "
  							},
  							"col_span": 6,
@@ -8576,7 +8576,7 @@
  							"name": "ssq11b_2",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie Kollegen erläutert oder mit ihnen besprochen.",
  								"en": "I have explained or discussed the EU Taxonomy with colleagues. "
  							},
  							"col_span": 6,
@@ -8604,7 +8604,7 @@
  							"name": "ssq11b_3",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie Kunden oder anderen externen Interessengrup\u0026shy;pen erläutert oder mit ihnen besprochen.",
  								"en": "I have explained or discussed the EU Taxonomy with clients or other external stakeholders. "
  							},
  							"col_span": 6,
@@ -8632,7 +8632,7 @@
  							"name": "ssq11b_4",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe in Präsentationen, Veröffentlichungen, im Un\u0026shy;terricht oder in anderer beruflicher Kommunikation auf die EU-Taxonomie Bezug genommen.",
  								"en": "I have referred to the EU Taxonomy in presentations, publications, teaching, or other professional com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion. "
  							},
  							"col_span": 6,
@@ -8660,7 +8660,7 @@
  							"name": "ssq11b_5",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "Ich habe die EU-Taxonomie in beruflichen Diskussionen als Beispiel oder Bezugspunkt verwendet.",
  								"en": "I have used the EU Taxonomy as an example or point of reference in professional discussions. "
  							},
  							"col_span": 6,
@@ -8688,7 +8688,7 @@
  							"name": "ssq11b_6",
  							"type": "checkbox",
  							"label": {
- 								"de": "todo",
+ 								"de": "sonstiges",
  								"en": "other"
  							},
  							"col_span": 2,

@@ -233,7 +233,7 @@ var askForConsent = map[int]bool{
 
 	9990: true,
 	9991: false,
-	9992: true,  // already agreed, do not include
+	9992: true,  //    not  agreed yet
 	9993: false, // already agreed, do not include
 
 	10003: false,
@@ -257,12 +257,15 @@ var askForConsent = map[int]bool{
 	10073: false,
 	10079: false,
 	10080: false,
+	10081: false,
 	10084: false,
 	10086: false,
 	10089: false,
 	10090: false,
 	10095: false,
+	10103: false,
 	10105: false,
+	10112: false,
 	10115: false,
 	10129: false,
 	10133: false,
@@ -273,9 +276,11 @@ var askForConsent = map[int]bool{
 	10147: false,
 	10150: false,
 	10154: false,
+	10160: false,
 	10161: false,
 	10162: false,
 	10163: false,
+	10168: false,
 	10172: false,
 	10178: false,
 	10179: false,
@@ -286,17 +291,24 @@ var askForConsent = map[int]bool{
 	10210: false,
 	10231: false,
 	10235: false,
+	10256: false,
+	10262: false,
 	10263: false,
 	10267: false,
 	10268: false,
 	10274: false,
 	10278: false,
+	10281: false,
 	10307: false,
+	10311: false,
 	10315: false,
+	10316: false,
+	10322: false,
 	10330: false,
 	10343: false,
 	10344: false,
 	10345: false,
+	10363: false,
 	10364: false,
 	10366: false,
 	10367: false,
@@ -306,7 +318,9 @@ var askForConsent = map[int]bool{
 	10377: false,
 	10381: false,
 	10385: false,
+	10387: false,
 	10391: false,
+	10412: false,
 	10418: false,
 	10420: false,
 	10421: false,
@@ -314,14 +328,17 @@ var askForConsent = map[int]bool{
 	10806: false,
 	10812: false,
 	10813: false,
+	10816: false,
 	10828: false,
 	10830: false,
+	10839: false,
 	10844: false,
 	10947: false,
 	11241: false,
 	11246: false,
 	11272: false,
 	11275: false,
+	11345: false,
 	11400: false,
 	11425: false,
 	11435: false,
@@ -330,9 +347,12 @@ var askForConsent = map[int]bool{
 	11465: false,
 	11478: false,
 	11482: false,
+	11497: false,
 	11499: false,
 	11500: false,
 	11514: false,
+	11534: false,
+	11544: false,
 	11558: false,
 	11565: false,
 	11568: false,
@@ -340,7 +360,9 @@ var askForConsent = map[int]bool{
 	11575: false,
 	11588: false,
 	11589: false,
+	11596: false,
 	11600: false,
+	11601: false,
 	11602: false,
 	11603: false,
 	11605: false,
@@ -360,14 +382,21 @@ var askForConsent = map[int]bool{
 	11643: false,
 	11650: false,
 	11653: false,
+	11654: false,
 	11659: false,
 	11661: false,
+	11665: false,
+	11670: false,
+	11672: false,
 	11673: false,
 	11677: false,
 	11680: false,
 	11682: false,
+	11684: false,
+	11685: false,
 	11686: false,
 	11687: false,
+	11688: false,
 	11689: false,
 	11692: false,
 	11693: false,
@@ -375,10 +404,13 @@ var askForConsent = map[int]bool{
 	11699: false,
 	11702: false,
 	11703: false,
+	11704: false,
 	11705: false,
+	11707: false,
 	11708: false,
 	11709: false,
 	11710: false,
+	11711: false,
 	11712: false,
 	11714: false,
 	11715: false,
@@ -389,6 +421,7 @@ var askForConsent = map[int]bool{
 	11720: false,
 	11721: false,
 	11726: false,
+	11727: false,
 	11728: false,
 	11729: false,
 	11730: false,
@@ -397,11 +430,14 @@ var askForConsent = map[int]bool{
 	11740: false,
 	11743: false,
 	11750: false,
+	11752: false,
 	11753: false,
 	11755: false,
 	11756: false,
 	11758: false,
+	11759: false,
 	11760: false,
+	11761: false,
 	11765: false,
 	11767: false,
 	11768: false,
@@ -412,6 +448,7 @@ var askForConsent = map[int]bool{
 	11774: false,
 	11777: false,
 	11779: false,
+	11780: false,
 	11781: false,
 	11783: false,
 	11786: false,
@@ -421,7 +458,7 @@ var askForConsent = map[int]bool{
 // fmtAskConsent_GDPR - which users get to see the "agree to terms and conditions" page
 func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 
-	for i := 9970; i < 10000; i++ {
+	for i := 9950; i < 10000; i++ {
 		if i%2 == 0 {
 			askForConsent[i] = true
 		} else {
@@ -433,30 +470,14 @@ func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 		// aaa testuser
 		11246: true,
 
-		11653: true,
-		11709: true,
+		// 11653: true,
+		// 11709: true,
 	}
 
 	/*
 
-		SELECT *
-		FROM `sonderfragen_ger`
-		WHERE               1
-					AND   frage_kurz = 'agree_gdpr_terms'
-					-- AND   antwort != "1"
-
-					AND person_id IN (
-						11246,
-						11653,
-						11709
-					)
-		ORDER BY    `survey_id`  DESC
 
 
-		https://survey2.zew.de/?u=11246&sid=fmt&wid=2026-08&p=1&h=u5M6SZlPnMSG9Jfs89IdoMuQ8U0DkYcG4QQGYO_i6iQ
-
-		https://survey2.zew.de/?u=11653&sid=fmt&wid=2026-08&p=1&h=pgDN47ditQL-Tc5c8UZ1eV_xPEkSOkkLyeWQ-lp9bcQ
-		https://survey2.zew.de/?u=11709&sid=fmt&wid=2026-08&p=1&h=JXTrwJmdQfU_skd_EAjpk2jIVcmlbDIK83GnGdBdTcc
 
 		SELECT *
 			FROM `panel_ger`
@@ -469,6 +490,30 @@ func fmtAskConsent_GDPR(q *QuestionnaireT, pageIdx int) bool {
 					)
 				AND survey_id > 202604
 			ORDER BY `survey_id`  DESC
+			GROUP BY
+
+
+
+		-- answered NO
+		SELECT 		survey_id, person_id, frage_kurz, antwort
+		FROM 		`sonderfragen_ger`
+		WHERE               1
+					AND   frage_kurz = 'agree_gdpr_terms'
+					AND   antwort != "1"
+					AND   survey_id > 202604
+
+		ORDER BY    `survey_id`  DESC
+
+		-- answere YES
+		SELECT 		person_id, frage_kurz, antwort, survey_id
+		FROM 		`sonderfragen_ger`
+		WHERE               1
+					AND   frage_kurz = 'agree_gdpr_terms'
+					AND   antwort = "1"
+					AND   survey_id > 202604
+
+		ORDER BY    `person_id`  ASC
+
 	*/
 
 	//

@@ -96,7 +96,7 @@ func special202603Climate(q *qst.QuestionnaireT) error {
 			"en": "other, namely...",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 2, true, true)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 2, true, true, 2)
 
 	//
 	{

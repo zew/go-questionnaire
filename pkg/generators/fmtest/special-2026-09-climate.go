@@ -3,6 +3,7 @@ package fmtest
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -26,12 +27,60 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 	}
 	page.Label = trl.S{
 		"de": "",
+		"en": "intro text",
+	}
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.WidthMax("38rem")
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 4
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+					<br>
+					<br>
+					<br>
+					Die folgenden Fragen sind Teil einer Befragungsreihe, die im Rahmen eines wissenschaftlichen Forschungsprojekts zu den Themen Nachhaltigkeit und Klimawandel durchgeführt wird. 
+					
+					<br>
+					<br>
+					Wenn in den Fragen von einer „klimaneutralen Wirtschaft“ die Rede ist, dann ist damit eine Wirtschaft gemeint, die eine Netto-Null-Bilanz bei den Treibhausgasemissionen erreicht hat. 
+					Das heißt, alle vom Menschen verursachten Emissionen werden durch die Entfernung aus der Atmosphäre ausgeglichen, sodass keine Auswirkungen auf das Klimasystem entstehen.
+				`,
+				"en": `
+					<br>
+					<br>
+					<br>
+					The following questions are part of a series of surveys conducted for a scientific research project on sustainability and climate change. 
+					<br>
+					<br>
+					When the questions refer to a “climate-neutral economy”, this should be read as an economy that has achieved a net-zero greenhouse gas emissions balance, meaning all human-caused emissions are balanced by removals from the atmosphere, ensuring no impact on the climate system.
+				`,
+			}
+		}
+	}
+
+	//
+	page = q.AddPage()
+	// pge.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+
+	page.Label = trl.S{
+		"de": "",
 		"en": "Beliefs",
 	}
 	page.Label = trl.S{
 		"de": "",
 		"en": "",
 	}
+	page.SuppressInProgressbar = true
 	page.WidthMax("48rem")
 
 	{
@@ -113,25 +162,10 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "more than 4&nbsp;°C",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 0, false, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 0, false, false, 1)
 
 	//
 	//
-	//
-	//
-	//
-	//
-	page = q.AddPage()
-	// pge.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
-
-	page.WidthMax("44rem")
-
-	page.Label = trl.S{
-		"en": "&nbsp;",
-		"de": "&nbsp;",
-	}
-	page.SuppressInProgressbar = true
-
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
@@ -150,6 +184,9 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 					On a scale from 1 (not at all confident) to 5 (very confident), how confident are you about your assessment in the previous question?`,
 			}.Outline("2.")
 		}
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleBox.Display = "none"
+
 	}
 
 	{
@@ -164,7 +201,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			},
 			[]trl.S{
 				{
-					"de": "überhaupt nicht sicher",
+					"de": "überhaupt nicht<br>sicher",
 					"en": "not at all confident",
 				},
 				{
@@ -188,8 +225,33 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			radioVals5,
 			nil,
 		)
+
 		gr := page.AddGrid(gb)
-		gr.BottomVSpacers = 4
+		gr.BottomVSpacers = 3
+
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleBox.Display = "none"
+
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "conditional-appearance"
+
+			s1 := trl.S{
+				"de": "",
+				"en": "",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+			inp.JSBlockStrings = map[string]string{
+				"inp1Id":   "ssq1",
+				"groupID1": "pg08-grp09",
+				"groupID2": "pg08-grp10",
+			}
+		}
+
 	}
 
 	//
@@ -560,7 +622,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "I have expert-level knowledge of it.",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq5", lblsSsq5, 0, false, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq5", lblsSsq5, 0, false, false, 2)
 
 	//
 	//
@@ -619,7 +681,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "don't know",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq6", lblsSsq6, 0, false, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq6", lblsSsq6, 0, false, false, 2)
 
 	{
 		gr := page.AddGroup()
@@ -667,7 +729,7 @@ func special202609Climate(q *qst.QuestionnaireT) error {
 			"en": "not relevant to my role",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq7", lblsSsq7, 0, false, false)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq7", lblsSsq7, 0, false, false, 2)
 
 	//
 	//

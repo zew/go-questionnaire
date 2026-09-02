@@ -15,6 +15,7 @@ func randomizedVerticalRadiosWithFree(
 	randomGroup int,
 	lastWithFree bool,
 	strangeJavasScript bool,
+	bottomSpacers int,
 ) {
 
 	for i := 0; i < len(rowLbls); i++ {
@@ -88,10 +89,11 @@ func randomizedVerticalRadiosWithFree(
 	// since the groups above can be randomized,
 	// we cannot give a vertical spacer at the "end"
 	// =>  explicit vertical spacer
-	{
+
+	if bottomSpacers > 0 {
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.BottomVSpacers = 2
+		gr.BottomVSpacers = bottomSpacers
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"

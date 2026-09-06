@@ -88,7 +88,12 @@ dummy {
     top: 0.04ch;
 }
 
-.pg09-grp01 .grid-item-lvl-2 {
+.pg07-grp00 .grid-item-lvl-2 {
+    font-size:   107%;
+    line-height: 148%  ;
+}
+
+.pg10-grp01 .grid-item-lvl-2 {
     font-size:   107%;
     line-height: 128%  ;
 }

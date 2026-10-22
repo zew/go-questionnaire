@@ -19,7 +19,8 @@ import (
 
 var mtxUnsubscribe = sync.Mutex{}
 
-const fileCSV = "unsubscribe.csv"
+const csvPost = "unsubscribe-post.csv"
+const csvGet = "unsubscribe-get.csv"
 
 func emailHost() string {
 	return cfg.Get().SMTPHost.HostNamePort
@@ -27,6 +28,16 @@ func emailHost() string {
 
 func adminEmail() []string {
 	return cfg.Get().AdminEmails
+}
+
+func restoreObfuscation(s string) string {
+	s = strings.ReplaceAll(s, "mmpp", "&")
+	s = strings.ReplaceAll(s, "qquu", "=")
+	s = strings.ReplaceAll(s, "ddtt", ".")
+	s = strings.ReplaceAll(s, "aatt", "@")
+	s = strings.ReplaceAll(s, "hhyy", "-")
+	s = strings.ReplaceAll(s, "pct40", "@")
+	return strings.TrimSpace(s)
 }
 
 type unsubscribeT struct {
@@ -37,6 +48,9 @@ type unsubscribeT struct {
 	Date    string `json:"date"`
 	Path    string `json:"path"`  // the original URL path
 	Query   string `json:"query"` // the original URL raw query string
+
+	EmailPath  string `json:"-"` // email extracted from URL path
+	EmailQuery string `json:"-"` // email extracted from URL GET param
 
 	Response template.HTML `json:"response"`
 }
@@ -65,6 +79,35 @@ func (us unsubscribeT) CSVRow() string {
 	fmt.Fprint(b, "\n")
 	return b.String()
 }
+
+func (us unsubscribeT) CSVHeaderGet() string {
+	b := &bytes.Buffer{}
+	fmt.Fprintf(b, "%v;", "project")
+	fmt.Fprintf(b, "%v;", "task")
+	fmt.Fprintf(b, "%v;", "email")
+	fmt.Fprintf(b, "%v;", "email_path")
+	fmt.Fprintf(b, "%v;", "email_query")
+	fmt.Fprintf(b, "%v;", "date")
+	fmt.Fprintf(b, "%v;", "path")
+	fmt.Fprintf(b, "%v;", "query")
+	fmt.Fprint(b, "\n")
+	return b.String()
+}
+
+func (us unsubscribeT) CSVRowGet() string {
+	b := &bytes.Buffer{}
+	fmt.Fprintf(b, "%v;", us.Project)
+	fmt.Fprintf(b, "%v;", us.Task)
+	fmt.Fprintf(b, "%v;", us.Email)
+	fmt.Fprintf(b, "%v;", us.EmailPath)
+	fmt.Fprintf(b, "%v;", us.EmailQuery)
+	fmt.Fprintf(b, "%v;", us.Date)
+	fmt.Fprintf(b, "%v;", us.Path)
+	fmt.Fprintf(b, "%v;", us.Query)
+	fmt.Fprint(b, "\n")
+	return b.String()
+}
+
 func (us unsubscribeT) String() string {
 	// prevent repetition...
 	b := &bytes.Buffer{}
@@ -76,27 +119,53 @@ func (us unsubscribeT) String() string {
 	return b.String()
 }
 
-func saveCSVRow(fe unsubscribeT) (string, error) {
+// saving a row to the CSV POST file
+func saveRowPost(fe unsubscribeT) (string, error) {
 
 	mtxUnsubscribe.Lock()
 	defer mtxUnsubscribe.Unlock()
 
-	fd, size := mustDir(fileCSV)
-	f, err := os.OpenFile(filepath.Join(fd, fileCSV), os.O_APPEND|os.O_WRONLY, 0600)
+	fd, size := mustDir(csvPost)
+	f, err := os.OpenFile(filepath.Join(fd, csvPost), os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
-		return fmt.Sprintf("Could not open  %v. Email %v.", fileCSV, adminEmail()), err
+		return fmt.Sprintf("Could not open  %v. Email %v.", csvPost, adminEmail()), err
 	}
 	defer f.Close()
 	if size < 10 {
 		if _, err = f.WriteString(fe.CSVHeader()); err != nil {
-			return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV header). Informieren Sie %v.", fileCSV, adminEmail()), err
+			return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV header). Informieren Sie %v.", csvPost, adminEmail()), err
 		}
 	}
 	if _, err = f.WriteString(fe.CSVRow()); err != nil {
-		return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV row). Informieren Sie %v.", fileCSV, adminEmail()), err
+		return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV row). Informieren Sie %v.", csvPost, adminEmail()), err
 	}
 
 	return "Ihre Daten wurden gespeichert", nil
+
+}
+
+// saving a row to the CSV GET file
+func saveRowGet(fe unsubscribeT) (string, error) {
+
+	mtxUnsubscribe.Lock()
+	defer mtxUnsubscribe.Unlock()
+
+	fd, size := mustDir(csvGet)
+	f, err := os.OpenFile(filepath.Join(fd, csvGet), os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		return fmt.Sprintf("Could not open  %v. Email %v.", csvGet, adminEmail()), err
+	}
+	defer f.Close()
+	if size < 10 {
+		if _, err = f.WriteString(fe.CSVHeaderGet()); err != nil {
+			return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV header). Informieren Sie %v.", csvGet, adminEmail()), err
+		}
+	}
+	if _, err = f.WriteString(fe.CSVRowGet()); err != nil {
+		return fmt.Sprintf("Ihre Daten konnten nicht nach %v gespeichert werden (CSV row). Informieren Sie %v.", csvGet, adminEmail()), err
+	}
+
+	return "GET request logged", nil
 
 }
 
@@ -152,7 +221,7 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 </head>
 <body>
 
-<form method="get"   style='white-space:pre' >
+<form method="post"  style='white-space:pre' >
     <b>Unsubscribe</b>
 	Project     <input type="text"   name="project"   value="{{.Project}}"> <br>
 	Task        <input type="text"   name="task"      value="{{.Task}}">    <br>
@@ -170,37 +239,70 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 </html>
 `
 
-	//
-	// data from URL parameters
-	//   email clients somehow garble those parameters
 	fe := unsubscribeT{} // form entry
-	dec := form.NewDecoder()
-	dec.SetTagName("json") // recognizes and ignores ,omitempty
-	err := dec.Decode(&fe, r.Form)
+
+	//
+	// parse form first
+	err := r.ParseForm()
 	if err != nil {
-		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
+		errMsg += fmt.Sprintf("ParseForm error: %v\n", err)
 	}
+	fe.EmailQuery = restoreObfuscation(r.URL.Query().Get("email"))
 
 	//
 	// data from URL path
+	var pathProject, pathTask, pathEmail string
 	dirs := strings.Split(r.URL.Path, "/") // path.SplitList(r.URL.Path) does not exist
 	// pths[0...x] is "/.../.../unsubscribe/proj/tsk/someemail/dummy"
-	dirs = dirs[:len(dirs)-1] // cut off the last element - "dummy"
+	if len(dirs) > 0 {
+		dirs = dirs[:len(dirs)-1] // cut off the last element - "dummy"
+	}
 	// from the end...
 	if len(dirs) > 3 {
 		ln := len(dirs) - 1
 		// third last path element: project
 		if dirs[ln-2] != "" {
-			fe.Project = dirs[ln-2]
+			pathProject = restoreObfuscation(dirs[ln-2])
 		}
 		// second last path element: task
 		if dirs[ln-1] != "" {
-			fe.Task = dirs[ln-1]
+			pathTask = restoreObfuscation(dirs[ln-1])
 		}
 		// last path element: email
 		if dirs[ln-0] != "" {
-			fe.Email = dirs[ln-0]
-			fe.Email = strings.ReplaceAll(fe.Email, "pct40", "@")
+			pathEmail = restoreObfuscation(dirs[ln-0])
+		}
+	}
+	fe.EmailPath = pathEmail
+
+	//
+	// data from URL parameters or POST body
+	//   email clients somehow garble those parameters
+	dec := form.NewDecoder()
+	dec.SetTagName("json") // recognizes and ignores ,omitempty
+	if r.Method == http.MethodPost {
+		// on POST: set URL path values as defaults first, then decode PostForm so user edits take precedence
+		fe.Project = pathProject
+		fe.Task = pathTask
+		fe.Email = pathEmail
+		err = dec.Decode(&fe, r.PostForm)
+		if err != nil {
+			errMsg += fmt.Sprintf("Decoding error: %v\n", err)
+		}
+	} else {
+		// on GET: decode query parameters first, and do not overwrite non-empty values with URL path
+		err = dec.Decode(&fe, r.Form)
+		if err != nil {
+			errMsg += fmt.Sprintf("Decoding error: %v\n", err)
+		}
+		if fe.Project == "" {
+			fe.Project = pathProject
+		}
+		if fe.Task == "" {
+			fe.Task = pathTask
+		}
+		if fe.Email == "" {
+			fe.Email = pathEmail
 		}
 	}
 
@@ -213,37 +315,48 @@ func UnsubscribeH(w http.ResponseWriter, r *http.Request) {
 	// time.DateTime was introduced after go version 1.17 => codecov fails
 	// fe.Date = time.Now().Format(time.DateTime)
 	fe.Date = time.Now().Format("2006-01-02 15:04:05")
+	fe.Path = r.URL.Path
+	fe.Query = r.URL.RawQuery
 
-	if fe.Project == "" {
-		msg := "Project cannot be empty; 'fmt' or 'pds'"
-		fe.Response += template.HTML(msg + "<br>")
-	}
-	if fe.Task == "" {
-		msg := "Task cannot be empty; 'invitation' or 'reminder'"
-		fe.Response += template.HTML(msg + "<br>")
-	}
-	if fe.Email == "" || fe.Email == "your-email" {
-		msg := "Email cannot be empty"
-		fe.Response += template.HTML(msg + "<br>")
-	}
+	if r.Method != http.MethodPost {
 
-	// dbg.Dump(fe)
+		// log all GET requests into separate CSV file and return 200 OK with confirmation form
+		_, _ = saveRowGet(fe)
+		if fe.Project != "" && fe.Task != "" && fe.Email != "" && fe.Email != "your-email" {
+			fe.Response += template.HTML("Please click Submit to confirm your unsubscribe request.<br>")
+		}
+		w.WriteHeader(http.StatusOK)
 
-	// no errors
-	if fe.Response == "" {
-		// fe.Path = r.RequestURI
-		fe.Path = r.URL.Path
-		fe.Query = r.URL.RawQuery
-		msg1, err := saveCSVRow(fe)
-		if err != nil {
-			fe.Response += template.HTML(err.Error() + "<br>")
-		} else {
-			fe.Response += template.HTML(msg1 + "<br>")
-			msg2, err := sendAdminEmail(fe)
+	} else {
+
+		if fe.Project == "" {
+			msg := "Project cannot be empty; 'fmt' or 'pds'"
+			fe.Response += template.HTML(msg + "<br>")
+		}
+		if fe.Task == "" {
+			msg := "Task cannot be empty; 'invitation' or 'reminder'"
+			fe.Response += template.HTML(msg + "<br>")
+		}
+		if fe.Email == "" || fe.Email == "your-email" {
+			msg := "Email cannot be empty"
+			fe.Response += template.HTML(msg + "<br>")
+		}
+
+		// dbg.Dump(fe)
+
+		// no errors
+		if fe.Response == "" {
+			msg1, err := saveRowPost(fe)
 			if err != nil {
 				fe.Response += template.HTML(err.Error() + "<br>")
+			} else {
+				fe.Response += template.HTML(msg1 + "<br>")
+				msg2, err := sendAdminEmail(fe)
+				if err != nil {
+					fe.Response += template.HTML(err.Error() + "<br>")
+				}
+				fe.Response += template.HTML(msg2 + "<br>")
 			}
-			fe.Response += template.HTML(msg2 + "<br>")
 		}
 	}
 
@@ -276,7 +389,7 @@ func DownloadUnsubscribe(w http.ResponseWriter, r *http.Request) {
 	if cond1 || cond2 || cond3 {
 		// proceed below
 	} else {
-		s := fmt.Sprintf("Only local or subnet access to %v. Email %v.", fileCSV, adminEmail())
+		s := fmt.Sprintf("Only local or subnet access to %v. Email %v.", csvPost, adminEmail())
 		log.Print(s)
 		http.Error(w, s, 400)
 		return
@@ -284,17 +397,17 @@ func DownloadUnsubscribe(w http.ResponseWriter, r *http.Request) {
 
 	//
 	w.Header().Set("Content-Type", "text/csv; charset=utf-8")
-	w.Header().Add("Content-Disposition", fmt.Sprintf(`attachment; filename="%v"`, fileCSV))
-	fd, size := mustDir(fileCSV)
+	w.Header().Add("Content-Disposition", fmt.Sprintf(`attachment; filename="%v"`, csvPost))
+	fd, size := mustDir(csvPost)
 	w.Header().Add("Content-Length", fmt.Sprint(size))
 
-	log.Printf("   %v - %v Bytes from --%v-- start", filepath.Join(fd, fileCSV), size, r.RemoteAddr)
+	log.Printf("   %v - %v Bytes from --%v-- start", filepath.Join(fd, csvPost), size, r.RemoteAddr)
 
 	mtxUnsubscribe.Lock()
 	defer mtxUnsubscribe.Unlock()
-	bts, err := os.ReadFile(filepath.Join(fd, fileCSV))
+	bts, err := os.ReadFile(filepath.Join(fd, csvPost))
 	if err != nil {
-		s := fmt.Sprintf("Could not open  %v. Email %v.", fileCSV, adminEmail())
+		s := fmt.Sprintf("Could not open  %v. Email %v.", csvPost, adminEmail())
 		log.Print(s)
 		http.Error(w, s, 400)
 		return
@@ -302,8 +415,8 @@ func DownloadUnsubscribe(w http.ResponseWriter, r *http.Request) {
 	// this fails; server closes network connection, before bts is written to w
 	//    fmt.Fprint(w, bts)
 	// we need use 	io.Copy(out, in)
-	http.ServeContent(w, r, fileCSV, time.Now(), bytes.NewReader(bts))
+	http.ServeContent(w, r, csvPost, time.Now(), bytes.NewReader(bts))
 
-	log.Printf("   %v - %v Bytes from --%v-- end", filepath.Join(fd, fileCSV), size, r.RemoteAddr)
+	log.Printf("   %v - %v Bytes from --%v-- end", filepath.Join(fd, csvPost), size, r.RemoteAddr)
 
 }

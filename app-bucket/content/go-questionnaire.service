@@ -15,7 +15,7 @@ Group=gquser
 WorkingDirectory=/opt/go-questionnaire/
 ExecStart=/opt/go-questionnaire/go-questionnaire
 Restart=always
-Environment=USER=gquser HOME=/home/gquser
+Environment=USER=gquser HOME=/home/gquser TMPDIR=/var/tmp
 # bind to a port below 1024
 CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_BIND_SERVICE

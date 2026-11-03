@@ -337,10 +337,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		// },
 
 		// 2026-08
-		{
-			"de": "Reformpaket des Koalitionsausschusses vom Juli 2026",
-			"en": "Reform package agreed by the coalition committee in July 2026",
-		},
+		// {
+		// 	"de": "Reformpaket des Koalitionsausschusses vom Juli 2026",
+		// 	"en": "Reform package agreed by the coalition committee in July 2026",
+		// },
 	}
 
 	colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
@@ -369,8 +369,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"rev_defence_spending",
 				// "rev_banking_strain",
 				// "rev_debt_brake",
-				// "rev_free",
-				"rev_reform_package",
+				// "rev_reform_package",
 			},
 			radioVals6,
 			rowLabelsEconomicAreas,

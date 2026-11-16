@@ -105,8 +105,8 @@ dummy {
 #ssq11a_free,
 #ssq11b_free,
 dummy {
-    max-width: 60ch;
-    margin-left: -6rem;
+    /* max-width: 60ch; */
+    /* margin-left: -6rem; */
 }
 #ssq8_free,
 #ssq9_free,
@@ -114,7 +114,35 @@ dummy {
 #ssq11a_free,
 #ssq1b_free,
 dummy {
-    margin-left: -8rem;
+    /* margin-left: -8rem; */
+}
+
+
+/* 2026-12 climate */
+.pg07-grp02  {
+    margin-top: 0.62rem;
+}
+
+#ssq1_free,
+dummy {
+    max-width: 60ch;
+    margin-left: -4rem;
+}
+#ssq5_free,
+dummy {
+    max-width: 60ch;
+    margin-left: 1.2rem;
+}
+@media screen and (max-width: 800px) {
+    #ssq1_free,
+    dummy {
+        max-width:   32ch;
+        margin-left: -1.2rem;
+    }
+    #ssq5_free,
+    dummy {
+        max-width:   14ch;
+    }
 }
 
 

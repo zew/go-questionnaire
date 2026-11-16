@@ -7,10 +7,10 @@ import (
 
 // main
 // func
-func special202603Climate(q *qst.QuestionnaireT) error {
+func special202612Climate(q *qst.QuestionnaireT) error {
 
 	cond := false
-	cond = cond || q.Survey.Year == 2026 && q.Survey.Month == 3
+	cond = cond || q.Survey.Year == 2026 && q.Survey.Month == 12
 	if !cond {
 		return nil
 	}
@@ -42,10 +42,10 @@ func special202603Climate(q *qst.QuestionnaireT) error {
 			inp.ColSpan = gr.Cols
 			inp.Label = trl.S{
 				"de": `
-					Im Dezember 2025 wurden Sie gebeten, mehrere Fragen zu Ihren Überzeugungen zum Klimawandel zu beantworten. Diese Fragen sowie die nachfolgenden sind Teil eines laufenden Forschungsprojekts. Eine weitere Erhebungswelle zu diesem Thema wird im Juni durchgeführt.
+					Die folgenden Fragen sind Teil einer Befragungsreihe, die im Rahmen eines wissenschaftlichen Forschungsprojekts zu den Themen Nachhaltigkeit und Klimawandel durchgeführt wird.
 				`,
 				"en": `
-					In December 2025, you were asked to respond to several questions regarding your beliefs about climate change. These questions, together with those that follow, are part of an ongoing research project. A subsequent survey wave on this topic will be conducted in June.
+					The following questions are part of a series of surveys conducted for a scientific research project on sustainability and climate change.
 				`,
 			}
 		}

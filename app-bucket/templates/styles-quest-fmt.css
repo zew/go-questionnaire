@@ -88,39 +88,12 @@ dummy {
     top: 0.04ch;
 }
 
-.pg07-grp00 .grid-item-lvl-2 {
-    font-size:   107%;
-    line-height: 148%  ;
-}
-
-.pg10-grp01 .grid-item-lvl-2 {
-    font-size:   107%;
-    line-height: 128%  ;
-}
-
-#ssq4_free,
-#ssq8_free,
-#ssq9_free,
-#ssq10_free,
-#ssq11a_free,
-#ssq11b_free,
-dummy {
-    /* max-width: 60ch; */
-    /* margin-left: -6rem; */
-}
-#ssq8_free,
-#ssq9_free,
-#ssq10_free,
-#ssq11a_free,
-#ssq1b_free,
-dummy {
-    /* margin-left: -8rem; */
-}
 
 
 /* 2026-12 climate */
-.pg07-grp02  {
-    margin-top: 0.62rem;
+.pg07-grp01  {
+    margin-bottom: 0.62rem;
+    /* background-color: red; */
 }
 
 #ssq1_free,

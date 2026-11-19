@@ -96,12 +96,12 @@ func special202612Climate(q *qst.QuestionnaireT) error {
 			"en": "other, namely...",
 		},
 	}
-	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 2, true, true, 2)
+	randomizedVerticalRadiosWithFree(qst.WrapPageT(page), "ssq1", lblsSsq1, 2, true, true, 0)
 
 	//
 	{
 		gr := page.AddGroup()
-		gr.Cols = 1
+		gr.Cols = 3
 		gr.BottomVSpacers = 3
 		{
 			inp := gr.AddInput()
@@ -392,6 +392,147 @@ func special202612Climate(q *qst.QuestionnaireT) error {
 	}
 
 	randomizedMatrixWithFree(qst.WrapPageT(page), colLabelsSsq3and5, "ssq5", lblsSsq5, 4, lblFree)
+
+	page = q.AddPage()
+	page.WidthMax("50rem")
+	page.Label = trl.S{
+		"de": "",
+		"en": "",
+	}
+	page.SuppressInProgressbar = true
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = gr.Cols
+			inp.Label = trl.S{
+				"de": `
+					Nun sind wir an Ihren Investitionserwartungen interessiert: 
+				`,
+				"en": `
+					Now we are interested in your investment expectations:
+				`,
+			}
+		}
+	}
+
+	//
+	//
+	colLabelsSsq6And7 := []trl.S{
+		{
+			"de": "viel<br>niedriger",
+			"en": "much<br>lower",
+		},
+		{
+			"de": "etwas<br>niedriger",
+			"en": "somewhat<br>lower",
+		},
+		{
+			"de": "&nbsp;<br>gleich",
+			"en": "about<br>the same",
+		},
+		{
+			"de": "etwas<br>höher",
+			"en": "somewhat<br>higher",
+		},
+		{
+			"de": "viel<br>höher",
+			"en": "much<br>higher",
+		},
+		{
+			"de": "weiß<br>nicht",
+			"en": "don't<br>know",
+		},
+	}
+
+	// gr0
+	{
+		gb := qst.NewGridBuilderRadios(
+			[]float32{
+				0.2, 1,
+				0, 1,
+				0, 1,
+				0, 1,
+				0, 1,
+				0.4, 1,
+			},
+			colLabelsSsq6And7,
+			[]string{"ssq6"},
+			radioVals6,
+			[]trl.S{
+				{
+					"de": "--",
+					"en": "--",
+				},
+			},
+		)
+		gb.MainLabel = trl.S{
+			"de": `
+			Wie schätzen Sie langfristig die durchschnittlichen Renditen nachhaltiger Aktienfonds im Vergleich zu konventionellen Aktienfonds ein?
+			<br>
+			<small>Bitte lassen Sie Gebühren von Finanzdienstleistern außer Acht.</small>
+			<br>
+			<br>
+			Die Renditen nachhaltiger Aktienfonds sind...
+		`,
+			"en": `
+			In the long run, how do you expect the average returns of sustainable equity funds to compare with those of conventional equity funds?
+			<br>
+			<small>Please disregard any fees charged by financial service providers.</small>
+			<br>
+			<br>
+			The returns of sustainable equity funds are...
+		`,
+			// gb.MainLabel = gb.MainLabel.Outline("6.")
+		}.Outline("6.")
+		gr := page.AddGrid(gb)
+		_ = gr
+
+	}
+
+	// gr1
+	{
+		gb := qst.NewGridBuilderRadios(
+			[]float32{
+				0.2, 1,
+				0, 1,
+				0, 1,
+				0, 1,
+				0, 1,
+				0.4, 1,
+			},
+			colLabelsSsq6And7,
+			[]string{"ssq7"},
+			radioVals6,
+			[]trl.S{
+				{
+					"de": "--",
+					"en": "--",
+				},
+			},
+		)
+		gb.MainLabel = trl.S{
+			"de": `
+			Wie schätzen Sie das durchschnittliche Risiko nachhaltiger Aktienfonds im Vergleich zu konventionellen Aktienfonds langfristig ein?
+			<br>
+			<br>
+			Das Risiko nachhaltiger Aktienfonds ist...
+		`,
+			"en": `
+			In the long run, how do you expect the average risk of sustainable equity funds to compare with that of conventional equity funds?
+			<br>
+			<br>
+			The risk of sustainable equity funds is...
+		`,
+		}.Outline("7.")
+		gr := page.AddGrid(gb)
+		_ = gr
+
+	}
 
 	return nil
 

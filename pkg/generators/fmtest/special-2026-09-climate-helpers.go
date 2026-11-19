@@ -78,7 +78,7 @@ func randomizedVerticalRadiosWithFree(
 				"msg": s1,
 			}
 			inp.JSBlockStrings = map[string]string{
-				"inp1":    inputStem,
+				"inp1":    fmt.Sprintf("%v%v", inputStem, i+1),
 				"inp2":    inputStem + "_free",
 				"radioOn": inputStem + "6",
 			}

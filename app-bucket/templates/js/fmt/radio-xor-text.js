@@ -1,6 +1,6 @@
-// inp1Id - radio input name
-// inp2Id - number input - assigned to radio 6
-//    any radio checking triggers the disabling of the number input - except radio 6
+// inp1Id - radio  input name
+// inp2Id - text   input - assigned to radio 6
+//    any radio checking triggers the disabling of the text input - except radio 6
 //    initial disabling NOT set 			...gr.Style.Desktop....
 
 
@@ -12,10 +12,14 @@
     var inp2Id  = "{{.inp2}}";
     var radioOn = "{{.radioOn}}";
 
-    console.log( `names for inp1-2 -${inp1Id}- -${inp2Id}-  radioOn -${radioOn}- `);
 
-    var inp2   = document.getElementById(inp2Id);
-    var radio6 = document.getElementById(radioOn);
+    console.log( `ids for inp1-2 -${inp1Id}- -${inp2Id}-  radioOn -${radioOn}- `);
+
+    // declaring outer references before dom parse
+    var inp1   = null;
+    var inp2   = null;
+    var radio6 = null;
+    // console.log( `el  for radio6.name -${radio6.tagName}- `);
 
     function checkHandler(evt) {
         // console.log("selected:", evt.target.value);
@@ -36,7 +40,28 @@
     // addEventListener is cumulative
     window.addEventListener("load", function (evt) {
 
-        const selector = `input[type="radio"][name="${inp1Id}"]`
+        // querying elements after full dom parse
+        inp1   = document.getElementById(inp1Id);
+        inp2   = document.getElementById(inp2Id);
+        radio6 = document.getElementById(radioOn);
+
+        // if (inp1) {
+        //     console.log( `el  for inp1.name   -${inp1.tagName}-  -${inp1.name}- `);
+        // }
+        if (!inp2 || !radio6) {
+            console.error( `missing dom elements inp2=${inp2Id} radioOn=${radioOn}` );
+            return;
+        }
+
+        // preventing duplicate binding across repeated script blocks
+        if (inp2.dataset.xorBound) {
+            return;
+        }
+        inp2.dataset.xorBound = "1";
+
+        // resolving shared name attribute from element or fallback
+        const radioName = inp1 ? inp1.name : inp1Id;
+        const selector = `input[type="radio"][name="${radioName}"]`
         // console.log(`selector ${selector}`)
         const radioList = document.querySelectorAll(selector);
 

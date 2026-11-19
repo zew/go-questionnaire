@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1f36d876349abe8a9a0541bd0c6adb02c2473232aabd9c54a2f03457c58536d0",
+ 	"md_5": "234979c2b03ece9b533043cd813aac32568b4a740f2958c3c84975eb4b934742",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4758,7 +4758,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp1": "ssq1",
+ 								"inp1": "ssq11",
  								"inp2": "ssq1_free",
  								"radioOn": "ssq16"
  							},
@@ -4810,7 +4810,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp1": "ssq1",
+ 								"inp1": "ssq12",
  								"inp2": "ssq1_free",
  								"radioOn": "ssq16"
  							},
@@ -4862,7 +4862,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp1": "ssq1",
+ 								"inp1": "ssq13",
  								"inp2": "ssq1_free",
  								"radioOn": "ssq16"
  							},
@@ -4914,7 +4914,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp1": "ssq1",
+ 								"inp1": "ssq14",
  								"inp2": "ssq1_free",
  								"radioOn": "ssq16"
  							},
@@ -4966,7 +4966,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp1": "ssq1",
+ 								"inp1": "ssq15",
  								"inp2": "ssq1_free",
  								"radioOn": "ssq16"
  							},
@@ -5025,7 +5025,7 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp1": "ssq1",
+ 								"inp1": "ssq16",
  								"inp2": "ssq1_free",
  								"radioOn": "ssq16"
  							},
@@ -8369,7 +8369,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\tWie schätzen Sie das durchschnittliche Ri\u0026shy;si\u0026shy;ko nachhaltiger Aktienfonds im Vergleich zu konventionellen Aktienfonds lang\u0026shy;fristig ein?\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cbr\u003e\n\t\t\tDas Ri\u0026shy;si\u0026shy;ko nachhaltiger Aktienfonds ist...\n\t\t",
- 								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\tn the long run, how do you expect the av\u0026shy;er\u0026shy;age risk of sustainable equity funds to compare with that of conventional equity funds?\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cbr\u003e\n\t\t\tThe risk of sustainable equity funds is...\n\t\t"
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; \n\t\t\tIn the long run, how do you expect the av\u0026shy;er\u0026shy;age risk of sustainable equity funds to compare with that of conventional equity funds?\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cbr\u003e\n\t\t\tThe risk of sustainable equity funds is...\n\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
